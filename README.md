@@ -14,7 +14,17 @@
     
     - Với nhân viên: giúp thực hiện các công việc được giao.
     
-  - Danh sách các chức năng của phần mềm: đang phát triển.
+  - Danh sách các chức năng của phần mềm: 
+  
+    - Quản lí danh sách hóa đơn.
+    
+    - Quản lí danh sách nhập hàng.
+    
+    - Quản lí nhân viên.
+    
+    - Điểm danh, chấm công.
+    
+    - Order thức uống, đồ ăn.
   
   - Tác giả:
   
