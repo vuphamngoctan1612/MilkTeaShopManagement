@@ -23,21 +23,24 @@ namespace MilkTeaShopManagement
             string userName = txtUserName.Text;
             string passWord = txtPassWord.Text;
 
-            fOrder f = new fOrder();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-            //if (Login(userName, passWord))
-            //{
-            //    fShowOrder f = new fShowOrder();
-            //    this.Hide();
-            //    f.ShowDialog();
-            //    this.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Tài Khoản hoặc Mật Khẩu không hợp lệ!", "Login");
-            //}
+            if (LoginAdmin(userName, passWord))
+            {
+                fOrder f = new fOrder();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else if (LoginStaff(userName, passWord))
+            {
+                fOrder f = new fOrder();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tài Khoản hoặc Mật Khẩu không đúng!");
+            }
         }
 
         private bool LoginAdmin(string userName, string passWord)
