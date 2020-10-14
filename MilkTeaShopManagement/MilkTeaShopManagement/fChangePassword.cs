@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UIAdmin
+namespace MilkTeaShopManagement
 {
     public partial class fChangePassword : Form
     {
@@ -26,6 +26,11 @@ namespace UIAdmin
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void fChangePassword_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

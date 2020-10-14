@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UIAdmin
+namespace MilkTeaShopManagement
 {
     
     public partial class Admin : Form
@@ -79,6 +79,11 @@ namespace UIAdmin
             this.Hide();
             frm.ShowDialog();
             this.Show();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

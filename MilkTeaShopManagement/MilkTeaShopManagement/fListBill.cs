@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UIAdmin
+namespace MilkTeaShopManagement
 {
     public partial class fListBill : Form
     {

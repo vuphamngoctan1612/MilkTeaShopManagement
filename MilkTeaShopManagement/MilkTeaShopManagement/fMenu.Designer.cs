@@ -1,4 +1,4 @@
-﻿namespace UIAdmin
+﻿namespace MilkTeaShopManagement
 {
     partial class fMenu
     {

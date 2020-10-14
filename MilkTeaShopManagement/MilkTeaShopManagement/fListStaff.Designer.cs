@@ -1,4 +1,4 @@
-﻿namespace UIAdmin
+﻿namespace MilkTeaShopManagement
 {
     partial class fListStaff
     {
@@ -47,11 +47,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 22);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(690, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(613, 338);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -59,16 +60,17 @@
             this.panel1.Controls.Add(this.lbListStaff);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 29);
+            this.panel1.Size = new System.Drawing.Size(711, 23);
             this.panel1.TabIndex = 3;
             // 
             // lbListStaff
             // 
             this.lbListStaff.AutoSize = true;
-            this.lbListStaff.Location = new System.Drawing.Point(3, 5);
+            this.lbListStaff.Location = new System.Drawing.Point(3, 4);
             this.lbListStaff.Name = "lbListStaff";
-            this.lbListStaff.Size = new System.Drawing.Size(158, 20);
+            this.lbListStaff.Size = new System.Drawing.Size(142, 17);
             this.lbListStaff.TabIndex = 1;
             this.lbListStaff.Text = "Danh sách nhân viên";
             // 
@@ -78,8 +80,9 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 450);
+            this.panel2.Size = new System.Drawing.Size(711, 360);
             this.panel2.TabIndex = 4;
             // 
             // panel3
@@ -87,36 +90,41 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Location = new System.Drawing.Point(696, 350);
+            this.panel3.Location = new System.Drawing.Point(619, 280);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(104, 100);
+            this.panel3.Size = new System.Drawing.Size(92, 80);
             this.panel3.TabIndex = 2;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(8, 53);
+            this.btnDelete.Location = new System.Drawing.Point(7, 42);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(92, 35);
+            this.btnDelete.Size = new System.Drawing.Size(82, 28);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 12);
+            this.btnAdd.Location = new System.Drawing.Point(8, 10);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(92, 35);
+            this.btnAdd.Size = new System.Drawing.Size(82, 28);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // fListStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fListStaff";
             this.Text = "fListStaff";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
