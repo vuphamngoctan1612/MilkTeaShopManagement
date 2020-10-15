@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fChangePassword));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -51,19 +52,19 @@
             this.panel1.Controls.Add(this.txtNewPw);
             this.panel1.Controls.Add(this.txtRePw);
             this.panel1.Controls.Add(this.txtNameLogin);
-            this.panel1.Location = new System.Drawing.Point(59, 47);
+            this.panel1.Location = new System.Drawing.Point(177, 160);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(614, 256);
+            this.panel1.Size = new System.Drawing.Size(691, 320);
             this.panel1.TabIndex = 3;
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.Location = new System.Drawing.Point(330, 186);
+            this.btnCancel.Location = new System.Drawing.Point(371, 232);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 38);
+            this.btnCancel.Size = new System.Drawing.Size(97, 48);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -71,10 +72,10 @@
             // btnOk
             // 
             this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnOk.Location = new System.Drawing.Point(180, 186);
+            this.btnOk.Location = new System.Drawing.Point(202, 232);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(86, 38);
+            this.btnOk.Size = new System.Drawing.Size(97, 48);
             this.btnOk.TabIndex = 10;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -83,9 +84,9 @@
             // 
             this.lbRePw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbRePw.AutoSize = true;
-            this.lbRePw.Location = new System.Drawing.Point(81, 128);
+            this.lbRePw.Location = new System.Drawing.Point(91, 160);
             this.lbRePw.Name = "lbRePw";
-            this.lbRePw.Size = new System.Drawing.Size(122, 17);
+            this.lbRePw.Size = new System.Drawing.Size(136, 20);
             this.lbRePw.TabIndex = 6;
             this.lbRePw.Text = "Nhập lại mật khẩu";
             // 
@@ -93,9 +94,9 @@
             // 
             this.lbNewPw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbNewPw.AutoSize = true;
-            this.lbNewPw.Location = new System.Drawing.Point(81, 81);
+            this.lbNewPw.Location = new System.Drawing.Point(91, 101);
             this.lbNewPw.Name = "lbNewPw";
-            this.lbNewPw.Size = new System.Drawing.Size(92, 17);
+            this.lbNewPw.Size = new System.Drawing.Size(104, 20);
             this.lbNewPw.TabIndex = 7;
             this.lbNewPw.Text = "Mật khẩu mới";
             // 
@@ -103,48 +104,49 @@
             // 
             this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(81, 36);
+            this.lbName.Location = new System.Drawing.Point(91, 45);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(105, 17);
+            this.lbName.Size = new System.Drawing.Size(116, 20);
             this.lbName.TabIndex = 8;
             this.lbName.Text = "Tên đăng nhập";
             // 
             // txtNewPw
             // 
             this.txtNewPw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtNewPw.Location = new System.Drawing.Point(225, 78);
+            this.txtNewPw.Location = new System.Drawing.Point(253, 98);
             this.txtNewPw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPw.Name = "txtNewPw";
-            this.txtNewPw.Size = new System.Drawing.Size(308, 22);
+            this.txtNewPw.Size = new System.Drawing.Size(346, 26);
             this.txtNewPw.TabIndex = 3;
             // 
             // txtRePw
             // 
             this.txtRePw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtRePw.Location = new System.Drawing.Point(225, 123);
+            this.txtRePw.Location = new System.Drawing.Point(253, 154);
             this.txtRePw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRePw.Name = "txtRePw";
-            this.txtRePw.Size = new System.Drawing.Size(308, 22);
+            this.txtRePw.Size = new System.Drawing.Size(346, 26);
             this.txtRePw.TabIndex = 4;
             // 
             // txtNameLogin
             // 
             this.txtNameLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtNameLogin.Location = new System.Drawing.Point(225, 31);
+            this.txtNameLogin.Location = new System.Drawing.Point(253, 39);
             this.txtNameLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNameLogin.Name = "txtNameLogin";
-            this.txtNameLogin.Size = new System.Drawing.Size(308, 22);
+            this.txtNameLogin.Size = new System.Drawing.Size(346, 26);
             this.txtNameLogin.TabIndex = 5;
             // 
             // fChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.ClientSize = new System.Drawing.Size(1022, 652);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fChangePassword";
-            this.Text = "fChangePassword";
+            this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.fChangePassword_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

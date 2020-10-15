@@ -25,7 +25,10 @@ namespace MilkTeaShopManagement
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            fAdmin frm = new fAdmin();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

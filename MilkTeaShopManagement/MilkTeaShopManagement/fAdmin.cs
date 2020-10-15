@@ -10,21 +10,18 @@ using System.Windows.Forms;
 
 namespace MilkTeaShopManagement
 {
-    
-    public partial class Admin : Form
+    public partial class fAdmin : Form
     {
-        public Admin()
+        public fAdmin()
         {
             InitializeComponent();
         }
-
-
 
         private void menuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
             fMenu f1 = new fMenu();
-            f1.TopLevel =false;
+            f1.TopLevel = false;
             panel2.Controls.Add(f1);
             f1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             f1.Dock = DockStyle.Fill;
@@ -55,8 +52,8 @@ namespace MilkTeaShopManagement
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult res=new DialogResult();
-            res=MessageBox.Show("Bạn muốn thoát?", "Exit", MessageBoxButtons.OKCancel);
+            DialogResult res = new DialogResult();
+            res = MessageBox.Show("Bạn muốn thoát?", "Exit", MessageBoxButtons.OKCancel);
             if (res == DialogResult.OK)
                 System.Windows.Forms.Application.Exit();
         }
@@ -79,11 +76,6 @@ namespace MilkTeaShopManagement
             this.Hide();
             frm.ShowDialog();
             this.Show();
-        }
-
-        private void Admin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
