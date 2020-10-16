@@ -31,4 +31,9 @@ C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Deb
 C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JThinButton.dll
 C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.Form1.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fAdmin.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fChangePassword.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fListBill.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fListStaff.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fMenu.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fSalary.resources

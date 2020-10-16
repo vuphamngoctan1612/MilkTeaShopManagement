@@ -30,6 +30,12 @@ namespace MilkTeaShopManagement
                 Button btn = new Button() { Width = DrinkDAO.DrinkWidth, Height = DrinkDAO.DrinkHeight };
                 btn.Text = drink.Name + Environment.NewLine + drink.Price;
 
+                //custom button
+                btn.BackColor = Color.SkyBlue;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.Font = new System.Drawing.Font("Calibri", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
                 flpDrink.Controls.Add(btn);
             }
         }

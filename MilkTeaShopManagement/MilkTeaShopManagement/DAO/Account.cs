@@ -21,7 +21,7 @@ namespace MilkTeaShopManagement.DAO
 
         public bool LoginAdmin(string userName, string passWord)
         {
-            passWord = Encryptor.Instance.Encrypt(passWord);
+            //passWord = Encryptor.Instance.Encrypt(passWord);
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 0";
 

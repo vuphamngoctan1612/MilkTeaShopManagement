@@ -62,7 +62,7 @@
             this.colCount,
             this.colPrice,
             this.colTotalPrice});
-            this.lvBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvBill.Dock = System.Windows.Forms.DockStyle.Right;
             this.lvBill.GridLines = true;
             this.lvBill.HideSelection = false;
             this.lvBill.Location = new System.Drawing.Point(0, 0);
@@ -112,9 +112,10 @@
             // flpDrink
             // 
             this.flpDrink.AutoScroll = true;
-            this.flpDrink.Location = new System.Drawing.Point(12, 31);
+            this.flpDrink.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flpDrink.Location = new System.Drawing.Point(0, 28);
             this.flpDrink.Name = "flpDrink";
-            this.flpDrink.Size = new System.Drawing.Size(550, 534);
+            this.flpDrink.Size = new System.Drawing.Size(566, 549);
             this.flpDrink.TabIndex = 0;
             // 
             // pnPay
@@ -124,40 +125,53 @@
             this.pnPay.Controls.Add(this.btPay);
             this.pnPay.Location = new System.Drawing.Point(580, 503);
             this.pnPay.Name = "pnPay";
-            this.pnPay.Size = new System.Drawing.Size(417, 62);
+            this.pnPay.Size = new System.Drawing.Size(417, 74);
             this.pnPay.TabIndex = 0;
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(298, 3);
+            this.btCancel.BackColor = System.Drawing.Color.SkyBlue;
+            this.btCancel.FlatAppearance.BorderSize = 0;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCancel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.Location = new System.Drawing.Point(298, 6);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(116, 56);
             this.btCancel.TabIndex = 0;
             this.btCancel.Text = "Hủy";
-            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.UseVisualStyleBackColor = false;
             // 
             // btPrint
             // 
-            this.btPrint.Location = new System.Drawing.Point(152, 3);
+            this.btPrint.BackColor = System.Drawing.Color.SkyBlue;
+            this.btPrint.FlatAppearance.BorderSize = 0;
+            this.btPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPrint.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint.Location = new System.Drawing.Point(152, 6);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(116, 56);
             this.btPrint.TabIndex = 0;
             this.btPrint.Text = "In";
-            this.btPrint.UseVisualStyleBackColor = true;
+            this.btPrint.UseVisualStyleBackColor = false;
             // 
             // btPay
             // 
-            this.btPay.Location = new System.Drawing.Point(3, 3);
+            this.btPay.BackColor = System.Drawing.Color.SkyBlue;
+            this.btPay.FlatAppearance.BorderSize = 0;
+            this.btPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPay.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPay.Location = new System.Drawing.Point(3, 6);
             this.btPay.Name = "btPay";
             this.btPay.Size = new System.Drawing.Size(116, 56);
             this.btPay.TabIndex = 0;
             this.btPay.Text = "Thanh Toán";
-            this.btPay.UseVisualStyleBackColor = true;
+            this.btPay.UseVisualStyleBackColor = false;
             // 
             // lbListOrder
             // 
             this.lbListOrder.AutoSize = true;
             this.lbListOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbListOrder.ForeColor = System.Drawing.Color.SkyBlue;
             this.lbListOrder.Location = new System.Drawing.Point(572, 31);
             this.lbListOrder.Name = "lbListOrder";
             this.lbListOrder.Size = new System.Drawing.Size(345, 46);
