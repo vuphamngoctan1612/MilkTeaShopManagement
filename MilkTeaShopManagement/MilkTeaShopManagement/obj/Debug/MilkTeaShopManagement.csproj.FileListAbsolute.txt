@@ -20,3 +20,15 @@ C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Deb
 C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.exe
 C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JTextBox.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.CopyComplete
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\FlatButton.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JDragControl.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JImageButton.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JMaterialTextbox.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JMetroTextBox.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JTextBox2.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\JThinButton.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.Form1.resources

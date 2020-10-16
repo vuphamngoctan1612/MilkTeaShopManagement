@@ -20,44 +20,22 @@ namespace MilkTeaShopManagement
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userName = txtUserName.Text;
-            string passWord = txtPassWord.Text;
+            string userName = this.txtUserName.Text;
+            string passWord = this.txtPassWord.Text;
 
-            if (LoginAdmin(userName, passWord))
-            {
-                fOrder f = new fOrder();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
-            }
-            else if (LoginStaff(userName, passWord))
-            {
-                fOrder f = new fOrder();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Tài Khoản hoặc Mật Khẩu không đúng!");
+            if (LoginAdmin(userName, passWord)) 
+            { 
+                
             }
         }
 
-        private bool LoginAdmin(string userName, string passWord)
+        bool LoginAdmin(string userName, string passWord)
         {
             return Account.Instance.LoginAdmin(userName, passWord);
         }
-        private bool LoginStaff(string userName, string passWord)
+        bool LoginStaff(string userName, string passWord)
         {
             return Account.Instance.LoginStaff(userName, passWord);
-        }
-
-        private void txtPassWord_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.btnLogin_Click(sender, e);
-            }
         }
     }
 }

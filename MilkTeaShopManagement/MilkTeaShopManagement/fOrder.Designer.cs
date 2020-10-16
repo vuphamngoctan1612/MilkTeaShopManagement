@@ -62,11 +62,12 @@
             this.colCount,
             this.colPrice,
             this.colTotalPrice});
+            this.lvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvBill.GridLines = true;
             this.lvBill.HideSelection = false;
-            this.lvBill.Location = new System.Drawing.Point(3, 3);
+            this.lvBill.Location = new System.Drawing.Point(0, 0);
             this.lvBill.Name = "lvBill";
-            this.lvBill.Size = new System.Drawing.Size(411, 411);
+            this.lvBill.Size = new System.Drawing.Size(417, 417);
             this.lvBill.TabIndex = 0;
             this.lvBill.UseCompatibleStateImageBehavior = false;
             this.lvBill.View = System.Windows.Forms.View.Details;
