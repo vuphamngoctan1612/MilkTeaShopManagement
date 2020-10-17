@@ -29,6 +29,7 @@ namespace MilkTeaShopManagement
             {
                 Button btn = new Button() { Width = DrinkDAO.DrinkWidth, Height = DrinkDAO.DrinkHeight };
                 btn.Text = drink.Name + Environment.NewLine + drink.Price;
+                btn.Tag = drink;
 
                 //custom button
                 btn.BackColor = Color.SkyBlue;
@@ -37,6 +38,40 @@ namespace MilkTeaShopManagement
                 btn.Font = new System.Drawing.Font("Calibri", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
                 flpDrink.Controls.Add(btn);
+
+                btn.Click += Btn_Click;
+            }
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = new ListViewItem(((sender as Button).Tag as Drink).Name);
+            item.SubItems.Add("1");
+            item.SubItems.Add(((sender as Button).Tag as Drink).Price.ToString());
+            this.lvOrder.Items.Add(item);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.lvOrder.Items.Count > 0)
+                    this.lvOrder.Items.Remove(this.lvOrder.SelectedItems[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Chọn món cần xóa!", "Lỗi");
             }
         }
     }
