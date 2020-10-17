@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,15 +52,24 @@ namespace MilkTeaShopManagement
             this.lvOrder.Items.Add(item);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
         private void btnPay_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("Bill.txt"))
+                {
+                    foreach (ListViewItem item in this.lvOrder.Items)
+                    {
+                        writer.WriteLine(item.SubItems[0].Text + "\t" + item.SubItems[1].Text + "\t" + item.SubItems[2].Text);
+                    }
+                    MessageBox.Show("Your data has been successfully exported.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -73,6 +83,11 @@ namespace MilkTeaShopManagement
             {
                 MessageBox.Show("Chọn món cần xóa!", "Lỗi");
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
