@@ -25,5 +25,15 @@ namespace MilkTeaShopManagement
             string query = "SELECT * FROM Drinks";
             this.dtgvDrinks.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
