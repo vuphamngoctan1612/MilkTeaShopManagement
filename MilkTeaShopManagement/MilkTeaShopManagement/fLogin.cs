@@ -52,17 +52,18 @@ namespace MilkTeaShopManagement
             return Account.Instance.LoginStaff(userName, passWord);
         }
 
-        private void txtPassWord_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.btnLogin_Click(sender, e);
-            }
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtPassWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                this.btnLogin_Click(sender, e);
+            }
         }
     }
 }

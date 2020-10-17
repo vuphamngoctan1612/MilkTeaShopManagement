@@ -86,8 +86,9 @@
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(257, 22);
             this.txtPassWord.TabIndex = 1;
+            this.txtPassWord.Text = "1";
             this.txtPassWord.UseSystemPasswordChar = true;
-            this.txtPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassWord_KeyDown);
+            this.txtPassWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassWord_KeyPress);
             // 
             // txtUserName
             // 
@@ -98,6 +99,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(257, 22);
             this.txtUserName.TabIndex = 0;
+            this.txtUserName.Text = "nv";
             // 
             // panel3
             // 
