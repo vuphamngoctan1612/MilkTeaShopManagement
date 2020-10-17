@@ -99,7 +99,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(257, 22);
             this.txtUserName.TabIndex = 0;
-            this.txtUserName.Text = "nv";
+            this.txtUserName.Text = "admin";
             // 
             // panel3
             // 
