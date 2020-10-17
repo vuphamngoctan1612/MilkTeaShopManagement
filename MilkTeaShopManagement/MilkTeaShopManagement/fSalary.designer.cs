@@ -47,25 +47,25 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(946, 23);
+            this.panel1.Size = new System.Drawing.Size(1064, 29);
             this.panel1.TabIndex = 1;
             // 
             // lbSalary
             // 
             this.lbSalary.AutoSize = true;
-            this.lbSalary.Location = new System.Drawing.Point(3, 4);
+            this.lbSalary.Location = new System.Drawing.Point(3, 5);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(80, 17);
+            this.lbSalary.Size = new System.Drawing.Size(90, 20);
             this.lbSalary.TabIndex = 1;
             this.lbSalary.Text = "Bảng lương";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dateTimePicker1.Location = new System.Drawing.Point(680, 0);
+            this.dateTimePicker1.Location = new System.Drawing.Point(765, 0);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(266, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(299, 26);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // panel2
@@ -73,19 +73,19 @@
             this.panel2.Controls.Add(this.btnExport);
             this.panel2.Controls.Add(this.dtGVSalary);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 23);
+            this.panel2.Location = new System.Drawing.Point(0, 29);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 521);
+            this.panel2.Size = new System.Drawing.Size(1064, 651);
             this.panel2.TabIndex = 2;
             // 
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Location = new System.Drawing.Point(879, 493);
+            this.btnExport.Location = new System.Drawing.Point(989, 616);
             this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(67, 28);
+            this.btnExport.Size = new System.Drawing.Size(75, 35);
             this.btnExport.TabIndex = 1;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -101,14 +101,14 @@
             this.dtGVSalary.Name = "dtGVSalary";
             this.dtGVSalary.RowHeadersWidth = 62;
             this.dtGVSalary.RowTemplate.Height = 28;
-            this.dtGVSalary.Size = new System.Drawing.Size(946, 493);
+            this.dtGVSalary.Size = new System.Drawing.Size(1064, 616);
             this.dtGVSalary.TabIndex = 0;
             // 
             // fSalary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 544);
+            this.ClientSize = new System.Drawing.Size(1064, 680);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
