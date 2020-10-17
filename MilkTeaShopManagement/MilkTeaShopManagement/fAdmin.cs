@@ -19,10 +19,10 @@ namespace MilkTeaShopManagement
 
         private void menuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
+            pnScreen.Controls.Clear();
             fMenu f1 = new fMenu();
             f1.TopLevel = false;
-            panel2.Controls.Add(f1);
+            pnScreen.Controls.Add(f1);
             f1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             f1.Dock = DockStyle.Fill;
             f1.Show();
@@ -30,10 +30,10 @@ namespace MilkTeaShopManagement
 
         private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
+            pnScreen.Controls.Clear();
             fListStaff frm = new fListStaff();
             frm.TopLevel = false;
-            panel2.Controls.Add(frm);
+            pnScreen.Controls.Add(frm);
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             frm.Show();
@@ -41,10 +41,10 @@ namespace MilkTeaShopManagement
 
         private void bảngLươngThángToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
+            pnScreen.Controls.Clear();
             fSalary frm = new fSalary();
             frm.TopLevel = false;
-            panel2.Controls.Add(frm);
+            pnScreen.Controls.Add(frm);
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             frm.Show();
@@ -60,10 +60,10 @@ namespace MilkTeaShopManagement
 
         private void danhSáchHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
+            pnScreen.Controls.Clear();
             fListBill frm = new fListBill();
             frm.TopLevel = false;
-            panel2.Controls.Add(frm);
+            pnScreen.Controls.Add(frm);
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             frm.Show();
