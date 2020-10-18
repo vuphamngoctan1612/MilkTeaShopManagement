@@ -15,6 +15,8 @@
     - Với nhân viên: giúp thực hiện các công việc được giao.
     
   - Danh sách các chức năng của phần mềm: 
+    
+    - Phân quyền truy cập, đăng nhập.
   
     - Quản lí danh sách hóa đơn.
     
@@ -25,6 +27,10 @@
     - Điểm danh, chấm công.
     
     - Order thức uống, đồ ăn.
+    
+  - Giao diện demo:
+  
+    -https://ninjamock.com/s/DFFG7Gx
   
   - Tác giả:
   
