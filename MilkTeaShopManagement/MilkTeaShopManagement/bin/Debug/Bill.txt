@@ -1,9 +1,12 @@
-Chanh Nóng	1	39000
-Chanh Nóng	1	39000
-Chanh Nóng	1	39000
-Chocolate	1	55000
-Espresso	1	35000
-Chocolate Freeze	1	49000
-Chanh Ðá Viên	1	39000
-Chanh Ðá Viên	1	39000
-Trà Sen Vàng	1	39000
+Phin Đen Đá	1	29000
+Phin Đen Đá	1	29000
+Phin Sữa Đá	1	29000
+Trà Thạch Đào	1	39000
+PhinDi Kem Sữa	1	39000
+Phin Sữa Đá	1	29000
+Trà Thanh Đậu Đỏ	1	39000
+Trà Thạch Vải	1	39000
+Trà Thanh Đào	1	39000
+Phin Đen Đá	1	29000
+Trà Thạch Vải	1	39000
+Trà Thạch Vải	1	39000

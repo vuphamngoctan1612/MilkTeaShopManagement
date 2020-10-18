@@ -49,26 +49,26 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 38);
+            this.panel1.Size = new System.Drawing.Size(981, 30);
             this.panel1.TabIndex = 3;
             // 
             // lbListBill
             // 
             this.lbListBill.AutoSize = true;
             this.lbListBill.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListBill.Location = new System.Drawing.Point(3, 4);
+            this.lbListBill.Location = new System.Drawing.Point(3, 3);
             this.lbListBill.Name = "lbListBill";
-            this.lbListBill.Size = new System.Drawing.Size(209, 29);
+            this.lbListBill.Size = new System.Drawing.Size(175, 24);
             this.lbListBill.TabIndex = 1;
             this.lbListBill.Text = "Danh Sách Hóa Đơn";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dateTimePicker1.Location = new System.Drawing.Point(823, 0);
+            this.dateTimePicker1.Location = new System.Drawing.Point(731, 0);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(250, 22);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // dtGVListBill
@@ -80,7 +80,7 @@
             this.dtGVListBill.Name = "dtGVListBill";
             this.dtGVListBill.RowHeadersWidth = 62;
             this.dtGVListBill.RowTemplate.Height = 28;
-            this.dtGVListBill.Size = new System.Drawing.Size(1104, 755);
+            this.dtGVListBill.Size = new System.Drawing.Size(981, 604);
             this.dtGVListBill.TabIndex = 0;
             // 
             // panel2
@@ -91,7 +91,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 755);
+            this.panel2.Size = new System.Drawing.Size(981, 604);
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -99,10 +99,9 @@
             // 
             this.panel3.Controls.Add(this.btnExport);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 606);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 485);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1104, 149);
+            this.panel3.Size = new System.Drawing.Size(981, 119);
             this.panel3.TabIndex = 2;
             // 
             // btnExport
@@ -112,19 +111,18 @@
             this.btnExport.FlatAppearance.BorderSize = 0;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(592, 50);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExport.Location = new System.Drawing.Point(526, 40);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(163, 41);
+            this.btnExport.Size = new System.Drawing.Size(145, 33);
             this.btnExport.TabIndex = 16;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = false;
             // 
             // fListBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 755);
+            this.ClientSize = new System.Drawing.Size(981, 604);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -14,7 +14,7 @@ namespace MilkTeaShopManagement
     {
         public fAdmin()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void menuToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -85,6 +85,11 @@ namespace MilkTeaShopManagement
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+            this.menuToolStripMenuItem1_Click(sender, e);   
         }
     }
 }

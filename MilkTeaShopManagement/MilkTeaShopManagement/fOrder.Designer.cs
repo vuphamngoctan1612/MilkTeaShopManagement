@@ -102,9 +102,9 @@
             this.panel5.Controls.Add(this.btnPay);
             this.panel5.Controls.Add(this.btnDel);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(547, 507);
+            this.panel5.Location = new System.Drawing.Point(547, 497);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(428, 93);
+            this.panel5.Size = new System.Drawing.Size(428, 103);
             this.panel5.TabIndex = 0;
             // 
             // btnPay
@@ -141,9 +141,9 @@
             // 
             this.panel4.Controls.Add(this.lvOrder);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(547, 95);
+            this.panel4.Location = new System.Drawing.Point(547, 69);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(428, 505);
+            this.panel4.Size = new System.Drawing.Size(428, 531);
             this.panel4.TabIndex = 0;
             // 
             // lvOrder
@@ -157,7 +157,7 @@
             this.lvOrder.HideSelection = false;
             this.lvOrder.Location = new System.Drawing.Point(0, 0);
             this.lvOrder.Name = "lvOrder";
-            this.lvOrder.Size = new System.Drawing.Size(428, 505);
+            this.lvOrder.Size = new System.Drawing.Size(428, 531);
             this.lvOrder.TabIndex = 0;
             this.lvOrder.UseCompatibleStateImageBehavior = false;
             this.lvOrder.View = System.Windows.Forms.View.Details;
@@ -183,7 +183,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(547, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(428, 95);
+            this.panel3.Size = new System.Drawing.Size(428, 69);
             this.panel3.TabIndex = 0;
             // 
             // label1
@@ -191,7 +191,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SkyBlue;
-            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Location = new System.Drawing.Point(2, -3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(295, 49);
             this.label1.TabIndex = 0;

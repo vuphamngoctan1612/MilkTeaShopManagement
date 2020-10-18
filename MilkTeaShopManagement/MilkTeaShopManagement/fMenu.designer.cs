@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             this.lbID = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvDrinks = new System.Windows.Forms.DataGridView();
             this.btnDeleteDrink = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnDel);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.txtPrice);
@@ -91,28 +91,28 @@
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.txtUserName);
+            this.panel1.Controls.Add(this.txtID);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 338);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(965, 235);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnUpdate
+            // btnEdit
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(643, 160);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(145, 33);
-            this.btnUpdate.TabIndex = 15;
-            this.btnUpdate.Text = "Cập Nhật";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(643, 160);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(145, 33);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDel
             // 
@@ -127,6 +127,7 @@
             this.btnDel.TabIndex = 15;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -141,6 +142,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Thêm Món";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPrice
             // 
@@ -172,7 +174,6 @@
             this.lbPrice.Size = new System.Drawing.Size(61, 29);
             this.lbPrice.TabIndex = 12;
             this.lbPrice.Text = "Price";
-            this.lbPrice.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbName
             // 
@@ -184,7 +185,6 @@
             this.lbName.Size = new System.Drawing.Size(72, 29);
             this.lbName.TabIndex = 12;
             this.lbName.Text = "Name";
-            this.lbName.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbID
             // 
@@ -213,15 +213,15 @@
             this.panel3.Size = new System.Drawing.Size(257, 1);
             this.panel3.TabIndex = 10;
             // 
-            // txtUserName
+            // txtID
             // 
-            this.txtUserName.BackColor = System.Drawing.Color.White;
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(220, 39);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(257, 22);
-            this.txtUserName.TabIndex = 9;
+            this.txtID.BackColor = System.Drawing.Color.White;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtID.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(220, 39);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(257, 22);
+            this.txtID.TabIndex = 9;
             // 
             // panel2
             // 
@@ -244,6 +244,7 @@
             this.dtgvDrinks.RowTemplate.Height = 28;
             this.dtgvDrinks.Size = new System.Drawing.Size(965, 336);
             this.dtgvDrinks.TabIndex = 0;
+            this.dtgvDrinks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDrinks_CellClick);
             // 
             // btnDeleteDrink
             // 
@@ -304,14 +305,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbPrice;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
     }

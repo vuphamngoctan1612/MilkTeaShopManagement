@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,31 +46,50 @@ namespace MilkTeaShopManagement.DAO
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            try
             {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listPara = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listPara)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
+
+                    data = command.ExecuteNonQuery();
+
+                    connection.Close();
                 }
-
-                data = command.ExecuteNonQuery();
-
-                connection.Close();
             }
+            catch (InvalidCastException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (System.IO.IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
 
             return data;
         }
