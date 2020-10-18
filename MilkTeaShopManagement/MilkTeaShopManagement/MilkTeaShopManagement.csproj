@@ -97,6 +97,12 @@
     <Compile Include="fSalary.designer.cs">
       <DependentUpon>fSalary.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSignUp.Designer.cs">
+      <DependentUpon>fSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fAdmin.resx">
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fSalary.resx">
       <DependentUpon>fSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSignUp.resx">
+      <DependentUpon>fSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

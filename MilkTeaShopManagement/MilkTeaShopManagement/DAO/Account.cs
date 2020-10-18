@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MilkTeaShopManagement.DAO
 {
@@ -38,6 +40,23 @@ namespace MilkTeaShopManagement.DAO
             DataTable result = DataProvider.Instance.ExcuteQuery(query);
 
             return result.Rows.Count > 0;
+        }
+
+        public bool SignUp(string userName, string passWord)
+        {
+            passWord = Encryptor.Instance.Encrypt(passWord);
+            bool res = false;
+            try
+            {
+                string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 1)";
+
+                res = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
+            }
+            return res;
         }
     }
 }

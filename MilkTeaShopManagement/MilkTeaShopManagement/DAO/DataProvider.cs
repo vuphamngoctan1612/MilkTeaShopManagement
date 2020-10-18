@@ -46,50 +46,30 @@ namespace MilkTeaShopManagement.DAO
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            try
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
-                using (SqlConnection connection = new SqlConnection(connectionSTR))
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
                 {
-                    connection.Open();
-
-                    SqlCommand command = new SqlCommand(query, connection);
-
-                    if (parameter != null)
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
                     {
-                        string[] listPara = query.Split(' ');
-                        int i = 0;
-                        foreach (string item in listPara)
+                        if (item.Contains('@'))
                         {
-                            if (item.Contains('@'))
-                            {
-                                command.Parameters.AddWithValue(item, parameter[i]);
-                                i++;
-                            }
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
                         }
                     }
-
-                    data = command.ExecuteNonQuery();
-
-                    connection.Close();
                 }
-            }
-            catch (InvalidCastException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (System.IO.IOException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
+
+                data = command.ExecuteNonQuery();
+
+                connection.Close();
+            }           
 
             return data;
         }

@@ -69,6 +69,14 @@ namespace MilkTeaShopManagement
             frm.Show();
         }
 
+        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fSignUp fSignUp = new fSignUp();
+            this.Hide();
+            fSignUp.ShowDialog();
+            this.Show();
+        }
+
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fChangePassword frm = new fChangePassword();
