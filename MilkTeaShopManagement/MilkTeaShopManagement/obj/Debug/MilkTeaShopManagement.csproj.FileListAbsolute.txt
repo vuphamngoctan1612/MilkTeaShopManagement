@@ -43,3 +43,4 @@ C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj
 C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.exe
 C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fSignUp.resources
