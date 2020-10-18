@@ -30,7 +30,7 @@
     
   - Giao diện demo:
   
-    -https://ninjamock.com/s/DFFG7Gx
+    - https://ninjamock.com/s/DFFG7Gx
   
   - Tác giả:
   
