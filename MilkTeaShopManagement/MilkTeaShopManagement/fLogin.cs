@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MilkTeaShopManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,52 @@ namespace MilkTeaShopManagement
             InitializeComponent();
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string userName = this.txtUserName.Text;
+            string passWord = this.txtPassWord.Text;
 
+            if (LoginAdmin(userName, passWord))
+            {
+                fAdmin admin = new fAdmin();
+                this.Hide();
+                admin.ShowDialog();
+                this.Show();
+            }
+            else if (LoginStaff(userName, passWord))
+            {
+                fOrder order = new fOrder();
+                this.Hide();
+                order.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tài Khoản hoặc Mật Khẩu không đúng!", "Đăng Nhập");
+            }
+        }
+
+        bool LoginAdmin(string userName, string passWord)
+        {
+            return Account.Instance.LoginAdmin(userName, passWord);
+        }
+        bool LoginStaff(string userName, string passWord)
+        {
+            return Account.Instance.LoginStaff(userName, passWord);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtPassWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                this.btnLogin_Click(sender, e);
+            }
         }
     }
 }

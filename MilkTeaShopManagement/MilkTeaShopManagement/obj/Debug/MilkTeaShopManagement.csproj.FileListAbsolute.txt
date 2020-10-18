@@ -1,0 +1,45 @@
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.exe.config
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.exe
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fLogin.resources
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.Properties.Resources.resources
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.exe
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\branchConnectToDatabase\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fOrder.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.exe.config
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.exe
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fLogin.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fOrder.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.Properties.Resources.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.exe
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fAdmin.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fChangePassword.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fListBill.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fListStaff.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fMenu.resources
+C:\Users\Asus\Desktop\fOrder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fSalary.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.exe.config
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.exe
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\bin\Debug\MilkTeaShopManagement.pdb
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fAdmin.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fChangePassword.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fListBill.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fListStaff.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fLogin.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fMenu.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fOrder.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.fSalary.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.Properties.Resources.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.exe
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaShopManagement\obj\Debug\MilkTeaShopManagement.pdb
