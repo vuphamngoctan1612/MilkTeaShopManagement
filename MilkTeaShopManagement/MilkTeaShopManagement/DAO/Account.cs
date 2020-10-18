@@ -39,5 +39,20 @@ namespace MilkTeaShopManagement.DAO
 
             return result.Rows.Count > 0;
         }
+        public bool checkUserName(string userName)
+        {
+            string query = "SELECT * FROM Account WHERE UserName = '" + userName + "'";
+            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+
+            return result.Rows.Count > 0;
+        }
+        public bool Register(string userName, string passWord)
+        {
+            passWord = Encryptor.Instance.Encrypt(passWord);
+
+            string query = "INSERT INTO Account VALUES ('" + userName + "','" + passWord + "',1)";
+
+            return DataProvider.Instance.ExecuteNonQuery(query) > 1;
+        }
     }
 }

@@ -91,5 +91,13 @@ namespace MilkTeaShopManagement
         {
             this.menuToolStripMenuItem1_Click(sender, e);   
         }
+
+        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fRegister frm = new fRegister();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

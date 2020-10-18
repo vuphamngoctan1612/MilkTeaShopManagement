@@ -22,7 +22,7 @@ namespace MilkTeaShopManagement.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=MilkteaManagement;Persist Security Info=True;User ID=sa;Password=tta221101";
+        private string connectionSTR = @"Data Source=.\QUANG_UIT_K14;Initial Catalog=MilkteaManagement;Persist Security Info=True;User ID=sa;Password=0917950489quangaka";
 
         public DataTable ExcuteQuery(string query)
         {

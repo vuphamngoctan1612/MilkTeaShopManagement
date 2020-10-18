@@ -1,6 +1,6 @@
 ﻿namespace MilkTeaShopManagement
 {
-    partial class fChangePassword
+    partial class fRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fChangePassword));
             this.lbExit = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,13 +38,10 @@
             this.lbPassWord = new System.Windows.Forms.Label();
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbNewPassWord = new System.Windows.Forms.Label();
-            this.txtNewPassWord = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lbRePassWord = new System.Windows.Forms.Label();
             this.txtRePassWord = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,42 +155,12 @@
             this.panel3.Size = new System.Drawing.Size(257, 1);
             this.panel3.TabIndex = 16;
             // 
-            // lbNewPassWord
-            // 
-            this.lbNewPassWord.AutoSize = true;
-            this.lbNewPassWord.Font = new System.Drawing.Font("Calibri", 10.8F);
-            this.lbNewPassWord.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbNewPassWord.Location = new System.Drawing.Point(82, 419);
-            this.lbNewPassWord.Name = "lbNewPassWord";
-            this.lbNewPassWord.Size = new System.Drawing.Size(119, 23);
-            this.lbNewPassWord.TabIndex = 20;
-            this.lbNewPassWord.Text = "Mật Khẩu Mới";
-            // 
-            // txtNewPassWord
-            // 
-            this.txtNewPassWord.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNewPassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNewPassWord.Font = new System.Drawing.Font("Calibri", 10.8F);
-            this.txtNewPassWord.Location = new System.Drawing.Point(86, 458);
-            this.txtNewPassWord.Name = "txtNewPassWord";
-            this.txtNewPassWord.Size = new System.Drawing.Size(257, 22);
-            this.txtNewPassWord.TabIndex = 2;
-            this.txtNewPassWord.UseSystemPasswordChar = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Location = new System.Drawing.Point(86, 482);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(257, 1);
-            this.panel4.TabIndex = 19;
-            // 
             // lbRePassWord
             // 
             this.lbRePassWord.AutoSize = true;
             this.lbRePassWord.Font = new System.Drawing.Font("Calibri", 10.8F);
             this.lbRePassWord.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbRePassWord.Location = new System.Drawing.Point(82, 523);
+            this.lbRePassWord.Location = new System.Drawing.Point(82, 428);
             this.lbRePassWord.Name = "lbRePassWord";
             this.lbRePassWord.Size = new System.Drawing.Size(154, 23);
             this.lbRePassWord.TabIndex = 23;
@@ -205,7 +171,7 @@
             this.txtRePassWord.BackColor = System.Drawing.SystemColors.Control;
             this.txtRePassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRePassWord.Font = new System.Drawing.Font("Calibri", 10.8F);
-            this.txtRePassWord.Location = new System.Drawing.Point(86, 562);
+            this.txtRePassWord.Location = new System.Drawing.Point(86, 472);
             this.txtRePassWord.Name = "txtRePassWord";
             this.txtRePassWord.Size = new System.Drawing.Size(257, 22);
             this.txtRePassWord.TabIndex = 3;
@@ -214,25 +180,25 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gray;
-            this.panel5.Location = new System.Drawing.Point(86, 586);
+            this.panel5.Location = new System.Drawing.Point(86, 496);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(257, 1);
             this.panel5.TabIndex = 22;
             // 
-            // btnUpdate
+            // btnRegister
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(86, 623);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(121, 33);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Cập Nhật";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnRegister.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(86, 565);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(121, 33);
+            this.btnRegister.TabIndex = 4;
+            this.btnRegister.Text = "Đăng Kí";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnCancel
             // 
@@ -241,7 +207,7 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(222, 623);
+            this.btnCancel.Location = new System.Drawing.Point(222, 565);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 33);
             this.btnCancel.TabIndex = 5;
@@ -249,19 +215,16 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // fChangePassword
+            // fRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 715);
+            this.ClientSize = new System.Drawing.Size(497, 656);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbRePassWord);
             this.Controls.Add(this.txtRePassWord);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.lbNewPassWord);
-            this.Controls.Add(this.txtNewPassWord);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.lbPassWord);
             this.Controls.Add(this.txtPassWord);
             this.Controls.Add(this.panel3);
@@ -271,10 +234,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "fChangePassword";
-            this.Text = "Đổi mật khẩu";
+            this.Name = "fRegister";
+            this.Text = "Đăng Ký";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -291,13 +253,10 @@
         private System.Windows.Forms.Label lbPassWord;
         private System.Windows.Forms.TextBox txtPassWord;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lbNewPassWord;
-        private System.Windows.Forms.TextBox txtNewPassWord;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbRePassWord;
         private System.Windows.Forms.TextBox txtRePassWord;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox pictureBox1;
