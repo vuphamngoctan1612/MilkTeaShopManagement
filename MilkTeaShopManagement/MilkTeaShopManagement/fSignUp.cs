@@ -39,6 +39,10 @@ namespace MilkTeaShopManagement
             }
         }
 
+        void InsertStafftoDatabase(string id, string name, string date, long salary)
+        {
+
+        }
         bool SignUp(string userName, string passWord)
         {
             return Account.Instance.SignUp(userName, passWord);
@@ -52,6 +56,11 @@ namespace MilkTeaShopManagement
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

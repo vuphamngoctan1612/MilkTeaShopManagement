@@ -46,6 +46,7 @@ namespace MilkTeaShopManagement.DAO
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
             bool res = false;
+
             try
             {
                 string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 1)";
@@ -56,6 +57,7 @@ namespace MilkTeaShopManagement.DAO
             {
                 MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
             }
+
             return res;
         }
     }
