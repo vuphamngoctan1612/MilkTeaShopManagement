@@ -34,14 +34,12 @@
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnSignUp = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnLogin = new System.Windows.Forms.Panel();
-            this.cbbPos = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbBirth = new System.Windows.Forms.Label();
-            this.lbPos = new System.Windows.Forms.Label();
             this.lbRePass = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtBirth = new System.Windows.Forms.TextBox();
             this.lbPass = new System.Windows.Forms.Label();
             this.txtRePass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -77,6 +75,7 @@
             this.btnExit.CheckedForeColor = System.Drawing.Color.White;
             this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
             this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.FocusedColor = System.Drawing.Color.Empty;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 15F);
@@ -108,6 +107,7 @@
             this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
             this.btnReturn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnReturn.CheckedImage")));
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -140,6 +140,7 @@
             this.btnSignUp.CheckedForeColor = System.Drawing.Color.White;
             this.btnSignUp.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSignUp.CheckedImage")));
             this.btnSignUp.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignUp.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSignUp.FocusedColor = System.Drawing.Color.Empty;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -162,14 +163,12 @@
             // 
             // pnLogin
             // 
-            this.pnLogin.Controls.Add(this.cbbPos);
+            this.pnLogin.Controls.Add(this.dateTimePicker1);
             this.pnLogin.Controls.Add(this.lbBirth);
-            this.pnLogin.Controls.Add(this.lbPos);
             this.pnLogin.Controls.Add(this.lbRePass);
             this.pnLogin.Controls.Add(this.lbName);
             this.pnLogin.Controls.Add(this.lbUser);
             this.pnLogin.Controls.Add(this.txtName);
-            this.pnLogin.Controls.Add(this.txtBirth);
             this.pnLogin.Controls.Add(this.lbPass);
             this.pnLogin.Controls.Add(this.txtRePass);
             this.pnLogin.Controls.Add(this.txtPass);
@@ -180,13 +179,12 @@
             this.pnLogin.TabIndex = 8;
             this.pnLogin.Tag = "0";
             // 
-            // cbbPos
+            // dateTimePicker1
             // 
-            this.cbbPos.FormattingEnabled = true;
-            this.cbbPos.Location = new System.Drawing.Point(67, 496);
-            this.cbbPos.Name = "cbbPos";
-            this.cbbPos.Size = new System.Drawing.Size(430, 40);
-            this.cbbPos.TabIndex = 3;
+            this.dateTimePicker1.Location = new System.Drawing.Point(67, 460);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(430, 39);
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // lbBirth
             // 
@@ -194,23 +192,11 @@
             this.lbBirth.AutoSize = true;
             this.lbBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbBirth.Location = new System.Drawing.Point(61, 371);
+            this.lbBirth.Location = new System.Drawing.Point(61, 413);
             this.lbBirth.Name = "lbBirth";
             this.lbBirth.Size = new System.Drawing.Size(123, 32);
             this.lbBirth.TabIndex = 1;
             this.lbBirth.Text = "Ngày sinh";
-            // 
-            // lbPos
-            // 
-            this.lbPos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbPos.AutoSize = true;
-            this.lbPos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPos.Location = new System.Drawing.Point(61, 460);
-            this.lbPos.Name = "lbPos";
-            this.lbPos.Size = new System.Drawing.Size(67, 32);
-            this.lbPos.TabIndex = 1;
-            this.lbPos.Text = "Vị trí";
             // 
             // lbRePass
             // 
@@ -218,7 +204,7 @@
             this.lbRePass.AutoSize = true;
             this.lbRePass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbRePass.Location = new System.Drawing.Point(61, 193);
+            this.lbRePass.Location = new System.Drawing.Point(61, 235);
             this.lbRePass.Name = "lbRePass";
             this.lbRePass.Size = new System.Drawing.Size(217, 32);
             this.lbRePass.TabIndex = 1;
@@ -230,7 +216,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbName.Location = new System.Drawing.Point(61, 281);
+            this.lbName.Location = new System.Drawing.Point(61, 323);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(90, 32);
             this.lbName.TabIndex = 1;
@@ -242,7 +228,7 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbUser.Location = new System.Drawing.Point(61, 14);
+            this.lbUser.Location = new System.Drawing.Point(61, 56);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(178, 32);
             this.lbUser.TabIndex = 1;
@@ -251,7 +237,7 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(67, 326);
+            this.txtName.Location = new System.Drawing.Point(67, 368);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(430, 39);
             this.txtName.TabIndex = 2;
@@ -259,23 +245,13 @@
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtName.UseSystemPasswordChar = true;
             // 
-            // txtBirth
-            // 
-            this.txtBirth.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBirth.Location = new System.Drawing.Point(67, 415);
-            this.txtBirth.Name = "txtBirth";
-            this.txtBirth.Size = new System.Drawing.Size(430, 39);
-            this.txtBirth.TabIndex = 1;
-            this.txtBirth.Tag = "1";
-            this.txtBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // lbPass
             // 
             this.lbPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPass.Location = new System.Drawing.Point(61, 103);
+            this.lbPass.Location = new System.Drawing.Point(61, 145);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(120, 32);
             this.lbPass.TabIndex = 1;
@@ -284,7 +260,7 @@
             // txtRePass
             // 
             this.txtRePass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtRePass.Location = new System.Drawing.Point(67, 237);
+            this.txtRePass.Location = new System.Drawing.Point(67, 279);
             this.txtRePass.Name = "txtRePass";
             this.txtRePass.Size = new System.Drawing.Size(430, 39);
             this.txtRePass.TabIndex = 1;
@@ -294,7 +270,7 @@
             // txtPass
             // 
             this.txtPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPass.Location = new System.Drawing.Point(67, 148);
+            this.txtPass.Location = new System.Drawing.Point(67, 190);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(430, 39);
             this.txtPass.TabIndex = 2;
@@ -305,7 +281,7 @@
             // txtUser
             // 
             this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUser.Location = new System.Drawing.Point(67, 58);
+            this.txtUser.Location = new System.Drawing.Point(67, 100);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(430, 39);
             this.txtUser.TabIndex = 1;
@@ -358,8 +334,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtRePass;
         private System.Windows.Forms.Label lbBirth;
-        private System.Windows.Forms.Label lbPos;
-        private System.Windows.Forms.TextBox txtBirth;
-        private System.Windows.Forms.ComboBox cbbPos;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

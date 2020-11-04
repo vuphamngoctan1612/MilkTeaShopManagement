@@ -40,15 +40,11 @@
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnImage = new System.Windows.Forms.Panel();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.txtMonth = new System.Windows.Forms.TextBox();
-            this.txtDay = new System.Windows.Forms.TextBox();
             this.lbBirth = new System.Windows.Forms.Label();
-            this.lb2 = new System.Windows.Forms.Label();
-            this.lb1 = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lbPass = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,6 +165,7 @@
             this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
             this.btnReturn.CheckedImage = null;
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,6 +198,7 @@
             this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
             this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,34 +224,11 @@
             this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnImage.Location = new System.Drawing.Point(114, 72);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(231, 218);
             this.pnImage.TabIndex = 35;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYear.Location = new System.Drawing.Point(238, 641);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(77, 29);
-            this.txtYear.TabIndex = 44;
-            // 
-            // txtMonth
-            // 
-            this.txtMonth.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonth.Location = new System.Drawing.Point(151, 641);
-            this.txtMonth.Name = "txtMonth";
-            this.txtMonth.Size = new System.Drawing.Size(77, 29);
-            this.txtMonth.TabIndex = 45;
-            // 
-            // txtDay
-            // 
-            this.txtDay.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDay.Location = new System.Drawing.Point(64, 641);
-            this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(77, 29);
-            this.txtDay.TabIndex = 46;
             // 
             // lbBirth
             // 
@@ -265,26 +240,6 @@
             this.lbBirth.Size = new System.Drawing.Size(194, 28);
             this.lbBirth.TabIndex = 43;
             this.lbBirth.Text = "Ngày tháng năm sinh:";
-            // 
-            // lb2
-            // 
-            this.lb2.AutoSize = true;
-            this.lb2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb2.Location = new System.Drawing.Point(227, 643);
-            this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(13, 20);
-            this.lb2.TabIndex = 47;
-            this.lb2.Text = "/";
-            // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb1.Location = new System.Drawing.Point(140, 644);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(13, 20);
-            this.lb1.TabIndex = 48;
-            this.lb1.Text = "/";
             // 
             // lbUser
             // 
@@ -316,21 +271,25 @@
             this.lbPass.TabIndex = 43;
             this.lbPass.Text = "Mật khẩu";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(64, 647);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(321, 26);
+            this.dateTimePicker1.TabIndex = 44;
+            // 
             // fAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(455, 800);
-            this.Controls.Add(this.txtYear);
-            this.Controls.Add(this.txtMonth);
-            this.Controls.Add(this.txtDay);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbPass);
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.lbBirth);
-            this.Controls.Add(this.lb2);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.lb1);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lbIdIncrease);
@@ -347,7 +306,7 @@
             this.MaximumSize = new System.Drawing.Size(455, 800);
             this.MinimumSize = new System.Drawing.Size(455, 800);
             this.Name = "fAccount";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fAccount";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pn.ResumeLayout(false);
@@ -370,14 +329,10 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private System.Windows.Forms.Panel pnImage;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtMonth;
-        private System.Windows.Forms.TextBox txtDay;
         private System.Windows.Forms.Label lbBirth;
-        private System.Windows.Forms.Label lb2;
-        private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lbUser;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbPass;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
