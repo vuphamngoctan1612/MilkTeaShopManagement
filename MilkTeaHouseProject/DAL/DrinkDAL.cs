@@ -8,28 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MilkTeaShopManagement.DAO
+namespace MilkTeaShopManagement.DAL
 {
-    public class DrinkDAO
+    public class DrinkDAL
     {
-        private static DrinkDAO instance;
+        private static DrinkDAL instance;
 
-        public static DrinkDAO Instance
+        public static DrinkDAL Instance
         {
-            get { if (instance == null) instance = new DrinkDAO(); return DrinkDAO.instance; }
-            private set { DrinkDAO.instance = value; }
+            get { if (instance == null) instance = new DrinkDAL(); return DrinkDAL.instance; }
+            private set { DrinkDAL.instance = value; }
         }
 
-        private DrinkDAO() { }
+        private DrinkDAL() { }
 
-        public static int DrinkWidth = 90;
-        public static int DrinkHeight = 90;
-
-        public List<Drink> LoadDrinkList()
+        public List<Drink> LoadDrinks()
         {
             List<Drink> drinks = new List<Drink>();
 
-            DataTable data = DataProvider.Instance.ExcuteQuery("USP_GetDrinkList");
+            DataTable data = DataProvider.Instance.ExcuteQuery("select * from Drinks");
 
             foreach(DataRow dataRow in data.Rows)
             {

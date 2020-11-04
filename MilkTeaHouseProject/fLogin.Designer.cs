@@ -60,9 +60,10 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.panel2.Location = new System.Drawing.Point(440, 0);
+            this.panel2.Location = new System.Drawing.Point(391, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 642);
+            this.panel2.Size = new System.Drawing.Size(576, 514);
             this.panel2.TabIndex = 1;
             // 
             // btnExit
@@ -83,7 +84,8 @@
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(601, 0);
+            this.btnExit.Location = new System.Drawing.Point(534, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -91,7 +93,7 @@
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(47, 42);
+            this.btnExit.Size = new System.Drawing.Size(42, 34);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "X";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -114,7 +116,8 @@
             this.btnLogin.Image = null;
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLogin.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogin.Location = new System.Drawing.Point(239, 413);
+            this.btnLogin.Location = new System.Drawing.Point(212, 330);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -122,7 +125,7 @@
             this.btnLogin.OnHoverImage = null;
             this.btnLogin.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnLogin.OnPressedColor = System.Drawing.Color.Black;
-            this.btnLogin.Size = new System.Drawing.Size(180, 42);
+            this.btnLogin.Size = new System.Drawing.Size(160, 34);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -138,9 +141,10 @@
             this.pnLogin.Controls.Add(this.lbPass);
             this.pnLogin.Controls.Add(this.txtPass);
             this.pnLogin.Controls.Add(this.txtUser);
-            this.pnLogin.Location = new System.Drawing.Point(52, 72);
+            this.pnLogin.Location = new System.Drawing.Point(46, 58);
+            this.pnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(562, 304);
+            this.pnLogin.Size = new System.Drawing.Size(500, 243);
             this.pnLogin.TabIndex = 8;
             this.pnLogin.Tag = "0";
             // 
@@ -164,7 +168,8 @@
             this.btnShowPass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnShowPass.ImageSize = new System.Drawing.Size(20, 20);
             this.btnShowPass.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnShowPass.Location = new System.Drawing.Point(498, 231);
+            this.btnShowPass.Location = new System.Drawing.Point(443, 185);
+            this.btnShowPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnShowPass.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -172,7 +177,7 @@
             this.btnShowPass.OnHoverImage = null;
             this.btnShowPass.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnShowPass.OnPressedColor = System.Drawing.Color.Black;
-            this.btnShowPass.Size = new System.Drawing.Size(31, 34);
+            this.btnShowPass.Size = new System.Drawing.Size(28, 27);
             this.btnShowPass.TabIndex = 8;
             this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
             // 
@@ -180,9 +185,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::MilkTeaHouseProject.Properties.Resources.lock_24px;
-            this.pictureBox2.Location = new System.Drawing.Point(68, 238);
+            this.pictureBox2.Location = new System.Drawing.Point(58, 187);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -193,9 +199,9 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbUser.Location = new System.Drawing.Point(56, 66);
+            this.lbUser.Location = new System.Drawing.Point(50, 53);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(178, 32);
+            this.lbUser.Size = new System.Drawing.Size(148, 28);
             this.lbUser.TabIndex = 1;
             this.lbUser.Text = "Tên đăng nhập";
             // 
@@ -203,9 +209,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::MilkTeaHouseProject.Properties.Resources.account_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(58, 92);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -216,42 +223,49 @@
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPass.Location = new System.Drawing.Point(53, 178);
+            this.lbPass.Location = new System.Drawing.Point(47, 142);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(120, 32);
+            this.lbPass.Size = new System.Drawing.Size(98, 28);
             this.lbPass.TabIndex = 1;
             this.lbPass.Text = "Mật khẩu";
             // 
             // txtPass
             // 
             this.txtPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPass.Location = new System.Drawing.Point(62, 228);
+            this.txtPass.Location = new System.Drawing.Point(55, 182);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(430, 39);
+            this.txtPass.Size = new System.Drawing.Size(383, 34);
             this.txtPass.TabIndex = 2;
             this.txtPass.Tag = "2";
-            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPass.Text = "001";
+            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtUser
             // 
             this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUser.Location = new System.Drawing.Point(62, 110);
+            this.txtUser.Location = new System.Drawing.Point(55, 88);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(430, 39);
+            this.txtUser.Size = new System.Drawing.Size(383, 34);
             this.txtUser.TabIndex = 1;
             this.txtUser.Tag = "1";
-            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtUser.Text = "ADMIN001";
+            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // lbSignup
             // 
             this.lbSignup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbSignup.AutoSize = true;
+            this.lbSignup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSignup.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
-            this.lbSignup.Location = new System.Drawing.Point(410, 498);
+            this.lbSignup.Location = new System.Drawing.Point(364, 398);
             this.lbSignup.Name = "lbSignup";
-            this.lbSignup.Size = new System.Drawing.Size(82, 28);
+            this.lbSignup.Size = new System.Drawing.Size(69, 23);
             this.lbSignup.TabIndex = 5;
             this.lbSignup.Tag = "0";
             this.lbSignup.Text = "Đăng kí";
@@ -262,9 +276,9 @@
             this.lb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(185, 498);
+            this.lb.Location = new System.Drawing.Point(164, 398);
             this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(222, 28);
+            this.lb.Size = new System.Drawing.Size(190, 23);
             this.lb.TabIndex = 4;
             this.lb.Tag = "0";
             this.lb.Text = "Bạn chưa có tài khoản?";
@@ -276,18 +290,20 @@
             this.pnPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnPic.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnPic.Location = new System.Drawing.Point(0, 0);
+            this.pnPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnPic.Name = "pnPic";
-            this.pnPic.Size = new System.Drawing.Size(440, 642);
+            this.pnPic.Size = new System.Drawing.Size(391, 514);
             this.pnPic.TabIndex = 2;
             // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 642);
+            this.ClientSize = new System.Drawing.Size(967, 514);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnPic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLogin";

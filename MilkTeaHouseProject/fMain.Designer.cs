@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnTool = new System.Windows.Forms.Panel();
-            this.btnCloseDesktop = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbButtonSelected = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnZoom = new System.Windows.Forms.Button();
@@ -61,8 +59,9 @@
             this.panelBackground.Controls.Add(this.panelControl);
             this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBackground.Location = new System.Drawing.Point(0, 0);
+            this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(1378, 744);
+            this.panelBackground.Size = new System.Drawing.Size(1228, 602);
             this.panelBackground.TabIndex = 0;
             // 
             // pnDesktop
@@ -71,58 +70,26 @@
             this.pnDesktop.BackColor = System.Drawing.Color.White;
             this.pnDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDesktop.Location = new System.Drawing.Point(290, 102);
+            this.pnDesktop.Location = new System.Drawing.Point(258, 82);
+            this.pnDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDesktop.Name = "pnDesktop";
-            this.pnDesktop.Size = new System.Drawing.Size(1088, 642);
+            this.pnDesktop.Size = new System.Drawing.Size(970, 520);
             this.pnDesktop.TabIndex = 3;
             // 
             // pnTool
             // 
             this.pnTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(220)))), ((int)(((byte)(253)))));
-            this.pnTool.Controls.Add(this.btnCloseDesktop);
             this.pnTool.Controls.Add(this.lbButtonSelected);
             this.pnTool.Controls.Add(this.btnMinimize);
             this.pnTool.Controls.Add(this.btnZoom);
             this.pnTool.Controls.Add(this.btnExit);
             this.pnTool.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTool.Location = new System.Drawing.Point(290, 0);
+            this.pnTool.Location = new System.Drawing.Point(258, 0);
+            this.pnTool.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTool.Name = "pnTool";
-            this.pnTool.Size = new System.Drawing.Size(1088, 102);
+            this.pnTool.Size = new System.Drawing.Size(970, 82);
             this.pnTool.TabIndex = 2;
             this.pnTool.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // btnCloseDesktop
-            // 
-            this.btnCloseDesktop.AnimationHoverSpeed = 0.07F;
-            this.btnCloseDesktop.AnimationSpeed = 0.03F;
-            this.btnCloseDesktop.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnCloseDesktop.BorderColor = System.Drawing.Color.Black;
-            this.btnCloseDesktop.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnCloseDesktop.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnCloseDesktop.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCloseDesktop.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnCloseDesktop.CheckedImage")));
-            this.btnCloseDesktop.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnCloseDesktop.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCloseDesktop.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCloseDesktop.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnCloseDesktop.ForeColor = System.Drawing.Color.White;
-            this.btnCloseDesktop.Image = null;
-            this.btnCloseDesktop.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCloseDesktop.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCloseDesktop.Location = new System.Drawing.Point(1, 60);
-            this.btnCloseDesktop.Name = "btnCloseDesktop";
-            this.btnCloseDesktop.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnCloseDesktop.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCloseDesktop.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCloseDesktop.OnHoverImage = null;
-            this.btnCloseDesktop.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCloseDesktop.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCloseDesktop.Size = new System.Drawing.Size(46, 42);
-            this.btnCloseDesktop.TabIndex = 0;
-            this.btnCloseDesktop.Text = "X";
-            this.btnCloseDesktop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCloseDesktop.Visible = false;
-            this.btnCloseDesktop.Click += new System.EventHandler(this.btnCloseDesktop_Click);
             // 
             // lbButtonSelected
             // 
@@ -130,9 +97,9 @@
             this.lbButtonSelected.AutoSize = true;
             this.lbButtonSelected.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbButtonSelected.ForeColor = System.Drawing.Color.White;
-            this.lbButtonSelected.Location = new System.Drawing.Point(494, 26);
+            this.lbButtonSelected.Location = new System.Drawing.Point(441, 21);
             this.lbButtonSelected.Name = "lbButtonSelected";
-            this.lbButtonSelected.Size = new System.Drawing.Size(115, 45);
+            this.lbButtonSelected.Size = new System.Drawing.Size(96, 37);
             this.lbButtonSelected.TabIndex = 9;
             this.lbButtonSelected.Text = "HOME";
             // 
@@ -144,9 +111,10 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(926, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(826, 0);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(54, 46);
+            this.btnMinimize.Size = new System.Drawing.Size(48, 37);
             this.btnMinimize.TabIndex = 6;
             this.btnMinimize.Text = "_";
             this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -161,9 +129,10 @@
             this.btnZoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZoom.ForeColor = System.Drawing.Color.White;
-            this.btnZoom.Location = new System.Drawing.Point(980, 0);
+            this.btnZoom.Location = new System.Drawing.Point(874, 0);
+            this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZoom.Name = "btnZoom";
-            this.btnZoom.Size = new System.Drawing.Size(54, 46);
+            this.btnZoom.Size = new System.Drawing.Size(48, 37);
             this.btnZoom.TabIndex = 7;
             this.btnZoom.Text = "O";
             this.btnZoom.UseVisualStyleBackColor = false;
@@ -177,9 +146,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(1034, 0);
+            this.btnExit.Location = new System.Drawing.Point(922, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(54, 46);
+            this.btnExit.Size = new System.Drawing.Size(48, 37);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -192,8 +162,9 @@
             this.panelControl.Controls.Add(this.pnContainName);
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
+            this.panelControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(290, 744);
+            this.panelControl.Size = new System.Drawing.Size(258, 602);
             this.panelControl.TabIndex = 0;
             // 
             // fpnControl
@@ -205,9 +176,10 @@
             this.fpnControl.Controls.Add(this.btnAccount);
             this.fpnControl.Controls.Add(this.btnOrder);
             this.fpnControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnControl.Location = new System.Drawing.Point(0, 102);
+            this.fpnControl.Location = new System.Drawing.Point(0, 82);
+            this.fpnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fpnControl.Name = "fpnControl";
-            this.fpnControl.Size = new System.Drawing.Size(290, 642);
+            this.fpnControl.Size = new System.Drawing.Size(258, 520);
             this.fpnControl.TabIndex = 6;
             // 
             // btnMenu
@@ -229,7 +201,8 @@
             this.btnMenu.Image = global::MilkTeaHouseProject.Properties.Resources.restaurant_menu_64px;
             this.btnMenu.ImageSize = new System.Drawing.Size(40, 40);
             this.btnMenu.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnMenu.Location = new System.Drawing.Point(3, 3);
+            this.btnMenu.Location = new System.Drawing.Point(3, 2);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnMenu.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -237,7 +210,7 @@
             this.btnMenu.OnHoverImage = null;
             this.btnMenu.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnMenu.OnPressedColor = System.Drawing.Color.Black;
-            this.btnMenu.Size = new System.Drawing.Size(290, 79);
+            this.btnMenu.Size = new System.Drawing.Size(258, 63);
             this.btnMenu.TabIndex = 14;
             this.btnMenu.Text = "Menu";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -262,7 +235,8 @@
             this.btnStaff.Image = global::MilkTeaHouseProject.Properties.Resources.account_50px;
             this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
             this.btnStaff.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnStaff.Location = new System.Drawing.Point(3, 88);
+            this.btnStaff.Location = new System.Drawing.Point(3, 69);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnStaff.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -270,7 +244,7 @@
             this.btnStaff.OnHoverImage = null;
             this.btnStaff.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnStaff.OnPressedColor = System.Drawing.Color.Black;
-            this.btnStaff.Size = new System.Drawing.Size(290, 79);
+            this.btnStaff.Size = new System.Drawing.Size(258, 63);
             this.btnStaff.TabIndex = 13;
             this.btnStaff.Text = "Nhân viên";
             this.btnStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -295,7 +269,8 @@
             this.btnBill.Image = global::MilkTeaHouseProject.Properties.Resources.pos_terminal_50px;
             this.btnBill.ImageSize = new System.Drawing.Size(40, 40);
             this.btnBill.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnBill.Location = new System.Drawing.Point(3, 173);
+            this.btnBill.Location = new System.Drawing.Point(3, 136);
+            this.btnBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBill.Name = "btnBill";
             this.btnBill.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnBill.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -303,7 +278,7 @@
             this.btnBill.OnHoverImage = null;
             this.btnBill.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnBill.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBill.Size = new System.Drawing.Size(290, 79);
+            this.btnBill.Size = new System.Drawing.Size(258, 63);
             this.btnBill.TabIndex = 12;
             this.btnBill.Text = "Hóa đơn";
             this.btnBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -328,7 +303,8 @@
             this.btnAccount.Image = global::MilkTeaHouseProject.Properties.Resources.settings_64px;
             this.btnAccount.ImageSize = new System.Drawing.Size(40, 40);
             this.btnAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAccount.Location = new System.Drawing.Point(3, 258);
+            this.btnAccount.Location = new System.Drawing.Point(3, 203);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAccount.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -336,7 +312,7 @@
             this.btnAccount.OnHoverImage = null;
             this.btnAccount.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAccount.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAccount.Size = new System.Drawing.Size(290, 79);
+            this.btnAccount.Size = new System.Drawing.Size(258, 63);
             this.btnAccount.TabIndex = 11;
             this.btnAccount.Text = "Tài khoản";
             this.btnAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -361,7 +337,8 @@
             this.btnOrder.Image = global::MilkTeaHouseProject.Properties.Resources.kawaii_coffee_64px;
             this.btnOrder.ImageSize = new System.Drawing.Size(40, 40);
             this.btnOrder.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnOrder.Location = new System.Drawing.Point(3, 343);
+            this.btnOrder.Location = new System.Drawing.Point(3, 270);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnOrder.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -369,7 +346,7 @@
             this.btnOrder.OnHoverImage = null;
             this.btnOrder.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnOrder.OnPressedColor = System.Drawing.Color.Black;
-            this.btnOrder.Size = new System.Drawing.Size(290, 79);
+            this.btnOrder.Size = new System.Drawing.Size(258, 63);
             this.btnOrder.TabIndex = 10;
             this.btnOrder.Text = "Đặt món";
             this.btnOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -381,31 +358,35 @@
             this.pnContainName.Controls.Add(this.lbName);
             this.pnContainName.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnContainName.Location = new System.Drawing.Point(0, 0);
+            this.pnContainName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnContainName.Name = "pnContainName";
-            this.pnContainName.Size = new System.Drawing.Size(290, 102);
+            this.pnContainName.Size = new System.Drawing.Size(258, 82);
             this.pnContainName.TabIndex = 5;
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
+            this.lbName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(34, 31);
+            this.lbName.Location = new System.Drawing.Point(30, 25);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(225, 45);
+            this.lbName.Size = new System.Drawing.Size(188, 37);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "MilkTeaHouse";
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // fMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1378, 744);
+            this.ClientSize = new System.Drawing.Size(1228, 602);
             this.Controls.Add(this.panelBackground);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1400, 800);
+            this.MinimumSize = new System.Drawing.Size(1246, 649);
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main";
@@ -439,7 +420,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnOrder;
         private System.Windows.Forms.Panel pnContainName;
         private Guna.UI.WinForms.GunaLabel lbName;
-        private Guna.UI.WinForms.GunaAdvenceButton btnCloseDesktop;
     }
 }
 

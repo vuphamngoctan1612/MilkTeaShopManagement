@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MilkTeaShopManagement.DAO
+namespace MilkTeaShopManagement.DAL
 {
     public class Account
     {
@@ -53,7 +53,7 @@ namespace MilkTeaShopManagement.DAO
 
                 res = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             }
-            catch (SqlException ex)
+            catch
             {
                 MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
             }

@@ -199,5 +199,15 @@ namespace MilkTeaHouseProject.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Toffee_nut_crunch_latte {
+            get {
+                object obj = ResourceManager.GetObject("Toffee nut crunch latte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

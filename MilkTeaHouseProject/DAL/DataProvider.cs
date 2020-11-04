@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MilkTeaShopManagement.DAO
+namespace MilkTeaShopManagement.DAL
 {
     public class DataProvider
     {

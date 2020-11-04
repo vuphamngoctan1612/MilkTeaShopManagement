@@ -63,9 +63,7 @@ namespace MilkTeaHouseProject
                     currentButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     pnContainName.BackColor = lbName.BackColor = color;
                     pnTool.BackColor = themeColor.ChangeColorBrightness(color, +0.3);
-                    btnCloseDesktop.BaseColor = btnExit.BackColor = btnZoom.BackColor = btnMinimize.BackColor = themeColor.ChangeColorBrightness(color, +0.3);
                     lbButtonSelected.ForeColor = Color.White;
-                    btnCloseDesktop.Visible = true;
                     leftCurrentButton.Location = new Point(0, currentButton.Location.Y+65);
                     leftCurrentButton.BackColor = color;
                     leftCurrentButton.Visible = true;
@@ -130,17 +128,14 @@ namespace MilkTeaHouseProject
             if (activeForm != null)
                 activeForm.Close();
             Reset();
-            btnCloseDesktop.Visible = false;
         }
         private void Reset()
         {
             DisableButton();
             lbButtonSelected.Text = "HOME";
             lbButtonSelected.ForeColor = Color.White;
-            btnCloseDesktop.BackColor = btnExit.BackColor = btnZoom.BackColor = btnMinimize.BackColor = pnTool.BackColor = Color.FromArgb(113, 220, 253);
             currentButton = null;
             lbName.BackColor = pnContainName.BackColor = Color.FromArgb(68, 193, 240);
-            btnCloseDesktop.Visible = true;
             leftCurrentButton.Visible = false;
         }
 
@@ -171,6 +166,11 @@ namespace MilkTeaHouseProject
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void lbName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
