@@ -41,8 +41,28 @@ namespace MilkTeaShopManagement.DAL
 
             return result.Rows.Count > 0;
         }
+        public bool SignUpAdmin(string userName, string passWord,string name, string birthDate)
+        {
+            passWord = Encryptor.Instance.Encrypt(passWord);
+            bool res = false;
+            try
+            {
+                string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 0)";
 
-        public bool SignUp(string userName, string passWord)
+                res = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            }
+            catch
+            {
+                MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
+            }
+            string queryAdmin = "SELECT ID FROM Admin";
+            DataTable dt = DataProvider.Instance.ExcuteQuery(queryAdmin);
+            int newID = int.Parse(dt.Rows[dt.Rows.Count - 1].ItemArray[0].ToString()) + 1;
+            string que = "INSERT INTO Admin VALUES (" + newID + ",N'" + name + "','" + birthDate + "','" + userName + "')";
+            DataProvider.Instance.ExcuteQuery(que);
+            return res;
+        }
+        public bool SignUpStaff(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
             bool res = false;
