@@ -33,14 +33,12 @@
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStraight = new System.Windows.Forms.Panel();
             this.lbBasicSalary = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.txtMonth = new System.Windows.Forms.TextBox();
-            this.txtDay = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbIdIncrease = new System.Windows.Forms.Label();
             this.lbSalary = new System.Windows.Forms.Label();
@@ -49,8 +47,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.pnImage = new System.Windows.Forms.Panel();
-            this.lb2 = new System.Windows.Forms.Label();
-            this.lb1 = new System.Windows.Forms.Label();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +85,7 @@
             this.btnExit.CheckedForeColor = System.Drawing.Color.White;
             this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
             this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FocusedColor = System.Drawing.Color.Empty;
@@ -114,14 +111,12 @@
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnContain.Controls.Add(this.dateTimePicker1);
             this.pnContain.Controls.Add(this.btnReturn);
             this.pnContain.Controls.Add(this.btnEdit);
             this.pnContain.Controls.Add(this.pnStraight);
             this.pnContain.Controls.Add(this.lbBasicSalary);
             this.pnContain.Controls.Add(this.comboBox1);
-            this.pnContain.Controls.Add(this.txtYear);
-            this.pnContain.Controls.Add(this.txtMonth);
-            this.pnContain.Controls.Add(this.txtDay);
             this.pnContain.Controls.Add(this.txtName);
             this.pnContain.Controls.Add(this.lbIdIncrease);
             this.pnContain.Controls.Add(this.lbSalary);
@@ -130,13 +125,18 @@
             this.pnContain.Controls.Add(this.lbName);
             this.pnContain.Controls.Add(this.lbId);
             this.pnContain.Controls.Add(this.pnImage);
-            this.pnContain.Controls.Add(this.lb2);
-            this.pnContain.Controls.Add(this.lb1);
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContain.Location = new System.Drawing.Point(0, 42);
             this.pnContain.Name = "pnContain";
             this.pnContain.Size = new System.Drawing.Size(900, 618);
             this.pnContain.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(479, 245);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(355, 26);
+            this.dateTimePicker1.TabIndex = 19;
             // 
             // btnReturn
             // 
@@ -149,6 +149,7 @@
             this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
             this.btnReturn.CheckedImage = null;
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -181,6 +182,7 @@
             this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
             this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
             this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -226,27 +228,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(355, 28);
             this.comboBox1.TabIndex = 15;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(653, 242);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(77, 26);
-            this.txtYear.TabIndex = 14;
-            // 
-            // txtMonth
-            // 
-            this.txtMonth.Location = new System.Drawing.Point(566, 242);
-            this.txtMonth.Name = "txtMonth";
-            this.txtMonth.Size = new System.Drawing.Size(77, 26);
-            this.txtMonth.TabIndex = 14;
-            // 
-            // txtDay
-            // 
-            this.txtDay.Location = new System.Drawing.Point(479, 242);
-            this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(77, 26);
-            this.txtDay.TabIndex = 14;
             // 
             // txtName
             // 
@@ -325,28 +306,11 @@
             this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnImage.Location = new System.Drawing.Point(79, 59);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(236, 236);
             this.pnImage.TabIndex = 12;
-            // 
-            // lb2
-            // 
-            this.lb2.AutoSize = true;
-            this.lb2.Location = new System.Drawing.Point(642, 245);
-            this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(13, 20);
-            this.lb2.TabIndex = 16;
-            this.lb2.Text = "/";
-            // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.Location = new System.Drawing.Point(555, 245);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(13, 20);
-            this.lb1.TabIndex = 16;
-            this.lb1.Text = "/";
             // 
             // fEditStaff
             // 
@@ -385,11 +349,7 @@
         private System.Windows.Forms.Panel pnStraight;
         private System.Windows.Forms.Label lbBasicSalary;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtMonth;
-        private System.Windows.Forms.TextBox txtDay;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lb2;
-        private System.Windows.Forms.Label lb1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

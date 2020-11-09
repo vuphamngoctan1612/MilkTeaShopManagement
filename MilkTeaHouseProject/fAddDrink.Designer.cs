@@ -191,6 +191,7 @@
             this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
             this.btnReturn.CheckedImage = null;
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,6 +224,7 @@
             this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
             this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,6 +250,7 @@
             this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnImage.Location = new System.Drawing.Point(108, 104);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(236, 236);

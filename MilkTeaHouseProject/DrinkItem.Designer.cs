@@ -55,7 +55,7 @@
             this.picFood.InitialImage = ((System.Drawing.Image)(resources.GetObject("picFood.InitialImage")));
             this.picFood.Location = new System.Drawing.Point(10, 41);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(251, 257);
+            this.picFood.Size = new System.Drawing.Size(251, 263);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFood.TabIndex = 1;
             this.picFood.TabStop = false;
@@ -78,6 +78,7 @@
             this.btnChoose.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnChoose.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnChoose.BorderColor = System.Drawing.Color.Black;
+            this.btnChoose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChoose.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnChoose.FocusedColor = System.Drawing.Color.Empty;
             this.btnChoose.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

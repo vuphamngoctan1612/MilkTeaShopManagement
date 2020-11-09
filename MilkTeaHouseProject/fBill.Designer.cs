@@ -76,6 +76,7 @@
             this.btnExport.CheckedForeColor = System.Drawing.Color.White;
             this.btnExport.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExport.CheckedImage")));
             this.btnExport.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExport.FocusedColor = System.Drawing.Color.Empty;
             this.btnExport.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -108,6 +109,7 @@
             this.btnShow.CheckedForeColor = System.Drawing.Color.White;
             this.btnShow.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnShow.CheckedImage")));
             this.btnShow.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShow.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnShow.FocusedColor = System.Drawing.Color.Empty;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -164,6 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 642);
             this.Controls.Add(this.pnBill);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fBill";
             this.Text = "HÓA ĐƠN";

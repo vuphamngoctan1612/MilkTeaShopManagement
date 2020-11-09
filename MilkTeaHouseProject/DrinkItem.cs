@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics.Eventing.Reader;
 
 namespace MilkTeaHouseProject
 {
@@ -23,13 +24,15 @@ namespace MilkTeaHouseProject
             this.lbName.Text = name;
             this.lbPrice.Text = price.ToString();
         }
-        
-        public string Name { get => this.lbName.Text; set => this.lbName.Text = value; }
 
-        private void btnChoose_Click(object sender, EventArgs e)
+        public event EventHandler onChoose = null;
+
+        public void btnChoose_Click(object sender, EventArgs e)
         {
-
+            if (onChoose != null)
+            {
+                onChoose.Invoke(this, new EventArgs());
+            }
         }
-
     }
 }

@@ -27,7 +27,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             random = new Random();
             leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10,52);
+            leftCurrentButton.Size = new Size(10,53);
             panelControl.Controls.Add(leftCurrentButton);
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -61,10 +61,9 @@ namespace MilkTeaHouseProject
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    pnContainName.BackColor = lbName.BackColor = color;
-                    pnTool.BackColor = themeColor.ChangeColorBrightness(color, +0.3);
+                    pnTool.BackColor=btnExit.BackColor=btnMinimize.BackColor=btnZoom.BackColor = themeColor.ChangeColorBrightness(color, +0.3);
                     lbButtonSelected.ForeColor = Color.White;
-                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y+65);
+                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y+82);
                     leftCurrentButton.BackColor = color;
                     leftCurrentButton.Visible = true;
                     leftCurrentButton.BringToFront();
@@ -98,10 +97,6 @@ namespace MilkTeaHouseProject
             childForm.Show();
             lbButtonSelected.Text = childForm.Text;
         }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
@@ -121,22 +116,15 @@ namespace MilkTeaHouseProject
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void btnCloseDesktop_Click(object sender, EventArgs e)
-        {
-
-            if (activeForm != null)
-                activeForm.Close();
-            Reset();
-        }
         private void Reset()
         {
             DisableButton();
             lbButtonSelected.Text = "HOME";
             lbButtonSelected.ForeColor = Color.White;
             currentButton = null;
-            lbName.BackColor = pnContainName.BackColor = Color.FromArgb(68, 193, 240);
             leftCurrentButton.Visible = false;
+            pnTool.BackColor = btnExit.BackColor = btnMinimize.BackColor = btnZoom.BackColor = Color.White;
+            lbButtonSelected.ForeColor = Color.Black;
         }
 
         private void btnMenu_Click_1(object sender, EventArgs e)
@@ -170,7 +158,14 @@ namespace MilkTeaHouseProject
 
         private void lbName_Click(object sender, EventArgs e)
         {
+            if (activeForm != null)
+                activeForm.Close();
+            Reset();
+        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

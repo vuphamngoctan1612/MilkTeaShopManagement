@@ -114,6 +114,7 @@
             this.btnExit.CheckedForeColor = System.Drawing.Color.White;
             this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
             this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FocusedColor = System.Drawing.Color.Empty;
@@ -191,6 +192,7 @@
             this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
             this.btnReturn.CheckedImage = null;
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,6 +225,7 @@
             this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
             this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
             this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,6 +251,7 @@
             this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnImage.Location = new System.Drawing.Point(108, 75);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(236, 236);
