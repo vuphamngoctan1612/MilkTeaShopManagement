@@ -33,5 +33,23 @@ namespace MilkTeaHouseProject.DAL
 
             return -1;
         }
+
+        public void InsertBill()
+        {
+            //DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @id", new object[] { id });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill");
+        }
+
+        public int GetMAXIDBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("select MAX(ID) from Bill");
+            }
+            catch
+            {
+                return 1;
+            }            
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace MilkTeaHouseProject
 
         public event EventHandler onChoose = null;
 
-        public void btnChoose_Click(object sender, EventArgs e)
+        private void btnChoose_Click(object sender, EventArgs e)
         {
             if (onChoose != null)
             {

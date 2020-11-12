@@ -91,3 +91,7 @@ C:\Users\Asus\Desktop\appUI\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.cs
 C:\Users\Asus\Desktop\appUI\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\appUI\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
 C:\Users\Asus\Desktop\appUI\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll

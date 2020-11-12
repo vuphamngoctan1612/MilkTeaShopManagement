@@ -36,24 +36,24 @@ namespace MilkTeaHouseProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
+            //string username = this.txtUser.Text;
+            //string password = this.txtPass.Text;
 
-            if (Login(username, password))
-            {
-                fMain f = new fMain();
-                this.Hide();
-                f.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
-            }
-            //fMain f = new fMain();
-            //this.Hide();
-            //f.ShowDialog();
-            //this.Close();
+            //if (Login(username, password))
+            //{
+            //    fMain f = new fMain();
+            //    this.Hide();
+            //    f.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+            //}
+            fMain f = new fMain();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
 
         private bool Login(string username, string password)

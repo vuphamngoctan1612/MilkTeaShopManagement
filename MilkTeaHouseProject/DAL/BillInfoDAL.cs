@@ -36,5 +36,29 @@ namespace MilkTeaHouseProject.DAL
 
             return listBillInfo;
         }
+
+        public int GetMAXIDBillInfo()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("select MAX(ID) from BillInfo");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+        public void InsertBillInfo(int id, int idBill, string idDrink, int count)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @id , @idBill , @idDrink , @count", new object[] { id, idBill, idDrink, count });
+        }
+
+        public void UpdateBillInfo(string idDrink, int count)
+        {
+            //DataProvider.Instance.ExecuteNonQuery("USP_UpdateBillInfo @Count , @ID , @idBill", new object[] { id, count, idBill });
+
+            DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where IdDrink = '" + idDrink + "'");
+        }
     }
 }

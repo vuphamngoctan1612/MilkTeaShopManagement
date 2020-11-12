@@ -9,6 +9,7 @@ namespace MilkTeaHouseProject.DTO
 {
     public class Menu
     {
+        private string idDrink;
         private string drinkName;
         private int price;
         private int count;
@@ -16,6 +17,7 @@ namespace MilkTeaHouseProject.DTO
         public string DrinkName { get => drinkName; set => drinkName = value; }
         public int Price { get => price; set => price = value; }
         public int Count { get => count; set => count = value; }
+        public string IdDrink { get => idDrink; set => idDrink = value; }
 
         public Menu(string drinkName, int price, int count)
         {
@@ -26,6 +28,7 @@ namespace MilkTeaHouseProject.DTO
 
         public Menu(DataRow row)
         {
+            this.idDrink = row["ID"].ToString();    
             this.drinkName = row["Name"].ToString();
             this.price = (int)row["Price"];
             this.count = (int)row["Count"];

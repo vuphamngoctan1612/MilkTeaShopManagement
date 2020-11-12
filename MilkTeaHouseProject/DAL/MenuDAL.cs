@@ -25,7 +25,7 @@ namespace MilkTeaHouseProject.DAL
         {
             List<Menu> listMenu = new List<Menu>();
 
-            string query = "select d.Name, d.Price, bd.Count from BillInfo as bd, Drinks as d where bd.IdDrink = d.ID";
+            string query = "select d.ID, d.Name, d.Price, bd.Count from BillInfo as bd, Drinks as d where bd.IdDrink = d.ID";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)

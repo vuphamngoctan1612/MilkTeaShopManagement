@@ -32,15 +32,16 @@
             this.count = new Guna.UI.WinForms.GunaNumeric();
             this.lbPrice = new Guna.UI.WinForms.GunaLabel();
             this.lbTotal = new Guna.UI.WinForms.GunaLabel();
+            this.lbID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbFoodName
             // 
             this.lbFoodName.AutoSize = true;
-            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFoodName.Location = new System.Drawing.Point(3, 15);
+            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFoodName.Location = new System.Drawing.Point(3, 18);
             this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(102, 28);
+            this.lbFoodName.Size = new System.Drawing.Size(88, 23);
             this.lbFoodName.TabIndex = 0;
             this.lbFoodName.Text = "Food Item";
             // 
@@ -65,28 +66,39 @@
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrice.Location = new System.Drawing.Point(292, 13);
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Location = new System.Drawing.Point(292, 20);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(54, 28);
+            this.lbPrice.Size = new System.Drawing.Size(47, 23);
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "Price";
             // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(419, 13);
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(419, 20);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(54, 28);
+            this.lbTotal.Size = new System.Drawing.Size(46, 23);
             this.lbTotal.TabIndex = 2;
             this.lbTotal.Text = "Total";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Enabled = false;
+            this.lbID.Location = new System.Drawing.Point(34, 1);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(0, 17);
+            this.lbID.TabIndex = 3;
+            this.lbID.Visible = false;
             // 
             // BillItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lbID);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.count);
@@ -94,6 +106,7 @@
             this.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Name = "BillItem";
             this.Size = new System.Drawing.Size(514, 57);
+            this.Load += new System.EventHandler(this.BillItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +118,6 @@
         private Guna.UI.WinForms.GunaNumeric count;
         private Guna.UI.WinForms.GunaLabel lbPrice;
         private Guna.UI.WinForms.GunaLabel lbTotal;
+        private System.Windows.Forms.Label lbID;
     }
 }

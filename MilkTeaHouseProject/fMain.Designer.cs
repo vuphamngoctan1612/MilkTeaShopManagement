@@ -211,7 +211,7 @@
             this.btnMenu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenu.FocusedColor = System.Drawing.Color.Empty;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = global::MilkTeaHouseProject.Properties.Resources.restaurant_menu_64px;
             this.btnMenu.ImageSize = new System.Drawing.Size(40, 40);
@@ -247,7 +247,7 @@
             this.btnStaff.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnStaff.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStaff.FocusedColor = System.Drawing.Color.Empty;
-            this.btnStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.Image = global::MilkTeaHouseProject.Properties.Resources.account_50px;
             this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
@@ -283,7 +283,7 @@
             this.btnBill.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBill.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBill.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBill.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.Image = global::MilkTeaHouseProject.Properties.Resources.pos_terminal_50px;
             this.btnBill.ImageSize = new System.Drawing.Size(40, 40);
@@ -319,7 +319,7 @@
             this.btnAccount.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccount.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.White;
             this.btnAccount.Image = global::MilkTeaHouseProject.Properties.Resources.settings_64px;
             this.btnAccount.ImageSize = new System.Drawing.Size(40, 40);
@@ -355,7 +355,7 @@
             this.btnOrder.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrder.FocusedColor = System.Drawing.Color.Empty;
-            this.btnOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.Image = global::MilkTeaHouseProject.Properties.Resources.kawaii_coffee_64px;
             this.btnOrder.ImageSize = new System.Drawing.Size(40, 40);

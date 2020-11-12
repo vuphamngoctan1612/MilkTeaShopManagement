@@ -35,17 +35,20 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.flowLayoutPanelBill.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gunaLinePanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelDrinks
             // 
             this.flowLayoutPanelDrinks.AutoScroll = true;
             this.flowLayoutPanelDrinks.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(3, 0);
+            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanelDrinks.Name = "flowLayoutPanelDrinks";
-            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(877, 729);
+            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(988, 874);
             this.flowLayoutPanelDrinks.TabIndex = 0;
             // 
             // flowLayoutPanelBill
@@ -54,15 +57,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelBill.AutoScroll = true;
             this.flowLayoutPanelBill.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanelBill.Controls.Add(this.gunaLinePanel1);
-            this.flowLayoutPanelBill.Location = new System.Drawing.Point(887, 0);
+            this.flowLayoutPanelBill.Location = new System.Drawing.Point(3, 76);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(574, 426);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(668, 613);
             this.flowLayoutPanelBill.TabIndex = 1;
             // 
             // gunaLinePanel1
             // 
             this.gunaLinePanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel1.BackColor = System.Drawing.Color.White;
             this.gunaLinePanel1.Controls.Add(this.gunaLabel4);
             this.gunaLinePanel1.Controls.Add(this.gunaLabel3);
             this.gunaLinePanel1.Controls.Add(this.gunaLabel2);
@@ -71,63 +74,81 @@
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(3, 3);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(562, 67);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(668, 67);
             this.gunaLinePanel1.TabIndex = 2;
             // 
             // gunaLabel4
             // 
             this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.Location = new System.Drawing.Point(441, 20);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(102, 25);
+            this.gunaLabel4.Size = new System.Drawing.Size(110, 28);
             this.gunaLabel4.TabIndex = 0;
             this.gunaLabel4.Text = "Thành tiền";
             // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.Location = new System.Drawing.Point(307, 20);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(78, 25);
+            this.gunaLabel3.Size = new System.Drawing.Size(83, 28);
             this.gunaLabel3.TabIndex = 0;
             this.gunaLabel3.Text = "Đơn giá";
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.Location = new System.Drawing.Point(151, 20);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(87, 25);
+            this.gunaLabel2.Size = new System.Drawing.Size(94, 28);
             this.gunaLabel2.TabIndex = 0;
             this.gunaLabel2.Text = "Số lượng";
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.Location = new System.Drawing.Point(32, 20);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(41, 25);
+            this.gunaLabel1.Size = new System.Drawing.Size(44, 28);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Tên";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.flowLayoutPanelDrinks);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1674, 880);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gunaLinePanel1);
+            this.panel2.Controls.Add(this.flowLayoutPanelBill);
+            this.panel2.Location = new System.Drawing.Point(997, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(674, 874);
+            this.panel2.TabIndex = 1;
             // 
             // fOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1464, 730);
-            this.Controls.Add(this.flowLayoutPanelBill);
-            this.Controls.Add(this.flowLayoutPanelDrinks);
+            this.ClientSize = new System.Drawing.Size(1698, 904);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fOrder";
             this.Text = "ĐẶT HÀNG";
-            this.flowLayoutPanelBill.ResumeLayout(false);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,5 +162,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

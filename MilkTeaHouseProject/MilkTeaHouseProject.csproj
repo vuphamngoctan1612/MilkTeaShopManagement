@@ -152,6 +152,9 @@
     <EmbeddedResource Include="BillItem.resx">
       <DependentUpon>BillItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DrinkItem.dje.resx">
+      <DependentUpon>DrinkItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DrinkItem.resx">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </EmbeddedResource>

@@ -93,7 +93,7 @@ namespace MilkTeaHouseProject
             childForm.Dock = DockStyle.Fill;
             this.pnDesktop.Controls.Add(childForm);
             this.pnDesktop.Tag = childForm;
-            childForm.BringToFront();
+            //childForm.BringToFront();
             childForm.Show();
             lbButtonSelected.Text = childForm.Text;
         }
