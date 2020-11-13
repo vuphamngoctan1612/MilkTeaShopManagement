@@ -27,7 +27,7 @@ namespace MilkTeaShopManagement.DAL
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 0";
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0;
         }
@@ -37,7 +37,7 @@ namespace MilkTeaShopManagement.DAL
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 1";
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0;
         }

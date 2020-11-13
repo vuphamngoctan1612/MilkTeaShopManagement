@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.panelBackground = new System.Windows.Forms.Panel();
+            this.pnDesktop = new System.Windows.Forms.Panel();
+            this.pnTool = new System.Windows.Forms.Panel();
+            this.lbButtonSelected = new System.Windows.Forms.Label();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnZoom = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelControl = new System.Windows.Forms.Panel();
             this.fpnControl = new System.Windows.Forms.FlowLayoutPanel();
             this.btnMenu = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -38,18 +45,11 @@
             this.btnOrder = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContainName = new System.Windows.Forms.Panel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnTool = new System.Windows.Forms.Panel();
-            this.lbButtonSelected = new System.Windows.Forms.Label();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnZoom = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pnDesktop = new System.Windows.Forms.Panel();
             this.panelBackground.SuspendLayout();
+            this.pnTool.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.fpnControl.SuspendLayout();
             this.pnContainName.SuspendLayout();
-            this.pnTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -63,8 +63,110 @@
             this.panelBackground.Location = new System.Drawing.Point(0, 0);
             this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(1382, 752);
+            this.panelBackground.Size = new System.Drawing.Size(1383, 796);
             this.panelBackground.TabIndex = 0;
+            // 
+            // pnDesktop
+            // 
+            this.pnDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDesktop.Location = new System.Drawing.Point(359, 127);
+            this.pnDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnDesktop.Name = "pnDesktop";
+            this.pnDesktop.Size = new System.Drawing.Size(1024, 669);
+            this.pnDesktop.TabIndex = 4;
+            // 
+            // pnTool
+            // 
+            this.pnTool.BackColor = System.Drawing.Color.White;
+            this.pnTool.Controls.Add(this.lbButtonSelected);
+            this.pnTool.Controls.Add(this.btnMinimize);
+            this.pnTool.Controls.Add(this.btnZoom);
+            this.pnTool.Controls.Add(this.btnExit);
+            this.pnTool.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTool.Location = new System.Drawing.Point(359, 25);
+            this.pnTool.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTool.Name = "pnTool";
+            this.pnTool.Size = new System.Drawing.Size(1024, 102);
+            this.pnTool.TabIndex = 3;
+            this.pnTool.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // lbButtonSelected
+            // 
+            this.lbButtonSelected.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbButtonSelected.AutoSize = true;
+            this.lbButtonSelected.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbButtonSelected.ForeColor = System.Drawing.Color.Black;
+            this.lbButtonSelected.Location = new System.Drawing.Point(464, 26);
+            this.lbButtonSelected.Name = "lbButtonSelected";
+            this.lbButtonSelected.Size = new System.Drawing.Size(117, 45);
+            this.lbButtonSelected.TabIndex = 9;
+            this.lbButtonSelected.Text = "HOME";
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.White;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.Black;
+            this.btnMinimize.Location = new System.Drawing.Point(862, 0);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(54, 46);
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.Text = "_";
+            this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnZoom
+            // 
+            this.btnZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnZoom.BackColor = System.Drawing.Color.White;
+            this.btnZoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZoom.FlatAppearance.BorderSize = 0;
+            this.btnZoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZoom.ForeColor = System.Drawing.Color.Black;
+            this.btnZoom.Location = new System.Drawing.Point(916, 0);
+            this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnZoom.Name = "btnZoom";
+            this.btnZoom.Size = new System.Drawing.Size(54, 46);
+            this.btnZoom.TabIndex = 7;
+            this.btnZoom.Text = "O";
+            this.btnZoom.UseVisualStyleBackColor = false;
+            this.btnZoom.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(970, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(54, 46);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(359, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1024, 25);
+            this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panelControl
             // 
@@ -75,7 +177,7 @@
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(359, 752);
+            this.panelControl.Size = new System.Drawing.Size(359, 796);
             this.panelControl.TabIndex = 0;
             // 
             // fpnControl
@@ -87,10 +189,10 @@
             this.fpnControl.Controls.Add(this.btnAccount);
             this.fpnControl.Controls.Add(this.btnOrder);
             this.fpnControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnControl.Location = new System.Drawing.Point(0, 127);
+            this.fpnControl.Location = new System.Drawing.Point(0, 128);
             this.fpnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fpnControl.Name = "fpnControl";
-            this.fpnControl.Size = new System.Drawing.Size(359, 625);
+            this.fpnControl.Size = new System.Drawing.Size(359, 668);
             this.fpnControl.TabIndex = 6;
             // 
             // btnMenu
@@ -109,7 +211,7 @@
             this.btnMenu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenu.FocusedColor = System.Drawing.Color.Empty;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = global::MilkTeaHouseProject.Properties.Resources.restaurant_menu_64px;
             this.btnMenu.ImageSize = new System.Drawing.Size(40, 40);
@@ -145,7 +247,7 @@
             this.btnStaff.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnStaff.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStaff.FocusedColor = System.Drawing.Color.Empty;
-            this.btnStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.Image = global::MilkTeaHouseProject.Properties.Resources.account_50px;
             this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
@@ -181,7 +283,7 @@
             this.btnBill.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBill.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBill.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBill.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.Image = global::MilkTeaHouseProject.Properties.Resources.pos_terminal_50px;
             this.btnBill.ImageSize = new System.Drawing.Size(40, 40);
@@ -217,7 +319,7 @@
             this.btnAccount.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccount.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.White;
             this.btnAccount.Image = global::MilkTeaHouseProject.Properties.Resources.settings_64px;
             this.btnAccount.ImageSize = new System.Drawing.Size(40, 40);
@@ -253,7 +355,7 @@
             this.btnOrder.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrder.FocusedColor = System.Drawing.Color.Empty;
-            this.btnOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.Image = global::MilkTeaHouseProject.Properties.Resources.kawaii_coffee_64px;
             this.btnOrder.ImageSize = new System.Drawing.Size(40, 40);
@@ -281,7 +383,7 @@
             this.pnContainName.Location = new System.Drawing.Point(0, 0);
             this.pnContainName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnContainName.Name = "pnContainName";
-            this.pnContainName.Size = new System.Drawing.Size(359, 127);
+            this.pnContainName.Size = new System.Drawing.Size(359, 128);
             this.pnContainName.TabIndex = 5;
             // 
             // lbName
@@ -298,127 +400,27 @@
             this.lbName.Text = "MilkTeaHouse";
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(359, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1023, 25);
-            this.panel1.TabIndex = 1;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // pnTool
-            // 
-            this.pnTool.BackColor = System.Drawing.Color.White;
-            this.pnTool.Controls.Add(this.lbButtonSelected);
-            this.pnTool.Controls.Add(this.btnMinimize);
-            this.pnTool.Controls.Add(this.btnZoom);
-            this.pnTool.Controls.Add(this.btnExit);
-            this.pnTool.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTool.Location = new System.Drawing.Point(359, 25);
-            this.pnTool.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnTool.Name = "pnTool";
-            this.pnTool.Size = new System.Drawing.Size(1023, 102);
-            this.pnTool.TabIndex = 3;
-            this.pnTool.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // lbButtonSelected
-            // 
-            this.lbButtonSelected.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbButtonSelected.AutoSize = true;
-            this.lbButtonSelected.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbButtonSelected.ForeColor = System.Drawing.Color.Black;
-            this.lbButtonSelected.Location = new System.Drawing.Point(462, 26);
-            this.lbButtonSelected.Name = "lbButtonSelected";
-            this.lbButtonSelected.Size = new System.Drawing.Size(115, 45);
-            this.lbButtonSelected.TabIndex = 9;
-            this.lbButtonSelected.Text = "HOME";
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.White;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.Black;
-            this.btnMinimize.Location = new System.Drawing.Point(861, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(54, 46);
-            this.btnMinimize.TabIndex = 6;
-            this.btnMinimize.Text = "_";
-            this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnZoom
-            // 
-            this.btnZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnZoom.BackColor = System.Drawing.Color.White;
-            this.btnZoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnZoom.FlatAppearance.BorderSize = 0;
-            this.btnZoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZoom.ForeColor = System.Drawing.Color.Black;
-            this.btnZoom.Location = new System.Drawing.Point(915, 0);
-            this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnZoom.Name = "btnZoom";
-            this.btnZoom.Size = new System.Drawing.Size(54, 46);
-            this.btnZoom.TabIndex = 7;
-            this.btnZoom.Text = "O";
-            this.btnZoom.UseVisualStyleBackColor = false;
-            this.btnZoom.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(969, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(54, 46);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pnDesktop
-            // 
-            this.pnDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDesktop.Location = new System.Drawing.Point(359, 127);
-            this.pnDesktop.Name = "pnDesktop";
-            this.pnDesktop.Size = new System.Drawing.Size(1023, 625);
-            this.pnDesktop.TabIndex = 4;
-            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1382, 752);
+            this.ClientSize = new System.Drawing.Size(1383, 796);
             this.Controls.Add(this.panelBackground);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1399, 797);
+            this.MinimumSize = new System.Drawing.Size(1399, 795);
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelBackground.ResumeLayout(false);
+            this.pnTool.ResumeLayout(false);
+            this.pnTool.PerformLayout();
             this.panelControl.ResumeLayout(false);
             this.fpnControl.ResumeLayout(false);
             this.pnContainName.ResumeLayout(false);
             this.pnContainName.PerformLayout();
-            this.pnTool.ResumeLayout(false);
-            this.pnTool.PerformLayout();
             this.ResumeLayout(false);
 
         }

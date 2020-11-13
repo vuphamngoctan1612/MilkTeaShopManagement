@@ -36,8 +36,8 @@ namespace MilkTeaHouseProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
+            //string username = this.txtUser.Text;
+            //string password = this.txtPass.Text;
 
             //if (Login(username, password))
             //{

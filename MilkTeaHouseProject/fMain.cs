@@ -38,17 +38,6 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(themeColor.ColorList.Count);
-            while (tempIndex == index)
-            {
-                index = random.Next(themeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = themeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -56,11 +45,11 @@ namespace MilkTeaHouseProject
                 if (currentButton != (GunaAdvenceButton)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
+                    Color color = Color.FromArgb(243, 74, 105);
                     currentButton = (GunaAdvenceButton)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     pnTool.BackColor=btnExit.BackColor=btnMinimize.BackColor=btnZoom.BackColor = themeColor.ChangeColorBrightness(color, +0.3);
                     lbButtonSelected.ForeColor = Color.White;
                     leftCurrentButton.Location = new Point(0, currentButton.Location.Y+82);
@@ -93,7 +82,7 @@ namespace MilkTeaHouseProject
             childForm.Dock = DockStyle.Fill;
             this.pnDesktop.Controls.Add(childForm);
             this.pnDesktop.Tag = childForm;
-            childForm.BringToFront();
+            //childForm.BringToFront();
             childForm.Show();
             lbButtonSelected.Text = childForm.Text;
         }
@@ -134,7 +123,9 @@ namespace MilkTeaHouseProject
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fOrder(), sender);
+            fOrder frm = new fOrder();
+            frm.Size = pnDesktop.Size;
+            OpenChildForm(frm, sender);
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
@@ -167,5 +158,6 @@ namespace MilkTeaHouseProject
         {
             this.Close();
         }
+
     }
 }
