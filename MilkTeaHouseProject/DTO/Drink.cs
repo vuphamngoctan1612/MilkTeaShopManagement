@@ -9,15 +9,15 @@ namespace MilkTeaShopManagement.DTO
 {
     public class Drink
     {
-        string iD;
+        int iD;
         string name;
         int price;
 
-        public string ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
+        public int ID { get => iD; set => iD = value; }
 
-        public Drink(string id, string name, int price)
+        public Drink(int id, string name, int price)
         {
             this.ID = id;
             this.Name = name;
@@ -25,7 +25,7 @@ namespace MilkTeaShopManagement.DTO
         }
         public Drink(DataRow row)
         {
-            this.ID = row["ID"].ToString();
+            this.ID = (int)row["ID"];
             this.Name = row["Name"].ToString();
             this.Price = (int)row["Price"];
         }

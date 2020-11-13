@@ -32,7 +32,7 @@
             this.count = new Guna.UI.WinForms.GunaNumeric();
             this.lbPrice = new Guna.UI.WinForms.GunaLabel();
             this.lbTotal = new Guna.UI.WinForms.GunaLabel();
-            this.lbID = new System.Windows.Forms.Label();
+            this.lbDrinkID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbFoodName
@@ -83,22 +83,22 @@
             this.lbTotal.TabIndex = 2;
             this.lbTotal.Text = "Total";
             // 
-            // lbID
+            // lbDrinkID
             // 
-            this.lbID.AutoSize = true;
-            this.lbID.Enabled = false;
-            this.lbID.Location = new System.Drawing.Point(34, 1);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(0, 17);
-            this.lbID.TabIndex = 3;
-            this.lbID.Visible = false;
+            this.lbDrinkID.AutoSize = true;
+            this.lbDrinkID.Enabled = false;
+            this.lbDrinkID.Location = new System.Drawing.Point(34, 1);
+            this.lbDrinkID.Name = "lbDrinkID";
+            this.lbDrinkID.Size = new System.Drawing.Size(0, 17);
+            this.lbDrinkID.TabIndex = 3;
+            this.lbDrinkID.Visible = false;
             // 
             // BillItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lbID);
+            this.Controls.Add(this.lbDrinkID);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.count);
@@ -118,6 +118,6 @@
         private Guna.UI.WinForms.GunaNumeric count;
         private Guna.UI.WinForms.GunaLabel lbPrice;
         private Guna.UI.WinForms.GunaLabel lbTotal;
-        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Label lbDrinkID;
     }
 }

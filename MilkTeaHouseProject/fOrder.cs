@@ -22,18 +22,17 @@ namespace MilkTeaHouseProject
             InitializeComponent();
 
             LoadDrink();
-           // LoadBill();
         }
 
-        #region Method
+        #region Methods
         public void LoadBill()
         {
-            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu();
+            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(BillDAL.Instance.GetMAXIDBill());
 
             foreach (DTO.Menu menu in listMenu)
             {
                 BillItem item = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
-                item.Tag = item;
+                //item.Tag = item;
 
                 this.flowLayoutPanelBill.Controls.Add(item);
             }
@@ -41,7 +40,7 @@ namespace MilkTeaHouseProject
 
         public void LoadDrink()
         {
-            List<Drink> drinks = DrinkDAL.Instance.LoadDrinks();
+            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
 
             foreach (Drink drink in drinks)
             {
@@ -55,16 +54,16 @@ namespace MilkTeaHouseProject
         }
         #endregion
 
-        #region Event
+        #region Events
         private void Item_onChoose(object sender, EventArgs e)
         {
-            int id = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
+            int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
             int idBill = BillDAL.Instance.GetMAXIDBill();
-            string idDrink = ((sender as DrinkItem).Tag as Drink).ID;
+            int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
             int count = 1;
             try
             {
-                BillInfoDAL.Instance.InsertBillInfo(id, idBill, idDrink, count);
+                BillInfoDAL.Instance.InsertBillInfo(idBillInfo, idBill, idDrink, count);
             }
             catch
             {
@@ -75,7 +74,6 @@ namespace MilkTeaHouseProject
                 this.flowLayoutPanelBill.Controls.Clear();
                 LoadBill();
             }
-
         }
 
 

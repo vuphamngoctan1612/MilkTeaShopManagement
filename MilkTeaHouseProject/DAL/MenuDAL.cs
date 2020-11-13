@@ -25,7 +25,32 @@ namespace MilkTeaHouseProject.DAL
         {
             List<Menu> listMenu = new List<Menu>();
 
-            string query = "select d.ID, d.Name, d.Price, bd.Count from BillInfo as bd, Drinks as d where bd.IdDrink = d.ID";
+            string query = "select bd.ID as IDBillInfo, d.ID as IDDrink, d.Name, d.Price, bd.Count " +
+                            "from BillInfo as bd " +
+                            "inner join Drink as d " +
+                            "on bd.DrinkID = d.ID";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Menu menu = new Menu(item);
+                listMenu.Add(menu);
+            }
+
+            return listMenu;
+        }
+
+        public List<Menu> GetListMenu(int idBill)
+        {
+            List<Menu> listMenu = new List<Menu>();
+
+            string query = "select b.ID as BillID, bf.ID as IDBillInfo, d.ID as IDDrink, d.Name, d.Price, bf.Count " +
+                            "from (" +
+                            "(BillInfo as bf inner join Drink as d on bf.DrinkID = d.ID)" +
+                            " inner join Bill as b on b.ID = bf.BillID) " +
+                            "where b.ID = " + idBill;
+
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
