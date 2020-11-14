@@ -58,5 +58,10 @@ namespace MilkTeaHouseProject.DAL
         {
             DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where DrinkID = '" + idDrink + "'");
         }
+
+        public void DeleteBillInfo(int idBill)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_DeleteBillInfo @BillID ", new object[] { idBill });
+        }
     }
 }

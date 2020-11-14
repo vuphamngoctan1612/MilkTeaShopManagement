@@ -74,6 +74,7 @@
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Encryptor.cs" />
     <Compile Include="DTO\Menu.cs" />
+    <Compile Include="DTO\Staff.cs" />
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
     </Compile>

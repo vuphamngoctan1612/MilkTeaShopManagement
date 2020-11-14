@@ -53,7 +53,7 @@
             this.count.ButtonForeColor = System.Drawing.Color.White;
             this.count.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.count.ForeColor = System.Drawing.Color.Black;
-            this.count.Location = new System.Drawing.Point(142, 13);
+            this.count.Location = new System.Drawing.Point(139, 13);
             this.count.Maximum = ((long)(9999999));
             this.count.Minimum = ((long)(0));
             this.count.Name = "count";
@@ -67,7 +67,7 @@
             // 
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrice.Location = new System.Drawing.Point(292, 20);
+            this.lbPrice.Location = new System.Drawing.Point(245, 18);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(47, 23);
             this.lbPrice.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(419, 20);
+            this.lbTotal.Location = new System.Drawing.Point(359, 18);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(46, 23);
             this.lbTotal.TabIndex = 2;
@@ -105,8 +105,7 @@
             this.Controls.Add(this.lbFoodName);
             this.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Name = "BillItem";
-            this.Size = new System.Drawing.Size(514, 57);
-            this.Load += new System.EventHandler(this.BillItem_Load);
+            this.Size = new System.Drawing.Size(466, 57);
             this.ResumeLayout(false);
             this.PerformLayout();
 

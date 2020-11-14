@@ -63,10 +63,5 @@ namespace MilkTeaHouseProject
                 onValueChanged.Invoke(this, new EventArgs());
             }
         }
-
-        private void BillItem_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

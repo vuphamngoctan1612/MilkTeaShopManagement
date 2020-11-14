@@ -28,16 +28,16 @@ namespace MilkTeaHouseProject.DAL
             if (data.Rows.Count > 0)
             {
                 Bill bill = new Bill(data.Rows[0]);
-                return bill.Id;
+                return bill.ID;
             }
 
             return -1;
         }
-
-        public void InsertBill()
+        public bool existBill()
         {
-            //DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @id", new object[] { id });
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Bill");
+
+            return data.Rows.Count > 0;
         }
 
         public int GetMAXIDBill()
@@ -50,6 +50,21 @@ namespace MilkTeaHouseProject.DAL
             {
                 return 1;
             }            
+        }
+
+        public void InsertBill(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID ", new object[] { id });
+        }
+
+        public void UpdateBill(int id, DateTime checkOut, bool status, int total)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @CheckOut , @Status , @Total , @ID", new object[] { checkOut, status, total, id });
+        }        
+
+        public void DeleteBill(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_DeleteBill @ID ", new object[] { id });
         }
     }
 }

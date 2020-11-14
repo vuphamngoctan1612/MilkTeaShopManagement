@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Management.Instrumentation;
@@ -32,7 +33,8 @@ namespace MilkTeaHouseProject
             foreach (DTO.Menu menu in listMenu)
             {
                 BillItem item = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
-                //item.Tag = item;
+
+                item.onValueChanged += Item_onValueChanged;
 
                 this.flowLayoutPanelBill.Controls.Add(item);
             }
@@ -57,25 +59,74 @@ namespace MilkTeaHouseProject
         #region Events
         private void Item_onChoose(object sender, EventArgs e)
         {
-            int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
-            int idBill = BillDAL.Instance.GetMAXIDBill();
-            int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
-            int count = 1;
             try
             {
+                int idBill = BillDAL.Instance.GetMAXIDBill();
+                int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
+                int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
+                int count = 1;
+
+                if (!BillDAL.Instance.existBill())
+                {
+                    BillDAL.Instance.InsertBill(idBill);
+                }
+
                 BillInfoDAL.Instance.InsertBillInfo(idBillInfo, idBill, idDrink, count);
             }
-            catch
+            catch (SqlException ex)
             {
-                
+                MessageBox.Show(ex.Message, "Error");
             }
             finally
             {
                 this.flowLayoutPanelBill.Controls.Clear();
+                this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
+                this.lbTotalPrice.Text = MenuDAL.Instance.GetTotalPrice().ToString() + " VNĐ";
                 LoadBill();
             }
         }
 
+        private void Item_onValueChanged(object sender, EventArgs e)
+        {
+            this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
+            this.lbTotalPrice.Text = MenuDAL.Instance.GetTotalPrice().ToString() + " VNĐ";
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idBill = BillDAL.Instance.GetMAXIDBill();
+                DateTime checkout = DateTime.Now;
+                bool status = true;
+                int total = MenuDAL.Instance.GetTotalPrice();
+
+                BillDAL.Instance.UpdateBill(idBill, checkout, status, total);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.flowLayoutPanelBill.Controls.Clear();
+                this.lbCount.Text = "0";
+                this.lbTotalPrice.Text = "0 VNĐ";
+
+                BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.flowLayoutPanelBill.Controls.Clear();
+            this.lbCount.Text = "0";
+            this.lbTotalPrice.Text = "0 VNĐ";
+
+            int BillID = BillDAL.Instance.GetMAXIDBill();
+            BillInfoDAL.Instance.DeleteBillInfo(BillID);
+            BillDAL.Instance.DeleteBill(BillID);
+        }
 
         #endregion
     }

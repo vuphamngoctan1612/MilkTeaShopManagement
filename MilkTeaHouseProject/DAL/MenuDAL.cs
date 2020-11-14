@@ -61,5 +61,33 @@ namespace MilkTeaHouseProject.DAL
 
             return listMenu;
         }
+
+        public int GetCount()
+        {
+            List<Menu> listMenu = this.GetListMenu(BillDAL.Instance.GetMAXIDBill());
+
+            int Count = 0;
+
+            foreach (Menu item in listMenu)
+            {
+                Count += item.Count;
+            }
+
+            return Count;
+        }
+
+        public int GetTotalPrice()
+        {
+            List<Menu> listMenu = this.GetListMenu(BillDAL.Instance.GetMAXIDBill());
+
+            int totalPrice = 0;
+
+            foreach (Menu item in listMenu)
+            {
+                totalPrice += item.Price * item.Count;
+            }
+
+            return totalPrice;
+        }
     }
 }
