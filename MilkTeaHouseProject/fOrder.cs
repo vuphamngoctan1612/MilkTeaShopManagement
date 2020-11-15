@@ -57,6 +57,7 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Events
+
         private void Item_onChoose(object sender, EventArgs e)
         {
             try
@@ -119,13 +120,21 @@ namespace MilkTeaHouseProject
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.flowLayoutPanelBill.Controls.Clear();
-            this.lbCount.Text = "0";
-            this.lbTotalPrice.Text = "0 VNĐ";
-
-            int BillID = BillDAL.Instance.GetMAXIDBill();
-            BillInfoDAL.Instance.DeleteBillInfo(BillID);
-            BillDAL.Instance.DeleteBill(BillID);
+            try
+            {
+                int BillID = BillDAL.Instance.GetMAXIDBill();
+                BillInfoDAL.Instance.DeleteBillInfo(BillID);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                this.flowLayoutPanelBill.Controls.Clear();
+                this.lbCount.Text = "0";
+                this.lbTotalPrice.Text = "0 VNĐ";
+            }
         }
 
         #endregion

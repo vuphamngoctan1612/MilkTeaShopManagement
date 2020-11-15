@@ -18,21 +18,15 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             this.CenterToScreen();
         }
-        private void lbSignup_Click(object sender, EventArgs e)
-        {
-            fSignUp f = new fSignUp();
-            this.Hide();
-            f.ShowDialog();
-            this.Close();
-        }
 
-        private void btnShowPass_Click(object sender, EventArgs e)
+        #region Methods
+        private bool Login(string username, string password)
         {
-            if (txtPass.UseSystemPasswordChar == true)
-                txtPass.UseSystemPasswordChar = false;
-            else
-                txtPass.UseSystemPasswordChar = true;
+            return Account.Instance.LoginAdmin(username, password);
         }
+        #endregion
+
+        #region Events
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -52,9 +46,20 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private bool Login(string username, string password)
+        private void lbSignup_Click(object sender, EventArgs e)
         {
-            return Account.Instance.LoginAdmin(username, password);
+            fSignUp f = new fSignUp();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void btnShowPass_Click(object sender, EventArgs e)
+        {
+            if (txtPass.UseSystemPasswordChar == true)
+                txtPass.UseSystemPasswordChar = false;
+            else
+                txtPass.UseSystemPasswordChar = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -79,5 +84,7 @@ namespace MilkTeaHouseProject
                 this.btnLogin_Click(sender, e);
             }
         }
+
+        #endregion
     }
 }
