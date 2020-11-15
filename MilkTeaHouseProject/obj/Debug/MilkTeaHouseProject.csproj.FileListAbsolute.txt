@@ -90,3 +90,5 @@ D:\IT008\MilkteaManagement\AppVer2\MilkTeaHouseProject\obj\Debug\MilkTeaHousePro
 D:\IT008\MilkteaManagement\AppVer2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 D:\IT008\MilkteaManagement\AppVer2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 D:\IT008\MilkteaManagement\AppVer2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+D:\IT008\MilkteaManagement\AppVer2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+D:\IT008\MilkteaManagement\AppVer2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.usTitle.resources
