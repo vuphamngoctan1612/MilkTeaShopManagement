@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Desktop\_Getintopc.com_Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
@@ -57,12 +60,14 @@
     <Compile Include="BillItem.designer.cs">
       <DependentUpon>BillItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentAccount.cs" />
     <Compile Include="DAL\Account.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\BillInfoDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DrinkDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
+    <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="DrinkItem.cs">
       <SubType>UserControl</SubType>
     </Compile>

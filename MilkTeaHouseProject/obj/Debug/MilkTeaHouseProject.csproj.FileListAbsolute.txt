@@ -95,3 +95,4 @@ C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseP
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\Bunifu_UI_v1.5.3.dll

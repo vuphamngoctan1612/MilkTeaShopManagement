@@ -98,8 +98,8 @@
         #endregion
 
         private Guna.UI.WinForms.GunaLabel lbName;
-        private Guna.UI.WinForms.GunaPictureBox picFood;
         private Guna.UI.WinForms.GunaLabel lbPrice;
         private Guna.UI.WinForms.GunaGradientButton btnChoose;
+        private Guna.UI.WinForms.GunaPictureBox picFood;
     }
 }

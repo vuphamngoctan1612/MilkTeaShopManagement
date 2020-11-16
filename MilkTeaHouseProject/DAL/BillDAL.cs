@@ -52,19 +52,42 @@ namespace MilkTeaHouseProject.DAL
             }            
         }
 
-        public void InsertBill(int id)
+        public void InsertBill(int id, int staffID)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID ", new object[] { id });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID", new object[] { id, staffID });
         }
 
-        public void UpdateBill(int id, DateTime checkOut, bool status, int total)
+        public void UpdateBill(int id, DateTime checkOut, bool status, int total, int staffID)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @CheckOut , @Status , @Total , @ID", new object[] { checkOut, status, total, id });
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @CheckOut , @Status , @Total , @ID , @StaffID ", new object[] { checkOut, status, total, id, staffID });
         }        
 
         public void DeleteBill(int id)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_DeleteBill @ID ", new object[] { id });
+        }
+
+        public int GetStaffID(int id)
+        {
+            try
+            {
+                string query = "SELECT StaffID FROM Bill WHERE ID = " + id;
+
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                if (data.Rows.Count > 0)
+                {
+                    Bill bill = new Bill(data.Rows[0]);
+
+                    return bill.StaffID;
+                }
+
+                return -1;
+            }
+            catch
+            {
+                return -1;
+            }
         }
     }
 }

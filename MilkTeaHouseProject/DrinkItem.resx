@@ -126,17 +126,11 @@
   <data name="&gt;&gt;lbName.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnChoose.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;picFood.Name" xml:space="preserve">
-    <value>picFood</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 10</value>
+  <data name="picFood.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 222</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -155,6 +149,9 @@
   <data name="btnChoose.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.8pt</value>
   </data>
+  <data name="&gt;&gt;btnChoose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="lbName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -170,12 +167,8 @@
   <data name="&gt;&gt;btnChoose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="picFood.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="picFood.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 41</value>
+  <data name="&gt;&gt;picFood.Name" xml:space="preserve">
+    <value>picFood</value>
   </data>
   <data name="lbPrice.Text" xml:space="preserve">
     <value>Price</value>
@@ -185,6 +178,9 @@
   </data>
   <data name="&gt;&gt;picFood.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 334</value>
   </data>
   <data name="lbName.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 28</value>
@@ -203,11 +199,11 @@
         QegYvv63jLpa6SHc3tJ1XMUulTv8BVn2AlP6YXPmw0UbAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnChoose.Text" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
   <data name="&gt;&gt;lbPrice.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbPrice.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="&gt;&gt;lbPrice.Name" xml:space="preserve">
     <value>lbPrice</value>
@@ -224,8 +220,8 @@
   <data name="lbPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.8pt</value>
   </data>
-  <data name="&gt;&gt;btnChoose.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnChoose.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="lbName.Text" xml:space="preserve">
     <value>Drink Item</value>
@@ -656,26 +652,30 @@
         K/8AIVKlf/RH/9k=
 </value>
   </data>
-  <data name="picFood.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 222</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picFood.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="&gt;&gt;lbName.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
-  <data name="btnChoose.Text" xml:space="preserve">
-    <value>Chọn</value>
-  </data>
-  <data name="&gt;&gt;btnChoose.Name" xml:space="preserve">
-    <value>btnChoose</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
+  </data>
+  <data name="&gt;&gt;lbPrice.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="picFood.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 41</value>
+  </data>
+  <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 10</value>
   </data>
   <data name="&gt;&gt;picFood.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 334</value>
+  <data name="&gt;&gt;btnChoose.Name" xml:space="preserve">
+    <value>btnChoose</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DrinkItem</value>
