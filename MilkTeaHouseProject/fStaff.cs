@@ -18,20 +18,11 @@ namespace MilkTeaHouseProject
         public fStaff()
         {
             InitializeComponent();
+            usTitle ustitle = new usTitle();
+            flowLayoutPanelTitle.Controls.Add(ustitle);
             LoadStaff();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            fAddStaff f = new fAddStaff();
-            f.ShowDialog();
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            fEditStaff f = new fEditStaff();
-            f.ShowDialog();
-        }
+        #region Methods
         public void LoadStaff()
         {
             List<Staff> staffs = StaffDAL.Instance.LoadStaffs();
@@ -39,12 +30,35 @@ namespace MilkTeaHouseProject
             foreach (Staff staff in staffs)
             {
                 StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.UserName, staff.BasicSalary, staff.WorkingTime, staff.Salary);
+                staffItem.onEdit += Item_OnEdit;
+                staffItem.onDel += StaffItem_onDel;
+
+                staffItem.Tag = staff;
                 flowLayoutPanelStaff.Controls.Add(staffItem);
             }
-            usTitle ustitle = new usTitle();
-            flowLayoutPanelTitle.Controls.Add(ustitle);
+            
         }
+        #endregion
 
-        
+        #region Events
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            fAddStaff f = new fAddStaff();
+            f.ShowDialog();
+        }
+        private void StaffItem_onDel(object sender, EventArgs e)
+        {
+            StaffDAL.Instance.DelStaff(int.Parse(((sender as StaffItem).Tag as Staff).ID));
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
+        }
+        private void Item_OnEdit(object sender, EventArgs args)
+        {
+            fEditStaff frm = new fEditStaff(int.Parse(((sender as StaffItem).Tag as Staff).ID));
+            frm.ShowDialog();
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
+        }
+        #endregion
     }
 }

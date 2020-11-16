@@ -16,5 +16,10 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            fAddStaff addStaff = new fAddStaff();
+            addStaff.ShowDialog();
+        }
     }
 }

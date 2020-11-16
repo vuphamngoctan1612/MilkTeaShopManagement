@@ -34,6 +34,24 @@ namespace MilkTeaHouseProject
 
         }
 
-        
+        public event EventHandler onEdit = null;
+        public event EventHandler onDel = null;
+
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            if (onEdit != null)
+            {
+                onEdit.Invoke(this, new EventArgs());
+            }
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            if (onDel != null)
+            {
+                onDel.Invoke(this, new EventArgs());
+            }
+        }
     }
 }

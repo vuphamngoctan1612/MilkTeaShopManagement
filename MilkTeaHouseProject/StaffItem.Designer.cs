@@ -44,7 +44,8 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(0, 20);
+            this.lbID.Location = new System.Drawing.Point(0, 16);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(30, 25);
             this.lbID.TabIndex = 0;
@@ -54,7 +55,8 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(45, 20);
+            this.lbName.Location = new System.Drawing.Point(34, 16);
+            this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(62, 25);
             this.lbName.TabIndex = 1;
@@ -64,7 +66,8 @@
             // 
             this.lbBirthDate.AutoSize = true;
             this.lbBirthDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirthDate.Location = new System.Drawing.Point(337, 20);
+            this.lbBirthDate.Location = new System.Drawing.Point(253, 16);
+            this.lbBirthDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBirthDate.Name = "lbBirthDate";
             this.lbBirthDate.Size = new System.Drawing.Size(91, 25);
             this.lbBirthDate.TabIndex = 2;
@@ -74,7 +77,8 @@
             // 
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.Location = new System.Drawing.Point(477, 20);
+            this.lbPosition.Location = new System.Drawing.Point(358, 16);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPosition.Name = "lbPosition";
             this.lbPosition.Size = new System.Drawing.Size(79, 25);
             this.lbPosition.TabIndex = 3;
@@ -84,7 +88,8 @@
             // 
             this.lbBasicSalary.AutoSize = true;
             this.lbBasicSalary.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBasicSalary.Location = new System.Drawing.Point(743, 20);
+            this.lbBasicSalary.Location = new System.Drawing.Point(557, 16);
+            this.lbBasicSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBasicSalary.Name = "lbBasicSalary";
             this.lbBasicSalary.Size = new System.Drawing.Size(106, 25);
             this.lbBasicSalary.TabIndex = 4;
@@ -94,7 +99,8 @@
             // 
             this.lbWorkingTime.AutoSize = true;
             this.lbWorkingTime.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWorkingTime.Location = new System.Drawing.Point(889, 20);
+            this.lbWorkingTime.Location = new System.Drawing.Point(667, 16);
+            this.lbWorkingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbWorkingTime.Name = "lbWorkingTime";
             this.lbWorkingTime.Size = new System.Drawing.Size(124, 25);
             this.lbWorkingTime.TabIndex = 5;
@@ -104,7 +110,8 @@
             // 
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(1047, 20);
+            this.lbSalary.Location = new System.Drawing.Point(785, 16);
+            this.lbSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSalary.Name = "lbSalary";
             this.lbSalary.Size = new System.Drawing.Size(63, 25);
             this.lbSalary.TabIndex = 6;
@@ -114,7 +121,8 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(604, 20);
+            this.lbUserName.Location = new System.Drawing.Point(453, 16);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(100, 25);
             this.lbUserName.TabIndex = 7;
@@ -133,16 +141,17 @@
             this.btDelete.Image = global::MilkTeaHouseProject.Properties.Resources.delete_bin_32px;
             this.btDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btDelete.Location = new System.Drawing.Point(1200, 10);
-            this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btDelete.Location = new System.Drawing.Point(900, 8);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btDelete.Name = "btDelete";
             this.btDelete.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btDelete.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btDelete.OnHoverForeColor = System.Drawing.Color.White;
             this.btDelete.OnHoverImage = null;
             this.btDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.btDelete.Size = new System.Drawing.Size(50, 50);
+            this.btDelete.Size = new System.Drawing.Size(38, 41);
             this.btDelete.TabIndex = 14;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btEdit
             // 
@@ -157,20 +166,21 @@
             this.btEdit.Image = global::MilkTeaHouseProject.Properties.Resources.pencil_24px;
             this.btEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btEdit.Location = new System.Drawing.Point(1150, 10);
-            this.btEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btEdit.Location = new System.Drawing.Point(862, 8);
+            this.btEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btEdit.Name = "btEdit";
             this.btEdit.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btEdit.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btEdit.OnHoverForeColor = System.Drawing.Color.White;
             this.btEdit.OnHoverImage = null;
             this.btEdit.OnPressedColor = System.Drawing.Color.Black;
-            this.btEdit.Size = new System.Drawing.Size(50, 50);
+            this.btEdit.Size = new System.Drawing.Size(38, 41);
             this.btEdit.TabIndex = 15;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // StaffItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btDelete);
@@ -182,9 +192,9 @@
             this.Controls.Add(this.lbBirthDate);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbID);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StaffItem";
-            this.Size = new System.Drawing.Size(1300, 60);
+            this.Size = new System.Drawing.Size(975, 49);
             this.Load += new System.EventHandler(this.StaffItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

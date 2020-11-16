@@ -62,7 +62,7 @@ namespace MilkTeaShopManagement.DAL
             DataProvider.Instance.ExcuteQuery(que);
             return res;
         }
-        public bool SignUpStaff(string userName, string passWord)
+        public bool SignUpStaff(string userName, string passWord, string name, string birthDate, string position, int basicSalary)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
             bool res = false;
@@ -77,6 +77,11 @@ namespace MilkTeaShopManagement.DAL
             {
                 MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
             }
+            string queryStaff = "SELECT ID FROM Staff";
+            DataTable dt = DataProvider.Instance.ExcuteQuery(queryStaff);
+            int newID = int.Parse(dt.Rows[dt.Rows.Count - 1].ItemArray[0].ToString()) + 1;
+            string que = "INSERT INTO Staff VALUES (" + newID + ",N'" + name + "','" + birthDate + "',N'" + position + "','" + userName + "','" + basicSalary + ",96," + basicSalary * 96 + ");";
+            DataProvider.Instance.ExcuteQuery(que);
 
             return res;
         }
