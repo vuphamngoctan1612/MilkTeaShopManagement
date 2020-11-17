@@ -37,6 +37,7 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        #region Events
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.txtName.Text))
@@ -64,6 +65,12 @@ namespace MilkTeaHouseProject
                 Account.Instance.SignUpStaff(this.txtUser.Text, this.txtPass.Text, this.txtName.Text, this.dateTimePicker1.Value.ToString(), this.cbbPos.Text, int.Parse(this.txtBasicSalary.Text));
             }
         }
+        private void txtBasicSalary_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
         #endregion
+
     }
 }

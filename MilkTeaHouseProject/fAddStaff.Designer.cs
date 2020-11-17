@@ -260,6 +260,7 @@
             this.txtBasicSalary.Name = "txtBasicSalary";
             this.txtBasicSalary.Size = new System.Drawing.Size(238, 22);
             this.txtBasicSalary.TabIndex = 22;
+            this.txtBasicSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasicSalary_KeyPress_1);
             // 
             // dateTimePicker1
             // 
