@@ -15,11 +15,11 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditDrink : Form
     {
-        public fEditDrink(string drink)
+        public fEditDrink(int drink)
         {
             InitializeComponent();
-            lbShowId.Text = drink;
-            loadingInfo();
+            lbShowId.Text = drink.ToString();
+            LoadingInfo();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -61,10 +61,10 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void loadingInfo()
+        private void LoadingInfo()
         {
             connect.Open();
-            string sqlQuery = "SELECT * FROM Drinks WHERE ID='" + lbShowId.Text + "'";
+            string sqlQuery = "SELECT * FROM Drink WHERE ID='" + lbShowId.Text + "'";
             cmd = new SqlCommand(sqlQuery, connect);
             SqlDataReader dataReader = cmd.ExecuteReader();
             dataReader.Read();
@@ -93,12 +93,11 @@ namespace MilkTeaHouseProject
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
                 if (ptbImg.Image == null)
                 {
                     if (imgLocation == "")
                     {
-                        loadImage();
+                        LoadImage();
                     }
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader bnr = new BinaryReader(stream);
@@ -124,7 +123,7 @@ namespace MilkTeaHouseProject
                 else
                 {
                     connect.Open();
-                    string sqlQuery = "UPDATE Drinks SET Name = '" + txtNameDrink.Text + "', Price = " + txtPrice.Text + ", Image = @img WHERE ID = '" + lbShowId.Text + "'";
+                    string sqlQuery = "UPDATE Drink SET Name = '" + txtNameDrink.Text + "', Price = " + txtPrice.Text + ", Image = @img WHERE ID = '" + lbShowId.Text + "'";
                     cmd = new SqlCommand(sqlQuery, connect);
                     cmd.Parameters.Add(new SqlParameter("@img", img));
                     cmd.ExecuteNonQuery();
@@ -132,7 +131,7 @@ namespace MilkTeaHouseProject
                     MessageBox.Show("Cập nhật thành công");
                 }
         }
-        private void loadImage()
+        private void LoadImage()
         {
             imgLocation = "./images/kawaii_coffee_64px.png";
         }

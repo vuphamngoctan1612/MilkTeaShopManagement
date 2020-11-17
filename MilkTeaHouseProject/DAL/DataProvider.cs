@@ -22,7 +22,7 @@ namespace MilkTeaShopManagement.DAL
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=DESKTOP-EV76EB0\\SQLEXPRESS;Initial Catalog=MilkteaManagement;Integrated Security=True";
+        private string connectionSTR = @"Data Source=LAPTOP-9RONKO2M\SQLSERVE;Initial Catalog=MilkTeaManagement;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

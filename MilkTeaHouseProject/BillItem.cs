@@ -19,22 +19,22 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
-        public int Count 
+        public int Count
         {
             get { return (int)this.count.Value; }
-            set => this.count.Value = value; 
+            set => this.count.Value = value;
         }
 
         public string IdDrink
         {
-            get { return this.lbID.Text; }
+            get { return this.lbDrinkID.Text; }
         }
 
-        public BillItem (string idDrink, string foodName, int price, int count)
+        public BillItem(int idDrink, string foodName, int price, int count)
         {
             InitializeComponent();
 
-            this.lbID.Text = idDrink;
+            this.lbDrinkID.Text = idDrink.ToString();
             this.lbFoodName.Text = foodName;
             this.lbPrice.Text = price.ToString();
             this.count.Value = count;
@@ -56,17 +56,12 @@ namespace MilkTeaHouseProject
         {
             this.lbTotal.Text = (int.Parse(this.lbPrice.Text) * (int)this.count.Value).ToString();
 
-            BillInfoDAL.Instance.UpdateBillInfo(this.lbID.Text, (int)this.count.Value);
+            BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), (int)this.count.Value);
 
             if (onValueChanged != null)
             {
                 onValueChanged.Invoke(this, new EventArgs());
             }
-        }
-
-        private void BillItem_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

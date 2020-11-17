@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Management.Instrumentation;
@@ -21,65 +22,143 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
 
-            LoadDrink();
-            //LoadBill();
+            //LoadDrink();
         }
 
-        #region Method
-        public void LoadBill()
-        {
-            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu();
+        //public fOrder(string username)
+        //{
+        //    InitializeComponent();
+        //    this.lbUserName.Text = username;
 
-            foreach (DTO.Menu menu in listMenu)
-            {
-                BillItem item = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
-                item.Tag = item;
+        //    LoadDrink();
+        //}
 
-                this.flowLayoutPanelBill.Controls.Add(item);
-            }
-        }
+        //#region Methods
+        //public string UserName { get => this.lbUserName.Text; set => this.lbUserName.Text = value; }
 
-        public void LoadDrink()
-        {
-            List<Drink> drinks = DrinkDAL.Instance.LoadDrinks();
+        //public void LoadBill()
+        //{
+        //    List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(BillDAL.Instance.GetMAXIDBill());
 
-            foreach (Drink drink in drinks)
-            {
-                DrinkItem item = new DrinkItem(drink.Name, drink.Price);
-                item.Tag = drink;
+        //    foreach (DTO.Menu menu in listMenu)
+        //    {
+        //        BillItem item = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
 
-                item.onChoose += Item_onChoose;
+        //        item.onValueChanged += Item_onValueChanged;
 
-                this.flowLayoutPanelDrinks.Controls.Add(item);
-            }
-        }
-        #endregion
+        //        this.flowLayoutPanelBill.Controls.Add(item);
+        //    }
+        //}
 
-        #region Event
-        private void Item_onChoose(object sender, EventArgs e)
-        {
-            int id = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
-            int idBill = BillDAL.Instance.GetMAXIDBill();
-            string idDrink = ((sender as DrinkItem).Tag as Drink).ID;
-            int count = 1;
-            try
-            {
-                BillInfoDAL.Instance.InsertBillInfo(id, idBill, idDrink, count);
-            }
-            catch
-            {
-                
-            }
-            finally
-            {
-                this.flowLayoutPanelBill.Controls.Clear();
-                LoadBill();
-            }
+        //public void LoadDrink()
+        //{
+        //    List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
 
-        }
+        //    foreach (Drink drink in drinks)
+        //    {
+        //        DrinkItem item = new DrinkItem(drink.Name, drink.Price);
+        //        item.Tag = drink;
+        //        item.onChoose += Item_onChoose;
 
+        //        this.flowLayoutPanelDrinks.Controls.Add(item);
+        //    }
+        //}
+        //#endregion
 
-        #endregion
+        //#region Events
+        //private void Item_onChoose(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int idBill = BillDAL.Instance.GetMAXIDBill();
+        //        int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
+        //        int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text); // chua co bill => return -1
+        //        int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
+        //        int count = 1;
 
+        //        if (!BillDAL.Instance.existBill())
+        //        {
+        //            BillDAL.Instance.InsertBill(idBill, idStaff);
+        //        }
+
+        //        BillInfoDAL.Instance.InsertBillInfo(idBillInfo, idBill, idDrink, count);
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error");
+        //    }
+        //    finally
+        //    {
+        //        this.flowLayoutPanelBill.Controls.Clear();
+        //        this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
+        //        this.lbTotalPrice.Text = MenuDAL.Instance.GetTotalPrice().ToString() + " VNĐ";
+        //        LoadBill();
+        //    }
+        //}
+
+        //private void Item_onValueChanged(object sender, EventArgs e)
+        //{
+        //    this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
+        //    this.lbTotalPrice.Text = MenuDAL.Instance.GetTotalPrice().ToString() + " VNĐ";
+        //}
+
+        //private void btnPay_Click(object sender, EventArgs e)
+        //{
+        //    if (this.flowLayoutPanelBill.Controls.Count != 0)
+        //    {
+        //        int idBill = BillDAL.Instance.GetMAXIDBill();
+        //        int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text);
+        //        DateTime checkout = DateTime.Now;
+        //        bool status = true;
+        //        int total = MenuDAL.Instance.GetTotalPrice();
+        //        try
+        //        {
+        //            BillDAL.Instance.UpdateBill(idBill, checkout, status, total, idStaff);
+        //        }
+        //        catch (SqlException ex)
+        //        {
+        //            MessageBox.Show(ex.Message, "Error");
+        //        }
+        //        finally
+        //        {
+        //            this.flowLayoutPanelBill.Controls.Clear();
+        //            this.lbCount.Text = "0";
+        //            this.lbTotalPrice.Text = "0 VNĐ";
+
+        //            BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1, idStaff);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Hóa đơn không tồn tại!", "Error");
+        //    }
+        //}
+
+        //private void btnCancel_Click(object sender, EventArgs e)
+        //{
+        //    if (this.flowLayoutPanelBill.Controls.Count != 0)
+        //    {
+        //        try
+        //        {
+        //            int BillID = BillDAL.Instance.GetMAXIDBill();
+        //            BillInfoDAL.Instance.DeleteBillInfo(BillID);
+        //        }
+        //        catch (SqlException ex)
+        //        {
+        //            MessageBox.Show(ex.Message, "Error");
+        //        }
+        //        finally
+        //        {
+        //            this.flowLayoutPanelBill.Controls.Clear();
+        //            this.lbCount.Text = "0";
+        //            this.lbTotalPrice.Text = "0 VNĐ";
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Hóa đơn không tồn tại!", "Error");
+        //    }
+        //}
+        //#endregion
     }
 }

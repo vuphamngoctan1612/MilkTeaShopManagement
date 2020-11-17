@@ -27,11 +27,11 @@ namespace MilkTeaHouseProject.DTO
             this.count = count;
         }
 
-        public BillInfo (DataRow row)
+        public BillInfo(DataRow row)
         {
             this.id = (int)row["Id"];
-            this.idBill = (int)row["IdBill"];
-            this.idDrink = row["IdDrink"].ToString();
+            this.idBill = (int)row["BillID"];
+            this.idDrink = row["DrinkID"].ToString();
             this.count = (int)row["Count"];
         }
     }

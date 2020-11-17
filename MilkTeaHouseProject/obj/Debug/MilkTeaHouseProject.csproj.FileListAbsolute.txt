@@ -177,3 +177,59 @@ C:\Users\NIU\Desktop\fMenu\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
 C:\Users\NIU\Desktop\fMenu\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
 C:\Users\NIU\Desktop\fMenu\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
 C:\Users\NIU\Desktop\fMenu\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\New folder\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete

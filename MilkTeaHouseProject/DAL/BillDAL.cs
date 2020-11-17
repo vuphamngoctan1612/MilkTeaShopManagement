@@ -16,7 +16,7 @@ namespace MilkTeaHouseProject.DAL
         public static BillDAL Instance
         {
             get { if (instance == null) instance = new BillDAL(); return BillDAL.instance; }
-            set => BillDAL.instance = value;
+            private set => BillDAL.instance = value;
         }
 
         private BillDAL() { }
@@ -28,16 +28,16 @@ namespace MilkTeaHouseProject.DAL
             if (data.Rows.Count > 0)
             {
                 Bill bill = new Bill(data.Rows[0]);
-                return bill.Id;
+                return bill.ID;
             }
 
             return -1;
         }
-
-        public void InsertBill()
+        public bool existBill()
         {
-            //DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @id", new object[] { id });
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Bill");
+
+            return data.Rows.Count > 0;
         }
 
         public int GetMAXIDBill()
@@ -49,7 +49,45 @@ namespace MilkTeaHouseProject.DAL
             catch
             {
                 return 1;
-            }            
+            }
+        }
+
+        public void InsertBill(int id, int staffID)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID", new object[] { id, staffID });
+        }
+
+        public void UpdateBill(int id, DateTime checkOut, bool status, int total, int staffID)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @CheckOut , @Status , @Total , @ID , @StaffID ", new object[] { checkOut, status, total, id, staffID });
+        }
+
+        public void DeleteBill(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_DeleteBill @ID ", new object[] { id });
+        }
+
+        public int GetStaffID(int id)
+        {
+            try
+            {
+                string query = "SELECT StaffID FROM Bill WHERE ID = " + id;
+
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                if (data.Rows.Count > 0)
+                {
+                    Bill bill = new Bill(data.Rows[0]);
+
+                    return bill.StaffID;
+                }
+
+                return -1;
+            }
+            catch
+            {
+                return -1;
+            }
         }
     }
 }

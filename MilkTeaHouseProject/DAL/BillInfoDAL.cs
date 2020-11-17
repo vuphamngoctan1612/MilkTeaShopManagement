@@ -14,10 +14,10 @@ namespace MilkTeaHouseProject.DAL
     {
         private static BillInfoDAL instance;
 
-        public static BillInfoDAL Instance 
+        public static BillInfoDAL Instance
         {
             get { if (instance == null) instance = new BillInfoDAL(); return BillInfoDAL.instance; }
-            set => instance = value; 
+            private set => instance = value;
         }
 
         private BillInfoDAL() { }
@@ -26,7 +26,7 @@ namespace MilkTeaHouseProject.DAL
         {
             List<BillInfo> listBillInfo = new List<BillInfo>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM BillInfo WHERE IdBill = " + idBill);
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM BillInfo WHERE BillID = " + idBill);
 
             foreach (DataRow item in data.Rows)
             {
@@ -45,20 +45,23 @@ namespace MilkTeaHouseProject.DAL
             }
             catch
             {
-                return 1;
+                return 0;
             }
         }
 
-        public void InsertBillInfo(int id, int idBill, string idDrink, int count)
+        public void InsertBillInfo(int id, int idBill, int idDrink, int count)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @id , @idBill , @idDrink , @count", new object[] { id, idBill, idDrink, count });
         }
 
-        public void UpdateBillInfo(string idDrink, int count)
+        public void UpdateBillInfo(int idDrink, int count)
         {
-            //DataProvider.Instance.ExecuteNonQuery("USP_UpdateBillInfo @Count , @ID , @idBill", new object[] { id, count, idBill });
+            DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where DrinkID = '" + idDrink + "'");
+        }
 
-            DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where IdDrink = '" + idDrink + "'");
+        public void DeleteBillInfo(int idBill)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_DeleteBillInfo @BillID ", new object[] { idBill });
         }
     }
 }

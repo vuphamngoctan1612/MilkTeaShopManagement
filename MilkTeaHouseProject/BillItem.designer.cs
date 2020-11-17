@@ -28,22 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbFoodName = new Guna.UI.WinForms.GunaLabel();
-            this.count = new Guna.UI.WinForms.GunaNumeric();
-            this.lbPrice = new Guna.UI.WinForms.GunaLabel();
+            this.lbDrinkID = new System.Windows.Forms.Label();
             this.lbTotal = new Guna.UI.WinForms.GunaLabel();
-            this.lbID = new System.Windows.Forms.Label();
+            this.lbPrice = new Guna.UI.WinForms.GunaLabel();
+            this.count = new Guna.UI.WinForms.GunaNumeric();
+            this.lbFoodName = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
-            // lbFoodName
+            // lbDrinkID
             // 
-            this.lbFoodName.AutoSize = true;
-            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFoodName.Location = new System.Drawing.Point(3, 22);
-            this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(107, 30);
-            this.lbFoodName.TabIndex = 0;
-            this.lbFoodName.Text = "Food Item";
+            this.lbDrinkID.AutoSize = true;
+            this.lbDrinkID.Enabled = false;
+            this.lbDrinkID.Location = new System.Drawing.Point(62, 0);
+            this.lbDrinkID.Name = "lbDrinkID";
+            this.lbDrinkID.Size = new System.Drawing.Size(0, 17);
+            this.lbDrinkID.TabIndex = 8;
+            this.lbDrinkID.Visible = false;
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(387, 17);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(46, 23);
+            this.lbTotal.TabIndex = 6;
+            this.lbTotal.Text = "Total";
+            // 
+            // lbPrice
+            // 
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Location = new System.Drawing.Point(273, 17);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(47, 23);
+            this.lbPrice.TabIndex = 7;
+            this.lbPrice.Text = "Price";
             // 
             // count
             // 
@@ -53,61 +73,38 @@
             this.count.ButtonForeColor = System.Drawing.Color.White;
             this.count.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.count.ForeColor = System.Drawing.Color.Black;
-            this.count.Location = new System.Drawing.Point(154, 22);
-            this.count.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.count.Location = new System.Drawing.Point(167, 12);
             this.count.Maximum = ((long)(9999999));
             this.count.Minimum = ((long)(0));
             this.count.Name = "count";
-            this.count.Size = new System.Drawing.Size(86, 30);
-            this.count.TabIndex = 1;
+            this.count.Size = new System.Drawing.Size(76, 30);
+            this.count.TabIndex = 5;
             this.count.Text = "gunaNumeric1";
             this.count.Value = ((long)(1));
-            this.count.ValueChanged += new System.EventHandler(this.count_ValueChanged);
             // 
-            // lbPrice
+            // lbFoodName
             // 
-            this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrice.Location = new System.Drawing.Point(310, 22);
-            this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(58, 30);
-            this.lbPrice.TabIndex = 2;
-            this.lbPrice.Text = "Price";
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(436, 22);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(57, 30);
-            this.lbTotal.TabIndex = 2;
-            this.lbTotal.Text = "Total";
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Enabled = false;
-            this.lbID.Location = new System.Drawing.Point(38, 1);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(0, 20);
-            this.lbID.TabIndex = 3;
-            this.lbID.Visible = false;
+            this.lbFoodName.AutoSize = true;
+            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFoodName.Location = new System.Drawing.Point(31, 17);
+            this.lbFoodName.Name = "lbFoodName";
+            this.lbFoodName.Size = new System.Drawing.Size(88, 23);
+            this.lbFoodName.TabIndex = 4;
+            this.lbFoodName.Text = "Food Item";
             // 
             // BillItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lbID);
+            this.Controls.Add(this.lbDrinkID);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.count);
             this.Controls.Add(this.lbFoodName);
-            this.Margin = new System.Windows.Forms.Padding(22, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Name = "BillItem";
-            this.Size = new System.Drawing.Size(563, 71);
-            this.Load += new System.EventHandler(this.BillItem_Load);
+            this.Size = new System.Drawing.Size(500, 57);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,10 +112,10 @@
 
         #endregion
 
-        private Guna.UI.WinForms.GunaLabel lbFoodName;
-        private Guna.UI.WinForms.GunaNumeric count;
-        private Guna.UI.WinForms.GunaLabel lbPrice;
+        private System.Windows.Forms.Label lbDrinkID;
         private Guna.UI.WinForms.GunaLabel lbTotal;
-        private System.Windows.Forms.Label lbID;
+        private Guna.UI.WinForms.GunaLabel lbPrice;
+        private Guna.UI.WinForms.GunaNumeric count;
+        private Guna.UI.WinForms.GunaLabel lbFoodName;
     }
 }

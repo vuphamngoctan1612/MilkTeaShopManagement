@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MilkTeaHouseProject.DTO;
 using MilkTeaHouseProject.DAL;
 using MilkTeaShopManagement.DAL;
+using MilkTeaShopManagement.DTO;
 
 namespace MilkTeaHouseProject   
 {
@@ -29,15 +30,16 @@ namespace MilkTeaHouseProject
             LoadMenu();
         }
 
-
+        #region Methods
         public void LoadMenu()
         {
             flowLayoutPanelMenu.Controls.Clear();
-            List<MenuItemDTO> drinks = menuItemDAL.Instance.LoadDrinks();
+            //List<MenuItemDTO> drinks = menuItemDAL.Instance.LoadDrinks();
+            List<Drink> drinks = DrinkDAL.Instance.GetDrinkList();
 
-            foreach (MenuItemDTO drink in drinks)
+            foreach (Drink drink in drinks)
             {
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Image);
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price);
                 item.onDel += Item_onDel;
                 item.onEdit += Item_onEdit;
 
@@ -66,23 +68,26 @@ namespace MilkTeaHouseProject
             }
         }
 
+        void DeleteMenu(int id)
+        {
+            string query = "DELETE FROM Drink WHERE ID = '"+ id +"'";
+            int data = DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        #endregion
+
+        #region Events
         private void Item_onEdit(object sender, EventArgs e)
         {
-            fEditDrink frm = new fEditDrink(((sender as MenuItem).Tag as MenuItemDTO).ID);
+            fEditDrink frm = new fEditDrink(((sender as MenuItem).Tag as Drink).ID);
             frm.ShowDialog();
             LoadMenu();
         }
 
         private void Item_onDel(object sender, EventArgs e)
         {
-            DeleteMenu(((sender as MenuItem).Tag as MenuItemDTO).ID);
+            DeleteMenu(((sender as MenuItem).Tag as Drink).ID);
             LoadMenu();
         }
-
-        void DeleteMenu(string id)
-        {
-            string query = "DELETE FROM Drinks WHERE ID = '"+ id +"'";
-            int data = DataProvider.Instance.ExecuteNonQuery(query);
-        }
+        #endregion
     }
 }

@@ -22,13 +22,13 @@ namespace MilkTeaShopManagement.DAL
 
         private DrinkDAL() { }
 
-        public List<Drink> LoadDrinks()
+        public List<Drink> GetDrinkList()
         {
             List<Drink> drinks = new List<Drink>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Drinks");
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Drink");
 
-            foreach(DataRow dataRow in data.Rows)
+            foreach (DataRow dataRow in data.Rows)
             {
                 Drink drink = new Drink(dataRow);
                 drinks.Add(drink);

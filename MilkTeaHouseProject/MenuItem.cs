@@ -34,8 +34,19 @@ namespace MilkTeaHouseProject
                 picFood.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
+        public MenuItem(int id, string name, int price)
+        {
+            InitializeComponent();
+
+            this.lbId.Text = id.ToString();
+            this.lbName.Text = name;
+            this.lbName.BringToFront();
+            this.lbPrice.Text = price.ToString();
+        }
+
         public string ID { get => this.lbId.Text; set => this.lbId.Text = value; }
-        public string Name { get => this.lbName.Text; set => this.lbName.Text = value; }
+        public new string Name { get => this.lbName.Text; set => this.lbName.Text = value; }
         public byte[] Images { get; set; }
 
         public event EventHandler onDel = null;
