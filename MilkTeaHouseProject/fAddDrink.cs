@@ -1,0 +1,103 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
+
+namespace MilkTeaHouseProject
+{
+    public partial class fAddDrink : Form
+    {
+        public fAddDrink()
+        {
+            InitializeComponent();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        SqlConnection connect = new SqlConnection("Data Source=DESKTOP-EV76EB0\\SQLEXPRESS;Initial Catalog=MilkteaManagement;Integrated Security=True");
+        string imgLocation = "";
+        SqlCommand cmd;
+        byte[] img = null;
+        private void pnImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                ptbImage.ImageLocation = imgLocation;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (imgLocation == "")
+                {
+                    loadImage();
+                }
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader bnr = new BinaryReader(stream);
+                img = bnr.ReadBytes((int)stream.Length);
+                if (txtID.Text == "")
+                    MessageBox.Show("Vui lòng nhập ID món");
+                else if (txtNameDrink.Text == "")
+                    MessageBox.Show("Vui lòng nhập tên món");
+                else if (txtPrice.Text == "")
+                    MessageBox.Show("Vui lòng nhập giá món");
+                else
+                {
+                    connect.Open();
+                    string sqlQuery = "INSERT INTO Drinks(ID,Name,Price,Image) VALUES ('" + txtID.Text + "',N'" + txtNameDrink.Text + "','" + txtPrice.Text + "',@img) ";
+                    cmd = new SqlCommand(sqlQuery, connect);
+                    cmd.Parameters.Add(new SqlParameter("@img", img));
+                    int N = cmd.ExecuteNonQuery();
+                    connect.Close();
+                    MessageBox.Show("Cập nhật thành công");
+                    this.Close();
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Trùng ID.");
+                connect.Close();
+            }
+        }
+        private void loadImage()
+        {
+            imgLocation = "./images/kawaii_coffee_64px.png";
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+    }
+}
