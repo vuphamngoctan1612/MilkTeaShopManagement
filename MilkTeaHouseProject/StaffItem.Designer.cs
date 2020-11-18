@@ -32,7 +32,6 @@
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbBirthDate = new Guna.UI.WinForms.GunaLabel();
             this.lbPosition = new Guna.UI.WinForms.GunaLabel();
-            this.lbBasicSalary = new Guna.UI.WinForms.GunaLabel();
             this.lbWorkingTime = new Guna.UI.WinForms.GunaLabel();
             this.lbSalary = new Guna.UI.WinForms.GunaLabel();
             this.lbUserName = new Guna.UI.WinForms.GunaLabel();
@@ -84,33 +83,22 @@
             this.lbPosition.TabIndex = 3;
             this.lbPosition.Text = "Position";
             // 
-            // lbBasicSalary
-            // 
-            this.lbBasicSalary.AutoSize = true;
-            this.lbBasicSalary.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBasicSalary.Location = new System.Drawing.Point(557, 16);
-            this.lbBasicSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbBasicSalary.Name = "lbBasicSalary";
-            this.lbBasicSalary.Size = new System.Drawing.Size(106, 25);
-            this.lbBasicSalary.TabIndex = 4;
-            this.lbBasicSalary.Text = "BasicSalary";
-            // 
             // lbWorkingTime
             // 
             this.lbWorkingTime.AutoSize = true;
             this.lbWorkingTime.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWorkingTime.Location = new System.Drawing.Point(667, 16);
+            this.lbWorkingTime.Location = new System.Drawing.Point(592, 16);
             this.lbWorkingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbWorkingTime.Name = "lbWorkingTime";
-            this.lbWorkingTime.Size = new System.Drawing.Size(124, 25);
+            this.lbWorkingTime.Size = new System.Drawing.Size(93, 25);
             this.lbWorkingTime.TabIndex = 5;
-            this.lbWorkingTime.Text = "WorkingTime";
+            this.lbWorkingTime.Text = "OverTime";
             // 
             // lbSalary
             // 
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(785, 16);
+            this.lbSalary.Location = new System.Drawing.Point(711, 16);
             this.lbSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSalary.Name = "lbSalary";
             this.lbSalary.Size = new System.Drawing.Size(63, 25);
@@ -141,7 +129,7 @@
             this.btDelete.Image = global::MilkTeaHouseProject.Properties.Resources.delete_bin_32px;
             this.btDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btDelete.Location = new System.Drawing.Point(900, 8);
+            this.btDelete.Location = new System.Drawing.Point(867, 8);
             this.btDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btDelete.Name = "btDelete";
             this.btDelete.OnHoverBaseColor = System.Drawing.Color.Red;
@@ -166,7 +154,7 @@
             this.btEdit.Image = global::MilkTeaHouseProject.Properties.Resources.pencil_24px;
             this.btEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btEdit.Location = new System.Drawing.Point(862, 8);
+            this.btEdit.Location = new System.Drawing.Point(808, 8);
             this.btEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btEdit.Name = "btEdit";
             this.btEdit.OnHoverBaseColor = System.Drawing.Color.Red;
@@ -187,14 +175,13 @@
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.lbSalary);
             this.Controls.Add(this.lbWorkingTime);
-            this.Controls.Add(this.lbBasicSalary);
             this.Controls.Add(this.lbPosition);
             this.Controls.Add(this.lbBirthDate);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbID);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StaffItem";
-            this.Size = new System.Drawing.Size(975, 49);
+            this.Size = new System.Drawing.Size(910, 49);
             this.Load += new System.EventHandler(this.StaffItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,7 +193,6 @@
         private Guna.UI.WinForms.GunaLabel lbName;
         private Guna.UI.WinForms.GunaLabel lbBirthDate;
         private Guna.UI.WinForms.GunaLabel lbPosition;
-        private Guna.UI.WinForms.GunaLabel lbBasicSalary;
         private Guna.UI.WinForms.GunaLabel lbWorkingTime;
         private Guna.UI.WinForms.GunaLabel lbSalary;
         private Guna.UI.WinForms.GunaLabel lbUserName;

@@ -24,7 +24,7 @@ namespace MilkTeaShopManagement.DAL
         {
             List<Staff> staffs = new List<Staff>();
 
-            DataTable data = DataProvider.Instance.ExcuteQuery("SELECT * FROM Staff");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff");
 
             foreach (DataRow dataRow in data.Rows)
             {
@@ -34,15 +34,23 @@ namespace MilkTeaShopManagement.DAL
 
             return staffs;
         }
-        public void EditStaff(string name, string birthDate, string position, int basicSalary, int iD)
+        public void EditStaff(int ID, string name, DateTime birthDate, string pos, int overtime, int salary)
         {
-            string query = "UPDATE Staff SET Name = N'" + name + "', BirthDate = '" + birthDate + "', Position = N'" + position + "', BasicSalary = " + basicSalary + ", Salary = " + basicSalary * 96 + "WHERE ID = " + iD + ";";
-            DataProvider.Instance.ExecuteNonQuery(query);
+            DataProvider.Instance.ExecuteNonQuery("USP_EditStaff @ID , @Name , @birthday , @pos , @overtime , @salary ", new object[] { ID, name, birthDate, pos, overtime,salary });
         }
         public void DelStaff(int iD)
         {
             string query = "DELETE FROM Staff WHERE ID = " + iD +";";
             DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void AddStaff(string name, DateTime birthDate, string pos, int overtime, int salary, string username)
+        {
+            string queryStaff = "SELECT MAX(ID) FROM Staff";
+            int id = (int)DataProvider.Instance.ExecuteScalar(queryStaff) + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @birthday , @pos , @username , @workingtime , @salary ",
+                new object[] { id, name, birthDate, pos, username, overtime, salary });
         }
     }
 }

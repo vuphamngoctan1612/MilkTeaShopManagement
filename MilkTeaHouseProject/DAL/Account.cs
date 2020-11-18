@@ -27,7 +27,7 @@ namespace MilkTeaShopManagement.DAL
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 0";
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0;
         }
@@ -37,7 +37,7 @@ namespace MilkTeaShopManagement.DAL
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 1";
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0;
         }
@@ -56,34 +56,29 @@ namespace MilkTeaShopManagement.DAL
                 MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
             }
             string queryAdmin = "SELECT ID FROM Admin";
-            DataTable dt = DataProvider.Instance.ExcuteQuery(queryAdmin);
+            DataTable dt = DataProvider.Instance.ExecuteQuery(queryAdmin);
             int newID = int.Parse(dt.Rows[dt.Rows.Count - 1].ItemArray[0].ToString()) + 1;
             string que = "INSERT INTO Admin VALUES (" + newID + ",N'" + name + "','" + birthDate + "','" + userName + "')";
-            DataProvider.Instance.ExcuteQuery(que);
+            DataProvider.Instance.ExecuteQuery(que);
             return res;
         }
-        public bool SignUpStaff(string userName, string passWord, string name, string birthDate, string position, int basicSalary)
-        {
-            passWord = Encryptor.Instance.Encrypt(passWord);
-            bool res = false;
 
+        public void SignUp(string username, string password)
+        {
+            string query = "USP_InsertAcc @username , @password";
+            password = Encryptor.Instance.Encrypt(password);
             try
             {
-                string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 1)";
-
-                res = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+                DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, password });
             }
-            catch
+            catch (SqlException)
             {
-                MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
+                MessageBox.Show("Tai khoan ton tai");
             }
-            string queryStaff = "SELECT ID FROM Staff";
-            DataTable dt = DataProvider.Instance.ExcuteQuery(queryStaff);
-            int newID = int.Parse(dt.Rows[dt.Rows.Count - 1].ItemArray[0].ToString()) + 1;
-            string que = "INSERT INTO Staff VALUES (" + newID + ",N'" + name + "','" + birthDate + "',N'" + position + "','" + userName + "','" + basicSalary + ",96," + basicSalary * 96 + ");";
-            DataProvider.Instance.ExcuteQuery(que);
-
-            return res;
+        }
+        public void DelAccount(string username)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_DelAccount @username ", new object[] { username });
         }
     }
 }

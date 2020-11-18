@@ -20,6 +20,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             usTitle ustitle = new usTitle();
             flowLayoutPanelTitle.Controls.Add(ustitle);
+            ustitle.onAdd += usTitle_onAdd;
             LoadStaff();
         }
         #region Methods
@@ -29,10 +30,9 @@ namespace MilkTeaHouseProject
 
             foreach (Staff staff in staffs)
             {
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.UserName, staff.BasicSalary, staff.WorkingTime, staff.Salary);
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.UserName, staff.WorkingTime, staff.Salary);
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
-
                 staffItem.Tag = staff;
                 flowLayoutPanelStaff.Controls.Add(staffItem);
             }
@@ -41,14 +41,18 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Events
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
+        private void usTitle_onAdd(object sender, EventArgs e)
+        { 
             fAddStaff f = new fAddStaff();
             f.ShowDialog();
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
         }
+        
         private void StaffItem_onDel(object sender, EventArgs e)
         {
             StaffDAL.Instance.DelStaff(int.Parse(((sender as StaffItem).Tag as Staff).ID));
+            Account.Instance.DelAccount(((sender as StaffItem).Tag as Staff).UserName);
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }

@@ -26,7 +26,7 @@ namespace MilkTeaShopManagement.DAL
         {
             List<Drink> drinks = new List<Drink>();
 
-            DataTable data = DataProvider.Instance.ExcuteQuery("select * from Drinks");
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Drink");
 
             foreach(DataRow dataRow in data.Rows)
             {

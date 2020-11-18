@@ -42,8 +42,9 @@
             this.lbName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(0, 0);
+            this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(147, 38);
+            this.lbName.Size = new System.Drawing.Size(114, 30);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Drink Item";
             // 
@@ -53,10 +54,10 @@
             this.picFood.BaseColor = System.Drawing.Color.White;
             this.picFood.Image = global::MilkTeaHouseProject.Properties.Resources.Toffee_nut_crunch_latte;
             this.picFood.InitialImage = ((System.Drawing.Image)(resources.GetObject("picFood.InitialImage")));
-            this.picFood.Location = new System.Drawing.Point(11, 41);
-            this.picFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFood.Location = new System.Drawing.Point(8, 33);
+            this.picFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(251, 257);
+            this.picFood.Size = new System.Drawing.Size(188, 209);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFood.TabIndex = 1;
             this.picFood.TabStop = false;
@@ -65,9 +66,10 @@
             // 
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrice.Location = new System.Drawing.Point(5, 338);
+            this.lbPrice.Location = new System.Drawing.Point(4, 275);
+            this.lbPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(54, 25);
+            this.lbPrice.Size = new System.Drawing.Size(41, 20);
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "Price";
             // 
@@ -85,8 +87,8 @@
             this.btnChoose.ForeColor = System.Drawing.Color.White;
             this.btnChoose.Image = ((System.Drawing.Image)(resources.GetObject("btnChoose.Image")));
             this.btnChoose.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnChoose.Location = new System.Drawing.Point(139, 331);
-            this.btnChoose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChoose.Location = new System.Drawing.Point(104, 269);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
             this.btnChoose.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
@@ -94,23 +96,23 @@
             this.btnChoose.OnHoverForeColor = System.Drawing.Color.White;
             this.btnChoose.OnHoverImage = null;
             this.btnChoose.OnPressedColor = System.Drawing.Color.Black;
-            this.btnChoose.Size = new System.Drawing.Size(123, 43);
+            this.btnChoose.Size = new System.Drawing.Size(92, 35);
             this.btnChoose.TabIndex = 4;
             this.btnChoose.Text = "Chọn";
             this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // DrinkItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.picFood);
             this.Controls.Add(this.lbName);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DrinkItem";
-            this.Size = new System.Drawing.Size(271, 390);
+            this.Size = new System.Drawing.Size(203, 317);
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

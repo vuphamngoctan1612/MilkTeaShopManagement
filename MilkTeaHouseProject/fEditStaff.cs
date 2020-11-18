@@ -39,6 +39,7 @@ namespace MilkTeaHouseProject
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(this.txtName.Text))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
@@ -53,7 +54,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                StaffDAL.Instance.EditStaff(this.txtName.Text, this.dateTimePicker1.Value.ToString(), this.comboBox1.Text, int.Parse(this.txtBasicSalary.Text), int.Parse(this.lbID.Text));
+                StaffDAL.Instance.EditStaff( int.Parse(this.lbID.Text), this.txtName.Text, this.dateTimePicker1.Value, this.comboBox1.Text, 96, int.Parse(this.txtBasicSalary.Text) );
                 this.Close();
             }
         }

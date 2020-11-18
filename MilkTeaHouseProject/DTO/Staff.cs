@@ -16,7 +16,6 @@ namespace MilkTeaHouseProject.DTO
         string birthDate;
         string position;
         string userName;
-        int basicSalary;
         int workingTime;
         int salary;
 
@@ -25,18 +24,16 @@ namespace MilkTeaHouseProject.DTO
         public string BirthDate { get => birthDate; set => birthDate = value; }
         public string Position { get => position; set => position = value; }
         public string UserName { get => userName; set => userName = value; }
-        public int BasicSalary { get => basicSalary; set => basicSalary = value; }
         public int WorkingTime { get => workingTime; set => workingTime = value; }
         public int Salary { get => salary; set => salary = value; }
 
-        public Staff(string id, string name, string birthdate, string position, string userName, int basicSalary, int workingTime, int salary)
+        public Staff(string id, string name, string birthdate, string position, string userName, int workingTime, int salary)
         {
             this.ID = id;
             this.Name = name;
             this.BirthDate = birthdate;
             this.Position = position;
             this.UserName = userName;
-            this.BasicSalary = basicSalary;
             this.WorkingTime = workingTime;
             this.Salary = salary;
         }
@@ -47,8 +44,7 @@ namespace MilkTeaHouseProject.DTO
             this.BirthDate = row["BirthDate"].ToString().Substring(0,10);
             this.Position = row["Position"].ToString();
             this.UserName = row["UserName"].ToString();
-            this.BasicSalary = int.Parse(row["BasicSalary"].ToString());
-            this.WorkingTime = int.Parse(row["WorkingTime"].ToString());
+            this.WorkingTime = int.Parse(row["OverTime"].ToString());
             this.Salary = int.Parse(row["Salary"].ToString());
         }
     }

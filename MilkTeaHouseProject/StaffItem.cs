@@ -16,7 +16,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(string id, string name, string birthdate, string position, string userName, int basicSalary, int workingTime, int salary)
+        public StaffItem(string id, string name, string birthdate, string position, string userName, int workingTime, int salary)
         {
             InitializeComponent();
             this.lbID.Text = id;
@@ -24,7 +24,6 @@ namespace MilkTeaHouseProject
             this.lbBirthDate.Text = birthdate;
             this.lbPosition.Text = position;
             this.lbUserName.Text = userName;
-            this.lbBasicSalary.Text = basicSalary.ToString();
             this.lbWorkingTime.Text = workingTime.ToString();
             this.lbSalary.Text = salary.ToString();
         }

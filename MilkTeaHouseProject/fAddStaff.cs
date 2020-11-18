@@ -37,9 +37,9 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        #region Events
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string username = this.txtUser.Text;
             if (string.IsNullOrEmpty(this.txtName.Text))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
@@ -55,14 +55,16 @@ namespace MilkTeaHouseProject
             else if (string.IsNullOrEmpty(this.txtUser.Text))
             {
                 MessageBox.Show("Nhập User", "Error");
-            }    
+            }
             else if (string.IsNullOrEmpty(this.txtPass.Text))
             {
                 MessageBox.Show("Nhập PassWord", "Error");
-            }    
+            }
             else
             {
-                Account.Instance.SignUpStaff(this.txtUser.Text, this.txtPass.Text, this.txtName.Text, this.dateTimePicker1.Value.ToString(), this.cbbPos.Text, int.Parse(this.txtBasicSalary.Text));
+                Account.Instance.SignUp(this.txtUser.Text, this.txtPass.Text);
+                StaffDAL.Instance.AddStaff(this.txtName.Text, this.dateTimePicker1.Value, this.cbbPos.Text, 96, int.Parse(this.txtBasicSalary.Text), this.txtUser.Text); ;
+                this.Close();
             }
         }
         private void txtBasicSalary_KeyPress_1(object sender, KeyPressEventArgs e)
