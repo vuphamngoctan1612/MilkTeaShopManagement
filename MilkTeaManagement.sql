@@ -31,7 +31,7 @@ create table Staff
 	BirthDate DATE not null,
 	Position NVARCHAR(100) not null,
 	UserName VARCHAR(100) not null,
-	WorkingTime SMALLINT not null,
+	WorkingTime SMALLINT not null, -- sửa lại là overtime nha
 	Salary INT not null,
 
 	constraint PK_Staff primary key (ID)
@@ -44,18 +44,20 @@ go
 create table Bill
 (
 	ID int not null,
-	--StaffID int not null,
-	--CheckIn DATE not null default getdate(),
+	StaffID int not null,
 	CheckOut date,
-	--Price INT not null
 	Status bit not null default 0,
 
 	constraint PK_Bill primary key(ID),
-	--constraint FK_Bill foreign key(StaffID) references Staff(ID)
 )
 go
 alter table Bill
 add Total int
+alter table bill
+add StaffID int
+alter table bill	
+add constraint FK_Bill_StaffID foreign key(staffID) references Staff(ID)
+
 
 create table BillInfo
 (
@@ -76,7 +78,7 @@ insert into Drink (ID, Name, Price) values (4,N'Kem Sữa',39000)
 insert into Drink (ID, Name, Price) values (5,'Latte',55000)
 insert into Drink (ID, Name, Price) values (6,'Cappuccino',55000)
 
-create proc USP_UpdateBillInfo
+alter proc USP_UpdateBillInfo
 @Count int, @ID int, @BillID int
 as
 begin
@@ -86,7 +88,7 @@ begin
 end
 go
 
-create proc USP_InsertBillInfo
+alter proc USP_InsertBillInfo
 @id int, @idBill int, @idDrink int, @count int	
 as
 begin
@@ -122,7 +124,7 @@ begin
 end
 go
 
-create proc USP_DeleteBillInfo
+alter proc USP_DeleteBillInfo
 @BillID int
 as
 begin
@@ -132,23 +134,24 @@ end
 go
 
 alter proc USP_UpdateBill
-@CheckOut date, @Status bit, @Total int, @ID int
+@CheckOut date, @Status bit, @Total int, @ID int, @StaffID int
 as
 begin
 	update Bill
-	set CheckOut = @CheckOut, Status = @Status, Total = @Total
+	set CheckOut = @CheckOut, Status = @Status, Total = @Total, StaffID = @StaffID
 	where ID = @ID
 end
 go
 
 alter proc USP_InsertBill
-@ID int
+@ID int, @StaffID int
 as
 begin
-	insert into Bill (ID) 
+	insert into Bill (ID, StaffID) 
 	values 
 	(
-	@ID
+	@ID,
+	@StaffID
 	)
 end
 go
@@ -179,3 +182,22 @@ from ((BillInfo as bf
 		inner join Bill as b
 		on b.ID = bf.BillID)
 where b.ID = 1
+
+create proc USP_EditStaff
+@ID int, @Name nvarchar(100), @birthday date, @pos nvarchar(100), @workingtime smallint, @salary int
+as
+begin
+	update Staff 
+	set Name = @Name, BirthDate = @birthday, Position = @pos, WorkingTime = @workingtime, Salary = @salary
+	where ID = @ID
+end
+go
+
+alter proc USP_GetStaffID
+@UserName varchar(100)
+as
+begin
+	select * from Staff
+	where UserName = @UserName
+end
+go

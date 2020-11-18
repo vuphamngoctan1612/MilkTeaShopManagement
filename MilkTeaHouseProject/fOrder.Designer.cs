@@ -44,6 +44,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelBill = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.lbUserName = new System.Windows.Forms.Label();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -66,7 +67,7 @@
             this.pnPay.Location = new System.Drawing.Point(0, 657);
             this.pnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnPay.Name = "pnPay";
-            this.pnPay.Size = new System.Drawing.Size(500, 63);
+            this.pnPay.Size = new System.Drawing.Size(653, 63);
             this.pnPay.TabIndex = 4;
             // 
             // btnCancel
@@ -89,7 +90,7 @@
             this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
             this.btnCancel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCancel.Location = new System.Drawing.Point(251, 0);
+            this.btnCancel.Location = new System.Drawing.Point(404, 0);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -177,7 +178,7 @@
             this.pnShowError.Location = new System.Drawing.Point(0, 578);
             this.pnShowError.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnShowError.Name = "pnShowError";
-            this.pnShowError.Size = new System.Drawing.Size(500, 33);
+            this.pnShowError.Size = new System.Drawing.Size(653, 33);
             this.pnShowError.TabIndex = 6;
             // 
             // pnTotal
@@ -190,7 +191,7 @@
             this.pnTotal.Location = new System.Drawing.Point(0, 611);
             this.pnTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(500, 46);
+            this.pnTotal.Size = new System.Drawing.Size(653, 46);
             this.pnTotal.TabIndex = 5;
             // 
             // flowLayoutPanelDrinks
@@ -200,13 +201,13 @@
             this.flowLayoutPanelDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelDrinks.Name = "flowLayoutPanelDrinks";
-            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(740, 720);
+            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(587, 720);
             this.flowLayoutPanelDrinks.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(740, 0);
+            this.panel3.Location = new System.Drawing.Point(587, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(4, 720);
@@ -219,9 +220,9 @@
             this.panel2.Controls.Add(this.pnTotal);
             this.panel2.Controls.Add(this.pnPay);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(744, 0);
+            this.panel2.Location = new System.Drawing.Point(591, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 720);
+            this.panel2.Size = new System.Drawing.Size(653, 720);
             this.panel2.TabIndex = 1;
             // 
             // panel4
@@ -232,7 +233,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(500, 578);
+            this.panel4.Size = new System.Drawing.Size(653, 578);
             this.panel4.TabIndex = 0;
             // 
             // panel5
@@ -241,7 +242,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 67);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(500, 511);
+            this.panel5.Size = new System.Drawing.Size(653, 511);
             this.panel5.TabIndex = 3;
             // 
             // flowLayoutPanelBill
@@ -251,12 +252,13 @@
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(500, 511);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(653, 511);
             this.flowLayoutPanelBill.TabIndex = 1;
             // 
             // gunaLinePanel1
             // 
             this.gunaLinePanel1.BackColor = System.Drawing.Color.White;
+            this.gunaLinePanel1.Controls.Add(this.lbUserName);
             this.gunaLinePanel1.Controls.Add(this.gunaLabel4);
             this.gunaLinePanel1.Controls.Add(this.gunaLabel3);
             this.gunaLinePanel1.Controls.Add(this.gunaLabel2);
@@ -266,8 +268,20 @@
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(500, 67);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(653, 67);
             this.gunaLinePanel1.TabIndex = 2;
+            // 
+            // lbUserName
+            // 
+            this.lbUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbUserName.AutoSize = true;
+            this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserName.Location = new System.Drawing.Point(551, 9);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(90, 23);
+            this.lbUserName.TabIndex = 1;
+            this.lbUserName.Text = "user name";
+            this.lbUserName.Visible = false;
             // 
             // gunaLabel4
             // 
@@ -365,5 +379,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lbUserName;
     }
 }

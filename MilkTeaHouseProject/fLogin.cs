@@ -20,9 +20,19 @@ namespace MilkTeaHouseProject
         }
 
         #region Methods
-        private bool Login(string username, string password)
+        private bool LoginAdmin(string username, string password)
         {
             return Account.Instance.LoginAdmin(username, password);
+        }
+
+        private bool LoginStaff(string username, string password)
+        {
+            return Account.Instance.LoginStaff(username, password);
+        }
+
+        private bool Login(string username, string password)
+        {
+            return Account.Instance.Login(username, password);
         }
         #endregion
 
@@ -36,6 +46,7 @@ namespace MilkTeaHouseProject
             if (Login(username, password))
             {
                 fMain f = new fMain();
+                f.UserName = username;
                 this.Hide();
                 f.ShowDialog();
                 this.Close();

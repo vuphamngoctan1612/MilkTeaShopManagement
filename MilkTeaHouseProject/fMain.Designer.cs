@@ -31,6 +31,7 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnTool = new System.Windows.Forms.Panel();
+            this.lbUserName = new System.Windows.Forms.Label();
             this.lbButtonSelected = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnZoom = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             // pnTool
             // 
             this.pnTool.BackColor = System.Drawing.Color.White;
+            this.pnTool.Controls.Add(this.lbUserName);
             this.pnTool.Controls.Add(this.lbButtonSelected);
             this.pnTool.Controls.Add(this.btnMinimize);
             this.pnTool.Controls.Add(this.btnZoom);
@@ -89,6 +91,18 @@
             this.pnTool.Size = new System.Drawing.Size(910, 82);
             this.pnTool.TabIndex = 3;
             this.pnTool.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // lbUserName
+            // 
+            this.lbUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbUserName.AutoSize = true;
+            this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserName.Location = new System.Drawing.Point(762, 57);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(95, 23);
+            this.lbUserName.TabIndex = 1;
+            this.lbUserName.Text = "User Name";
+            this.lbUserName.Visible = false;
             // 
             // lbButtonSelected
             // 
@@ -444,6 +458,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnDesktop;
+        private System.Windows.Forms.Label lbUserName;
     }
 }
 

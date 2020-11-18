@@ -17,6 +17,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
+         
         public DrinkItem(string name, int price)
         {
             InitializeComponent();

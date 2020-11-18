@@ -31,11 +31,23 @@ namespace MilkTeaShopManagement.DAL
 
             return result.Rows.Count > 0;
         }
+
         public bool LoginStaff(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 1";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+
+            return result.Rows.Count > 0;
+        }
+
+        public bool Login(string username, string password)
+        {
+            password = Encryptor.Instance.Encrypt(password);
+
+            string query = "SELECT * FROM Account WHERE UserName = '" + username + "' AND PassWord = '" + password + "'";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
 

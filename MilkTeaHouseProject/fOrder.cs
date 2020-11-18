@@ -25,7 +25,17 @@ namespace MilkTeaHouseProject
             LoadDrink();
         }
 
+        public fOrder(string username)
+        {
+            InitializeComponent();
+            this.lbUserName.Text = username;
+
+            LoadDrink();
+        }
+
         #region Methods
+        public string UserName { get => this.lbUserName.Text; set => this.lbUserName.Text = value; }
+
         public void LoadBill()
         {
             List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(BillDAL.Instance.GetMAXIDBill());
@@ -48,7 +58,6 @@ namespace MilkTeaHouseProject
             {
                 DrinkItem item = new DrinkItem(drink.Name, drink.Price);
                 item.Tag = drink;
-
                 item.onChoose += Item_onChoose;
 
                 this.flowLayoutPanelDrinks.Controls.Add(item);
@@ -57,19 +66,19 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Events
-
         private void Item_onChoose(object sender, EventArgs e)
         {
             try
             {
                 int idBill = BillDAL.Instance.GetMAXIDBill();
                 int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
+                int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text); // chua co bill => return -1
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
                 if (!BillDAL.Instance.existBill())
                 {
-                    BillDAL.Instance.InsertBill(idBill);
+                    BillDAL.Instance.InsertBill(idBill, idStaff);
                 }
 
                 BillInfoDAL.Instance.InsertBillInfo(idBillInfo, idBill, idDrink, count);
@@ -95,48 +104,61 @@ namespace MilkTeaHouseProject
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            try
+            if (this.flowLayoutPanelBill.Controls.Count != 0)
             {
                 int idBill = BillDAL.Instance.GetMAXIDBill();
+                int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text);
                 DateTime checkout = DateTime.Now;
                 bool status = true;
                 int total = MenuDAL.Instance.GetTotalPrice();
+                try
+                {
+                    BillDAL.Instance.UpdateBill(idBill, checkout, status, total, idStaff);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                finally
+                {
+                    this.flowLayoutPanelBill.Controls.Clear();
+                    this.lbCount.Text = "0";
+                    this.lbTotalPrice.Text = "0 VNĐ";
 
-                BillDAL.Instance.UpdateBill(idBill, checkout, status, total);
+                    BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1, idStaff);
+                }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error");
-            }
-            finally
-            {
-                this.flowLayoutPanelBill.Controls.Clear();
-                this.lbCount.Text = "0";
-                this.lbTotalPrice.Text = "0 VNĐ";
-
-                BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1);
+                MessageBox.Show("Hóa đơn không tồn tại!", "Error");
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            try
+            if (this.flowLayoutPanelBill.Controls.Count != 0)
             {
-                int BillID = BillDAL.Instance.GetMAXIDBill();
-                BillInfoDAL.Instance.DeleteBillInfo(BillID);
+                try
+                {
+                    int BillID = BillDAL.Instance.GetMAXIDBill();
+                    BillInfoDAL.Instance.DeleteBillInfo(BillID);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                finally
+                {
+                    this.flowLayoutPanelBill.Controls.Clear();
+                    this.lbCount.Text = "0";
+                    this.lbTotalPrice.Text = "0 VNĐ";
+                }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error");
-            }
-            finally
-            {
-                this.flowLayoutPanelBill.Controls.Clear();
-                this.lbCount.Text = "0";
-                this.lbTotalPrice.Text = "0 VNĐ";
+                MessageBox.Show("Hóa đơn không tồn tại!", "Error");
             }
         }
-
         #endregion
     }
 }
