@@ -56,7 +56,8 @@ namespace MilkTeaHouseProject
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = null;
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEdit.Location = new System.Drawing.Point(1025, 18);
+            this.btnEdit.Location = new System.Drawing.Point(1153, 22);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnEdit.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
@@ -65,7 +66,7 @@ namespace MilkTeaHouseProject
             this.btnEdit.OnHoverImage = null;
             this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btnEdit.Radius = 10;
-            this.btnEdit.Size = new System.Drawing.Size(92, 34);
+            this.btnEdit.Size = new System.Drawing.Size(104, 42);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -76,9 +77,9 @@ namespace MilkTeaHouseProject
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbPrice.Location = new System.Drawing.Point(727, 27);
+            this.lbPrice.Location = new System.Drawing.Point(818, 34);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(54, 25);
+            this.lbPrice.Size = new System.Drawing.Size(62, 30);
             this.lbPrice.TabIndex = 7;
             this.lbPrice.Text = "Price";
             // 
@@ -89,9 +90,10 @@ namespace MilkTeaHouseProject
             this.picFood.Image = global::MilkTeaHouseProject.Properties.Resources.Toffee_nut_crunch_latte;
             this.picFood.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.picFood.InitialImage = ((System.Drawing.Image)(resources.GetObject("picFood.InitialImage")));
-            this.picFood.Location = new System.Drawing.Point(15, 10);
+            this.picFood.Location = new System.Drawing.Point(17, 12);
+            this.picFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(68, 57);
+            this.picFood.Size = new System.Drawing.Size(76, 71);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFood.TabIndex = 6;
             this.picFood.TabStop = false;
@@ -101,9 +103,9 @@ namespace MilkTeaHouseProject
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbName.Location = new System.Drawing.Point(428, 27);
+            this.lbName.Location = new System.Drawing.Point(482, 34);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(104, 25);
+            this.lbName.Size = new System.Drawing.Size(119, 30);
             this.lbName.TabIndex = 5;
             this.lbName.Text = "Drink Item";
             // 
@@ -112,9 +114,9 @@ namespace MilkTeaHouseProject
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbId.Location = new System.Drawing.Point(212, 27);
+            this.lbId.Location = new System.Drawing.Point(238, 34);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(32, 25);
+            this.lbId.Size = new System.Drawing.Size(35, 30);
             this.lbId.TabIndex = 5;
             this.lbId.Text = "ID";
             this.lbId.Click += new System.EventHandler(this.lbId_Click);
@@ -134,7 +136,8 @@ namespace MilkTeaHouseProject
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = null;
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(1215, 18);
+            this.btnDelete.Location = new System.Drawing.Point(1356, 22);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
             this.btnDelete.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
@@ -143,7 +146,7 @@ namespace MilkTeaHouseProject
             this.btnDelete.OnHoverImage = null;
             this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
             this.btnDelete.Radius = 10;
-            this.btnDelete.Size = new System.Drawing.Size(92, 34);
+            this.btnDelete.Size = new System.Drawing.Size(104, 42);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -156,7 +159,7 @@ namespace MilkTeaHouseProject
             // 
             // MenuItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.btnDelete);
@@ -167,7 +170,8 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbName);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuItem";
-            this.Size = new System.Drawing.Size(1358, 79);
+            this.Size = new System.Drawing.Size(1497, 99);
+            this.SizeChanged += new System.EventHandler(this.MenuItem_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -72,5 +72,15 @@ namespace MilkTeaHouseProject
         {
 
         }
+
+        private void MenuItem_SizeChanged(object sender, EventArgs e)
+        {
+            int space = this.Width / 5;
+            lbId.Location = new Point(space, 8);
+            lbName.Location = new Point(space*2, 8);
+            lbPrice.Location = new Point(space*3, 8);
+            btnEdit.Location = new Point(space * 4, 8);
+            btnDelete.Location = new Point(space * 4 + 70, 8);
+        }
     }
 }

@@ -28,6 +28,7 @@ namespace MilkTeaHouseProject
             fAddDrink f = new fAddDrink();
             f.ShowDialog();
             LoadMenu();
+            flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
         #region Methods
@@ -81,13 +82,29 @@ namespace MilkTeaHouseProject
             fEditDrink frm = new fEditDrink(((sender as MenuItem).Tag as Drink).ID);
             frm.ShowDialog();
             LoadMenu();
+            flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
         private void Item_onDel(object sender, EventArgs e)
         {
             DeleteMenu(((sender as MenuItem).Tag as Drink).ID);
             LoadMenu();
+            flowLayoutPanelMenu_SizeChanged(sender, e);
         }
         #endregion
+
+
+
+        private void flowLayoutPanelMenu_SizeChanged(object sender, EventArgs e)
+        {
+            foreach (Control item in flowLayoutPanelMenu.Controls)
+            {
+                item.Width = flowLayoutPanelMenu.Width;
+            }
+            double space = flowLayoutPanelMenu.Width / 5;
+            lbID.Location = new Point((int)space,8);
+            lbName.Location = new Point((int)space * 2, 8);
+            lbPrice.Location=new Point((int )space*3,8);
+        }
     }
 }

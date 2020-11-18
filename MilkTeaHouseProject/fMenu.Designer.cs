@@ -35,10 +35,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbPrice = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbPrice = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnBtn.SuspendLayout();
             this.pnStaff.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -128,6 +128,37 @@
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
             this.flowLayoutPanelMenu.Size = new System.Drawing.Size(1088, 512);
             this.flowLayoutPanelMenu.TabIndex = 2;
+            this.flowLayoutPanelMenu.SizeChanged += new System.EventHandler(this.flowLayoutPanelMenu_SizeChanged);
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(240, 11);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(145, 30);
+            this.lbID.TabIndex = 0;
+            this.lbID.Text = "Mã sản phẩm";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(484, 11);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(99, 30);
+            this.lbName.TabIndex = 0;
+            this.lbName.Text = "Tên món";
+            // 
+            // lbPrice
+            // 
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Location = new System.Drawing.Point(820, 11);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(88, 30);
+            this.lbPrice.TabIndex = 0;
+            this.lbPrice.Text = "Giá bán";
             // 
             // panel1
             // 
@@ -140,36 +171,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 51);
             this.panel1.TabIndex = 0;
-            // 
-            // lbPrice
-            // 
-            this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrice.Location = new System.Drawing.Point(820, 11);
-            this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(88, 30);
-            this.lbPrice.TabIndex = 0;
-            this.lbPrice.Text = "Giá bán";
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(484, 11);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(99, 30);
-            this.lbName.TabIndex = 0;
-            this.lbName.Text = "Tên món";
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(240, 11);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(145, 30);
-            this.lbID.TabIndex = 0;
-            this.lbID.Text = "Mã sản phẩm";
             // 
             // fMenu
             // 
@@ -196,11 +197,11 @@
         private System.Windows.Forms.Panel pnStaff;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
     }
 }
