@@ -16,6 +16,7 @@ namespace MilkTeaShopManagement.DTO
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
         public int ID { get => iD; set => iD = value; }
+        public byte[] Image { get; internal set; }
 
         public Drink(int id, string name, int price)
         {
@@ -28,6 +29,8 @@ namespace MilkTeaShopManagement.DTO
             this.ID = (int)row["ID"];
             this.Name = row["Name"].ToString();
             this.Price = (int)row["Price"];
+            if (!Convert.IsDBNull(row["Image"]))
+                this.Image = (byte[])row["Image"];
         }
     }
 }

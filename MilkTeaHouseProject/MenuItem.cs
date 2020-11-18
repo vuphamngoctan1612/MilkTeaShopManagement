@@ -14,11 +14,11 @@ namespace MilkTeaHouseProject
 {
     public partial class MenuItem : UserControl
     {
-        public MenuItem(string id, string name, int price, byte[] img)
+        public MenuItem(int id, string name, int price, byte[] img)
         {
             InitializeComponent();
 
-            this.lbId.Text = id;
+            this.lbId.Text = id.ToString();
             this.lbName.Text = name;
             this.lbName.BringToFront();
             this.lbPrice.Text = price.ToString();

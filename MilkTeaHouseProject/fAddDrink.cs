@@ -38,7 +38,7 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        SqlConnection connect = new SqlConnection("Data Source=DESKTOP-EV76EB0\\SQLEXPRESS;Initial Catalog=MilkteaManagement;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTeaManagement;Integrated Security=True");
         string imgLocation = "";
         SqlCommand cmd;
         byte[] img = null;
@@ -74,7 +74,7 @@ namespace MilkTeaHouseProject
                 else
                 {
                     connect.Open();
-                    string sqlQuery = "INSERT INTO Drinks(ID,Name,Price,Image) VALUES ('" + txtID.Text + "',N'" + txtNameDrink.Text + "','" + txtPrice.Text + "',@img) ";
+                    string sqlQuery = "INSERT INTO Drink(ID,Name,Price,Image) VALUES ('" + txtID.Text + "',N'" + txtNameDrink.Text + "','" + txtPrice.Text + "',@img) ";
                     cmd = new SqlCommand(sqlQuery, connect);
                     cmd.Parameters.Add(new SqlParameter("@img", img));
                     int N = cmd.ExecuteNonQuery();
@@ -86,8 +86,16 @@ namespace MilkTeaHouseProject
             catch (SqlException)
             {
                 MessageBox.Show("Trùng ID.");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Vui lòng chọn ảnh.");
+            }
+            finally
+            {
                 connect.Close();
             }
+            
         }
         private void loadImage()
         {

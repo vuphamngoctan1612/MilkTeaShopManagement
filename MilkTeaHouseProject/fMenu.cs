@@ -39,7 +39,7 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price);
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price,drink.Image);
                 item.onDel += Item_onDel;
                 item.onEdit += Item_onEdit;
 
