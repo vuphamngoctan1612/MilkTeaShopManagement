@@ -33,15 +33,16 @@
             this.pnStraight = new System.Windows.Forms.Panel();
             this.cbbPos = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.lbIdIncrease = new System.Windows.Forms.Label();
             this.lbSalary = new System.Windows.Forms.Label();
             this.lbBirth = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
             this.lbNameForm = new System.Windows.Forms.Label();
             this.pn = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbPos = new System.Windows.Forms.Label();
             this.pnContain = new System.Windows.Forms.Panel();
-            this.txtBasicSalary = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lbPass = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.lbUser = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnImage = new System.Windows.Forms.Panel();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(471, 332);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -81,7 +83,7 @@
             this.btnReturn.OnHoverImage = null;
             this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
-            this.btnReturn.Size = new System.Drawing.Size(94, 28);
+            this.btnReturn.Size = new System.Drawing.Size(95, 27);
             this.btnReturn.TabIndex = 18;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -90,21 +92,17 @@
             // pnStraight
             // 
             this.pnStraight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
-            this.pnStraight.Location = new System.Drawing.Point(284, 0);
-            this.pnStraight.Margin = new System.Windows.Forms.Padding(2);
+            this.pnStraight.Location = new System.Drawing.Point(283, 0);
+            this.pnStraight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnStraight.Name = "pnStraight";
-            this.pnStraight.Size = new System.Drawing.Size(12, 401);
+            this.pnStraight.Size = new System.Drawing.Size(12, 402);
             this.pnStraight.TabIndex = 17;
             // 
             // cbbPos
             // 
             this.cbbPos.FormattingEnabled = true;
-            this.cbbPos.Items.AddRange(new object[] {
-            "Thu Ngân",
-            "Pha Chế",
-            "Phục Vụ"});
             this.cbbPos.Location = new System.Drawing.Point(329, 217);
-            this.cbbPos.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbPos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbPos.Name = "cbbPos";
             this.cbbPos.Size = new System.Drawing.Size(238, 21);
             this.cbbPos.TabIndex = 15;
@@ -113,10 +111,21 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(329, 101);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(238, 22);
             this.txtName.TabIndex = 14;
+            // 
+            // lbIdIncrease
+            // 
+            this.lbIdIncrease.AutoSize = true;
+            this.lbIdIncrease.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdIncrease.Location = new System.Drawing.Point(402, 37);
+            this.lbIdIncrease.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbIdIncrease.Name = "lbIdIncrease";
+            this.lbIdIncrease.Size = new System.Drawing.Size(24, 20);
+            this.lbIdIncrease.TabIndex = 13;
+            this.lbIdIncrease.Text = "ID";
             // 
             // lbSalary
             // 
@@ -154,6 +163,18 @@
             this.lbName.TabIndex = 13;
             this.lbName.Text = "Họ tên:";
             // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbId.Location = new System.Drawing.Point(326, 37);
+            this.lbId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(27, 20);
+            this.lbId.TabIndex = 13;
+            this.lbId.Text = "ID:";
+            // 
             // lbNameForm
             // 
             this.lbNameForm.AutoSize = true;
@@ -173,9 +194,9 @@
             this.pn.Controls.Add(this.btnExit);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pn.Name = "pn";
-            this.pn.Size = new System.Drawing.Size(600, 28);
+            this.pn.Size = new System.Drawing.Size(600, 27);
             this.pn.TabIndex = 2;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
             // 
@@ -199,8 +220,8 @@
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(574, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(575, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -208,7 +229,7 @@
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(26, 28);
+            this.btnExit.Size = new System.Drawing.Size(25, 27);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "X";
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -229,7 +250,7 @@
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnContain.Controls.Add(this.txtBasicSalary);
+            this.pnContain.Controls.Add(this.txtSalary);
             this.pnContain.Controls.Add(this.dateTimePicker1);
             this.pnContain.Controls.Add(this.pnStraight);
             this.pnContain.Controls.Add(this.txtPass);
@@ -240,32 +261,24 @@
             this.pnContain.Controls.Add(this.btnAdd);
             this.pnContain.Controls.Add(this.cbbPos);
             this.pnContain.Controls.Add(this.txtName);
+            this.pnContain.Controls.Add(this.lbIdIncrease);
             this.pnContain.Controls.Add(this.lbSalary);
             this.pnContain.Controls.Add(this.lbPos);
             this.pnContain.Controls.Add(this.lbBirth);
             this.pnContain.Controls.Add(this.lbName);
+            this.pnContain.Controls.Add(this.lbId);
             this.pnContain.Controls.Add(this.pnImage);
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContain.Location = new System.Drawing.Point(0, 28);
-            this.pnContain.Margin = new System.Windows.Forms.Padding(2);
+            this.pnContain.Location = new System.Drawing.Point(0, 27);
+            this.pnContain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnContain.Name = "pnContain";
-            this.pnContain.Size = new System.Drawing.Size(600, 373);
+            this.pnContain.Size = new System.Drawing.Size(600, 375);
             this.pnContain.TabIndex = 3;
-            // 
-            // txtBasicSalary
-            // 
-            this.txtBasicSalary.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBasicSalary.Location = new System.Drawing.Point(329, 284);
-            this.txtBasicSalary.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBasicSalary.Name = "txtBasicSalary";
-            this.txtBasicSalary.Size = new System.Drawing.Size(238, 22);
-            this.txtBasicSalary.TabIndex = 22;
-            this.txtBasicSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasicSalary_KeyPress_1);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(329, 159);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(238, 20);
             this.dateTimePicker1.TabIndex = 21;
@@ -274,7 +287,7 @@
             // 
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(24, 305);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(238, 22);
             this.txtPass.TabIndex = 20;
@@ -294,8 +307,8 @@
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(24, 249);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUser.Location = new System.Drawing.Point(24, 248);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(238, 22);
             this.txtUser.TabIndex = 20;
@@ -332,7 +345,7 @@
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.Location = new System.Drawing.Point(329, 332);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -340,7 +353,7 @@
             this.btnAdd.OnHoverImage = null;
             this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Size = new System.Drawing.Size(94, 28);
+            this.btnAdd.Size = new System.Drawing.Size(95, 27);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -352,23 +365,33 @@
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnImage.Location = new System.Drawing.Point(52, 38);
-            this.pnImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pnImage.Location = new System.Drawing.Point(53, 38);
+            this.pnImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(158, 154);
             this.pnImage.TabIndex = 12;
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Location = new System.Drawing.Point(330, 280);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(238, 22);
+            this.txtSalary.TabIndex = 22;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // fAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(600, 401);
+            this.ClientSize = new System.Drawing.Size(600, 402);
             this.Controls.Add(this.pnContain);
             this.Controls.Add(this.pn);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fAddStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddStaff";
@@ -387,9 +410,11 @@
         private System.Windows.Forms.Panel pnStraight;
         private System.Windows.Forms.ComboBox cbbPos;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lbIdIncrease;
         private System.Windows.Forms.Label lbSalary;
         private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Panel pnImage;
         private System.Windows.Forms.Label lbNameForm;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
@@ -401,6 +426,6 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtBasicSalary;
+        private System.Windows.Forms.TextBox txtSalary;
     }
 }

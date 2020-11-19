@@ -18,6 +18,45 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             this.CenterToScreen();
         }
+
+        #region Methods
+        private bool LoginAdmin(string username, string password)
+        {
+            return Account.Instance.LoginAdmin(username, password);
+        }
+
+        private bool LoginStaff(string username, string password)
+        {
+            return Account.Instance.LoginStaff(username, password);
+        }
+
+        private bool Login(string username, string password)
+        {
+            return Account.Instance.Login(username, password);
+        }
+        #endregion
+
+        #region Events
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = this.txtUser.Text;
+            string password = this.txtPass.Text;
+
+            if (Login(username, password))
+            {
+                fMain f = new fMain();
+                f.UserName = username;
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+            }
+        }
+
         private void lbSignup_Click(object sender, EventArgs e)
         {
             fSignUp f = new fSignUp();
@@ -32,33 +71,6 @@ namespace MilkTeaHouseProject
                 txtPass.UseSystemPasswordChar = false;
             else
                 txtPass.UseSystemPasswordChar = true;
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
-
-            //if (Login(username, password))
-            //{
-            //    fMain f = new fMain();
-            //    this.Hide();
-            //    f.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
-            //}
-            fMain f = new fMain();
-            this.Hide();
-            f.ShowDialog();
-            this.Close();
-        }
-
-        private bool Login(string username, string password)
-        {
-            return Account.Instance.LoginAdmin(username, password);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -83,5 +95,7 @@ namespace MilkTeaHouseProject
                 this.btnLogin_Click(sender, e);
             }
         }
+
+        #endregion
     }
 }

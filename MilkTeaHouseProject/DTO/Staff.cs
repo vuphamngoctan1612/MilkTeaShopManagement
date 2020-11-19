@@ -1,51 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Globalization;
-using System.Windows.Controls;
 
 namespace MilkTeaHouseProject.DTO
 {
     public class Staff
     {
-        string iD;
-        string name;
-        string birthDate;
-        string position;
-        string userName;
-        int workingTime;
-        int salary;
+        private int iD;
+        private string name;
+        private DateTime birthDate;
+        private string position;
+        private string userName;
+        private int workingTime;
+        private int salary;
 
-        public string ID { get => iD; set => iD = value; }
+        public int ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
-        public string BirthDate { get => birthDate; set => birthDate = value; }
+        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
         public string Position { get => position; set => position = value; }
         public string UserName { get => userName; set => userName = value; }
         public int WorkingTime { get => workingTime; set => workingTime = value; }
         public int Salary { get => salary; set => salary = value; }
-
-        public Staff(string id, string name, string birthdate, string position, string userName, int workingTime, int salary)
+        
+        public Staff(int id, string name, DateTime birthdate, string position, string username, int workingTime, int salary)
         {
-            this.ID = id;
-            this.Name = name;
-            this.BirthDate = birthdate;
-            this.Position = position;
-            this.UserName = userName;
-            this.WorkingTime = workingTime;
-            this.Salary = salary;
+            this.iD = id;
+            this.name = name;
+            this.birthDate = birthdate;
+            this.position = position;
+            this.userName = username;
+            this.workingTime = workingTime;
+            this.salary = salary; ;
         }
+
         public Staff(DataRow row)
         {
-            this.ID = row["ID"].ToString();
-            this.Name = row["Name"].ToString();
-            this.BirthDate = row["BirthDate"].ToString().Substring(0,10);
-            this.Position = row["Position"].ToString();
-            this.UserName = row["UserName"].ToString();
-            this.WorkingTime = int.Parse(row["OverTime"].ToString());
-            this.Salary = int.Parse(row["Salary"].ToString());
+            this.iD = (int)row["ID"];
+            this.name = row["Name"].ToString();
+            this.birthDate = (DateTime)row["BirthDate"];
+            this.position = row["Position"].ToString();
+            this.userName = row["UserName"].ToString();
+            this.workingTime = int.Parse(row["OverTime"].ToString());
+            this.salary = (int)row["Salary"];
         }
     }
 }

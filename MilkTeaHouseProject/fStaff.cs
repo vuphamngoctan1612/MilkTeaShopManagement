@@ -1,7 +1,4 @@
-﻿using MilkTeaHouseProject.DTO;
-using MilkTeaShopManagement.DAL;
-using MilkTeaShopManagement.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaHouseProject.DAL;
+using MilkTeaHouseProject.DTO;
+using MilkTeaShopManagement.DAL;
+using MilkTeaShopManagement.DTO;
 
 namespace MilkTeaHouseProject
 {
@@ -18,12 +19,8 @@ namespace MilkTeaHouseProject
         public fStaff()
         {
             InitializeComponent();
-            usTitle ustitle = new usTitle();
-            flowLayoutPanelTitle.Controls.Add(ustitle);
-            ustitle.onAdd += usTitle_onAdd;
             LoadStaff();
         }
-        #region Methods
         public void LoadStaff()
         {
             List<Staff> staffs = StaffDAL.Instance.LoadStaffs();
@@ -36,33 +33,39 @@ namespace MilkTeaHouseProject
                 staffItem.Tag = staff;
                 flowLayoutPanelStaff.Controls.Add(staffItem);
             }
-            
-        }
-        #endregion
 
-        #region Events
+        }
         private void usTitle_onAdd(object sender, EventArgs e)
-        { 
+        {
             fAddStaff f = new fAddStaff();
             f.ShowDialog();
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
-        
+
         private void StaffItem_onDel(object sender, EventArgs e)
         {
-            StaffDAL.Instance.DelStaff(int.Parse(((sender as StaffItem).Tag as Staff).ID));
+            BillDAL.Instance.UpDateStaffIDtoNULL(((sender as StaffItem).Tag as Staff).ID);
+            StaffDAL.Instance.DelStaff(((sender as StaffItem).Tag as Staff).ID);
             Account.Instance.DelAccount(((sender as StaffItem).Tag as Staff).UserName);
+            
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
-            fEditStaff frm = new fEditStaff(int.Parse(((sender as StaffItem).Tag as Staff).ID));
+            fEditStaff frm = new fEditStaff(((sender as StaffItem).Tag as Staff).ID);
             frm.ShowDialog();
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
-        #endregion
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            fAddStaff f = new fAddStaff();
+            f.ShowDialog();
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
+        }
     }
 }

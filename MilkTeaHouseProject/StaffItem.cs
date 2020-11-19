@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaHouseProject.DAL;
+using MilkTeaHouseProject.DTO;
+using MilkTeaShopManagement.DAL;
+using MilkTeaShopManagement.DTO;
 
 namespace MilkTeaHouseProject
 {
@@ -16,23 +20,17 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(string id, string name, string birthdate, string position, string userName, int workingTime, int salary)
+        public StaffItem(int id, string name, DateTime birthdate, string position, string userName, int workingTime, int salary)
         {
             InitializeComponent();
-            this.lbID.Text = id;
+            this.lbID.Text = id.ToString();
             this.lbName.Text = name;
-            this.lbBirthDate.Text = birthdate;
+            this.lbBirthDate.Text = birthdate.ToString();
             this.lbPosition.Text = position;
             this.lbUserName.Text = userName;
-            this.lbWorkingTime.Text = workingTime.ToString();
+            this.lbOverTime.Text = workingTime.ToString();
             this.lbSalary.Text = salary.ToString();
         }
-
-        private void StaffItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public event EventHandler onEdit = null;
         public event EventHandler onDel = null;
 
@@ -45,7 +43,7 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void btDelete_Click(object sender, EventArgs e)
+        private void btDel_Click(object sender, EventArgs e)
         {
             if (onDel != null)
             {

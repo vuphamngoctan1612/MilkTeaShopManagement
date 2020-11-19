@@ -22,6 +22,8 @@ namespace MilkTeaHouseProject
         private Form activeForm;
         private Panel leftCurrentButton;
 
+        public string UserName { get => this.lbUserName.Text; set => this.lbUserName.Text = value; }
+
         public fMain()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        #region Methods
         private Color SelectThemeColor()
         {
             int index = random.Next(themeColor.ColorList.Count);
@@ -97,7 +100,19 @@ namespace MilkTeaHouseProject
             childForm.Show();
             lbButtonSelected.Text = childForm.Text;
         }
+        private void Reset()
+        {
+            DisableButton();
+            lbButtonSelected.Text = "HOME";
+            lbButtonSelected.ForeColor = Color.White;
+            currentButton = null;
+            leftCurrentButton.Visible = false;
+            pnTool.BackColor = btnExit.BackColor = btnMinimize.BackColor = btnZoom.BackColor = Color.White;
+            lbButtonSelected.ForeColor = Color.Black;
+        }
+        #endregion
 
+        #region Events
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -116,16 +131,6 @@ namespace MilkTeaHouseProject
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void Reset()
-        {
-            DisableButton();
-            lbButtonSelected.Text = "HOME";
-            lbButtonSelected.ForeColor = Color.White;
-            currentButton = null;
-            leftCurrentButton.Visible = false;
-            pnTool.BackColor = btnExit.BackColor = btnMinimize.BackColor = btnZoom.BackColor = Color.White;
-            lbButtonSelected.ForeColor = Color.Black;
-        }
 
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
@@ -134,7 +139,7 @@ namespace MilkTeaHouseProject
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fOrder(), sender);
+            OpenChildForm(new fOrder(this.lbUserName.Text), sender);
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
@@ -167,5 +172,6 @@ namespace MilkTeaHouseProject
         {
             this.Close();
         }
+        #endregion
     }
 }

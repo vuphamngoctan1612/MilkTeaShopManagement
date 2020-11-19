@@ -33,19 +33,20 @@
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
-            this.lbID = new Guna.UI.WinForms.GunaLabel();
-            this.txtBasicSalary = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStraight = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.lbIdIncrease = new System.Windows.Forms.Label();
             this.lbSalary = new System.Windows.Forms.Label();
             this.lbPos = new System.Windows.Forms.Label();
             this.lbBirth = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.pnImage = new System.Windows.Forms.Panel();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.pn.Controls.Add(this.btnExit);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(600, 27);
             this.pn.TabIndex = 0;
@@ -96,7 +97,7 @@
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(575, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -113,49 +114,31 @@
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnContain.Controls.Add(this.lbID);
-            this.pnContain.Controls.Add(this.txtBasicSalary);
+            this.pnContain.Controls.Add(this.txtSalary);
             this.pnContain.Controls.Add(this.dateTimePicker1);
             this.pnContain.Controls.Add(this.btnReturn);
             this.pnContain.Controls.Add(this.btnEdit);
             this.pnContain.Controls.Add(this.pnStraight);
             this.pnContain.Controls.Add(this.comboBox1);
             this.pnContain.Controls.Add(this.txtName);
+            this.pnContain.Controls.Add(this.lbIdIncrease);
             this.pnContain.Controls.Add(this.lbSalary);
             this.pnContain.Controls.Add(this.lbPos);
             this.pnContain.Controls.Add(this.lbBirth);
             this.pnContain.Controls.Add(this.lbName);
+            this.pnContain.Controls.Add(this.lbID);
             this.pnContain.Controls.Add(this.pnImage);
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContain.Location = new System.Drawing.Point(0, 27);
-            this.pnContain.Margin = new System.Windows.Forms.Padding(2);
+            this.pnContain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnContain.Name = "pnContain";
             this.pnContain.Size = new System.Drawing.Size(600, 402);
             this.pnContain.TabIndex = 1;
             // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbID.Location = new System.Drawing.Point(366, 44);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(18, 15);
-            this.lbID.TabIndex = 21;
-            this.lbID.Text = "ID";
-            // 
-            // txtBasicSalary
-            // 
-            this.txtBasicSalary.Location = new System.Drawing.Point(319, 284);
-            this.txtBasicSalary.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBasicSalary.Name = "txtBasicSalary";
-            this.txtBasicSalary.Size = new System.Drawing.Size(238, 20);
-            this.txtBasicSalary.TabIndex = 20;
-            this.txtBasicSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasicSalary_KeyPress);
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(319, 159);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(238, 20);
             this.dateTimePicker1.TabIndex = 19;
@@ -180,7 +163,7 @@
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(461, 332);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -214,7 +197,7 @@
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnEdit.Location = new System.Drawing.Point(319, 332);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -232,7 +215,7 @@
             // 
             this.pnStraight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
             this.pnStraight.Location = new System.Drawing.Point(258, 0);
-            this.pnStraight.Margin = new System.Windows.Forms.Padding(2);
+            this.pnStraight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnStraight.Name = "pnStraight";
             this.pnStraight.Size = new System.Drawing.Size(12, 402);
             this.pnStraight.TabIndex = 17;
@@ -240,12 +223,8 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Phục Vụ",
-            "Pha Chế",
-            "Thu Ngân"});
             this.comboBox1.Location = new System.Drawing.Point(319, 217);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(238, 21);
             this.comboBox1.TabIndex = 15;
@@ -253,10 +232,21 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(319, 101);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(238, 20);
             this.txtName.TabIndex = 14;
+            // 
+            // lbIdIncrease
+            // 
+            this.lbIdIncrease.AutoSize = true;
+            this.lbIdIncrease.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdIncrease.Location = new System.Drawing.Point(392, 37);
+            this.lbIdIncrease.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbIdIncrease.Name = "lbIdIncrease";
+            this.lbIdIncrease.Size = new System.Drawing.Size(24, 20);
+            this.lbIdIncrease.TabIndex = 13;
+            this.lbIdIncrease.Text = "ID";
             // 
             // lbSalary
             // 
@@ -306,6 +296,18 @@
             this.lbName.TabIndex = 13;
             this.lbName.Text = "Họ tên:";
             // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbID.Location = new System.Drawing.Point(316, 37);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(27, 20);
+            this.lbID.TabIndex = 13;
+            this.lbID.Text = "ID:";
+            // 
             // pnImage
             // 
             this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
@@ -313,10 +315,18 @@
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnImage.Location = new System.Drawing.Point(53, 38);
-            this.pnImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pnImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(158, 154);
             this.pnImage.TabIndex = 12;
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(320, 283);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(238, 20);
+            this.txtSalary.TabIndex = 20;
             // 
             // fEditStaff
             // 
@@ -326,7 +336,7 @@
             this.Controls.Add(this.pnContain);
             this.Controls.Add(this.pn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fEditStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fEditStaff";
@@ -345,17 +355,18 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private System.Windows.Forms.Panel pnContain;
         private System.Windows.Forms.Panel pnImage;
+        private System.Windows.Forms.Label lbIdIncrease;
         private System.Windows.Forms.Label lbSalary;
         private System.Windows.Forms.Label lbPos;
         private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbID;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
         private System.Windows.Forms.Panel pnStraight;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtBasicSalary;
-        private Guna.UI.WinForms.GunaLabel lbID;
+        private System.Windows.Forms.TextBox txtSalary;
     }
 }

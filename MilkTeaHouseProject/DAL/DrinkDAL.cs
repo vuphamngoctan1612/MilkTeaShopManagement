@@ -22,7 +22,7 @@ namespace MilkTeaShopManagement.DAL
 
         private DrinkDAL() { }
 
-        public List<Drink> LoadDrinks()
+        public List<Drink> LoadDrink()
         {
             List<Drink> drinks = new List<Drink>();
 

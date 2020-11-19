@@ -31,6 +31,7 @@ namespace MilkTeaShopManagement.DAL
 
             return result.Rows.Count > 0;
         }
+
         public bool LoginStaff(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
@@ -41,13 +42,26 @@ namespace MilkTeaShopManagement.DAL
 
             return result.Rows.Count > 0;
         }
-        public bool SignUpAdmin(string userName, string passWord,string name, string birthDate)
+
+        public bool Login(string username, string password)
+        {
+            password = Encryptor.Instance.Encrypt(password);
+
+            string query = "SELECT * FROM Account WHERE UserName = '" + username + "' AND PassWord = '" + password + "'";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+
+            return result.Rows.Count > 0;
+        }
+
+        public bool SignUp(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
             bool res = false;
+
             try
             {
-                string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 0)";
+                string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 1)";
 
                 res = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             }
@@ -55,26 +69,8 @@ namespace MilkTeaShopManagement.DAL
             {
                 MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
             }
-            string queryAdmin = "SELECT ID FROM Admin";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(queryAdmin);
-            int newID = int.Parse(dt.Rows[dt.Rows.Count - 1].ItemArray[0].ToString()) + 1;
-            string que = "INSERT INTO Admin VALUES (" + newID + ",N'" + name + "','" + birthDate + "','" + userName + "')";
-            DataProvider.Instance.ExecuteQuery(que);
-            return res;
-        }
 
-        public void SignUp(string username, string password)
-        {
-            string query = "USP_InsertAcc @username , @password";
-            password = Encryptor.Instance.Encrypt(password);
-            try
-            {
-                DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, password });
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Tai khoan ton tai");
-            }
+            return res;
         }
         public void DelAccount(string username)
         {

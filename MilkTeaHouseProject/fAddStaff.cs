@@ -1,5 +1,4 @@
 ﻿using System;
-using MilkTeaShopManagement.DAL;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaHouseProject.DAL;
+using MilkTeaHouseProject.DTO;
+using MilkTeaShopManagement.DAL;
+using MilkTeaShopManagement.DTO;
 
 namespace MilkTeaHouseProject
 {
@@ -22,21 +25,27 @@ namespace MilkTeaHouseProject
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        #region Events
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void pn_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.txtUser.Text;
@@ -48,7 +57,7 @@ namespace MilkTeaHouseProject
             {
                 MessageBox.Show("Chọn Công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(this.txtBasicSalary.Text))
+            else if (string.IsNullOrEmpty(this.txtSalary.Text))
             {
                 MessageBox.Show("Nhập mức lương cơ bản", "Error");
             }
@@ -63,7 +72,7 @@ namespace MilkTeaHouseProject
             else
             {
                 Account.Instance.SignUp(this.txtUser.Text, this.txtPass.Text);
-                StaffDAL.Instance.AddStaff(this.txtName.Text, this.dateTimePicker1.Value, this.cbbPos.Text, 96, int.Parse(this.txtBasicSalary.Text), this.txtUser.Text); ;
+                StaffDAL.Instance.AddStaff(this.txtName.Text, this.dateTimePicker1.Value, this.cbbPos.Text, 96, int.Parse(this.txtSalary.Text), this.txtUser.Text); ;
                 this.Close();
             }
         }
@@ -72,7 +81,5 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
-        #endregion
-
     }
 }
