@@ -43,7 +43,7 @@ namespace MilkTeaHouseProject.DTO
             this.birthDate = (DateTime)row["BirthDate"];
             this.position = row["Position"].ToString();
             this.userName = row["UserName"].ToString();
-            this.workingTime = int.Parse(row["WorkingTime"].ToString());
+            this.workingTime = int.Parse(row["OverTime"].ToString());
             this.salary = (int)row["Salary"];
         }
     }

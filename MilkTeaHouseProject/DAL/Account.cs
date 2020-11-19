@@ -72,5 +72,9 @@ namespace MilkTeaShopManagement.DAL
 
             return res;
         }
+        public void DelAccount(string username)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_DelAccount @username ", new object[] { username });
+        }
     }
 }

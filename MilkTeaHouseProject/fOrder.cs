@@ -71,8 +71,7 @@ namespace MilkTeaHouseProject
             try
             {
                 int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
-                int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text); // chua co bill => return -1
+                int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text);
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
@@ -81,7 +80,7 @@ namespace MilkTeaHouseProject
                     BillDAL.Instance.InsertBill(idBill, idStaff);
                 }
 
-                BillInfoDAL.Instance.InsertBillInfo(idBillInfo, idBill, idDrink, count);
+                BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
             }
             catch (SqlException ex)
             {

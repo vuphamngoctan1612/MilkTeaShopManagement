@@ -22,21 +22,19 @@ namespace MilkTeaHouseProject.DAL
 
         private StaffDAL() { }
 
-        public List<Staff> GetListStaff()
+        public List<Staff> LoadStaffs()
         {
-            List<Staff> listStaff = new List<Staff>();
+            List<Staff> staffs = new List<Staff>();
 
-            string query = "select * from Staff";
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff");
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
-            foreach (DataRow item in data.Rows)
+            foreach (DataRow dataRow in data.Rows)
             {
-                Staff staff = new Staff(item);
-                listStaff.Add(staff);
+                Staff staff = new Staff(dataRow);
+                staffs.Add(staff);
             }
 
-            return listStaff;
+            return staffs;
         }
 
         public int GetStaffID(string username)
@@ -52,6 +50,24 @@ namespace MilkTeaHouseProject.DAL
                 return staff.ID;
             }
             return -1;
+        }
+        public void EditStaff(int ID, string name, DateTime birthDate, string pos, int overtime, int salary)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_EditStaff @ID , @Name , @birthday , @pos , @overtime , @salary ", new object[] { ID, name, birthDate, pos, overtime, salary });
+        }
+        public void DelStaff(int iD)
+        {
+            string query = "DELETE FROM Staff WHERE ID = " + iD + ";";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void AddStaff(string name, DateTime birthDate, string pos, int overtime, int salary, string username)
+        {
+            string queryStaff = "SELECT MAX(ID) FROM Staff";
+            int id = (int)DataProvider.Instance.ExecuteScalar(queryStaff) + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @birthday , @pos , @username , @workingtime , @salary ",
+                new object[] { id, name, birthDate, pos, username, salary, overtime });
         }
     }
 }

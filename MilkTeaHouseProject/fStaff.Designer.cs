@@ -29,133 +29,149 @@
         private void InitializeComponent()
         {
             this.pnStaff = new System.Windows.Forms.Panel();
-            this.pnBtn = new System.Windows.Forms.Panel();
-            this.btnDelete = new Guna.UI.WinForms.GunaCircleButton();
-            this.btnEdit = new Guna.UI.WinForms.GunaCircleButton();
-            this.btnAdd = new Guna.UI.WinForms.GunaCircleButton();
-            this.dtgvStaff = new System.Windows.Forms.DataGridView();
+            this.btAdd = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.lbBirthDate = new Guna.UI.WinForms.GunaLabel();
+            this.lbPosition = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.lbOverTime = new Guna.UI.WinForms.GunaLabel();
+            this.lbSalary = new Guna.UI.WinForms.GunaLabel();
+            this.lbID = new Guna.UI.WinForms.GunaLabel();
+            this.flowLayoutPanelStaff = new System.Windows.Forms.FlowLayoutPanel();
             this.pnStaff.SuspendLayout();
-            this.pnBtn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // pnStaff
             // 
-            this.pnStaff.Controls.Add(this.pnBtn);
-            this.pnStaff.Controls.Add(this.dtgvStaff);
+            this.pnStaff.Controls.Add(this.btAdd);
+            this.pnStaff.Controls.Add(this.gunaLabel7);
+            this.pnStaff.Controls.Add(this.lbBirthDate);
+            this.pnStaff.Controls.Add(this.lbPosition);
+            this.pnStaff.Controls.Add(this.gunaLabel4);
+            this.pnStaff.Controls.Add(this.lbOverTime);
+            this.pnStaff.Controls.Add(this.lbSalary);
+            this.pnStaff.Controls.Add(this.lbID);
+            this.pnStaff.Controls.Add(this.flowLayoutPanelStaff);
             this.pnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnStaff.Location = new System.Drawing.Point(0, 0);
+            this.pnStaff.Margin = new System.Windows.Forms.Padding(2);
             this.pnStaff.Name = "pnStaff";
-            this.pnStaff.Size = new System.Drawing.Size(1088, 642);
+            this.pnStaff.Size = new System.Drawing.Size(1213, 839);
             this.pnStaff.TabIndex = 0;
             // 
-            // pnBtn
+            // btAdd
             // 
-            this.pnBtn.Controls.Add(this.btnDelete);
-            this.pnBtn.Controls.Add(this.btnEdit);
-            this.pnBtn.Controls.Add(this.btnAdd);
-            this.pnBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnBtn.Location = new System.Drawing.Point(782, 0);
-            this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(306, 642);
-            this.pnBtn.TabIndex = 1;
+            this.btAdd.AnimationHoverSpeed = 0.07F;
+            this.btAdd.AnimationSpeed = 0.03F;
+            this.btAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btAdd.BorderColor = System.Drawing.Color.Black;
+            this.btAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
+            this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btAdd.Location = new System.Drawing.Point(1025, 12);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btAdd.OnHoverImage = null;
+            this.btAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btAdd.Size = new System.Drawing.Size(40, 40);
+            this.btAdd.TabIndex = 9;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // btnDelete
+            // gunaLabel7
             // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelete.AnimationHoverSpeed = 0.07F;
-            this.btnDelete.AnimationSpeed = 0.03F;
-            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.Black;
-            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::MilkTeaHouseProject.Properties.Resources.delete_bin_32px;
-            this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(115, 393);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDelete.OnHoverImage = null;
-            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDelete.Size = new System.Drawing.Size(77, 73);
-            this.btnDelete.TabIndex = 2;
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.Location = new System.Drawing.Point(39, 26);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(62, 25);
+            this.gunaLabel7.TabIndex = 8;
+            this.gunaLabel7.Text = "Name";
             // 
-            // btnEdit
+            // lbBirthDate
             // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEdit.AnimationHoverSpeed = 0.07F;
-            this.btnEdit.AnimationSpeed = 0.03F;
-            this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
-            this.btnEdit.BorderColor = System.Drawing.Color.Black;
-            this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = global::MilkTeaHouseProject.Properties.Resources.pencil_24px;
-            this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(115, 285);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEdit.OnHoverImage = null;
-            this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEdit.Size = new System.Drawing.Size(77, 73);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.lbBirthDate.AutoSize = true;
+            this.lbBirthDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirthDate.Location = new System.Drawing.Point(344, 26);
+            this.lbBirthDate.Name = "lbBirthDate";
+            this.lbBirthDate.Size = new System.Drawing.Size(91, 25);
+            this.lbBirthDate.TabIndex = 7;
+            this.lbBirthDate.Text = "BirthDate";
             // 
-            // btnAdd
+            // lbPosition
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdd.AnimationHoverSpeed = 0.07F;
-            this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Black;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = null;
-            this.btnAdd.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnAdd.Location = new System.Drawing.Point(115, 177);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.OnHoverImage = null;
-            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Size = new System.Drawing.Size(77, 73);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "+";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.lbPosition.AutoSize = true;
+            this.lbPosition.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.Location = new System.Drawing.Point(591, 26);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(79, 25);
+            this.lbPosition.TabIndex = 6;
+            this.lbPosition.Text = "Position";
             // 
-            // dtgvStaff
+            // gunaLabel4
             // 
-            this.dtgvStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvStaff.Location = new System.Drawing.Point(0, 0);
-            this.dtgvStaff.Name = "dtgvStaff";
-            this.dtgvStaff.RowHeadersWidth = 62;
-            this.dtgvStaff.RowTemplate.Height = 28;
-            this.dtgvStaff.Size = new System.Drawing.Size(1088, 642);
-            this.dtgvStaff.TabIndex = 0;
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.Location = new System.Drawing.Point(696, 26);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(100, 25);
+            this.gunaLabel4.TabIndex = 5;
+            this.gunaLabel4.Text = "UserName";
+            // 
+            // lbOverTime
+            // 
+            this.lbOverTime.AutoSize = true;
+            this.lbOverTime.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverTime.Location = new System.Drawing.Point(802, 26);
+            this.lbOverTime.Name = "lbOverTime";
+            this.lbOverTime.Size = new System.Drawing.Size(93, 25);
+            this.lbOverTime.TabIndex = 4;
+            this.lbOverTime.Text = "OverTime";
+            // 
+            // lbSalary
+            // 
+            this.lbSalary.AutoSize = true;
+            this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalary.Location = new System.Drawing.Point(901, 26);
+            this.lbSalary.Name = "lbSalary";
+            this.lbSalary.Size = new System.Drawing.Size(63, 25);
+            this.lbSalary.TabIndex = 3;
+            this.lbSalary.Text = "Salary";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(3, 26);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(30, 25);
+            this.lbID.TabIndex = 1;
+            this.lbID.Text = "ID";
+            // 
+            // flowLayoutPanelStaff
+            // 
+            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 54);
+            this.flowLayoutPanelStaff.Name = "flowLayoutPanelStaff";
+            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1213, 785);
+            this.flowLayoutPanelStaff.TabIndex = 0;
             // 
             // fStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 642);
+            this.ClientSize = new System.Drawing.Size(1213, 839);
             this.Controls.Add(this.pnStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fStaff";
             this.Text = "NHÂN VIÊN";
             this.pnStaff.ResumeLayout(false);
-            this.pnBtn.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).EndInit();
+            this.pnStaff.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -163,10 +179,14 @@
         #endregion
 
         private System.Windows.Forms.Panel pnStaff;
-        private System.Windows.Forms.DataGridView dtgvStaff;
-        private System.Windows.Forms.Panel pnBtn;
-        private Guna.UI.WinForms.GunaCircleButton btnDelete;
-        private Guna.UI.WinForms.GunaCircleButton btnEdit;
-        private Guna.UI.WinForms.GunaCircleButton btnAdd;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelStaff;
+        private Guna.UI.WinForms.GunaButton btAdd;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private Guna.UI.WinForms.GunaLabel lbBirthDate;
+        private Guna.UI.WinForms.GunaLabel lbPosition;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel lbOverTime;
+        private Guna.UI.WinForms.GunaLabel lbSalary;
+        private Guna.UI.WinForms.GunaLabel lbID;
     }
 }

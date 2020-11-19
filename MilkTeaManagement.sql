@@ -78,6 +78,8 @@ insert into Drink (ID, Name, Price) values (4,N'Kem Sữa',39000)
 insert into Drink (ID, Name, Price) values (5,'Latte',55000)
 insert into Drink (ID, Name, Price) values (6,'Cappuccino',55000)
 
+select * from Drink
+
 alter proc USP_UpdateBillInfo
 @Count int, @ID int, @BillID int
 as
@@ -168,10 +170,6 @@ go
 
 insert into Account values ('admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0)
 
-insert into Bill (ID, CheckIn) values (1,GETDATE())
-insert into Bill (ID, CheckIn) values (2,GETDATE())
-insert into Bill (ID, CheckIn) values (3,GETDATE())
-
 insert into Staff (ID, Name, BirthDate, Salary, WorkingTime) values (1, N'Trần Thế Anh', '2001-11-22', 3000000, 200)
 insert into Staff (ID, Name, BirthDate, Salary, WorkingTime) values (2, N'Quang', '2001-4-15', 4000000, 200)
 
@@ -201,3 +199,15 @@ begin
 	where UserName = @UserName
 end
 go
+
+select * from BillInfo
+
+select * from Bill
+select * from Staff
+
+update bill	
+set StaffID = null	
+where StaffID = 2
+
+delete from Staff 
+where ID = 2

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAddStaff));
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStraight = new System.Windows.Forms.Panel();
-            this.lbBasicSalary = new System.Windows.Forms.Label();
             this.cbbPos = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbIdIncrease = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.lbUser = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnImage = new System.Windows.Forms.Panel();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,8 @@
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(707, 511);
+            this.btnReturn.Location = new System.Drawing.Point(471, 332);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -82,7 +83,7 @@
             this.btnReturn.OnHoverImage = null;
             this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
-            this.btnReturn.Size = new System.Drawing.Size(142, 42);
+            this.btnReturn.Size = new System.Drawing.Size(95, 27);
             this.btnReturn.TabIndex = 18;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -91,44 +92,38 @@
             // pnStraight
             // 
             this.pnStraight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
-            this.pnStraight.Location = new System.Drawing.Point(425, 0);
+            this.pnStraight.Location = new System.Drawing.Point(283, 0);
+            this.pnStraight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnStraight.Name = "pnStraight";
-            this.pnStraight.Size = new System.Drawing.Size(18, 618);
+            this.pnStraight.Size = new System.Drawing.Size(12, 402);
             this.pnStraight.TabIndex = 17;
-            // 
-            // lbBasicSalary
-            // 
-            this.lbBasicSalary.AutoSize = true;
-            this.lbBasicSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBasicSalary.Location = new System.Drawing.Point(494, 437);
-            this.lbBasicSalary.Name = "lbBasicSalary";
-            this.lbBasicSalary.Size = new System.Drawing.Size(333, 30);
-            this.lbBasicSalary.TabIndex = 16;
-            this.lbBasicSalary.Text = "Hiển thị lương cơ bản theo vị trí";
             // 
             // cbbPos
             // 
             this.cbbPos.FormattingEnabled = true;
-            this.cbbPos.Location = new System.Drawing.Point(494, 334);
+            this.cbbPos.Location = new System.Drawing.Point(329, 217);
+            this.cbbPos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbPos.Name = "cbbPos";
-            this.cbbPos.Size = new System.Drawing.Size(355, 28);
+            this.cbbPos.Size = new System.Drawing.Size(238, 21);
             this.cbbPos.TabIndex = 15;
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(494, 155);
+            this.txtName.Location = new System.Drawing.Point(329, 101);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(355, 29);
+            this.txtName.Size = new System.Drawing.Size(238, 22);
             this.txtName.TabIndex = 14;
             // 
             // lbIdIncrease
             // 
             this.lbIdIncrease.AutoSize = true;
             this.lbIdIncrease.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdIncrease.Location = new System.Drawing.Point(603, 57);
+            this.lbIdIncrease.Location = new System.Drawing.Point(402, 37);
+            this.lbIdIncrease.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbIdIncrease.Name = "lbIdIncrease";
-            this.lbIdIncrease.Size = new System.Drawing.Size(35, 30);
+            this.lbIdIncrease.Size = new System.Drawing.Size(24, 20);
             this.lbIdIncrease.TabIndex = 13;
             this.lbIdIncrease.Text = "ID";
             // 
@@ -137,9 +132,10 @@
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSalary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbSalary.Location = new System.Drawing.Point(489, 385);
+            this.lbSalary.Location = new System.Drawing.Point(326, 250);
+            this.lbSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(147, 30);
+            this.lbSalary.Size = new System.Drawing.Size(99, 20);
             this.lbSalary.TabIndex = 13;
             this.lbSalary.Text = "Lương cơ bản:";
             // 
@@ -148,9 +144,10 @@
             this.lbBirth.AutoSize = true;
             this.lbBirth.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBirth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbBirth.Location = new System.Drawing.Point(489, 194);
+            this.lbBirth.Location = new System.Drawing.Point(326, 126);
+            this.lbBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBirth.Name = "lbBirth";
-            this.lbBirth.Size = new System.Drawing.Size(225, 30);
+            this.lbBirth.Size = new System.Drawing.Size(150, 20);
             this.lbBirth.TabIndex = 13;
             this.lbBirth.Text = "Ngày tháng năm sinh:";
             // 
@@ -159,9 +156,10 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbName.Location = new System.Drawing.Point(489, 113);
+            this.lbName.Location = new System.Drawing.Point(326, 73);
+            this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(82, 30);
+            this.lbName.Size = new System.Drawing.Size(55, 20);
             this.lbName.TabIndex = 13;
             this.lbName.Text = "Họ tên:";
             // 
@@ -170,9 +168,10 @@
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbId.Location = new System.Drawing.Point(489, 57);
+            this.lbId.Location = new System.Drawing.Point(326, 37);
+            this.lbId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(40, 30);
+            this.lbId.Size = new System.Drawing.Size(27, 20);
             this.lbId.TabIndex = 13;
             this.lbId.Text = "ID:";
             // 
@@ -181,9 +180,10 @@
             this.lbNameForm.AutoSize = true;
             this.lbNameForm.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameForm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNameForm.Location = new System.Drawing.Point(19, 9);
+            this.lbNameForm.Location = new System.Drawing.Point(13, 6);
+            this.lbNameForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNameForm.Name = "lbNameForm";
-            this.lbNameForm.Size = new System.Drawing.Size(173, 30);
+            this.lbNameForm.Size = new System.Drawing.Size(119, 20);
             this.lbNameForm.TabIndex = 2;
             this.lbNameForm.Text = "Thêm nhân viên";
             // 
@@ -194,8 +194,9 @@
             this.pn.Controls.Add(this.btnExit);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
+            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pn.Name = "pn";
-            this.pn.Size = new System.Drawing.Size(900, 42);
+            this.pn.Size = new System.Drawing.Size(600, 27);
             this.pn.TabIndex = 2;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
             // 
@@ -219,7 +220,8 @@
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(862, 0);
+            this.btnExit.Location = new System.Drawing.Point(575, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -227,7 +229,7 @@
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(38, 42);
+            this.btnExit.Size = new System.Drawing.Size(25, 27);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "X";
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -238,15 +240,17 @@
             this.lbPos.AutoSize = true;
             this.lbPos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPos.Location = new System.Drawing.Point(489, 288);
+            this.lbPos.Location = new System.Drawing.Point(326, 187);
+            this.lbPos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPos.Name = "lbPos";
-            this.lbPos.Size = new System.Drawing.Size(65, 30);
+            this.lbPos.Size = new System.Drawing.Size(43, 20);
             this.lbPos.TabIndex = 13;
             this.lbPos.Text = "Vị trí:";
             // 
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnContain.Controls.Add(this.txtSalary);
             this.pnContain.Controls.Add(this.dateTimePicker1);
             this.pnContain.Controls.Add(this.pnStraight);
             this.pnContain.Controls.Add(this.txtPass);
@@ -255,7 +259,6 @@
             this.pnContain.Controls.Add(this.lbUser);
             this.pnContain.Controls.Add(this.btnReturn);
             this.pnContain.Controls.Add(this.btnAdd);
-            this.pnContain.Controls.Add(this.lbBasicSalary);
             this.pnContain.Controls.Add(this.cbbPos);
             this.pnContain.Controls.Add(this.txtName);
             this.pnContain.Controls.Add(this.lbIdIncrease);
@@ -266,24 +269,27 @@
             this.pnContain.Controls.Add(this.lbId);
             this.pnContain.Controls.Add(this.pnImage);
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContain.Location = new System.Drawing.Point(0, 42);
+            this.pnContain.Location = new System.Drawing.Point(0, 27);
+            this.pnContain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnContain.Name = "pnContain";
-            this.pnContain.Size = new System.Drawing.Size(900, 576);
+            this.pnContain.Size = new System.Drawing.Size(600, 375);
             this.pnContain.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(494, 245);
+            this.dateTimePicker1.Location = new System.Drawing.Point(329, 159);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(355, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(238, 20);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(36, 469);
+            this.txtPass.Location = new System.Drawing.Point(24, 305);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(355, 29);
+            this.txtPass.Size = new System.Drawing.Size(238, 22);
             this.txtPass.TabIndex = 20;
             // 
             // lbPass
@@ -291,18 +297,20 @@
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPass.Location = new System.Drawing.Point(31, 427);
+            this.lbPass.Location = new System.Drawing.Point(21, 278);
+            this.lbPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(108, 30);
+            this.lbPass.Size = new System.Drawing.Size(72, 20);
             this.lbPass.TabIndex = 19;
             this.lbPass.Text = "Mật khẩu:";
             // 
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(36, 382);
+            this.txtUser.Location = new System.Drawing.Point(24, 248);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(355, 29);
+            this.txtUser.Size = new System.Drawing.Size(238, 22);
             this.txtUser.TabIndex = 20;
             // 
             // lbUser
@@ -310,9 +318,10 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbUser.Location = new System.Drawing.Point(31, 340);
+            this.lbUser.Location = new System.Drawing.Point(21, 221);
+            this.lbUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(161, 30);
+            this.lbUser.Size = new System.Drawing.Size(107, 20);
             this.lbUser.TabIndex = 19;
             this.lbUser.Text = "Tên đăng nhập:";
             // 
@@ -335,7 +344,8 @@
             this.btnAdd.Image = null;
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.Location = new System.Drawing.Point(494, 511);
+            this.btnAdd.Location = new System.Drawing.Point(329, 332);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -343,10 +353,11 @@
             this.btnAdd.OnHoverImage = null;
             this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Size = new System.Drawing.Size(142, 42);
+            this.btnAdd.Size = new System.Drawing.Size(95, 27);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pnImage
             // 
@@ -354,21 +365,33 @@
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnImage.Location = new System.Drawing.Point(79, 59);
+            this.pnImage.Location = new System.Drawing.Point(53, 38);
+            this.pnImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnImage.Name = "pnImage";
-            this.pnImage.Size = new System.Drawing.Size(236, 236);
+            this.pnImage.Size = new System.Drawing.Size(158, 154);
             this.pnImage.TabIndex = 12;
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Location = new System.Drawing.Point(330, 280);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(238, 22);
+            this.txtSalary.TabIndex = 22;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // fAddStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(900, 618);
+            this.ClientSize = new System.Drawing.Size(600, 402);
             this.Controls.Add(this.pnContain);
             this.Controls.Add(this.pn);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fAddStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddStaff";
@@ -385,7 +408,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private System.Windows.Forms.Panel pnStraight;
-        private System.Windows.Forms.Label lbBasicSalary;
         private System.Windows.Forms.ComboBox cbbPos;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbIdIncrease;
@@ -404,5 +426,6 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtSalary;
     }
 }
