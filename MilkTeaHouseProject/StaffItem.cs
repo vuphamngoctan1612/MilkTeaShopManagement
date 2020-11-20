@@ -50,5 +50,18 @@ namespace MilkTeaHouseProject
                 onDel.Invoke(this, new EventArgs());
             }
         }
+
+        private void StaffItem_SizeChanged(object sender, EventArgs e)
+        {
+            int space =  this.Width/8-10;
+            lbID.Location = new Point(30, 25);
+            lbName.Location = new Point(space - 20, 25);
+            lbBirthDate.Location = new Point(space * 3, 25);
+            lbPosition.Location = new Point(space * 4 + 10, 25);
+            lbUserName.Location = new Point(space * 5 + 10, 25);
+            lbSalary.Location = new Point(space * 6 + 30, 25);
+            btEdit.Location = new Point(space * 7 + 30, 25);
+            btDel.Location = new Point(space * 7 + 110, 25);
+        }
     }
 }
