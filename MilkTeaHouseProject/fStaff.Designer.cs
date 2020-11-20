@@ -89,9 +89,9 @@
             this.lbBirthDate.Location = new System.Drawing.Point(338, -1);
             this.lbBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBirthDate.Name = "lbBirthDate";
-            this.lbBirthDate.Size = new System.Drawing.Size(137, 40);
+            this.lbBirthDate.Size = new System.Drawing.Size(144, 40);
             this.lbBirthDate.TabIndex = 22;
-            this.lbBirthDate.Text = "BirthDate";
+            this.lbBirthDate.Text = "Ngày sinh";
             // 
             // lbPosition
             // 
@@ -100,9 +100,9 @@
             this.lbPosition.Location = new System.Drawing.Point(693, 10);
             this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(118, 40);
+            this.lbPosition.Size = new System.Drawing.Size(77, 40);
             this.lbPosition.TabIndex = 21;
-            this.lbPosition.Text = "Position";
+            this.lbPosition.Text = "Vị trí";
             // 
             // lbUserName
             // 
@@ -111,20 +111,20 @@
             this.lbUserName.Location = new System.Drawing.Point(872, -1);
             this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(151, 40);
+            this.lbUserName.Size = new System.Drawing.Size(205, 40);
             this.lbUserName.TabIndex = 20;
-            this.lbUserName.Text = "UserName";
+            this.lbUserName.Text = "Tên đăng nhập";
             // 
             // lbOverTime
             // 
             this.lbOverTime.AutoSize = true;
             this.lbOverTime.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOverTime.Location = new System.Drawing.Point(1045, 21);
+            this.lbOverTime.Location = new System.Drawing.Point(1332, 5);
             this.lbOverTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOverTime.Name = "lbOverTime";
-            this.lbOverTime.Size = new System.Drawing.Size(140, 40);
+            this.lbOverTime.Size = new System.Drawing.Size(190, 40);
             this.lbOverTime.TabIndex = 19;
-            this.lbOverTime.Text = "OverTime";
+            this.lbOverTime.Text = "Giờ làm thêm";
             this.lbOverTime.Visible = false;
             // 
             // lbSalary
@@ -134,9 +134,9 @@
             this.lbSalary.Location = new System.Drawing.Point(1206, -1);
             this.lbSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(93, 40);
+            this.lbSalary.Size = new System.Drawing.Size(98, 40);
             this.lbSalary.TabIndex = 18;
-            this.lbSalary.Text = "Salary";
+            this.lbSalary.Text = "Lương";
             // 
             // lbName
             // 
@@ -145,9 +145,9 @@
             this.lbName.Location = new System.Drawing.Point(137, 0);
             this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(94, 40);
+            this.lbName.Size = new System.Drawing.Size(191, 40);
             this.lbName.TabIndex = 16;
-            this.lbName.Text = "Name";
+            this.lbName.Text = "Tên nhân viên";
             // 
             // lbID
             // 
@@ -156,9 +156,9 @@
             this.lbID.Location = new System.Drawing.Point(39, 4);
             this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(45, 40);
+            this.lbID.Size = new System.Drawing.Size(189, 40);
             this.lbID.TabIndex = 10;
-            this.lbID.Text = "ID";
+            this.lbID.Text = "Mã nhân viên";
             // 
             // panel2
             // 

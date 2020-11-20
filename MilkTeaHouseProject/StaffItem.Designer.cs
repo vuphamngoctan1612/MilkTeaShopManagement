@@ -29,6 +29,7 @@ namespace MilkTeaHouseProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbID = new Guna.UI.WinForms.GunaLabel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbBirthDate = new Guna.UI.WinForms.GunaLabel();
@@ -38,6 +39,7 @@ namespace MilkTeaHouseProject
             this.btEdit = new Guna.UI.WinForms.GunaButton();
             this.btDel = new Guna.UI.WinForms.GunaButton();
             this.lbOverTime = new Guna.UI.WinForms.GunaLabel();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.SuspendLayout();
             // 
             // lbID
@@ -47,20 +49,20 @@ namespace MilkTeaHouseProject
             this.lbID.Location = new System.Drawing.Point(5, 25);
             this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(45, 40);
+            this.lbID.Size = new System.Drawing.Size(189, 40);
             this.lbID.TabIndex = 2;
-            this.lbID.Text = "ID";
+            this.lbID.Text = "Mã nhân viên";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(58, 37);
+            this.lbName.Location = new System.Drawing.Point(202, 26);
             this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(94, 40);
+            this.lbName.Size = new System.Drawing.Size(191, 40);
             this.lbName.TabIndex = 9;
-            this.lbName.Text = "Name";
+            this.lbName.Text = "Tên nhân viên";
             // 
             // lbBirthDate
             // 
@@ -69,9 +71,9 @@ namespace MilkTeaHouseProject
             this.lbBirthDate.Location = new System.Drawing.Point(516, 37);
             this.lbBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBirthDate.Name = "lbBirthDate";
-            this.lbBirthDate.Size = new System.Drawing.Size(137, 40);
+            this.lbBirthDate.Size = new System.Drawing.Size(144, 40);
             this.lbBirthDate.TabIndex = 10;
-            this.lbBirthDate.Text = "BirthDate";
+            this.lbBirthDate.Text = "Ngày sinh";
             // 
             // lbPosition
             // 
@@ -80,9 +82,9 @@ namespace MilkTeaHouseProject
             this.lbPosition.Location = new System.Drawing.Point(885, 37);
             this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(118, 40);
+            this.lbPosition.Size = new System.Drawing.Size(77, 40);
             this.lbPosition.TabIndex = 11;
-            this.lbPosition.Text = "Position";
+            this.lbPosition.Text = "Vị trí";
             // 
             // lbUserName
             // 
@@ -91,9 +93,9 @@ namespace MilkTeaHouseProject
             this.lbUserName.Location = new System.Drawing.Point(1044, 37);
             this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(151, 40);
+            this.lbUserName.Size = new System.Drawing.Size(205, 40);
             this.lbUserName.TabIndex = 12;
-            this.lbUserName.Text = "UserName";
+            this.lbUserName.Text = "Tên đăng nhập";
             // 
             // lbSalary
             // 
@@ -102,9 +104,9 @@ namespace MilkTeaHouseProject
             this.lbSalary.Location = new System.Drawing.Point(1352, 37);
             this.lbSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(93, 40);
+            this.lbSalary.Size = new System.Drawing.Size(98, 40);
             this.lbSalary.TabIndex = 14;
-            this.lbSalary.Text = "Salary";
+            this.lbSalary.Text = "Lương";
             // 
             // btEdit
             // 
@@ -172,10 +174,16 @@ namespace MilkTeaHouseProject
             this.lbOverTime.Text = "OverTime";
             this.lbOverTime.Visible = false;
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 10;
+            this.gunaElipse1.TargetControl = this;
+            // 
             // StaffItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.btDel);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.lbSalary);
@@ -205,5 +213,6 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaButton btEdit;
         private Guna.UI.WinForms.GunaButton btDel;
         private Guna.UI.WinForms.GunaLabel lbOverTime;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }

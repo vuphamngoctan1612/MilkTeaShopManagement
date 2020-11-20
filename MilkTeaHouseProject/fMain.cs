@@ -18,7 +18,6 @@ namespace MilkTeaHouseProject
     {
         private GunaAdvenceButton currentButton;
         private Random random;
-        private int tempIndex;
         private Form activeForm;
         private Panel leftCurrentButton;
 

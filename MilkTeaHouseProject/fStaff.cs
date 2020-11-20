@@ -71,13 +71,17 @@ namespace MilkTeaHouseProject
 
         private void flowLayoutPanelStaff_SizeChanged(object sender, EventArgs e)
         {
-            int space = this.flowLayoutPanelStaff.Width / 8-10;
-            lbID.Location = new Point(30, 4);
-            lbName.Location = new Point(space , 4);
+            foreach (Control item in flowLayoutPanelStaff.Controls)
+            {
+                item.Width = this.flowLayoutPanelStaff.Width;
+            }
+            int space = this.flowLayoutPanelStaff.Width / 8+3;
+            lbID.Location = new Point(5, 4);
+            lbName.Location = new Point(space+5 , 4);
             lbBirthDate.Location = new Point(space * 3, 4);
             lbPosition.Location = new Point(space * 4+10, 4);
-            lbUserName.Location = new Point(space * 5+10, 4);
-            lbSalary.Location = new Point(space * 6+30, 4);
+            lbUserName.Location = new Point(space * 5-10, 4);
+            lbSalary.Location = new Point(space * 6+20, 4);
         }
 
 
