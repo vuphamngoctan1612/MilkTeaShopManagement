@@ -51,9 +51,10 @@ namespace MilkTeaHouseProject.DAL
             }
             return -1;
         }
-        public void EditStaff(int ID, string name, DateTime birthDate, string pos, int overtime, int salary)
+        public void EditStaff(int ID, string name, DateTime birthDate, string pos, int salary, int overtime)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_EditStaff @ID , @Name , @birthday , @pos , @overtime , @salary ", new object[] { ID, name, birthDate, pos, overtime, salary });
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @birthday , @pos , @salary , @overtime ",
+                new object[] { ID, name, birthDate, pos, salary, overtime });
         }
         public void DelStaff(int iD)
         {
@@ -61,12 +62,12 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void AddStaff(string name, DateTime birthDate, string pos, int overtime, int salary, string username)
+        public void AddStaff(string name, DateTime birthDate, string pos, int salary, int overtime, string username)
         {
             string queryStaff = "SELECT MAX(ID) FROM Staff";
             int id = (int)DataProvider.Instance.ExecuteScalar(queryStaff) + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @birthday , @pos , @username , @workingtime , @salary ",
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @birthday , @pos , @username , @salary , @overtime ",
                 new object[] { id, name, birthDate, pos, username, salary, overtime });
         }
     }

@@ -36,26 +36,34 @@ namespace MilkTeaHouseProject
             }
 
         }
-        private void usTitle_onAdd(object sender, EventArgs e)
-        {
-            fAddStaff f = new fAddStaff();
-            f.ShowDialog();
-            this.flowLayoutPanelStaff.Controls.Clear();
-            LoadStaff();
-        }
 
         private void StaffItem_onDel(object sender, EventArgs e)
         {
-            BillDAL.Instance.UpDateStaffIDtoNULL(((sender as StaffItem).Tag as Staff).ID);
-            StaffDAL.Instance.DelStaff(((sender as StaffItem).Tag as Staff).ID);
-            Account.Instance.DelAccount(((sender as StaffItem).Tag as Staff).UserName);
-            
+            int iD = ((sender as StaffItem).Tag as Staff).ID;
+            string username = ((sender as StaffItem).Tag as Staff).UserName;
+            string pos = ((sender as StaffItem).Tag as Staff).Position;
+            if (pos == "Thu Ngân")
+            {
+                BillDAL.Instance.UpDateStaffIDtoNULL(iD);
+                StaffDAL.Instance.DelStaff(iD);
+                Account.Instance.DelAccount(username);
+            }
+            else
+            {
+                StaffDAL.Instance.DelStaff(iD);
+            }
+
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
-            fEditStaff frm = new fEditStaff(((sender as StaffItem).Tag as Staff).ID);
+            int iD = ((sender as StaffItem).Tag as Staff).ID;
+            string name = ((sender as StaffItem).Tag as Staff).Name;
+            DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
+            string pos = ((sender as StaffItem).Tag as Staff).Position;
+            int salary = ((sender as StaffItem).Tag as Staff).Salary;
+            fEditStaff frm = new fEditStaff(iD, name, birthDate, pos, salary);
             frm.ShowDialog();
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
@@ -75,13 +83,13 @@ namespace MilkTeaHouseProject
             {
                 item.Width = this.flowLayoutPanelStaff.Width;
             }
-            int space = this.flowLayoutPanelStaff.Width / 8+3;
+            int space = this.flowLayoutPanelStaff.Width / 8 + 3;
             lbID.Location = new Point(5, 4);
-            lbName.Location = new Point(space+5 , 4);
+            lbName.Location = new Point(space + 5, 4);
             lbBirthDate.Location = new Point(space * 3, 4);
-            lbPosition.Location = new Point(space * 4+10, 4);
-            lbUserName.Location = new Point(space * 5-10, 4);
-            lbSalary.Location = new Point(space * 6+20, 4);
+            lbPosition.Location = new Point(space * 4 + 10, 4);
+            lbUserName.Location = new Point(space * 5 - 10, 4);
+            lbSalary.Location = new Point(space * 6 + 20, 4);
         }
 
 

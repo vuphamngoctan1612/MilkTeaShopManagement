@@ -17,10 +17,14 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditStaff : Form
     {
-        public fEditStaff(int ID)
+        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, int salary)
         {
             InitializeComponent();
-            lbID.Text = ID.ToString();
+            this.lbIdIncrease.Text = ID.ToString();
+            this.txtName.Text = name;
+            this.dateTimePicker1.Value = BirthDate;
+            this.comboBox1.Text = pos;
+            this.txtSalary.Text = salary.ToString();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -44,24 +48,35 @@ namespace MilkTeaHouseProject
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.txtName.Text))
+            string iD = this.lbIdIncrease.Text;
+            string name = this.txtName.Text;
+            DateTime birthdate = this.dateTimePicker1.Value;
+            string pos = this.comboBox1.Text;
+            string salary = this.txtSalary.Text;
+            int overtime = 0;
+            if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
             }
-            else if (string.IsNullOrEmpty(this.comboBox1.Text))
+            else if (string.IsNullOrEmpty(pos))
             {
                 MessageBox.Show("Chọn Công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(this.txtSalary.Text))
+            else if (string.IsNullOrEmpty(salary))
             {
                 MessageBox.Show("Nhập mức lương cơ bản", "Error");
             }
             else
             {
-                StaffDAL.Instance.EditStaff(int.Parse(this.lbID.Text), this.txtName.Text, this.dateTimePicker1.Value, this.comboBox1.Text, 96, int.Parse(this.txtSalary.Text));
+                StaffDAL.Instance.EditStaff(int.Parse(iD), name, birthdate, pos, int.Parse(salary), overtime);
                 this.Close();
             }
         }
 
+        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

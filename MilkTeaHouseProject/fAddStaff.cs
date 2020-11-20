@@ -41,45 +41,64 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void txtSalary_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.txtUser.Text;
-            if (string.IsNullOrEmpty(this.txtName.Text))
+            string password = this.txtPass.Text;
+            string name = this.txtName.Text;
+            DateTime birthdate = this.dateTimePicker1.Value;
+            string position = this.cbbPos.Text;
+            int overtime = 0;
+            string salary = this.txtSalary.Text;
+            if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
             }
-            else if (string.IsNullOrEmpty(this.cbbPos.Text))
+            else if (string.IsNullOrEmpty(position))
             {
                 MessageBox.Show("Chọn Công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(this.txtSalary.Text))
+            else if (string.IsNullOrEmpty(salary))
             {
-                MessageBox.Show("Nhập mức lương cơ bản", "Error");
+                MessageBox.Show("Nhập mức lương", "Error");
             }
-            else if (string.IsNullOrEmpty(this.txtUser.Text))
+            else if (position == "Thu Ngân")
             {
-                MessageBox.Show("Nhập User", "Error");
-            }
-            else if (string.IsNullOrEmpty(this.txtPass.Text))
-            {
-                MessageBox.Show("Nhập PassWord", "Error");
+                if (string.IsNullOrEmpty(this.txtUser.Text))
+                {
+                    MessageBox.Show("Nhập User", "Error");
+                }
+                else if (string.IsNullOrEmpty(this.txtPass.Text))
+                {
+                    MessageBox.Show("Nhập PassWord", "Error");
+                }
+                else
+                {
+                    Account.Instance.SignUp(username, password);
+                    StaffDAL.Instance.AddStaff(name, birthdate, position, int.Parse(salary), overtime, username);
+                    this.Close();
+                }
             }
             else
             {
-                Account.Instance.SignUp(this.txtUser.Text, this.txtPass.Text);
-                StaffDAL.Instance.AddStaff(this.txtName.Text, this.dateTimePicker1.Value, this.cbbPos.Text, 96, int.Parse(this.txtSalary.Text), this.txtUser.Text); ;
+                StaffDAL.Instance.AddStaff(name, birthdate, position, int.Parse(salary), overtime, "0");
                 this.Close();
             }
         }
-        private void txtBasicSalary_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (this.cbbPos.Text != "Thu Ngân") e.Handled = true;
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (this.cbbPos.Text != "Thu Ngân") e.Handled = true;
         }
     }
 }
