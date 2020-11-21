@@ -167,7 +167,8 @@ namespace MilkTeaHouseProject
             {
                 item.Width =(int) space;
             }
-            this.txtSearch.Width = this.flowLayoutPanelDrinks.Width / 4;
+            double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
+            this.txtSearch.Width = (int)SearchWidth;
             this.btnSearch.Location = new Point(this.txtSearch.Width + this.txtSearch.Location.X + 3,this.btnSearch.Location.Y);
         }
 

@@ -74,6 +74,7 @@
             this.btnChoose.OnHoverForeColor = System.Drawing.Color.White;
             this.btnChoose.OnHoverImage = null;
             this.btnChoose.OnPressedColor = System.Drawing.Color.Black;
+            this.btnChoose.Size = this.Size;
             this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             this.btnChoose.MouseLeave += new System.EventHandler(this.btnChoose_MouseLeave);
             this.btnChoose.MouseHover += new System.EventHandler(this.btnChoose_MouseHover);

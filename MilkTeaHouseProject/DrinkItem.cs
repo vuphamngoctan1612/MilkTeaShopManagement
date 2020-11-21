@@ -54,6 +54,7 @@ namespace MilkTeaHouseProject
         private void DrinkItem_SizeChanged(object sender, EventArgs e)
         {
             this.picFood.Width = this.Width - 2 * (this.picFood.Location.X);
+            btnChoose.Size = this.Size;
         }
     }
 }
