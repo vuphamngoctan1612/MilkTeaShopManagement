@@ -162,7 +162,7 @@ namespace MilkTeaHouseProject
 
         private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
         {
-            double space = this.flowLayoutPanelDrinks.Width / 4.3;
+            double space = this.flowLayoutPanelDrinks.Width / 4.4;
             foreach (Control item in flowLayoutPanelDrinks.Controls)
             {
                 item.Width =(int) space;

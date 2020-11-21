@@ -38,16 +38,10 @@
             this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
             this.lbCategory = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI.WinForms.GunaLineTextBox();
-            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.flowLayoutPanelBill = new System.Windows.Forms.FlowLayoutPanel();
             this.pnTotal = new System.Windows.Forms.Panel();
-            this.lb = new System.Windows.Forms.Label();
-            this.lbCount = new System.Windows.Forms.Label();
-            this.lbTotalPrice = new System.Windows.Forms.Label();
             this.pnBtnPay = new System.Windows.Forms.Panel();
-            this.btnCancel = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnPay = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +55,14 @@
             this.pnToolInCategory = new System.Windows.Forms.Panel();
             this.flowLayoutPanelCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.pnSplitCategory = new System.Windows.Forms.Panel();
+            this.btnCancel = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnPay = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lb = new System.Windows.Forms.Label();
+            this.lbCount = new System.Windows.Forms.Label();
+            this.lbTotalPrice = new System.Windows.Forms.Label();
+            this.lbCountTotal = new System.Windows.Forms.Label();
             this.pnTop.SuspendLayout();
             this.gunaElipsePanel4.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
@@ -70,6 +72,7 @@
             this.pnTitle.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.pnToolInCategory.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnRight
@@ -107,7 +110,7 @@
             // lbUserName
             // 
             this.lbUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbUserName.Location = new System.Drawing.Point(1288, 11);
+            this.lbUserName.Location = new System.Drawing.Point(1285, 12);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(84, 20);
             this.lbUserName.TabIndex = 0;
@@ -119,7 +122,7 @@
             this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel4.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel4.Controls.Add(this.lbBill);
-            this.gunaElipsePanel4.Location = new System.Drawing.Point(958, 2);
+            this.gunaElipsePanel4.Location = new System.Drawing.Point(897, 2);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";
             this.gunaElipsePanel4.Radius = 10;
             this.gunaElipsePanel4.Size = new System.Drawing.Size(164, 55);
@@ -130,7 +133,7 @@
             this.lbBill.AutoSize = true;
             this.lbBill.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.lbBill.Location = new System.Drawing.Point(38, 4);
+            this.lbBill.Location = new System.Drawing.Point(35, 9);
             this.lbBill.Name = "lbBill";
             this.lbBill.Size = new System.Drawing.Size(94, 28);
             this.lbBill.TabIndex = 0;
@@ -175,36 +178,6 @@
             this.txtSearch.Text = "Tìm món\r\n";
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.AnimationHoverSpeed = 0.07F;
-            this.btnSearch.AnimationSpeed = 0.03F;
-            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnSearch.BorderColor = System.Drawing.Color.Black;
-            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
-            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::MilkTeaHouseProject.Properties.Resources.Search_32;
-            this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(563, 1);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(226)))));
-            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSearch.OnHoverImage = null;
-            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Size = new System.Drawing.Size(42, 37);
-            this.btnSearch.TabIndex = 4;
-            // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
@@ -213,10 +186,10 @@
             this.gunaElipsePanel1.Controls.Add(this.pnTotal);
             this.gunaElipsePanel1.Controls.Add(this.pnTitle);
             this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(900, 42);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(840, 42);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(490, 672);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(550, 672);
             this.gunaElipsePanel1.TabIndex = 6;
             // 
             // flowLayoutPanelBill
@@ -226,62 +199,166 @@
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 57);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(490, 499);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(550, 462);
             this.flowLayoutPanelBill.TabIndex = 5;
             // 
             // pnTotal
             // 
             this.pnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(171)))));
-            this.pnTotal.Controls.Add(this.lb);
-            this.pnTotal.Controls.Add(this.lbCount);
-            this.pnTotal.Controls.Add(this.lbTotalPrice);
+            this.pnTotal.Controls.Add(this.panel1);
             this.pnTotal.Controls.Add(this.pnBtnPay);
             this.pnTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnTotal.Location = new System.Drawing.Point(0, 556);
+            this.pnTotal.Location = new System.Drawing.Point(0, 519);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(490, 116);
+            this.pnTotal.Size = new System.Drawing.Size(550, 153);
             this.pnTotal.TabIndex = 2;
-            // 
-            // lb
-            // 
-            this.lb.AutoSize = true;
-            this.lb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(429, 8);
-            this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(53, 28);
-            this.lb.TabIndex = 2;
-            this.lb.Text = "VND";
-            // 
-            // lbCount
-            // 
-            this.lbCount.AutoSize = true;
-            this.lbCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCount.Location = new System.Drawing.Point(361, 8);
-            this.lbCount.Name = "lbCount";
-            this.lbCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbCount.Size = new System.Drawing.Size(67, 28);
-            this.lbCount.TabIndex = 0;
-            this.lbCount.Text = "20000";
-            // 
-            // lbTotalPrice
-            // 
-            this.lbTotalPrice.AutoSize = true;
-            this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPrice.Location = new System.Drawing.Point(237, 8);
-            this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(110, 28);
-            this.lbTotalPrice.TabIndex = 0;
-            this.lbTotalPrice.Text = "Tổng cộng:";
             // 
             // pnBtnPay
             // 
             this.pnBtnPay.Controls.Add(this.btnCancel);
             this.pnBtnPay.Controls.Add(this.btnPay);
             this.pnBtnPay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBtnPay.Location = new System.Drawing.Point(0, 43);
+            this.pnBtnPay.Location = new System.Drawing.Point(0, 80);
             this.pnBtnPay.Name = "pnBtnPay";
-            this.pnBtnPay.Size = new System.Drawing.Size(490, 73);
+            this.pnBtnPay.Size = new System.Drawing.Size(550, 73);
             this.pnBtnPay.TabIndex = 1;
+            // 
+            // pnTitle
+            // 
+            this.pnTitle.BackColor = System.Drawing.Color.Transparent;
+            this.pnTitle.Controls.Add(this.label3);
+            this.pnTitle.Controls.Add(this.label2);
+            this.pnTitle.Controls.Add(this.label1);
+            this.pnTitle.Controls.Add(this.lbFoodName);
+            this.pnTitle.Controls.Add(this.pnSplitBill);
+            this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(550, 57);
+            this.pnTitle.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(408, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 28);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tổng";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(313, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Giá món";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(204, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Số lượng";
+            // 
+            // lbFoodName
+            // 
+            this.lbFoodName.AutoSize = true;
+            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFoodName.Location = new System.Drawing.Point(13, 18);
+            this.lbFoodName.Name = "lbFoodName";
+            this.lbFoodName.Size = new System.Drawing.Size(92, 28);
+            this.lbFoodName.TabIndex = 2;
+            this.lbFoodName.Text = "Tên món";
+            // 
+            // pnSplitBill
+            // 
+            this.pnSplitBill.BackColor = System.Drawing.Color.LightGray;
+            this.pnSplitBill.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnSplitBill.Location = new System.Drawing.Point(0, 56);
+            this.pnSplitBill.Name = "pnSplitBill";
+            this.pnSplitBill.Size = new System.Drawing.Size(550, 1);
+            this.pnSplitBill.TabIndex = 1;
+            // 
+            // pnCenter
+            // 
+            this.pnCenter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.pnCenter.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnCenter.Location = new System.Drawing.Point(825, 42);
+            this.pnCenter.Name = "pnCenter";
+            this.pnCenter.Size = new System.Drawing.Size(15, 672);
+            this.pnCenter.TabIndex = 7;
+            // 
+            // gunaElipsePanel2
+            // 
+            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel2.Controls.Add(this.flowLayoutPanelDrinks);
+            this.gunaElipsePanel2.Controls.Add(this.pnBottom);
+            this.gunaElipsePanel2.Controls.Add(this.pnToolInCategory);
+            this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(10, 42);
+            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
+            this.gunaElipsePanel2.Radius = 20;
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(815, 672);
+            this.gunaElipsePanel2.TabIndex = 8;
+            // 
+            // flowLayoutPanelDrinks
+            // 
+            this.flowLayoutPanelDrinks.AutoScroll = true;
+            this.flowLayoutPanelDrinks.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanelDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 57);
+            this.flowLayoutPanelDrinks.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanelDrinks.Name = "flowLayoutPanelDrinks";
+            this.flowLayoutPanelDrinks.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(815, 598);
+            this.flowLayoutPanelDrinks.TabIndex = 4;
+            this.flowLayoutPanelDrinks.SizeChanged += new System.EventHandler(this.flowLayoutPanelDrinks_SizeChanged);
+            // 
+            // pnBottom
+            // 
+            this.pnBottom.BackColor = System.Drawing.Color.White;
+            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnBottom.Location = new System.Drawing.Point(0, 655);
+            this.pnBottom.Name = "pnBottom";
+            this.pnBottom.Size = new System.Drawing.Size(815, 17);
+            this.pnBottom.TabIndex = 3;
+            // 
+            // pnToolInCategory
+            // 
+            this.pnToolInCategory.BackColor = System.Drawing.Color.Transparent;
+            this.pnToolInCategory.Controls.Add(this.flowLayoutPanelCategory);
+            this.pnToolInCategory.Controls.Add(this.pnSplitCategory);
+            this.pnToolInCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnToolInCategory.Location = new System.Drawing.Point(0, 0);
+            this.pnToolInCategory.Name = "pnToolInCategory";
+            this.pnToolInCategory.Size = new System.Drawing.Size(815, 57);
+            this.pnToolInCategory.TabIndex = 1;
+            // 
+            // flowLayoutPanelCategory
+            // 
+            this.flowLayoutPanelCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 18);
+            this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
+            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanelCategory.Size = new System.Drawing.Size(815, 38);
+            this.flowLayoutPanelCategory.TabIndex = 1;
+            // 
+            // pnSplitCategory
+            // 
+            this.pnSplitCategory.BackColor = System.Drawing.Color.LightGray;
+            this.pnSplitCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnSplitCategory.Location = new System.Drawing.Point(0, 56);
+            this.pnSplitCategory.Name = "pnSplitCategory";
+            this.pnSplitCategory.Size = new System.Drawing.Size(815, 1);
+            this.pnSplitCategory.TabIndex = 0;
             // 
             // btnCancel
             // 
@@ -303,7 +380,7 @@
             this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCancel.ImageSize = new System.Drawing.Size(30, 30);
             this.btnCancel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCancel.Location = new System.Drawing.Point(237, 0);
+            this.btnCancel.Location = new System.Drawing.Point(275, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -311,7 +388,7 @@
             this.btnCancel.OnHoverImage = null;
             this.btnCancel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancel.Size = new System.Drawing.Size(253, 73);
+            this.btnCancel.Size = new System.Drawing.Size(275, 73);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Hủy đơn";
             this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -345,148 +422,97 @@
             this.btnPay.OnHoverImage = null;
             this.btnPay.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnPay.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPay.Size = new System.Drawing.Size(237, 73);
+            this.btnPay.Size = new System.Drawing.Size(275, 73);
             this.btnPay.TabIndex = 2;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
-            // pnTitle
+            // btnSearch
             // 
-            this.pnTitle.BackColor = System.Drawing.Color.Transparent;
-            this.pnTitle.Controls.Add(this.label3);
-            this.pnTitle.Controls.Add(this.label2);
-            this.pnTitle.Controls.Add(this.label1);
-            this.pnTitle.Controls.Add(this.lbFoodName);
-            this.pnTitle.Controls.Add(this.pnSplitBill);
-            this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(490, 57);
-            this.pnTitle.TabIndex = 0;
+            this.btnSearch.AnimationHoverSpeed = 0.07F;
+            this.btnSearch.AnimationSpeed = 0.03F;
+            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnSearch.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
+            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::MilkTeaHouseProject.Properties.Resources.Search_32;
+            this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSearch.Location = new System.Drawing.Point(563, 1);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(226)))));
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverImage = null;
+            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSearch.Size = new System.Drawing.Size(42, 37);
+            this.btnSearch.TabIndex = 4;
             // 
-            // label3
+            // panel1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(367, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tổng";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbCountTotal);
+            this.panel1.Controls.Add(this.lb);
+            this.panel1.Controls.Add(this.lbCount);
+            this.panel1.Controls.Add(this.lbTotalPrice);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 39);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(550, 41);
+            this.panel1.TabIndex = 3;
             // 
-            // label2
+            // lb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(277, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 28);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Giá món";
+            this.lb.AutoSize = true;
+            this.lb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb.Location = new System.Drawing.Point(486, 7);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(53, 28);
+            this.lb.TabIndex = 5;
+            this.lb.Text = "VND";
             // 
-            // label1
+            // lbCount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 28);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Số lượng";
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.Location = new System.Drawing.Point(413, 7);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbCount.Size = new System.Drawing.Size(67, 28);
+            this.lbCount.TabIndex = 3;
+            this.lbCount.Text = "20000";
             // 
-            // lbFoodName
+            // lbTotalPrice
             // 
-            this.lbFoodName.AutoSize = true;
-            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFoodName.Location = new System.Drawing.Point(13, 18);
-            this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(92, 28);
-            this.lbFoodName.TabIndex = 2;
-            this.lbFoodName.Text = "Tên món";
+            this.lbTotalPrice.AutoSize = true;
+            this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.Location = new System.Drawing.Point(240, 7);
+            this.lbTotalPrice.Name = "lbTotalPrice";
+            this.lbTotalPrice.Size = new System.Drawing.Size(110, 28);
+            this.lbTotalPrice.TabIndex = 4;
+            this.lbTotalPrice.Text = "Tổng cộng:";
             // 
-            // pnSplitBill
+            // lbCountTotal
             // 
-            this.pnSplitBill.BackColor = System.Drawing.Color.LightGray;
-            this.pnSplitBill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitBill.Location = new System.Drawing.Point(0, 56);
-            this.pnSplitBill.Name = "pnSplitBill";
-            this.pnSplitBill.Size = new System.Drawing.Size(490, 1);
-            this.pnSplitBill.TabIndex = 1;
-            // 
-            // pnCenter
-            // 
-            this.pnCenter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.pnCenter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnCenter.Location = new System.Drawing.Point(885, 42);
-            this.pnCenter.Name = "pnCenter";
-            this.pnCenter.Size = new System.Drawing.Size(15, 672);
-            this.pnCenter.TabIndex = 7;
-            // 
-            // gunaElipsePanel2
-            // 
-            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel2.Controls.Add(this.flowLayoutPanelDrinks);
-            this.gunaElipsePanel2.Controls.Add(this.pnBottom);
-            this.gunaElipsePanel2.Controls.Add(this.pnToolInCategory);
-            this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(10, 42);
-            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Radius = 20;
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(875, 672);
-            this.gunaElipsePanel2.TabIndex = 8;
-            // 
-            // flowLayoutPanelDrinks
-            // 
-            this.flowLayoutPanelDrinks.AutoScroll = true;
-            this.flowLayoutPanelDrinks.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanelDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 57);
-            this.flowLayoutPanelDrinks.Margin = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelDrinks.Name = "flowLayoutPanelDrinks";
-            this.flowLayoutPanelDrinks.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(875, 598);
-            this.flowLayoutPanelDrinks.TabIndex = 4;
-            this.flowLayoutPanelDrinks.SizeChanged += new System.EventHandler(this.flowLayoutPanelDrinks_SizeChanged);
-            // 
-            // pnBottom
-            // 
-            this.pnBottom.BackColor = System.Drawing.Color.White;
-            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBottom.Location = new System.Drawing.Point(0, 655);
-            this.pnBottom.Name = "pnBottom";
-            this.pnBottom.Size = new System.Drawing.Size(875, 17);
-            this.pnBottom.TabIndex = 3;
-            // 
-            // pnToolInCategory
-            // 
-            this.pnToolInCategory.BackColor = System.Drawing.Color.Transparent;
-            this.pnToolInCategory.Controls.Add(this.flowLayoutPanelCategory);
-            this.pnToolInCategory.Controls.Add(this.pnSplitCategory);
-            this.pnToolInCategory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnToolInCategory.Location = new System.Drawing.Point(0, 0);
-            this.pnToolInCategory.Name = "pnToolInCategory";
-            this.pnToolInCategory.Size = new System.Drawing.Size(875, 57);
-            this.pnToolInCategory.TabIndex = 1;
-            // 
-            // flowLayoutPanelCategory
-            // 
-            this.flowLayoutPanelCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 18);
-            this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
-            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanelCategory.Size = new System.Drawing.Size(875, 38);
-            this.flowLayoutPanelCategory.TabIndex = 1;
-            // 
-            // pnSplitCategory
-            // 
-            this.pnSplitCategory.BackColor = System.Drawing.Color.LightGray;
-            this.pnSplitCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitCategory.Location = new System.Drawing.Point(0, 56);
-            this.pnSplitCategory.Name = "pnSplitCategory";
-            this.pnSplitCategory.Size = new System.Drawing.Size(875, 1);
-            this.pnSplitCategory.TabIndex = 0;
+            this.lbCountTotal.AutoSize = true;
+            this.lbCountTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbCountTotal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountTotal.Location = new System.Drawing.Point(356, 5);
+            this.lbCountTotal.Name = "lbCountTotal";
+            this.lbCountTotal.Size = new System.Drawing.Size(25, 30);
+            this.lbCountTotal.TabIndex = 6;
+            this.lbCountTotal.Text = "3";
+            this.lbCountTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fOrder
             // 
@@ -511,12 +537,13 @@
             this.gunaElipsePanel3.PerformLayout();
             this.gunaElipsePanel1.ResumeLayout(false);
             this.pnTotal.ResumeLayout(false);
-            this.pnTotal.PerformLayout();
             this.pnBtnPay.ResumeLayout(false);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.pnToolInCategory.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -534,9 +561,6 @@
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelBill;
         private System.Windows.Forms.Panel pnTotal;
-        private System.Windows.Forms.Label lb;
-        private System.Windows.Forms.Label lbCount;
-        private System.Windows.Forms.Label lbTotalPrice;
         private System.Windows.Forms.Panel pnBtnPay;
         private Guna.UI.WinForms.GunaAdvenceButton btnCancel;
         private Guna.UI.WinForms.GunaAdvenceButton btnPay;
@@ -555,5 +579,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbFoodName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbCountTotal;
+        private System.Windows.Forms.Label lb;
+        private System.Windows.Forms.Label lbCount;
+        private System.Windows.Forms.Label lbTotalPrice;
     }
 }
