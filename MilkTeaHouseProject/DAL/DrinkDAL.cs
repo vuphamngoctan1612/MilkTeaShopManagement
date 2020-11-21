@@ -36,5 +36,22 @@ namespace MilkTeaShopManagement.DAL
 
             return drinks;
         }
+
+        public void AddDrink(int id, string Name, int Price, byte[] Image)
+        {
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Image ",
+                new object[] { id, Name, Price, Image });
+        }
+        public void EditDrink(int id, string name, int price, byte[] image)
+        {
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditDrink @ID , @Name , @Price , @Image ",
+                new object[] { id, name, price, image });
+        }
+        public void DelDrink(int id)
+        {
+            string query = "Delete from Drink where ID = '" + id + "'";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }

@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using MilkTeaShopManagement.DAL;
+using System.Data.SqlClient;
 
 namespace MilkTeaHouseProject
 {
@@ -35,6 +38,60 @@ namespace MilkTeaHouseProject
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        string imgLocation = "";
+        byte[] img = null;
+        private void pnImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.png)(*.jpg)(*.jepg)(*.ico)|*.png;*.jpg;*.jepg;*.ico";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                ptbImage.ImageLocation = imgLocation;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (imgLocation == "")
+                {
+                    loadImage();
+                }
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader bnr = new BinaryReader(stream);
+                img = bnr.ReadBytes((int)stream.Length);
+                if (txtID.Text == "")
+                    MessageBox.Show("Vui lòng nhập ID món");
+                else if (txtNameDrink.Text == "")
+                    MessageBox.Show("Vui lòng nhập tên món");
+                else if (txtPrice.Text == "")
+                    MessageBox.Show("Vui lòng nhập giá món");
+                else
+                {
+                    DrinkDAL.Instance.AddDrink(Int32.Parse(txtID.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text), img);
+                    MessageBox.Show("Cập nhật thành công");
+                    this.Close();
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Trùng ID.");
+            }
+
+        }
+        private void loadImage()
+        {
+            imgLocation = "./images/kawaii_coffee_64px.png";
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

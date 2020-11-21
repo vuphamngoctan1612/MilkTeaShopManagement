@@ -199,7 +199,7 @@
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(740, 2);
+            this.btnSearch.Location = new System.Drawing.Point(740, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(226)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;

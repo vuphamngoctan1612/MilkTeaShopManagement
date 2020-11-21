@@ -29,67 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAddDrink));
-            this.txtType = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtNameDrink = new System.Windows.Forms.TextBox();
-            this.lbIdIncrease = new System.Windows.Forms.Label();
             this.pn = new System.Windows.Forms.Panel();
             this.lbNameForm = new System.Windows.Forms.Label();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.lbType = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ptbImage = new System.Windows.Forms.PictureBox();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbNameDrink = new System.Windows.Forms.Label();
-            this.lbId = new System.Windows.Forms.Label();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.pnImage = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtType
-            // 
-            this.txtType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(64, 581);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(320, 34);
-            this.txtType.TabIndex = 26;
             // 
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(62, 507);
+            this.txtPrice.Location = new System.Drawing.Point(62, 578);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(321, 34);
-            this.txtPrice.TabIndex = 27;
+            this.txtPrice.TabIndex = 37;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // txtNameDrink
             // 
             this.txtNameDrink.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameDrink.Location = new System.Drawing.Point(62, 433);
+            this.txtNameDrink.Location = new System.Drawing.Point(62, 503);
             this.txtNameDrink.Name = "txtNameDrink";
             this.txtNameDrink.Size = new System.Drawing.Size(321, 34);
-            this.txtNameDrink.TabIndex = 28;
-            // 
-            // lbIdIncrease
-            // 
-            this.lbIdIncrease.AutoSize = true;
-            this.lbIdIncrease.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdIncrease.Location = new System.Drawing.Point(113, 354);
-            this.lbIdIncrease.Name = "lbIdIncrease";
-            this.lbIdIncrease.Size = new System.Drawing.Size(32, 28);
-            this.lbIdIncrease.TabIndex = 25;
-            this.lbIdIncrease.Text = "ID";
+            this.txtNameDrink.TabIndex = 38;
             // 
             // pn
             // 
-            this.pn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
-            this.pn.Controls.Add(this.lbNameForm);
+            this.pn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pn.Controls.Add(this.btnExit);
+            this.pn.Controls.Add(this.lbNameForm);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(455, 42);
-            this.pn.TabIndex = 24;
+            this.pn.TabIndex = 36;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // lbNameForm
@@ -103,88 +85,67 @@
             this.lbNameForm.TabIndex = 1;
             this.lbNameForm.Text = "Thêm món";
             // 
-            // btnExit
+            // txtID
             // 
-            this.btnExit.AnimationHoverSpeed = 0.07F;
-            this.btnExit.AnimationSpeed = 0.03F;
-            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(193)))), ((int)(((byte)(240)))));
-            this.btnExit.BorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
-            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = null;
-            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(417, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExit.OnHoverImage = null;
-            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(38, 42);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "X";
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(64, 412);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(318, 34);
+            this.txtID.TabIndex = 43;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
-            // lbType
+            // label1
             // 
-            this.lbType.AutoSize = true;
-            this.lbType.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbType.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbType.Location = new System.Drawing.Point(59, 546);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(48, 28);
-            this.lbType.TabIndex = 19;
-            this.lbType.Text = "Loại:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(60, 379);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 28);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "ID:";
+            // 
+            // ptbImage
+            // 
+            this.ptbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbImage.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
+            this.ptbImage.Location = new System.Drawing.Point(107, 128);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(247, 231);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbImage.TabIndex = 41;
+            this.ptbImage.TabStop = false;
+            this.ptbImage.Click += new System.EventHandler(this.pnImage_Click);
             // 
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPrice.Location = new System.Drawing.Point(59, 471);
+            this.lbPrice.Location = new System.Drawing.Point(59, 544);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(87, 28);
-            this.lbPrice.TabIndex = 20;
+            this.lbPrice.Size = new System.Drawing.Size(96, 28);
+            this.lbPrice.TabIndex = 34;
             this.lbPrice.Text = "Giá món:";
             // 
             // lbNameDrink
             // 
             this.lbNameDrink.AutoSize = true;
-            this.lbNameDrink.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameDrink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameDrink.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbNameDrink.Location = new System.Drawing.Point(57, 396);
+            this.lbNameDrink.Location = new System.Drawing.Point(57, 468);
             this.lbNameDrink.Name = "lbNameDrink";
-            this.lbNameDrink.Size = new System.Drawing.Size(89, 28);
-            this.lbNameDrink.TabIndex = 21;
+            this.lbNameDrink.Size = new System.Drawing.Size(98, 28);
+            this.lbNameDrink.TabIndex = 35;
             this.lbNameDrink.Text = "Tên món:";
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbId.Location = new System.Drawing.Point(59, 354);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(35, 28);
-            this.lbId.TabIndex = 22;
-            this.lbId.Text = "ID:";
             // 
             // btnReturn
             // 
             this.btnReturn.AnimationHoverSpeed = 0.07F;
             this.btnReturn.AnimationSpeed = 0.03F;
-            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.btnReturn.BorderColor = System.Drawing.Color.Black;
             this.btnReturn.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnReturn.CheckedBorderColor = System.Drawing.Color.Black;
@@ -201,14 +162,15 @@
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(238, 665);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnReturn.OnHoverForeColor = System.Drawing.Color.White;
             this.btnReturn.OnHoverImage = null;
             this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
+            this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(144, 42);
-            this.btnReturn.TabIndex = 29;
+            this.btnReturn.TabIndex = 39;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -217,7 +179,8 @@
             // 
             this.btnAdd.AnimationHoverSpeed = 0.07F;
             this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.btnAdd.BorderColor = System.Drawing.Color.Black;
             this.btnAdd.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnAdd.CheckedBorderColor = System.Drawing.Color.Black;
@@ -234,27 +197,53 @@
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.Location = new System.Drawing.Point(63, 665);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAdd.OnHoverImage = null;
             this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(144, 42);
-            this.btnAdd.TabIndex = 30;
+            this.btnAdd.TabIndex = 40;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pnImage
+            // btnExit
             // 
-            this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
-            this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnImage.Location = new System.Drawing.Point(108, 104);
-            this.pnImage.Name = "pnImage";
-            this.pnImage.Size = new System.Drawing.Size(236, 236);
-            this.pnImage.TabIndex = 23;
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
+            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
+            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.Location = new System.Drawing.Point(405, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(50, 42);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fAddDrink
             // 
@@ -262,24 +251,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(455, 736);
-            this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtNameDrink);
-            this.Controls.Add(this.lbIdIncrease);
             this.Controls.Add(this.pn);
-            this.Controls.Add(this.lbType);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ptbImage);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbNameDrink);
-            this.Controls.Add(this.lbId);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.pnImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fAddDrink";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddDrink";
             this.pn.ResumeLayout(false);
             this.pn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,19 +275,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtNameDrink;
-        private System.Windows.Forms.Label lbIdIncrease;
         private System.Windows.Forms.Panel pn;
         private System.Windows.Forms.Label lbNameForm;
-        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
-        private System.Windows.Forms.Label lbType;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox ptbImage;
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbNameDrink;
-        private System.Windows.Forms.Label lbId;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
-        private System.Windows.Forms.Panel pnImage;
+        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
     }
 }

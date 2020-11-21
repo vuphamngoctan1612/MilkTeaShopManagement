@@ -84,12 +84,12 @@ namespace MilkTeaHouseProject
                 item.Width = this.flowLayoutPanelStaff.Width;
             }
             int space = this.flowLayoutPanelStaff.Width / 8 + 3;
-            lbID.Location = new Point(5, 4);
-            lbName.Location = new Point(space + 5, 4);
-            lbBirthDate.Location = new Point(space * 3, 4);
-            lbPosition.Location = new Point(space * 4 + 10, 4);
-            lbUserName.Location = new Point(space * 5 - 10, 4);
-            lbSalary.Location = new Point(space * 6 + 20, 4);
+            lbID.Location = new Point(5, 6);
+            lbName.Location = new Point(space + 5, 6);
+            lbBirthDate.Location = new Point(space * 3, 6);
+            lbPosition.Location = new Point(space * 4 + 10, 6);
+            lbUserName.Location = new Point(space * 5 - 10, 6);
+            lbSalary.Location = new Point(space * 6 + 20, 6);
         }
 
 

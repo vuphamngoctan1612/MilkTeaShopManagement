@@ -70,7 +70,7 @@ namespace MilkTeaHouseProject
             fSignUp f = new fSignUp();
             this.Hide();
             f.ShowDialog();
-            this.Close();
+            this.Show();
         }
 
         private void btnShowPass_Click(object sender, EventArgs e)

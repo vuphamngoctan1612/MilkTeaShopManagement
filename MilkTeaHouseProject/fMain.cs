@@ -141,7 +141,6 @@ namespace MilkTeaHouseProject
         {
             ActivateButton(btnAccount);
             fAccount f = new fAccount();
-            this.Hide();
             f.ShowDialog();
             this.Show();
         }

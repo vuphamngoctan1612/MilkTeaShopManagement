@@ -152,6 +152,12 @@
     <Compile Include="fStaff.Designer.cs">
       <DependentUpon>fStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuItem.Designer.cs">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffItem.cs">
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItem.resx">
+      <DependentUpon>MenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
