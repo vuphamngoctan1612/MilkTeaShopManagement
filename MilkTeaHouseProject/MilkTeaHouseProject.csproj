@@ -283,5 +283,17 @@
   <ItemGroup>
     <None Include="Resources\Delete_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkout_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkitem.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,7 +28,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             random = new Random();
             leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10,53);
+            leftCurrentButton.Size = new Size(10,52);
             panelControl.Controls.Add(leftCurrentButton);
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -52,7 +52,7 @@ namespace MilkTeaHouseProject
                     currentButton.BaseColor = Color.FromArgb(0, 144, 218);
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 82);
+                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 149);
                     leftCurrentButton.BackColor = color;
                     leftCurrentButton.Visible = true;
                     leftCurrentButton.BringToFront();

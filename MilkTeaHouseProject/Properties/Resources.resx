@@ -121,35 +121,41 @@
   <data name="delete_bin_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\delete_bin_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pos_terminal_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\pos_terminal_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MILKTEA HOUSE (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\MILKTEA HOUSE (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MILKTEA HOUSE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\MILKTEA HOUSE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kawaii_coffee_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\kawaii_coffee_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Toffee nut crunch latte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\FoodsImage\Toffee nut crunch latte.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencil_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\pencil_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pos_terminal_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\pos_terminal_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\add_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MILKTEA HOUSE (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\MILKTEA HOUSE (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MILKTEA HOUSE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\MILKTEA HOUSE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Checkout_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checkout_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="account_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\account_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\add_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\add_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\lock_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pencil_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\pencil_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="account_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\account_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,16 +163,25 @@
   <data name="restaurant_menu_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\restaurant_menu_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\lock_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eye_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\eye_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clear_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clear_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\settings_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kawaii_coffee_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\kawaii_coffee_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="drinkitem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drinkitem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="drinkitem1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drinkitem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

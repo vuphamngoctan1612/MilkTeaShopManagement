@@ -159,5 +159,22 @@ namespace MilkTeaHouseProject
             }
         }
         #endregion
+
+        private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
+        {
+            double space = this.flowLayoutPanelDrinks.Width / 4.3;
+            foreach (Control item in flowLayoutPanelDrinks.Controls)
+            {
+                item.Width =(int) space;
+            }
+            this.txtSearch.Width = this.flowLayoutPanelDrinks.Width / 4;
+            this.btnSearch.Location = new Point(this.txtSearch.Width + this.txtSearch.Location.X + 3,this.btnSearch.Location.Y);
+        }
+
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Text = "";
+        }
     }
 }
