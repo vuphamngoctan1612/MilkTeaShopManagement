@@ -19,6 +19,7 @@ namespace MilkTeaHouseProject
         public fEditDrink(int id, string name, int price, byte[] image)
         {
             InitializeComponent();
+            LoadNameCategory();
             lbShowId.Text = id.ToString();
             txtNameDrink.Text = name;
             txtPrice.Text = price.ToString();
@@ -71,6 +72,12 @@ namespace MilkTeaHouseProject
                 ptbImg.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+        private void LoadNameCategory()
+        {
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
+            cbCategory.DataSource = dt;
+            cbCategory.DisplayMember = "NAME";
+        }
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
@@ -103,7 +110,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text),"1", img);
+                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text),cbCategory.Text, img);
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
             }

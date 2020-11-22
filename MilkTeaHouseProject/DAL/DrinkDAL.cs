@@ -38,42 +38,28 @@ namespace MilkTeaShopManagement.DAL
             return drinks;
         }
 
-        public void AddCategory(string name)
-        {
-            DataProvider.Instance.ExecuteNonQuery("insert into Category values ( N'" + name + "')");
-        }
         public int getIdDrinkMax()
         {
             try
             {
                 string query = "SELECT MAX(ID) FROM Drink";
-                int id = (int)DataProvider.Instance.ExecuteScalar(query) + 1;
+                int id = (int)DataProvider.Instance.ExecuteScalar(query);
                 return id;
             }
             catch (InvalidCastException)
             {
-                return 1;
+                return 0;
             }
         }
         public void AddDrink(string Name, int Price, string Category, byte[] Image)
         {
-            int id = new int();
-            try
-            {
-                string query = "SELECT MAX(ID) FROM Drink";
-                id=(int)DataProvider.Instance.ExecuteScalar(query) + 1;
-            }
-            catch (InvalidCastException)
-            {
-                id = 1;
-            }
-          
+            int id = getIdDrinkMax()+1;
 
             DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image ",
                 new object[] { id, Name, Price, Category, Image });
         }
         public void EditDrink(int id, string name, int price, string category, byte[] image)
-        {
+        { 
             DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image ",
                 new object[] { id, name, price,category, image });
         }

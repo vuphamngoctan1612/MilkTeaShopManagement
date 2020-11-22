@@ -18,12 +18,12 @@ create table Drink
 (
 	ID int not null,
 	NAME nvarchar(100) not null,
-	nameCategory nvarchar(100),
+	Category nvarchar(100),
 	PRICE int default 0,
 	IMAGE image,
 
 	constraint PK_Drink primary key (ID),
-	constraint FK_Drink_IDCategory foreign key(nameCategory) references Category(NAME)
+	constraint FK_Drink_IDCategory foreign key(Category) references Category(NAME)
 )
 go
 
@@ -160,9 +160,8 @@ as
 begin
 	insert into Drink(ID,NAME,PRICE,IMAGE) values (@ID,@Name,@Price,@Image)
 
-
 	update Drink
-	set nameCategory=@Category
+	set Category=@Category
 	where ID=@ID
 end
 go
@@ -174,7 +173,7 @@ create proc USP_EditDrink
 as 
 begin
 	update Drink
-	set Name=@Name, Price=@Price, nameCategory=@Category, Image=@Image
+	set Name=@Name, Price=@Price, Category=@Category, IMAGE=@Image
 	where ID=@ID
 end
 go
@@ -187,6 +186,19 @@ begin
 	update BillInfo
 	set DrinkID=null
 	where DrinkID=@drinkID
+end
+go
+
+--proc Category
+create proc USP_DeleteCategory
+@Category nvarchar(100)
+as 
+begin
+	delete from Drink
+	where Category=@Category
+
+	delete from Category
+	where NAME=@Category
 end
 go
 

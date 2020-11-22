@@ -107,5 +107,12 @@ namespace MilkTeaHouseProject
             fCategory frm = new fCategory();
             frm.ShowDialog();
         }
+
+        private void btnDelCategory_Click(object sender, EventArgs e)
+        {
+            fDelCategory frm = new fDelCategory();
+            frm.ShowDialog();
+            LoadMenu();
+        }
     }
 }

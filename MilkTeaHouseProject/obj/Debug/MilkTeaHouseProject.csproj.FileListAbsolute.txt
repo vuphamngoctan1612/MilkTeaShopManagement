@@ -297,3 +297,4 @@ C:\Users\NIU\Desktop\woking\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProjec
 C:\Users\NIU\Desktop\woking\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
 C:\Users\NIU\Desktop\woking\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\NIU\Desktop\woking\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
+C:\Users\NIU\Desktop\woking\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources

@@ -21,7 +21,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
             LoadNameCategory();
-            txtID.Text = DrinkDAL.Instance.getIdDrinkMax().ToString();
+            txtID.Text = (DrinkDAL.Instance.getIdDrinkMax()+1).ToString();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

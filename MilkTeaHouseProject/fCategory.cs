@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using MilkTeaShopManagement.DAL;
+using MilkTeaHouseProject.DAL;
 using System.Data.SqlClient;
 
 
@@ -20,7 +20,6 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-
 
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -40,7 +39,7 @@ namespace MilkTeaHouseProject
         {
             try
             {
-                DrinkDAL.Instance.AddCategory(txtNameDrink.Text);
+                CategoryDAL.Instance.AddCategory(txtNameDrink.Text);
                 this.Close();
             }
             catch (SqlException)
