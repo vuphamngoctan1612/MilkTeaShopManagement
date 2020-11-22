@@ -37,16 +37,34 @@ namespace MilkTeaShopManagement.DAL
             return drinks;
         }
 
-        public void AddDrink(int id, string Name, int Price, byte[] Image)
+        public void AddCategory(string name)
         {
-
-            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Image ",
-                new object[] { id, Name, Price, Image });
+            DataProvider.Instance.ExecuteNonQuery("insert into Category values ( N'" + name + "')");
         }
-        public void EditDrink(int id, string name, int price, byte[] image)
+        public int getIdDrinkMax()
         {
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditDrink @ID , @Name , @Price , @Image ",
-                new object[] { id, name, price, image });
+            string query = "SELECT MAX(ID) FROM Drink";
+            int id = (int)DataProvider.Instance.ExecuteScalar(query)+1;
+            return id;
+        }
+        public void AddDrink(string Name, int Price, string Category, byte[] Image)
+        { 
+            string query= "SELECT MAX(ID) FROM Drink";
+            int id = new int();
+            if (DataProvider.Instance.ExecuteScalar(query) == null)
+            {
+                id = 1;
+            }
+            else
+                id = (int)DataProvider.Instance.ExecuteScalar(query) + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image ",
+                new object[] { id, Name, Price, Category, Image });
+        }
+        public void EditDrink(int id, string name, int price, string category, byte[] image)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image ",
+                new object[] { id, name, price,category, image });
         }
         public void DelDrink(int id)
         {

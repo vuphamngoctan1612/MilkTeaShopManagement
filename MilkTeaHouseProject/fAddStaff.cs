@@ -74,7 +74,7 @@ namespace MilkTeaHouseProject
                 }
                 else
                 {
-                    Account.Instance.SignUp(username, password);
+                    AccountDAL.Instance.SignUp(username, password);
                     StaffDAL.Instance.AddStaff(name, birthdate, position, int.Parse(salary), overtime, username);
                     this.Close();
                 }

@@ -37,7 +37,7 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Image);
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price,drink.CategoryID, drink.Image);
                 item.onDel += Item_onDel;
                 item.onEdit += Item_onEdit;
 
@@ -95,10 +95,17 @@ namespace MilkTeaHouseProject
             {
                 item.Width = flowLayoutPanelMenu.Width-14;
             }
-            double space = flowLayoutPanelMenu.Width / 5;
+            double space = flowLayoutPanelMenu.Width / 6;
             lbID.Location = new Point((int)space, 8);
-            lbName.Location = new Point((int)space * 2, 8);
-            lbPrice.Location = new Point((int)space * 3, 8);
+            lbCategory.Location = new Point((int)space * 2, 8);
+            lbName.Location = new Point((int)space * 3, 8);
+            lbPrice.Location = new Point((int)space * 4, 8);
+        }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            fCategory frm = new fCategory();
+            frm.ShowDialog();
         }
     }
 }

@@ -32,15 +32,17 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtNameDrink = new System.Windows.Forms.TextBox();
             this.pn = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbNameForm = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ptbImage = new System.Windows.Forms.PictureBox();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbNameDrink = new System.Windows.Forms.Label();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.lbCategory = new System.Windows.Forms.Label();
+            this.ptbImage = new System.Windows.Forms.PictureBox();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.cbCategory = new Guna.UI.WinForms.GunaComboBox();
             this.pn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +76,41 @@
             this.pn.TabIndex = 36;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // btnExit
+            // 
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
+            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
+            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.Location = new System.Drawing.Point(405, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(50, 42);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // lbNameForm
             // 
             this.lbNameForm.AutoSize = true;
@@ -87,8 +124,9 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(64, 412);
+            this.txtID.Location = new System.Drawing.Point(62, 339);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(318, 34);
             this.txtID.TabIndex = 43;
@@ -99,24 +137,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(60, 379);
+            this.label1.Location = new System.Drawing.Point(58, 306);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 28);
             this.label1.TabIndex = 42;
             this.label1.Text = "ID:";
-            // 
-            // ptbImage
-            // 
-            this.ptbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbImage.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
-            this.ptbImage.Location = new System.Drawing.Point(107, 128);
-            this.ptbImage.Name = "ptbImage";
-            this.ptbImage.Size = new System.Drawing.Size(247, 231);
-            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ptbImage.TabIndex = 41;
-            this.ptbImage.TabStop = false;
-            this.ptbImage.Click += new System.EventHandler(this.pnImage_Click);
             // 
             // lbPrice
             // 
@@ -175,6 +200,30 @@
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // lbCategory
+            // 
+            this.lbCategory.AutoSize = true;
+            this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbCategory.Location = new System.Drawing.Point(58, 386);
+            this.lbCategory.Name = "lbCategory";
+            this.lbCategory.Size = new System.Drawing.Size(56, 28);
+            this.lbCategory.TabIndex = 42;
+            this.lbCategory.Text = "Loại:";
+            // 
+            // ptbImage
+            // 
+            this.ptbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbImage.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
+            this.ptbImage.Location = new System.Drawing.Point(108, 63);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(247, 231);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbImage.TabIndex = 41;
+            this.ptbImage.TabStop = false;
+            this.ptbImage.Click += new System.EventHandler(this.pnImage_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.AnimationHoverSpeed = 0.07F;
@@ -210,40 +259,24 @@
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnExit
+            // cbCategory
             // 
-            this.btnExit.AnimationHoverSpeed = 0.07F;
-            this.btnExit.AnimationSpeed = 0.03F;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnExit.BorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
-            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
-            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(405, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
-            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExit.OnHoverImage = null;
-            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(50, 42);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.cbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbCategory.BaseColor = System.Drawing.Color.White;
+            this.cbCategory.BorderColor = System.Drawing.Color.Silver;
+            this.cbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbCategory.ForeColor = System.Drawing.Color.Black;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(64, 427);
+            this.cbCategory.MaxDropDownItems = 100;
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbCategory.Size = new System.Drawing.Size(319, 35);
+            this.cbCategory.TabIndex = 44;
             // 
             // fAddDrink
             // 
@@ -251,9 +284,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(455, 736);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtNameDrink);
             this.Controls.Add(this.pn);
+            this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ptbImage);
@@ -287,5 +322,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
+        private System.Windows.Forms.Label lbCategory;
+        private Guna.UI.WinForms.GunaComboBox cbCategory;
     }
 }

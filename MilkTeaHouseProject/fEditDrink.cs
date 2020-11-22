@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MilkTeaShopManagement.DAL;
+using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -102,7 +103,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text), img);
+                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text),"1", img);
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
             }

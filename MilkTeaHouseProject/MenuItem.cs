@@ -13,7 +13,7 @@ namespace MilkTeaHouseProject
 {
     public partial class MenuItem : UserControl
     {
-        public MenuItem(int id, string name, int price, byte[] img)
+        public MenuItem(int id, string name, int price,string nameCategory, byte[] img)
         {
             InitializeComponent();
 
@@ -21,6 +21,7 @@ namespace MilkTeaHouseProject
             this.lbName.Text = name;
             this.lbName.BringToFront();
             this.lbPrice.Text = price.ToString();
+            this.lbCategory.Text = nameCategory;
             if (img == null)
             {
                 picFood.Image = null;
@@ -57,12 +58,13 @@ namespace MilkTeaHouseProject
 
         private void MenuItem_SizeChanged(object sender, EventArgs e)
         {
-            int space = this.Width / 5;
+            int space = this.Width / 6;
             lbId.Location = new Point(space, 20);
-            lbName.Location = new Point(space * 2, 20);
-            lbPrice.Location = new Point(space * 3, 20);
-            btnEdit.Location = new Point(space * 4-10, 20);
-            btnDelete.Location = new Point(space * 4 +70 , 20);
+            lbName.Location = new Point(space * 3, 20);
+            lbCategory.Location = new Point(space * 2, 20);
+            lbPrice.Location = new Point(space * 4, 20);
+            btnEdit.Location = new Point(space * 5-10, 20);
+            btnDelete.Location = new Point(space * 5 +70 , 20);
         }
     }
 }

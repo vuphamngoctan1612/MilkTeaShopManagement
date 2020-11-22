@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MilkTeaShopManagement.DAL;
+using MilkTeaHouseProject.DAL;
 using System.Data.SqlClient;
 
 namespace MilkTeaHouseProject
@@ -19,6 +20,8 @@ namespace MilkTeaHouseProject
         public fAddDrink()
         {
             InitializeComponent();
+            LoadNameCategory();
+            txtID.Text = DrinkDAL.Instance.getIdDrinkMax().ToString();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -53,6 +56,12 @@ namespace MilkTeaHouseProject
             }
         }
 
+        private void LoadNameCategory()
+        {
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
+            cbCategory.DataSource = dt;
+            cbCategory.DisplayMember = "NAME";
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -64,15 +73,15 @@ namespace MilkTeaHouseProject
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader bnr = new BinaryReader(stream);
                 img = bnr.ReadBytes((int)stream.Length);
-                if (txtID.Text == "")
-                    MessageBox.Show("Vui lòng nhập ID món");
+                if (cbCategory.Text == "")
+                    MessageBox.Show("Vui lòng chọn loại");
                 else if (txtNameDrink.Text == "")
                     MessageBox.Show("Vui lòng nhập tên món");
                 else if (txtPrice.Text == "")
                     MessageBox.Show("Vui lòng nhập giá món");
                 else
                 {
-                    DrinkDAL.Instance.AddDrink(Int32.Parse(txtID.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text), img);
+                    DrinkDAL.Instance.AddDrink(txtNameDrink.Text, Int32.Parse(txtPrice.Text), cbCategory.Text, img);
                     MessageBox.Show("Cập nhật thành công");
                     this.Close();
                 }

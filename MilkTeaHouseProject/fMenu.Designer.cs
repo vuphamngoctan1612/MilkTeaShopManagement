@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMenu));
             this.pnBtn = new System.Windows.Forms.Panel();
+            this.btnAddCategory = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStaff = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -39,6 +40,7 @@
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
+            this.lbCategory = new System.Windows.Forms.Label();
             this.pnBtn.SuspendLayout();
             this.pnStaff.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -49,12 +51,48 @@
             // pnBtn
             // 
             this.pnBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnBtn.Controls.Add(this.btnAddCategory);
             this.pnBtn.Controls.Add(this.gunaAdvenceButton1);
             this.pnBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBtn.Location = new System.Drawing.Point(0, 0);
             this.pnBtn.Name = "pnBtn";
             this.pnBtn.Size = new System.Drawing.Size(1088, 79);
             this.pnBtn.TabIndex = 1;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddCategory.AnimationHoverSpeed = 0.07F;
+            this.btnAddCategory.AnimationSpeed = 0.03F;
+            this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnAddCategory.BorderColor = System.Drawing.Color.Black;
+            this.btnAddCategory.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnAddCategory.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAddCategory.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.CheckedImage")));
+            this.btnAddCategory.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAddCategory.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.Image = null;
+            this.btnAddCategory.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddCategory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnAddCategory.Location = new System.Drawing.Point(587, 17);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnAddCategory.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddCategory.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.OnHoverImage = null;
+            this.btnAddCategory.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnAddCategory.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddCategory.Radius = 10;
+            this.btnAddCategory.Size = new System.Drawing.Size(212, 42);
+            this.btnAddCategory.TabIndex = 0;
+            this.btnAddCategory.Text = "Thêm loại";
+            this.btnAddCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // gunaAdvenceButton1
             // 
@@ -136,6 +174,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
             this.panel1.Controls.Add(this.lbPrice);
+            this.panel1.Controls.Add(this.lbCategory);
             this.panel1.Controls.Add(this.lbName);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -158,7 +197,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(484, 11);
+            this.lbName.Location = new System.Drawing.Point(636, 11);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(99, 30);
             this.lbName.TabIndex = 0;
@@ -173,6 +212,16 @@
             this.lbID.Size = new System.Drawing.Size(145, 30);
             this.lbID.TabIndex = 0;
             this.lbID.Text = "Mã sản phẩm";
+            // 
+            // lbCategory
+            // 
+            this.lbCategory.AutoSize = true;
+            this.lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategory.Location = new System.Drawing.Point(485, 11);
+            this.lbCategory.Name = "lbCategory";
+            this.lbCategory.Size = new System.Drawing.Size(54, 30);
+            this.lbCategory.TabIndex = 0;
+            this.lbCategory.Text = "Loại";
             // 
             // fMenu
             // 
@@ -205,5 +254,7 @@
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbID;
+        private Guna.UI.WinForms.GunaAdvenceButton btnAddCategory;
+        private System.Windows.Forms.Label lbCategory;
     }
 }

@@ -28,7 +28,7 @@ namespace MilkTeaHouseProject
 
             foreach (Staff staff in staffs)
             {
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.UserName, staff.WorkingTime, staff.Salary);
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Salary);
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.Tag = staff;
@@ -46,7 +46,7 @@ namespace MilkTeaHouseProject
             {
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
                 StaffDAL.Instance.DelStaff(iD);
-                Account.Instance.DelAccount(username);
+                AccountDAL.Instance.DelAccount(username);
             }
             else
             {

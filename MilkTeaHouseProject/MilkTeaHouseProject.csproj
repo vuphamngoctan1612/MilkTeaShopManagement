@@ -61,7 +61,7 @@
       <DependentUpon>BillItem.cs</DependentUpon>
     </Compile>
     <Compile Include="CurrentAccount.cs" />
-    <Compile Include="DAL\Account.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\BillInfoDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
@@ -74,8 +74,10 @@
     <Compile Include="DrinkItem.Designer.cs">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
+    <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Encryptor.cs" />
     <Compile Include="DTO\Menu.cs" />
@@ -103,6 +105,12 @@
     </Compile>
     <Compile Include="fBill.Designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCategory.Designer.cs">
+      <DependentUpon>fCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="fEditDrink.cs">
       <SubType>Form</SubType>
@@ -187,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCategory.resx">
+      <DependentUpon>fCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fEditDrink.resx">
       <DependentUpon>fEditDrink.cs</DependentUpon>
