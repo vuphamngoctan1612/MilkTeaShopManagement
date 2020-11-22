@@ -1,103 +1,88 @@
-﻿create database MilkTeaManagement
+﻿create MilkTea
 go
 
-use MilkTeaManagement
+use MilkTea
 go
 
 create table Account
 (
-	UserName varchar(100) not null,
-	PassWord VARCHAR(1000) not null,
-	Type BIT not null,
+	USERNAME varchar(100) not null,
+	PASSWORD VARCHAR(1000) not null,
+	TYPE BIT not null,
 
-	constraint PK_Account primary key (username)
+	constraint PK_Account primary key (USERNAME)
 )
 go
 
 create table Drink
 (
 	ID int not null,
-	Name nvarchar(100) not null,
-	Price int not null,
+	NAME nvarchar(100) not null,
+	idCategory int,
+	PRICE int default 0,
+	IMAGE image,
 
-	constraint PK_Drink primary key (ID)
+	constraint PK_Drink primary key (ID),
+	constraint FK_Drink_IDCategory foreign key(idCategory) references Category(ID)
 )
 go
+
+create table Category
+(
+	ID int not null,
+	NAME nvarchar(100) default ''
+
+	constraint PK_Category primary key (ID)
+)
 
 create table Staff
 (
 	ID int not null,
-	Name NVARCHAR(100) not null,
-	BirthDate DATE not null,
-	Position NVARCHAR(100) not null,
-	UserName VARCHAR(100) not null,
-	WorkingTime SMALLINT not null, -- sửa lại là overtime nha
-	Salary INT not null,
+	NAME NVARCHAR(100) not null,
+	IMAGE image,
+	BIRTHDATE DATE,
+	POSITION NVARCHAR(100),
+	USERNAME VARCHAR(100),
+	OVERTIME SMALLINT DEFAULT 0, -- sửa lại là overtime nha
+	SALARY INT DEFAULT 0,
 
-	constraint PK_Staff primary key (ID)
+	constraint PK_Staff primary key (ID),
+	constraint FK_Staff_UserName foreign key(USERNAME) references Account(USERNAME)
 )
-go
-alter table staff
-add constraint FK_Staff_UserName foreign key (UserName) references Account(username)
 go
 
 create table Bill
 (
 	ID int not null,
-	StaffID int not null,
-	CheckOut date,
-	Status bit not null default 0,
+	STAFFID int,
+	CHECKOUT date,
+	STATUS bit default 0,
+	TOTAL int default 0,
 
 	constraint PK_Bill primary key(ID),
 )
 go
-alter table Bill
-add Total int
-alter table bill
-add StaffID int
-alter table bill	
-add constraint FK_Bill_StaffID foreign key(staffID) references Staff(ID)
-
 
 create table BillInfo
 (
-	ID int not null,
-	BillID int not null,
-	DrinkID int not null,
-	Count int not null,
+	BILLID int,
+	DRINKID int,
+	COUNT int,
 
-	constraint PK_BillInfo primary key(ID),
-	constraint FK_BillInfo_BillID foreign key(BillID) references Bill(ID),
-	constraint FK_BillInfo_DrinkID foreign key(DrinkID) references Drink(ID)
+	constraint PK_BillInfo primary key(BILLID, DRINKID),
+	constraint FK_BillInfo_BillID foreign key(BILLID) references Bill(ID),
+	constraint FK_BillInfo_DrinkID foreign key(DRINKID) references Drink(ID)
 )
 
-insert into Drink (ID, Name, Price) values (1,N'Trà Sen Vàng', 39000)
-insert into Drink (ID, Name, Price) values (2,N'Trà Thạch Vải',39000)
-insert into Drink (ID, Name, Price) values (3,N'Hạnh Nhân',39000)
-insert into Drink (ID, Name, Price) values (4,N'Kem Sữa',39000)
-insert into Drink (ID, Name, Price) values (5,'Latte',55000)
-insert into Drink (ID, Name, Price) values (6,'Cappuccino',55000)
-
-select * from Drink
-
-alter proc USP_UpdateBillInfo
-@Count int, @ID int, @BillID int
-as
-begin
-	update BillInfo 
-	set Count = @Count
-	where Id = @ID and BillID = @BillID
-end
-go
-
-alter proc USP_InsertBillInfo
-@id int, @idBill int, @idDrink int, @count int	
+-- proc BillInfo
+create proc USP_InsertBillInfo
+@idBill int, @idDrink int, @count int	
 as
 begin
 	declare @isExistBillInfo int
 	declare @drinkCount int = 1
 
-	select @isExistBillInfo = Id, @drinkCount = Count
+	select @isExistBillInfo = BillID, @drinkCount = Count
 	from BillInfo
 	where BillID = @idBill and DrinkID = @idDrink
 
@@ -114,10 +99,9 @@ begin
 		end
 	else 
 		begin
-			insert into BillInfo(id, BillID, DrinkID, Count)
+			insert into BillInfo(BillID, DrinkID, Count)
 			values
 			(
-				@id,
 				@idBill,
 				@idDrink,
 				@Count
@@ -126,7 +110,7 @@ begin
 end
 go
 
-alter proc USP_DeleteBillInfo
+create proc USP_DeleteBillInfo
 @BillID int
 as
 begin
@@ -135,7 +119,8 @@ begin
 end
 go
 
-alter proc USP_UpdateBill
+-- proc Bill
+create proc USP_UpdateBill
 @CheckOut date, @Status bit, @Total int, @ID int, @StaffID int
 as
 begin
@@ -145,7 +130,7 @@ begin
 end
 go
 
-alter proc USP_InsertBill
+create proc USP_InsertBill
 @ID int, @StaffID int
 as
 begin
@@ -166,48 +151,3 @@ begin
 	where ID = @ID
 end
 go
-
-
-insert into Account values ('admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0)
-
-insert into Staff (ID, Name, BirthDate, Salary, WorkingTime) values (1, N'Trần Thế Anh', '2001-11-22', 3000000, 200)
-insert into Staff (ID, Name, BirthDate, Salary, WorkingTime) values (2, N'Quang', '2001-4-15', 4000000, 200)
-
-select b.ID as BillID, bf.ID as IDBillInfo, d.ID as IDDrink, d.Name, d.Price, bf.Count 
-from ((BillInfo as bf 
-		inner join Drink as d
-		on bf.DrinkID = d.ID)
-		inner join Bill as b
-		on b.ID = bf.BillID)
-where b.ID = 1
-
-create proc USP_EditStaff
-@ID int, @Name nvarchar(100), @birthday date, @pos nvarchar(100), @workingtime smallint, @salary int
-as
-begin
-	update Staff 
-	set Name = @Name, BirthDate = @birthday, Position = @pos, WorkingTime = @workingtime, Salary = @salary
-	where ID = @ID
-end
-go
-
-alter proc USP_GetStaffID
-@UserName varchar(100)
-as
-begin
-	select * from Staff
-	where UserName = @UserName
-end
-go
-
-select * from BillInfo
-
-select * from Bill
-select * from Staff
-
-update bill	
-set StaffID = null	
-where StaffID = 2
-
-delete from Staff 
-where ID = 2
