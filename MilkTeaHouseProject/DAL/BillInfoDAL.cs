@@ -37,21 +37,9 @@ namespace MilkTeaHouseProject.DAL
             return listBillInfo;
         }
 
-        public int GetMAXIDBillInfo()
+        public void InsertBillInfo(int idBill, int idDrink, int count)
         {
-            try
-            {
-                return (int)DataProvider.Instance.ExecuteScalar("select MAX(ID) from BillInfo");
-            }
-            catch
-            {
-                return 0;
-            }
-        }
-
-        public void InsertBillInfo(int id, int idBill, int idDrink, int count)
-        {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @id , @idBill , @idDrink , @count", new object[] { id, idBill, idDrink, count });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idDrink , @count", new object[] { idBill, idDrink, count });
         }
 
         public void UpdateBillInfo(int idDrink, int count)
@@ -62,6 +50,11 @@ namespace MilkTeaHouseProject.DAL
         public void DeleteBillInfo(int idBill)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_DeleteBillInfo @BillID ", new object[] { idBill });
+        }
+        public void SetnullDrinkIdBillInfo(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_SetnullDrinkIDinBillInfo @drinkID ",
+                new object[] { id });
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using MilkTeaHouseProject.DAL;
+﻿    using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaShopManagement.DTO;
@@ -71,8 +71,7 @@ namespace MilkTeaHouseProject
             try
             {
                 int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idBillInfo = BillInfoDAL.Instance.GetMAXIDBillInfo() + 1;
-                int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text); // chua co bill => return -1
+                int idStaff = StaffDAL.Instance.GetStaffID(this.lbUserName.Text);
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
@@ -81,7 +80,7 @@ namespace MilkTeaHouseProject
                     BillDAL.Instance.InsertBill(idBill, idStaff);
                 }
 
-                BillInfoDAL.Instance.InsertBillInfo(idBillInfo, idBill, idDrink, count);
+                BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
             }
             catch (SqlException ex)
             {
@@ -160,5 +159,23 @@ namespace MilkTeaHouseProject
             }
         }
         #endregion
+
+        private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
+        {
+            double space = this.flowLayoutPanelDrinks.Width / 4.4;
+            foreach (Control item in flowLayoutPanelDrinks.Controls)
+            {
+                item.Width =(int) space;
+            }
+            double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
+            this.txtSearch.Width = (int)SearchWidth;
+            this.btnSearch.Location = new Point(this.txtSearch.Width + this.txtSearch.Location.X + 3,this.btnSearch.Location.Y);
+        }
+
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Text = "";
+        }
     }
 }

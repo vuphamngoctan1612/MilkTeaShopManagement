@@ -18,7 +18,6 @@ namespace MilkTeaHouseProject
     {
         private GunaAdvenceButton currentButton;
         private Random random;
-        private int tempIndex;
         private Form activeForm;
         private Panel leftCurrentButton;
 
@@ -29,7 +28,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             random = new Random();
             leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10,53);
+            leftCurrentButton.Size = new Size(10,52);
             panelControl.Controls.Add(leftCurrentButton);
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -41,17 +40,6 @@ namespace MilkTeaHouseProject
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         #region Methods
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(themeColor.ColorList.Count);
-            while (tempIndex == index)
-            {
-                index = random.Next(themeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = themeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -59,14 +47,12 @@ namespace MilkTeaHouseProject
                 if (currentButton != (GunaAdvenceButton)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
+                    Color color = Color.FromArgb(255, 255, 255);
                     currentButton = (GunaAdvenceButton)btnSender;
-                    currentButton.BackColor = color;
+                    currentButton.BaseColor = Color.FromArgb(0, 144, 218);
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    pnTool.BackColor=btnExit.BackColor=btnMinimize.BackColor=btnZoom.BackColor = themeColor.ChangeColorBrightness(color, +0.3);
-                    lbButtonSelected.ForeColor = Color.White;
-                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y+82);
+                    currentButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 149);
                     leftCurrentButton.BackColor = color;
                     leftCurrentButton.Visible = true;
                     leftCurrentButton.BringToFront();
@@ -75,11 +61,11 @@ namespace MilkTeaHouseProject
         }
         private void DisableButton()
         {
-            foreach (Control previousBtn in fpnControl.Controls)
+            foreach (GunaAdvenceButton previousBtn in fpnControl.Controls)
             {
                 if (previousBtn.GetType() == typeof(GunaAdvenceButton))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.BaseColor = Color.FromArgb(28, 29, 38);
                     previousBtn.ForeColor = Color.FromArgb(160, 160, 160);
                     previousBtn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
@@ -107,8 +93,7 @@ namespace MilkTeaHouseProject
             lbButtonSelected.ForeColor = Color.White;
             currentButton = null;
             leftCurrentButton.Visible = false;
-            pnTool.BackColor = btnExit.BackColor = btnMinimize.BackColor = btnZoom.BackColor = Color.White;
-            lbButtonSelected.ForeColor = Color.Black;
+            
         }
         #endregion
 
@@ -156,7 +141,6 @@ namespace MilkTeaHouseProject
         {
             ActivateButton(btnAccount);
             fAccount f = new fAccount();
-            this.Hide();
             f.ShowDialog();
             this.Show();
         }

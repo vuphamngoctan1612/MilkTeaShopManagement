@@ -22,17 +22,17 @@ namespace MilkTeaHouseProject
         #region Methods
         private bool LoginAdmin(string username, string password)
         {
-            return Account.Instance.LoginAdmin(username, password);
+            return AccountDAL.Instance.LoginAdmin(username, password);
         }
 
         private bool LoginStaff(string username, string password)
         {
-            return Account.Instance.LoginStaff(username, password);
+            return AccountDAL.Instance.LoginStaff(username, password);
         }
 
         private bool Login(string username, string password)
         {
-            return Account.Instance.Login(username, password);
+            return AccountDAL.Instance.Login(username, password);
         }
         #endregion
 
@@ -43,18 +43,26 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            if (Login(username, password))
-            {
-                fMain f = new fMain();
-                f.UserName = username;
-                this.Hide();
-                f.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
-            }
+
+            fMain f = new fMain();
+            f.UserName = username;
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+
+
+            //if (Login(username, password))
+            //{
+            //    fMain f = new fMain();
+            //    f.UserName = username;
+            //    this.Hide();
+            //    f.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+            //}
         }
 
         private void lbSignup_Click(object sender, EventArgs e)
@@ -62,7 +70,7 @@ namespace MilkTeaHouseProject
             fSignUp f = new fSignUp();
             this.Hide();
             f.ShowDialog();
-            this.Close();
+            this.Show();
         }
 
         private void btnShowPass_Click(object sender, EventArgs e)

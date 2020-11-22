@@ -117,114 +117,158 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="lbName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 250</value>
+  </data>
+  <data name="lbName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 32</value>
+  </data>
+  <data name="lbName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbName.Text" xml:space="preserve">
+    <value>Drink Item</value>
+  </data>
   <data name="&gt;&gt;lbName.Name" xml:space="preserve">
     <value>lbName</value>
+  </data>
+  <data name="&gt;&gt;lbName.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="&gt;&gt;lbName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbName.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="picFood.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 222</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;picFood.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 25</value>
-  </data>
-  <data name="btnChoose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 34</value>
-  </data>
-  <data name="btnChoose.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.8pt</value>
-  </data>
-  <data name="&gt;&gt;btnChoose.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lbName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 287</value>
-  </data>
-  <data name="picFood.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 12pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;btnChoose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;picFood.Name" xml:space="preserve">
-    <value>picFood</value>
-  </data>
-  <data name="lbPrice.Text" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="lbPrice.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;picFood.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 334</value>
-  </data>
-  <data name="lbName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
-  </data>
-  <data name="btnChoose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 287</value>
-  </data>
-  <data name="btnChoose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAUxJREFUSEvt
-        lDsvBFEYhoeoSGSJS/gJSqVEQaFQSESi1/kXm41asYVGoqHjTyh0VCpEIREFahESjuf75rXmuM0yJ6LY
-        J3myk+/yns3Z7GQd/gUhhBVs4qhK6SF8Gp/QuMVFtdJBaB+e2wkF7rFbI2kgcMOjY3bVTgOB83luxCXW
-        NFIdwgbxypILPOOcRtJA4LZHx2ypnQYCl/LciAvs10h1CBvBG0suYFc2q5FyGB7CBk6p9AF6O/ieTbXL
-        YXgcT3wthAdcUKsFtWXvxpxhr0bKYXjf1964w9Z18DyM19YoYG+DGY20BwsHvhpjh3kQn3teiWn68k9g
-        yb7xsa/H2GHr+WPEKbZ/ZUVYrOGhpZTwiJNa+x0E2GFHlvYNaxqvBkED+NVhVu/RaHUI++w3s9f/hEbS
-        QegYvv63jLpa6SHc3tJ1XMUulTv8BVn2AlP6YXPmw0UbAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnChoose.Text" xml:space="preserve">
-    <value>Chọn</value>
-  </data>
-  <data name="&gt;&gt;lbPrice.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbPrice.Name" xml:space="preserve">
-    <value>lbPrice</value>
-  </data>
-  <data name="&gt;&gt;lbPrice.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lbPrice.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="lbPrice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;btnChoose.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  <data name="lbPrice.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lbPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.8pt</value>
   </data>
+  <data name="lbPrice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 281</value>
+  </data>
+  <data name="lbPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 30</value>
+  </data>
+  <data name="lbPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="&gt;&gt;lbPrice.Name" xml:space="preserve">
+    <value>lbPrice</value>
+  </data>
+  <data name="&gt;&gt;lbPrice.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;lbPrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbPrice.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnChoose.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.8pt</value>
+  </data>
+  <data name="btnChoose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="btnChoose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="&gt;&gt;picFood.Name" xml:space="preserve">
+    <value>picFood</value>
+  </data>
+  <data name="&gt;&gt;picFood.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;picFood.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picFood.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 8</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 323</value>
+  </data>
+  <data name="&gt;&gt;gunaElipse1.Name" xml:space="preserve">
+    <value>gunaElipse1</value>
+  </data>
+  <data name="&gt;&gt;gunaElipse1.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaElipse, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DrinkItem</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btnChoose.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lbName.Text" xml:space="preserve">
-    <value>Drink Item</value>
+  <data name="&gt;&gt;btnChoose.Name" xml:space="preserve">
+    <value>btnChoose</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="gunaElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="picFood.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="picFood.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="picFood.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="picFood.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -652,38 +696,31 @@
         K/8AIVKlf/RH/9k=
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picFood.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 14</value>
+  </data>
+  <data name="picFood.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="picFood.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 233</value>
+  </data>
   <data name="picFood.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="&gt;&gt;lbName.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  <data name="picFood.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+  <data name="&gt;&gt;picFood.Name" xml:space="preserve">
+    <value>picFood</value>
   </data>
-  <data name="&gt;&gt;lbPrice.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="picFood.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 41</value>
-  </data>
-  <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 10</value>
+  <data name="&gt;&gt;picFood.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="&gt;&gt;picFood.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnChoose.Name" xml:space="preserve">
-    <value>btnChoose</value>
+  <data name="&gt;&gt;picFood.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DrinkItem</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>dje</value>
-  </metadata>
 </root>

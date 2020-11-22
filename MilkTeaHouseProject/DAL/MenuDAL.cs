@@ -45,14 +45,8 @@ namespace MilkTeaHouseProject.DAL
         {
             List<Menu> listMenu = new List<Menu>();
 
-            string query = "select b.ID as BillID, bf.ID as IDBillInfo, d.ID as IDDrink, d.Name, d.Price, bf.Count " +
-                            "from (" +
-                            "(BillInfo as bf inner join Drink as d on bf.DrinkID = d.ID)" +
-                            " inner join Bill as b on b.ID = bf.BillID) " +
-                            "where b.ID = " + idBill;
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListMenuByBillID @billID ", new object[] { idBill });
+            
             foreach (DataRow item in data.Rows)
             {
                 Menu menu = new Menu(item);

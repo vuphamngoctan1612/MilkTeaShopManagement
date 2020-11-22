@@ -11,10 +11,11 @@ namespace MilkTeaHouseProject.DTO
     {
         private int iD;
         private string name;
+        private byte[] image;
         private DateTime birthDate;
         private string position;
         private string userName;
-        private int workingTime;
+        private int overTime;
         private int salary;
 
         public int ID { get => iD; set => iD = value; }
@@ -22,17 +23,18 @@ namespace MilkTeaHouseProject.DTO
         public DateTime BirthDate { get => birthDate; set => birthDate = value; }
         public string Position { get => position; set => position = value; }
         public string UserName { get => userName; set => userName = value; }
-        public int WorkingTime { get => workingTime; set => workingTime = value; }
         public int Salary { get => salary; set => salary = value; }
-        
-        public Staff(int id, string name, DateTime birthdate, string position, string username, int workingTime, int salary)
+        public int OverTime { get => overTime; set => overTime = value; }
+        public byte[] Image { get => image; set => image = value; }
+
+        public Staff(int id, string name, DateTime birthdate, string position, string username, int overtime, int salary)
         {
             this.iD = id;
             this.name = name;
             this.birthDate = birthdate;
             this.position = position;
             this.userName = username;
-            this.workingTime = workingTime;
+            this.overTime = overtime;
             this.salary = salary; ;
         }
 
@@ -43,8 +45,10 @@ namespace MilkTeaHouseProject.DTO
             this.birthDate = (DateTime)row["BirthDate"];
             this.position = row["Position"].ToString();
             this.userName = row["UserName"].ToString();
-            this.workingTime = int.Parse(row["WorkingTime"].ToString());
+            this.overTime = (int)row["OverTime"];
             this.salary = (int)row["Salary"];
+            if (!Convert.IsDBNull(row["Image"]))
+                this.Image = (byte[])row["Image"];
         }
     }
 }

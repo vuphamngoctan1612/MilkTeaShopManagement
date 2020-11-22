@@ -89,5 +89,10 @@ namespace MilkTeaHouseProject.DAL
                 return -1;
             }
         }
+        public void UpDateStaffIDtoNULL(int ID)
+        {
+            string que = "UPDATE Bill SET StaffID = NULL WHERE StaffID = " + ID;
+            DataProvider.Instance.ExecuteNonQuery(que);
+        }
     }
 }
