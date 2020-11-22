@@ -33,6 +33,7 @@ namespace MilkTeaHouseProject
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.Tag = staff;
                 flowLayoutPanelStaff.Controls.Add(staffItem);
+                staffItem.Width = flowLayoutPanelStaff.Width;
             }
 
         }

@@ -42,7 +42,7 @@ create table Staff
 	BIRTHDATE DATE,
 	POSITION NVARCHAR(100),
 	USERNAME VARCHAR(100),
-	OVERTIME SMALLINT DEFAULT 0, -- sửa lại là overtime nha
+	OVERTIME INT DEFAULT 0, -- sửa lại là overtime nha
 	SALARY INT DEFAULT 0,
 
 	constraint PK_Staff primary key (ID),
@@ -232,3 +232,7 @@ as
 begin
 	delete from Account where UserName = @user
 end
+insert into Account
+values ('quangaka','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
+insert into Staff 
+values (1,N'Thành Quang',null, '10-06-2001',N'Thu Ngân','quangaka',0,5000000)
