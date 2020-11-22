@@ -201,4 +201,34 @@ begin
 	where NAME=@Category
 end
 go
+--proc Staff
+create proc USP_AddStaff
+@ID int, @Name nvarchar(100), @birthday date, @pos nvarchar(100),@username varchar(100), @salary int, @overtime int
+as
+begin
+	insert into Staff values(@ID, @Name, @birthday, @pos, @username, @salary, @overtime)
+end
+go
+create proc USP_EditStaff
+@ID int, @Name nvarchar(100), @birthday date, @pos nvarchar(100), @salary int, @overtime int
+as
+begin
+	update Staff 
+	set Name = @Name, BirthDate = @birthday, Position = @pos, Salary = @salary, OverTime = @overtime
+	where ID = @ID
+end
+go
 
+create proc USP_DelStaff
+@ID int
+as
+begin
+	delete from Staff where ID = @ID
+end
+go
+create proc USP_DelAccount
+@user varchar(100)
+as
+begin
+	delete from Account where UserName = @user
+end
