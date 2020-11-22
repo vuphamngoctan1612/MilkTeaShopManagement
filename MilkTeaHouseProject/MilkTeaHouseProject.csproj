@@ -61,7 +61,7 @@
       <DependentUpon>BillItem.cs</DependentUpon>
     </Compile>
     <Compile Include="CurrentAccount.cs" />
-    <Compile Include="DAL\Account.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\BillInfoDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
@@ -74,8 +74,10 @@
     <Compile Include="DrinkItem.Designer.cs">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
+    <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Encryptor.cs" />
     <Compile Include="DTO\Menu.cs" />
