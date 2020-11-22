@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MilkTeaShopManagement.DAL
 {
@@ -43,20 +44,30 @@ namespace MilkTeaShopManagement.DAL
         }
         public int getIdDrinkMax()
         {
-            string query = "SELECT MAX(ID) FROM Drink";
-            int id = (int)DataProvider.Instance.ExecuteScalar(query)+1;
-            return id;
+            try
+            {
+                string query = "SELECT MAX(ID) FROM Drink";
+                int id = (int)DataProvider.Instance.ExecuteScalar(query) + 1;
+                return id;
+            }
+            catch (InvalidCastException)
+            {
+                return 1;
+            }
         }
         public void AddDrink(string Name, int Price, string Category, byte[] Image)
-        { 
-            string query= "SELECT MAX(ID) FROM Drink";
+        {
             int id = new int();
-            if (DataProvider.Instance.ExecuteScalar(query) == null)
+            try
+            {
+                string query = "SELECT MAX(ID) FROM Drink";
+                id=(int)DataProvider.Instance.ExecuteScalar(query) + 1;
+            }
+            catch (InvalidCastException)
             {
                 id = 1;
             }
-            else
-                id = (int)DataProvider.Instance.ExecuteScalar(query) + 1;
+          
 
             DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image ",
                 new object[] { id, Name, Price, Category, Image });

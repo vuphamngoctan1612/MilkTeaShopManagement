@@ -270,12 +270,12 @@
             this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(64, 427);
+            this.cbCategory.Location = new System.Drawing.Point(62, 427);
             this.cbCategory.MaxDropDownItems = 100;
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbCategory.Size = new System.Drawing.Size(319, 35);
+            this.cbCategory.Size = new System.Drawing.Size(321, 35);
             this.cbCategory.TabIndex = 44;
             // 
             // fAddDrink
