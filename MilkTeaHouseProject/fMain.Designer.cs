@@ -32,6 +32,7 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnTool = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnZoom = new System.Windows.Forms.Button();
             this.lbButtonSelected = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.pnContainName = new System.Windows.Forms.Panel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelBackground.SuspendLayout();
             this.pnTool.SuspendLayout();
             this.panelControl.SuspendLayout();
@@ -72,10 +72,10 @@
             // 
             this.pnDesktop.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDesktop.Location = new System.Drawing.Point(359, 86);
+            this.pnDesktop.Location = new System.Drawing.Point(359, 126);
             this.pnDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDesktop.Name = "pnDesktop";
-            this.pnDesktop.Size = new System.Drawing.Size(1024, 710);
+            this.pnDesktop.Size = new System.Drawing.Size(1024, 670);
             this.pnDesktop.TabIndex = 4;
             // 
             // pnTool
@@ -90,9 +90,44 @@
             this.pnTool.Location = new System.Drawing.Point(359, 0);
             this.pnTool.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTool.Name = "pnTool";
-            this.pnTool.Size = new System.Drawing.Size(1024, 86);
+            this.pnTool.Size = new System.Drawing.Size(1024, 126);
             this.pnTool.TabIndex = 3;
             this.pnTool.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
+            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
+            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.Location = new System.Drawing.Point(974, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(50, 42);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnMinimize
             // 
@@ -135,7 +170,7 @@
             this.lbButtonSelected.AutoSize = true;
             this.lbButtonSelected.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbButtonSelected.ForeColor = System.Drawing.Color.White;
-            this.lbButtonSelected.Location = new System.Drawing.Point(451, 24);
+            this.lbButtonSelected.Location = new System.Drawing.Point(451, 44);
             this.lbButtonSelected.Name = "lbButtonSelected";
             this.lbButtonSelected.Size = new System.Drawing.Size(115, 45);
             this.lbButtonSelected.TabIndex = 9;
@@ -163,10 +198,10 @@
             this.fpnControl.Controls.Add(this.btnAccount);
             this.fpnControl.Controls.Add(this.btnOrder);
             this.fpnControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnControl.Location = new System.Drawing.Point(0, 231);
+            this.fpnControl.Location = new System.Drawing.Point(0, 274);
             this.fpnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fpnControl.Name = "fpnControl";
-            this.fpnControl.Size = new System.Drawing.Size(359, 565);
+            this.fpnControl.Size = new System.Drawing.Size(359, 522);
             this.fpnControl.TabIndex = 17;
             // 
             // btnMenu
@@ -356,7 +391,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 128);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 103);
+            this.panel1.Size = new System.Drawing.Size(359, 146);
             this.panel1.TabIndex = 16;
             // 
             // lbUserName
@@ -364,7 +399,7 @@
             this.lbUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserName.ForeColor = System.Drawing.Color.White;
-            this.lbUserName.Location = new System.Drawing.Point(119, 38);
+            this.lbUserName.Location = new System.Drawing.Point(119, 60);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(116, 30);
             this.lbUserName.TabIndex = 1;
@@ -394,41 +429,6 @@
             this.lbName.TabIndex = 0;
             this.lbName.Text = "MilkTeaHouse";
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnExit.AnimationHoverSpeed = 0.07F;
-            this.btnExit.AnimationSpeed = 0.03F;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnExit.BorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
-            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
-            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(974, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
-            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExit.OnHoverImage = null;
-            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(50, 42);
-            this.btnExit.TabIndex = 14;
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fMain
             // 

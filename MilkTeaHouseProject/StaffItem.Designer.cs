@@ -47,60 +47,66 @@ namespace MilkTeaHouseProject
             // lbID
             // 
             this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(3, 16);
+            this.lbID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(233, 26);
+            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(127, 25);
+            this.lbID.Size = new System.Drawing.Size(162, 32);
             this.lbID.TabIndex = 2;
             this.lbID.Text = "Mã nhân viên";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(135, 17);
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(455, 15);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(129, 25);
+            this.lbName.Size = new System.Drawing.Size(166, 32);
             this.lbName.TabIndex = 9;
             this.lbName.Text = "Tên nhân viên";
             // 
             // lbBirthDate
             // 
             this.lbBirthDate.AutoSize = true;
-            this.lbBirthDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirthDate.Location = new System.Drawing.Point(344, 24);
+            this.lbBirthDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirthDate.Location = new System.Drawing.Point(694, 15);
+            this.lbBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBirthDate.Name = "lbBirthDate";
-            this.lbBirthDate.Size = new System.Drawing.Size(96, 25);
+            this.lbBirthDate.Size = new System.Drawing.Size(122, 32);
             this.lbBirthDate.TabIndex = 10;
             this.lbBirthDate.Text = "Ngày sinh";
             // 
             // lbPosition
             // 
             this.lbPosition.AutoSize = true;
-            this.lbPosition.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.Location = new System.Drawing.Point(590, 24);
+            this.lbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.Location = new System.Drawing.Point(856, 24);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(52, 25);
+            this.lbPosition.Size = new System.Drawing.Size(65, 32);
             this.lbPosition.TabIndex = 11;
             this.lbPosition.Text = "Vị trí";
             // 
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(696, 24);
+            this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserName.Location = new System.Drawing.Point(954, 24);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(137, 25);
+            this.lbUserName.Size = new System.Drawing.Size(175, 32);
             this.lbUserName.TabIndex = 12;
             this.lbUserName.Text = "Tên đăng nhập";
             // 
             // lbSalary
             // 
             this.lbSalary.AutoSize = true;
-            this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(901, 24);
+            this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalary.Location = new System.Drawing.Point(1298, 26);
+            this.lbSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(65, 25);
+            this.lbSalary.Size = new System.Drawing.Size(82, 32);
             this.lbSalary.TabIndex = 14;
             this.lbSalary.Text = "Lương";
             // 
@@ -118,7 +124,8 @@ namespace MilkTeaHouseProject
             this.btEdit.Image = global::MilkTeaHouseProject.Properties.Resources.pencil_24px;
             this.btEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btEdit.Location = new System.Drawing.Point(1025, 17);
+            this.btEdit.Location = new System.Drawing.Point(1405, 28);
+            this.btEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEdit.Name = "btEdit";
             this.btEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btEdit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -126,7 +133,7 @@ namespace MilkTeaHouseProject
             this.btEdit.OnHoverImage = null;
             this.btEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btEdit.Radius = 10;
-            this.btEdit.Size = new System.Drawing.Size(40, 25);
+            this.btEdit.Size = new System.Drawing.Size(60, 38);
             this.btEdit.TabIndex = 15;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
@@ -144,7 +151,8 @@ namespace MilkTeaHouseProject
             this.btDel.Image = global::MilkTeaHouseProject.Properties.Resources.delete_bin_32px;
             this.btDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btDel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btDel.Location = new System.Drawing.Point(1097, 16);
+            this.btDel.Location = new System.Drawing.Point(1506, 28);
+            this.btDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btDel.Name = "btDel";
             this.btDel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
             this.btDel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -152,17 +160,18 @@ namespace MilkTeaHouseProject
             this.btDel.OnHoverImage = null;
             this.btDel.OnPressedColor = System.Drawing.Color.Black;
             this.btDel.Radius = 10;
-            this.btDel.Size = new System.Drawing.Size(40, 25);
+            this.btDel.Size = new System.Drawing.Size(60, 38);
             this.btDel.TabIndex = 16;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // lbOverTime
             // 
             this.lbOverTime.AutoSize = true;
-            this.lbOverTime.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOverTime.Location = new System.Drawing.Point(802, 24);
+            this.lbOverTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverTime.Location = new System.Drawing.Point(1167, 26);
+            this.lbOverTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOverTime.Name = "lbOverTime";
-            this.lbOverTime.Size = new System.Drawing.Size(93, 25);
+            this.lbOverTime.Size = new System.Drawing.Size(119, 32);
             this.lbOverTime.TabIndex = 13;
             this.lbOverTime.Text = "OverTime";
             this.lbOverTime.Visible = false;
@@ -175,15 +184,16 @@ namespace MilkTeaHouseProject
             // picStaff
             // 
             this.picStaff.BaseColor = System.Drawing.Color.White;
-            this.picStaff.Location = new System.Drawing.Point(275, 16);
+            this.picStaff.Location = new System.Drawing.Point(106, 15);
+            this.picStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picStaff.Name = "picStaff";
-            this.picStaff.Size = new System.Drawing.Size(120, 120);
+            this.picStaff.Size = new System.Drawing.Size(78, 72);
             this.picStaff.TabIndex = 17;
             this.picStaff.TabStop = false;
             // 
             // StaffItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.picStaff);
@@ -196,8 +206,9 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbBirthDate);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbID);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "StaffItem";
-            this.Size = new System.Drawing.Size(1213, 60);
+            this.Size = new System.Drawing.Size(1544, 92);
             this.SizeChanged += new System.EventHandler(this.StaffItem_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.picStaff)).EndInit();
             this.ResumeLayout(false);

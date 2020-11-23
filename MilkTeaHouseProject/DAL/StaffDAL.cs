@@ -61,11 +61,22 @@ namespace MilkTeaHouseProject.DAL
             string query = "DELETE FROM Staff WHERE ID = " + iD + ";";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
-
+        public int getIdStaffMax()
+        {
+            try
+            {
+                string query = "SELECT MAX(ID) FROM Staff";
+                int id = (int)DataProvider.Instance.ExecuteScalar(query);
+                return id;
+            }
+            catch (InvalidCastException)
+            {
+                return 0;
+            }
+        }
         public void AddStaff(string name, byte[] image,DateTime birthDate, string pos,  int salary,int overtime, string username)
         {
-            string queryStaff = "SELECT MAX(ID) FROM Staff";
-            int id = (int)DataProvider.Instance.ExecuteScalar(queryStaff) + 1;
+            int id = getIdStaffMax() + 1;
 
             DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary , @overtime ",
                 new object[] { id, name, image,birthDate, pos, username, overtime, salary });

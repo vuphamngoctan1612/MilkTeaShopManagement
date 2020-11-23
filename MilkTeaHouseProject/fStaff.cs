@@ -83,15 +83,15 @@ namespace MilkTeaHouseProject
         {
             foreach (Control item in flowLayoutPanelStaff.Controls)
             {
-                item.Width = this.flowLayoutPanelStaff.Width;
+                item.Width = this.flowLayoutPanelStaff.Width-10;
             }
-            int space = this.flowLayoutPanelStaff.Width / 8 + 3;
-            lbID.Location = new Point(5, 6);
-            lbName.Location = new Point(space + 5, 6);
-            lbBirthDate.Location = new Point(space * 3, 6);
-            lbPosition.Location = new Point(space * 4 + 10, 6);
-            lbUserName.Location = new Point(space * 5 - 10, 6);
-            lbSalary.Location = new Point(space * 6 + 20, 6);
+            int space = this.flowLayoutPanelStaff.Width /8;
+            lbID.Location = new Point(85, 5);
+            lbName.Location = new Point((int)(space * 1.7), 5);
+            lbBirthDate.Location = new Point((int)(space * 3), 5);
+            lbPosition.Location = new Point(space * 4, 5);
+            lbUserName.Location = new Point((int)(space *4.9), 5);
+            lbSalary.Location = new Point(space * 6, 5);
         }
 
 
