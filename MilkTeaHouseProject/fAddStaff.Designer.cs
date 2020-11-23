@@ -45,14 +45,15 @@
             this.lbBirth = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
-            this.pnImage = new System.Windows.Forms.Panel();
             this.pn = new System.Windows.Forms.Panel();
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
             this.txtSalary = new System.Windows.Forms.TextBox();
+            this.ptbImage = new System.Windows.Forms.PictureBox();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -284,18 +285,6 @@
             this.lbId.TabIndex = 13;
             this.lbId.Text = "ID:";
             // 
-            // pnImage
-            // 
-            this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
-            this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnImage.Location = new System.Drawing.Point(63, 51);
-            this.pnImage.Margin = new System.Windows.Forms.Padding(2);
-            this.pnImage.Name = "pnImage";
-            this.pnImage.Size = new System.Drawing.Size(161, 140);
-            this.pnImage.TabIndex = 12;
-            // 
             // pn
             // 
             this.pn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
@@ -360,6 +349,7 @@
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnContain.Controls.Add(this.ptbImage);
             this.pnContain.Controls.Add(this.txtSalary);
             this.pnContain.Controls.Add(this.dateTimePicker1);
             this.pnContain.Controls.Add(this.pnStraight);
@@ -377,7 +367,6 @@
             this.pnContain.Controls.Add(this.lbBirth);
             this.pnContain.Controls.Add(this.lbName);
             this.pnContain.Controls.Add(this.lbId);
-            this.pnContain.Controls.Add(this.pnImage);
             this.pnContain.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContain.Location = new System.Drawing.Point(0, 0);
@@ -395,6 +384,20 @@
             this.txtSalary.Size = new System.Drawing.Size(238, 23);
             this.txtSalary.TabIndex = 22;
             this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
+            // 
+            // ptbImage
+            // 
+            this.ptbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbImage.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
+            this.ptbImage.Location = new System.Drawing.Point(63, 45);
+            this.ptbImage.Margin = new System.Windows.Forms.Padding(2);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(165, 151);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbImage.TabIndex = 42;
+            this.ptbImage.TabStop = false;
+            this.ptbImage.Click += new System.EventHandler(this.ptbImage_Click);
             // 
             // fAddStaff
             // 
@@ -414,6 +417,7 @@
             this.pn.PerformLayout();
             this.pnContain.ResumeLayout(false);
             this.pnContain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,11 +440,11 @@
         private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.Panel pnImage;
         private System.Windows.Forms.Panel pn;
         private System.Windows.Forms.Label lbNameForm;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private System.Windows.Forms.Panel pnContain;
         private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.PictureBox ptbImage;
     }
 }

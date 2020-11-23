@@ -51,24 +51,35 @@ namespace MilkTeaHouseProject.DAL
             }
             return -1;
         }
-        public void EditStaff(int ID, string name, DateTime birthDate, string pos, int salary, int overtime)
+        public void EditStaff(int ID, string name, byte[] image,DateTime birthDate, string pos,  int overtime, int salary)
         {
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @birthday , @pos , @salary , @overtime ",
-                new object[] { ID, name, birthDate, pos, salary, overtime });
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @salary , @overtime ",
+                new object[] { ID, name, image,birthDate, pos, overtime, salary });
         }
         public void DelStaff(int iD)
         {
             string query = "DELETE FROM Staff WHERE ID = " + iD + ";";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
-
-        public void AddStaff(string name, DateTime birthDate, string pos, int salary, int overtime, string username)
+        public int getIdStaffMax()
         {
-            string queryStaff = "SELECT MAX(ID) FROM Staff";
-            int id = (int)DataProvider.Instance.ExecuteScalar(queryStaff) + 1;
+            try
+            {
+                string query = "SELECT MAX(ID) FROM Staff";
+                int id = (int)DataProvider.Instance.ExecuteScalar(query);
+                return id;
+            }
+            catch (InvalidCastException)
+            {
+                return 0;
+            }
+        }
+        public void AddStaff(string name, byte[] image,DateTime birthDate, string pos,  int salary,int overtime, string username)
+        {
+            int id = getIdStaffMax() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @birthday , @pos , @username , @salary , @overtime ",
-                new object[] { id, name, birthDate, pos, username, salary, overtime });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary , @overtime ",
+                new object[] { id, name, image,birthDate, pos, username, overtime, salary });
         }
     }
 }
