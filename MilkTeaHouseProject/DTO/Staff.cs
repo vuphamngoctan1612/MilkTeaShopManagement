@@ -45,7 +45,7 @@ namespace MilkTeaHouseProject.DTO
             this.birthDate = (DateTime)row["BirthDate"];
             this.position = row["Position"].ToString();
             this.userName = row["UserName"].ToString();
-            this.overTime = (int)row["OverTime"];
+            this.overTime = int.Parse(row["OverTime"].ToString());
             this.salary = (int)row["Salary"];
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];

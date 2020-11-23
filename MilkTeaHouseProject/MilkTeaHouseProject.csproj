@@ -64,6 +64,7 @@
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\BillInfoDAL.cs" />
+    <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DrinkDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
@@ -105,6 +106,18 @@
     </Compile>
     <Compile Include="fBill.Designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCategory.Designer.cs">
+      <DependentUpon>fCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fDelCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDelCategory.Designer.cs">
+      <DependentUpon>fDelCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="fEditDrink.cs">
       <SubType>Form</SubType>
@@ -154,8 +167,20 @@
     <Compile Include="fStaff.Designer.cs">
       <DependentUpon>fStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuItem.Designer.cs">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffItem.Designer.cs">
+      <DependentUpon>StaffItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="themeColor.cs" />
     <EmbeddedResource Include="BillItem.resx">
       <DependentUpon>BillItem.cs</DependentUpon>
@@ -177,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCategory.resx">
+      <DependentUpon>fCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDelCategory.resx">
+      <DependentUpon>fDelCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fEditDrink.resx">
       <DependentUpon>fEditDrink.cs</DependentUpon>
@@ -202,6 +233,9 @@
     <EmbeddedResource Include="fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuItem.resx">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -212,6 +246,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StaffItem.resx">
+      <DependentUpon>StaffItem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -267,9 +304,32 @@
   <ItemGroup>
     <None Include="bin\Debug\images\add_32px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Delete_16.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="FoodsImage\Toffee nut crunch latte.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkout_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkitem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

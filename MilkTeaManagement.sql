@@ -18,21 +18,21 @@ create table Drink
 (
 	ID int not null,
 	NAME nvarchar(100) not null,
-	idCategory int,
+	CATEGORY nvarchar(100) default '',
 	PRICE int default 0,
 	IMAGE image,
+	STATUS bit default 1,
 
 	constraint PK_Drink primary key (ID),
-	constraint FK_Drink_IDCategory foreign key(idCategory) references Category(ID)
+	constraint FK_Drink_Category foreign key(CATEGORY) references Category(NAME)
 )
 go
 
 create table Category
 (
-	ID int not null,
 	NAME nvarchar(100) default ''
 
-	constraint PK_Category primary key (ID)
+	constraint PK_Category primary key (NAME)
 )
 
 create table Staff
@@ -73,6 +73,7 @@ create table BillInfo
 	constraint FK_BillInfo_BillID foreign key(BILLID) references Bill(ID),
 	constraint FK_BillInfo_DrinkID foreign key(DRINKID) references Drink(ID)
 )
+go
 
 -- proc BillInfo
 create proc USP_InsertBillInfo
@@ -120,12 +121,12 @@ end
 go
 
 -- proc Bill
-create proc USP_UpdateBill
-@CheckOut date, @Status bit, @Total int, @ID int, @StaffID int
+alter proc USP_UpdateBill
+@ID int, @StaffID int, @CheckOut date, @Status bit, @Total int
 as
 begin
 	update Bill
-	set CheckOut = @CheckOut, Status = @Status, Total = @Total, StaffID = @StaffID
+	set StaffID = @StaffID, CheckOut = @CheckOut, Status = @Status, Total = @Total 
 	where ID = @ID
 end
 go
@@ -151,3 +152,96 @@ begin
 	where ID = @ID
 end
 go
+
+-- proc drink
+alter proc USP_AddDrink
+@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
+as
+begin
+	--insert into Drink(ID,NAME,PRICE,IMAGE) values (@ID,@Name,@Price,@Image)
+
+	--update Drink
+	--set category = @Category
+	--where ID = @ID
+
+	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE) values (@ID, @Name, @Category, @Price, @Image)
+end
+go
+
+create proc USP_EditDrink
+@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
+as 
+begin
+	update Drink
+	set Name=@Name, Price=@Price, category=@Category, Image=@Image
+	where ID=@ID
+end
+go
+
+alter proc USP_SetnullDrinkIDinBillInfo
+@drinkID int
+as
+begin
+	update BillInfo
+	set DrinkID=null
+	where DrinkID=@drinkID
+end
+go
+
+UPDATE Drink
+SET STATUS =1
+WHERE ID = 1
+
+select * from Drink
+-- PROC MENU
+create proc USP_GetListMenuByBillID
+@billID int
+as
+begin
+	select b.ID as BillID, d.ID as IDDrink, d.Name, d.Price, bf.Count 
+	from ((BillInfo as bf 
+		inner join Drink as d
+		on bf.DrinkID = d.ID)
+		inner join Bill as b
+		on b.ID = bf.BillID)
+	where b.ID = @billID
+end
+go
+
+-- proc category
+create proc USP_DeleteCategory
+@Category nvarchar(100)
+as 
+begin
+	delete from Drink
+	where Category=@Category
+
+	delete from Category
+	where NAME=@Category
+end
+go
+
+INSERT INTO Account VALUES ('admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0)
+INSERT INTO Account VALUES ('nv', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 1)
+
+insert into Staff(ID, Name, BirthDate, Position, UserName, Salary, overtime) values(1, 'Anhdz', '2001-11-22', 'Quan Ly', 'admin', '3000000', 0)
+insert into Staff(ID, Name, BirthDate, Position, UserName, Salary, overtime) values(2, 'Quang', '2001-11-22', 'Quan Ly', 'nv', '3000000', 0)
+
+
+select * from billinfo
+select * from Staff
+
+delete from BillInfo
+delete from Bill
+
+exec USP_GetListMenuByBillID 1
+select * from bill
+
+select * from staff where USERNAME = 'admin'
+
+SELECT * FROM Drink WHERE Category = 'a'
+
+select * from BillInfo
+
+update Category
+set NAME = ''

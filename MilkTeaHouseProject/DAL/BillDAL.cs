@@ -59,7 +59,8 @@ namespace MilkTeaHouseProject.DAL
 
         public void UpdateBill(int id, DateTime checkOut, bool status, int total, int staffID)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @CheckOut , @Status , @Total , @ID , @StaffID ", new object[] { checkOut, status, total, id, staffID });
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @ID , @StaffID , @CheckOut , @Status , @Total ", 
+                new object[] { id, staffID, checkOut, status, total});
         }        
 
         public void DeleteBill(int id)
@@ -88,6 +89,11 @@ namespace MilkTeaHouseProject.DAL
             {
                 return -1;
             }
+        }
+        public void UpDateStaffIDtoNULL(int ID)
+        {
+            string que = "UPDATE Bill SET StaffID = NULL WHERE StaffID = " + ID;
+            DataProvider.Instance.ExecuteNonQuery(que);
         }
     }
 }

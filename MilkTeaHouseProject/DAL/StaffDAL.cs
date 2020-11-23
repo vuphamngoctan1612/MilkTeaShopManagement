@@ -22,28 +22,26 @@ namespace MilkTeaHouseProject.DAL
 
         private StaffDAL() { }
 
-        public List<Staff> GetListStaff()
+        public List<Staff> LoadStaffs()
         {
-            List<Staff> listStaff = new List<Staff>();
+            List<Staff> staffs = new List<Staff>();
 
-            string query = "select * from Staff";
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff");
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
-            foreach (DataRow item in data.Rows)
+            foreach (DataRow dataRow in data.Rows)
             {
-                Staff staff = new Staff(item);
-                listStaff.Add(staff);
+                Staff staff = new Staff(dataRow);
+                staffs.Add(staff);
             }
 
-            return listStaff;
+            return staffs;
         }
 
         public int GetStaffID(string username)
         {
-            string query = "USP_GetStaffID @UserName ";
+            string query = string.Format("select * from Staff where username = '{0}'", username);
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             if (data.Rows.Count > 0)
             {
@@ -52,6 +50,45 @@ namespace MilkTeaHouseProject.DAL
                 return staff.ID;
             }
             return -1;
+        }
+
+        public string GetNamebyUsername(string username)
+        {
+            string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Name;
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
+        public void EditStaff(int ID, string name, DateTime birthDate, string pos, int salary, int overtime)
+        {
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @birthday , @pos , @salary , @overtime ",
+                new object[] { ID, name, birthDate, pos, salary, overtime });
+        }
+
+        public void DelStaff(int iD)
+        {
+            string query = "DELETE FROM Staff WHERE ID = " + iD + ";";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void AddStaff(string name, DateTime birthDate, string pos, int salary, int overtime, string username)
+        {
+            string queryStaff = "SELECT MAX(ID) FROM Staff";
+            int id = (int)DataProvider.Instance.ExecuteScalar(queryStaff) + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @birthday , @pos , @username , @salary , @overtime ",
+                new object[] { id, name, birthDate, pos, username, salary, overtime });
         }
     }
 }

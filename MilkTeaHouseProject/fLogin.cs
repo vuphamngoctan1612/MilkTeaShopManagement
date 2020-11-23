@@ -1,4 +1,5 @@
-﻿using MilkTeaShopManagement.DAL;
+﻿using MilkTeaHouseProject.DAL;
+using MilkTeaShopManagement.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,17 +23,17 @@ namespace MilkTeaHouseProject
         #region Methods
         private bool LoginAdmin(string username, string password)
         {
-            return Account.Instance.LoginAdmin(username, password);
+            return AccountDAL.Instance.LoginAdmin(username, password);
         }
 
         private bool LoginStaff(string username, string password)
         {
-            return Account.Instance.LoginStaff(username, password);
+            return AccountDAL.Instance.LoginStaff(username, password);
         }
 
         private bool Login(string username, string password)
         {
-            return Account.Instance.Login(username, password);
+            return AccountDAL.Instance.Login(username, password);
         }
         #endregion
 
@@ -62,7 +63,7 @@ namespace MilkTeaHouseProject
             fSignUp f = new fSignUp();
             this.Hide();
             f.ShowDialog();
-            this.Close();
+            this.Show();
         }
 
         private void btnShowPass_Click(object sender, EventArgs e)
