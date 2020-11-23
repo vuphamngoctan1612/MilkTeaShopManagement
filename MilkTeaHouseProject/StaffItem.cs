@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
@@ -20,11 +21,21 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, DateTime birthdate, string position, string userName, int workingTime, int salary)
+        public StaffItem(int id, string name, byte[] image,DateTime birthdate, string position, string userName, int workingTime, int salary)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
             this.lbName.Text = name;
+            if (image == null)
+            {
+                this.picStaff.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(image);
+                picStaff.Image = Image.FromStream(mstream);
+                picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
             this.lbBirthDate.Text = birthdate.ToString();
             this.lbPosition.Text = position;
             this.lbUserName.Text = userName;

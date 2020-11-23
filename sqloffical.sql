@@ -203,18 +203,18 @@ end
 go
 --proc Staff
 create proc USP_AddStaff
-@ID int, @Name nvarchar(100), @birthday date, @pos nvarchar(100),@username varchar(100), @salary int, @overtime int
+@ID int, @Name nvarchar(100),@image image, @birthday date, @pos nvarchar(100),@username varchar(100), @overtime int, @salary int
 as
 begin
-	insert into Staff values(@ID, @Name, @birthday, @pos, @username, @salary, @overtime)
+	insert into Staff values(@ID, @Name, @image,@birthday, @pos, @username, @overtime, @salary)
 end
 go
 create proc USP_EditStaff
-@ID int, @Name nvarchar(100), @birthday date, @pos nvarchar(100), @salary int, @overtime int
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@overtime int, @salary int
 as
 begin
 	update Staff 
-	set Name = @Name, BirthDate = @birthday, Position = @pos, Salary = @salary, OverTime = @overtime
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, OverTime = @overtime, SALARY = @salary
 	where ID = @ID
 end
 go
@@ -236,3 +236,6 @@ insert into Account
 values ('quangaka','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
 insert into Staff 
 values (1,N'Thành Quang',null, '10-06-2001',N'Thu Ngân','quangaka',0,5000000)
+insert into Account
+values ('0','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
+

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Runtime.InteropServices;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
 using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
@@ -40,7 +42,26 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        
+        string imgLocation = "";
+        byte[] img = null;
 
+
+        private void ptbImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.png)(*.jpg)(*.jepg)(*.ico)|*.png;*.jpg;*.jepg;*.ico";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                ptbImage.ImageLocation = imgLocation;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+        private void LoadImage()
+        {
+            imgLocation = "./images/blank-profile.png";
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.txtUser.Text;
@@ -50,6 +71,13 @@ namespace MilkTeaHouseProject
             string position = this.cbbPos.Text;
             int overtime = 0;
             string salary = this.txtSalary.Text;
+            if (imgLocation == "")
+            {
+                LoadImage();
+            }
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader bnr = new BinaryReader(stream);
+            img = bnr.ReadBytes((int)stream.Length);
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
@@ -75,13 +103,13 @@ namespace MilkTeaHouseProject
                 else
                 {
                     AccountDAL.Instance.SignUp(username, password);
-                    StaffDAL.Instance.AddStaff(name, birthdate, position, int.Parse(salary), overtime, username);
+                    StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, username);
                     this.Close();
                 }
             }
             else
             {
-                StaffDAL.Instance.AddStaff(name, birthdate, position, int.Parse(salary), overtime, "0");
+                StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, "0");
                 this.Close();
             }
         }

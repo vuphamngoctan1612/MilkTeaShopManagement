@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
@@ -28,7 +29,7 @@ namespace MilkTeaHouseProject
 
             foreach (Staff staff in staffs)
             {
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Salary);
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image,staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Salary);
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.Tag = staff;
