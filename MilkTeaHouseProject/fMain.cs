@@ -142,7 +142,7 @@ namespace MilkTeaHouseProject
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            fAccount f = new fAccount();
+            fAccount f = new fAccount(this.lbUserName.Text);
             f.ShowDialog();
             this.Show();
         }
@@ -162,6 +162,7 @@ namespace MilkTeaHouseProject
 
         private void pnHomePage_SizeChanged(object sender, EventArgs e)
         {
+            this.picLogo.Location = new Point((int)(this.pnHomePage.Width - this.picLogo.Width) / 2, this.picLogo.Location.Y);
             this.btnViewPro5.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnViewPro5.Location.Y);
             this.btnAccount.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnAccount.Location.Y);
             this.btnLogOut.Location = new Point((int)(this.pnHomePage.Width - this.btnLogOut.Width) / 2, this.btnLogOut.Location.Y);

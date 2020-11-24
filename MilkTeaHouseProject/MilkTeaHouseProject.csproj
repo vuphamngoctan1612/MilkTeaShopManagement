@@ -355,5 +355,8 @@
   <ItemGroup>
     <None Include="Resources\Business_Contact_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FoodsImage\3545f49ee7278db6a6d44e62e4e9bfeb.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

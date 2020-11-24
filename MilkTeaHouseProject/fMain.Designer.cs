@@ -43,6 +43,7 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.pnContainName = new System.Windows.Forms.Panel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnViewPro5 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAccount = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnLogOut = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -59,6 +60,7 @@
             this.fpnControl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnContainName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -87,6 +89,8 @@
             // 
             // pnHomePage
             // 
+            this.pnHomePage.BackColor = System.Drawing.Color.White;
+            this.pnHomePage.Controls.Add(this.picLogo);
             this.pnHomePage.Controls.Add(this.btnViewPro5);
             this.pnHomePage.Controls.Add(this.btnAccount);
             this.pnHomePage.Controls.Add(this.btnLogOut);
@@ -247,6 +251,16 @@
             this.lbName.Text = "MilkTeaHouse";
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::MilkTeaHouseProject.Properties.Resources._3545f49ee7278db6a6d44e62e4e9bfeb;
+            this.picLogo.Location = new System.Drawing.Point(252, 37);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(686, 358);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
+            // 
             // btnViewPro5
             // 
             this.btnViewPro5.AnimationHoverSpeed = 0.07F;
@@ -267,7 +281,7 @@
             this.btnViewPro5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnViewPro5.ImageSize = new System.Drawing.Size(25, 25);
             this.btnViewPro5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnViewPro5.Location = new System.Drawing.Point(403, 330);
+            this.btnViewPro5.Location = new System.Drawing.Point(403, 450);
             this.btnViewPro5.Name = "btnViewPro5";
             this.btnViewPro5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnViewPro5.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -302,7 +316,7 @@
             this.btnAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAccount.ImageSize = new System.Drawing.Size(25, 25);
             this.btnAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAccount.Location = new System.Drawing.Point(403, 444);
+            this.btnAccount.Location = new System.Drawing.Point(403, 564);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnAccount.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -337,7 +351,7 @@
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogOut.ImageSize = new System.Drawing.Size(25, 25);
             this.btnLogOut.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogOut.Location = new System.Drawing.Point(403, 555);
+            this.btnLogOut.Location = new System.Drawing.Point(403, 675);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnLogOut.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -557,6 +571,7 @@
             this.panel1.PerformLayout();
             this.pnContainName.ResumeLayout(false);
             this.pnContainName.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -585,6 +600,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnAccount;
         public Guna.UI.WinForms.GunaAdvenceButton btnLogOut;
         private Guna.UI.WinForms.GunaAdvenceButton btnViewPro5;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
 

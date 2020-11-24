@@ -63,6 +63,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3545f49ee7278db6a6d44e62e4e9bfeb {
+            get {
+                object obj = ResourceManager.GetObject("3545f49ee7278db6a6d44e62e4e9bfeb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap a881ce19f6d5832f8c6fa156cb45abb6 {
             get {
                 object obj = ResourceManager.GetObject("a881ce19f6d5832f8c6fa156cb45abb6", resourceCulture);

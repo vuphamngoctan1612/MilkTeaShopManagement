@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccount));
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtRepass = new System.Windows.Forms.TextBox();
             this.pn = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbNameForm = new System.Windows.Forms.Label();
@@ -52,13 +52,14 @@
             this.txtUser.Size = new System.Drawing.Size(320, 34);
             this.txtUser.TabIndex = 50;
             // 
-            // txtName
+            // txtRepass
             // 
-            this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(67, 297);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(321, 34);
-            this.txtName.TabIndex = 52;
+            this.txtRepass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepass.Location = new System.Drawing.Point(67, 297);
+            this.txtRepass.Name = "txtRepass";
+            this.txtRepass.Size = new System.Drawing.Size(321, 34);
+            this.txtRepass.TabIndex = 52;
+            this.txtRepass.UseSystemPasswordChar = true;
             // 
             // pn
             // 
@@ -147,6 +148,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(320, 34);
             this.txtPass.TabIndex = 51;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // lbName
             // 
@@ -227,6 +229,7 @@
             this.btnAdd.TabIndex = 54;
             this.btnAdd.Text = "Đổi";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // fAccount
             // 
@@ -235,7 +238,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(455, 489);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtRepass);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.lbPass);
             this.Controls.Add(this.lbUser);
@@ -261,7 +264,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtRepass;
         private System.Windows.Forms.Panel pn;
         private System.Windows.Forms.Label lbNameForm;
         private System.Windows.Forms.Label lbPass;
