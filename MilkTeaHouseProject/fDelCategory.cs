@@ -43,7 +43,10 @@ namespace MilkTeaHouseProject
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            CategoryDAL.Instance.DeleteCategory(cbCategory.Text);
+            string category = cbCategory.Text;
+
+            DrinkDAL.Instance.SetnullForCategory(category);
+            CategoryDAL.Instance.DeleteCategory(category);
             this.Close();
         }
     }

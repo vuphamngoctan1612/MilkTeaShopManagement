@@ -47,8 +47,7 @@ namespace MilkTeaHouseProject.DAL
 
         public void DeleteCategory(string name)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_DeleteCategory @Category ",
-                new object[] { name });
+            DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM CATEGORY WHERE NAME = '{0}'", name));
         }
     }
 }

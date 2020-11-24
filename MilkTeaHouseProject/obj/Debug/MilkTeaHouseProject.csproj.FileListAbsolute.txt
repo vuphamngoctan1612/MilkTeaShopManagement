@@ -391,3 +391,7 @@ C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug
 C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
