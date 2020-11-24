@@ -17,7 +17,7 @@ namespace MilkTeaHouseProject
         public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
         public byte[] Images { get; set; }
 
-        public MenuItem(int id, string name, int price,string nameCategory, byte[] img)
+        public MenuItem(int id, string name, int price, string category, byte[] img)
         {
             InitializeComponent();
 
@@ -25,7 +25,7 @@ namespace MilkTeaHouseProject
             this.lbName.Text = name;
             this.lbName.BringToFront();
             this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
-            this.lbCategory.Text = nameCategory;
+            this.lbCategory.Text = category;
             if (img == null)
             {
                 picFood.Image = null;
@@ -64,8 +64,8 @@ namespace MilkTeaHouseProject
             lbName.Location = new Point(space * 3, 20);
             lbCategory.Location = new Point(space * 2, 20);
             lbPrice.Location = new Point(space * 4, 20);
-            btnEdit.Location = new Point(space * 5-10, 20);
-            btnDelete.Location = new Point(space * 5 +70 , 20);
+            btnEdit.Location = new Point(space * 5 - 10, 20);
+            btnDelete.Location = new Point(space * 5 + 70, 20);
         }
     }
 }

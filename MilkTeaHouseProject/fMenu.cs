@@ -21,7 +21,14 @@ namespace MilkTeaHouseProject
             LoadMenu();
         }
 
-        #region Method
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            fAddDrink f = new fAddDrink();
+            f.ShowDialog();
+            LoadMenu();
+            flowLayoutPanelMenu_SizeChanged(sender, e);
+        }
+
         public void LoadMenu()
         {
             flowLayoutPanelMenu.Controls.Clear();
@@ -55,21 +62,6 @@ namespace MilkTeaHouseProject
             }
         }
 
-        void DeleteMenu(int id)
-        {
-            DrinkDAL.Instance.DelDrink(id);
-        }
-        #endregion
-
-        #region Event
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            fAddDrink f = new fAddDrink();
-            f.ShowDialog();
-            LoadMenu();
-            flowLayoutPanelMenu_SizeChanged(sender, e);
-        }
-
         private void Item_onEdit(object sender, EventArgs e)
         {
             int id = ((sender as MenuItem).Tag as Drink).ID;
@@ -80,6 +72,7 @@ namespace MilkTeaHouseProject
             fEditDrink frm = new fEditDrink(id, name, price, image);
             frm.ShowDialog();
             LoadMenu();
+
             flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
@@ -91,12 +84,18 @@ namespace MilkTeaHouseProject
             flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
+        void DeleteMenu(int id)
+        {
+            DrinkDAL.Instance.DelDrink(id);
+        }
+
         private void flowLayoutPanelMenu_SizeChanged(object sender, EventArgs e)
         {
             foreach (Control item in flowLayoutPanelMenu.Controls)
             {
                 item.Width = flowLayoutPanelMenu.Width-14;
             }
+
             double space = flowLayoutPanelMenu.Width / 6;
             lbID.Location = new Point((int)space, 8);
             lbCategory.Location = new Point((int)space * 2, 8);
@@ -116,6 +115,5 @@ namespace MilkTeaHouseProject
             frm.ShowDialog();
             LoadMenu();
         }
-        #endregion
     }
 }

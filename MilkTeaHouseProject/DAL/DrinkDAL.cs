@@ -30,8 +30,9 @@ namespace MilkTeaShopManagement.DAL
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Drink");
 
             foreach(DataRow dataRow in data.Rows)
-            {                
+            {
                 Drink drink = new Drink(dataRow);
+
                 if (drink.Status == true)
                 {
                     drinks.Add(drink);
@@ -59,23 +60,20 @@ namespace MilkTeaShopManagement.DAL
             return drinks;
         }
 
-        public int GetMaxDrinkID()
+        public int GetMAXDrinkID()
         {
             try
             {
-                string query = "SELECT MAX(ID) FROM Drink";
-                int id = (int)DataProvider.Instance.ExecuteScalar(query);
-                return id;
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID) FROM Drink");
             }
             catch (InvalidCastException)
             {
                 return 0;
             }
         }
-
         public void AddDrink(string Name, int Price, string Category, byte[] Image)
         {
-            int id = GetMaxDrinkID() + 1;
+            int id = GetMAXDrinkID() + 1;
 
             DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image ",
                 new object[] { id, Name, Price, Category, Image });
@@ -84,7 +82,7 @@ namespace MilkTeaShopManagement.DAL
         public void EditDrink(int id, string name, int price, string category, byte[] image)
         { 
             DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image ",
-                new object[] { id, name, price,category, image });
+                new object[] { id, name, price, category, image });
         }
 
         public void DelDrink(int id)

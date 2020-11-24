@@ -138,7 +138,7 @@
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.count);
             this.Controls.Add(this.lbFoodName);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BillItem";
             this.Size = new System.Drawing.Size(478, 57);
             this.ResumeLayout(false);

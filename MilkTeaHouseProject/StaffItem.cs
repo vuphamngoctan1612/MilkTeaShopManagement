@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
@@ -20,12 +21,22 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, DateTime birthdate, string position, string userName, int workingTime, int salary)
+        public StaffItem(int id, string name, byte[] image,DateTime birthdate, string position, string userName, int workingTime, int salary)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
             this.lbName.Text = name;
-            this.lbBirthDate.Text = birthdate.ToString();
+            if (image == null)
+            {
+                this.picStaff.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(image);
+                picStaff.Image = Image.FromStream(mstream);
+                picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            this.lbBirthDate.Text = birthdate.ToString("dd/M/yyyy");
             this.lbPosition.Text = position;
             this.lbUserName.Text = userName;
             this.lbOverTime.Text = workingTime.ToString();
@@ -53,15 +64,16 @@ namespace MilkTeaHouseProject
 
         private void StaffItem_SizeChanged(object sender, EventArgs e)
         {
-            int space = this.Width/ 8 + 3;
-            lbID.Location = new Point(80, 4);
-            lbName.Location = new Point(space + 5, 4);
-            lbBirthDate.Location = new Point(space * 3, 4);
-            lbPosition.Location = new Point(space * 4 + 10, 4);
-            lbUserName.Location = new Point(space * 5 - 10, 4);
-            lbSalary.Location = new Point(space * 6 + 20, 4);
-            btEdit.Location = new Point(space * 7 + 30, 25);
-            btDel.Location = new Point(space * 7 + 110, 25);
+            int space = this.Width/ 8 ;
+            picStaff.Location = new Point(10,6);
+            lbID.Location = new Point(120, 18);
+            lbName.Location = new Point((int)(space*1.7), 18);
+            lbBirthDate.Location = new Point((int)(space * 3), 18);
+            lbPosition.Location = new Point(space * 4 , 18);
+            lbUserName.Location = new Point(space * 5 , 18);
+            lbSalary.Location = new Point(space * 6, 18);
+            btEdit.Location = new Point(space * 7,18);
+            btDel.Location = new Point(space * 7 +50,18);
         }
     }
 }

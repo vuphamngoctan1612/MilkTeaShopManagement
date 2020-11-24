@@ -212,11 +212,12 @@
             this.txtPass.Location = new System.Drawing.Point(98, 187);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(291, 30);
             this.txtPass.TabIndex = 10;
             this.txtPass.Text = "1";
+            this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtUser

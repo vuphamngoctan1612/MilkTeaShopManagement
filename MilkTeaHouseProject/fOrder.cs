@@ -1,4 +1,4 @@
-﻿    using MilkTeaHouseProject.DAL;
+﻿using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaShopManagement.DTO;
@@ -25,7 +25,7 @@ namespace MilkTeaHouseProject
 
             this.username = username;
 
-            LoadDrink();            
+            LoadDrink();
             LoadCategory();
         }
 
@@ -40,7 +40,7 @@ namespace MilkTeaHouseProject
             {
                 Label lbCategory = new Label();
                 lbCategory.Text = category.Name;
-                lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, 
+                lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
                                                             System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 lbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
                 lbCategory.Tag = lbCategory;
@@ -77,7 +77,7 @@ namespace MilkTeaHouseProject
                 item.onDel += Item_onDel;
 
                 item.Tag = menu;
-                
+
                 this.flowLayoutPanelBill.Controls.Add(item);
             }
         }
@@ -88,19 +88,19 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                DrinkItem item = new DrinkItem(drink.Name, drink.Price,drink.Image);
+                DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
                 item.Tag = drink;
                 item.onChoose += Item_onChoose;
 
                 this.flowLayoutPanelDrinks.Controls.Add(item);
             }
-        }        
+        }
 
         public void SearchDrink(string search)
         {
             List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
             this.flowLayoutPanelDrinks.Controls.Clear();
-            
+
             foreach (Drink drink in drinks)
             {
                 string name = drink.Name;
@@ -122,7 +122,7 @@ namespace MilkTeaHouseProject
             try
             {
                 int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idStaff = StaffDAL.Instance.GetStaffID(this.Username);
+                int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
@@ -140,8 +140,8 @@ namespace MilkTeaHouseProject
             finally
             {
                 this.flowLayoutPanelBill.Controls.Clear();
-                this.lbCountTotal.Text = MenuDAL.Instance.GetCount().ToString();
-                this.lbTotalPrice.Text = MenuDAL.Instance.GetTotalPrice().ToString();
+                this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
                 LoadBill();
             }
         }
@@ -167,8 +167,8 @@ namespace MilkTeaHouseProject
 
         private void Item_onValueChanged(object sender, EventArgs e)
         {
-            this.lbCountTotal.Text = MenuDAL.Instance.GetCount().ToString();
-            this.lbTotalPrice.Text = MenuDAL.Instance.GetTotalPrice().ToString();
+            this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
+            this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace MilkTeaHouseProject
             if (this.flowLayoutPanelBill.Controls.Count != 0)
             {
                 int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idStaff = StaffDAL.Instance.GetStaffID(this.Username);
+                int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
                 DateTime checkout = DateTime.Now;
                 bool status = true;
                 int total = MenuDAL.Instance.GetTotalPrice();
@@ -191,7 +191,7 @@ namespace MilkTeaHouseProject
                 finally
                 {
                     this.flowLayoutPanelBill.Controls.Clear();
-                    this.lbCountTotal.Text = "0";
+                    this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
 
                     BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1, idStaff);
@@ -219,7 +219,7 @@ namespace MilkTeaHouseProject
                 finally
                 {
                     this.flowLayoutPanelBill.Controls.Clear();
-                    this.lbCountTotal.Text = "0";
+                    this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
                 }
             }
@@ -234,9 +234,9 @@ namespace MilkTeaHouseProject
             double space = this.flowLayoutPanelDrinks.Width / 5;
             foreach (Control item in flowLayoutPanelDrinks.Controls)
             {
-                item.Width =(int) space;
+                item.Width = (int)space;
             }
-            this.pnSearch.Location = new Point(this.pnCenter.Location.X-300,this.pnSearch.Location.Y);
+            this.pnSearch.Location = new Point(this.pnCenter.Location.X - 300, this.pnSearch.Location.Y);
             double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
         }
 
@@ -247,6 +247,10 @@ namespace MilkTeaHouseProject
 
         private void lbAll_Click(object sender, EventArgs e)
         {
+            foreach (Control control in this.flowLayoutPanelCategory.Controls)
+            {
+                control.ForeColor = Color.Black;
+            }
             this.lbAll.ForeColor = Color.FromArgb(0, 144, 218);
 
             this.flowLayoutPanelDrinks.Controls.Clear();
@@ -255,6 +259,10 @@ namespace MilkTeaHouseProject
 
         private void LbCategory_Click(object sender, EventArgs e)
         {
+            foreach (Control control in this.flowLayoutPanelCategory.Controls)
+            {
+                control.ForeColor = Color.Black;
+            }
             ((sender as Label).Tag as Label).ForeColor = Color.FromArgb(0, 144, 218);
 
             this.flowLayoutPanelDrinks.Controls.Clear();
@@ -269,15 +277,6 @@ namespace MilkTeaHouseProject
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             SearchDrink(txtSearch.Text);
-        }
-
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = true;
-                this.btnSearch_Click(sender, e);
-            }
         }
         #endregion
     }

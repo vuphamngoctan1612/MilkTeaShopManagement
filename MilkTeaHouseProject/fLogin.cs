@@ -1,5 +1,4 @@
-﻿using MilkTeaHouseProject.DAL;
-using MilkTeaShopManagement.DAL;
+﻿using MilkTeaShopManagement.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

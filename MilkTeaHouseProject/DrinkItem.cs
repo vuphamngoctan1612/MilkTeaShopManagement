@@ -22,10 +22,12 @@ namespace MilkTeaHouseProject
         public DrinkItem(string name, int price, byte[] image)
         {
             InitializeComponent();
+
             this.picFood.Width = this.Width - 2 * (this.picFood.Location.X);
-            btnChoose.Size =this.Size;
+            btnChoose.Size = this.Size;
             this.lbName.Text = name;
             this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
+
             if (image == null)
             {
                 picFood.Image = null;
@@ -51,7 +53,7 @@ namespace MilkTeaHouseProject
 
         private void btnChoose_MouseHover(object sender, EventArgs e)
         {
-            this.btnChoose.OnHoverBaseColor1=this.btnChoose.OnHoverBaseColor2= Color.FromArgb(194, 228, 246);
+            this.btnChoose.OnHoverBaseColor1 = this.btnChoose.OnHoverBaseColor2 = Color.FromArgb(194, 228, 246);
             this.lbName.BackColor = Color.FromArgb(194, 228, 246);
             this.lbPrice.BackColor = Color.FromArgb(194, 228, 246);
         }

@@ -74,7 +74,7 @@ namespace MilkTeaShopManagement.DAL
         }
         public void DelAccount(string username)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_DelAccount @username ", new object[] { username });
+            DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM ACCOUNT WHERE USERNAME = '{0}'", username));
         }
     }
 }

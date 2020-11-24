@@ -17,35 +17,16 @@ namespace MilkTeaHouseProject
 {
     public partial class fAddDrink : Form
     {
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        string imgLocation = "";
-        byte[] img = null;
-
         public fAddDrink()
         {
             InitializeComponent();
             LoadNameCategory();
-            txtID.Text = (DrinkDAL.Instance.GetMaxDrinkID()+1).ToString();
+            txtID.Text = (DrinkDAL.Instance.GetMAXDrinkID()+1).ToString();
         }
-
-        #region Method
-        private void LoadNameCategory()
-        {
-            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
-            cbCategory.DataSource = dt;
-            cbCategory.DisplayMember = "NAME";
-        }
-
-        private void loadImage()
-        {
-            imgLocation = "./images/kawaii_coffee_64px.png";
-        }
-        #endregion
-
-        #region Event
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,7 +42,8 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        string imgLocation = "";
+        byte[] img = null;
         private void pnImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -74,6 +56,12 @@ namespace MilkTeaHouseProject
             }
         }
 
+        private void LoadNameCategory()
+        {
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
+            cbCategory.DataSource = dt;
+            cbCategory.DisplayMember = "NAME";
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -98,11 +86,15 @@ namespace MilkTeaHouseProject
                     this.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Trùng ID.");
             }
 
+        }
+        private void loadImage()
+        {
+            imgLocation = "./images/kawaii_coffee_64px.png";
         }
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -110,6 +102,5 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
-        #endregion
     }
 }

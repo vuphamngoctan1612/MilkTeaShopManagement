@@ -27,10 +27,11 @@ namespace MilkTeaHouseProject.DTO
         public int OverTime { get => overTime; set => overTime = value; }
         public byte[] Image { get => image; set => image = value; }
 
-        public Staff(int id, string name, DateTime birthdate, string position, string username, int overtime, int salary)
+        public Staff(int id, string name,byte[] image ,DateTime birthdate, string position, string username, int overtime, int salary)
         {
             this.iD = id;
             this.name = name;
+            this.image = image;
             this.birthDate = birthdate;
             this.position = position;
             this.userName = username;
@@ -45,7 +46,7 @@ namespace MilkTeaHouseProject.DTO
             this.birthDate = (DateTime)row["BirthDate"];
             this.position = row["Position"].ToString();
             this.userName = row["UserName"].ToString();
-            this.overTime = int.Parse(row["OverTime"].ToString());
+            this.overTime = (int)row["OverTime"];
             this.salary = (int)row["Salary"];
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];

@@ -19,6 +19,7 @@ namespace MilkTeaHouseProject
         public fEditDrink(int id, string name, int price, byte[] image)
         {
             InitializeComponent();
+
             LoadNameCategory();
             lbShowId.Text = id.ToString();
             txtNameDrink.Text = name;
