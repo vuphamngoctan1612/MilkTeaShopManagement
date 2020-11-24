@@ -29,7 +29,6 @@ namespace MilkTeaHouseProject
             flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
-
         public void LoadMenu()
         {
             flowLayoutPanelMenu.Controls.Clear();
@@ -73,6 +72,7 @@ namespace MilkTeaHouseProject
             fEditDrink frm = new fEditDrink(id, name, price, image);
             frm.ShowDialog();
             LoadMenu();
+
             flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
@@ -80,12 +80,12 @@ namespace MilkTeaHouseProject
         {
             DeleteMenu(((sender as MenuItem).Tag as Drink).ID);
             LoadMenu();
+
             flowLayoutPanelMenu_SizeChanged(sender, e);
         }
 
         void DeleteMenu(int id)
         {
-            BillInfoDAL.Instance.SetnullDrinkIdBillInfo(id);
             DrinkDAL.Instance.DelDrink(id);
         }
 
@@ -95,6 +95,7 @@ namespace MilkTeaHouseProject
             {
                 item.Width = flowLayoutPanelMenu.Width-14;
             }
+
             double space = flowLayoutPanelMenu.Width / 6;
             lbID.Location = new Point((int)space, 8);
             lbCategory.Location = new Point((int)space * 2, 8);

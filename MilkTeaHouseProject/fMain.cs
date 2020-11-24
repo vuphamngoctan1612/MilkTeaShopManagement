@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MilkteaHouse.bin.Debug.image;
 using Guna.UI.WinForms;
-
+using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -154,7 +154,9 @@ namespace MilkTeaHouseProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int BillID = BillDAL.Instance.GetMAXIDBill();
+            BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
+            Application.Exit();
         }
         #endregion
     }

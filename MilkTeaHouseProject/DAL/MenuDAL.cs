@@ -58,30 +58,16 @@ namespace MilkTeaHouseProject.DAL
 
         public int GetCount()
         {
-            List<Menu> listMenu = this.GetListMenu(BillDAL.Instance.GetMAXIDBill());
-
-            int Count = 0;
-
-            foreach (Menu item in listMenu)
-            {
-                Count += item.Count;
-            }
-
-            return Count;
+            return (int)DataProvider.Instance.ExecuteScalar(string.Format("SELECT SUM(bf.COUNT) FROM BillInfo bf " +
+                "JOIN Drink d ON d.ID = bf.DRINKID " +
+                "WHERE BILLID = {0}", BillDAL.Instance.GetMAXIDBill()));
         }
 
         public int GetTotalPrice()
         {
-            List<Menu> listMenu = this.GetListMenu(BillDAL.Instance.GetMAXIDBill());
-
-            int totalPrice = 0;
-
-            foreach (Menu item in listMenu)
-            {
-                totalPrice += item.Price * item.Count;
-            }
-
-            return totalPrice;
+            return (int)DataProvider.Instance.ExecuteScalar(string.Format("SELECT SUM(d.PRICE * bf.COUNT) FROM BillInfo bf " +
+                "JOIN Drink d ON d.ID = bf.DRINKID " +
+                "WHERE BILLID = {0}", BillDAL.Instance.GetMAXIDBill()));
         }
     }
 }

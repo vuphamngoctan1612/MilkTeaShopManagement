@@ -27,6 +27,9 @@ namespace MilkTeaHouseProject
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        string imgLocation = "";
+        byte[] img = null;
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,10 +46,6 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         
-        string imgLocation = "";
-        byte[] img = null;
-
-
         private void ptbImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -58,10 +57,12 @@ namespace MilkTeaHouseProject
                 ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
         private void LoadImage()
         {
             imgLocation = "./images/blank-profile.png";
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.txtUser.Text;
@@ -109,10 +110,11 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, "0");
+                StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, "null");
                 this.Close();
             }
         }
+
         private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))

@@ -25,7 +25,7 @@ namespace MilkTeaHouseProject
         }
         public void LoadStaff()
         {
-            List<Staff> staffs = StaffDAL.Instance.LoadStaffs();
+            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
 
             foreach (Staff staff in staffs)
             {
