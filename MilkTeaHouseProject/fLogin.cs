@@ -45,8 +45,8 @@ namespace MilkTeaHouseProject
 
             if (Login(username, password))
             {
-                fMain f = new fMain();
-                f.UserName = username;
+                fMain f = new fMain(username);
+                //f.UserName = username;
                 this.Hide();
                 f.ShowDialog();
                 this.Close();

@@ -94,12 +94,20 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void AddStaff(string name, byte[] image,DateTime birthDate, string pos,  int salary,int overtime, string username)
+        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, int salary)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary , @overtime ",
-                new object[] { id, name, image,birthDate, pos, username, overtime, salary });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary ",
+                new object[] { id, name, image, birthDate, pos, username, salary });
+        }
+
+        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, int salary)
+        {
+            int id = GetMAXStaffID() + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @salary ",
+                new object[] { id, name, image, birthdate, pos, salary });
         }
     }
 }

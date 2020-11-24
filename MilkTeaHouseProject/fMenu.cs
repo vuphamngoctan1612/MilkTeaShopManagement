@@ -114,6 +114,8 @@ namespace MilkTeaHouseProject
             fDelCategory frm = new fDelCategory();
             frm.ShowDialog();
             LoadMenu();
+
+            this.flowLayoutPanelMenu_SizeChanged(sender, e);
         }
     }
 }

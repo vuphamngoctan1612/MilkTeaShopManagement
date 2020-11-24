@@ -90,5 +90,12 @@ namespace MilkTeaShopManagement.DAL
             string query = string.Format("UPDATE Drink SET STATUS = 0 WHERE ID = {0}", id);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+        public void SetnullForCategory(string category)
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE DRINK " +
+                "SET CATEGORY = NULL, STATUS = 0" +
+                " WHERE CATEGORY = '{0}'", category));
+        }
     }
 }

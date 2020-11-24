@@ -22,6 +22,8 @@ namespace MilkTeaHouseProject
         public fAddStaff()
         {
             InitializeComponent();
+
+            this.txtID.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -29,6 +31,59 @@ namespace MilkTeaHouseProject
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         string imgLocation = "";
         byte[] img = null;
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string username = this.txtUser.Text;
+            string password = this.txtPass.Text;
+            string name = this.txtName.Text;
+            DateTime birthdate = this.dateTimePicker1.Value;
+            string position = this.cbbPos.Text;
+            string salary = this.txtSalary.Text;
+
+            if (imgLocation == "")
+            {
+                LoadImage();
+            }
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader bnr = new BinaryReader(stream);
+            img = bnr.ReadBytes((int)stream.Length);
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Nhập Họ Tên", "Error");
+            }
+            else if (string.IsNullOrEmpty(position))
+            {
+                MessageBox.Show("Chọn Công việc", "Error");
+            }
+            else if (string.IsNullOrEmpty(salary))
+            {
+                MessageBox.Show("Nhập mức lương", "Error");
+            }
+            else if (position == "Thu Ngân")
+            {
+                if (string.IsNullOrEmpty(this.txtUser.Text))
+                {
+                    MessageBox.Show("Nhập User", "Error");
+                }
+                else if (string.IsNullOrEmpty(this.txtPass.Text))
+                {
+                    MessageBox.Show("Nhập PassWord", "Error");
+                }
+                else
+                {
+                    AccountDAL.Instance.SignUp(username, password);
+                    StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, int.Parse(salary));
+                    this.Close();
+                }
+            }
+            else
+            {
+                StaffDAL.Instance.AddStaff(name, img, birthdate, position, int.Parse(salary));
+                this.Close();
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -61,58 +116,6 @@ namespace MilkTeaHouseProject
         private void LoadImage()
         {
             imgLocation = "./images/blank-profile.png";
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
-            string name = this.txtName.Text;
-            DateTime birthdate = this.dateTimePicker1.Value;
-            string position = this.cbbPos.Text;
-            int overtime = 0;
-            string salary = this.txtSalary.Text;
-            if (imgLocation == "")
-            {
-                LoadImage();
-            }
-            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader bnr = new BinaryReader(stream);
-            img = bnr.ReadBytes((int)stream.Length);
-            if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Nhập Họ Tên", "Error");
-            }
-            else if (string.IsNullOrEmpty(position))
-            {
-                MessageBox.Show("Chọn Công việc", "Error");
-            }
-            else if (string.IsNullOrEmpty(salary))
-            {
-                MessageBox.Show("Nhập mức lương", "Error");
-            }
-            else if (position == "Thu Ngân")
-            {
-                if (string.IsNullOrEmpty(this.txtUser.Text))
-                {
-                    MessageBox.Show("Nhập User", "Error");
-                }
-                else if (string.IsNullOrEmpty(this.txtPass.Text))
-                {
-                    MessageBox.Show("Nhập PassWord", "Error");
-                }
-                else
-                {
-                    AccountDAL.Instance.SignUp(username, password);
-                    StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, username);
-                    this.Close();
-                }
-            }
-            else
-            {
-                StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, "null");
-                this.Close();
-            }
         }
 
         private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
