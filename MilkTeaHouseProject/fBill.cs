@@ -16,6 +16,5 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-
     }
 }

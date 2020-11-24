@@ -16,7 +16,7 @@ namespace MilkTeaHouseProject.DAL
         public static BillDAL Instance
         {
             get { if (instance == null) instance = new BillDAL(); return BillDAL.instance; }
-            private set => BillDAL.instance = value;
+            set => BillDAL.instance = value;
         }
 
         private BillDAL() { }
@@ -49,7 +49,7 @@ namespace MilkTeaHouseProject.DAL
             catch
             {
                 return 1;
-            }
+            }            
         }
 
         public void InsertBill(int id, int staffID)
@@ -59,12 +59,13 @@ namespace MilkTeaHouseProject.DAL
 
         public void UpdateBill(int id, DateTime checkOut, bool status, int total, int staffID)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @CheckOut , @Status , @Total , @ID , @StaffID ", new object[] { checkOut, status, total, id, staffID });
-        }
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateBill @ID , @StaffID , @CheckOut , @Status , @Total ",
+                new object[] { id, staffID, checkOut, status, total });
+        }        
 
         public void DeleteBill(int id)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_DeleteBill @ID ", new object[] { id });
+            DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM BILL WHERE ID = {0}", id));
         }
 
         public int GetStaffID(int id)
@@ -88,6 +89,11 @@ namespace MilkTeaHouseProject.DAL
             {
                 return -1;
             }
+        }
+        public void UpDateStaffIDtoNULL(int ID)
+        {
+            string que = "UPDATE Bill SET StaffID = NULL WHERE StaffID = " + ID;
+            DataProvider.Instance.ExecuteNonQuery(que);
         }
     }
 }

@@ -9,17 +9,17 @@ using System.Windows.Forms;
 
 namespace MilkTeaShopManagement.DAL
 {
-    public class Account
+    public class AccountDAL
     {
-        private static Account instance;
+        private static AccountDAL instance;
 
-        public static Account Instance
+        public static AccountDAL Instance
         {
-            get { if (instance == null) instance = new Account(); return Account.instance; }
-            private set { Account.instance = value; }
+            get { if (instance == null) instance = new AccountDAL(); return AccountDAL.instance; }
+            private set { AccountDAL.instance = value; }
         }
 
-        private Account() { }
+        private AccountDAL() { }
 
         public bool LoginAdmin(string userName, string passWord)
         {
@@ -31,11 +31,23 @@ namespace MilkTeaShopManagement.DAL
 
             return result.Rows.Count > 0;
         }
+
         public bool LoginStaff(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
 
             string query = "SELECT * FROM Account WHERE UserName = '" + userName + "' AND PassWord = '" + passWord + "' AND Type = 1";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+
+            return result.Rows.Count > 0;
+        }
+
+        public bool Login(string username, string password)
+        {
+            password = Encryptor.Instance.Encrypt(password);
+
+            string query = "SELECT * FROM Account WHERE UserName = '" + username + "' AND PassWord = '" + password + "'";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
 
@@ -59,6 +71,10 @@ namespace MilkTeaShopManagement.DAL
             }
 
             return res;
+        }
+        public void DelAccount(string username)
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM ACCOUNT WHERE USERNAME = '{0}'", username));
         }
     }
 }

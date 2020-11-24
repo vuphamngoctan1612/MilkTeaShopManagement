@@ -13,10 +13,10 @@ namespace MilkTeaHouseProject.DAL
     {
         private static MenuDAL instance;
 
-        public static MenuDAL Instance
-        {
+        public static MenuDAL Instance 
+        { 
             get { if (instance == null) instance = new MenuDAL(); return instance; }
-            private set => instance = value;
+            set => instance = value; 
         }
 
         private MenuDAL() { }
@@ -45,14 +45,8 @@ namespace MilkTeaHouseProject.DAL
         {
             List<Menu> listMenu = new List<Menu>();
 
-            string query = "select b.ID as BillID, bf.ID as IDBillInfo, d.ID as IDDrink, d.Name, d.Price, bf.Count " +
-                            "from (" +
-                            "(BillInfo as bf inner join Drink as d on bf.DrinkID = d.ID)" +
-                            " inner join Bill as b on b.ID = bf.BillID) " +
-                            "where b.ID = " + idBill;
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListMenuByBillID @billID ", new object[] { idBill });
+            
             foreach (DataRow item in data.Rows)
             {
                 Menu menu = new Menu(item);
@@ -64,30 +58,16 @@ namespace MilkTeaHouseProject.DAL
 
         public int GetCount()
         {
-            List<Menu> listMenu = this.GetListMenu(BillDAL.Instance.GetMAXIDBill());
-
-            int Count = 0;
-
-            foreach (Menu item in listMenu)
-            {
-                Count += item.Count;
-            }
-
-            return Count;
+            return (int)DataProvider.Instance.ExecuteScalar(string.Format("SELECT SUM(bf.COUNT) FROM BillInfo bf " +
+                "JOIN Drink d ON d.ID = bf.DRINKID " +
+                "WHERE BILLID = {0}", BillDAL.Instance.GetMAXIDBill()));
         }
 
         public int GetTotalPrice()
         {
-            List<Menu> listMenu = this.GetListMenu(BillDAL.Instance.GetMAXIDBill());
-
-            int totalPrice = 0;
-
-            foreach (Menu item in listMenu)
-            {
-                totalPrice += item.Price * item.Count;
-            }
-
-            return totalPrice;
+            return (int)DataProvider.Instance.ExecuteScalar(string.Format("SELECT SUM(d.PRICE * bf.COUNT) FROM BillInfo bf " +
+                "JOIN Drink d ON d.ID = bf.DRINKID " +
+                "WHERE BILLID = {0}", BillDAL.Instance.GetMAXIDBill()));
         }
     }
 }

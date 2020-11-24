@@ -68,6 +68,9 @@
             // 
             this.btnExit.AnimationHoverSpeed = 0.07F;
             this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.BaseColor = System.Drawing.Color.White;
             this.btnExit.BorderColor = System.Drawing.Color.Black;
             this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
@@ -80,20 +83,22 @@
             this.btnExit.FocusedColor = System.Drawing.Color.Empty;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.btnExit.Image = null;
+            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
+            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(601, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(47, 42);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "X";
+            this.btnExit.TabIndex = 11;
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnReturn
@@ -185,7 +190,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(67, 460);
+            this.dateTimePicker1.Location = new System.Drawing.Point(67, 450);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(430, 39);
             this.dateTimePicker1.TabIndex = 4;
@@ -196,7 +201,7 @@
             this.lbBirth.AutoSize = true;
             this.lbBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbBirth.Location = new System.Drawing.Point(61, 413);
+            this.lbBirth.Location = new System.Drawing.Point(61, 403);
             this.lbBirth.Name = "lbBirth";
             this.lbBirth.Size = new System.Drawing.Size(123, 32);
             this.lbBirth.TabIndex = 1;
@@ -208,7 +213,7 @@
             this.lbRePass.AutoSize = true;
             this.lbRePass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbRePass.Location = new System.Drawing.Point(61, 235);
+            this.lbRePass.Location = new System.Drawing.Point(61, 223);
             this.lbRePass.Name = "lbRePass";
             this.lbRePass.Size = new System.Drawing.Size(217, 32);
             this.lbRePass.TabIndex = 1;
@@ -220,7 +225,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbName.Location = new System.Drawing.Point(61, 323);
+            this.lbName.Location = new System.Drawing.Point(61, 313);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(90, 32);
             this.lbName.TabIndex = 1;
@@ -232,7 +237,7 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbUser.Location = new System.Drawing.Point(61, 56);
+            this.lbUser.Location = new System.Drawing.Point(61, 44);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(178, 32);
             this.lbUser.TabIndex = 1;
@@ -241,7 +246,7 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(67, 368);
+            this.txtName.Location = new System.Drawing.Point(67, 358);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(430, 39);
             this.txtName.TabIndex = 2;
@@ -255,7 +260,7 @@
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPass.Location = new System.Drawing.Point(61, 145);
+            this.lbPass.Location = new System.Drawing.Point(61, 133);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(120, 32);
             this.lbPass.TabIndex = 1;
@@ -264,7 +269,7 @@
             // txtRePass
             // 
             this.txtRePass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtRePass.Location = new System.Drawing.Point(67, 279);
+            this.txtRePass.Location = new System.Drawing.Point(67, 267);
             this.txtRePass.Name = "txtRePass";
             this.txtRePass.Size = new System.Drawing.Size(430, 39);
             this.txtRePass.TabIndex = 1;
@@ -274,7 +279,7 @@
             // txtPass
             // 
             this.txtPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPass.Location = new System.Drawing.Point(67, 190);
+            this.txtPass.Location = new System.Drawing.Point(67, 178);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(430, 39);
             this.txtPass.TabIndex = 2;
@@ -285,7 +290,7 @@
             // txtUser
             // 
             this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUser.Location = new System.Drawing.Point(67, 100);
+            this.txtUser.Location = new System.Drawing.Point(67, 88);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(430, 39);
             this.txtUser.TabIndex = 1;
@@ -324,7 +329,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnSignUp;
         private System.Windows.Forms.Panel pnLogin;
@@ -339,5 +343,6 @@
         private System.Windows.Forms.TextBox txtRePass;
         private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
     }
 }

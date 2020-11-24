@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MilkteaHouse.bin.Debug.image;
 using Guna.UI.WinForms;
-
+using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -18,26 +18,29 @@ namespace MilkTeaHouseProject
     {
         private GunaAdvenceButton currentButton;
         private Random random;
-        private int tempIndex;
         private Form activeForm;
         private Panel leftCurrentButton;
 
-        public fMain()
+        public fMain(string username)
         {
             InitializeComponent();
             random = new Random();
             leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10,53);
+            leftCurrentButton.Size = new Size(10, 52);
             panelControl.Controls.Add(leftCurrentButton);
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            this.lbDisplay.Text = "Hello, " + StaffDAL.Instance.GetNamebyUsername(username);
+            this.lbUserName.Text = username;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        #region Methods
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -45,12 +48,12 @@ namespace MilkTeaHouseProject
                 if (currentButton != (GunaAdvenceButton)btnSender)
                 {
                     DisableButton();
-                    Color color = Color.FromArgb(255,255,255);
+                    Color color = Color.FromArgb(255, 255, 255);
                     currentButton = (GunaAdvenceButton)btnSender;
                     currentButton.BaseColor = Color.FromArgb(0, 144, 218);
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y+82);
+                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 177);
                     leftCurrentButton.BackColor = color;
                     leftCurrentButton.Visible = true;
                     leftCurrentButton.BringToFront();
@@ -80,11 +83,22 @@ namespace MilkTeaHouseProject
             childForm.Dock = DockStyle.Fill;
             this.pnDesktop.Controls.Add(childForm);
             this.pnDesktop.Tag = childForm;
-            //childForm.BringToFront();
+            childForm.BringToFront();
             childForm.Show();
             lbButtonSelected.Text = childForm.Text;
         }
+        private void Reset()
+        {
+            DisableButton();
+            lbButtonSelected.Text = "HOME";
+            lbButtonSelected.ForeColor = Color.White;
+            currentButton = null;
+            leftCurrentButton.Visible = false;
+            
+        }
+        #endregion
 
+        #region Events
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -103,14 +117,6 @@ namespace MilkTeaHouseProject
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void Reset()
-        {
-            DisableButton();
-            lbButtonSelected.Text = "HOME";
-            lbButtonSelected.ForeColor = Color.White;
-            currentButton = null;
-            leftCurrentButton.Visible = false;
-        }
 
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
@@ -119,9 +125,7 @@ namespace MilkTeaHouseProject
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            fOrder frm = new fOrder();
-            frm.Size = pnDesktop.Size;
-            OpenChildForm(frm, sender);
+            OpenChildForm(new fOrder(this.lbUserName.Text), sender);
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
@@ -138,7 +142,6 @@ namespace MilkTeaHouseProject
         {
             ActivateButton(btnAccount);
             fAccount f = new fAccount();
-            this.Hide();
             f.ShowDialog();
             this.Show();
         }
@@ -146,16 +149,16 @@ namespace MilkTeaHouseProject
         private void lbName_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
-            {
                 activeForm.Close();
-                Reset();
-            }
+            Reset();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int BillID = BillDAL.Instance.GetMAXIDBill();
+            BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
+            Application.Exit();
         }
-
+        #endregion
     }
 }

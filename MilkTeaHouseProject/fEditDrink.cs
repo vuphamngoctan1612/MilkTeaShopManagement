@@ -9,17 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Data.SqlClient;
+using MilkTeaShopManagement.DAL;
+using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaHouseProject
 {
     public partial class fEditDrink : Form
     {
-        public fEditDrink(int drink)
+        public fEditDrink(int id, string name, int price, byte[] image)
         {
             InitializeComponent();
-            lbShowId.Text = drink.ToString();
-            LoadingInfo();
+
+            LoadNameCategory();
+            lbShowId.Text = id.ToString();
+            txtNameDrink.Text = name;
+            txtPrice.Text = price.ToString();
+            if (image == null)
+            {
+                ptbImg.Image = null;
+            }
+            else
+            {
+                img = image;
+                MemoryStream mstream = new MemoryStream(image);
+                Bitmap bitmap = new Bitmap(mstream);
+                ptbImg.Image = bitmap;
+                ptbImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -44,15 +60,12 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        SqlConnection connect = new SqlConnection("Data Source=DESKTOP-EV76EB0\\SQLEXPRESS;Initial Catalog=MilkteaManagement;Integrated Security=True");
         string imgLocation = "";
-        SqlCommand cmd;
         byte[] img = null;
-
         private void ptbImg_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.*)|*.*";
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.png)(*.jpg)(*.jepg)(*.ico)|*.png;*.jpg;*.jepg;*.ico";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 imgLocation = dialog.FileName.ToString();
@@ -60,80 +73,58 @@ namespace MilkTeaHouseProject
                 ptbImg.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
-        private void LoadingInfo()
+        private void LoadNameCategory()
         {
-            connect.Open();
-            string sqlQuery = "SELECT * FROM Drink WHERE ID='" + lbShowId.Text + "'";
-            cmd = new SqlCommand(sqlQuery, connect);
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            dataReader.Read();
-
-            if (dataReader.HasRows)
-            {
-                lbShowId.Text = dataReader[0].ToString();
-                txtNameDrink.Text = dataReader[1].ToString();
-                txtPrice.Text = dataReader[2].ToString();
-                if (!Convert.IsDBNull(dataReader[3]))
-                    img = (byte[])dataReader[3];
-                if (img == null)
-                {
-                    ptbImg.Image = null;
-                }
-                else
-                {
-                    MemoryStream mstream = new MemoryStream(img);
-                    Bitmap bitmap = new Bitmap(mstream);
-                    ptbImg.Image = bitmap;
-                    ptbImg.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-            }
-            connect.Close();
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
+            cbCategory.DataSource = dt;
+            cbCategory.DisplayMember = "NAME";
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
-                if (ptbImg.Image == null)
+
+            if (ptbImg.Image == null)
+            {
+                if (imgLocation == "")
                 {
-                    if (imgLocation == "")
-                    {
-                        LoadImage();
-                    }
+                    loadImage();
+                }
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader bnr = new BinaryReader(stream);
+                img = bnr.ReadBytes((int)stream.Length);
+            }
+            else
+            {
+                if (imgLocation != "")
+                {
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader bnr = new BinaryReader(stream);
                     img = bnr.ReadBytes((int)stream.Length);
                 }
-                else
-                {
-                    if (imgLocation != "")
-                    {
-                        FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                        BinaryReader bnr = new BinaryReader(stream);
-                        img = bnr.ReadBytes((int)stream.Length);
-                    }
-                }
-                if (txtNameDrink.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập tên món");
-                }
-                else if (txtPrice.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập giá");
-                }
-                else
-                {
-                    connect.Open();
-                    string sqlQuery = "UPDATE Drink SET Name = '" + txtNameDrink.Text + "', Price = " + txtPrice.Text + ", Image = @img WHERE ID = '" + lbShowId.Text + "'";
-                    cmd = new SqlCommand(sqlQuery, connect);
-                    cmd.Parameters.Add(new SqlParameter("@img", img));
-                    cmd.ExecuteNonQuery();
-                    connect.Close();
-                    MessageBox.Show("Cập nhật thành công");
-                }
+            }
+            if (txtNameDrink.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên món");
+            }
+            else if (txtPrice.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập giá");
+            }
+            else
+            {
+                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text),cbCategory.Text, img);
+                MessageBox.Show("Cập nhật thành công");
+                this.Close();
+            }
         }
-        private void LoadImage()
+        private void loadImage()
         {
             imgLocation = "./images/kawaii_coffee_64px.png";
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

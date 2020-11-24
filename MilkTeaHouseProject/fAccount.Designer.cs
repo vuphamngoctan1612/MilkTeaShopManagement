@@ -34,17 +34,17 @@
             this.lbIdIncrease = new System.Windows.Forms.Label();
             this.pn = new System.Windows.Forms.Panel();
             this.lbNameForm = new System.Windows.Forms.Label();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lbPass = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
+            this.lbBirth = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnImage = new System.Windows.Forms.Panel();
-            this.lbBirth = new System.Windows.Forms.Label();
-            this.lbUser = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.lbPass = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,40 +52,40 @@
             // 
             this.txtUser.Enabled = false;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(64, 397);
+            this.txtUser.Location = new System.Drawing.Point(64, 383);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(320, 34);
-            this.txtUser.TabIndex = 38;
+            this.txtUser.TabIndex = 50;
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(64, 559);
+            this.txtName.Location = new System.Drawing.Point(64, 545);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(321, 34);
-            this.txtName.TabIndex = 40;
+            this.txtName.TabIndex = 52;
             // 
             // lbIdIncrease
             // 
             this.lbIdIncrease.AutoSize = true;
             this.lbIdIncrease.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdIncrease.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbIdIncrease.Location = new System.Drawing.Point(113, 318);
+            this.lbIdIncrease.Location = new System.Drawing.Point(113, 304);
             this.lbIdIncrease.Name = "lbIdIncrease";
             this.lbIdIncrease.Size = new System.Drawing.Size(32, 28);
-            this.lbIdIncrease.TabIndex = 37;
+            this.lbIdIncrease.TabIndex = 49;
             this.lbIdIncrease.Text = "ID";
             // 
             // pn
             // 
             this.pn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.pn.Controls.Add(this.lbNameForm);
             this.pn.Controls.Add(this.btnExit);
+            this.pn.Controls.Add(this.lbNameForm);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(455, 42);
-            this.pn.TabIndex = 36;
+            this.pn.TabIndex = 48;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // lbNameForm
@@ -99,48 +99,64 @@
             this.lbNameForm.TabIndex = 1;
             this.lbNameForm.Text = "Tài khoản";
             // 
-            // btnExit
+            // dateTimePicker1
             // 
-            this.btnExit.AnimationHoverSpeed = 0.07F;
-            this.btnExit.AnimationSpeed = 0.03F;
-            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnExit.BorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
-            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = null;
-            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(410, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExit.OnHoverImage = null;
-            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(45, 42);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "X";
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(64, 633);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(321, 26);
+            this.dateTimePicker1.TabIndex = 58;
+            // 
+            // lbPass
+            // 
+            this.lbPass.AutoSize = true;
+            this.lbPass.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbPass.Location = new System.Drawing.Point(59, 433);
+            this.lbPass.Name = "lbPass";
+            this.lbPass.Size = new System.Drawing.Size(99, 28);
+            this.lbPass.TabIndex = 55;
+            this.lbPass.Text = "Mật khẩu";
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbUser.Location = new System.Drawing.Point(59, 349);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(154, 28);
+            this.lbUser.TabIndex = 56;
+            this.lbUser.Text = "Tên đăng nhập:";
+            // 
+            // lbBirth
+            // 
+            this.lbBirth.AutoSize = true;
+            this.lbBirth.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbBirth.Location = new System.Drawing.Point(59, 596);
+            this.lbBirth.Name = "lbBirth";
+            this.lbBirth.Size = new System.Drawing.Size(215, 28);
+            this.lbBirth.TabIndex = 57;
+            this.lbBirth.Text = "Ngày tháng năm sinh:";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(64, 467);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(320, 34);
+            this.txtPass.TabIndex = 51;
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbName.Location = new System.Drawing.Point(59, 525);
+            this.lbName.Location = new System.Drawing.Point(59, 511);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(80, 28);
-            this.lbName.TabIndex = 33;
+            this.lbName.TabIndex = 45;
             this.lbName.Text = "Họ tên:";
             // 
             // lbId
@@ -148,10 +164,10 @@
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbId.Location = new System.Drawing.Point(59, 318);
+            this.lbId.Location = new System.Drawing.Point(59, 304);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(37, 28);
-            this.lbId.TabIndex = 34;
+            this.lbId.TabIndex = 46;
             this.lbId.Text = "ID:";
             // 
             // btnReturn
@@ -174,7 +190,7 @@
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(237, 712);
+            this.btnReturn.Location = new System.Drawing.Point(237, 686);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -184,7 +200,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(144, 42);
-            this.btnReturn.TabIndex = 41;
+            this.btnReturn.TabIndex = 53;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -209,7 +225,7 @@
             this.btnAdd.Image = null;
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.Location = new System.Drawing.Point(60, 712);
+            this.btnAdd.Location = new System.Drawing.Point(60, 686);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -219,7 +235,7 @@
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(144, 42);
-            this.btnAdd.TabIndex = 42;
+            this.btnAdd.TabIndex = 54;
             this.btnAdd.Text = "Đổi";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -229,59 +245,45 @@
             this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnImage.Location = new System.Drawing.Point(114, 72);
+            this.pnImage.Location = new System.Drawing.Point(114, 58);
             this.pnImage.Name = "pnImage";
             this.pnImage.Size = new System.Drawing.Size(231, 218);
-            this.pnImage.TabIndex = 35;
+            this.pnImage.TabIndex = 47;
             // 
-            // lbBirth
+            // btnExit
             // 
-            this.lbBirth.AutoSize = true;
-            this.lbBirth.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbBirth.Location = new System.Drawing.Point(59, 610);
-            this.lbBirth.Name = "lbBirth";
-            this.lbBirth.Size = new System.Drawing.Size(215, 28);
-            this.lbBirth.TabIndex = 43;
-            this.lbBirth.Text = "Ngày tháng năm sinh:";
-            // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbUser.Location = new System.Drawing.Point(59, 363);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(154, 28);
-            this.lbUser.TabIndex = 43;
-            this.lbUser.Text = "Tên đăng nhập:";
-            // 
-            // txtPass
-            // 
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(64, 481);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(320, 34);
-            this.txtPass.TabIndex = 38;
-            // 
-            // lbPass
-            // 
-            this.lbPass.AutoSize = true;
-            this.lbPass.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPass.Location = new System.Drawing.Point(59, 447);
-            this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(99, 28);
-            this.lbPass.TabIndex = 43;
-            this.lbPass.Text = "Mật khẩu";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(64, 647);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(321, 26);
-            this.dateTimePicker1.TabIndex = 44;
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnExit.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
+            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
+            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.Location = new System.Drawing.Point(405, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(50, 42);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fAccount
             // 
@@ -289,15 +291,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(455, 800);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lbIdIncrease);
+            this.Controls.Add(this.pn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbPass);
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.lbBirth);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lbIdIncrease);
-            this.Controls.Add(this.pn);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.btnReturn);
@@ -310,9 +312,8 @@
             this.MaximumSize = new System.Drawing.Size(455, 800);
             this.MinimumSize = new System.Drawing.Size(455, 800);
             this.Name = "fAccount";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAccount";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pn.ResumeLayout(false);
             this.pn.PerformLayout();
             this.ResumeLayout(false);
@@ -327,16 +328,16 @@
         private System.Windows.Forms.Label lbIdIncrease;
         private System.Windows.Forms.Panel pn;
         private System.Windows.Forms.Label lbNameForm;
-        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lbPass;
+        private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Label lbBirth;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbId;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private System.Windows.Forms.Panel pnImage;
-        private System.Windows.Forms.Label lbBirth;
-        private System.Windows.Forms.Label lbUser;
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Label lbPass;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
     }
 }

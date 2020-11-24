@@ -28,243 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fStaff));
-            this.flowLayoutPanelStaff = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnBtn = new System.Windows.Forms.Panel();
-            this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStaff = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelStaff = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbBirthDate = new Guna.UI.WinForms.GunaLabel();
+            this.lbPosition = new Guna.UI.WinForms.GunaLabel();
+            this.lbUserName = new Guna.UI.WinForms.GunaLabel();
+            this.lbOverTime = new Guna.UI.WinForms.GunaLabel();
+            this.lbSalary = new Guna.UI.WinForms.GunaLabel();
+            this.lbName = new Guna.UI.WinForms.GunaLabel();
+            this.lbID = new Guna.UI.WinForms.GunaLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnTitle = new System.Windows.Forms.Panel();
-            this.lbBasicSalary = new System.Windows.Forms.Label();
-            this.lbUserName = new System.Windows.Forms.Label();
-            this.lbPos = new System.Windows.Forms.Label();
-            this.lbBirth = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.lbOvertime = new System.Windows.Forms.Label();
-            this.lbSalary = new System.Windows.Forms.Label();
-            this.pnBtn.SuspendLayout();
+            this.btAdd = new Guna.UI.WinForms.GunaButton();
             this.pnStaff.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanelStaff
-            // 
-            this.flowLayoutPanelStaff.AutoScroll = true;
-            this.flowLayoutPanelStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelStaff.Name = "flowLayoutPanelStaff";
-            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1514, 658);
-            this.flowLayoutPanelStaff.TabIndex = 2;
-            // 
-            // pnBtn
-            // 
-            this.pnBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnBtn.Controls.Add(this.btnAdd);
-            this.pnBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBtn.Location = new System.Drawing.Point(0, 0);
-            this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(1514, 79);
-            this.pnBtn.TabIndex = 1;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAdd.AnimationHoverSpeed = 0.07F;
-            this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Black;
-            this.btnAdd.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAdd.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
-            this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = null;
-            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.Location = new System.Drawing.Point(1253, 17);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
-            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.OnHoverImage = null;
-            this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Radius = 10;
-            this.btnAdd.Size = new System.Drawing.Size(212, 42);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm nhân viên";
-            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pnStaff
             // 
-            this.pnStaff.Controls.Add(this.panel3);
-            this.pnStaff.Controls.Add(this.pnBtn);
+            this.pnStaff.Controls.Add(this.flowLayoutPanelStaff);
+            this.pnStaff.Controls.Add(this.panel1);
+            this.pnStaff.Controls.Add(this.panel2);
             this.pnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnStaff.Location = new System.Drawing.Point(0, 0);
             this.pnStaff.Name = "pnStaff";
-            this.pnStaff.Size = new System.Drawing.Size(1514, 788);
-            this.pnStaff.TabIndex = 2;
+            this.pnStaff.Size = new System.Drawing.Size(1820, 1106);
+            this.pnStaff.TabIndex = 0;
             // 
-            // panel3
+            // flowLayoutPanelStaff
             // 
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.pnTitle);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 79);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1514, 709);
-            this.panel3.TabIndex = 2;
+            this.flowLayoutPanelStaff.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.flowLayoutPanelStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 129);
+            this.flowLayoutPanelStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanelStaff.Name = "flowLayoutPanelStaff";
+            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1820, 977);
+            this.flowLayoutPanelStaff.TabIndex = 15;
+            this.flowLayoutPanelStaff.SizeChanged += new System.EventHandler(this.flowLayoutPanelStaff_SizeChanged);
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.flowLayoutPanelStaff);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 51);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1514, 658);
-            this.panel2.TabIndex = 0;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.lbBirthDate);
+            this.panel1.Controls.Add(this.lbPosition);
+            this.panel1.Controls.Add(this.lbUserName);
+            this.panel1.Controls.Add(this.lbOverTime);
+            this.panel1.Controls.Add(this.lbSalary);
+            this.panel1.Controls.Add(this.lbName);
+            this.panel1.Controls.Add(this.lbID);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 79);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1820, 50);
+            this.panel1.TabIndex = 14;
             // 
-            // pnTitle
+            // lbBirthDate
             // 
-            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
-            this.pnTitle.Controls.Add(this.lbSalary);
-            this.pnTitle.Controls.Add(this.lbOvertime);
-            this.pnTitle.Controls.Add(this.lbBasicSalary);
-            this.pnTitle.Controls.Add(this.lbUserName);
-            this.pnTitle.Controls.Add(this.lbPos);
-            this.pnTitle.Controls.Add(this.lbBirth);
-            this.pnTitle.Controls.Add(this.lbName);
-            this.pnTitle.Controls.Add(this.lbID);
-            this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1514, 51);
-            this.pnTitle.TabIndex = 0;
+            this.lbBirthDate.AutoSize = true;
+            this.lbBirthDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirthDate.Location = new System.Drawing.Point(338, -1);
+            this.lbBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbBirthDate.Name = "lbBirthDate";
+            this.lbBirthDate.Size = new System.Drawing.Size(112, 30);
+            this.lbBirthDate.TabIndex = 22;
+            this.lbBirthDate.Text = "Ngày sinh";
             // 
-            // lbBasicSalary
+            // lbPosition
             // 
-            this.lbBasicSalary.AutoSize = true;
-            this.lbBasicSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBasicSalary.Location = new System.Drawing.Point(968, 11);
-            this.lbBasicSalary.Name = "lbBasicSalary";
-            this.lbBasicSalary.Size = new System.Drawing.Size(149, 30);
-            this.lbBasicSalary.TabIndex = 0;
-            this.lbBasicSalary.Text = "Lương cơ bản";
+            this.lbPosition.AutoSize = true;
+            this.lbPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.Location = new System.Drawing.Point(693, 10);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(61, 30);
+            this.lbPosition.TabIndex = 21;
+            this.lbPosition.Text = "Vị trí";
             // 
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(769, 11);
+            this.lbUserName.Location = new System.Drawing.Point(872, -1);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(160, 30);
-            this.lbUserName.TabIndex = 0;
+            this.lbUserName.TabIndex = 20;
             this.lbUserName.Text = "Tên đăng nhập";
             // 
-            // lbPos
+            // lbOverTime
             // 
-            this.lbPos.AutoSize = true;
-            this.lbPos.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPos.Location = new System.Drawing.Point(660, 11);
-            this.lbPos.Name = "lbPos";
-            this.lbPos.Size = new System.Drawing.Size(61, 30);
-            this.lbPos.TabIndex = 0;
-            this.lbPos.Text = "Vị trí";
+            this.lbOverTime.AutoSize = true;
+            this.lbOverTime.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverTime.Location = new System.Drawing.Point(1332, 5);
+            this.lbOverTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbOverTime.Name = "lbOverTime";
+            this.lbOverTime.Size = new System.Drawing.Size(147, 30);
+            this.lbOverTime.TabIndex = 19;
+            this.lbOverTime.Text = "Giờ làm thêm";
+            this.lbOverTime.Visible = false;
             // 
-            // lbBirth
+            // lbSalary
             // 
-            this.lbBirth.AutoSize = true;
-            this.lbBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirth.Location = new System.Drawing.Point(476, 11);
-            this.lbBirth.Name = "lbBirth";
-            this.lbBirth.Size = new System.Drawing.Size(112, 30);
-            this.lbBirth.TabIndex = 0;
-            this.lbBirth.Text = "Ngày sinh";
+            this.lbSalary.AutoSize = true;
+            this.lbSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalary.Location = new System.Drawing.Point(1206, -1);
+            this.lbSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSalary.Name = "lbSalary";
+            this.lbSalary.Size = new System.Drawing.Size(77, 30);
+            this.lbSalary.TabIndex = 18;
+            this.lbSalary.Text = "Lương";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(188, 11);
+            this.lbName.Location = new System.Drawing.Point(137, 0);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(152, 30);
-            this.lbName.TabIndex = 0;
+            this.lbName.TabIndex = 16;
             this.lbName.Text = "Tên nhân viên";
             // 
             // lbID
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(12, 11);
+            this.lbID.Location = new System.Drawing.Point(39, 4);
+            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(148, 30);
-            this.lbID.TabIndex = 0;
+            this.lbID.TabIndex = 10;
             this.lbID.Text = "Mã nhân viên";
             // 
-            // lbOvertime
+            // panel2
             // 
-            this.lbOvertime.AutoSize = true;
-            this.lbOvertime.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOvertime.Location = new System.Drawing.Point(1145, 11);
-            this.lbOvertime.Name = "lbOvertime";
-            this.lbOvertime.Size = new System.Drawing.Size(107, 30);
-            this.lbOvertime.TabIndex = 0;
-            this.lbOvertime.Text = "Overtime";
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.btAdd);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1820, 79);
+            this.panel2.TabIndex = 13;
             // 
-            // lbSalary
+            // btAdd
             // 
-            this.lbSalary.AutoSize = true;
-            this.lbSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(1282, 11);
-            this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(77, 30);
-            this.lbSalary.TabIndex = 0;
-            this.lbSalary.Text = "Lương";
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btAdd.AnimationHoverSpeed = 0.07F;
+            this.btAdd.AnimationSpeed = 0.03F;
+            this.btAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btAdd.BorderColor = System.Drawing.Color.White;
+            this.btAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Image = null;
+            this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btAdd.Location = new System.Drawing.Point(1563, 19);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btAdd.OnHoverImage = null;
+            this.btAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btAdd.Radius = 10;
+            this.btAdd.Size = new System.Drawing.Size(212, 42);
+            this.btAdd.TabIndex = 23;
+            this.btAdd.Text = "Thêm nhân viên";
+            this.btAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // fStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1514, 788);
+            this.ClientSize = new System.Drawing.Size(1820, 1106);
             this.Controls.Add(this.pnStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fStaff";
             this.Text = "NHÂN VIÊN";
-            this.pnBtn.ResumeLayout(false);
             this.pnStaff.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.pnTitle.ResumeLayout(false);
-            this.pnTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelStaff;
-        private System.Windows.Forms.Panel pnBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private System.Windows.Forms.Panel pnStaff;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pnTitle;
-        private System.Windows.Forms.Label lbBirth;
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Label lbBasicSalary;
-        private System.Windows.Forms.Label lbUserName;
-        private System.Windows.Forms.Label lbPos;
-        private System.Windows.Forms.Label lbSalary;
-        private System.Windows.Forms.Label lbOvertime;
+        private Guna.UI.WinForms.GunaLabel lbName;
+        private Guna.UI.WinForms.GunaLabel lbID;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelStaff;
+        private Guna.UI.WinForms.GunaLabel lbBirthDate;
+        private Guna.UI.WinForms.GunaLabel lbSalary;
+        private Guna.UI.WinForms.GunaLabel lbOverTime;
+        private Guna.UI.WinForms.GunaLabel lbUserName;
+        private Guna.UI.WinForms.GunaLabel lbPosition;
+        private Guna.UI.WinForms.GunaButton btAdd;
     }
 }

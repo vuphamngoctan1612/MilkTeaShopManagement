@@ -14,10 +14,10 @@ namespace MilkTeaHouseProject.DAL
     {
         private static BillInfoDAL instance;
 
-        public static BillInfoDAL Instance
+        public static BillInfoDAL Instance 
         {
             get { if (instance == null) instance = new BillInfoDAL(); return BillInfoDAL.instance; }
-            private set => instance = value;
+            set => instance = value; 
         }
 
         private BillInfoDAL() { }
@@ -37,21 +37,9 @@ namespace MilkTeaHouseProject.DAL
             return listBillInfo;
         }
 
-        public int GetMAXIDBillInfo()
+        public void InsertBillInfo(int idBill, int idDrink, int count)
         {
-            try
-            {
-                return (int)DataProvider.Instance.ExecuteScalar("select MAX(ID) from BillInfo");
-            }
-            catch
-            {
-                return 0;
-            }
-        }
-
-        public void InsertBillInfo(int id, int idBill, int idDrink, int count)
-        {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @id , @idBill , @idDrink , @count", new object[] { id, idBill, idDrink, count });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idDrink , @count", new object[] { idBill, idDrink, count });
         }
 
         public void UpdateBillInfo(int idDrink, int count)
@@ -59,9 +47,20 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where DrinkID = '" + idDrink + "'");
         }
 
-        public void DeleteBillInfo(int idBill)
+        public void DeleteBillInfobyIDBill(int idBill)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_DeleteBillInfo @BillID ", new object[] { idBill });
+        }
+
+        public void DeleteBillInfobyIDDrink(int iddrink)
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("Delete from BillInfo where drinkid = '{0}'", iddrink));
+        }
+
+        public void SetnullDrinkIdBillInfo(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_SetnullDrinkIDinBillInfo @drinkID ",
+                new object[] { id });
         }
     }
 }

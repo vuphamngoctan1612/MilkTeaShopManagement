@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBill));
-            this.pnBill = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnBill = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNameStaff = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +50,16 @@
             this.pnDate.SuspendLayout();
             this.SuspendLayout();
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.flowLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 124);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1456, 570);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // pnBill
             // 
             this.pnBill.Controls.Add(this.flowLayoutPanel1);
@@ -58,17 +68,8 @@
             this.pnBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBill.Location = new System.Drawing.Point(0, 0);
             this.pnBill.Name = "pnBill";
-            this.pnBill.Size = new System.Drawing.Size(1492, 800);
-            this.pnBill.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 124);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1492, 676);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.pnBill.Size = new System.Drawing.Size(1456, 694);
+            this.pnBill.TabIndex = 1;
             // 
             // panel1
             // 
@@ -81,17 +82,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 79);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1492, 45);
+            this.panel1.Size = new System.Drawing.Size(1456, 45);
             this.panel1.TabIndex = 3;
             // 
             // lbNameStaff
             // 
             this.lbNameStaff.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbNameStaff.AutoSize = true;
-            this.lbNameStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameStaff.Location = new System.Drawing.Point(889, 8);
+            this.lbNameStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameStaff.Location = new System.Drawing.Point(845, 6);
             this.lbNameStaff.Name = "lbNameStaff";
-            this.lbNameStaff.Size = new System.Drawing.Size(140, 28);
+            this.lbNameStaff.Size = new System.Drawing.Size(152, 30);
             this.lbNameStaff.TabIndex = 0;
             this.lbNameStaff.Text = "Tên nhân viên";
             // 
@@ -99,10 +100,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1286, 8);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1242, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 28);
+            this.label3.Size = new System.Drawing.Size(152, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tổng hóa đơn";
             // 
@@ -110,10 +111,10 @@
             // 
             this.lbIdStaff.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbIdStaff.AutoSize = true;
-            this.lbIdStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdStaff.Location = new System.Drawing.Point(571, 8);
+            this.lbIdStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdStaff.Location = new System.Drawing.Point(512, 6);
             this.lbIdStaff.Name = "lbIdStaff";
-            this.lbIdStaff.Size = new System.Drawing.Size(136, 28);
+            this.lbIdStaff.Size = new System.Drawing.Size(148, 30);
             this.lbIdStaff.TabIndex = 0;
             this.lbIdStaff.Text = "Mã nhân viên";
             // 
@@ -121,20 +122,20 @@
             // 
             this.lbCheckout.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbCheckout.AutoSize = true;
-            this.lbCheckout.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCheckout.Location = new System.Drawing.Point(258, 8);
+            this.lbCheckout.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckout.Location = new System.Drawing.Point(228, 6);
             this.lbCheckout.Name = "lbCheckout";
-            this.lbCheckout.Size = new System.Drawing.Size(97, 28);
+            this.lbCheckout.Size = new System.Drawing.Size(106, 30);
             this.lbCheckout.TabIndex = 0;
             this.lbCheckout.Text = "Thời gian";
             // 
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(66, 6);
+            this.lbId.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.Location = new System.Drawing.Point(17, 6);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(122, 28);
+            this.lbId.Size = new System.Drawing.Size(132, 30);
             this.lbId.TabIndex = 0;
             this.lbId.Text = "Mã hóa đơn";
             // 
@@ -151,7 +152,7 @@
             this.pnDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnDate.Location = new System.Drawing.Point(0, 0);
             this.pnDate.Name = "pnDate";
-            this.pnDate.Size = new System.Drawing.Size(1492, 79);
+            this.pnDate.Size = new System.Drawing.Size(1456, 79);
             this.pnDate.TabIndex = 1;
             // 
             // gunaAdvenceButton1
@@ -174,7 +175,7 @@
             this.gunaAdvenceButton1.Image = null;
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1371, 32);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1335, 32);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -193,7 +194,7 @@
             this.gunaLabel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.gunaLabel3.Location = new System.Drawing.Point(1104, 0);
+            this.gunaLabel3.Location = new System.Drawing.Point(1068, 0);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(96, 30);
             this.gunaLabel3.TabIndex = 0;
@@ -204,7 +205,7 @@
             this.gunaLabel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.gunaLabel2.Location = new System.Drawing.Point(1248, 0);
+            this.gunaLabel2.Location = new System.Drawing.Point(1212, 0);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(92, 30);
             this.gunaLabel2.TabIndex = 0;
@@ -216,7 +217,7 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gunaLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
-            this.gunaLabel6.Location = new System.Drawing.Point(1242, 44);
+            this.gunaLabel6.Location = new System.Drawing.Point(1206, 44);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gunaLabel6.Size = new System.Drawing.Size(104, 30);
@@ -229,7 +230,7 @@
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
-            this.gunaLabel5.Location = new System.Drawing.Point(1102, 44);
+            this.gunaLabel5.Location = new System.Drawing.Point(1066, 44);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gunaLabel5.Size = new System.Drawing.Size(104, 30);
@@ -242,7 +243,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.gunaLabel4.Location = new System.Drawing.Point(960, 44);
+            this.gunaLabel4.Location = new System.Drawing.Point(924, 44);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gunaLabel4.Size = new System.Drawing.Size(104, 30);
@@ -254,7 +255,7 @@
             this.gunaLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.gunaLabel1.Location = new System.Drawing.Point(961, 0);
+            this.gunaLabel1.Location = new System.Drawing.Point(925, 0);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(100, 30);
             this.gunaLabel1.TabIndex = 0;
@@ -264,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1492, 800);
+            this.ClientSize = new System.Drawing.Size(1456, 694);
             this.Controls.Add(this.pnBill);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -281,21 +282,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnBill;
-        private System.Windows.Forms.Panel pnDate;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel pnBill;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private System.Windows.Forms.Label lbNameStaff;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbIdStaff;
         private System.Windows.Forms.Label lbCheckout;
         private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.Label lbNameStaff;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnDate;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }

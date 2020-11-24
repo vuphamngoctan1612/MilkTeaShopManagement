@@ -19,10 +19,10 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
-        public int Count
+        public int Count 
         {
             get { return (int)this.count.Value; }
-            set => this.count.Value = value;
+            set => this.count.Value = value; 
         }
 
         public string IdDrink
@@ -30,37 +30,50 @@ namespace MilkTeaHouseProject
             get { return this.lbDrinkID.Text; }
         }
 
-        public BillItem(int idDrink, string foodName, int price, int count)
+        public int CovertToNumber(string str)
+        {
+            string[] s = str.Split(',');
+            string tmp = "";
+            foreach (string a in s)
+            {
+                tmp = tmp + a;
+            }
+            return int.Parse(tmp);
+        }
+
+        public BillItem (int idDrink, string foodName, int price, int count)
         {
             InitializeComponent();
 
             this.lbDrinkID.Text = idDrink.ToString();
             this.lbFoodName.Text = foodName;
-            this.lbPrice.Text = price.ToString();
+            this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
             this.count.Value = count;
-            this.lbTotal.Text = (price * (int)this.count.Value).ToString();
-        }
-
-        public BillItem(string foodName, int price)
-        {
-            InitializeComponent();
-
-            this.lbFoodName.Text = foodName;
-            this.lbPrice.Text = price.ToString();
-            this.lbTotal.Text = (price * (int)this.count.Value).ToString();
+            this.lbTotal.Text = string.Format("{0:n0}", price * (int)this.count.Value).ToString();
         }
 
         public event EventHandler onValueChanged = null;
+        public event EventHandler onDel = null;
 
         private void count_ValueChanged(object sender, EventArgs e)
         {
-            this.lbTotal.Text = (int.Parse(this.lbPrice.Text) * (int)this.count.Value).ToString();
+            int price = CovertToNumber(this.lbPrice.Text);
+            int total = price * (int)this.count.Value;
+            this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
 
             BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), (int)this.count.Value);
 
             if (onValueChanged != null)
             {
                 onValueChanged.Invoke(this, new EventArgs());
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (onDel != null)
+            {
+                onDel.Invoke(this, new EventArgs());
             }
         }
     }
