@@ -331,5 +331,17 @@
   <ItemGroup>
     <None Include="Resources\Delete2.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FoodsImage\a881ce19f6d5832f8c6fa156cb45abb6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key 2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key 2 - Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit - Copy.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

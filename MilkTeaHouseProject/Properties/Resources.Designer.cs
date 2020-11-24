@@ -63,6 +63,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap a881ce19f6d5832f8c6fa156cb45abb6 {
+            get {
+                object obj = ResourceManager.GetObject("a881ce19f6d5832f8c6fa156cb45abb6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap account_24px {
             get {
                 object obj = ResourceManager.GetObject("account_24px", resourceCulture);
@@ -193,6 +203,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Exit___Copy {
+            get {
+                object obj = ResourceManager.GetObject("Exit - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_30px {
             get {
                 object obj = ResourceManager.GetObject("eye_30px", resourceCulture);
@@ -206,6 +226,26 @@ namespace MilkTeaHouseProject.Properties {
         internal static System.Drawing.Bitmap kawaii_coffee_64px {
             get {
                 object obj = ResourceManager.GetObject("kawaii_coffee_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Key_2 {
+            get {
+                object obj = ResourceManager.GetObject("Key 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Key_2___Copy {
+            get {
+                object obj = ResourceManager.GetObject("Key 2 - Copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
