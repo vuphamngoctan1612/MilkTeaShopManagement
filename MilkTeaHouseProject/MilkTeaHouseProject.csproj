@@ -167,6 +167,12 @@
     <Compile Include="fStaff.Designer.cs">
       <DependentUpon>fStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="fViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fViewProfile.Designer.cs">
+      <DependentUpon>fViewProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fViewProfile.resx">
+      <DependentUpon>fViewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>
@@ -342,6 +351,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Exit - Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Business_Contact_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

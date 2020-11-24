@@ -162,8 +162,7 @@ namespace MilkTeaHouseProject
 
         private void pnHomePage_SizeChanged(object sender, EventArgs e)
         {
-            double X = (this.pnHomePage.Width - this.picHomePage.Width) / 2;
-            this.picHomePage.Location = new Point((int)X, 0);
+            this.btnViewPro5.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnViewPro5.Location.Y);
             this.btnAccount.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnAccount.Location.Y);
             this.btnLogOut.Location = new Point((int)(this.pnHomePage.Width - this.btnLogOut.Width) / 2, this.btnLogOut.Location.Y);
         }
@@ -173,5 +172,12 @@ namespace MilkTeaHouseProject
             this.Close();
         }
         #endregion
+
+        private void btnViewPro5_Click(object sender, EventArgs e)
+        {
+            DTO.Staff staff = StaffDAL.Instance.getStaff(this.lbUserName.Text);
+            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.Salary, staff.Image);
+            frm.ShowDialog();
+        }
     }
 }
