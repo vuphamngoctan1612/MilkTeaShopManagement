@@ -32,19 +32,39 @@ namespace MilkTeaShopManagement.DAL
             foreach(DataRow dataRow in data.Rows)
             {
                 Drink drink = new Drink(dataRow);
-                drinks.Add(drink);
+
+                if (drink.Status == true)
+                {
+                    drinks.Add(drink);
+                }
             }
 
             return drinks;
         }
 
-        public int getIdDrinkMax()
+        public List<Drink> GetListDrinkbyCategory(string category)
+        {
+            List<Drink> drinks = new List<Drink>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM Drink WHERE Category = '{0}'", category));
+
+            foreach (DataRow row in data.Rows)
+            {
+                Drink drink = new Drink(row);
+                if (drink.Status == true)
+                {
+                    drinks.Add(drink);
+                }
+            }
+
+            return drinks;
+        }
+
+        public int GetMAXDrinkID()
         {
             try
             {
-                string query = "SELECT MAX(ID) FROM Drink";
-                int id = (int)DataProvider.Instance.ExecuteScalar(query);
-                return id;
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID) FROM Drink");
             }
             catch (InvalidCastException)
             {
@@ -53,20 +73,29 @@ namespace MilkTeaShopManagement.DAL
         }
         public void AddDrink(string Name, int Price, string Category, byte[] Image)
         {
-            int id = getIdDrinkMax()+1;
+            int id = GetMAXDrinkID() + 1;
 
             DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image ",
                 new object[] { id, Name, Price, Category, Image });
         }
+
         public void EditDrink(int id, string name, int price, string category, byte[] image)
         { 
             DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image ",
-                new object[] { id, name, price,category, image });
+                new object[] { id, name, price, category, image });
         }
+
         public void DelDrink(int id)
         {
-            string query = "Delete from Drink where ID = '" + id + "'";
+            string query = string.Format("UPDATE Drink SET STATUS = 0 WHERE ID = {0}", id);
             DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void SetnullForCategory(string category)
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE DRINK " +
+                "SET CATEGORY = NULL, STATUS = 0" +
+                " WHERE CATEGORY = '{0}'", category));
         }
     }
 }

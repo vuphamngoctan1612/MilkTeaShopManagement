@@ -43,26 +43,18 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-
-            fMain f = new fMain();
-            f.UserName = username;
-            this.Hide();
-            f.ShowDialog();
-            this.Close();
-
-
-            //if (Login(username, password))
-            //{
-            //    fMain f = new fMain();
-            //    f.UserName = username;
-            //    this.Hide();
-            //    f.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
-            //}
+            if (Login(username, password))
+            {
+                fMain f = new fMain(username);
+                //f.UserName = username;
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+            }
         }
 
         private void lbSignup_Click(object sender, EventArgs e)

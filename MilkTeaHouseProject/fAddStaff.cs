@@ -22,46 +22,16 @@ namespace MilkTeaHouseProject
         public fAddStaff()
         {
             InitializeComponent();
+
+            this.txtID.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pn_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        
         string imgLocation = "";
         byte[] img = null;
 
-
-        private void ptbImage_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.png)(*.jpg)(*.jepg)(*.ico)|*.png;*.jpg;*.jepg;*.ico";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                imgLocation = dialog.FileName.ToString();
-                ptbImage.ImageLocation = imgLocation;
-                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-        }
-        private void LoadImage()
-        {
-            imgLocation = "./images/blank-profile.png";
-        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.txtUser.Text;
@@ -69,8 +39,8 @@ namespace MilkTeaHouseProject
             string name = this.txtName.Text;
             DateTime birthdate = this.dateTimePicker1.Value;
             string position = this.cbbPos.Text;
-            int overtime = 0;
             string salary = this.txtSalary.Text;
+
             if (imgLocation == "")
             {
                 LoadImage();
@@ -78,6 +48,7 @@ namespace MilkTeaHouseProject
             FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
             BinaryReader bnr = new BinaryReader(stream);
             img = bnr.ReadBytes((int)stream.Length);
+
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
@@ -103,16 +74,50 @@ namespace MilkTeaHouseProject
                 else
                 {
                     AccountDAL.Instance.SignUp(username, password);
-                    StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, username);
+                    StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, int.Parse(salary));
                     this.Close();
                 }
             }
             else
             {
-                StaffDAL.Instance.AddStaff(name, img,birthdate, position, int.Parse(salary), overtime, "0");
+                StaffDAL.Instance.AddStaff(name, img, birthdate, position, int.Parse(salary));
                 this.Close();
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pn_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        
+        private void ptbImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.png)(*.jpg)(*.jepg)(*.ico)|*.png;*.jpg;*.jepg;*.ico";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                ptbImage.ImageLocation = imgLocation;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void LoadImage()
+        {
+            imgLocation = "./images/blank-profile.png";
+        }
+
         private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))

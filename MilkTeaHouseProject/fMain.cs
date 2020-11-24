@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MilkteaHouse.bin.Debug.image;
 using Guna.UI.WinForms;
-
+using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -21,18 +21,19 @@ namespace MilkTeaHouseProject
         private Form activeForm;
         private Panel leftCurrentButton;
 
-        public string UserName { get => this.lbUserName.Text; set => this.lbUserName.Text = value; }
-
-        public fMain()
+        public fMain(string username)
         {
             InitializeComponent();
             random = new Random();
             leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10,52);
+            leftCurrentButton.Size = new Size(10, 52);
             panelControl.Controls.Add(leftCurrentButton);
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            this.lbDisplay.Text = "Hello, " + StaffDAL.Instance.GetNamebyUsername(username);
+            this.lbUserName.Text = username;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -154,7 +155,9 @@ namespace MilkTeaHouseProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int BillID = BillDAL.Instance.GetMAXIDBill();
+            BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
+            Application.Exit();
         }
         #endregion
     }

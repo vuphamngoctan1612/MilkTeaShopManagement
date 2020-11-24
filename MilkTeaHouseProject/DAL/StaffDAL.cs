@@ -22,7 +22,7 @@ namespace MilkTeaHouseProject.DAL
 
         private StaffDAL() { }
 
-        public List<Staff> LoadStaffs()
+        public List<Staff> GetListStaff()
         {
             List<Staff> staffs = new List<Staff>();
 
@@ -37,11 +37,10 @@ namespace MilkTeaHouseProject.DAL
             return staffs;
         }
 
-        public int GetStaffID(string username)
+        public int GetStaffIDbyUsername(string username)
         {
-            string query = "USP_GetStaffID @UserName ";
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             if (data.Rows.Count > 0)
             {
@@ -49,37 +48,66 @@ namespace MilkTeaHouseProject.DAL
 
                 return staff.ID;
             }
+
             return -1;
         }
-        public void EditStaff(int ID, string name, byte[] image,DateTime birthDate, string pos,  int overtime, int salary)
-        {
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @salary , @overtime ",
-                new object[] { ID, name, image,birthDate, pos, overtime, salary });
-        }
-        public void DelStaff(int iD)
-        {
-            string query = "DELETE FROM Staff WHERE ID = " + iD + ";";
-            DataProvider.Instance.ExecuteNonQuery(query);
-        }
-        public int getIdStaffMax()
+
+        public int GetMAXStaffID()
         {
             try
             {
-                string query = "SELECT MAX(ID) FROM Staff";
-                int id = (int)DataProvider.Instance.ExecuteScalar(query);
-                return id;
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID) FROM Staff");
             }
             catch (InvalidCastException)
             {
                 return 0;
             }
         }
-        public void AddStaff(string name, byte[] image,DateTime birthDate, string pos,  int salary,int overtime, string username)
-        {
-            int id = getIdStaffMax() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary , @overtime ",
-                new object[] { id, name, image,birthDate, pos, username, overtime, salary });
+        public string GetNamebyUsername(string username)
+        {
+            string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Name;
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
+        public void EditStaff(int ID, string name, byte[] image,DateTime birthDate, string pos,  int overtime, int salary)
+        {
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @salary , @overtime ",
+                new object[] { ID, name, image,birthDate, pos, overtime, salary });
+        }
+
+        public void DelStaff(int iD)
+        {
+            string query = "DELETE FROM Staff WHERE ID = " + iD + ";";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, int salary)
+        {
+            int id = GetMAXStaffID() + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary ",
+                new object[] { id, name, image, birthDate, pos, username, salary });
+        }
+
+        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, int salary)
+        {
+            int id = GetMAXStaffID() + 1;
+
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @salary ",
+                new object[] { id, name, image, birthdate, pos, salary });
         }
     }
 }

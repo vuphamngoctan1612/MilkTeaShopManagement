@@ -13,15 +13,19 @@ namespace MilkTeaHouseProject
 {
     public partial class MenuItem : UserControl
     {
-        public MenuItem(int id, string name, int price,string nameCategory, byte[] img)
+        public string ID { get => this.lbId.Text; set => this.lbId.Text = value; }
+        public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
+        public byte[] Images { get; set; }
+
+        public MenuItem(int id, string name, int price, string category, byte[] img)
         {
             InitializeComponent();
 
             this.lbId.Text = id.ToString();
             this.lbName.Text = name;
             this.lbName.BringToFront();
-            this.lbPrice.Text = price.ToString();
-            this.lbCategory.Text = nameCategory;
+            this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
+            this.lbCategory.Text = category;
             if (img == null)
             {
                 picFood.Image = null;
@@ -33,9 +37,6 @@ namespace MilkTeaHouseProject
                 picFood.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-        public string ID { get => this.lbId.Text; set => this.lbId.Text = value; }
-        public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
-        public byte[] Images { get; set; }
 
         public event EventHandler onDel = null;
         public event EventHandler onEdit = null;
@@ -63,8 +64,8 @@ namespace MilkTeaHouseProject
             lbName.Location = new Point(space * 3, 20);
             lbCategory.Location = new Point(space * 2, 20);
             lbPrice.Location = new Point(space * 4, 20);
-            btnEdit.Location = new Point(space * 5-10, 20);
-            btnDelete.Location = new Point(space * 5 +70 , 20);
+            btnEdit.Location = new Point(space * 5 - 10, 20);
+            btnDelete.Location = new Point(space * 5 + 70, 20);
         }
     }
 }

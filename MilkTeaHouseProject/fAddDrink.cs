@@ -21,7 +21,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
             LoadNameCategory();
-            txtID.Text = (DrinkDAL.Instance.getIdDrinkMax()+1).ToString();
+            txtID.Text = (DrinkDAL.Instance.GetMAXDrinkID() + 1).ToString();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -73,6 +73,7 @@ namespace MilkTeaHouseProject
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader bnr = new BinaryReader(stream);
                 img = bnr.ReadBytes((int)stream.Length);
+
                 if (cbCategory.Text == "")
                     MessageBox.Show("Vui lòng chọn loại");
                 else if (txtNameDrink.Text == "")
