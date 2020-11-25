@@ -17,7 +17,11 @@ namespace MilkTeaHouseProject.DTO
         private string userName;
         private int overTime;
         private int salary;
-
+        private int salaryReceived;
+        private int overTimeSalary;
+        private int fault;
+        private int minusSalary;
+        private string phoneNumber;
         public int ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
         public DateTime BirthDate { get => birthDate; set => birthDate = value; }
@@ -26,8 +30,13 @@ namespace MilkTeaHouseProject.DTO
         public int Salary { get => salary; set => salary = value; }
         public int OverTime { get => overTime; set => overTime = value; }
         public byte[] Image { get => image; set => image = value; }
+        public int SalaryReceived { get => salaryReceived; set => salaryReceived = value; }
+        public int OverTimeSalary { get => overTimeSalary; set => overTimeSalary = value; }
+        public int Fault { get => fault; set => fault = value; }
+        public int MinusSalary { get => minusSalary; set => minusSalary = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
-        public Staff(int id, string name,byte[] image ,DateTime birthdate, string position, string username, int overtime, int salary)
+        public Staff(int id, string name,byte[] image ,DateTime birthdate, string position, string username, int overtime, int salary, int salaryreceived, int overtimesalary, int fault, int minussalary, string phonenumber )
         {
             this.iD = id;
             this.name = name;
@@ -36,7 +45,13 @@ namespace MilkTeaHouseProject.DTO
             this.position = position;
             this.userName = username;
             this.overTime = overtime;
-            this.salary = salary; ;
+            this.salary = salary;
+            this.salaryReceived = salaryreceived;
+            this.overTimeSalary = overtimesalary;
+            this.fault = fault;
+            this.minusSalary = minussalary;
+            this.phoneNumber = phonenumber;
+
         }
 
         public Staff(DataRow row)
@@ -50,6 +65,11 @@ namespace MilkTeaHouseProject.DTO
             this.salary = (int)row["Salary"];
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];
+            this.salaryReceived = (int)row["SalaryReceived"];
+            this.overTimeSalary = (int)row["OverTimeSalary"];
+            this.fault = (int)row["Fault"];
+            this.minusSalary = (int)row["MinusSalary"];
+            this.phoneNumber = row["PhoneNumber"].ToString();
         }
     }
 }

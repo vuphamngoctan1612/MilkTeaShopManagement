@@ -39,7 +39,7 @@ namespace MilkTeaHouseProject
             string name = this.txtName.Text;
             DateTime birthdate = this.dateTimePicker1.Value;
             string position = this.cbbPos.Text;
-            string salary = this.txtSalary.Text;
+            string phoneNumber = this.txtPhoneNumber.Text;
 
             if (imgLocation == "")
             {
@@ -57,9 +57,9 @@ namespace MilkTeaHouseProject
             {
                 MessageBox.Show("Chọn Công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(salary))
+            else if (string.IsNullOrEmpty(phoneNumber))
             {
-                MessageBox.Show("Nhập mức lương", "Error");
+                MessageBox.Show("Nhập SĐT", "Error");
             }
             else if (position == "Thu Ngân")
             {
@@ -73,14 +73,20 @@ namespace MilkTeaHouseProject
                 }
                 else
                 {
-                    AccountDAL.Instance.SignUp(username, password);
-                    StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, int.Parse(salary));
-                    this.Close();
+                    if (AccountDAL.Instance.SignUp(username, password))
+                    {
+                        StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, phoneNumber);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Trùng username", "Error");
+                    }    
                 }
             }
             else
             {
-                StaffDAL.Instance.AddStaff(name, img, birthdate, position, int.Parse(salary));
+                StaffDAL.Instance.AddStaff(name, img, birthdate, position, phoneNumber);
                 this.Close();
             }
         }

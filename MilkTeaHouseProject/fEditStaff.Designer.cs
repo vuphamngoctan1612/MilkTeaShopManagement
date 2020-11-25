@@ -36,7 +36,7 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbBirth = new System.Windows.Forms.Label();
             this.lbPos = new System.Windows.Forms.Label();
-            this.lbSalary = new System.Windows.Forms.Label();
+            this.lbPhoneNumber = new System.Windows.Forms.Label();
             this.lbIdIncrease = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,7 +44,7 @@
             this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.pnContain = new System.Windows.Forms.Panel();
             this.ptbImage = new System.Windows.Forms.PictureBox();
             this.pn.SuspendLayout();
@@ -160,17 +160,17 @@
             this.lbPos.TabIndex = 13;
             this.lbPos.Text = "Vị trí:";
             // 
-            // lbSalary
+            // lbPhoneNumber
             // 
-            this.lbSalary.AutoSize = true;
-            this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbSalary.Location = new System.Drawing.Point(316, 255);
-            this.lbSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(55, 19);
-            this.lbSalary.TabIndex = 13;
-            this.lbSalary.Text = "Lương:";
+            this.lbPhoneNumber.AutoSize = true;
+            this.lbPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhoneNumber.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbPhoneNumber.Location = new System.Drawing.Point(316, 255);
+            this.lbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPhoneNumber.Name = "lbPhoneNumber";
+            this.lbPhoneNumber.Size = new System.Drawing.Size(43, 19);
+            this.lbPhoneNumber.TabIndex = 13;
+            this.lbPhoneNumber.Text = "SĐT: ";
             // 
             // lbIdIncrease
             // 
@@ -297,21 +297,21 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(238, 23);
             this.dateTimePicker1.TabIndex = 19;
             // 
-            // txtSalary
+            // txtPhoneNumber
             // 
-            this.txtSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(320, 283);
-            this.txtSalary.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(238, 23);
-            this.txtSalary.TabIndex = 20;
-            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(320, 283);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(238, 23);
+            this.txtPhoneNumber.TabIndex = 20;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             // 
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnContain.Controls.Add(this.ptbImage);
-            this.pnContain.Controls.Add(this.txtSalary);
+            this.pnContain.Controls.Add(this.txtPhoneNumber);
             this.pnContain.Controls.Add(this.dateTimePicker1);
             this.pnContain.Controls.Add(this.btnReturn);
             this.pnContain.Controls.Add(this.btnEdit);
@@ -319,7 +319,7 @@
             this.pnContain.Controls.Add(this.comboBox1);
             this.pnContain.Controls.Add(this.txtName);
             this.pnContain.Controls.Add(this.lbIdIncrease);
-            this.pnContain.Controls.Add(this.lbSalary);
+            this.pnContain.Controls.Add(this.lbPhoneNumber);
             this.pnContain.Controls.Add(this.lbPos);
             this.pnContain.Controls.Add(this.lbBirth);
             this.pnContain.Controls.Add(this.lbName);
@@ -375,7 +375,7 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.Label lbPos;
-        private System.Windows.Forms.Label lbSalary;
+        private System.Windows.Forms.Label lbPhoneNumber;
         private System.Windows.Forms.Label lbIdIncrease;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -383,7 +383,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Panel pnContain;
         private System.Windows.Forms.PictureBox ptbImage;
     }

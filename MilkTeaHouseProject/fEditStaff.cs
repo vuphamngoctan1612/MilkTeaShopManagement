@@ -18,14 +18,14 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditStaff : Form
     {
-        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, int salary)
+        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, string phonenumber)
         {
             InitializeComponent();
             this.lbIdIncrease.Text = ID.ToString();
             this.txtName.Text = name;
             this.dateTimePicker1.Value = BirthDate;
             this.comboBox1.Text = pos;
-            this.txtSalary.Text = salary.ToString();
+            this.txtPhoneNumber.Text = phonenumber;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -71,8 +71,7 @@ namespace MilkTeaHouseProject
             string name = this.txtName.Text;
             DateTime birthdate = this.dateTimePicker1.Value;
             string pos = this.comboBox1.Text;
-            string salary = this.txtSalary.Text;
-            int overtime = 0;
+            string phonenumber = this.txtPhoneNumber.Text;
             if (imgLocation == "")
             {
                 LoadImage();
@@ -88,13 +87,13 @@ namespace MilkTeaHouseProject
             {
                 MessageBox.Show("Chọn Công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(salary))
+            else if (string.IsNullOrEmpty(phonenumber))
             {
                 MessageBox.Show("Nhập mức lương cơ bản", "Error");
             }
             else
             {
-                StaffDAL.Instance.EditStaff(int.Parse(iD), name, img,birthdate, pos, overtime, int.Parse(salary));
+                StaffDAL.Instance.EditStaff(int.Parse(iD), name, img,birthdate, pos, phonenumber);
                 this.Close();
             }
         }

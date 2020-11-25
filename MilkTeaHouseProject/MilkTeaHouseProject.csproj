@@ -155,6 +155,12 @@
     <Compile Include="fOrder.Designer.cs">
       <DependentUpon>fOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSetSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSetSalary.Designer.cs">
+      <DependentUpon>fSetSalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fOrder.resx">
       <DependentUpon>fOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSetSalary.resx">
+      <DependentUpon>fSetSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
