@@ -23,41 +23,22 @@ namespace MilkTeaHouseProject
             LoadStaff();
 
         }
-        #region Method
         public void LoadStaff()
         {
             List<Staff> staffs = StaffDAL.Instance.GetListStaff();
 
             foreach (Staff staff in staffs)
             {
-                int salaryReceived = staff.Salary + staff.OverTime * staff.OverTimeSalary - staff.Fault * staff.MinusSalary;
-                StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image,staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault,staff.SalaryReceived);
-                
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image,staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Salary);
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
-                staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
-                staffItem.onFaultChanged += StaffItem_onFaultChanged;
                 staffItem.Tag = staff;
-
                 flowLayoutPanelStaff.Controls.Add(staffItem);
                 staffItem.Width = flowLayoutPanelStaff.Width;
             }
 
         }
-        #endregion
 
-        #region Events
-        private void StaffItem_onFaultChanged (object sender, EventArgs e)
-        {
-            this.flowLayoutPanelStaff.Controls.Clear();
-            LoadStaff();
-        }
-        private void StaffItem_onOverTimeValueChanged(object sender, EventArgs e)
-        {
-            this.flowLayoutPanelStaff.Controls.Clear();
-            LoadStaff();
-        }
         private void StaffItem_onDel(object sender, EventArgs e)
         {
             int iD = ((sender as StaffItem).Tag as Staff).ID;
@@ -83,8 +64,9 @@ namespace MilkTeaHouseProject
             string name = ((sender as StaffItem).Tag as Staff).Name;
             DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
             string pos = ((sender as StaffItem).Tag as Staff).Position;
-            string phonenumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
-            fEditStaff frm = new fEditStaff(iD, name, birthDate, pos, phonenumber);
+            int salary = ((sender as StaffItem).Tag as Staff).Salary;
+            byte[] img = ((sender as StaffItem).Tag as Staff).Image;
+            fEditStaff frm = new fEditStaff(iD, name, birthDate, pos, salary, img);
             frm.ShowDialog();
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
@@ -113,13 +95,6 @@ namespace MilkTeaHouseProject
             lbSalary.Location = new Point(space * 6, 5);
         }
 
-        private void btSetSalary_Click(object sender, EventArgs e)
-        {
-            fSetSalary f = new fSetSalary();
-            f.ShowDialog();
-            this.flowLayoutPanelStaff.Controls.Clear();
-            LoadStaff();
-        }
-        #endregion
+
     }
 }

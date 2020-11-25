@@ -395,35 +395,99 @@ C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseP
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
-C:\Users\Thanh Quang\OneDrive\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\NIU\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb

@@ -18,14 +18,24 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditStaff : Form
     {
-        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, string phonenumber)
+        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, int salary, byte[] img)
         {
             InitializeComponent();
             this.lbIdIncrease.Text = ID.ToString();
             this.txtName.Text = name;
             this.dateTimePicker1.Value = BirthDate;
             this.comboBox1.Text = pos;
-            this.txtPhoneNumber.Text = phonenumber;
+            this.txtSalary.Text = salary.ToString();
+            if (img == null)
+            {
+                this.ptbImage.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(img);
+                ptbImage.Image = Image.FromStream(mstream);
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -71,7 +81,8 @@ namespace MilkTeaHouseProject
             string name = this.txtName.Text;
             DateTime birthdate = this.dateTimePicker1.Value;
             string pos = this.comboBox1.Text;
-            string phonenumber = this.txtPhoneNumber.Text;
+            string salary = this.txtSalary.Text;
+            int overtime = 0;
             if (imgLocation == "")
             {
                 LoadImage();
@@ -87,13 +98,13 @@ namespace MilkTeaHouseProject
             {
                 MessageBox.Show("Chọn Công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(phonenumber))
+            else if (string.IsNullOrEmpty(salary))
             {
                 MessageBox.Show("Nhập mức lương cơ bản", "Error");
             }
             else
             {
-                StaffDAL.Instance.EditStaff(int.Parse(iD), name, img,birthdate, pos, phonenumber);
+                StaffDAL.Instance.EditStaff(int.Parse(iD), name, img,birthdate, pos, overtime, int.Parse(salary));
                 this.Close();
             }
         }
