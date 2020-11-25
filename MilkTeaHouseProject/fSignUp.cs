@@ -59,7 +59,7 @@ namespace MilkTeaHouseProject
             else
             {
                 AccountDAL.Instance.signUpAdmin(username, password);
-                StaffDAL.Instance.AddStaff(name, img, birthday, pos, username, 0);
+                StaffDAL.Instance.AddStaff(name, img, birthday, pos, username);
                 MessageBox.Show("Đăng kí thành công");
                 this.Close();
             }

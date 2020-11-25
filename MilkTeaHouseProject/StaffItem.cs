@@ -21,7 +21,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, byte[] image,DateTime birthdate, string position, string userName, int workingTime, int salary)
+        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
@@ -39,11 +39,14 @@ namespace MilkTeaHouseProject
             this.lbBirthDate.Text = birthdate.ToString("dd/M/yyyy");
             this.lbPosition.Text = position;
             this.lbUserName.Text = userName;
-            this.lbOverTime.Text = workingTime.ToString();
-            this.lbSalary.Text = salary.ToString();
+            this.numericUpDownOverTime.Value = overtime;
+            this.numericFault.Value = fault;
+            this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
         }
         public event EventHandler onEdit = null;
         public event EventHandler onDel = null;
+        public event EventHandler onOverTimeValueChanged = null;
+        public event EventHandler onFaultChanged = null;
 
 
         private void btEdit_Click(object sender, EventArgs e)
@@ -64,16 +67,42 @@ namespace MilkTeaHouseProject
 
         private void StaffItem_SizeChanged(object sender, EventArgs e)
         {
-            int space = this.Width/ 8 ;
-            picStaff.Location = new Point(15,6);
+            int space = this.Width / 8;
+            picStaff.Location = new Point(10, 6);
             lbID.Location = new Point(120, 18);
-            lbName.Location = new Point((int)(space*1.7), 18);
+            lbName.Location = new Point((int)(space * 1.7), 18);
             lbBirthDate.Location = new Point((int)(space * 3), 18);
-            lbPosition.Location = new Point(space * 4 , 18);
-            lbUserName.Location = new Point(space * 5 , 18);
+            lbPosition.Location = new Point(space * 4, 18);
+            numericUpDownOverTime.Location = new Point(space * 5, 18);
             lbSalary.Location = new Point(space * 6, 18);
-            btEdit.Location = new Point(space * 7-10,18);
-            btDel.Location = new Point(space * 7 +50,18);
+            btEdit.Location = new Point(space * 7, 18);
+            btDel.Location = new Point(space * 7 + 50, 18);
+        }
+
+        private void numericUpDownOverTime_ValueChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.lbID.Text);
+            int overtime = int.Parse(this.numericUpDownOverTime.Value.ToString());
+
+            StaffDAL.Instance.UpdateOverTime(id, overtime);
+
+            if (onOverTimeValueChanged != null)
+            {
+                onOverTimeValueChanged.Invoke(this, new EventArgs());
+            }
+
+        }
+        private void numericFault_ValueChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.lbID.Text);
+            int fault = (int)this.numericFault.Value;
+
+            StaffDAL.Instance.UpdateFault(id, fault);
+
+            if (onFaultChanged != null)
+            {
+                onFaultChanged.Invoke(this, new EventArgs());
+            }
         }
     }
 }

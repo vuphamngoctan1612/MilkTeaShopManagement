@@ -57,20 +57,17 @@ namespace MilkTeaShopManagement.DAL
         public bool SignUp(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);
-            bool res = false;
 
             try
             {
                 string query = "INSERT INTO Account VALUES('" + userName + "', '" + passWord + "', 1)";
 
-                res = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+                return DataProvider.Instance.ExecuteNonQuery(query) > 0;
             }
             catch
             {
-                MessageBox.Show("Tài Khoản đã tồn tại!", "Error");
+                return false;
             }
-
-            return res;
         }
 
         public bool signUpAdmin(string username, string password)
