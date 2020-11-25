@@ -22,7 +22,7 @@ namespace MilkTeaHouseProject
             txtName.Text = name;
             txtBirth.Text = BirthDate.ToString("dd/M/yyyy");
             txtPos.Text = pos;
-            txtSalary.Text = salary.ToString() ;
+            txtSalary.Text = string.Format("{0:n0}", salary).ToString();
             if (img == null)
             {
                 this.ptbImage.Image = null;

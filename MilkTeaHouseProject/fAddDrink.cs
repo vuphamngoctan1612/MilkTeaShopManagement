@@ -26,13 +26,50 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        #region Method
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void btnExit_Click(object sender, EventArgs e)
+
+        private void LoadNameCategory()
         {
-            this.Close();
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
+            cbCategory.DataSource = dt;
+            cbCategory.DisplayMember = "NAME";
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void loadImage()
+        {
+            imgLocation = "./images/kawaii_coffee_64px.png";
+        }
+
+        public void separateThousands(TextBox txt)
+        {
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt.Text = String.Format(culture, "{0:N0}", valueBefore);
+                txt.Select(txt.Text.Length, 0);
+            }
+        }
+
+        public int CovertToNumber(string str)
+        {
+            string[] s = str.Split(',');
+            string tmp = "";
+            foreach (string a in s)
+            {
+                tmp = tmp + a;
+            }
+            return int.Parse(tmp);
+        }
+
+        string imgLocation = "";
+        byte[] img = null;
+        #endregion
+
+        #region Event
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -42,8 +79,12 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        string imgLocation = "";
-        byte[] img = null;
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void pnImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -56,14 +97,12 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void LoadNameCategory()
-        {
-            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
-            cbCategory.DataSource = dt;
-            cbCategory.DisplayMember = "NAME";
-        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string name = this.txtNameDrink.Text;
+            int price = CovertToNumber(this.txtPrice.Text);
+            string category = this.cbCategory.Text;
+
             try
             {
                 if (imgLocation == "")
@@ -82,7 +121,7 @@ namespace MilkTeaHouseProject
                     MessageBox.Show("Vui lòng nhập giá món");
                 else
                 {
-                    DrinkDAL.Instance.AddDrink(txtNameDrink.Text, Int32.Parse(txtPrice.Text), cbCategory.Text, img);
+                    DrinkDAL.Instance.AddDrink(name, price, category, img);
                     MessageBox.Show("Cập nhật thành công");
                     this.Close();
                 }
@@ -93,15 +132,17 @@ namespace MilkTeaHouseProject
             }
 
         }
-        private void loadImage()
-        {
-            imgLocation = "./images/kawaii_coffee_64px.png";
-        }
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            separateThousands(this.txtPrice);
+        }
+        #endregion
     }
 }

@@ -60,7 +60,6 @@
     <Compile Include="BillItem.designer.cs">
       <DependentUpon>BillItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="CurrentAccount.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\BillInfoDAL.cs" />
