@@ -65,14 +65,14 @@ namespace MilkTeaHouseProject
         private void StaffItem_SizeChanged(object sender, EventArgs e)
         {
             int space = this.Width/ 8 ;
-            picStaff.Location = new Point(10,6);
+            picStaff.Location = new Point(15,6);
             lbID.Location = new Point(120, 18);
             lbName.Location = new Point((int)(space*1.7), 18);
             lbBirthDate.Location = new Point((int)(space * 3), 18);
             lbPosition.Location = new Point(space * 4 , 18);
             lbUserName.Location = new Point(space * 5 , 18);
             lbSalary.Location = new Point(space * 6, 18);
-            btEdit.Location = new Point(space * 7,18);
+            btEdit.Location = new Point(space * 7-10,18);
             btDel.Location = new Point(space * 7 +50,18);
         }
     }

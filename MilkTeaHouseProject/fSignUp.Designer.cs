@@ -169,6 +169,7 @@
             this.btnSignUp.TabIndex = 9;
             this.btnSignUp.Text = "Đăng kí";
             this.btnSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // pnLogin
             // 
@@ -251,8 +252,6 @@
             this.txtName.Size = new System.Drawing.Size(430, 39);
             this.txtName.TabIndex = 2;
             this.txtName.Tag = "2";
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtName.UseSystemPasswordChar = true;
             // 
             // lbPass
             // 
@@ -274,7 +273,7 @@
             this.txtRePass.Size = new System.Drawing.Size(430, 39);
             this.txtRePass.TabIndex = 1;
             this.txtRePass.Tag = "1";
-            this.txtRePass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRePass.UseSystemPasswordChar = true;
             // 
             // txtPass
             // 
@@ -284,7 +283,6 @@
             this.txtPass.Size = new System.Drawing.Size(430, 39);
             this.txtPass.TabIndex = 2;
             this.txtPass.Tag = "2";
-            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtUser
@@ -295,7 +293,6 @@
             this.txtUser.Size = new System.Drawing.Size(430, 39);
             this.txtUser.TabIndex = 1;
             this.txtUser.Tag = "1";
-            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pnPic
             // 

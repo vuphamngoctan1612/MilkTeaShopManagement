@@ -24,6 +24,7 @@ namespace MilkTeaHouseProject
         public fMain(string username)
         {
             InitializeComponent();
+            
             random = new Random();
             leftCurrentButton = new Panel();
             leftCurrentButton.Size = new Size(10, 52);
@@ -33,6 +34,7 @@ namespace MilkTeaHouseProject
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             this.lbDisplay.Text = "Hello, " + StaffDAL.Instance.GetNamebyUsername(username);
+            this.lbDisplay.Location = new Point((this.pnContainName.Width - lbDisplay.Width) / 2, this.lbDisplay.Location.Y);
             this.lbUserName.Text = username;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -140,12 +142,10 @@ namespace MilkTeaHouseProject
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            ActivateButton(btnAccount);
-            fAccount f = new fAccount();
+            fAccount f = new fAccount(this.lbUserName.Text);
             f.ShowDialog();
             this.Show();
         }
-
         private void lbName_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
@@ -159,6 +159,26 @@ namespace MilkTeaHouseProject
             BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
             Application.Exit();
         }
+
+        private void pnHomePage_SizeChanged(object sender, EventArgs e)
+        {
+            this.picLogo.Location = new Point((int)(this.pnHomePage.Width - this.picLogo.Width) / 2, this.picLogo.Location.Y);
+            this.btnViewPro5.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnViewPro5.Location.Y);
+            this.btnAccount.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnAccount.Location.Y);
+            this.btnLogOut.Location = new Point((int)(this.pnHomePage.Width - this.btnLogOut.Width) / 2, this.btnLogOut.Location.Y);
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
+        private void btnViewPro5_Click(object sender, EventArgs e)
+        {
+            DTO.Staff staff = StaffDAL.Instance.getStaff(this.lbUserName.Text);
+            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.Salary, staff.Image);
+            frm.ShowDialog();
+        }
     }
 }

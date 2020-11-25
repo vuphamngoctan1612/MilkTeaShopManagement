@@ -8,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaShopManagement.DAL;
 
 namespace MilkTeaHouseProject
 {
     public partial class fAccount : Form
     {
-        public fAccount()
+        public fAccount(string username)
         {
             InitializeComponent();
+
+            txtUser.Text = username;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -37,6 +40,28 @@ namespace MilkTeaHouseProject
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtPass.Text == "")
+            {
+                MessageBox.Show("Nhập mật khẩu mới");
+            }
+            else if (txtRepass.Text == "")
+                { 
+                    MessageBox.Show("Nhập lại mật khẩu mới"); 
+                }
+                    else if (txtPass.Text != txtRepass.Text)
+                    {
+                        MessageBox.Show("Mật khẩu nhập lại không trùng");
+                    } 
+                        else
+                        {
+                            AccountDAL.Instance.changePassword(txtUser.Text, txtPass.Text);
+                            MessageBox.Show("Đổi thành công");
+                            this.Close();
+                        }    
         }
     }
 }

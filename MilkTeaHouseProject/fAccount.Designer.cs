@@ -30,21 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccount));
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lbIdIncrease = new System.Windows.Forms.Label();
+            this.txtRepass = new System.Windows.Forms.TextBox();
             this.pn = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbNameForm = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbPass = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
-            this.lbBirth = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
-            this.lbId = new System.Windows.Forms.Label();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.pnImage = new System.Windows.Forms.Panel();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,29 +47,19 @@
             // 
             this.txtUser.Enabled = false;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(64, 383);
+            this.txtUser.Location = new System.Drawing.Point(67, 135);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(320, 34);
             this.txtUser.TabIndex = 50;
             // 
-            // txtName
+            // txtRepass
             // 
-            this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(64, 545);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(321, 34);
-            this.txtName.TabIndex = 52;
-            // 
-            // lbIdIncrease
-            // 
-            this.lbIdIncrease.AutoSize = true;
-            this.lbIdIncrease.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdIncrease.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbIdIncrease.Location = new System.Drawing.Point(113, 304);
-            this.lbIdIncrease.Name = "lbIdIncrease";
-            this.lbIdIncrease.Size = new System.Drawing.Size(32, 28);
-            this.lbIdIncrease.TabIndex = 49;
-            this.lbIdIncrease.Text = "ID";
+            this.txtRepass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepass.Location = new System.Drawing.Point(67, 297);
+            this.txtRepass.Name = "txtRepass";
+            this.txtRepass.Size = new System.Drawing.Size(321, 34);
+            this.txtRepass.TabIndex = 52;
+            this.txtRepass.UseSystemPasswordChar = true;
             // 
             // pn
             // 
@@ -87,168 +72,6 @@
             this.pn.Size = new System.Drawing.Size(455, 42);
             this.pn.TabIndex = 48;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // lbNameForm
-            // 
-            this.lbNameForm.AutoSize = true;
-            this.lbNameForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameForm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNameForm.Location = new System.Drawing.Point(10, 6);
-            this.lbNameForm.Name = "lbNameForm";
-            this.lbNameForm.Size = new System.Drawing.Size(99, 28);
-            this.lbNameForm.TabIndex = 1;
-            this.lbNameForm.Text = "Tài khoản";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(64, 633);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(321, 26);
-            this.dateTimePicker1.TabIndex = 58;
-            // 
-            // lbPass
-            // 
-            this.lbPass.AutoSize = true;
-            this.lbPass.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPass.Location = new System.Drawing.Point(59, 433);
-            this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(99, 28);
-            this.lbPass.TabIndex = 55;
-            this.lbPass.Text = "Mật khẩu";
-            // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbUser.Location = new System.Drawing.Point(59, 349);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(154, 28);
-            this.lbUser.TabIndex = 56;
-            this.lbUser.Text = "Tên đăng nhập:";
-            // 
-            // lbBirth
-            // 
-            this.lbBirth.AutoSize = true;
-            this.lbBirth.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbBirth.Location = new System.Drawing.Point(59, 596);
-            this.lbBirth.Name = "lbBirth";
-            this.lbBirth.Size = new System.Drawing.Size(215, 28);
-            this.lbBirth.TabIndex = 57;
-            this.lbBirth.Text = "Ngày tháng năm sinh:";
-            // 
-            // txtPass
-            // 
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(64, 467);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(320, 34);
-            this.txtPass.TabIndex = 51;
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbName.Location = new System.Drawing.Point(59, 511);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(80, 28);
-            this.lbName.TabIndex = 45;
-            this.lbName.Text = "Họ tên:";
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbId.Location = new System.Drawing.Point(59, 304);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(37, 28);
-            this.lbId.TabIndex = 46;
-            this.lbId.Text = "ID:";
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.AnimationHoverSpeed = 0.07F;
-            this.btnReturn.AnimationSpeed = 0.03F;
-            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnReturn.BorderColor = System.Drawing.Color.Black;
-            this.btnReturn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnReturn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
-            this.btnReturn.CheckedImage = null;
-            this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
-            this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Image = null;
-            this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(237, 686);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
-            this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnReturn.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnReturn.OnHoverImage = null;
-            this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
-            this.btnReturn.Radius = 10;
-            this.btnReturn.Size = new System.Drawing.Size(144, 42);
-            this.btnReturn.TabIndex = 53;
-            this.btnReturn.Text = "Trở lại";
-            this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.AnimationHoverSpeed = 0.07F;
-            this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Black;
-            this.btnAdd.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAdd.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
-            this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = null;
-            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.Location = new System.Drawing.Point(60, 686);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
-            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.OnHoverImage = null;
-            this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Radius = 10;
-            this.btnAdd.Size = new System.Drawing.Size(144, 42);
-            this.btnAdd.TabIndex = 54;
-            this.btnAdd.Text = "Đổi";
-            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pnImage
-            // 
-            this.pnImage.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources.add_32px;
-            this.pnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnImage.Location = new System.Drawing.Point(114, 58);
-            this.pnImage.Name = "pnImage";
-            this.pnImage.Size = new System.Drawing.Size(231, 218);
-            this.pnImage.TabIndex = 47;
             // 
             // btnExit
             // 
@@ -285,32 +108,149 @@
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lbNameForm
+            // 
+            this.lbNameForm.AutoSize = true;
+            this.lbNameForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameForm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbNameForm.Location = new System.Drawing.Point(10, 6);
+            this.lbNameForm.Name = "lbNameForm";
+            this.lbNameForm.Size = new System.Drawing.Size(99, 28);
+            this.lbNameForm.TabIndex = 1;
+            this.lbNameForm.Text = "Tài khoản";
+            // 
+            // lbPass
+            // 
+            this.lbPass.AutoSize = true;
+            this.lbPass.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbPass.Location = new System.Drawing.Point(62, 185);
+            this.lbPass.Name = "lbPass";
+            this.lbPass.Size = new System.Drawing.Size(99, 28);
+            this.lbPass.TabIndex = 55;
+            this.lbPass.Text = "Mật khẩu";
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbUser.Location = new System.Drawing.Point(62, 101);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(154, 28);
+            this.lbUser.TabIndex = 56;
+            this.lbUser.Text = "Tên đăng nhập:";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(67, 219);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(320, 34);
+            this.txtPass.TabIndex = 51;
+            this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbName.Location = new System.Drawing.Point(62, 263);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(186, 28);
+            this.lbName.TabIndex = 45;
+            this.lbName.Text = "Nhập lại mật khẩu:";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.AnimationHoverSpeed = 0.07F;
+            this.btnReturn.AnimationSpeed = 0.03F;
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnReturn.BorderColor = System.Drawing.Color.Black;
+            this.btnReturn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnReturn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
+            this.btnReturn.CheckedImage = null;
+            this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.Image = null;
+            this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnReturn.Location = new System.Drawing.Point(243, 379);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
+            this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnReturn.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnReturn.OnHoverImage = null;
+            this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
+            this.btnReturn.Radius = 10;
+            this.btnReturn.Size = new System.Drawing.Size(144, 42);
+            this.btnReturn.TabIndex = 53;
+            this.btnReturn.Text = "Trở lại";
+            this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AnimationHoverSpeed = 0.07F;
+            this.btnAdd.AnimationSpeed = 0.03F;
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnAdd.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
+            this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = null;
+            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnAdd.Location = new System.Drawing.Point(66, 379);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
+            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.OnHoverImage = null;
+            this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAdd.Radius = 10;
+            this.btnAdd.Size = new System.Drawing.Size(144, 42);
+            this.btnAdd.TabIndex = 54;
+            this.btnAdd.Text = "Đổi";
+            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // fAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(455, 800);
+            this.ClientSize = new System.Drawing.Size(455, 489);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lbIdIncrease);
+            this.Controls.Add(this.txtRepass);
             this.Controls.Add(this.pn);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbPass);
             this.Controls.Add(this.lbUser);
-            this.Controls.Add(this.lbBirth);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.lbName);
-            this.Controls.Add(this.lbId);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.pnImage);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Location = new System.Drawing.Point(100, 100);
             this.MaximumSize = new System.Drawing.Size(455, 800);
-            this.MinimumSize = new System.Drawing.Size(455, 800);
             this.Name = "fAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAccount";
@@ -324,20 +264,15 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lbIdIncrease;
+        private System.Windows.Forms.TextBox txtRepass;
         private System.Windows.Forms.Panel pn;
         private System.Windows.Forms.Label lbNameForm;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.Label lbUser;
-        private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label lbId;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
-        private System.Windows.Forms.Panel pnImage;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
     }
 }

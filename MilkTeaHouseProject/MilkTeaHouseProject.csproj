@@ -60,7 +60,6 @@
     <Compile Include="BillItem.designer.cs">
       <DependentUpon>BillItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="CurrentAccount.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\BillInfoDAL.cs" />
@@ -167,6 +166,12 @@
     <Compile Include="fStaff.Designer.cs">
       <DependentUpon>fStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="fViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fViewProfile.Designer.cs">
+      <DependentUpon>fViewProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fViewProfile.resx">
+      <DependentUpon>fViewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>
@@ -330,6 +338,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FoodsImage\a881ce19f6d5832f8c6fa156cb45abb6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key 2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key 2 - Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit - Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Business_Contact_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FoodsImage\3545f49ee7278db6a6d44e62e4e9bfeb.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

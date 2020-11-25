@@ -40,7 +40,7 @@ namespace MilkTeaHouseProject
             this.btDel = new Guna.UI.WinForms.GunaButton();
             this.lbOverTime = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.picStaff = new Guna.UI.WinForms.GunaPictureBox();
+            this.picStaff = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,12 +183,11 @@ namespace MilkTeaHouseProject
             // 
             // picStaff
             // 
-            this.picStaff.BaseColor = System.Drawing.Color.White;
-            this.picStaff.Location = new System.Drawing.Point(106, 15);
-            this.picStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picStaff.Location = new System.Drawing.Point(47, 6);
             this.picStaff.Name = "picStaff";
             this.picStaff.Size = new System.Drawing.Size(78, 72);
-            this.picStaff.TabIndex = 17;
+            this.picStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaff.TabIndex = 18;
             this.picStaff.TabStop = false;
             // 
             // StaffItem
@@ -228,6 +227,6 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaButton btDel;
         private Guna.UI.WinForms.GunaLabel lbOverTime;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
-        private Guna.UI.WinForms.GunaPictureBox picStaff;
+        private System.Windows.Forms.PictureBox picStaff;
     }
 }

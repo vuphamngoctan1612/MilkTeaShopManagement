@@ -18,7 +18,7 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditStaff : Form
     {
-        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, int salary)
+        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, int salary, byte[] img)
         {
             InitializeComponent();
             this.lbIdIncrease.Text = ID.ToString();
@@ -26,6 +26,16 @@ namespace MilkTeaHouseProject
             this.dateTimePicker1.Value = BirthDate;
             this.comboBox1.Text = pos;
             this.txtSalary.Text = salary.ToString();
+            if (img == null)
+            {
+                this.ptbImage.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(img);
+                ptbImage.Image = Image.FromStream(mstream);
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
