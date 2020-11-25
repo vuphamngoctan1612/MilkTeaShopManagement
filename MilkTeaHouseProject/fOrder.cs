@@ -42,11 +42,12 @@ namespace MilkTeaHouseProject
                 lbCategory.Text = category.Name;
                 lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
                                                             System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                lbCategory.Width = this.lbAll.Width;
                 lbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
                 lbCategory.Tag = lbCategory;
 
                 lbCategory.Click += LbCategory_Click;
-
+                
                 this.flowLayoutPanelCategory.Controls.Add(lbCategory);
             }
         }
@@ -63,6 +64,7 @@ namespace MilkTeaHouseProject
 
                 this.flowLayoutPanelDrinks.Controls.Add(item);
             }
+            loadSizeDrinḳ();
         }
 
         public void LoadBill()
@@ -94,6 +96,7 @@ namespace MilkTeaHouseProject
 
                 this.flowLayoutPanelDrinks.Controls.Add(item);
             }
+            loadSizeDrinḳ();
         }
 
         public void SearchDrink(string search)
@@ -112,7 +115,19 @@ namespace MilkTeaHouseProject
 
                     this.flowLayoutPanelDrinks.Controls.Add(item);
                 }
+                loadSizeDrinḳ();
             }
+        }
+
+        public void loadSizeDrinḳ()
+        {
+            double space = this.flowLayoutPanelDrinks.Width / 5;
+            foreach (Control item in flowLayoutPanelDrinks.Controls)
+            {
+                item.Width = (int)space;
+            }
+            this.pnSearch.Location = new Point(this.pnCenter.Location.X - this.pnSearch.Width, this.pnSearch.Location.Y);
+            double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
         }
         #endregion
 
@@ -231,13 +246,7 @@ namespace MilkTeaHouseProject
 
         private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
         {
-            double space = this.flowLayoutPanelDrinks.Width / 5;
-            foreach (Control item in flowLayoutPanelDrinks.Controls)
-            {
-                item.Width = (int)space;
-            }
-            this.pnSearch.Location = new Point(this.pnCenter.Location.X - 300, this.pnSearch.Location.Y);
-            double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
+            loadSizeDrinḳ();
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)

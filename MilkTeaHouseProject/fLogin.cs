@@ -17,6 +17,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
             this.CenterToScreen();
+            this.txtPass.UseSystemPasswordChar = true;
         }
 
         #region Methods
@@ -42,14 +43,14 @@ namespace MilkTeaHouseProject
         {
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
-
+            
             if (Login(username, password))
             {
                 fMain f = new fMain(username);
-                //f.UserName = username;
                 this.Hide();
                 f.ShowDialog();
-                this.Close();
+                this.Show();
+                this.txtUser.Text = this.txtPass.Text = "";
             }
             else
             {

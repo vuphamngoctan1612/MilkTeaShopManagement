@@ -65,7 +65,8 @@ namespace MilkTeaHouseProject
             DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
             string pos = ((sender as StaffItem).Tag as Staff).Position;
             int salary = ((sender as StaffItem).Tag as Staff).Salary;
-            fEditStaff frm = new fEditStaff(iD, name, birthDate, pos, salary);
+            byte[] img = ((sender as StaffItem).Tag as Staff).Image;
+            fEditStaff frm = new fEditStaff(iD, name, birthDate, pos, salary, img);
             frm.ShowDialog();
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
