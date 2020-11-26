@@ -49,7 +49,17 @@ create table Staff
 	constraint FK_Staff_UserName foreign key(USERNAME) references Account(USERNAME)
 )
 go
-
+alter table Staff
+add SalaryReceived int default 0
+alter table Staff
+add OverTimeSalary int default 0
+alter table Staff
+add Fault int default 0
+alter table Staff
+add MinusSalary int default 0
+alter table Staff
+add PhoneNumber varchar(10)
+select * from Staff
 create table Bill
 (
 	ID int not null,
@@ -203,18 +213,18 @@ end
 go
 --proc Staff
 create proc USP_AddStaff
-@ID int, @Name nvarchar(100),@image image, @birthday date, @pos nvarchar(100),@username varchar(100), @overtime int, @salary int
+@ID int, @Name nvarchar(100),@image image, @birthday date, @pos nvarchar(100),@username varchar(100), @phonenumber varchar(10)
 as
 begin
-	insert into Staff values(@ID, @Name, @image,@birthday, @pos, @username, @overtime, @salary)
+	insert into Staff values(@ID, @Name, @image,@birthday, @pos, @username, 0, 0, 0, 0, 0, 0, @phonenumber)
 end
 go
 create proc USP_EditStaff
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@overtime int, @salary int
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10)
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, OverTime = @overtime, SALARY = @salary
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber
 	where ID = @ID
 end
 go
@@ -232,10 +242,42 @@ as
 begin
 	delete from Account where UserName = @user
 end
+create proc USP_UpdateOverTime
+@ID int, @OverTime int
+as
+begin
+	update Staff
+	set OverTime = @OverTime
+	where ID = @ID
+end
+create proc USP_UpdateFault
+@ID int, @fault int
+as
+begin
+	update Staff
+	set Fault = @fault
+	where ID = @ID
+end
+create proc USP_UpdateSalary
+@position nvarchar(100), @salary int,@overtimesalary int, @minussalary int
+as
+begin
+	update Staff
+	set SALARY = @salary, OverTimeSalary = @overtimesalary, MinusSalary = @minussalary
+	where POSITION = @position
+end
+create proc USP_UpdateSalaryReceived
+@id int, @salaryreceived int
+as
+begin
+	update Staff
+	set SalaryReceived = @salaryreceived
+	where ID = @id
+end
 insert into Account
 values ('quangaka','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
-insert into Staff 
-values (1,N'Thành Quang',null, '10-06-2001',N'Thu Ngân','quangaka',0,5000000)
+
 insert into Account
 values ('0','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
-
+insert into Account
+values ('admin','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',0)
