@@ -41,12 +41,12 @@ namespace MilkTeaHouseProject
             this.lbName = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.pnContain = new System.Windows.Forms.Panel();
-            this.pnStraight = new System.Windows.Forms.Panel();
-            this.txtName = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtBirth = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtPhone = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtPos = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtSalary = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtBirth = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtID = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtName = new Guna.UI.WinForms.GunaLineTextBox();
+            this.pnStraight = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
@@ -168,9 +168,9 @@ namespace MilkTeaHouseProject
             this.lbSalary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSalary.Location = new System.Drawing.Point(456, 310);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(147, 28);
+            this.lbSalary.Size = new System.Drawing.Size(55, 28);
             this.lbSalary.TabIndex = 13;
-            this.lbSalary.Text = "Lương cơ bản:";
+            this.lbSalary.Text = "SĐT:";
             // 
             // lbPos
             // 
@@ -219,7 +219,7 @@ namespace MilkTeaHouseProject
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnContain.Controls.Add(this.txtSalary);
+            this.pnContain.Controls.Add(this.txtPhone);
             this.pnContain.Controls.Add(this.txtPos);
             this.pnContain.Controls.Add(this.txtBirth);
             this.pnContain.Controls.Add(this.txtID);
@@ -240,44 +240,20 @@ namespace MilkTeaHouseProject
             this.pnContain.Size = new System.Drawing.Size(1061, 487);
             this.pnContain.TabIndex = 7;
             // 
-            // pnStraight
+            // txtPhone
             // 
-            this.pnStraight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.pnStraight.Location = new System.Drawing.Point(367, 9);
-            this.pnStraight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnStraight.Name = "pnStraight";
-            this.pnStraight.Size = new System.Drawing.Size(21, 608);
-            this.pnStraight.TabIndex = 43;
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.Enabled = false;
-            this.txtName.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtName.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtName.Location = new System.Drawing.Point(624, 99);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(346, 37);
-            this.txtName.TabIndex = 44;
-            // 
-            // txtBirth
-            // 
-            this.txtBirth.BackColor = System.Drawing.Color.White;
-            this.txtBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBirth.Enabled = false;
-            this.txtBirth.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtBirth.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtBirth.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtBirth.Location = new System.Drawing.Point(624, 167);
-            this.txtBirth.Name = "txtBirth";
-            this.txtBirth.PasswordChar = '\0';
-            this.txtBirth.SelectedText = "";
-            this.txtBirth.Size = new System.Drawing.Size(346, 37);
-            this.txtBirth.TabIndex = 44;
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhone.Enabled = false;
+            this.txtPhone.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPhone.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtPhone.Location = new System.Drawing.Point(624, 302);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.PasswordChar = '\0';
+            this.txtPhone.SelectedText = "";
+            this.txtPhone.Size = new System.Drawing.Size(346, 37);
+            this.txtPhone.TabIndex = 44;
             // 
             // txtPos
             // 
@@ -294,20 +270,20 @@ namespace MilkTeaHouseProject
             this.txtPos.Size = new System.Drawing.Size(346, 37);
             this.txtPos.TabIndex = 44;
             // 
-            // txtSalary
+            // txtBirth
             // 
-            this.txtSalary.BackColor = System.Drawing.Color.White;
-            this.txtSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSalary.Enabled = false;
-            this.txtSalary.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtSalary.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtSalary.Location = new System.Drawing.Point(624, 302);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.PasswordChar = '\0';
-            this.txtSalary.SelectedText = "";
-            this.txtSalary.Size = new System.Drawing.Size(346, 37);
-            this.txtSalary.TabIndex = 44;
+            this.txtBirth.BackColor = System.Drawing.Color.White;
+            this.txtBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBirth.Enabled = false;
+            this.txtBirth.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtBirth.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtBirth.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtBirth.Location = new System.Drawing.Point(624, 167);
+            this.txtBirth.Name = "txtBirth";
+            this.txtBirth.PasswordChar = '\0';
+            this.txtBirth.SelectedText = "";
+            this.txtBirth.Size = new System.Drawing.Size(346, 37);
+            this.txtBirth.TabIndex = 44;
             // 
             // txtID
             // 
@@ -323,6 +299,30 @@ namespace MilkTeaHouseProject
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(74, 37);
             this.txtID.TabIndex = 44;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.Enabled = false;
+            this.txtName.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtName.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtName.Location = new System.Drawing.Point(624, 99);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(346, 37);
+            this.txtName.TabIndex = 44;
+            // 
+            // pnStraight
+            // 
+            this.pnStraight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.pnStraight.Location = new System.Drawing.Point(367, 9);
+            this.pnStraight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnStraight.Name = "pnStraight";
+            this.pnStraight.Size = new System.Drawing.Size(21, 608);
+            this.pnStraight.TabIndex = 43;
             // 
             // fViewProfile
             // 
@@ -357,7 +357,7 @@ namespace MilkTeaHouseProject
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Panel pnContain;
-        private Guna.UI.WinForms.GunaLineTextBox txtSalary;
+        private Guna.UI.WinForms.GunaLineTextBox txtPhone;
         private Guna.UI.WinForms.GunaLineTextBox txtPos;
         private Guna.UI.WinForms.GunaLineTextBox txtBirth;
         private Guna.UI.WinForms.GunaLineTextBox txtID;

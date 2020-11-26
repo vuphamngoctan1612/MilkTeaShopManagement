@@ -38,6 +38,7 @@ namespace MilkTeaHouseProject
             string name = txtName.Text;
             string pos = "Quản lí";
             DateTime birthday = dateTimePicker1.Value;
+
             byte[] img = LoadImage();
             
             if (string.IsNullOrEmpty(username))
@@ -58,10 +59,17 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                AccountDAL.Instance.signUpAdmin(username, password);
-                StaffDAL.Instance.AddStaff(name, img, birthday, pos, username, 0);
-                MessageBox.Show("Đăng kí thành công");
-                this.Close();
+                    bool res = AccountDAL.Instance.signUpAdmin(username, password);
+                if (res != false) 
+                {
+                    StaffDAL.Instance.AddStaff(name, img, birthday, pos, username,"");
+                    MessageBox.Show("Đăng kí thành công");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập đã tồn tại");
+                }
             }
         }
         private byte[] LoadImage()

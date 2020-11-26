@@ -41,6 +41,21 @@ namespace MilkTeaHouseProject
         public event EventHandler onDel = null;
         public event EventHandler onEdit = null;
 
+        #region Mothods
+
+        void sizeChange()
+        {
+            int space = this.Width / 6;
+            lbId.Location = new Point(space + 5, 10);
+            lbName.Location = new Point(space * 3 + 5, 10);
+            lbCategory.Location = new Point(space * 2 + 5, 10);
+            lbPrice.Location = new Point(space * 4 + 5, 10);
+            btnEdit.Location = new Point(space * 5 - 5, 10);
+            btnDelete.Location = new Point(space * 5 + 65, 10);
+        }
+        #endregion
+
+        #region Event
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (onEdit != null)
@@ -59,13 +74,8 @@ namespace MilkTeaHouseProject
 
         private void MenuItem_SizeChanged(object sender, EventArgs e)
         {
-            int space = this.Width / 6;
-            lbId.Location = new Point(space, 20);
-            lbName.Location = new Point(space * 3, 20);
-            lbCategory.Location = new Point(space * 2, 20);
-            lbPrice.Location = new Point(space * 4, 20);
-            btnEdit.Location = new Point(space * 5 - 10, 20);
-            btnDelete.Location = new Point(space * 5 + 70, 20);
+            sizeChange();
         }
+        #endregion
     }
 }

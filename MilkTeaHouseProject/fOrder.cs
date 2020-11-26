@@ -125,6 +125,7 @@ namespace MilkTeaHouseProject
             foreach (Control item in flowLayoutPanelDrinks.Controls)
             {
                 item.Width = (int)space;
+                item.Height = (int)(space / 3 * 4);
             }
             this.pnSearch.Location = new Point(this.pnCenter.Location.X - this.pnSearch.Width, this.pnSearch.Location.Y);
             double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;

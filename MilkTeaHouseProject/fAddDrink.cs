@@ -26,9 +26,9 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-
-        #region Method
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #region Method
+
 
         private void LoadNameCategory()
         {

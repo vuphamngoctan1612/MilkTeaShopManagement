@@ -21,6 +21,24 @@ namespace MilkTeaHouseProject.DAL
 
         private BillDAL() { }
 
+        public List<Bill> LoadBill()
+            {
+            List<Bill> bills = new List<Bill>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Bill");
+
+            foreach (DataRow dataRow in data.Rows)
+            { 
+                Bill bill = new Bill(dataRow);
+
+                if (bill.Status == true)
+                {
+                    bills.Add(bill);
+                }
+            }
+
+            return bills;
+        }
         public int GetIDBill()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("select ID from Bill");
@@ -54,7 +72,16 @@ namespace MilkTeaHouseProject.DAL
 
         public void InsertBill(int id, int staffID)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID", new object[] { id, staffID });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID , @Note", new object[] { id, staffID, "Đặt món" });
+        }
+
+        public void MakeABill(int idStaff, string note, int total)
+        {
+            int idBill = GetMAXIDBill()+1;
+            DateTime time = DateTime.Now;
+
+            DataProvider.Instance.ExecuteNonQuery(string.Format("INSERT INTO Bill VALUES({0}, {1}, '{2}', 1, {3}, '{4}')"
+                , idBill, idStaff, time, total, note));
         }
 
         public void UpdateBill(int id, DateTime checkOut, bool status, int total, int staffID)

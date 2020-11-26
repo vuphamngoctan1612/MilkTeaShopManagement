@@ -137,7 +137,7 @@ namespace MilkTeaHouseProject
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fBill(), sender);
+            OpenChildForm(new fBill(lbUserName.Text), sender);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -176,8 +176,8 @@ namespace MilkTeaHouseProject
 
         private void btnViewPro5_Click(object sender, EventArgs e)
         {
-            DTO.Staff staff = StaffDAL.Instance.getStaff(this.lbUserName.Text);
-            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.Salary, staff.Image);
+            DTO.Staff staff = StaffDAL.Instance.GetStaff(this.lbUserName.Text);
+            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.PhoneNumber, staff.Image);
             frm.ShowDialog();
         }
     }

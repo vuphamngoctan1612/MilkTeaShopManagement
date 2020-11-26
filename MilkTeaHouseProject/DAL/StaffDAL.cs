@@ -37,10 +37,12 @@ namespace MilkTeaHouseProject.DAL
             return staffs;
         }
 
-        public Staff getStaff(string username)
+        public Staff GetStaff(string username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff WHERE username = '" + username + "'");
+            
             Staff staff = new Staff(data.Rows[0]);
+
             return staff;
         }
         public int GetStaffIDbyUsername(string username)
@@ -88,10 +90,28 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public void EditStaff(int ID, string name, byte[] image,DateTime birthDate, string pos,  int overtime, int salary)
+        public string GetNamebyID(int id)
         {
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @salary , @overtime ",
-                new object[] { ID, name, image,birthDate, pos, overtime, salary });
+            string query = string.Format("SELECT * FROM STAFF WHERE ID = '{0}'", id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Name;
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber)
+        {
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber });
         }
 
         public void DelStaff(int iD)
@@ -100,20 +120,38 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, int salary)
+        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, string phonenumber)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salary ",
-                new object[] { id, name, image, birthDate, pos, username, salary });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber ",
+                new object[] { id, name, image, birthDate, pos, username, phonenumber });
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, int salary)
+        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, string phonenumber)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @salary ",
-                new object[] { id, name, image, birthdate, pos, salary });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber ",
+                new object[] { id, name, image, birthdate, pos, phonenumber });
+        }
+        public void UpdateOverTime(int id, int overtime)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateOverTime @ID , @OverTime ", new object[] { id, overtime });
+        }
+        public void UpdateFault(int id, int fault)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateFault @ID , @fault ", new object[] { id, fault });
+        }
+        public void UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalary @position , @salary , @overtimesalary , @minussalary ",
+                new object[] { pos, salary, overtimesalary, minussalary });
+        }
+        public void UpdateSalaryReceived(int id, int salaryreceived)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",
+                new object[] { id, salaryreceived });
         }
     }
 }
