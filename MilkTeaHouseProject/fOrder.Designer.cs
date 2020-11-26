@@ -189,40 +189,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(450, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 28);
+            this.label3.Size = new System.Drawing.Size(64, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tổng";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(340, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 28);
+            this.label2.Size = new System.Drawing.Size(96, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Giá món";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(220, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 28);
+            this.label1.Size = new System.Drawing.Size(103, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Số lượng";
             // 
             // lbFoodName
             // 
             this.lbFoodName.AutoSize = true;
-            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lbFoodName.Location = new System.Drawing.Point(50, 17);
             this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(92, 28);
+            this.lbFoodName.Size = new System.Drawing.Size(99, 30);
             this.lbFoodName.TabIndex = 2;
             this.lbFoodName.Text = "Tên món";
             // 
@@ -567,6 +567,7 @@
             this.Controls.Add(this.pnLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1400, 714);
             this.Name = "fOrder";
             this.Text = "ĐẶT HÀNG";
             this.pnToolInCategory.ResumeLayout(false);

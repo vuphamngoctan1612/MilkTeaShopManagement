@@ -14,7 +14,7 @@ namespace MilkTeaHouseProject
 {
     public partial class fViewProfile : Form
     {
-        public fViewProfile(int ID, string name, DateTime BirthDate, string pos, int salary, byte[] img)
+        public fViewProfile(int ID, string name, DateTime BirthDate, string pos, string phone, byte[] img)
         {
             InitializeComponent();
 
@@ -22,7 +22,7 @@ namespace MilkTeaHouseProject
             txtName.Text = name;
             txtBirth.Text = BirthDate.ToString("dd/M/yyyy");
             txtPos.Text = pos;
-            txtSalary.Text = string.Format("{0:n0}", salary).ToString();
+            txtPhone.Text = phone;
             if (img == null)
             {
                 this.ptbImage.Image = null;
