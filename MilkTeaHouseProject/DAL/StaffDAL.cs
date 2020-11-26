@@ -37,10 +37,12 @@ namespace MilkTeaHouseProject.DAL
             return staffs;
         }
 
-        public Staff getStaff(string username)
+        public Staff GetStaff(string username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff WHERE username = '" + username + "'");
+            
             Staff staff = new Staff(data.Rows[0]);
+
             return staff;
         }
         public int GetStaffIDbyUsername(string username)
@@ -73,6 +75,24 @@ namespace MilkTeaHouseProject.DAL
         public string GetNamebyUsername(string username)
         {
             string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Name;
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
+        public string GetNamebyID(int id)
+        {
+            string query = string.Format("SELECT * FROM STAFF WHERE ID = '{0}'", id);
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 

@@ -24,6 +24,23 @@ namespace MilkTeaHouseProject
 
         }
         #region Method
+
+        void sizeChange()
+        {
+            foreach (Control item in flowLayoutPanelStaff.Controls)
+            {
+                item.Width = this.flowLayoutPanelStaff.Width - 10;
+            }
+            int space = this.flowLayoutPanelStaff.Width / 8;
+            lbID.Location = new Point(85, 5);
+            lbName.Location = new Point((int)(space * 1.7), 5);
+            lbBirthDate.Location = new Point((int)(space * 2.8), 5);
+            lbPosition.Location = new Point((int)(space * 3.6), 5);
+            lbUserName.Location = new Point((int)(space * 4.2), 5);
+            lbOvertime.Location = new Point((int)(space * 5.1), 5);
+            lbFaust.Location = new Point((int)(space * 6), 5);
+            lbSalary.Location = new Point((int)(space * 6.6), 5);
+        }
         public void LoadStaff()
         {
             List<Staff> staffs = StaffDAL.Instance.GetListStaff();
@@ -41,7 +58,7 @@ namespace MilkTeaHouseProject
                 staffItem.Tag = staff;
 
                 flowLayoutPanelStaff.Controls.Add(staffItem);
-                staffItem.Width = flowLayoutPanelStaff.Width;
+                sizeChange();
             }
 
         }
@@ -71,6 +88,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
+                BillDAL.Instance.UpDateStaffIDtoNULL(iD);
                 StaffDAL.Instance.DelStaff(iD);
             }
 
@@ -100,17 +118,7 @@ namespace MilkTeaHouseProject
 
         private void flowLayoutPanelStaff_SizeChanged(object sender, EventArgs e)
         {
-            foreach (Control item in flowLayoutPanelStaff.Controls)
-            {
-                item.Width = this.flowLayoutPanelStaff.Width - 10;
-            }
-            int space = this.flowLayoutPanelStaff.Width / 8;
-            lbID.Location = new Point(85, 5);
-            lbName.Location = new Point((int)(space * 1.7), 5);
-            lbBirthDate.Location = new Point((int)(space * 3), 5);
-            lbPosition.Location = new Point(space * 4, 5);
-            lbUserName.Location = new Point((int)(space * 4.9), 5);
-            lbSalary.Location = new Point(space * 6, 5);
+            sizeChange();
         }
 
         private void btSetSalary_Click(object sender, EventArgs e)

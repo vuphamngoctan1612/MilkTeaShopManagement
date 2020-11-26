@@ -68,6 +68,10 @@ namespace MilkTeaHouseProject
         private void DrinkItem_SizeChanged(object sender, EventArgs e)
         {
             this.picFood.Width = this.Width - 2 * (this.picFood.Location.X);
+            this.picFood.Height = this.Height / 5 * 3;
+            this.picFood.Location = new Point(this.picFood.Location.X, 5);
+            this.lbName.Location = new Point(this.lbName.Location.X, this.picFood.Height + 10);
+            this.lbPrice.Location = new Point(this.lbPrice.Location.X, this.picFood.Height + this.lbName.Height + 10);
             btnChoose.Size = this.Size;
         }
     }

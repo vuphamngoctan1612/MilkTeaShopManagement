@@ -178,6 +178,18 @@
     <Compile Include="fViewProfile.Designer.cs">
       <DependentUpon>fViewProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemInBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemInBill.Designer.cs">
+      <DependentUpon>ItemInBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakeABill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeABill.Designer.cs">
+      <DependentUpon>MakeABill.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +250,9 @@
     <EmbeddedResource Include="fOrder.resx">
       <DependentUpon>fOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSetSalary.resx">
+      <DependentUpon>fSetSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fViewProfile.resx">
       <DependentUpon>fViewProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemInBill.resx">
+      <DependentUpon>ItemInBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeABill.resx">
+      <DependentUpon>MakeABill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>

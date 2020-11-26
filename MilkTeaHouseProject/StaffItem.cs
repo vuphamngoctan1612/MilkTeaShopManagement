@@ -68,15 +68,17 @@ namespace MilkTeaHouseProject
         private void StaffItem_SizeChanged(object sender, EventArgs e)
         {
             int space = this.Width / 8;
-            picStaff.Location = new Point(10, 6);
-            lbID.Location = new Point(120, 18);
-            lbName.Location = new Point((int)(space * 1.7), 18);
-            lbBirthDate.Location = new Point((int)(space * 3), 18);
-            lbPosition.Location = new Point(space * 4, 18);
-            numericUpDownOverTime.Location = new Point(space * 5, 18);
-            lbSalary.Location = new Point(space * 6, 18);
-            btEdit.Location = new Point(space * 7, 18);
-            btDel.Location = new Point(space * 7 + 50, 18);
+            picStaff.Location = new Point(10, 3);
+            lbID.Location = new Point(120, 10);
+            lbName.Location = new Point((int)(space * 1.7), 10);
+            lbBirthDate.Location = new Point((int)(space * 2.8), 10);
+            lbPosition.Location = new Point((int)(space * 3.6), 10);
+            lbUserName.Location = new Point((int)(space * 4.2), 10);
+            numericUpDownOverTime.Location = new Point((int)(space * 5.3), 7);
+            numericFault.Location = new Point((int)(space * 6), 7);
+            lbSalary.Location = new Point((int)(space * 6.6), 10);
+            btEdit.Location = new Point((int)(space * 7.2), 10);
+            btDel.Location = new Point((int)(space * 7.2) + 50, 10);
         }
 
         private void numericUpDownOverTime_ValueChanged(object sender, EventArgs e)

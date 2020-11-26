@@ -107,11 +107,11 @@ namespace MilkTeaHouseProject
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbPrice.Location = new System.Drawing.Point(838, 35);
+            this.lbPrice.Location = new System.Drawing.Point(841, 38);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(62, 30);
+            this.lbPrice.Size = new System.Drawing.Size(60, 30);
             this.lbPrice.TabIndex = 12;
             this.lbPrice.Text = "Price";
             // 
@@ -122,10 +122,10 @@ namespace MilkTeaHouseProject
             this.picFood.Image = global::MilkTeaHouseProject.Properties.Resources.Toffee_nut_crunch_latte;
             this.picFood.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.picFood.InitialImage = ((System.Drawing.Image)(resources.GetObject("picFood.InitialImage")));
-            this.picFood.Location = new System.Drawing.Point(37, 14);
+            this.picFood.Location = new System.Drawing.Point(27, 3);
             this.picFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(77, 71);
+            this.picFood.Size = new System.Drawing.Size(60, 60);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFood.TabIndex = 11;
             this.picFood.TabStop = false;
@@ -133,22 +133,22 @@ namespace MilkTeaHouseProject
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbId.Location = new System.Drawing.Point(258, 35);
+            this.lbId.Location = new System.Drawing.Point(242, 23);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(35, 30);
+            this.lbId.Size = new System.Drawing.Size(34, 30);
             this.lbId.TabIndex = 9;
             this.lbId.Text = "ID";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbName.Location = new System.Drawing.Point(398, 35);
+            this.lbName.Location = new System.Drawing.Point(401, 38);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(119, 30);
+            this.lbName.Size = new System.Drawing.Size(114, 30);
             this.lbName.TabIndex = 10;
             this.lbName.Text = "Drink Item";
             // 
@@ -160,11 +160,11 @@ namespace MilkTeaHouseProject
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbCategory.Location = new System.Drawing.Point(620, 35);
+            this.lbCategory.Location = new System.Drawing.Point(623, 38);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(104, 30);
+            this.lbCategory.Size = new System.Drawing.Size(102, 30);
             this.lbCategory.TabIndex = 10;
             this.lbCategory.Text = "Category";
             // 
@@ -181,7 +181,8 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.lbName);
             this.Name = "MenuItem";
-            this.Size = new System.Drawing.Size(1528, 99);
+            this.Padding = new System.Windows.Forms.Padding(3);
+            this.Size = new System.Drawing.Size(1528, 67);
             this.SizeChanged += new System.EventHandler(this.MenuItem_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
             this.ResumeLayout(false);
