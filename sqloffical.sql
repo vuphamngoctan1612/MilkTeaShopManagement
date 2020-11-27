@@ -51,6 +51,16 @@ create table Staff
 	constraint FK_Staff_UserName foreign key(USERNAME) references Account(USERNAME)
 )
 go
+alter table Staff
+add SalaryReceived int default 0
+alter table Staff
+add OverTimeSalary int default 0
+alter table Staff
+add Fault int default 0
+alter table Staff
+add MinusSalary int default 0
+alter table Staff
+add PhoneNumber varchar(10)
 
 create table Bill
 (
@@ -63,6 +73,8 @@ create table Bill
 	constraint PK_Bill primary key(ID),
 )
 go
+alter table bill	
+add NOTE text
 
 create table BillInfo
 (
@@ -132,15 +144,16 @@ begin
 end
 go
 
-create proc USP_InsertBill
-@ID int, @StaffID int
+alter proc USP_InsertBill
+@ID int, @StaffID int, @note text
 as
 begin
-	insert into Bill (ID, StaffID) 
+	insert into Bill (ID, StaffID, NOTE) 
 	values 
 	(
 	@ID,
-	@StaffID
+	@StaffID,
+	@note
 	)
 end
 go
@@ -223,19 +236,19 @@ end
 go
 
 -- proc staff
-create proc USP_AddStaff
-@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @salary int
+alter proc USP_AddStaff
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @phonenumber varchar(10)
 as
 begin
-	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, USERNAME, SALARY) values(@ID, @Name, @image, @birthday, @pos, @username, @salary)
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, USERNAME, PhoneNumber) values(@ID, @Name, @image, @birthday, @pos, @username, @phonenumber)
 end
 go
 
-create proc USP_AddStaffnoUsername
-@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @salary int
+alter proc USP_AddStaffnoUsername
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @phonenumber varchar(10)
 as
 begin
-	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, SALARY) values(@ID, @Name, @image, @birthday, @pos, @salary)
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, PhoneNumber) values(@ID, @Name, @image, @birthday, @pos, @phonenumber)
 end
 go
 
@@ -257,6 +270,46 @@ begin
 end
 go
 
+create proc USP_UpdateOverTime
+@ID int, @OverTime int
+as
+begin
+	update Staff
+	set OverTime = @OverTime
+	where ID = @ID
+end
+go
+
+create proc USP_UpdateFault
+@ID int, @fault int
+as
+begin
+	update Staff
+	set Fault = @fault
+	where ID = @ID
+end
+go
+
+create proc USP_UpdateSalary
+@position nvarchar(100), @salary int,@overtimesalary int, @minussalary int
+as
+begin
+	update Staff
+	set SALARY = @salary, OverTimeSalary = @overtimesalary, MinusSalary = @minussalary
+	where POSITION = @position
+end
+go
+
+create proc USP_UpdateSalaryReceived
+@id int, @salaryreceived int
+as
+begin
+	update Staff
+	set SalaryReceived = @salaryreceived
+	where ID = @id
+end
+go
+
 -- proc account
 create proc USP_DelAccount
 @user varchar(100)
@@ -265,34 +318,15 @@ begin
 	delete from Account where UserName = @user
 end
 
-INSERT INTO Account VALUES ('admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0)
-INSERT INTO Account VALUES ('nv', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 1)
-
-insert into Staff(ID, Name, BirthDate, Position, UserName, Salary, overtime) values(1, 'Anhdz', '2001-11-22', 'Quan Ly', 'admin', '3000000', 0)
-insert into Staff(ID, Name, BirthDate, Position, UserName, Salary, overtime) values(2, 'Quang', '2001-11-22', 'Quan Ly', 'nv', '3000000', 0)
-
-INSERT INTO Staff(ID, NAME, BIRTHDATE, POSITION, SALARY,) 
-VALUES (4, 'TAN', '2001-11-22', 'Quan Ly', 3000000, 0)
-SELECT * FROM Staff
-delete FROM Staff
-select * from Drink
-select * from billinfo
-select * from Bill
-
-delete from BillInfo
-delete from Bill
-delete from Drink
-select * from Category
-
-exec USP_GetListMenuByBillID 1
-select * from bill
-
-SELECT SUM(bf.COUNT) FROM BillInfo bf
-JOIN Drink d ON d.ID = bf.DRINKID
-WHERE BILLID = 2
-
-update Category
-set NAME = ''
-
-
-SELECT * FROM STAFF WHERE USERNAME = 'admin'
+alter proc USP_GetListInvoicebyBillID
+@billID int
+as
+begin
+select d.Name as N'Tên món', bf.Count as N'Số lượng', d.Price as N'Đơn giá', d.PRICE * bf.COUNT as N'Thành tiền'
+from ((BillInfo as bf 
+		inner join Drink as d
+		on bf.DrinkID = d.ID)
+		inner join Bill as b
+		on b.ID = bf.BillID)
+	where b.ID = 6
+end
