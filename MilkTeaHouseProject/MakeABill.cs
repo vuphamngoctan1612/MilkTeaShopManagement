@@ -22,6 +22,9 @@ namespace MilkTeaHouseProject
             this.txtIDBill.Text = (BillDAL.Instance.GetMAXIDBill() + 1).ToString();
             this.txtStaffID.Text = StaffDAL.Instance.GetStaffIDbyUsername(username).ToString();
         }
+
+        #region Mothods
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -31,6 +34,31 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
+        {
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt.Text = String.Format(culture, "{0:N0}", valueBefore);
+                txt.Select(txt.Text.Length, 0);
+            }
+        }
+
+        public int CovertToNumber(string str)
+        {
+            string[] s = str.Split(',');
+            string tmp = "";
+            foreach (string a in s)
+            {
+                tmp = tmp + a;
+            }
+            return int.Parse(tmp);
+        }
+        #endregion
+
+        #region Event
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -47,9 +75,20 @@ namespace MilkTeaHouseProject
         {
             int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.username);
 
-            BillDAL.Instance.MakeABill(idStaff, txtNote.Text, int.Parse(txtTotal.Text)* -1);
-            MessageBox.Show("Lập thành công");
-            this.Close();
+            if (string.IsNullOrEmpty(txtTotal.Text.ToString()))
+                MessageBox.Show("Nhập giá trị phiếu chi");
+            else
+            {
+                BillDAL.Instance.MakeABill(idStaff, txtNote.Text, CovertToNumber(txtTotal.Text) * -1);
+                MessageBox.Show("Lập thành công");
+                this.Close();
+            }
+        }
+        #endregion
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            SeparateThousands(this.txtTotal);
         }
     }
 }

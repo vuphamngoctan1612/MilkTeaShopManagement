@@ -17,11 +17,13 @@ namespace MilkTeaHouseProject
 {
     public partial class fStaff : Form
     {
-        public fStaff()
+        private int totalSalary;
+        private string username;
+        public fStaff(string username)
         {
             InitializeComponent();
             LoadStaff();
-
+            this.username = username;
         }
         #region Method
 
@@ -29,7 +31,7 @@ namespace MilkTeaHouseProject
         {
             foreach (Control item in flowLayoutPanelStaff.Controls)
             {
-                item.Width = this.flowLayoutPanelStaff.Width - 10;
+                item.Width = this.flowLayoutPanelStaff.Width;
             }
             int space = this.flowLayoutPanelStaff.Width / 8;
             lbID.Location = new Point(85, 5);
@@ -43,14 +45,21 @@ namespace MilkTeaHouseProject
         }
         public void LoadStaff()
         {
+            totalSalary = 0;
             List<Staff> staffs = StaffDAL.Instance.GetListStaff();
+            bool setcolor = true;
 
             foreach (Staff staff in staffs)
             {
+                if (setcolor == true)
+                    setcolor = false;
+                else
+                    setcolor = true;
                 int salaryReceived = staff.Salary + staff.OverTime * staff.OverTimeSalary - staff.Fault * staff.MinusSalary;
                 StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived);
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, setcolor);
 
+                totalSalary += staff.SalaryReceived;
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
@@ -128,6 +137,24 @@ namespace MilkTeaHouseProject
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
+
+        private void btnUpdateSalary_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanelStaff.Controls.Count > 0)
+            {
+                StaffDAL.Instance.ResetOverandFault();
+                BillDAL.Instance.UpdateBillSalary(username, totalSalary * -1);
+                MessageBox.Show("Kết toán lương thành công");
+                this.flowLayoutPanelStaff.Controls.Clear();
+                LoadStaff();
+            }
+            else
+            {
+                MessageBox.Show("Không có nhân viên nào");
+            }
+        }
         #endregion
+
+
     }
 }

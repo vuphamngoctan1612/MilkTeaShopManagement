@@ -49,7 +49,6 @@ namespace MilkTeaHouseProject
                 fMain f = new fMain(username);
                 this.Hide();
                 f.ShowDialog();
-                this.Show();
                 this.txtUser.Text = this.txtPass.Text = "";
             }
             else

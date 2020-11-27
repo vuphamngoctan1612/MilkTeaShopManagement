@@ -570,6 +570,7 @@
             this.MinimumSize = new System.Drawing.Size(1400, 714);
             this.Name = "fOrder";
             this.Text = "ĐẶT HÀNG";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fOrder_FormClosed);
             this.pnToolInCategory.ResumeLayout(false);
             this.flowLayoutPanelCategory.ResumeLayout(false);
             this.flowLayoutPanelCategory.PerformLayout();

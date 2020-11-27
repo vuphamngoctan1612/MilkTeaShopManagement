@@ -21,7 +21,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived)
+        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived, bool setcolor)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
@@ -42,6 +42,14 @@ namespace MilkTeaHouseProject
             this.numericUpDownOverTime.Value = overtime;
             this.numericFault.Value = fault;
             this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
+            if (setcolor == true)
+            {
+                this.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(255, 255, 255);
+            }
         }
         public event EventHandler onEdit = null;
         public event EventHandler onDel = null;

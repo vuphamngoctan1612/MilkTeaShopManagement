@@ -18,7 +18,7 @@ namespace MilkTeaHouseProject
         }
 
 
-        public ItemInBill(int ID, DateTime checkout, int staffID, string Staffname, string note, int total)
+        public ItemInBill(int ID, DateTime checkout, int staffID, string Staffname, string note, int total, bool setcolor)
         {
             InitializeComponent();
 
@@ -34,6 +34,14 @@ namespace MilkTeaHouseProject
                 this.lbStaffName.Text = "";
             this.lbNote.Text = note;
             this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
+            if (setcolor == true)
+            {
+                this.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(255, 255, 255);
+            }
         }
 
         #region Methods

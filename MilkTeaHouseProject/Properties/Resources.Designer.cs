@@ -133,6 +133,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cash_In_Hand_32 {
+            get {
+                object obj = ResourceManager.GetObject("Cash_In_Hand_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checkout_32 {
             get {
                 object obj = ResourceManager.GetObject("Checkout_32", resourceCulture);
@@ -243,6 +253,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Initiate_Money_Transfer_32 {
+            get {
+                object obj = ResourceManager.GetObject("Initiate_Money_Transfer_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kawaii_coffee_64px {
             get {
                 object obj = ResourceManager.GetObject("kawaii_coffee_64px", resourceCulture);
@@ -296,6 +316,36 @@ namespace MilkTeaHouseProject.Properties {
         internal static System.Drawing.Bitmap MILKTEA_HOUSE__1_ {
             get {
                 object obj = ResourceManager.GetObject("MILKTEA HOUSE (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Money_Box_32 {
+            get {
+                object obj = ResourceManager.GetObject("Money_Box_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moneybox {
+            get {
+                object obj = ResourceManager.GetObject("moneybox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moneyout {
+            get {
+                object obj = ResourceManager.GetObject("moneyout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -33,10 +33,16 @@ namespace MilkTeaHouseProject
         {
             flowLayoutPanelMenu.Controls.Clear();
             List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
+            bool setcolor = true;
 
             foreach (Drink drink in drinks)
             {
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price,drink.CategoryID, drink.Image);
+                if (setcolor == true)
+                    setcolor = false;
+                else
+                    setcolor = true;
+
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price,drink.CategoryID, drink.Image, setcolor);
                 item.onDel += Item_onDel;
                 item.onEdit += Item_onEdit;
 
@@ -93,7 +99,7 @@ namespace MilkTeaHouseProject
         {
             foreach (Control item in flowLayoutPanelMenu.Controls)
             {
-                item.Width = flowLayoutPanelMenu.Width-14;
+                item.Width = flowLayoutPanelMenu.Width;
             }
 
             double space = flowLayoutPanelMenu.Width / 6;

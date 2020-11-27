@@ -397,5 +397,20 @@
   <ItemGroup>
     <None Include="FoodsImage\3545f49ee7278db6a6d44e62e4e9bfeb.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash_In_Hand_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money_Box_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Initiate_Money_Transfer_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneybox.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -201,8 +201,8 @@
             this.flowLayoutPanelMenu.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMenu.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
-            this.flowLayoutPanelMenu.Padding = new System.Windows.Forms.Padding(3);
             this.flowLayoutPanelMenu.Size = new System.Drawing.Size(1088, 512);
             this.flowLayoutPanelMenu.TabIndex = 2;
             this.flowLayoutPanelMenu.SizeChanged += new System.EventHandler(this.flowLayoutPanelMenu_SizeChanged);

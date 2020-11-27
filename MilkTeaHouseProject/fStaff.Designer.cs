@@ -40,6 +40,7 @@
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbID = new Guna.UI.WinForms.GunaLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpdateSalary = new Guna.UI.WinForms.GunaButton();
             this.btSetSalary = new Guna.UI.WinForms.GunaButton();
             this.btAdd = new Guna.UI.WinForms.GunaButton();
             this.pnStaff.SuspendLayout();
@@ -63,9 +64,8 @@
             this.flowLayoutPanelStaff.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanelStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 127);
-            this.flowLayoutPanelStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanelStaff.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelStaff.Name = "flowLayoutPanelStaff";
-            this.flowLayoutPanelStaff.Padding = new System.Windows.Forms.Padding(3);
             this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1820, 973);
             this.flowLayoutPanelStaff.TabIndex = 15;
             this.flowLayoutPanelStaff.SizeChanged += new System.EventHandler(this.flowLayoutPanelStaff_SizeChanged);
@@ -178,6 +178,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.btnUpdateSalary);
             this.panel2.Controls.Add(this.btSetSalary);
             this.panel2.Controls.Add(this.btAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -185,6 +186,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1820, 78);
             this.panel2.TabIndex = 13;
+            // 
+            // btnUpdateSalary
+            // 
+            this.btnUpdateSalary.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdateSalary.AnimationHoverSpeed = 0.07F;
+            this.btnUpdateSalary.AnimationSpeed = 0.03F;
+            this.btnUpdateSalary.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateSalary.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnUpdateSalary.BorderColor = System.Drawing.Color.White;
+            this.btnUpdateSalary.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUpdateSalary.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUpdateSalary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUpdateSalary.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateSalary.Image = null;
+            this.btnUpdateSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdateSalary.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUpdateSalary.Location = new System.Drawing.Point(1113, 18);
+            this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdateSalary.Name = "btnUpdateSalary";
+            this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnUpdateSalary.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnUpdateSalary.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnUpdateSalary.OnHoverImage = null;
+            this.btnUpdateSalary.OnPressedColor = System.Drawing.Color.Black;
+            this.btnUpdateSalary.Radius = 10;
+            this.btnUpdateSalary.Size = new System.Drawing.Size(212, 42);
+            this.btnUpdateSalary.TabIndex = 24;
+            this.btnUpdateSalary.Text = "Kết toán lương";
+            this.btnUpdateSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdateSalary.Click += new System.EventHandler(this.btnUpdateSalary_Click);
             // 
             // btSetSalary
             // 
@@ -278,5 +309,6 @@
         private Guna.UI.WinForms.GunaButton btAdd;
         private Guna.UI.WinForms.GunaButton btSetSalary;
         private Guna.UI.WinForms.GunaLabel lbOvertime;
+        private Guna.UI.WinForms.GunaButton btnUpdateSalary;
     }
 }

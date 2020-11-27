@@ -12,6 +12,7 @@ using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaShopManagement.DTO;
+using System.Runtime.InteropServices;
 
 namespace MilkTeaHouseProject
 {
@@ -23,6 +24,13 @@ namespace MilkTeaHouseProject
         }
 
         #region Method
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
         public int ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
@@ -63,26 +71,27 @@ namespace MilkTeaHouseProject
             int salary = ConvertToNumber(this.txtSalary.Text);
             int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
             int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
-            if (string.IsNullOrEmpty(pos))
+            if (string.IsNullOrEmpty(cbbStaff.Text))
             {
                 MessageBox.Show("Chọn vị trí công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(salary.ToString()))
+            else if (string.IsNullOrEmpty(txtSalary.Text))
             {
                 MessageBox.Show("Nhập mức lương cơ bản", "Error");
             }
-            else if (string.IsNullOrEmpty(overTimeSalary.ToString()))
+            else if (string.IsNullOrEmpty(txtOverTime.Text))
             {
                 MessageBox.Show("Nhập mức lương tăng ca", "Error");
             }
-            else if (string.IsNullOrEmpty(minusSalary.ToString()))
+            else if (string.IsNullOrEmpty(txtMinusSalary.Text))
             {
                 MessageBox.Show("Nhập mức lương trừ khi dính lỗi", "Error");
             }
             else
             {
-                StaffDAL.Instance.UpdateSalary(pos, salary, overTimeSalary, minusSalary);
-                this.Close();
+                    StaffDAL.Instance.UpdateSalary(pos, salary, overTimeSalary, minusSalary);
+                    this.Close();
+
             }
         }
 
@@ -118,6 +127,16 @@ namespace MilkTeaHouseProject
         {
             SeparateThousands(txtMinusSalary);
         }
+
+        private void pn_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         #endregion
+
+
+
+
     }
 }

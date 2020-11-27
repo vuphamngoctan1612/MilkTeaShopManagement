@@ -17,7 +17,7 @@ namespace MilkTeaHouseProject
         public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
         public byte[] Images { get; set; }
 
-        public MenuItem(int id, string name, int price, string category, byte[] img)
+        public MenuItem(int id, string name, int price, string category, byte[] img, bool setcolor)
         {
             InitializeComponent();
 
@@ -35,6 +35,14 @@ namespace MilkTeaHouseProject
                 MemoryStream mstream = new MemoryStream(img);
                 picFood.Image = Image.FromStream(mstream);
                 picFood.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            if (setcolor == true)
+            {
+                this.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(255, 255, 255);
             }
         }
 

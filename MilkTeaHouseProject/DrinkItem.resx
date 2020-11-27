@@ -136,13 +136,10 @@
     <value>NoControl</value>
   </data>
   <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 162</value>
-  </data>
-  <data name="lbName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>26, 249</value>
   </data>
   <data name="lbName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+    <value>131, 32</value>
   </data>
   <data name="lbName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -178,13 +175,10 @@
     <value>NoControl</value>
   </data>
   <data name="lbPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 183</value>
-  </data>
-  <data name="lbPrice.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>27, 282</value>
   </data>
   <data name="lbPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
+    <value>60, 30</value>
   </data>
   <data name="lbPrice.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -208,16 +202,16 @@
     <value>Segoe UI, 10.8pt</value>
   </data>
   <data name="btnChoose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
+    <value>3, 0</value>
   </data>
   <data name="btnChoose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+    <value>3, 5, 3, 5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>9, 20</value>
   </data>
   <data name="picFood.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -655,13 +649,13 @@
 </value>
   </data>
   <data name="picFood.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 9</value>
+    <value>26, 14</value>
   </data>
   <data name="picFood.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+    <value>3, 5, 3, 5</value>
   </data>
   <data name="picFood.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 151</value>
+    <value>189, 232</value>
   </data>
   <data name="picFood.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -682,10 +676,10 @@
     <value>1</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>8, 8, 8, 8</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 210</value>
+    <value>242, 323</value>
   </data>
   <data name="&gt;&gt;gunaElipse1.Name" xml:space="preserve">
     <value>gunaElipse1</value>

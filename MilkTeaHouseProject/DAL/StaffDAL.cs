@@ -158,5 +158,10 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",
                 new object[] { id, salaryreceived });
         }
+
+        public void ResetOverandFault()
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE Staff SET OVERTIME = 0, FAULT = 0, SalaryReceived = Salary"));
+        }
     }
 }

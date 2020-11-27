@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace MilkTeaHouseProject
 {
@@ -39,6 +40,11 @@ namespace MilkTeaHouseProject
         }
 
         #region Method
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         public int ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
@@ -85,8 +91,6 @@ namespace MilkTeaHouseProject
             }
             finally
             {
-                BillDAL.Instance.InsertBill(this.BillID + 1, staffID);
-
                 this.btnPrintInvoice_Click(sender, e);
                 this.Close();
             }
@@ -137,6 +141,18 @@ namespace MilkTeaHouseProject
                 this.txtChange.Text = "";
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace MilkTeaHouseProject
         {
             foreach (Control item in flowLayoutPanelBill.Controls)
             {
-                item.Width = this.flowLayoutPanelBill.Width - 14;
+                item.Width = this.flowLayoutPanelBill.Width;
             }
             int space = this.Width / 7;
             this.lbId.Location = new Point(30, 10);
@@ -45,11 +45,18 @@ namespace MilkTeaHouseProject
             flowLayoutPanelBill.Controls.Clear();
             List<Bill> bills = BillDAL.Instance.LoadBill();
             Income = Spend = 0;
+            bool setcolor = true;
 
             foreach (Bill bill in bills)
             {
+                if (setcolor)
+                    setcolor = false;
+                else
+                    setcolor = true;
+
                 string StaffName = StaffDAL.Instance.GetNamebyID(bill.StaffID);
-                ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffName, bill.NOTE, bill.Total);
+
+                ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffName, bill.NOTE, bill.Total, setcolor);
                 if (bill.Total < 0)
                 {
                     Spend += bill.Total;

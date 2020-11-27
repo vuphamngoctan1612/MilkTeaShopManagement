@@ -80,5 +80,11 @@ namespace MilkTeaHouseProject
             byte[] img= bnr.ReadBytes((int)stream.Length);
             return img;
         }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsWhiteSpace(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

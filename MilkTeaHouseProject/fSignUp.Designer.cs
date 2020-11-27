@@ -293,6 +293,7 @@
             this.txtUser.Size = new System.Drawing.Size(430, 39);
             this.txtUser.TabIndex = 1;
             this.txtUser.Tag = "1";
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // pnPic
             // 

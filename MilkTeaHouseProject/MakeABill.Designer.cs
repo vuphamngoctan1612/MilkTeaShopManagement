@@ -144,6 +144,7 @@ namespace MilkTeaHouseProject
             this.txtTotal.SelectedText = "";
             this.txtTotal.Size = new System.Drawing.Size(307, 40);
             this.txtTotal.TabIndex = 1;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gunaLineTextBox4_KeyPress);
             // 
             // pn
