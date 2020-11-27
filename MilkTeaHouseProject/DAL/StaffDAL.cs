@@ -45,6 +45,7 @@ namespace MilkTeaHouseProject.DAL
 
             return staff;
         }
+
         public int GetStaffIDbyUsername(string username)
         {
             string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
@@ -135,19 +136,23 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber ",
                 new object[] { id, name, image, birthdate, pos, phonenumber });
         }
+
         public void UpdateOverTime(int id, int overtime)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateOverTime @ID , @OverTime ", new object[] { id, overtime });
         }
+
         public void UpdateFault(int id, int fault)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateFault @ID , @fault ", new object[] { id, fault });
         }
+
         public void UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalary @position , @salary , @overtimesalary , @minussalary ",
                 new object[] { pos, salary, overtimesalary, minussalary });
         }
+
         public void UpdateSalaryReceived(int id, int salaryreceived)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",

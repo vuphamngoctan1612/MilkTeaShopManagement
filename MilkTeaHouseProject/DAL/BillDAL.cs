@@ -39,6 +39,7 @@ namespace MilkTeaHouseProject.DAL
 
             return bills;
         }
+
         public int GetIDBill()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("select ID from Bill");
@@ -51,7 +52,8 @@ namespace MilkTeaHouseProject.DAL
 
             return -1;
         }
-        public bool existBill()
+
+        public bool ExistBill()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Bill");
 
@@ -117,6 +119,7 @@ namespace MilkTeaHouseProject.DAL
                 return -1;
             }
         }
+
         public void UpDateStaffIDtoNULL(int ID)
         {
             string que = "UPDATE Bill SET StaffID = NULL WHERE StaffID = " + ID;

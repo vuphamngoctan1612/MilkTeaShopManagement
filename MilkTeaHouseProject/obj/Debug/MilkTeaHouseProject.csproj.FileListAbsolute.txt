@@ -593,3 +593,9 @@ C:\Users\Thanh Quang\OneDrive\Desktop\Tân\MilkTeaHouseProject\obj\Debug\dje\Mil
 C:\Users\Thanh Quang\OneDrive\Desktop\Tân\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Thanh Quang\OneDrive\Desktop\Tân\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Thanh Quang\OneDrive\Desktop\Tân\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll

@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="EasyHTMLReports, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyHTMLReports.1.0.0\lib\EasyHTMLReports.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Desktop\_Getintopc.com_Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
@@ -129,6 +132,12 @@
     </Compile>
     <Compile Include="fEditStaff.Designer.cs">
       <DependentUpon>fEditStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fInvoice.Designer.cs">
+      <DependentUpon>fInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -238,6 +247,9 @@
     <EmbeddedResource Include="fEditStaff.resx">
       <DependentUpon>fEditStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fInvoice.resx">
+      <DependentUpon>fInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +296,7 @@
     <EmbeddedResource Include="StaffItem.resx">
       <DependentUpon>StaffItem.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

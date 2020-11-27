@@ -142,7 +142,7 @@ namespace MilkTeaHouseProject
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
-                if (!BillDAL.Instance.existBill())
+                if (!BillDAL.Instance.ExistBill())
                 {
                     BillDAL.Instance.InsertBill(idBill, idStaff);
                 }
@@ -151,7 +151,7 @@ namespace MilkTeaHouseProject
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message, "1");
+                MessageBox.Show(ex.Message, "Lỗi");
             }
             finally
             {
@@ -191,26 +191,16 @@ namespace MilkTeaHouseProject
         {
             if (this.flowLayoutPanelBill.Controls.Count != 0)
             {
-                int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
-                DateTime checkout = DateTime.Now;
-                bool status = true;
-                int total = MenuDAL.Instance.GetTotalPrice();
-                try
-                {
-                    BillDAL.Instance.UpdateBill(idBill, checkout, status, total, idStaff);
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
-                finally
+                int billID = BillDAL.Instance.GetMAXIDBill();
+                int totalPrice = MenuDAL.Instance.GetTotalPrice();
+                int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
+
+                fInvoice invoice = new fInvoice(this.Username, billID, totalPrice, staffID);
+                invoice.ShowDialog();
+
+                if (billID != BillDAL.Instance.GetMAXIDBill())
                 {
                     this.flowLayoutPanelBill.Controls.Clear();
-                    this.lbCount.Text = "0";
-                    this.lbTotalPrice.Text = "0";
-
-                    BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1, idStaff);
                 }
             }
             else

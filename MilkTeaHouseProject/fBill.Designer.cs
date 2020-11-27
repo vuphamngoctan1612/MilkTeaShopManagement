@@ -60,20 +60,23 @@
             this.pnBill.Controls.Add(this.pnDate);
             this.pnBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBill.Location = new System.Drawing.Point(0, 0);
+            this.pnBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnBill.Name = "pnBill";
-            this.pnBill.Size = new System.Drawing.Size(1456, 694);
+            this.pnBill.Size = new System.Drawing.Size(1294, 555);
             this.pnBill.TabIndex = 1;
             // 
             // flowLayoutPanelBill
             // 
+            this.flowLayoutPanelBill.AutoScroll = true;
             this.flowLayoutPanelBill.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanelBill.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelBill.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 180);
+            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 144);
+            this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Padding = new System.Windows.Forms.Padding(3);
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(1456, 514);
+            this.flowLayoutPanelBill.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(1294, 411);
             this.flowLayoutPanelBill.TabIndex = 9;
             this.flowLayoutPanelBill.SizeChanged += new System.EventHandler(this.flowLayoutPanelBill_SizeChanged);
             // 
@@ -87,9 +90,10 @@
             this.panel1.Controls.Add(this.lbCheckout);
             this.panel1.Controls.Add(this.lbId);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 135);
+            this.panel1.Location = new System.Drawing.Point(0, 108);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1456, 45);
+            this.panel1.Size = new System.Drawing.Size(1294, 36);
             this.panel1.TabIndex = 6;
             // 
             // lbNote
@@ -97,9 +101,9 @@
             this.lbNote.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbNote.AutoSize = true;
             this.lbNote.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNote.Location = new System.Drawing.Point(974, 6);
+            this.lbNote.Location = new System.Drawing.Point(866, 5);
             this.lbNote.Name = "lbNote";
-            this.lbNote.Size = new System.Drawing.Size(89, 30);
+            this.lbNote.Size = new System.Drawing.Size(77, 25);
             this.lbNote.TabIndex = 0;
             this.lbNote.Text = "Ghi chú";
             // 
@@ -108,9 +112,9 @@
             this.lbNameStaff.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbNameStaff.AutoSize = true;
             this.lbNameStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameStaff.Location = new System.Drawing.Point(599, 6);
+            this.lbNameStaff.Location = new System.Drawing.Point(532, 5);
             this.lbNameStaff.Name = "lbNameStaff";
-            this.lbNameStaff.Size = new System.Drawing.Size(152, 30);
+            this.lbNameStaff.Size = new System.Drawing.Size(130, 25);
             this.lbNameStaff.TabIndex = 0;
             this.lbNameStaff.Text = "Tên nhân viên";
             // 
@@ -119,9 +123,9 @@
             this.lbTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(1276, 6);
+            this.lbTotal.Location = new System.Drawing.Point(1134, 5);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(152, 30);
+            this.lbTotal.Size = new System.Drawing.Size(132, 25);
             this.lbTotal.TabIndex = 0;
             this.lbTotal.Text = "Tổng hóa đơn";
             // 
@@ -130,9 +134,9 @@
             this.lbIdStaff.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbIdStaff.AutoSize = true;
             this.lbIdStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdStaff.Location = new System.Drawing.Point(365, 6);
+            this.lbIdStaff.Location = new System.Drawing.Point(324, 5);
             this.lbIdStaff.Name = "lbIdStaff";
-            this.lbIdStaff.Size = new System.Drawing.Size(148, 30);
+            this.lbIdStaff.Size = new System.Drawing.Size(129, 25);
             this.lbIdStaff.TabIndex = 0;
             this.lbIdStaff.Text = "Mã nhân viên";
             // 
@@ -141,9 +145,9 @@
             this.lbCheckout.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbCheckout.AutoSize = true;
             this.lbCheckout.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCheckout.Location = new System.Drawing.Point(197, 6);
+            this.lbCheckout.Location = new System.Drawing.Point(175, 5);
             this.lbCheckout.Name = "lbCheckout";
-            this.lbCheckout.Size = new System.Drawing.Size(106, 30);
+            this.lbCheckout.Size = new System.Drawing.Size(92, 25);
             this.lbCheckout.TabIndex = 0;
             this.lbCheckout.Text = "Thời gian";
             // 
@@ -151,9 +155,9 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(17, 6);
+            this.lbId.Location = new System.Drawing.Point(15, 5);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(132, 30);
+            this.lbId.Size = new System.Drawing.Size(117, 25);
             this.lbId.TabIndex = 0;
             this.lbId.Text = "Mã hóa đơn";
             // 
@@ -165,9 +169,10 @@
             this.panel2.Controls.Add(this.lbTotalIncome);
             this.panel2.Controls.Add(this.gunaLabel12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 56);
+            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1456, 79);
+            this.panel2.Size = new System.Drawing.Size(1294, 63);
             this.panel2.TabIndex = 5;
             // 
             // gunaLabel7
@@ -175,9 +180,9 @@
             this.gunaLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.gunaLabel7.Location = new System.Drawing.Point(1246, 2);
+            this.gunaLabel7.Location = new System.Drawing.Point(1108, 2);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(96, 30);
+            this.gunaLabel7.Size = new System.Drawing.Size(85, 25);
             this.gunaLabel7.TabIndex = 0;
             this.gunaLabel7.Text = "Tổng chi";
             // 
@@ -187,9 +192,9 @@
             this.lbTotalSpend.AutoSize = true;
             this.lbTotalSpend.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lbTotalSpend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
-            this.lbTotalSpend.Location = new System.Drawing.Point(1244, 46);
+            this.lbTotalSpend.Location = new System.Drawing.Point(1106, 37);
             this.lbTotalSpend.Name = "lbTotalSpend";
-            this.lbTotalSpend.Size = new System.Drawing.Size(104, 30);
+            this.lbTotalSpend.Size = new System.Drawing.Size(89, 25);
             this.lbTotalSpend.TabIndex = 0;
             this.lbTotalSpend.Text = "1000000";
             // 
@@ -199,9 +204,9 @@
             this.lbTotalIncome.AutoSize = true;
             this.lbTotalIncome.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lbTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.lbTotalIncome.Location = new System.Drawing.Point(1094, 46);
+            this.lbTotalIncome.Location = new System.Drawing.Point(972, 37);
             this.lbTotalIncome.Name = "lbTotalIncome";
-            this.lbTotalIncome.Size = new System.Drawing.Size(104, 30);
+            this.lbTotalIncome.Size = new System.Drawing.Size(89, 25);
             this.lbTotalIncome.TabIndex = 0;
             this.lbTotalIncome.Text = "1000000";
             // 
@@ -210,9 +215,9 @@
             this.gunaLabel12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.gunaLabel12.AutoSize = true;
             this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.gunaLabel12.Location = new System.Drawing.Point(1095, 2);
+            this.gunaLabel12.Location = new System.Drawing.Point(973, 2);
             this.gunaLabel12.Name = "gunaLabel12";
-            this.gunaLabel12.Size = new System.Drawing.Size(100, 30);
+            this.gunaLabel12.Size = new System.Drawing.Size(88, 25);
             this.gunaLabel12.TabIndex = 0;
             this.gunaLabel12.Text = "Tổng thu";
             // 
@@ -223,8 +228,9 @@
             this.pnDate.Controls.Add(this.gunaAdvenceButton1);
             this.pnDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnDate.Location = new System.Drawing.Point(0, 0);
+            this.pnDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDate.Name = "pnDate";
-            this.pnDate.Size = new System.Drawing.Size(1456, 56);
+            this.pnDate.Size = new System.Drawing.Size(1294, 45);
             this.pnDate.TabIndex = 1;
             // 
             // btnMakePayment
@@ -247,7 +253,8 @@
             this.btnMakePayment.Image = null;
             this.btnMakePayment.ImageSize = new System.Drawing.Size(20, 20);
             this.btnMakePayment.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnMakePayment.Location = new System.Drawing.Point(1038, 7);
+            this.btnMakePayment.Location = new System.Drawing.Point(923, 6);
+            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMakePayment.Name = "btnMakePayment";
             this.btnMakePayment.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
             this.btnMakePayment.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -256,7 +263,7 @@
             this.btnMakePayment.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnMakePayment.OnPressedColor = System.Drawing.Color.Black;
             this.btnMakePayment.Radius = 10;
-            this.btnMakePayment.Size = new System.Drawing.Size(160, 37);
+            this.btnMakePayment.Size = new System.Drawing.Size(142, 30);
             this.btnMakePayment.TabIndex = 1;
             this.btnMakePayment.Text = "Lập phiếu chi";
             this.btnMakePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -282,7 +289,8 @@
             this.gunaAdvenceButton1.Image = null;
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1249, 7);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1110, 6);
+            this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -291,19 +299,20 @@
             this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton1.Radius = 10;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(160, 37);
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(142, 30);
             this.gunaAdvenceButton1.TabIndex = 1;
             this.gunaAdvenceButton1.Text = "Xuất file";
             this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1456, 694);
+            this.ClientSize = new System.Drawing.Size(1294, 555);
             this.Controls.Add(this.pnBill);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fBill";
             this.Text = "HÓA ĐƠN";
             this.pnBill.ResumeLayout(false);

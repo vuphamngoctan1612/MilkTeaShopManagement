@@ -157,7 +157,8 @@ namespace MilkTeaHouseProject
         {
             int BillID = BillDAL.Instance.GetMAXIDBill();
             BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
-            Application.Exit();
+
+            this.Close();
         }
 
         private void pnHomePage_SizeChanged(object sender, EventArgs e)
