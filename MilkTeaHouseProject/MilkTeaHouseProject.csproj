@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="EasyHTMLReports, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyHTMLReports.1.0.0\lib\EasyHTMLReports.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Desktop\_Getintopc.com_Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
@@ -130,6 +133,12 @@
     <Compile Include="fEditStaff.Designer.cs">
       <DependentUpon>fEditStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="fInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fInvoice.Designer.cs">
+      <DependentUpon>fInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +186,18 @@
     </Compile>
     <Compile Include="fViewProfile.Designer.cs">
       <DependentUpon>fViewProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemInBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemInBill.Designer.cs">
+      <DependentUpon>ItemInBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakeABill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeABill.Designer.cs">
+      <DependentUpon>MakeABill.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuItem.cs">
       <SubType>UserControl</SubType>
@@ -226,6 +247,9 @@
     <EmbeddedResource Include="fEditStaff.resx">
       <DependentUpon>fEditStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fInvoice.resx">
+      <DependentUpon>fInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +262,9 @@
     <EmbeddedResource Include="fOrder.resx">
       <DependentUpon>fOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSetSalary.resx">
+      <DependentUpon>fSetSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fViewProfile.resx">
       <DependentUpon>fViewProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemInBill.resx">
+      <DependentUpon>ItemInBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeABill.resx">
+      <DependentUpon>MakeABill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>
@@ -263,6 +296,7 @@
     <EmbeddedResource Include="StaffItem.resx">
       <DependentUpon>StaffItem.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -362,6 +396,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FoodsImage\3545f49ee7278db6a6d44e62e4e9bfeb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash_In_Hand_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money_Box_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Initiate_Money_Transfer_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneybox.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

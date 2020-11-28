@@ -37,12 +37,15 @@ namespace MilkTeaHouseProject.DAL
             return staffs;
         }
 
-        public Staff getStaff(string username)
+        public Staff GetStaff(string username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff WHERE username = '" + username + "'");
+            
             Staff staff = new Staff(data.Rows[0]);
+
             return staff;
         }
+
         public int GetStaffIDbyUsername(string username)
         {
             string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
@@ -88,6 +91,24 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
+        public string GetNamebyID(int id)
+        {
+            string query = string.Format("SELECT * FROM STAFF WHERE ID = '{0}'", id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Name;
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
         public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber)
         {
             DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber ",
@@ -115,23 +136,32 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber ",
                 new object[] { id, name, image, birthdate, pos, phonenumber });
         }
+
         public void UpdateOverTime(int id, int overtime)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateOverTime @ID , @OverTime ", new object[] { id, overtime });
         }
+
         public void UpdateFault(int id, int fault)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateFault @ID , @fault ", new object[] { id, fault });
         }
+
         public void UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalary @position , @salary , @overtimesalary , @minussalary ",
                 new object[] { pos, salary, overtimesalary, minussalary });
         }
+
         public void UpdateSalaryReceived(int id, int salaryreceived)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",
                 new object[] { id, salaryreceived });
+        }
+
+        public void ResetOverandFault()
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE Staff SET OVERTIME = 0, FAULT = 0, SalaryReceived = Salary"));
         }
     }
 }

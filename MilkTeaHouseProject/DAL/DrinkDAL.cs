@@ -97,5 +97,10 @@ namespace MilkTeaShopManagement.DAL
                 "SET CATEGORY = NULL, STATUS = 0" +
                 " WHERE CATEGORY = '{0}'", category));
         }
+
+        public string getCategorybyID(int id)
+        {
+            return (string)DataProvider.Instance.ExecuteScalar("SELECT Category FROM Drink WHERE ID = " + id);
+        }
     }
 }

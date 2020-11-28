@@ -89,7 +89,7 @@ namespace MilkTeaHouseProject
             }
             else if (string.IsNullOrEmpty(phonenumber))
             {
-                MessageBox.Show("Nhập mức lương cơ bản", "Error");
+                MessageBox.Show("Nhập số điện thoại", "Error");
             }
             else
             {

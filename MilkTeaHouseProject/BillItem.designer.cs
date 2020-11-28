@@ -41,10 +41,10 @@
             // lbFoodName
             // 
             this.lbFoodName.AutoSize = true;
-            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbFoodName.Location = new System.Drawing.Point(50, 21);
             this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(107, 30);
+            this.lbFoodName.Size = new System.Drawing.Size(113, 30);
             this.lbFoodName.TabIndex = 0;
             this.lbFoodName.Text = "Food Item";
             // 
@@ -70,22 +70,22 @@
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbPrice.Location = new System.Drawing.Point(340, 21);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbPrice.Size = new System.Drawing.Size(58, 30);
+            this.lbPrice.Size = new System.Drawing.Size(60, 30);
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "Price";
             // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbTotal.Location = new System.Drawing.Point(450, 21);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbTotal.Size = new System.Drawing.Size(57, 30);
+            this.lbTotal.Size = new System.Drawing.Size(59, 30);
             this.lbTotal.TabIndex = 2;
             this.lbTotal.Text = "Total";
             // 

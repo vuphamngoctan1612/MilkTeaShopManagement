@@ -21,7 +21,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived)
+        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived, bool setcolor)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
@@ -42,6 +42,14 @@ namespace MilkTeaHouseProject
             this.numericUpDownOverTime.Value = overtime;
             this.numericFault.Value = fault;
             this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
+            if (setcolor == true)
+            {
+                this.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(255, 255, 255);
+            }
         }
         public event EventHandler onEdit = null;
         public event EventHandler onDel = null;
@@ -68,15 +76,17 @@ namespace MilkTeaHouseProject
         private void StaffItem_SizeChanged(object sender, EventArgs e)
         {
             int space = this.Width / 8;
-            picStaff.Location = new Point(10, 6);
-            lbID.Location = new Point(120, 18);
-            lbName.Location = new Point((int)(space * 1.7), 18);
-            lbBirthDate.Location = new Point((int)(space * 3), 18);
-            lbPosition.Location = new Point(space * 4, 18);
-            numericUpDownOverTime.Location = new Point(space * 5, 18);
-            lbSalary.Location = new Point(space * 6, 18);
-            btEdit.Location = new Point(space * 7, 18);
-            btDel.Location = new Point(space * 7 + 50, 18);
+            picStaff.Location = new Point(10, 3);
+            lbID.Location = new Point(120, 10);
+            lbName.Location = new Point((int)(space * 1.7), 10);
+            lbBirthDate.Location = new Point((int)(space * 2.8), 10);
+            lbPosition.Location = new Point((int)(space * 3.6), 10);
+            lbUserName.Location = new Point((int)(space * 4.2), 10);
+            numericUpDownOverTime.Location = new Point((int)(space * 5.3), 7);
+            numericFault.Location = new Point((int)(space * 6), 7);
+            lbSalary.Location = new Point((int)(space * 6.6), 10);
+            btEdit.Location = new Point((int)(space * 7.2), 10);
+            btDel.Location = new Point((int)(space * 7.2) + 50, 10);
         }
 
         private void numericUpDownOverTime_ValueChanged(object sender, EventArgs e)

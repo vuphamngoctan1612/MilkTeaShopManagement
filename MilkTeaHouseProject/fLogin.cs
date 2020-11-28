@@ -43,13 +43,12 @@ namespace MilkTeaHouseProject
         {
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
-            
+
             if (Login(username, password))
             {
                 fMain f = new fMain(username);
                 this.Hide();
                 f.ShowDialog();
-                this.Show();
                 this.txtUser.Text = this.txtPass.Text = "";
             }
             else

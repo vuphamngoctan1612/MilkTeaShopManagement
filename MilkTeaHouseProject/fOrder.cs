@@ -19,6 +19,7 @@ namespace MilkTeaHouseProject
     public partial class fOrder : Form
     {
         private string username;
+        private int idBill = BillDAL.Instance.GetMAXIDBill() + 1;
         public fOrder(string username)
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace MilkTeaHouseProject
                 lbCategory.Text = category.Name;
                 lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
                                                             System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                lbCategory.Width = this.lbAll.Width;
+                lbCategory.AutoSize = true;
                 lbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
                 lbCategory.Tag = lbCategory;
 
@@ -69,7 +70,7 @@ namespace MilkTeaHouseProject
 
         public void LoadBill()
         {
-            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(BillDAL.Instance.GetMAXIDBill());
+            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(this.idBill);
 
             foreach (DTO.Menu menu in listMenu)
             {
@@ -125,6 +126,7 @@ namespace MilkTeaHouseProject
             foreach (Control item in flowLayoutPanelDrinks.Controls)
             {
                 item.Width = (int)space;
+                item.Height = (int)(space / 3 * 4);
             }
             this.pnSearch.Location = new Point(this.pnCenter.Location.X - this.pnSearch.Width, this.pnSearch.Location.Y);
             double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
@@ -136,21 +138,18 @@ namespace MilkTeaHouseProject
         {
             try
             {
-                int idBill = BillDAL.Instance.GetMAXIDBill();
                 int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
-                if (!BillDAL.Instance.existBill())
-                {
+                if (!BillDAL.Instance.ExistBillbyIDBill(idBill))
                     BillDAL.Instance.InsertBill(idBill, idStaff);
-                }
 
                 BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message, "1");
+                MessageBox.Show(ex.Message, "Lỗi");
             }
             finally
             {
@@ -167,7 +166,7 @@ namespace MilkTeaHouseProject
             {
                 int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
 
-                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID);
+                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
             }
             catch
             {
@@ -188,28 +187,18 @@ namespace MilkTeaHouseProject
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (this.flowLayoutPanelBill.Controls.Count != 0)
+            if (this.flowLayoutPanelBill.Controls.Count > 0)
             {
-                int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
-                DateTime checkout = DateTime.Now;
-                bool status = true;
-                int total = MenuDAL.Instance.GetTotalPrice();
-                try
-                {
-                    BillDAL.Instance.UpdateBill(idBill, checkout, status, total, idStaff);
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
-                finally
-                {
-                    this.flowLayoutPanelBill.Controls.Clear();
-                    this.lbCount.Text = "0";
-                    this.lbTotalPrice.Text = "0";
+                int totalPrice = MenuDAL.Instance.GetTotalPrice();
+                int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
 
-                    BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1, idStaff);
+                fInvoice invoice = new fInvoice(this.Username, idBill, totalPrice, staffID);
+                invoice.ShowDialog();
+
+                if (BillDAL.Instance.GetStatusbyIDBill(idBill) == true)
+                {
+                    flowLayoutPanelBill.Controls.Clear();
+                    idBill += 1;
                 }
             }
             else
@@ -224,8 +213,8 @@ namespace MilkTeaHouseProject
             {
                 try
                 {
-                    int BillID = BillDAL.Instance.GetMAXIDBill();
-                    BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
+                    BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
+                    BillDAL.Instance.DeleteBill(idBill);
                 }
                 catch (SqlException ex)
                 {
@@ -287,6 +276,18 @@ namespace MilkTeaHouseProject
         {
             SearchDrink(txtSearch.Text);
         }
+
+        private void fOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (flowLayoutPanelBill.Controls.Count > 0)
+            {
+                BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
+                BillDAL.Instance.DeleteBill(idBill);
+                flowLayoutPanelBill.Controls.Clear();
+            }
+        }
         #endregion
+
+
     }
 }

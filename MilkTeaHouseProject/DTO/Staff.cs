@@ -66,11 +66,12 @@ namespace MilkTeaHouseProject.DTO
             this.salary = (int)row["Salary"];
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];
-            this.salaryReceived = (int)row["SalaryReceived"];
+            //this.salaryReceived = (int)row["SalaryReceived"];
             this.overTimeSalary = (int)row["OverTimeSalary"];
             this.fault = (int)row["Fault"];
             this.minusSalary = (int)row["MinusSalary"];
             this.phoneNumber = row["PhoneNumber"].ToString();
+            this.salaryReceived = this.salary + this.overTime * this.overTimeSalary - this.fault * this.minusSalary;
         }
     }
 }

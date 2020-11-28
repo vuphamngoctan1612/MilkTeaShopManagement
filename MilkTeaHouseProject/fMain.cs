@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MilkteaHouse.bin.Debug.image;
 using Guna.UI.WinForms;
 using MilkTeaHouseProject.DAL;
+using MilkTeaShopManagement.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -24,7 +25,7 @@ namespace MilkTeaHouseProject
         public fMain(string username)
         {
             InitializeComponent();
-            
+
             random = new Random();
             leftCurrentButton = new Panel();
             leftCurrentButton.Size = new Size(10, 52);
@@ -36,6 +37,7 @@ namespace MilkTeaHouseProject
             this.lbDisplay.Text = "Hello, " + StaffDAL.Instance.GetNamebyUsername(username);
             this.lbDisplay.Location = new Point((this.pnContainName.Width - lbDisplay.Width) / 2, this.lbDisplay.Location.Y);
             this.lbUserName.Text = username;
+            Enable();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -43,6 +45,25 @@ namespace MilkTeaHouseProject
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         #region Methods
+
+        private void Enable()
+        {
+            DataTable dt = DataProvider.Instance.ExecuteQuery(string.Format("select * from Account where username = '{0}'", lbUserName.Text));
+
+            DataRow dr = dt.Rows[0];
+
+            DTO.Account acc = new DTO.Account(dr);
+
+            bool status = acc.Type;
+
+            if (status == true)
+            {
+                this.btnMenu.Enabled = false;
+                this.btnStaff.Enabled = false;
+                this.btnBill.Enabled = false;
+            }    
+        }
+
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -132,12 +153,12 @@ namespace MilkTeaHouseProject
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fStaff(), sender);
+            OpenChildForm(new fStaff(lbUserName.Text), sender);
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fBill(), sender);
+            OpenChildForm(new fBill(lbUserName.Text), sender);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -155,8 +176,6 @@ namespace MilkTeaHouseProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            int BillID = BillDAL.Instance.GetMAXIDBill();
-            BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
             Application.Exit();
         }
 
@@ -172,13 +191,15 @@ namespace MilkTeaHouseProject
         {
             this.Close();
         }
-        #endregion
 
         private void btnViewPro5_Click(object sender, EventArgs e)
         {
-            DTO.Staff staff = StaffDAL.Instance.getStaff(this.lbUserName.Text);
-            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.Salary, staff.Image);
+            DTO.Staff staff = StaffDAL.Instance.GetStaff(this.lbUserName.Text);
+            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.PhoneNumber, staff.Image);
             frm.ShowDialog();
         }
+        #endregion
+
+
     }
 }

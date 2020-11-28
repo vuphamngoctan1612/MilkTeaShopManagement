@@ -17,7 +17,7 @@ namespace MilkTeaHouseProject
         public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
         public byte[] Images { get; set; }
 
-        public MenuItem(int id, string name, int price, string category, byte[] img)
+        public MenuItem(int id, string name, int price, string category, byte[] img, bool setcolor)
         {
             InitializeComponent();
 
@@ -36,11 +36,34 @@ namespace MilkTeaHouseProject
                 picFood.Image = Image.FromStream(mstream);
                 picFood.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            if (setcolor == true)
+            {
+                this.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(255, 255, 255);
+            }
         }
 
         public event EventHandler onDel = null;
         public event EventHandler onEdit = null;
 
+        #region Mothods
+
+        void sizeChange()
+        {
+            int space = this.Width / 6;
+            lbId.Location = new Point(space + 5, 10);
+            lbName.Location = new Point(space * 3 + 5, 10);
+            lbCategory.Location = new Point(space * 2 + 5, 10);
+            lbPrice.Location = new Point(space * 4 + 5, 10);
+            btnEdit.Location = new Point(space * 5 - 5, 10);
+            btnDelete.Location = new Point(space * 5 + 65, 10);
+        }
+        #endregion
+
+        #region Event
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (onEdit != null)
@@ -59,13 +82,8 @@ namespace MilkTeaHouseProject
 
         private void MenuItem_SizeChanged(object sender, EventArgs e)
         {
-            int space = this.Width / 6;
-            lbId.Location = new Point(space, 20);
-            lbName.Location = new Point(space * 3, 20);
-            lbCategory.Location = new Point(space * 2, 20);
-            lbPrice.Location = new Point(space * 4, 20);
-            btnEdit.Location = new Point(space * 5 - 10, 20);
-            btnDelete.Location = new Point(space * 5 + 70, 20);
+            sizeChange();
         }
+        #endregion
     }
 }

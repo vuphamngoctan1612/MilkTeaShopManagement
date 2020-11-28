@@ -1,7 +1,7 @@
-﻿create database MilkTeaManagement
+﻿create MilkTea
 go
 
-use MilkTeaManagement
+use MilkTea
 go
 
 create table Account
@@ -18,21 +18,23 @@ create table Drink
 (
 	ID int not null,
 	NAME nvarchar(100) not null,
-	Category nvarchar(100),
+	CATEGORY nvarchar(100) default '',
 	PRICE int default 0,
 	IMAGE image,
+	STATUS bit default 1,
 
 	constraint PK_Drink primary key (ID),
-	constraint FK_Drink_IDCategory foreign key(Category) references Category(NAME)
+	constraint FK_Drink_Category foreign key(CATEGORY) references Category(NAME)
 )
 go
 
 create table Category
 (
-	NAME nvarchar(100) not null
+	NAME nvarchar(100) default '',
 
 	constraint PK_Category primary key (NAME)
 )
+go
 
 create table Staff
 (
@@ -42,7 +44,7 @@ create table Staff
 	BIRTHDATE DATE,
 	POSITION NVARCHAR(100),
 	USERNAME VARCHAR(100),
-	OVERTIME INT DEFAULT 0, -- sửa lại là overtime nha
+	OVERTIME SMALLINT DEFAULT 0, -- sửa lại là overtime nha
 	SALARY INT DEFAULT 0,
 
 	constraint PK_Staff primary key (ID),
@@ -59,7 +61,7 @@ alter table Staff
 add MinusSalary int default 0
 alter table Staff
 add PhoneNumber varchar(10)
-select * from Staff
+
 create table Bill
 (
 	ID int not null,
@@ -71,6 +73,8 @@ create table Bill
 	constraint PK_Bill primary key(ID),
 )
 go
+alter table bill	
+add NOTE text
 
 create table BillInfo
 (
@@ -82,6 +86,7 @@ create table BillInfo
 	constraint FK_BillInfo_BillID foreign key(BILLID) references Bill(ID),
 	constraint FK_BillInfo_DrinkID foreign key(DRINKID) references Drink(ID)
 )
+go
 
 -- proc BillInfo
 create proc USP_InsertBillInfo
@@ -129,25 +134,26 @@ end
 go
 
 -- proc Bill
-create proc USP_UpdateBill
-@CheckOut date, @Status bit, @Total int, @ID int, @StaffID int
+alter proc USP_UpdateBill
+@ID int, @StaffID int, @CheckOut date, @Status bit, @Total int
 as
 begin
 	update Bill
-	set CheckOut = @CheckOut, Status = @Status, Total = @Total, StaffID = @StaffID
+	set StaffID = @StaffID, CheckOut = @CheckOut, Status = @Status, Total = @Total 
 	where ID = @ID
 end
 go
 
-create proc USP_InsertBill
-@ID int, @StaffID int
+alter proc USP_InsertBill
+@ID int, @StaffID int, @note text
 as
 begin
-	insert into Bill (ID, StaffID) 
+	insert into Bill (ID, StaffID, NOTE) 
 	values 
 	(
 	@ID,
-	@StaffID
+	@StaffID,
+	@note
 	)
 end
 go
@@ -161,35 +167,32 @@ begin
 end
 go
 
---proc Drink
-
-
-create proc USP_AddDrink
+-- proc drink
+alter proc USP_AddDrink
 @ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
 as
 begin
-	insert into Drink(ID,NAME,PRICE,IMAGE) values (@ID,@Name,@Price,@Image)
+	--insert into Drink(ID,NAME,PRICE,IMAGE) values (@ID,@Name,@Price,@Image)
 
-	update Drink
-	set Category=@Category
-	where ID=@ID
+	--update Drink
+	--set category = @Category
+	--where ID = @ID
+
+	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE) values (@ID, @Name, @Category, @Price, @Image)
 end
 go
-
-drop proc USP_AddDrink
 
 create proc USP_EditDrink
 @ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
 as 
 begin
 	update Drink
-	set Name=@Name, Price=@Price, Category=@Category, IMAGE=@Image
+	set Name=@Name, Price=@Price, category=@Category, Image=@Image
 	where ID=@ID
 end
 go
 
-
-create proc USP_SetnullDrinkIDinBillInfo
+alter proc USP_SetnullDrinkIDinBillInfo
 @drinkID int
 as
 begin
@@ -199,7 +202,27 @@ begin
 end
 go
 
---proc Category
+UPDATE Drink
+SET STATUS =1
+WHERE ID = 1
+
+select * from Drink
+-- PROC MENU
+create proc USP_GetListMenuByBillID
+@billID int
+as
+begin
+	select b.ID as BillID, d.ID as IDDrink, d.Name, d.Price, bf.Count 
+	from ((BillInfo as bf 
+		inner join Drink as d
+		on bf.DrinkID = d.ID)
+		inner join Bill as b
+		on b.ID = bf.BillID)
+	where b.ID = @billID
+end
+go
+
+-- proc category
 create proc USP_DeleteCategory
 @Category nvarchar(100)
 as 
@@ -211,20 +234,30 @@ begin
 	where NAME=@Category
 end
 go
---proc Staff
-create proc USP_AddStaff
-@ID int, @Name nvarchar(100),@image image, @birthday date, @pos nvarchar(100),@username varchar(100), @phonenumber varchar(10)
+
+-- proc staff
+alter proc USP_AddStaff
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @phonenumber varchar(10)
 as
 begin
-	insert into Staff values(@ID, @Name, @image,@birthday, @pos, @username, 0, 0, 0, 0, 0, 0, @phonenumber)
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, USERNAME, PhoneNumber) values(@ID, @Name, @image, @birthday, @pos, @username, @phonenumber)
 end
 go
+
+alter proc USP_AddStaffnoUsername
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @phonenumber varchar(10)
+as
+begin
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, PhoneNumber) values(@ID, @Name, @image, @birthday, @pos, @phonenumber)
+end
+go
+
 create proc USP_EditStaff
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10)
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@overtime int, @salary int
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, OverTime = @overtime, SALARY = @salary
 	where ID = @ID
 end
 go
@@ -236,12 +269,7 @@ begin
 	delete from Staff where ID = @ID
 end
 go
-create proc USP_DelAccount
-@user varchar(100)
-as
-begin
-	delete from Account where UserName = @user
-end
+
 create proc USP_UpdateOverTime
 @ID int, @OverTime int
 as
@@ -250,6 +278,8 @@ begin
 	set OverTime = @OverTime
 	where ID = @ID
 end
+go
+
 create proc USP_UpdateFault
 @ID int, @fault int
 as
@@ -258,6 +288,8 @@ begin
 	set Fault = @fault
 	where ID = @ID
 end
+go
+
 create proc USP_UpdateSalary
 @position nvarchar(100), @salary int,@overtimesalary int, @minussalary int
 as
@@ -266,6 +298,8 @@ begin
 	set SALARY = @salary, OverTimeSalary = @overtimesalary, MinusSalary = @minussalary
 	where POSITION = @position
 end
+go
+
 create proc USP_UpdateSalaryReceived
 @id int, @salaryreceived int
 as
@@ -274,10 +308,25 @@ begin
 	set SalaryReceived = @salaryreceived
 	where ID = @id
 end
-insert into Account
-values ('quangaka','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
+go
 
-insert into Account
-values ('0','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',1)
-insert into Account
-values ('admin','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b',0)
+-- proc account
+create proc USP_DelAccount
+@user varchar(100)
+as
+begin
+	delete from Account where UserName = @user
+end
+
+alter proc USP_GetListInvoicebyBillID
+@billID int
+as
+begin
+select d.Name as N'Tên món', bf.Count as N'Số lượng', d.Price as N'Đơn giá', d.PRICE * bf.COUNT as N'Thành tiền'
+from ((BillInfo as bf 
+		inner join Drink as d
+		on bf.DrinkID = d.ID)
+		inner join Bill as b
+		on b.ID = bf.BillID)
+	where b.ID = 6
+end

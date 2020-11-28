@@ -26,10 +26,9 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-
-        #region Method
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        #region Method
         private void LoadNameCategory()
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
@@ -42,7 +41,7 @@ namespace MilkTeaHouseProject
             imgLocation = "./images/kawaii_coffee_64px.png";
         }
 
-        public void separateThousands(TextBox txt)
+        public void SeparateThousands(TextBox txt)
         {
             if (!string.IsNullOrEmpty(txt.Text))
             {
@@ -141,7 +140,7 @@ namespace MilkTeaHouseProject
 
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
-            separateThousands(this.txtPrice);
+            SeparateThousands(this.txtPrice);
         }
         #endregion
     }
