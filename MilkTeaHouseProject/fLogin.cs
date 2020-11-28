@@ -50,6 +50,7 @@ namespace MilkTeaHouseProject
                 this.Hide();
                 f.ShowDialog();
                 this.txtUser.Text = this.txtPass.Text = "";
+                this.Close();
             }
             else
             {

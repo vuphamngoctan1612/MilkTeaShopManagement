@@ -23,17 +23,11 @@ namespace MilkTeaHouseProject
             this.txtStaffID.Text = StaffDAL.Instance.GetStaffIDbyUsername(username).ToString();
         }
 
-        #region Mothods
-
+        #region Method
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void gunaLineTextBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
-        }
 
         public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
         {
@@ -59,6 +53,14 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Event
+        private void gunaLineTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                this.btnAdd_Click(sender, e);
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -84,11 +86,11 @@ namespace MilkTeaHouseProject
                 this.Close();
             }
         }
-        #endregion
 
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
             SeparateThousands(this.txtTotal);
         }
+        #endregion
     }
 }

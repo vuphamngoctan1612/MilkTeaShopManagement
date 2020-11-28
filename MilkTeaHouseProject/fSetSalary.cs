@@ -23,14 +23,12 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
-        #region Method
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-
+        #region Method
         public int ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
@@ -67,50 +65,71 @@ namespace MilkTeaHouseProject
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            string pos = this.cbbStaff.Text;
-            int salary = ConvertToNumber(this.txtSalary.Text);
-            int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
-            int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+            string position = this.cbbStaff.Text;
+            int Salary = ConvertToNumber(this.txtSalary.Text);
+            int OverTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+            int MinusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+
             if (string.IsNullOrEmpty(cbbStaff.Text))
             {
                 MessageBox.Show("Chọn vị trí công việc", "Error");
             }
             else if (string.IsNullOrEmpty(txtSalary.Text))
             {
-                MessageBox.Show("Nhập mức lương cơ bản", "Error");
+                this.txtSalary.Text = "0";
+                Salary = 0;
             }
             else if (string.IsNullOrEmpty(txtOverTime.Text))
             {
-                MessageBox.Show("Nhập mức lương tăng ca", "Error");
+                this.txtOverTime.Text = "0";
+                OverTimeSalary = 0;
             }
             else if (string.IsNullOrEmpty(txtMinusSalary.Text))
             {
-                MessageBox.Show("Nhập mức lương trừ khi dính lỗi", "Error");
+                this.txtMinusSalary.Text = "0";
+                MinusSalary = 0;
             }
             else
             {
-                    StaffDAL.Instance.UpdateSalary(pos, salary, overTimeSalary, minusSalary);
-                    this.Close();
-
+                StaffDAL.Instance.UpdateSalary(position, Salary, OverTimeSalary, MinusSalary);
+                this.Close();
             }
+        }
+
+        private void cbbStaff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string position = this.cbbStaff.Text;
+
+            this.txtSalary.Text = StaffDAL.Instance.GetSalarybyPosition(position).ToString();
+            this.txtOverTime.Text = StaffDAL.Instance.GetOvertimeSalarybyPosition(position).ToString();
+            this.txtMinusSalary.Text = StaffDAL.Instance.GetMinusSalarybyPosition(position).ToString();
         }
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+                this.btSave_Click(sender, e);
+            }
         }
 
         private void txtOverTime_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+                this.btSave_Click(sender, e);
+            }
         }
 
         private void txtMinusSalary_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+                this.btSave_Click(sender, e);
+            }
         }
 
         private void txtSalary_TextChanged(object sender, EventArgs e)
@@ -134,9 +153,5 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
-
-
-
-
     }
 }

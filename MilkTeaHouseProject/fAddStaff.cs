@@ -127,17 +127,27 @@ namespace MilkTeaHouseProject
         private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+                this.btnAdd_Click(sender, e);
+            }
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.cbbPos.Text != "Thu Ngân") e.Handled = true;
+            if (this.cbbPos.Text != "Thu Ngân")
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.cbbPos.Text != "Thu Ngân") e.Handled = true;
+            if (this.cbbPos.Text != "Thu Ngân")
+            {
+                e.Handled = true;
+                this.btnAdd_Click(sender, e);
+            }
         }
     }
 }

@@ -103,10 +103,56 @@ namespace MilkTeaHouseProject.DAL
 
                 return staff.Name;
             }
-            else
+            
+            return "null";            
+        }
+
+        public int GetSalarybyPosition(string position)
+        {
+            string query = string.Format("SELECT * FROM Staff WHERE POSITION = N'{0}'", position);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
             {
-                return "null";
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Salary;
             }
+
+            return 0;
+        }
+
+        public int GetOvertimeSalarybyPosition(string position)
+        {
+            string query = string.Format("SELECT * FROM Staff WHERE POSITION = N'{0}'", position);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.OverTimeSalary;
+            }
+
+            return 0;
+        }
+
+        public int GetMinusSalarybyPosition(string position)
+        {
+            string query = string.Format("SELECT * FROM Staff WHERE POSITION = N'{0}'", position);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.MinusSalary;
+            }
+
+            return 0;
         }
 
         public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber)
@@ -124,17 +170,23 @@ namespace MilkTeaHouseProject.DAL
         public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, string phonenumber)
         {
             int id = GetMAXStaffID() + 1;
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber ",
-                new object[] { id, name, image, birthDate, pos, username, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber , @salary , @OvertimeSalary , @MinusSalary ",
+                new object[] { id, name, image, birthDate, pos, username, phonenumber, Salary, OvertimeSalary, MinusSalary });
         }
 
         public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, string phonenumber)
         {
             int id = GetMAXStaffID() + 1;
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber ",
-                new object[] { id, name, image, birthdate, pos, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber , @salary , @OvertimeSalary , @MinusSalary ",
+                new object[] { id, name, image, birthdate, pos, phonenumber, Salary, OvertimeSalary, MinusSalary });
         }
 
         public void UpdateOverTime(int id, int overtime)

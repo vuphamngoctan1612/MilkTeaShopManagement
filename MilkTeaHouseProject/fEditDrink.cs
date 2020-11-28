@@ -144,7 +144,10 @@ namespace MilkTeaHouseProject
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+                this.btnEdit_Click(sender, e);
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

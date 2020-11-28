@@ -19,7 +19,8 @@ namespace MilkTeaHouseProject
     public partial class fOrder : Form
     {
         private string username;
-        private int idBill = BillDAL.Instance.GetMAXIDBill() + 1;
+        private int billID = BillDAL.Instance.GetMAXIDBill() + 1;
+
         public fOrder(string username)
         {
             InitializeComponent();
@@ -61,27 +62,28 @@ namespace MilkTeaHouseProject
             {
                 DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
                 item.Tag = drink;
-                item.onChoose += Item_onChoose;
+                item.onChoose += DrinkItem_onChoose;
 
                 this.flowLayoutPanelDrinks.Controls.Add(item);
             }
-            loadSizeDrinḳ();
+
+            LoadSizeDrinḳ();
         }
 
         public void LoadBill()
         {
-            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(this.idBill);
+            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(this.billID);
 
             foreach (DTO.Menu menu in listMenu)
             {
-                BillItem item = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
+                BillItem billItem = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
 
-                item.onValueChanged += Item_onValueChanged;
-                item.onDel += Item_onDel;
+                billItem.onValueChanged += BillItem_onValueChanged;
+                billItem.onDel += BillItem_onDel;
 
-                item.Tag = menu;
+                billItem.Tag = menu;
 
-                this.flowLayoutPanelBill.Controls.Add(item);
+                this.flowLayoutPanelBill.Controls.Add(billItem);
             }
         }
 
@@ -91,13 +93,14 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
-                item.Tag = drink;
-                item.onChoose += Item_onChoose;
+                DrinkItem drinkItem = new DrinkItem(drink.Name, drink.Price, drink.Image);
+                drinkItem.Tag = drink;
+                drinkItem.onChoose += DrinkItem_onChoose;
 
-                this.flowLayoutPanelDrinks.Controls.Add(item);
+                this.flowLayoutPanelDrinks.Controls.Add(drinkItem);
             }
-            loadSizeDrinḳ();
+
+            LoadSizeDrinḳ();
         }
 
         public void SearchDrink(string search)
@@ -112,15 +115,16 @@ namespace MilkTeaHouseProject
                 {
                     DrinkItem item = new DrinkItem(name, drink.Price, drink.Image);
                     item.Tag = drink;
-                    item.onChoose += Item_onChoose;
+                    item.onChoose += DrinkItem_onChoose;
 
                     this.flowLayoutPanelDrinks.Controls.Add(item);
                 }
-                loadSizeDrinḳ();
+
+                LoadSizeDrinḳ();
             }
         }
 
-        public void loadSizeDrinḳ()
+        public void LoadSizeDrinḳ()
         {
             double space = this.flowLayoutPanelDrinks.Width / 5;
             foreach (Control item in flowLayoutPanelDrinks.Controls)
@@ -134,7 +138,7 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Events
-        private void Item_onChoose(object sender, EventArgs e)
+        private void DrinkItem_onChoose(object sender, EventArgs e)
         {
             try
             {
@@ -142,10 +146,10 @@ namespace MilkTeaHouseProject
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
-                if (!BillDAL.Instance.ExistBillbyIDBill(idBill))
-                    BillDAL.Instance.InsertBill(idBill, idStaff);
+                if (!BillDAL.Instance.ExistBillbyIDBill(billID))
+                    BillDAL.Instance.InsertBill(billID, idStaff);
 
-                BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
+                BillInfoDAL.Instance.InsertBillInfo(billID, idDrink, count);
             }
             catch (SqlException ex)
             {
@@ -160,13 +164,13 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void Item_onDel(object sender, EventArgs e)
+        private void BillItem_onDel(object sender, EventArgs e)
         {
             try
             {
                 int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
 
-                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
+                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, billID);
             }
             catch
             {
@@ -179,7 +183,7 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void Item_onValueChanged(object sender, EventArgs e)
+        private void BillItem_onValueChanged(object sender, EventArgs e)
         {
             this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
             this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
@@ -192,13 +196,16 @@ namespace MilkTeaHouseProject
                 int totalPrice = MenuDAL.Instance.GetTotalPrice();
                 int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
 
-                fInvoice invoice = new fInvoice(this.Username, idBill, totalPrice, staffID);
+                fInvoice invoice = new fInvoice(this.Username, billID, totalPrice, staffID);
                 invoice.ShowDialog();
 
-                if (BillDAL.Instance.GetStatusbyIDBill(idBill) == true)
+                if (BillDAL.Instance.GetStatusbyIDBill(billID) == true)
                 {
+                    this.lbCount.Text = "0";
+                    this.lbTotalPrice.Text = "0";
                     flowLayoutPanelBill.Controls.Clear();
-                    idBill += 1;
+
+                    billID += 1;
                 }
             }
             else
@@ -213,8 +220,8 @@ namespace MilkTeaHouseProject
             {
                 try
                 {
-                    BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
-                    BillDAL.Instance.DeleteBill(idBill);
+                    BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
+                    BillDAL.Instance.DeleteBill(billID);
                 }
                 catch (SqlException ex)
                 {
@@ -235,7 +242,7 @@ namespace MilkTeaHouseProject
 
         private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
         {
-            loadSizeDrinḳ();
+            LoadSizeDrinḳ();
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
@@ -281,13 +288,11 @@ namespace MilkTeaHouseProject
         {
             if (flowLayoutPanelBill.Controls.Count > 0)
             {
-                BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
-                BillDAL.Instance.DeleteBill(idBill);
+                BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
+                BillDAL.Instance.DeleteBill(billID);
                 flowLayoutPanelBill.Controls.Clear();
             }
         }
         #endregion
-
-
     }
 }
