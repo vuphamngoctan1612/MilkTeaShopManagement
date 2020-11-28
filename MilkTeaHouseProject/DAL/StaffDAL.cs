@@ -147,12 +147,6 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateFault @ID , @fault ", new object[] { id, fault });
         }
 
-        public void UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
-        {
-            DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalary @position , @salary , @overtimesalary , @minussalary ",
-                new object[] { pos, salary, overtimesalary, minussalary });
-        }
-
         public void UpdateSalaryReceived(int id, int salaryreceived)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",

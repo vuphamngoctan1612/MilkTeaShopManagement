@@ -71,28 +71,18 @@ namespace MilkTeaHouseProject
             int salary = ConvertToNumber(this.txtSalary.Text);
             int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
             int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
-            if (string.IsNullOrEmpty(cbbStaff.Text))
+            if (string.IsNullOrEmpty(pos))
             {
                 MessageBox.Show("Chọn vị trí công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(txtSalary.Text))
-            {
-                MessageBox.Show("Nhập mức lương cơ bản", "Error");
-            }
-            else if (string.IsNullOrEmpty(txtOverTime.Text))
-            {
-                MessageBox.Show("Nhập mức lương tăng ca", "Error");
-            }
-            else if (string.IsNullOrEmpty(txtMinusSalary.Text))
-            {
-                MessageBox.Show("Nhập mức lương trừ khi dính lỗi", "Error");
-            }
             else
             {
-                    StaffDAL.Instance.UpdateSalary(pos, salary, overTimeSalary, minusSalary);
-                    this.Close();
-
-            }
+                if(!PositionDAL.Instance.UpdateSalary(pos, salary, overTimeSalary, minusSalary))
+                {
+                    MessageBox.Show("Nhập lương - lương tăng ca - lương trừ");
+                }
+                this.Close();
+            }    
         }
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)

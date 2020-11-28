@@ -98,7 +98,7 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPhoneNumber_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;

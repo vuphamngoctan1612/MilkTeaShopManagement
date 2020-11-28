@@ -37,7 +37,6 @@
             this.lbUser = new System.Windows.Forms.Label();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.cbbPos = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbPhoneNumber = new System.Windows.Forms.Label();
             this.lbPos = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
+            this.cbbPos = new Guna.UI.WinForms.GunaComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.ptbImage = new System.Windows.Forms.PictureBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(329, 173);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(238, 23);
             this.dateTimePicker1.TabIndex = 21;
@@ -69,7 +69,7 @@
             // 
             this.pnStraight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pnStraight.Location = new System.Drawing.Point(283, 0);
-            this.pnStraight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnStraight.Margin = new System.Windows.Forms.Padding(2);
             this.pnStraight.Name = "pnStraight";
             this.pnStraight.Size = new System.Drawing.Size(12, 402);
             this.pnStraight.TabIndex = 17;
@@ -78,7 +78,7 @@
             // 
             this.txtPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(24, 299);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(238, 23);
             this.txtPass.TabIndex = 20;
@@ -101,7 +101,7 @@
             // 
             this.txtUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(24, 231);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(238, 23);
             this.txtUser.TabIndex = 20;
@@ -140,7 +140,7 @@
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(471, 349);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -176,7 +176,7 @@
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.Location = new System.Drawing.Point(329, 349);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -191,26 +191,11 @@
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // cbbPos
-            // 
-            this.cbbPos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbPos.FormattingEnabled = true;
-            this.cbbPos.Items.AddRange(new object[] {
-            "Thu Ngân",
-            "Pha Chế",
-            "Phục Vụ",
-            "Bảo Vệ"});
-            this.cbbPos.Location = new System.Drawing.Point(329, 231);
-            this.cbbPos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbbPos.Name = "cbbPos";
-            this.cbbPos.Size = new System.Drawing.Size(238, 23);
-            this.cbbPos.TabIndex = 15;
-            // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(329, 114);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(238, 23);
             this.txtName.TabIndex = 14;
@@ -223,9 +208,9 @@
             this.lbPhoneNumber.Location = new System.Drawing.Point(326, 264);
             this.lbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPhoneNumber.Name = "lbPhoneNumber";
-            this.lbPhoneNumber.Size = new System.Drawing.Size(106, 19);
+            this.lbPhoneNumber.Size = new System.Drawing.Size(39, 19);
             this.lbPhoneNumber.TabIndex = 13;
-            this.lbPhoneNumber.Text = "PhoneNumber";
+            this.lbPhoneNumber.Text = "SĐT:";
             // 
             // lbPos
             // 
@@ -282,7 +267,7 @@
             this.pn.Controls.Add(this.btnExit);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(600, 27);
             this.pn.TabIndex = 4;
@@ -323,7 +308,7 @@
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(567, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -339,6 +324,7 @@
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnContain.Controls.Add(this.cbbPos);
             this.pnContain.Controls.Add(this.txtID);
             this.pnContain.Controls.Add(this.ptbImage);
             this.pnContain.Controls.Add(this.txtPhoneNumber);
@@ -350,7 +336,6 @@
             this.pnContain.Controls.Add(this.lbUser);
             this.pnContain.Controls.Add(this.btnReturn);
             this.pnContain.Controls.Add(this.btnAdd);
-            this.pnContain.Controls.Add(this.cbbPos);
             this.pnContain.Controls.Add(this.txtName);
             this.pnContain.Controls.Add(this.lbPhoneNumber);
             this.pnContain.Controls.Add(this.lbPos);
@@ -360,17 +345,40 @@
             this.pnContain.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContain.Location = new System.Drawing.Point(0, 0);
-            this.pnContain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnContain.Margin = new System.Windows.Forms.Padding(2);
             this.pnContain.Name = "pnContain";
             this.pnContain.Size = new System.Drawing.Size(600, 402);
             this.pnContain.TabIndex = 5;
+            // 
+            // cbbPos
+            // 
+            this.cbbPos.BackColor = System.Drawing.Color.Transparent;
+            this.cbbPos.BaseColor = System.Drawing.Color.White;
+            this.cbbPos.BorderColor = System.Drawing.Color.Silver;
+            this.cbbPos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPos.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbPos.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbPos.ForeColor = System.Drawing.Color.Black;
+            this.cbbPos.FormattingEnabled = true;
+            this.cbbPos.Items.AddRange(new object[] {
+            "Thu Ngân",
+            "Pha Chế",
+            "Thu Ngân",
+            "Phục Vụ"});
+            this.cbbPos.Location = new System.Drawing.Point(330, 231);
+            this.cbbPos.Name = "cbbPos";
+            this.cbbPos.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbbPos.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbbPos.Size = new System.Drawing.Size(237, 26);
+            this.cbbPos.TabIndex = 45;
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(329, 61);
-            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(238, 25);
             this.txtID.TabIndex = 44;
@@ -381,7 +389,7 @@
             this.ptbImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbImage.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.ptbImage.Location = new System.Drawing.Point(63, 45);
-            this.ptbImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptbImage.Margin = new System.Windows.Forms.Padding(2);
             this.ptbImage.Name = "ptbImage";
             this.ptbImage.Size = new System.Drawing.Size(165, 151);
             this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -393,11 +401,11 @@
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(329, 299);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(238, 23);
             this.txtPhoneNumber.TabIndex = 22;
-            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // fAddStaff
             // 
@@ -409,7 +417,7 @@
             this.Controls.Add(this.pnContain);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAddStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddStaff";
@@ -432,7 +440,6 @@
         private System.Windows.Forms.Label lbUser;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
-        private System.Windows.Forms.ComboBox cbbPos;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbPhoneNumber;
         private System.Windows.Forms.Label lbPos;
@@ -446,5 +453,6 @@
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.PictureBox ptbImage;
         private System.Windows.Forms.TextBox txtID;
+        private Guna.UI.WinForms.GunaComboBox cbbPos;
     }
 }

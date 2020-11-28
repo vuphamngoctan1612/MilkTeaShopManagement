@@ -76,6 +76,7 @@ namespace MilkTeaHouseProject
                     if (AccountDAL.Instance.SignUp(username, password))
                     {
                         StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, phoneNumber);
+                        //StaffDAL.Instance.UpdateSalary(position, )
                         this.Close();
                     }
                     else
@@ -124,11 +125,7 @@ namespace MilkTeaHouseProject
             imgLocation = "./images/blank-profile.png";
         }
 
-        private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
-        }
+        
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -138,6 +135,12 @@ namespace MilkTeaHouseProject
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (this.cbbPos.Text != "Thu Ngân") e.Handled = true;
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

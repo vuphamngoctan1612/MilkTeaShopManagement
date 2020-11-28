@@ -47,6 +47,7 @@ namespace MilkTeaHouseProject
         {
             totalSalary = 0;
             List<Staff> staffs = StaffDAL.Instance.GetListStaff();
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
             bool setcolor = true;
 
             foreach (Staff staff in staffs)
@@ -55,21 +56,26 @@ namespace MilkTeaHouseProject
                     setcolor = false;
                 else
                     setcolor = true;
-                int salaryReceived = staff.Salary + staff.OverTime * staff.OverTimeSalary - staff.Fault * staff.MinusSalary;
-                StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, setcolor);
+                int salaryReceived;
+                foreach(Position pos in positions)
+                {
+                    if(pos.Name == staff.Position)
+                    {
+                        salaryReceived = pos.Salary + staff.OverTime * pos.OverTimeSalary - staff.Fault * pos.MinusSalary;
+                        StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
+                        StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, setcolor);
+                        totalSalary += staff.SalaryReceived;
+                        staffItem.onEdit += Item_OnEdit;
+                        staffItem.onDel += StaffItem_onDel;
+                        staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
+                        staffItem.onFaultChanged += StaffItem_onFaultChanged;
+                        staffItem.Tag = staff;
 
-                totalSalary += staff.SalaryReceived;
-                staffItem.onEdit += Item_OnEdit;
-                staffItem.onDel += StaffItem_onDel;
-                staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
-                staffItem.onFaultChanged += StaffItem_onFaultChanged;
-                staffItem.Tag = staff;
-
-                flowLayoutPanelStaff.Controls.Add(staffItem);
-                sizeChange();
+                        flowLayoutPanelStaff.Controls.Add(staffItem);
+                        sizeChange();
+                    }    
+                }    
             }
-
         }
         #endregion
 
