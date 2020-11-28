@@ -1,7 +1,7 @@
 ﻿create MilkTea
 go
 
-use MilkTea
+use MilkTeaManagement
 go
 
 create table Account
@@ -54,13 +54,11 @@ go
 alter table Staff
 add SalaryReceived int default 0
 alter table Staff
-add OverTimeSalary int default 0
-alter table Staff
 add Fault int default 0
 alter table Staff
-add MinusSalary int default 0
-alter table Staff
 add PhoneNumber varchar(10)
+alter table Staff
+add foreign key (position) references Position(name)
 
 create table Bill
 (
@@ -87,6 +85,22 @@ create table BillInfo
 	constraint FK_BillInfo_DrinkID foreign key(DRINKID) references Drink(ID)
 )
 go
+create table Position
+(
+	Name NVARCHAR(100) primary key,
+	Salary INT default 0,
+	OverTimeSalary INT default 0,
+	MinusSalary INT default 0
+)
+select * from Position
+Insert into Position
+Values (N'Thu Ngân',3000000,0,0);
+Insert into Position
+Values (N'Pha Chế',3000000,0,0);
+Insert into Position
+Values (N'Phục Vụ',3000000,0,0);
+Insert into Position
+Values (N'Bảo Vệ',3000000,0,0);
 
 -- proc BillInfo
 create proc USP_InsertBillInfo
@@ -252,12 +266,12 @@ begin
 end
 go
 
-create proc USP_EditStaff
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@overtime int, @salary int
+alter proc USP_EditStaff
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@phonenumber varchar(10)
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, OverTime = @overtime, SALARY = @salary
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber
 	where ID = @ID
 end
 go
@@ -290,13 +304,13 @@ begin
 end
 go
 
-create proc USP_UpdateSalary
-@position nvarchar(100), @salary int,@overtimesalary int, @minussalary int
+alter proc USP_UpdateSalary
+@name nvarchar(100), @salary int,@overtimesalary int, @minussalary int
 as
 begin
-	update Staff
+	update Position
 	set SALARY = @salary, OverTimeSalary = @overtimesalary, MinusSalary = @minussalary
-	where POSITION = @position
+	where Name = @name
 end
 go
 
@@ -330,3 +344,4 @@ from ((BillInfo as bf
 		on b.ID = bf.BillID)
 	where b.ID = 6
 end
+update Staff
