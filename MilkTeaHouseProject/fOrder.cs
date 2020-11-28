@@ -158,8 +158,8 @@ namespace MilkTeaHouseProject
             finally
             {
                 this.flowLayoutPanelBill.Controls.Clear();
-                this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
-                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
+                this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
                 LoadBill();
             }
         }
@@ -171,6 +171,9 @@ namespace MilkTeaHouseProject
                 int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
 
                 BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, billID);
+
+                this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
             }
             catch
             {
@@ -178,6 +181,7 @@ namespace MilkTeaHouseProject
             }
             finally
             {
+
                 this.flowLayoutPanelBill.Controls.Clear();
                 LoadBill();
             }
@@ -185,15 +189,15 @@ namespace MilkTeaHouseProject
 
         private void BillItem_onValueChanged(object sender, EventArgs e)
         {
-            this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
-            this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
+            this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
+            this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
             if (this.flowLayoutPanelBill.Controls.Count > 0)
             {
-                int totalPrice = MenuDAL.Instance.GetTotalPrice();
+                int totalPrice = MenuDAL.Instance.GetTotalPrice(billID);
                 int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
 
                 fInvoice invoice = new fInvoice(this.Username, billID, totalPrice, staffID);

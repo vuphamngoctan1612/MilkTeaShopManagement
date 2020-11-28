@@ -189,6 +189,18 @@ namespace MilkTeaHouseProject.DAL
                 new object[] { id, name, image, birthdate, pos, phonenumber, Salary, OvertimeSalary, MinusSalary });
         }
 
+        public void UpdateSalarybyPosition(int id, string position)
+        {
+            int Salary = this.GetSalarybyPosition(position);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(position);
+            int MinusSalary = this.GetMinusSalarybyPosition(position);
+
+            string query = string.Format("update Staff " +
+                "set SALARY = {0}, OverTimeSalary = {1}, MinusSalary = {2} " +
+                "where ID = {3} and POSITION = N'{4}'", Salary, OvertimeSalary, MinusSalary, id, position);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
         public void UpdateOverTime(int id, int overtime)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateOverTime @ID , @OverTime ", new object[] { id, overtime });

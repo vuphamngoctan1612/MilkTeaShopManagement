@@ -25,6 +25,7 @@ namespace MilkTeaHouseProject
 
             this.txtID.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -52,37 +53,41 @@ namespace MilkTeaHouseProject
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
+                return;
             }
-            else if (string.IsNullOrEmpty(position))
+            if (string.IsNullOrEmpty(position))
             {
                 MessageBox.Show("Chọn Công việc", "Error");
+                return;
             }
-            else if (string.IsNullOrEmpty(phoneNumber))
+            if (string.IsNullOrEmpty(phoneNumber))
             {
                 MessageBox.Show("Nhập SĐT", "Error");
+                return;
             }
-            else if (position == "Thu Ngân")
+
+            if (position == "Thu Ngân")
             {
                 if (string.IsNullOrEmpty(this.txtUser.Text))
                 {
                     MessageBox.Show("Nhập User", "Error");
+                    return;
                 }
-                else if (string.IsNullOrEmpty(this.txtPass.Text))
+                if (string.IsNullOrEmpty(this.txtPass.Text))
                 {
                     MessageBox.Show("Nhập PassWord", "Error");
+                    return;
+                }
+                if (AccountDAL.Instance.SignUp(username, password))
+                {
+                    StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, phoneNumber);
+                    this.Close();
                 }
                 else
                 {
-                    if (AccountDAL.Instance.SignUp(username, password))
-                    {
-                        StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, phoneNumber);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Trùng username", "Error");
-                    }
-                }
+                    MessageBox.Show("Trùng username", "Error");
+                    return;
+                }                
             }
             else
             {
@@ -129,7 +134,6 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-                this.btnAdd_Click(sender, e);
             }
         }
 
@@ -143,11 +147,7 @@ namespace MilkTeaHouseProject
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.cbbPos.Text != "Thu Ngân")
-            {
-                e.Handled = true;
-                this.btnAdd_Click(sender, e);
-            }
+
         }
     }
 }

@@ -52,7 +52,7 @@ namespace MilkTeaHouseProject
             }
         }
 
-        public int CovertToNumber(string str)
+        public int ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -98,10 +98,6 @@ namespace MilkTeaHouseProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string name = this.txtNameDrink.Text;
-            int price = CovertToNumber(this.txtPrice.Text);
-            string category = this.cbCategory.Text;
-
             try
             {
                 if (imgLocation == "")
@@ -112,18 +108,30 @@ namespace MilkTeaHouseProject
                 BinaryReader bnr = new BinaryReader(stream);
                 img = bnr.ReadBytes((int)stream.Length);
 
-                if (cbCategory.Text == "")
-                    MessageBox.Show("Vui lòng chọn loại");
-                else if (txtNameDrink.Text == "")
-                    MessageBox.Show("Vui lòng nhập tên món");
-                else if (txtPrice.Text == "")
-                    MessageBox.Show("Vui lòng nhập giá món");
-                else
+                if (string.IsNullOrEmpty(cbCategory.Text))
                 {
-                    DrinkDAL.Instance.AddDrink(name, price, category, img);
-                    MessageBox.Show("Cập nhật thành công");
-                    this.Close();
+                    MessageBox.Show("Vui lòng chọn loại");
+                    return;
                 }
+                if (string.IsNullOrEmpty(txtNameDrink.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập tên món");
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtPrice.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập giá món");
+                    return;
+                }
+
+                string name = this.txtNameDrink.Text;
+                int price = ConvertToNumber(this.txtPrice.Text);
+                string category = this.cbCategory.Text;
+
+                DrinkDAL.Instance.AddDrink(name, price, category, img);
+                MessageBox.Show("Cập nhật thành công");
+                this.Close();
+
             }
             catch (SqlException)
             {
@@ -137,7 +145,6 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-                this.btnAdd_Click(sender, e);
             }
         }
 

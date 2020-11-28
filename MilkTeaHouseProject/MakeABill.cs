@@ -58,7 +58,6 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-                this.btnAdd_Click(sender, e);
             }
         }
 
@@ -91,6 +90,12 @@ namespace MilkTeaHouseProject
         {
             SeparateThousands(this.txtTotal);
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
     }
 }

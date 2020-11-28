@@ -24,9 +24,25 @@ namespace MilkTeaHouseProject
             this.lbIdIncrease.Text = ID.ToString();
             this.txtName.Text = name;
             this.dateTimePicker1.Value = BirthDate;
-            this.comboBox1.Text = pos;
+            this.cbbPos.Text = pos;
             this.txtPhoneNumber.Text = phonenumber;
         }
+
+        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, string phonenumber, string username)
+        {
+            InitializeComponent();
+
+            this.lbIdIncrease.Text = ID.ToString();
+            this.txtName.Text = name;
+            this.dateTimePicker1.Value = BirthDate;
+            this.cbbPos.Text = pos;
+            this.txtPhoneNumber.Text = phonenumber;
+            this.txtUser.Text = username;
+
+            this.txtUser.Enabled = false;
+            this.txtPass.Enabled = false;
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -67,35 +83,41 @@ namespace MilkTeaHouseProject
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string iD = this.lbIdIncrease.Text;
+            int id = int.Parse(this.lbIdIncrease.Text);
             string name = this.txtName.Text;
             DateTime birthdate = this.dateTimePicker1.Value;
-            string pos = this.comboBox1.Text;
+            string pos = this.cbbPos.Text;
             string phonenumber = this.txtPhoneNumber.Text;
+
             if (imgLocation == "")
             {
                 LoadImage();
             }
+
             FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
             BinaryReader bnr = new BinaryReader(stream);
             img = bnr.ReadBytes((int)stream.Length);
+
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Nhập Họ Tên", "Error");
+                return;
             }
-            else if (string.IsNullOrEmpty(pos))
+            if (string.IsNullOrEmpty(pos))
             {
                 MessageBox.Show("Chọn Công việc", "Error");
+                return;
             }
-            else if (string.IsNullOrEmpty(phonenumber))
+            if (string.IsNullOrEmpty(phonenumber))
             {
                 MessageBox.Show("Nhập số điện thoại", "Error");
+                return;
             }
-            else
-            {
-                StaffDAL.Instance.EditStaff(int.Parse(iD), name, img, birthdate, pos, phonenumber);
-                this.Close();
-            }
+
+            StaffDAL.Instance.EditStaff(id, name, img, birthdate, pos, phonenumber);
+            StaffDAL.Instance.UpdateSalarybyPosition(id, pos);
+            this.Close();
+            
         }
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)

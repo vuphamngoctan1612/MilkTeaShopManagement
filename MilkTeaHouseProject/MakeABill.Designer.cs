@@ -245,6 +245,7 @@ namespace MilkTeaHouseProject
             this.btnReturn.TabIndex = 3;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnAdd
             // 

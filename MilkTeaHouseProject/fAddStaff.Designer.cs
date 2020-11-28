@@ -47,10 +47,10 @@
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
+            this.cbbPos = new Guna.UI.WinForms.GunaComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.ptbImage = new System.Windows.Forms.PictureBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.cbbPos = new Guna.UI.WinForms.GunaComboBox();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
@@ -83,7 +83,7 @@
             this.txtPass.Size = new System.Drawing.Size(316, 27);
             this.txtPass.TabIndex = 5;
             this.txtPass.UseSystemPasswordChar = true;
-            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // lbPass
             // 
@@ -185,7 +185,7 @@
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(127, 33);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Lưu";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -203,11 +203,11 @@
             this.lbPhoneNumber.AutoSize = true;
             this.lbPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhoneNumber.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPhoneNumber.Location = new System.Drawing.Point(435, 325);
+            this.lbPhoneNumber.Location = new System.Drawing.Point(435, 329);
             this.lbPhoneNumber.Name = "lbPhoneNumber";
-            this.lbPhoneNumber.Size = new System.Drawing.Size(125, 23);
+            this.lbPhoneNumber.Size = new System.Drawing.Size(121, 23);
             this.lbPhoneNumber.TabIndex = 13;
-            this.lbPhoneNumber.Text = "PhoneNumber";
+            this.lbPhoneNumber.Text = "Số điện thoại:";
             // 
             // lbPos
             // 
@@ -225,7 +225,7 @@
             this.lbBirth.AutoSize = true;
             this.lbBirth.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBirth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbBirth.Location = new System.Drawing.Point(435, 172);
+            this.lbBirth.Location = new System.Drawing.Point(435, 178);
             this.lbBirth.Name = "lbBirth";
             this.lbBirth.Size = new System.Drawing.Size(186, 23);
             this.lbBirth.TabIndex = 13;
@@ -342,6 +342,29 @@
             this.pnContain.Size = new System.Drawing.Size(800, 495);
             this.pnContain.TabIndex = 5;
             // 
+            // cbbPos
+            // 
+            this.cbbPos.BackColor = System.Drawing.Color.Transparent;
+            this.cbbPos.BaseColor = System.Drawing.Color.White;
+            this.cbbPos.BorderColor = System.Drawing.Color.Silver;
+            this.cbbPos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPos.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbPos.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbPos.ForeColor = System.Drawing.Color.Black;
+            this.cbbPos.FormattingEnabled = true;
+            this.cbbPos.Items.AddRange(new object[] {
+            "Thu Ngân",
+            "Phục Vụ",
+            "Bảo Vệ",
+            "Pha Chế"});
+            this.cbbPos.Location = new System.Drawing.Point(439, 282);
+            this.cbbPos.Name = "cbbPos";
+            this.cbbPos.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbbPos.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbbPos.Size = new System.Drawing.Size(316, 31);
+            this.cbbPos.TabIndex = 2;
+            // 
             // txtID
             // 
             this.txtID.Enabled = false;
@@ -371,28 +394,11 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(439, 368);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(316, 27);
             this.txtPhoneNumber.TabIndex = 3;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
-            // 
-            // cbbPos
-            // 
-            this.cbbPos.BackColor = System.Drawing.Color.Transparent;
-            this.cbbPos.BaseColor = System.Drawing.Color.White;
-            this.cbbPos.BorderColor = System.Drawing.Color.Silver;
-            this.cbbPos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbPos.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbPos.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbPos.ForeColor = System.Drawing.Color.Black;
-            this.cbbPos.FormattingEnabled = true;
-            this.cbbPos.Location = new System.Drawing.Point(439, 282);
-            this.cbbPos.Name = "cbbPos";
-            this.cbbPos.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbbPos.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbPos.Size = new System.Drawing.Size(316, 31);
-            this.cbbPos.TabIndex = 2;
             // 
             // fAddStaff
             // 

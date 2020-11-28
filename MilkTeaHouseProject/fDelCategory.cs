@@ -49,5 +49,10 @@ namespace MilkTeaHouseProject
             CategoryDAL.Instance.DeleteCategory(category);
             this.Close();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

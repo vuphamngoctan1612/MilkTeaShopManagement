@@ -44,17 +44,24 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            if (Login(username, password))
+            try
             {
-                fMain f = new fMain(username);
-                this.Hide();
-                f.ShowDialog();
-                this.txtUser.Text = this.txtPass.Text = "";
-                this.Close();
+                if (Login(username, password))
+                {
+                    fMain f = new fMain(username);
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                    this.txtUser.Text = this.txtPass.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+
             }
         }
 

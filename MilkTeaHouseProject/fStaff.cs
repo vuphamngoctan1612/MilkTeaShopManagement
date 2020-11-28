@@ -52,9 +52,14 @@ namespace MilkTeaHouseProject
             foreach (Staff staff in staffs)
             {
                 if (setcolor == true)
+                {
                     setcolor = false;
+                }
                 else
+                {
                     setcolor = true;
+                }
+
                 int salaryReceived = staff.Salary + staff.OverTime * staff.OverTimeSalary - staff.Fault * staff.MinusSalary;
                 StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
                 StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, setcolor);
@@ -106,13 +111,17 @@ namespace MilkTeaHouseProject
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
-            int iD = ((sender as StaffItem).Tag as Staff).ID;
+            int id = ((sender as StaffItem).Tag as Staff).ID;
             string name = ((sender as StaffItem).Tag as Staff).Name;
             DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
             string pos = ((sender as StaffItem).Tag as Staff).Position;
             string phonenumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
-            fEditStaff frm = new fEditStaff(iD, name, birthDate, pos, phonenumber);
+            string username = ((sender as StaffItem).Tag as Staff).UserName;
+
+            fEditStaff frm = new fEditStaff(id, name, birthDate, pos, phonenumber, username);
+            //fAddStaff frm = new fAddStaff(id, name, birthDate, pos, phonenumber);
             frm.ShowDialog();
+
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
@@ -121,6 +130,7 @@ namespace MilkTeaHouseProject
         {
             fAddStaff f = new fAddStaff();
             f.ShowDialog();
+
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
@@ -134,6 +144,7 @@ namespace MilkTeaHouseProject
         {
             fSetSalary f = new fSetSalary();
             f.ShowDialog();
+
             this.flowLayoutPanelStaff.Controls.Clear();
             LoadStaff();
         }
@@ -154,7 +165,5 @@ namespace MilkTeaHouseProject
             }
         }
         #endregion
-
-
     }
 }
