@@ -154,8 +154,9 @@ namespace MilkTeaHouseProject
             string pos = ((sender as StaffItem).Tag as Staff).Position;
             string phonenumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
             string username = ((sender as StaffItem).Tag as Staff).UserName;
+            byte[] image = ((sender as StaffItem).Tag as Staff).Image;
 
-            fEditStaff frm = new fEditStaff(id, name, birthDate, pos, phonenumber, username);
+            fEditStaff frm = new fEditStaff(id, name, birthDate, pos, phonenumber, username, image);
             //fAddStaff frm = new fAddStaff(id, name, birthDate, pos, phonenumber);
             frm.ShowDialog();
 

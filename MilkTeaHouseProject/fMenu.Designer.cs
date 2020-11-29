@@ -146,6 +146,7 @@
             this.btnDelCategory.CheckedForeColor = System.Drawing.Color.White;
             this.btnDelCategory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnDelCategory.CheckedImage")));
             this.btnDelCategory.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnDelCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelCategory.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDelCategory.FocusedColor = System.Drawing.Color.Empty;
             this.btnDelCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -182,6 +183,7 @@
             this.btnAddCategory.CheckedForeColor = System.Drawing.Color.White;
             this.btnAddCategory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.CheckedImage")));
             this.btnAddCategory.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCategory.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddCategory.FocusedColor = System.Drawing.Color.Empty;
             this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -218,6 +220,7 @@
             this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
             this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
             this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);

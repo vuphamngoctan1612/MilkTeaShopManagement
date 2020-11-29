@@ -31,7 +31,7 @@ namespace MilkTeaHouseProject
             this.txtPhoneNumber.Text = phonenumber;
         }
 
-        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, string phonenumber, string username)
+        public fEditStaff(int ID, string name, DateTime BirthDate, string pos, string phonenumber, string username, byte[] image)
         {
             InitializeComponent();
 
@@ -49,6 +49,19 @@ namespace MilkTeaHouseProject
             {
                 this.txtUser.Enabled = false;
                 this.txtPass.Enabled = false;
+            }
+
+            if (image == null)
+            {
+                ptbImage.Image = null;
+            }
+            else
+            {
+                img = image;
+                MemoryStream mstream = new MemoryStream(image);
+                Bitmap bitmap = new Bitmap(mstream);
+                ptbImage.Image = bitmap;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
         }
@@ -157,14 +170,14 @@ namespace MilkTeaHouseProject
             if (this.CheckPosition(PositonBefore, positionAfter) == 0)
             {
                 StaffDAL.Instance.EditStaff(id, name, img, birthdate, positionAfter, phonenumber);
-                StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
+                //StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
             }
             else if (this.CheckPosition(PositonBefore, positionAfter) == 1)
             {
                 StaffDAL.Instance.SetUsernameToNULLbyID(id);
                 AccountDAL.Instance.DelAccount(Username);
                 StaffDAL.Instance.EditStaff(id, name, img, birthdate, positionAfter, phonenumber);
-                StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
+                //StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
             }
             else
             {
@@ -181,7 +194,7 @@ namespace MilkTeaHouseProject
                 if (AccountDAL.Instance.SignUp(this.txtUser.Text, this.txtPass.Text))
                 {
                     StaffDAL.Instance.EditStaff(id, name, img, birthdate, positionAfter, phonenumber, this.txtUser.Text);
-                    StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
+                    //StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
                 }
                 else
                 {

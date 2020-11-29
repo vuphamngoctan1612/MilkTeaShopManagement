@@ -116,6 +116,8 @@ namespace MilkTeaHouseProject
             this.easyHTMLReports.AddString("<br>");
             this.easyHTMLReports.AddString(string.Format("<h4>Tổng cộng: {0} VNĐ</h4>", string.Format("{0:n0}", this.TotalPrice)));
             this.easyHTMLReports.AddString("<br>");
+            this.easyHTMLReports.AddString("<p>Chúc quý khách ngon miệng</p>");
+            this.easyHTMLReports.AddString("<p>Cảm ơn và hẹn gặp lại</p>");
 
             this.easyHTMLReports.ShowPrintPreviewDialog();
             this.Close();

@@ -33,12 +33,12 @@ namespace MilkTeaHouseProject
                 item.Width = this.flowLayoutPanelBill.Width;
             }
             int space = this.Width / 7;
-            this.lbId.Location = new Point(30, 10);
-            this.lbCheckout.Location = new Point(space, 10);
-            this.lbIdStaff.Location = new Point(space * 2, 10);
-            this.lbNameStaff.Location = new Point(space * 3, 10);
-            this.lbNote.Location = new Point((int)(space * 4.8), 10);
-            this.lbTotal.Location = new Point((int)(space * 6.2), 10);
+            this.lbId.Location = new Point(30, 5);
+            this.lbCheckout.Location = new Point(space, 5);
+            this.lbIdStaff.Location = new Point(space * 2, 5);
+            this.lbNameStaff.Location = new Point(space * 3, 5);
+            this.lbNote.Location = new Point((int)(space * 4.3), 5);
+            this.lbTotal.Location = new Point((int)(space * 6.2), 5);
         }
         public void loadBill()
         {

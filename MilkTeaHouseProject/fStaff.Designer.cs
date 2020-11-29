@@ -270,6 +270,7 @@
             this.btnUpdateSalary.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdateSalary.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btnUpdateSalary.BorderColor = System.Drawing.Color.White;
+            this.btnUpdateSalary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateSalary.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUpdateSalary.FocusedColor = System.Drawing.Color.Empty;
             this.btnUpdateSalary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -278,7 +279,7 @@
             this.btnUpdateSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateSalary.ImageSize = new System.Drawing.Size(20, 20);
             this.btnUpdateSalary.Location = new System.Drawing.Point(16, 14);
-            this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateSalary.Name = "btnUpdateSalary";
             this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
             this.btnUpdateSalary.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -300,6 +301,7 @@
             this.btSetSalary.BackColor = System.Drawing.Color.Transparent;
             this.btSetSalary.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btSetSalary.BorderColor = System.Drawing.Color.White;
+            this.btSetSalary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSetSalary.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btSetSalary.FocusedColor = System.Drawing.Color.Empty;
             this.btSetSalary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -308,7 +310,7 @@
             this.btSetSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btSetSalary.ImageSize = new System.Drawing.Size(20, 20);
             this.btSetSalary.Location = new System.Drawing.Point(216, 14);
-            this.btSetSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSetSalary.Margin = new System.Windows.Forms.Padding(4);
             this.btSetSalary.Name = "btSetSalary";
             this.btSetSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
             this.btSetSalary.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -330,6 +332,7 @@
             this.btAdd.BackColor = System.Drawing.Color.Transparent;
             this.btAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btAdd.BorderColor = System.Drawing.Color.White;
+            this.btAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAdd.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btAdd.FocusedColor = System.Drawing.Color.Empty;
             this.btAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -338,7 +341,7 @@
             this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btAdd.Location = new System.Drawing.Point(416, 14);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btAdd.Name = "btAdd";
             this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
             this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;

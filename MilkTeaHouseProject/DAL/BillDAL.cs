@@ -74,7 +74,9 @@ namespace MilkTeaHouseProject.DAL
 
         public void InsertBill(int id, int staffID)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID , @Note", new object[] { id, staffID, "Đặt món" });
+            string query = string.Format("insert into Bill (ID, STAFFID, NOTE) values ({0}, {1}, N'Đặt món')", id, staffID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+            //DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID , @Note", new object[] { id, staffID, "Đặt món" });
         }
 
         public void MakeABill(int idStaff, string note, int total)

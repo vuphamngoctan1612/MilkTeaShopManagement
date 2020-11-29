@@ -97,7 +97,7 @@
             this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 15);
             this.flowLayoutPanelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
-            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(5);
             this.flowLayoutPanelCategory.Size = new System.Drawing.Size(640, 30);
             this.flowLayoutPanelCategory.TabIndex = 1;
             // 
@@ -327,6 +327,7 @@
             this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
             this.btnCancel.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.CheckedImage")));
             this.btnCancel.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
@@ -355,13 +356,15 @@
             // 
             this.btnPay.AnimationHoverSpeed = 0.07F;
             this.btnPay.AnimationSpeed = 0.03F;
-            this.btnPay.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(181)))), ((int)(((byte)(230)))));
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(166)))), ((int)(((byte)(97)))));
+            this.btnPay.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(166)))), ((int)(((byte)(97)))));
             this.btnPay.BorderColor = System.Drawing.Color.Black;
             this.btnPay.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnPay.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnPay.CheckedForeColor = System.Drawing.Color.White;
             this.btnPay.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPay.CheckedImage")));
             this.btnPay.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPay.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPay.FocusedColor = System.Drawing.Color.Empty;
@@ -374,7 +377,7 @@
             this.btnPay.Location = new System.Drawing.Point(0, 0);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPay.Name = "btnPay";
-            this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(151)))), ((int)(((byte)(71)))));
             this.btnPay.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnPay.OnHoverForeColor = System.Drawing.Color.White;
             this.btnPay.OnHoverImage = null;
