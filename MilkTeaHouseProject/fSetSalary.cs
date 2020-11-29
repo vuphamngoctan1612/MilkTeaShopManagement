@@ -21,6 +21,8 @@ namespace MilkTeaHouseProject
         public fSetSalary()
         {
             InitializeComponent();
+
+            this.cbbStaff.Text = "Thu ngân";
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

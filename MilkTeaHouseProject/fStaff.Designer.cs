@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fStaff));
             this.pnStaff = new System.Windows.Forms.Panel();
             this.flowLayoutPanelStaff = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,12 +41,16 @@
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbID = new Guna.UI.WinForms.GunaLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnSearch = new System.Windows.Forms.Panel();
+            this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
             this.btnUpdateSalary = new Guna.UI.WinForms.GunaButton();
             this.btSetSalary = new Guna.UI.WinForms.GunaButton();
             this.btAdd = new Guna.UI.WinForms.GunaButton();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStaff.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnStaff
@@ -178,6 +183,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.pnSearch);
             this.panel2.Controls.Add(this.btnUpdateSalary);
             this.panel2.Controls.Add(this.btSetSalary);
             this.panel2.Controls.Add(this.btAdd);
@@ -187,9 +193,43 @@
             this.panel2.Size = new System.Drawing.Size(1820, 78);
             this.panel2.TabIndex = 13;
             // 
+            // pnSearch
+            // 
+            this.pnSearch.Controls.Add(this.btnSearch);
+            this.pnSearch.Controls.Add(this.txtSearch);
+            this.pnSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnSearch.Location = new System.Drawing.Point(1456, 0);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnSearch.Name = "pnSearch";
+            this.pnSearch.Size = new System.Drawing.Size(364, 78);
+            this.pnSearch.TabIndex = 25;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AllowDrop = true;
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BaseColor = System.Drawing.Color.White;
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.Location = new System.Drawing.Point(43, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.Radius = 10;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(278, 41);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.Text = "\r\n";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
             // btnUpdateSalary
             // 
-            this.btnUpdateSalary.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdateSalary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnUpdateSalary.AnimationHoverSpeed = 0.07F;
             this.btnUpdateSalary.AnimationSpeed = 0.03F;
             this.btnUpdateSalary.BackColor = System.Drawing.Color.Transparent;
@@ -202,7 +242,7 @@
             this.btnUpdateSalary.Image = null;
             this.btnUpdateSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateSalary.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdateSalary.Location = new System.Drawing.Point(1113, 18);
+            this.btnUpdateSalary.Location = new System.Drawing.Point(18, 18);
             this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdateSalary.Name = "btnUpdateSalary";
             this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
@@ -219,7 +259,7 @@
             // 
             // btSetSalary
             // 
-            this.btSetSalary.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btSetSalary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btSetSalary.AnimationHoverSpeed = 0.07F;
             this.btSetSalary.AnimationSpeed = 0.03F;
             this.btSetSalary.BackColor = System.Drawing.Color.Transparent;
@@ -232,7 +272,7 @@
             this.btSetSalary.Image = null;
             this.btSetSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btSetSalary.ImageSize = new System.Drawing.Size(20, 20);
-            this.btSetSalary.Location = new System.Drawing.Point(1338, 18);
+            this.btSetSalary.Location = new System.Drawing.Point(243, 18);
             this.btSetSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btSetSalary.Name = "btSetSalary";
             this.btSetSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
@@ -249,7 +289,7 @@
             // 
             // btAdd
             // 
-            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btAdd.AnimationHoverSpeed = 0.07F;
             this.btAdd.AnimationSpeed = 0.03F;
             this.btAdd.BackColor = System.Drawing.Color.Transparent;
@@ -262,7 +302,7 @@
             this.btAdd.Image = null;
             this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btAdd.Location = new System.Drawing.Point(1563, 18);
+            this.btAdd.Location = new System.Drawing.Point(468, 18);
             this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAdd.Name = "btAdd";
             this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
@@ -277,6 +317,39 @@
             this.btAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.AnimationHoverSpeed = 0.07F;
+            this.btnSearch.AnimationSpeed = 0.03F;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.White;
+            this.btnSearch.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
+            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::MilkTeaHouseProject.Properties.Resources.searchlue2;
+            this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSearch.Location = new System.Drawing.Point(275, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverImage = null;
+            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSearch.Size = new System.Drawing.Size(36, 33);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // fStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -290,6 +363,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pnSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,5 +384,8 @@
         private Guna.UI.WinForms.GunaButton btSetSalary;
         private Guna.UI.WinForms.GunaLabel lbOvertime;
         private Guna.UI.WinForms.GunaButton btnUpdateSalary;
+        private System.Windows.Forms.Panel pnSearch;
+        private Guna.UI.WinForms.GunaAdvenceButton btnSearch;
+        private Guna.UI.WinForms.GunaTextBox txtSearch;
     }
 }

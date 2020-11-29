@@ -61,7 +61,10 @@ namespace MilkTeaHouseProject
             int space = this.Width / 7;
             this.lbID.Location = new Point(50, 10);
             this.lbDate.Location = new Point(space, 10);
-            this.lbStaffID.Location = new Point((int)(space * 2.3), 10);
+            if (lbStaffID.Text == "Nhân viên đã nghỉ")
+                this.lbStaffID.Location = new Point((int)(space * 1.9), 10);
+            else
+                this.lbStaffID.Location = new Point((int)(space * 2.3), 10);
             this.lbStaffName.Location = new Point(space * 3, 10);
             this.lbNote.Location = new Point((int)(space * 4.3), 10);
             this.lbTotal.Location = new Point((int)(space * 6.3), 10);

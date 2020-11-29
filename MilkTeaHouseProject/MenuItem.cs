@@ -54,9 +54,9 @@ namespace MilkTeaHouseProject
         void sizeChange()
         {
             int space = this.Width / 6;
-            lbId.Location = new Point(space + 5, 10);
-            lbName.Location = new Point(space * 3 + 5, 10);
-            lbCategory.Location = new Point(space * 2 + 5, 10);
+            lbId.Location = new Point((int)(space *1.2), 10);
+            lbName.Location = new Point(space * 3, 10);
+            lbCategory.Location = new Point(space * 2, 10);
             lbPrice.Location = new Point(space * 4 + 5, 10);
             btnEdit.Location = new Point(space * 5 - 5, 10);
             btnDelete.Location = new Point(space * 5 + 65, 10);

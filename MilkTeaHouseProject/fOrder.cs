@@ -133,7 +133,6 @@ namespace MilkTeaHouseProject
                 item.Height = (int)(space / 3 * 4);
             }
             this.pnSearch.Location = new Point(this.pnCenter.Location.X - this.pnSearch.Width, this.pnSearch.Location.Y);
-            double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
         }
         #endregion
 
@@ -280,7 +279,7 @@ namespace MilkTeaHouseProject
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchDrink(this.txtSearch.Text);
+            SearchDrink(txtSearch.Text);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -297,6 +296,18 @@ namespace MilkTeaHouseProject
                 flowLayoutPanelBill.Controls.Clear();
             }
         }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
         #endregion
+
+
     }
 }

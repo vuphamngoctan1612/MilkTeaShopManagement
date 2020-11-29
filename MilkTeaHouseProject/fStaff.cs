@@ -76,6 +76,39 @@ namespace MilkTeaHouseProject
             }
 
         }
+
+        public void SearchStaff(string search)
+        {
+            totalSalary = 0;
+            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
+            this.flowLayoutPanelStaff.Controls.Clear();
+            bool setcolor = true;
+
+            foreach (Staff staff in staffs)
+            {
+                string name = staff.Name;
+                if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                {
+                    if (setcolor == true)
+                        setcolor = false;
+                    else
+                        setcolor = true;
+                    int salaryReceived = staff.Salary + staff.OverTime * staff.OverTimeSalary - staff.Fault * staff.MinusSalary;
+                    StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
+                    StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, setcolor);
+
+                    totalSalary += staff.SalaryReceived;
+                    staffItem.onEdit += Item_OnEdit;
+                    staffItem.onDel += StaffItem_onDel;
+                    staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
+                    staffItem.onFaultChanged += StaffItem_onFaultChanged;
+                    staffItem.Tag = staff;
+
+                    flowLayoutPanelStaff.Controls.Add(staffItem);
+                }
+                sizeChange();
+            }
+        }
         #endregion
 
         #region Events
@@ -99,6 +132,10 @@ namespace MilkTeaHouseProject
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
                 StaffDAL.Instance.DelStaff(iD);
                 AccountDAL.Instance.DelAccount(username);
+            }
+            else if (pos == "Quản lí")
+            {
+                MessageBox.Show("Không thể xóa chức vụ này");
             }
             else
             {
@@ -164,6 +201,27 @@ namespace MilkTeaHouseProject
                 MessageBox.Show("Không có nhân viên nào");
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchStaff(txtSearch.Text);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchStaff(txtSearch.Text);
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
         #endregion
+
     }
 }

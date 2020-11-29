@@ -39,21 +39,25 @@
             this.lbCheckout = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.lbTotalSpend = new Guna.UI.WinForms.GunaLabel();
             this.lbTotalIncome = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
             this.pnDate = new System.Windows.Forms.Panel();
+            this.pnSearch = new System.Windows.Forms.Panel();
+            this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnMakePayment = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnBill.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnDate.SuspendLayout();
+            this.pnSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
-            this.pnDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnBill
@@ -180,30 +184,6 @@
             this.panel2.Size = new System.Drawing.Size(1456, 79);
             this.panel2.TabIndex = 5;
             // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = global::MilkTeaHouseProject.Properties.Resources.moneyout;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(1244, 2);
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox2.TabIndex = 1;
-            this.gunaPictureBox2.TabStop = false;
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::MilkTeaHouseProject.Properties.Resources.moneybox;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(1070, 2);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(26, 25);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 1;
-            this.gunaPictureBox1.TabStop = false;
-            // 
             // gunaLabel7
             // 
             this.gunaLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -240,6 +220,77 @@
             this.lbTotalIncome.TabIndex = 0;
             this.lbTotalIncome.Text = "1000000";
             // 
+            // pnDate
+            // 
+            this.pnDate.BackColor = System.Drawing.SystemColors.Control;
+            this.pnDate.Controls.Add(this.pnSearch);
+            this.pnDate.Controls.Add(this.btnMakePayment);
+            this.pnDate.Controls.Add(this.gunaAdvenceButton1);
+            this.pnDate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnDate.Location = new System.Drawing.Point(0, 0);
+            this.pnDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnDate.Name = "pnDate";
+            this.pnDate.Size = new System.Drawing.Size(1456, 56);
+            this.pnDate.TabIndex = 1;
+            // 
+            // pnSearch
+            // 
+            this.pnSearch.Controls.Add(this.btnSearch);
+            this.pnSearch.Controls.Add(this.txtSearch);
+            this.pnSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnSearch.Location = new System.Drawing.Point(1092, 0);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnSearch.Name = "pnSearch";
+            this.pnSearch.Size = new System.Drawing.Size(364, 56);
+            this.pnSearch.TabIndex = 10;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AllowDrop = true;
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BaseColor = System.Drawing.Color.White;
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.Location = new System.Drawing.Point(43, 8);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.Radius = 10;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(278, 41);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.Text = "\r\n";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = global::MilkTeaHouseProject.Properties.Resources.moneyout;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(1244, 2);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox2.TabIndex = 1;
+            this.gunaPictureBox2.TabStop = false;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::MilkTeaHouseProject.Properties.Resources.moneybox;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(1070, 2);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(26, 25);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 1;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // gunaLabel12
             // 
             this.gunaLabel12.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -255,21 +306,42 @@
             this.gunaLabel12.Text = "Tổng thu";
             this.gunaLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnDate
+            // btnSearch
             // 
-            this.pnDate.BackColor = System.Drawing.SystemColors.Control;
-            this.pnDate.Controls.Add(this.btnMakePayment);
-            this.pnDate.Controls.Add(this.gunaAdvenceButton1);
-            this.pnDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnDate.Location = new System.Drawing.Point(0, 0);
-            this.pnDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnDate.Name = "pnDate";
-            this.pnDate.Size = new System.Drawing.Size(1456, 56);
-            this.pnDate.TabIndex = 1;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.AnimationHoverSpeed = 0.07F;
+            this.btnSearch.AnimationSpeed = 0.03F;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.White;
+            this.btnSearch.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
+            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::MilkTeaHouseProject.Properties.Resources.searchlue1;
+            this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSearch.Location = new System.Drawing.Point(275, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverImage = null;
+            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSearch.Size = new System.Drawing.Size(36, 33);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnMakePayment
             // 
-            this.btnMakePayment.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMakePayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnMakePayment.AnimationHoverSpeed = 0.07F;
             this.btnMakePayment.AnimationSpeed = 0.03F;
             this.btnMakePayment.BackColor = System.Drawing.Color.Transparent;
@@ -287,7 +359,7 @@
             this.btnMakePayment.Image = null;
             this.btnMakePayment.ImageSize = new System.Drawing.Size(20, 20);
             this.btnMakePayment.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnMakePayment.Location = new System.Drawing.Point(1038, 8);
+            this.btnMakePayment.Location = new System.Drawing.Point(23, 11);
             this.btnMakePayment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMakePayment.Name = "btnMakePayment";
             this.btnMakePayment.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
@@ -305,7 +377,7 @@
             // 
             // gunaAdvenceButton1
             // 
-            this.gunaAdvenceButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaAdvenceButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
             this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
             this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
@@ -323,7 +395,7 @@
             this.gunaAdvenceButton1.Image = null;
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1249, 8);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(234, 11);
             this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
@@ -354,9 +426,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnDate.ResumeLayout(false);
+            this.pnSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
-            this.pnDate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -381,5 +454,8 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnMakePayment;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private System.Windows.Forms.Panel pnSearch;
+        private Guna.UI.WinForms.GunaAdvenceButton btnSearch;
+        private Guna.UI.WinForms.GunaTextBox txtSearch;
     }
 }

@@ -123,6 +123,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSearch {
+            get {
+                object obj = ResourceManager.GetObject("btnSearch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Business_Contact_32 {
             get {
                 object obj = ResourceManager.GetObject("Business_Contact_32", resourceCulture);
@@ -386,6 +396,36 @@ namespace MilkTeaHouseProject.Properties {
         internal static System.Drawing.Bitmap Search_32 {
             get {
                 object obj = ResourceManager.GetObject("Search_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchlue {
+            get {
+                object obj = ResourceManager.GetObject("searchlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchlue1 {
+            get {
+                object obj = ResourceManager.GetObject("searchlue1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchlue2 {
+            get {
+                object obj = ResourceManager.GetObject("searchlue2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
