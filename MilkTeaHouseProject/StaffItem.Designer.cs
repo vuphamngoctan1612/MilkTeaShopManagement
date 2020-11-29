@@ -29,7 +29,6 @@ namespace MilkTeaHouseProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbID = new Guna.UI.WinForms.GunaLabel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbBirthDate = new Guna.UI.WinForms.GunaLabel();
@@ -38,7 +37,6 @@ namespace MilkTeaHouseProject
             this.lbSalary = new Guna.UI.WinForms.GunaLabel();
             this.btEdit = new Guna.UI.WinForms.GunaButton();
             this.btDel = new Guna.UI.WinForms.GunaButton();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.picStaff = new Guna.UI.WinForms.GunaPictureBox();
             this.numericUpDownOverTime = new Guna.UI.WinForms.GunaNumeric();
             this.numericFault = new Guna.UI.WinForms.GunaNumeric();
@@ -165,11 +163,6 @@ namespace MilkTeaHouseProject
             this.btDel.TabIndex = 16;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.Radius = 10;
-            this.gunaElipse1.TargetControl = this;
-            // 
             // picStaff
             // 
             this.picStaff.BaseColor = System.Drawing.Color.White;
@@ -233,6 +226,7 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbBirthDate);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbID);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StaffItem";
             this.Size = new System.Drawing.Size(1706, 67);
             this.SizeChanged += new System.EventHandler(this.StaffItem_SizeChanged);
@@ -252,7 +246,6 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaLabel lbSalary;
         private Guna.UI.WinForms.GunaButton btEdit;
         private Guna.UI.WinForms.GunaButton btDel;
-        private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaPictureBox picStaff;
         private Guna.UI.WinForms.GunaNumeric numericUpDownOverTime;
         private Guna.UI.WinForms.GunaNumeric numericFault;

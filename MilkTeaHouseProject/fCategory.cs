@@ -39,6 +39,12 @@ namespace MilkTeaHouseProject
         {
             try
             {
+                if (string.IsNullOrEmpty(this.txtNameDrink.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập tên loại!", "Lỗi");
+                    return;
+                }
+
                 CategoryDAL.Instance.AddCategory(txtNameDrink.Text);
                 this.Close();
             }

@@ -41,6 +41,7 @@
             // lbName
             // 
             resources.ApplyResources(this.lbName, "lbName");
+            this.lbName.AutoEllipsis = true;
             this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.lbName.ForeColor = System.Drawing.Color.Black;
             this.lbName.Name = "lbName";

@@ -19,6 +19,8 @@ namespace MilkTeaHouseProject
     public partial class fOrder : Form
     {
         private string username;
+        private int billID = BillDAL.Instance.GetMAXIDBill() + 1;
+
         public fOrder(string username)
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace MilkTeaHouseProject
                 lbCategory.Text = category.Name;
                 lbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
                                                             System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                lbCategory.Width = this.lbAll.Width;
+                lbCategory.AutoSize = true;
                 lbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
                 lbCategory.Tag = lbCategory;
 
@@ -60,27 +62,28 @@ namespace MilkTeaHouseProject
             {
                 DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
                 item.Tag = drink;
-                item.onChoose += Item_onChoose;
+                item.onChoose += DrinkItem_onChoose;
 
                 this.flowLayoutPanelDrinks.Controls.Add(item);
             }
-            loadSizeDrinḳ();
+
+            LoadSizeDrinḳ();
         }
 
         public void LoadBill()
         {
-            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(BillDAL.Instance.GetMAXIDBill());
+            List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(this.billID);
 
             foreach (DTO.Menu menu in listMenu)
             {
-                BillItem item = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
+                BillItem billItem = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count);
 
-                item.onValueChanged += Item_onValueChanged;
-                item.onDel += Item_onDel;
+                billItem.onValueChanged += BillItem_onValueChanged;
+                billItem.onDel += BillItem_onDel;
 
-                item.Tag = menu;
+                billItem.Tag = menu;
 
-                this.flowLayoutPanelBill.Controls.Add(item);
+                this.flowLayoutPanelBill.Controls.Add(billItem);
             }
         }
 
@@ -90,13 +93,14 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
-                item.Tag = drink;
-                item.onChoose += Item_onChoose;
+                DrinkItem drinkItem = new DrinkItem(drink.Name, drink.Price, drink.Image);
+                drinkItem.Tag = drink;
+                drinkItem.onChoose += DrinkItem_onChoose;
 
-                this.flowLayoutPanelDrinks.Controls.Add(item);
+                this.flowLayoutPanelDrinks.Controls.Add(drinkItem);
             }
-            loadSizeDrinḳ();
+
+            LoadSizeDrinḳ();
         }
 
         public void SearchDrink(string search)
@@ -111,15 +115,16 @@ namespace MilkTeaHouseProject
                 {
                     DrinkItem item = new DrinkItem(name, drink.Price, drink.Image);
                     item.Tag = drink;
-                    item.onChoose += Item_onChoose;
+                    item.onChoose += DrinkItem_onChoose;
 
                     this.flowLayoutPanelDrinks.Controls.Add(item);
                 }
-                loadSizeDrinḳ();
+
+                LoadSizeDrinḳ();
             }
         }
 
-        public void loadSizeDrinḳ()
+        public void LoadSizeDrinḳ()
         {
             double space = this.flowLayoutPanelDrinks.Width / 5;
             foreach (Control item in flowLayoutPanelDrinks.Controls)
@@ -128,47 +133,46 @@ namespace MilkTeaHouseProject
                 item.Height = (int)(space / 3 * 4);
             }
             this.pnSearch.Location = new Point(this.pnCenter.Location.X - this.pnSearch.Width, this.pnSearch.Location.Y);
-            double SearchWidth = this.flowLayoutPanelDrinks.Width / 3.3;
         }
         #endregion
 
         #region Events
-        private void Item_onChoose(object sender, EventArgs e)
+        private void DrinkItem_onChoose(object sender, EventArgs e)
         {
             try
             {
-                int idBill = BillDAL.Instance.GetMAXIDBill();
                 int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
                 int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
                 int count = 1;
 
-                if (!BillDAL.Instance.existBill())
-                {
-                    BillDAL.Instance.InsertBill(idBill, idStaff);
-                }
+                if (!BillDAL.Instance.ExistBillbyIDBill(billID))
+                    BillDAL.Instance.InsertBill(billID, idStaff);
 
-                BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
+                BillInfoDAL.Instance.InsertBillInfo(billID, idDrink, count);
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message, "1");
+                MessageBox.Show(ex.Message, "Lỗi");
             }
             finally
             {
                 this.flowLayoutPanelBill.Controls.Clear();
-                this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
-                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
+                this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
                 LoadBill();
             }
         }
 
-        private void Item_onDel(object sender, EventArgs e)
+        private void BillItem_onDel(object sender, EventArgs e)
         {
             try
             {
                 int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
 
-                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID);
+                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, billID);
+
+                this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
             }
             catch
             {
@@ -176,41 +180,35 @@ namespace MilkTeaHouseProject
             }
             finally
             {
+
                 this.flowLayoutPanelBill.Controls.Clear();
                 LoadBill();
             }
         }
 
-        private void Item_onValueChanged(object sender, EventArgs e)
+        private void BillItem_onValueChanged(object sender, EventArgs e)
         {
-            this.lbCount.Text = MenuDAL.Instance.GetCount().ToString();
-            this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice()).ToString();
+            this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
+            this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (this.flowLayoutPanelBill.Controls.Count != 0)
+            if (this.flowLayoutPanelBill.Controls.Count > 0)
             {
-                int idBill = BillDAL.Instance.GetMAXIDBill();
-                int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
-                DateTime checkout = DateTime.Now;
-                bool status = true;
-                int total = MenuDAL.Instance.GetTotalPrice();
-                try
+                int totalPrice = MenuDAL.Instance.GetTotalPrice(billID);
+                int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
+
+                fInvoice invoice = new fInvoice(this.Username, billID, totalPrice, staffID);
+                invoice.ShowDialog();
+
+                if (BillDAL.Instance.GetStatusbyIDBill(billID) == true)
                 {
-                    BillDAL.Instance.UpdateBill(idBill, checkout, status, total, idStaff);
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
-                finally
-                {
-                    this.flowLayoutPanelBill.Controls.Clear();
                     this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
+                    flowLayoutPanelBill.Controls.Clear();
 
-                    BillDAL.Instance.InsertBill(BillDAL.Instance.GetMAXIDBill() + 1, idStaff);
+                    billID += 1;
                 }
             }
             else
@@ -225,8 +223,8 @@ namespace MilkTeaHouseProject
             {
                 try
                 {
-                    int BillID = BillDAL.Instance.GetMAXIDBill();
-                    BillInfoDAL.Instance.DeleteBillInfobyIDBill(BillID);
+                    BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
+                    BillDAL.Instance.DeleteBill(billID);
                 }
                 catch (SqlException ex)
                 {
@@ -247,12 +245,12 @@ namespace MilkTeaHouseProject
 
         private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
         {
-            loadSizeDrinḳ();
+            LoadSizeDrinḳ();
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
         {
-            txtSearch.Text = "";
+            txtSearch.Clear();
         }
 
         private void lbAll_Click(object sender, EventArgs e)
@@ -281,13 +279,35 @@ namespace MilkTeaHouseProject
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchDrink(this.txtSearch.Text);
+            SearchDrink(txtSearch.Text);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             SearchDrink(txtSearch.Text);
         }
+
+        private void fOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (flowLayoutPanelBill.Controls.Count > 0)
+            {
+                BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
+                BillDAL.Instance.DeleteBill(billID);
+                flowLayoutPanelBill.Controls.Clear();
+            }
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
         #endregion
+
+
     }
 }

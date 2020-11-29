@@ -45,6 +45,7 @@ namespace MilkTeaHouseProject.DAL
 
             return staff;
         }
+
         public int GetStaffIDbyUsername(string username)
         {
             string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
@@ -102,16 +103,83 @@ namespace MilkTeaHouseProject.DAL
 
                 return staff.Name;
             }
-            else
+            
+            return "null";            
+        }
+
+        public int GetSalarybyPosition(string position)
+        {
+            string query = string.Format("SELECT * FROM Staff WHERE POSITION = N'{0}'", position);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
             {
-                return "null";
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.Salary;
             }
+
+            return 0;
+        }
+
+        public int GetOvertimeSalarybyPosition(string position)
+        {
+            string query = string.Format("SELECT * FROM Staff WHERE POSITION = N'{0}'", position);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.OverTimeSalary;
+            }
+
+            return 0;
+        }
+
+        public int GetMinusSalarybyPosition(string position)
+        {
+            string query = string.Format("SELECT * FROM Staff WHERE POSITION = N'{0}'", position);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                Staff staff = new Staff(data.Rows[0]);
+
+                return staff.MinusSalary;
+            }
+
+            return 0;
+        }
+
+        public void SetUsernameToNULLbyID(int id)
+        {
+            string query = string.Format("update Staff set USERNAME = null where id = {0}", id);
+
+            DataProvider.Instance.ExecuteNonQuery(query);   
         }
 
         public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber)
         {
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber ",
-                new object[] { ID, name, image, birthDate, pos, phonenumber });
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
+
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @phonenumber , @salary , @overtimesalary , @minussalary ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, Salary, OvertimeSalary , MinusSalary });
+        }
+
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username)
+        {
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
+
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber , @username , @salary , @overtimesalary , @minussalary ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, username , Salary, OvertimeSalary, MinusSalary });
         }
 
         public void DelStaff(int iD)
@@ -123,35 +191,62 @@ namespace MilkTeaHouseProject.DAL
         public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, string phonenumber)
         {
             int id = GetMAXStaffID() + 1;
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber ",
-                new object[] { id, name, image, birthDate, pos, username, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber , @salary , @OvertimeSalary , @MinusSalary ",
+                new object[] { id, name, image, birthDate, pos, username, phonenumber, Salary, OvertimeSalary, MinusSalary });
         }
 
         public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, string phonenumber)
         {
             int id = GetMAXStaffID() + 1;
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber ",
-                new object[] { id, name, image, birthdate, pos, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber , @salary , @OvertimeSalary , @MinusSalary ",
+                new object[] { id, name, image, birthdate, pos, phonenumber, Salary, OvertimeSalary, MinusSalary });
         }
+
+        public void UpdateSalarybyPosition(int id, string position)
+        {
+            int Salary = this.GetSalarybyPosition(position);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(position);
+            int MinusSalary = this.GetMinusSalarybyPosition(position);
+
+            string query = string.Format("update Staff " +
+                "set SALARY = {0}, OverTimeSalary = {1}, MinusSalary = {2} " +
+                "where ID = {3} and POSITION = N'{4}'", Salary, OvertimeSalary, MinusSalary, id, position);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
         public void UpdateOverTime(int id, int overtime)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateOverTime @ID , @OverTime ", new object[] { id, overtime });
         }
+
         public void UpdateFault(int id, int fault)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateFault @ID , @fault ", new object[] { id, fault });
         }
+
         public void UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalary @position , @salary , @overtimesalary , @minussalary ",
                 new object[] { pos, salary, overtimesalary, minussalary });
         }
+
         public void UpdateSalaryReceived(int id, int salaryreceived)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",
                 new object[] { id, salaryreceived });
+        }
+
+        public void ResetOverandFault()
+        {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE Staff SET OVERTIME = 0, FAULT = 0, SalaryReceived = Salary"));
         }
     }
 }

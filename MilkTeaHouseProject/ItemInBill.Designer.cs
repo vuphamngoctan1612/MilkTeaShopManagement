@@ -29,8 +29,6 @@ namespace MilkTeaHouseProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.lbID = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbStaffID = new System.Windows.Forms.Label();
@@ -38,11 +36,6 @@ namespace MilkTeaHouseProject
             this.lbNote = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.Radius = 10;
-            this.gunaElipse1.TargetControl = this;
             // 
             // lbID
             // 
@@ -121,6 +114,7 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbStaffID);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbID);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ItemInBill";
             this.Size = new System.Drawing.Size(1381, 67);
             this.SizeChanged += new System.EventHandler(this.ItemInBill_SizeChanged);
@@ -130,8 +124,6 @@ namespace MilkTeaHouseProject
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private System.Windows.Forms.Label lbStaffName;
         private System.Windows.Forms.Label lbStaffID;
         private System.Windows.Forms.Label lbDate;

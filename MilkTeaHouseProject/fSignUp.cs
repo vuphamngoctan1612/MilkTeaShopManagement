@@ -20,7 +20,6 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -79,6 +78,15 @@ namespace MilkTeaHouseProject
             BinaryReader bnr = new BinaryReader(stream);
             byte[] img= bnr.ReadBytes((int)stream.Length);
             return img;
+        }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                this.btnSignUp_Click(sender, e);
+            }
         }
     }
 }

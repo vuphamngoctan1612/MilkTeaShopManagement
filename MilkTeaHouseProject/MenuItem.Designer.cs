@@ -29,7 +29,6 @@ namespace MilkTeaHouseProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuItem));
             this.btnDelete = new Guna.UI.WinForms.GunaGradientButton();
             this.btnEdit = new Guna.UI.WinForms.GunaGradientButton();
@@ -37,7 +36,6 @@ namespace MilkTeaHouseProject
             this.picFood = new Guna.UI.WinForms.GunaPictureBox();
             this.lbId = new Guna.UI.WinForms.GunaLabel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.lbCategory = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +107,7 @@ namespace MilkTeaHouseProject
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbPrice.Location = new System.Drawing.Point(841, 38);
+            this.lbPrice.Location = new System.Drawing.Point(838, 35);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(60, 30);
             this.lbPrice.TabIndex = 12;
@@ -135,7 +133,7 @@ namespace MilkTeaHouseProject
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbId.Location = new System.Drawing.Point(242, 23);
+            this.lbId.Location = new System.Drawing.Point(239, 20);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(34, 30);
             this.lbId.TabIndex = 9;
@@ -146,23 +144,18 @@ namespace MilkTeaHouseProject
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbName.Location = new System.Drawing.Point(401, 38);
+            this.lbName.Location = new System.Drawing.Point(398, 35);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(114, 30);
             this.lbName.TabIndex = 10;
             this.lbName.Text = "Drink Item";
-            // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.Radius = 10;
-            this.gunaElipse1.TargetControl = this;
             // 
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbCategory.Location = new System.Drawing.Point(623, 38);
+            this.lbCategory.Location = new System.Drawing.Point(620, 35);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(102, 30);
             this.lbCategory.TabIndex = 10;
@@ -180,8 +173,8 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.lbName);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "MenuItem";
-            this.Padding = new System.Windows.Forms.Padding(3);
             this.Size = new System.Drawing.Size(1528, 67);
             this.SizeChanged += new System.EventHandler(this.MenuItem_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
@@ -198,7 +191,6 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaPictureBox picFood;
         private Guna.UI.WinForms.GunaLabel lbId;
         private Guna.UI.WinForms.GunaLabel lbName;
-        private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaLabel lbCategory;
     }
 }

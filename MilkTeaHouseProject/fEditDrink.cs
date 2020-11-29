@@ -25,6 +25,7 @@ namespace MilkTeaHouseProject
             txtNameDrink.Text = name;
             txtPrice.Text = price.ToString();
             cbCategory.Text = DrinkDAL.Instance.getCategorybyID(id);
+
             if (image == null)
             {
                 ptbImg.Image = null;
@@ -38,6 +39,7 @@ namespace MilkTeaHouseProject
                 ptbImg.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
         #region Methods
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -55,7 +57,31 @@ namespace MilkTeaHouseProject
             cbCategory.DataSource = dt;
             cbCategory.DisplayMember = "NAME";
         }
+
+        public int ConvertToNumber(string str)
+        {
+            string[] s = str.Split(',');
+            string tmp = "";
+            foreach (string a in s)
+            {
+                tmp = tmp + a;
+            }
+            return int.Parse(tmp);
+        }
+
+        public void SeparateThousands(TextBox txt)
+        {
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt.Text = String.Format(culture, "{0:N0}", valueBefore);
+                txt.Select(txt.Text.Length, 0);
+            }
+        }
         #endregion
+
+        #region Event
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -63,8 +89,6 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
-        #region Event
         string imgLocation = "";
         byte[] img = null;
         private void ptbImg_Click(object sender, EventArgs e)
@@ -111,7 +135,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, Int32.Parse(txtPrice.Text),cbCategory.Text, img);
+                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, ConvertToNumber(txtPrice.Text),cbCategory.Text, img);
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
             }
@@ -120,7 +144,10 @@ namespace MilkTeaHouseProject
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+                this.btnEdit_Click(sender, e);
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -130,6 +157,11 @@ namespace MilkTeaHouseProject
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            SeparateThousands(this.txtPrice);
         }
         #endregion
     }
