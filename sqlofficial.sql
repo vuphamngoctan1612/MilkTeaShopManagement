@@ -340,3 +340,12 @@ from ((BillInfo as bf
 		on b.ID = bf.BillID)
 	where b.ID = @billID
 end
+
+SELECT SUM(bf.COUNT) FROM BillInfo bf      
+JOIN Drink d ON d.ID = bf.DRINKID                 
+WHERE BILLID = 22
+
+
+SELECT * FROM Staff 
+
+EXEC USP_GetListMenuByBillID 22

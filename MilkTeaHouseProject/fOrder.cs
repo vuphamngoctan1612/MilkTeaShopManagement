@@ -250,7 +250,7 @@ namespace MilkTeaHouseProject
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
         {
-            txtSearch.Text = "";
+            txtSearch.Clear();
         }
 
         private void lbAll_Click(object sender, EventArgs e)

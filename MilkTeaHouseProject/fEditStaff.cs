@@ -18,6 +18,9 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditStaff : Form
     {
+        private string username;
+        private string positonBefore;
+
         public fEditStaff(int ID, string name, DateTime BirthDate, string pos, string phonenumber)
         {
             InitializeComponent();
@@ -38,15 +41,49 @@ namespace MilkTeaHouseProject
             this.cbbPos.Text = pos;
             this.txtPhoneNumber.Text = phonenumber;
             this.txtUser.Text = username;
+            this.Username = username;
 
-            this.txtUser.Enabled = false;
-            this.txtPass.Enabled = false;
+            this.PositonBefore = pos;
+
+            if (pos == "Thu Ngân")
+            {
+                this.txtUser.Enabled = false;
+                this.txtPass.Enabled = false;
+            }
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        int CheckPosition(string posBefore, string posAfter)
+        {
+            if (posBefore == "Thu Ngân")
+            {
+                if (posAfter == "Thu Ngân")
+                {
+                    return 0;   // đéo làm gì
+                }
+                else
+                {
+                    return 1;   // set username = null
+                }
+            }
+            else
+            {
+                if (posAfter == "Thu Ngân")
+                {
+                    return 2;   // thêm acc
+                }
+                else
+                {
+                    return 0;   // đéo làm gì 
+                }
+            }
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -65,6 +102,8 @@ namespace MilkTeaHouseProject
         string imgLocation = "";
         byte[] img = null;
 
+        public string Username { get => username; set => username = value; }
+        public string PositonBefore { get => positonBefore; set => positonBefore = value; }
 
         private void ptbImage_Click(object sender, EventArgs e)
         {
@@ -77,16 +116,18 @@ namespace MilkTeaHouseProject
                 ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
         private void LoadImage()
         {
             imgLocation = "./images/blank-profile.png";
         }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int id = int.Parse(this.lbIdIncrease.Text);
             string name = this.txtName.Text;
             DateTime birthdate = this.dateTimePicker1.Value;
-            string pos = this.cbbPos.Text;
+            string positionAfter = this.cbbPos.Text;
             string phonenumber = this.txtPhoneNumber.Text;
 
             if (imgLocation == "")
@@ -103,27 +144,76 @@ namespace MilkTeaHouseProject
                 MessageBox.Show("Nhập Họ Tên", "Error");
                 return;
             }
-            if (string.IsNullOrEmpty(pos))
+            if (string.IsNullOrEmpty(positionAfter))
             {
                 MessageBox.Show("Chọn Công việc", "Error");
                 return;
-            }
-            if (string.IsNullOrEmpty(phonenumber))
+            }            
+            if (phonenumber.Length < 10)
             {
-                MessageBox.Show("Nhập số điện thoại", "Error");
+                MessageBox.Show("Số điện thoại không hợp lệ", "Error");
                 return;
             }
+            if (this.CheckPosition(PositonBefore, positionAfter) == 0)
+            {
+                StaffDAL.Instance.EditStaff(id, name, img, birthdate, positionAfter, phonenumber);
+                StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
+            }
+            else if (this.CheckPosition(PositonBefore, positionAfter) == 1)
+            {
+                StaffDAL.Instance.SetUsernameToNULLbyID(id);
+                AccountDAL.Instance.DelAccount(Username);
+                StaffDAL.Instance.EditStaff(id, name, img, birthdate, positionAfter, phonenumber);
+                StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(this.txtUser.Text))
+                {
+                    MessageBox.Show("Nhập User", "Error");
+                    return;
+                }
+                if (string.IsNullOrEmpty(this.txtPass.Text))
+                {
+                    MessageBox.Show("Nhập PassWord", "Error");
+                    return;
+                }
+                if (AccountDAL.Instance.SignUp(this.txtUser.Text, this.txtPass.Text))
+                {
+                    StaffDAL.Instance.EditStaff(id, name, img, birthdate, positionAfter, phonenumber, this.txtUser.Text);
+                    StaffDAL.Instance.UpdateSalarybyPosition(id, positionAfter);
+                }
+                else
+                {
+                    MessageBox.Show("Trùng username", "Error");
+                    return;
+                }
+            }
 
-            StaffDAL.Instance.EditStaff(id, name, img, birthdate, pos, phonenumber);
-            StaffDAL.Instance.UpdateSalarybyPosition(id, pos);
             this.Close();
-            
         }
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbbPos.Text != "Thu Ngân")
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cbbPos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.txtUser.Clear();
+            if (cbbPos.Text == "Thu Ngân")
+            {
+                this.txtUser.Text = this.Username;
+            }
         }
     }
 }

@@ -155,10 +155,31 @@ namespace MilkTeaHouseProject.DAL
             return 0;
         }
 
+        public void SetUsernameToNULLbyID(int id)
+        {
+            string query = string.Format("update Staff set USERNAME = null where id = {0}", id);
+
+            DataProvider.Instance.ExecuteNonQuery(query);   
+        }
+
         public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber)
         {
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber ",
-                new object[] { ID, name, image, birthDate, pos, phonenumber });
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
+
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @phonenumber , @salary , @overtimesalary , @minussalary ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, Salary, OvertimeSalary , MinusSalary });
+        }
+
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username)
+        {
+            int Salary = this.GetSalarybyPosition(pos);
+            int OvertimeSalary = this.GetOvertimeSalarybyPosition(pos);
+            int MinusSalary = this.GetMinusSalarybyPosition(pos);
+
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber , @username , @salary , @overtimesalary , @minussalary ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, username , Salary, OvertimeSalary, MinusSalary });
         }
 
         public void DelStaff(int iD)

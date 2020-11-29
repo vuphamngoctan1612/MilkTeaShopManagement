@@ -60,9 +60,9 @@ namespace MilkTeaHouseProject
                 MessageBox.Show("Chọn Công việc", "Error");
                 return;
             }
-            if (string.IsNullOrEmpty(phoneNumber))
+            if (phoneNumber.Length < 10)
             {
-                MessageBox.Show("Nhập SĐT", "Error");
+                MessageBox.Show("Số điện thoại không hợp lệ", "Error");
                 return;
             }
 

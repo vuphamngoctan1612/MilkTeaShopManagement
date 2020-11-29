@@ -284,6 +284,7 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(427, 348);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(316, 27);
             this.txtPhoneNumber.TabIndex = 20;
@@ -326,6 +327,7 @@
             this.txtPass.Size = new System.Drawing.Size(297, 27);
             this.txtPass.TabIndex = 46;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // lbPass
             // 
@@ -346,6 +348,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(297, 27);
             this.txtUser.TabIndex = 45;
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // lbUser
             // 
@@ -380,6 +383,7 @@
             this.cbbPos.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbPos.Size = new System.Drawing.Size(316, 31);
             this.cbbPos.TabIndex = 44;
+            this.cbbPos.SelectedIndexChanged += new System.EventHandler(this.cbbPos_SelectedIndexChanged);
             // 
             // ptbImage
             // 
