@@ -263,11 +263,23 @@ end
 go
 
 alter proc USP_EditStaff
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10)
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10), @username varchar(100), @salary int, @overtimesalary int, @minussalary int
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber, USERNAME = @username,
+		salary = @salary, OverTimeSalary = @overtimesalary, minussalary = @minussalary
+	where ID = @ID
+end
+go
+
+alter proc USP_EditStaffnoUsername
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10), @salary int, @overtimesalary int, @minussalary int
+as
+begin
+	update Staff 
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber,
+		salary = @salary, OverTimeSalary = @overtimesalary, minussalary = @minussalary
 	where ID = @ID
 end
 go
@@ -347,5 +359,7 @@ WHERE BILLID = 22
 
 
 SELECT * FROM Staff 
+SELECT * FROM Account
 
-EXEC USP_GetListMenuByBillID 22
+delete from Staff
+where id = 3
