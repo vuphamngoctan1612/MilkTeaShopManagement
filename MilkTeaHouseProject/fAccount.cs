@@ -63,5 +63,14 @@ namespace MilkTeaHouseProject
                             this.Close();
                         }    
         }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                this.btnAdd_Click(sender, e);
+            }
+        }
     }
 }

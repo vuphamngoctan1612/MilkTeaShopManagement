@@ -47,8 +47,9 @@ namespace MilkTeaHouseProject
             this.pn.Controls.Add(this.lbNameForm);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
+            this.pn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn.Name = "pn";
-            this.pn.Size = new System.Drawing.Size(392, 42);
+            this.pn.Size = new System.Drawing.Size(348, 34);
             this.pn.TabIndex = 52;
             // 
             // btnExit
@@ -73,7 +74,8 @@ namespace MilkTeaHouseProject
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(342, 0);
+            this.btnExit.Location = new System.Drawing.Point(304, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -81,7 +83,7 @@ namespace MilkTeaHouseProject
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(50, 42);
+            this.btnExit.Size = new System.Drawing.Size(44, 34);
             this.btnExit.TabIndex = 2;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -91,9 +93,9 @@ namespace MilkTeaHouseProject
             this.lbNameForm.AutoSize = true;
             this.lbNameForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameForm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNameForm.Location = new System.Drawing.Point(10, 6);
+            this.lbNameForm.Location = new System.Drawing.Point(9, 5);
             this.lbNameForm.Name = "lbNameForm";
-            this.lbNameForm.Size = new System.Drawing.Size(94, 28);
+            this.lbNameForm.Size = new System.Drawing.Size(80, 23);
             this.lbNameForm.TabIndex = 1;
             this.lbNameForm.Text = "Xóa món";
             // 
@@ -102,9 +104,9 @@ namespace MilkTeaHouseProject
             this.lbNameCategory.AutoSize = true;
             this.lbNameCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbNameCategory.Location = new System.Drawing.Point(35, 88);
+            this.lbNameCategory.Location = new System.Drawing.Point(31, 70);
             this.lbNameCategory.Name = "lbNameCategory";
-            this.lbNameCategory.Size = new System.Drawing.Size(91, 28);
+            this.lbNameCategory.Size = new System.Drawing.Size(76, 23);
             this.lbNameCategory.TabIndex = 51;
             this.lbNameCategory.Text = "Tên loại:";
             // 
@@ -128,7 +130,8 @@ namespace MilkTeaHouseProject
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(217, 235);
+            this.btnReturn.Location = new System.Drawing.Point(193, 188);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -137,10 +140,11 @@ namespace MilkTeaHouseProject
             this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
-            this.btnReturn.Size = new System.Drawing.Size(144, 42);
+            this.btnReturn.Size = new System.Drawing.Size(128, 34);
             this.btnReturn.TabIndex = 54;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnDel
             // 
@@ -162,7 +166,8 @@ namespace MilkTeaHouseProject
             this.btnDel.Image = null;
             this.btnDel.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDel.Location = new System.Drawing.Point(42, 235);
+            this.btnDel.Location = new System.Drawing.Point(37, 188);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDel.Name = "btnDel";
             this.btnDel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnDel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -171,7 +176,7 @@ namespace MilkTeaHouseProject
             this.btnDel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDel.OnPressedColor = System.Drawing.Color.Black;
             this.btnDel.Radius = 10;
-            this.btnDel.Size = new System.Drawing.Size(144, 42);
+            this.btnDel.Size = new System.Drawing.Size(128, 34);
             this.btnDel.TabIndex = 55;
             this.btnDel.Text = "Xóa";
             this.btnDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -188,25 +193,27 @@ namespace MilkTeaHouseProject
             this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(40, 148);
+            this.cbCategory.Location = new System.Drawing.Point(36, 118);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbCategory.Size = new System.Drawing.Size(321, 35);
+            this.cbCategory.Size = new System.Drawing.Size(286, 31);
             this.cbCategory.TabIndex = 56;
             // 
             // fDelCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(392, 333);
+            this.ClientSize = new System.Drawing.Size(348, 266);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.lbNameCategory);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fDelCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fDelCategory";

@@ -70,7 +70,6 @@
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DrinkDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
-    <Compile Include="DAL\PositionDAL.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="DrinkItem.cs">
       <SubType>UserControl</SubType>
@@ -85,7 +84,6 @@
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Encryptor.cs" />
     <Compile Include="DTO\Menu.cs" />
-    <Compile Include="DTO\Position.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
@@ -413,6 +411,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\moneybox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSearch.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchlue.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

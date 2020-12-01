@@ -20,7 +20,6 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -83,8 +82,11 @@ namespace MilkTeaHouseProject
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsWhiteSpace(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (e.KeyChar == (char)Keys.Enter)
+            {
                 e.Handled = true;
+                this.btnSignUp_Click(sender, e);
+            }
         }
     }
 }

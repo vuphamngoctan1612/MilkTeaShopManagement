@@ -58,10 +58,10 @@
             this.lbCategory = new System.Windows.Forms.Label();
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.lbBill = new System.Windows.Forms.Label();
-            this.pnSearch = new System.Windows.Forms.Panel();
-            this.txtSearch = new Guna.UI.WinForms.GunaLineTextBox();
-            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnTop = new System.Windows.Forms.Panel();
+            this.pnSearch = new System.Windows.Forms.Panel();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
             this.pnLeft = new System.Windows.Forms.Panel();
             this.pnRight = new System.Windows.Forms.Panel();
             this.pnToolInCategory.SuspendLayout();
@@ -74,8 +74,8 @@
             this.gunaElipsePanel1.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
             this.gunaElipsePanel4.SuspendLayout();
-            this.pnSearch.SuspendLayout();
             this.pnTop.SuspendLayout();
+            this.pnSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnToolInCategory
@@ -87,18 +87,18 @@
             this.pnToolInCategory.Location = new System.Drawing.Point(0, 0);
             this.pnToolInCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnToolInCategory.Name = "pnToolInCategory";
-            this.pnToolInCategory.Size = new System.Drawing.Size(720, 58);
+            this.pnToolInCategory.Size = new System.Drawing.Size(640, 46);
             this.pnToolInCategory.TabIndex = 1;
             // 
             // flowLayoutPanelCategory
             // 
             this.flowLayoutPanelCategory.Controls.Add(this.lbAll);
             this.flowLayoutPanelCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 19);
+            this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 15);
             this.flowLayoutPanelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
-            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanelCategory.Size = new System.Drawing.Size(720, 38);
+            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanelCategory.Size = new System.Drawing.Size(640, 30);
             this.flowLayoutPanelCategory.TabIndex = 1;
             // 
             // lbAll
@@ -106,9 +106,9 @@
             this.lbAll.AutoSize = true;
             this.lbAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbAll.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAll.Location = new System.Drawing.Point(9, 6);
+            this.lbAll.Location = new System.Drawing.Point(8, 5);
             this.lbAll.Name = "lbAll";
-            this.lbAll.Size = new System.Drawing.Size(71, 30);
+            this.lbAll.Size = new System.Drawing.Size(56, 23);
             this.lbAll.TabIndex = 0;
             this.lbAll.Text = "Tất cả";
             this.lbAll.Click += new System.EventHandler(this.lbAll_Click);
@@ -117,20 +117,20 @@
             // 
             this.pnSplitCategory.BackColor = System.Drawing.Color.LightGray;
             this.pnSplitCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitCategory.Location = new System.Drawing.Point(0, 57);
+            this.pnSplitCategory.Location = new System.Drawing.Point(0, 45);
             this.pnSplitCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnSplitCategory.Name = "pnSplitCategory";
-            this.pnSplitCategory.Size = new System.Drawing.Size(720, 1);
+            this.pnSplitCategory.Size = new System.Drawing.Size(640, 1);
             this.pnSplitCategory.TabIndex = 0;
             // 
             // pnBottom
             // 
             this.pnBottom.BackColor = System.Drawing.Color.White;
             this.pnBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBottom.Location = new System.Drawing.Point(0, 647);
+            this.pnBottom.Location = new System.Drawing.Point(0, 518);
             this.pnBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnBottom.Name = "pnBottom";
-            this.pnBottom.Size = new System.Drawing.Size(720, 18);
+            this.pnBottom.Size = new System.Drawing.Size(640, 14);
             this.pnBottom.TabIndex = 3;
             // 
             // gunaElipsePanel2
@@ -141,11 +141,11 @@
             this.gunaElipsePanel2.Controls.Add(this.pnBottom);
             this.gunaElipsePanel2.Controls.Add(this.pnToolInCategory);
             this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(10, 49);
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(9, 39);
             this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Radius = 20;
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(720, 665);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(640, 532);
             this.gunaElipsePanel2.TabIndex = 8;
             // 
             // flowLayoutPanelDrinks
@@ -153,11 +153,11 @@
             this.flowLayoutPanelDrinks.AutoScroll = true;
             this.flowLayoutPanelDrinks.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 58);
-            this.flowLayoutPanelDrinks.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 46);
+            this.flowLayoutPanelDrinks.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.flowLayoutPanelDrinks.Name = "flowLayoutPanelDrinks";
-            this.flowLayoutPanelDrinks.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(720, 589);
+            this.flowLayoutPanelDrinks.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(640, 472);
             this.flowLayoutPanelDrinks.TabIndex = 4;
             this.flowLayoutPanelDrinks.SizeChanged += new System.EventHandler(this.flowLayoutPanelDrinks_SizeChanged);
             // 
@@ -165,10 +165,10 @@
             // 
             this.pnCenter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pnCenter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnCenter.Location = new System.Drawing.Point(730, 49);
+            this.pnCenter.Location = new System.Drawing.Point(649, 39);
             this.pnCenter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnCenter.Name = "pnCenter";
-            this.pnCenter.Size = new System.Drawing.Size(15, 665);
+            this.pnCenter.Size = new System.Drawing.Size(13, 532);
             this.pnCenter.TabIndex = 7;
             // 
             // pnTitle
@@ -183,16 +183,16 @@
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(645, 58);
+            this.pnTitle.Size = new System.Drawing.Size(573, 46);
             this.pnTitle.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(450, 17);
+            this.label3.Location = new System.Drawing.Point(400, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 30);
+            this.label3.Size = new System.Drawing.Size(55, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tổng";
             // 
@@ -200,9 +200,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(340, 17);
+            this.label2.Location = new System.Drawing.Point(302, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 30);
+            this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Giá món";
             // 
@@ -210,9 +210,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(220, 17);
+            this.label1.Location = new System.Drawing.Point(196, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 30);
+            this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Số lượng";
             // 
@@ -220,9 +220,9 @@
             // 
             this.lbFoodName.AutoSize = true;
             this.lbFoodName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbFoodName.Location = new System.Drawing.Point(50, 17);
+            this.lbFoodName.Location = new System.Drawing.Point(44, 14);
             this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(99, 30);
+            this.lbFoodName.Size = new System.Drawing.Size(85, 25);
             this.lbFoodName.TabIndex = 2;
             this.lbFoodName.Text = "Tên món";
             // 
@@ -230,10 +230,10 @@
             // 
             this.pnSplitBill.BackColor = System.Drawing.Color.LightGray;
             this.pnSplitBill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitBill.Location = new System.Drawing.Point(0, 57);
+            this.pnSplitBill.Location = new System.Drawing.Point(0, 45);
             this.pnSplitBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnSplitBill.Name = "pnSplitBill";
-            this.pnSplitBill.Size = new System.Drawing.Size(645, 1);
+            this.pnSplitBill.Size = new System.Drawing.Size(573, 1);
             this.pnSplitBill.TabIndex = 1;
             // 
             // pnTotal
@@ -242,10 +242,10 @@
             this.pnTotal.Controls.Add(this.panel1);
             this.pnTotal.Controls.Add(this.pnBtnPay);
             this.pnTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnTotal.Location = new System.Drawing.Point(0, 513);
+            this.pnTotal.Location = new System.Drawing.Point(0, 410);
             this.pnTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(645, 152);
+            this.pnTotal.Size = new System.Drawing.Size(573, 122);
             this.pnTotal.TabIndex = 2;
             // 
             // panel1
@@ -256,10 +256,10 @@
             this.panel1.Controls.Add(this.lbTotalPrice);
             this.panel1.Controls.Add(this.lbNameTotal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 39);
+            this.panel1.Location = new System.Drawing.Point(0, 31);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(645, 41);
+            this.panel1.Size = new System.Drawing.Size(573, 33);
             this.panel1.TabIndex = 3;
             // 
             // lbCount
@@ -267,9 +267,9 @@
             this.lbCount.AutoSize = true;
             this.lbCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCount.Location = new System.Drawing.Point(356, 5);
+            this.lbCount.Location = new System.Drawing.Point(316, 4);
             this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(27, 32);
+            this.lbCount.Size = new System.Drawing.Size(21, 25);
             this.lbCount.TabIndex = 6;
             this.lbCount.Text = "0";
             this.lbCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -278,9 +278,9 @@
             // 
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(552, 5);
+            this.lb.Location = new System.Drawing.Point(491, 4);
             this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(57, 30);
+            this.lb.Size = new System.Drawing.Size(46, 23);
             this.lb.TabIndex = 5;
             this.lb.Text = "VND";
             // 
@@ -288,10 +288,10 @@
             // 
             this.lbTotalPrice.AutoSize = true;
             this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPrice.Location = new System.Drawing.Point(447, 5);
+            this.lbTotalPrice.Location = new System.Drawing.Point(397, 4);
             this.lbTotalPrice.Name = "lbTotalPrice";
             this.lbTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbTotalPrice.Size = new System.Drawing.Size(25, 30);
+            this.lbTotalPrice.Size = new System.Drawing.Size(19, 23);
             this.lbTotalPrice.TabIndex = 3;
             this.lbTotalPrice.Text = "0";
             // 
@@ -299,9 +299,9 @@
             // 
             this.lbNameTotal.AutoSize = true;
             this.lbNameTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameTotal.Location = new System.Drawing.Point(240, 8);
+            this.lbNameTotal.Location = new System.Drawing.Point(213, 6);
             this.lbNameTotal.Name = "lbNameTotal";
-            this.lbNameTotal.Size = new System.Drawing.Size(122, 30);
+            this.lbNameTotal.Size = new System.Drawing.Size(96, 23);
             this.lbNameTotal.TabIndex = 4;
             this.lbNameTotal.Text = "Tổng cộng:";
             // 
@@ -310,10 +310,10 @@
             this.pnBtnPay.Controls.Add(this.btnCancel);
             this.pnBtnPay.Controls.Add(this.btnPay);
             this.pnBtnPay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBtnPay.Location = new System.Drawing.Point(0, 80);
+            this.pnBtnPay.Location = new System.Drawing.Point(0, 64);
             this.pnBtnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnBtnPay.Name = "pnBtnPay";
-            this.pnBtnPay.Size = new System.Drawing.Size(645, 72);
+            this.pnBtnPay.Size = new System.Drawing.Size(573, 58);
             this.pnBtnPay.TabIndex = 1;
             // 
             // btnCancel
@@ -327,6 +327,7 @@
             this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
             this.btnCancel.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.CheckedImage")));
             this.btnCancel.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
@@ -336,7 +337,7 @@
             this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCancel.ImageSize = new System.Drawing.Size(30, 30);
             this.btnCancel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCancel.Location = new System.Drawing.Point(320, 0);
+            this.btnCancel.Location = new System.Drawing.Point(284, 0);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
@@ -345,7 +346,7 @@
             this.btnCancel.OnHoverImage = null;
             this.btnCancel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancel.Size = new System.Drawing.Size(325, 72);
+            this.btnCancel.Size = new System.Drawing.Size(289, 58);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Hủy đơn";
             this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -355,13 +356,15 @@
             // 
             this.btnPay.AnimationHoverSpeed = 0.07F;
             this.btnPay.AnimationSpeed = 0.03F;
-            this.btnPay.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(181)))), ((int)(((byte)(230)))));
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(166)))), ((int)(((byte)(97)))));
+            this.btnPay.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(166)))), ((int)(((byte)(97)))));
             this.btnPay.BorderColor = System.Drawing.Color.Black;
             this.btnPay.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnPay.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnPay.CheckedForeColor = System.Drawing.Color.White;
             this.btnPay.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPay.CheckedImage")));
             this.btnPay.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPay.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPay.FocusedColor = System.Drawing.Color.Empty;
@@ -374,13 +377,13 @@
             this.btnPay.Location = new System.Drawing.Point(0, 0);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPay.Name = "btnPay";
-            this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(151)))), ((int)(((byte)(71)))));
             this.btnPay.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnPay.OnHoverForeColor = System.Drawing.Color.White;
             this.btnPay.OnHoverImage = null;
             this.btnPay.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnPay.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPay.Size = new System.Drawing.Size(320, 72);
+            this.btnPay.Size = new System.Drawing.Size(284, 58);
             this.btnPay.TabIndex = 2;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -391,10 +394,10 @@
             this.flowLayoutPanelBill.AutoScroll = true;
             this.flowLayoutPanelBill.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 58);
+            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 46);
             this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(645, 455);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(573, 364);
             this.flowLayoutPanelBill.TabIndex = 5;
             // 
             // gunaElipsePanel1
@@ -405,11 +408,11 @@
             this.gunaElipsePanel1.Controls.Add(this.pnTotal);
             this.gunaElipsePanel1.Controls.Add(this.pnTitle);
             this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(745, 49);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(662, 39);
             this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(645, 665);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(573, 532);
             this.gunaElipsePanel1.TabIndex = 6;
             // 
             // gunaElipsePanel3
@@ -417,11 +420,11 @@
             this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel3.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel3.Controls.Add(this.lbCategory);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(66, -1);
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(59, -1);
             this.gunaElipsePanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
             this.gunaElipsePanel3.Radius = 10;
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(177, 73);
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(157, 58);
             this.gunaElipsePanel3.TabIndex = 1;
             // 
             // lbCategory
@@ -429,11 +432,11 @@
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.lbCategory.Location = new System.Drawing.Point(32, 12);
+            this.lbCategory.Location = new System.Drawing.Point(28, 10);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(108, 28);
+            this.lbCategory.Size = new System.Drawing.Size(86, 23);
             this.lbCategory.TabIndex = 0;
-            this.lbCategory.Text = "Danh mục";
+            this.lbCategory.Text = "Thực đơn";
             // 
             // gunaElipsePanel4
             // 
@@ -441,11 +444,11 @@
             this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel4.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel4.Controls.Add(this.lbBill);
-            this.gunaElipsePanel4.Location = new System.Drawing.Point(823, -2);
+            this.gunaElipsePanel4.Location = new System.Drawing.Point(731, -2);
             this.gunaElipsePanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";
             this.gunaElipsePanel4.Radius = 10;
-            this.gunaElipsePanel4.Size = new System.Drawing.Size(164, 63);
+            this.gunaElipsePanel4.Size = new System.Drawing.Size(146, 50);
             this.gunaElipsePanel4.TabIndex = 2;
             // 
             // lbBill
@@ -453,46 +456,41 @@
             this.lbBill.AutoSize = true;
             this.lbBill.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.lbBill.Location = new System.Drawing.Point(35, 9);
+            this.lbBill.Location = new System.Drawing.Point(31, 7);
             this.lbBill.Name = "lbBill";
-            this.lbBill.Size = new System.Drawing.Size(94, 28);
+            this.lbBill.Size = new System.Drawing.Size(79, 23);
             this.lbBill.TabIndex = 0;
             this.lbBill.Text = "Hóa đơn";
             // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.pnTop.Controls.Add(this.pnSearch);
+            this.pnTop.Controls.Add(this.gunaElipsePanel3);
+            this.pnTop.Controls.Add(this.gunaElipsePanel4);
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(9, 0);
+            this.pnTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1226, 39);
+            this.pnTop.TabIndex = 4;
+            // 
             // pnSearch
             // 
-            this.pnSearch.Controls.Add(this.txtSearch);
             this.pnSearch.Controls.Add(this.btnSearch);
-            this.pnSearch.Location = new System.Drawing.Point(382, 2);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnSearch.Controls.Add(this.txtSearch);
+            this.pnSearch.Location = new System.Drawing.Point(403, 0);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(364, 44);
-            this.pnSearch.TabIndex = 6;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.FocusedLineColor = System.Drawing.Color.White;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Italic);
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtSearch.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtSearch.Location = new System.Drawing.Point(17, 2);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(284, 40);
-            this.txtSearch.TabIndex = 5;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.pnSearch.Size = new System.Drawing.Size(324, 39);
+            this.pnSearch.TabIndex = 12;
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSearch.AnimationHoverSpeed = 0.07F;
             this.btnSearch.AnimationSpeed = 0.03F;
-            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.White;
             this.btnSearch.BorderColor = System.Drawing.Color.Black;
             this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
@@ -503,44 +501,54 @@
             this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::MilkTeaHouseProject.Properties.Resources.Search_32;
+            this.btnSearch.Image = global::MilkTeaHouseProject.Properties.Resources.searchlue;
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(306, 4);
+            this.btnSearch.Location = new System.Drawing.Point(244, 7);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(226)))));
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSearch.OnHoverImage = null;
             this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Size = new System.Drawing.Size(42, 38);
-            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Size = new System.Drawing.Size(32, 26);
+            this.btnSearch.TabIndex = 10;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // pnTop
+            // txtSearch
             // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.pnTop.Controls.Add(this.gunaElipsePanel3);
-            this.pnTop.Controls.Add(this.pnSearch);
-            this.pnTop.Controls.Add(this.gunaElipsePanel4);
-            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(10, 0);
-            this.pnTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1380, 49);
-            this.pnTop.TabIndex = 4;
+            this.txtSearch.AllowDrop = true;
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BaseColor = System.Drawing.Color.White;
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.Location = new System.Drawing.Point(38, 3);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.Radius = 10;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(247, 33);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // pnLeft
             // 
             this.pnLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pnLeft.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnLeft.Location = new System.Drawing.Point(1390, 0);
+            this.pnLeft.Location = new System.Drawing.Point(1235, 0);
             this.pnLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(10, 714);
+            this.pnLeft.Size = new System.Drawing.Size(9, 571);
             this.pnLeft.TabIndex = 2;
             // 
             // pnRight
@@ -550,15 +558,15 @@
             this.pnRight.Location = new System.Drawing.Point(0, 0);
             this.pnRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(10, 714);
+            this.pnRight.Size = new System.Drawing.Size(9, 571);
             this.pnRight.TabIndex = 3;
             // 
             // fOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(1400, 714);
+            this.ClientSize = new System.Drawing.Size(1244, 571);
             this.Controls.Add(this.gunaElipsePanel2);
             this.Controls.Add(this.pnCenter);
             this.Controls.Add(this.gunaElipsePanel1);
@@ -567,7 +575,7 @@
             this.Controls.Add(this.pnLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1400, 714);
+            this.MinimumSize = new System.Drawing.Size(1244, 571);
             this.Name = "fOrder";
             this.Text = "ĐẶT HÀNG";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fOrder_FormClosed);
@@ -586,8 +594,8 @@
             this.gunaElipsePanel3.PerformLayout();
             this.gunaElipsePanel4.ResumeLayout(false);
             this.gunaElipsePanel4.PerformLayout();
-            this.pnSearch.ResumeLayout(false);
             this.pnTop.ResumeLayout(false);
+            this.pnSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -622,12 +630,12 @@
         private System.Windows.Forms.Label lbCategory;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel4;
         private System.Windows.Forms.Label lbBill;
-        private System.Windows.Forms.Panel pnSearch;
-        private Guna.UI.WinForms.GunaLineTextBox txtSearch;
-        private Guna.UI.WinForms.GunaAdvenceButton btnSearch;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Panel pnLeft;
         private System.Windows.Forms.Panel pnRight;
         private Guna.UI.WinForms.GunaLabel lbAll;
+        private System.Windows.Forms.Panel pnSearch;
+        private Guna.UI.WinForms.GunaAdvenceButton btnSearch;
+        private Guna.UI.WinForms.GunaTextBox txtSearch;
     }
 }

@@ -25,6 +25,7 @@ namespace MilkTeaHouseProject
             txtNameDrink.Text = name;
             txtPrice.Text = price.ToString();
             cbCategory.Text = DrinkDAL.Instance.getCategorybyID(id);
+
             if (image == null)
             {
                 ptbImg.Image = null;
@@ -38,6 +39,7 @@ namespace MilkTeaHouseProject
                 ptbImg.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
         #region Methods
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -78,8 +80,6 @@ namespace MilkTeaHouseProject
             }
         }
         #endregion
-
-
 
         #region Event
 
@@ -144,7 +144,9 @@ namespace MilkTeaHouseProject
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -161,7 +163,5 @@ namespace MilkTeaHouseProject
             SeparateThousands(this.txtPrice);
         }
         #endregion
-
-
     }
 }

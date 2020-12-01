@@ -26,6 +26,13 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             this.lbID.Text = id.ToString();
             this.lbName.Text = name;
+            this.lbBirthDate.Text = birthdate.ToString("dd/M/yyyy");
+            this.lbPosition.Text = position;
+            this.lbUserName.Text = userName;
+            this.numericUpDownOverTime.Value = overtime;
+            this.numericFault.Value = fault;
+            this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
+
             if (image == null)
             {
                 this.picStaff.Image = null;
@@ -36,12 +43,15 @@ namespace MilkTeaHouseProject
                 picStaff.Image = Image.FromStream(mstream);
                 picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            this.lbBirthDate.Text = birthdate.ToString("dd/M/yyyy");
-            this.lbPosition.Text = position;
-            this.lbUserName.Text = userName;
-            this.numericUpDownOverTime.Value = overtime;
-            this.numericFault.Value = fault;
-            this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
+
+            if (position == "Quản lí")
+            {
+                this.btEdit.Visible = false;
+                this.btDel.Visible = false;
+                this.numericUpDownOverTime.Visible = false;
+                this.numericFault.Visible = false;
+                this.lbSalary.Visible = false;
+            }
             if (setcolor == true)
             {
                 this.BackColor = Color.FromArgb(240, 240, 240);

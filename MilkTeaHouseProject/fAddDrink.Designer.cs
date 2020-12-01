@@ -55,7 +55,7 @@
             this.txtPrice.MaxLength = 10;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(286, 30);
-            this.txtPrice.TabIndex = 37;
+            this.txtPrice.TabIndex = 3;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
@@ -66,7 +66,7 @@
             this.txtNameDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNameDrink.Name = "txtNameDrink";
             this.txtNameDrink.Size = new System.Drawing.Size(286, 30);
-            this.txtNameDrink.TabIndex = 38;
+            this.txtNameDrink.TabIndex = 2;
             // 
             // pn
             // 
@@ -136,8 +136,7 @@
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(283, 30);
-            this.txtID.TabIndex = 43;
-            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            this.txtID.TabIndex = 0;
             // 
             // label1
             // 
@@ -203,7 +202,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(128, 34);
-            this.btnReturn.TabIndex = 39;
+            this.btnReturn.TabIndex = 5;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -264,7 +263,7 @@
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(128, 34);
-            this.btnAdd.TabIndex = 40;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -287,7 +286,7 @@
             this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbCategory.Size = new System.Drawing.Size(286, 31);
-            this.cbCategory.TabIndex = 44;
+            this.cbCategory.TabIndex = 1;
             // 
             // fAddDrink
             // 
