@@ -784,3 +784,40 @@ C:\Users\NIU\Desktop\fixbug\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProjec
 C:\Users\NIU\Desktop\fixbug\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\NIU\Desktop\fixbug\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\NIU\Desktop\fixbug\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
