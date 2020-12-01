@@ -68,32 +68,17 @@ namespace MilkTeaHouseProject
         private void btSave_Click(object sender, EventArgs e)
         {
             string position = this.cbbStaff.Text;
-            int Salary = ConvertToNumber(this.txtSalary.Text);
-            int OverTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+            int salary = ConvertToNumber(this.txtSalary.Text);
+            int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
             int MinusSalary = ConvertToNumber(this.txtMinusSalary.Text);
 
             if (string.IsNullOrEmpty(cbbStaff.Text))
             {
                 MessageBox.Show("Chọn vị trí công việc", "Error");
             }
-            else if (string.IsNullOrEmpty(txtSalary.Text))
-            {
-                this.txtSalary.Text = "0";
-                Salary = 0;
-            }
-            else if (string.IsNullOrEmpty(txtOverTime.Text))
-            {
-                this.txtOverTime.Text = "0";
-                OverTimeSalary = 0;
-            }
-            else if (string.IsNullOrEmpty(txtMinusSalary.Text))
-            {
-                this.txtMinusSalary.Text = "0";
-                MinusSalary = 0;
-            }
             else
             {
-                StaffDAL.Instance.UpdateSalary(position, Salary, OverTimeSalary, MinusSalary);
+                PositionDAL.Instance.UpdateSalary(position, salary, overTimeSalary, MinusSalary);
                 this.Close();
             }
         }
@@ -101,10 +86,9 @@ namespace MilkTeaHouseProject
         private void cbbStaff_SelectedIndexChanged(object sender, EventArgs e)
         {
             string position = this.cbbStaff.Text;
-
-            this.txtSalary.Text = StaffDAL.Instance.GetSalarybyPosition(position).ToString();
-            this.txtOverTime.Text = StaffDAL.Instance.GetOvertimeSalarybyPosition(position).ToString();
-            this.txtMinusSalary.Text = StaffDAL.Instance.GetMinusSalarybyPosition(position).ToString();
+            this.txtSalary.Text = PositionDAL.Instance.GetSalarybyPosition(position).ToString();
+            this.txtOverTime.Text = PositionDAL.Instance.GetOverTimeSalarybyPosition(position).ToString();
+            this.txtMinusSalary.Text = PositionDAL.Instance.GetMinusSalarybyPosition(position).ToString();
         }
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
