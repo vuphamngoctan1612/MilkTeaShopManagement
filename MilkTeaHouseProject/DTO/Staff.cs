@@ -16,8 +16,8 @@ namespace MilkTeaHouseProject.DTO
         private string position;
         private string userName;
         private int overTime;
-        private int salaryReceived;
         private int fault;
+        private int salaryReceived;
         private string phoneNumber;
 
         public int ID { get => iD; set => iD = value; }

@@ -72,6 +72,7 @@
     <Compile Include="DAL\MenuDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
+    <Compile Include="DAL\TableFoodDAL.cs" />
     <Compile Include="DrinkItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +88,7 @@
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Position.cs" />
     <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\TableFood.cs" />
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
