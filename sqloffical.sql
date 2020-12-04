@@ -269,7 +269,8 @@ alter proc USP_AddStaff
 @ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
-	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, USERNAME, PhoneNumber, CMND, Sex, Address) values(@ID, @Name, @image, @birthday, @pos, @username, @phonenumber, @cmnd, @sex, @address)
+	insert into Staff  
+	values(@ID, @Name, @image, @birthday, @pos, @username,0,0,0, @phonenumber, @cmnd, @sex, @address)
 end
 go
 
