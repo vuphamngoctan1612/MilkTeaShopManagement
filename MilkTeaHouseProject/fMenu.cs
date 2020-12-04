@@ -34,7 +34,7 @@ namespace MilkTeaHouseProject
                 else
                     setcolor = true;
 
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.ORIGINPRICE, drink.COUNT);
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.OriginPrice, drink.Count);
                 item.onDel += Item_onDel;
                 item.onEdit += Item_onEdit;
 
@@ -59,7 +59,7 @@ namespace MilkTeaHouseProject
                         setcolor = false;
                     else
                         setcolor = true;
-                    MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.ORIGINPRICE, drink.COUNT);
+                    MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.OriginPrice, drink.Count);
                     item.Tag = drink;
                     item.onDel += Item_onDel;
                     item.onEdit += Item_onEdit;
@@ -107,8 +107,8 @@ namespace MilkTeaHouseProject
             string name = ((sender as MenuItem).Tag as Drink).Name;
             int price = ((sender as MenuItem).Tag as Drink).Price;
             byte[] image = ((sender as MenuItem).Tag as Drink).Image;
-            int origin = ((sender as MenuItem).Tag as Drink).ORIGINPRICE;
-            int count = ((sender as MenuItem).Tag as Drink).COUNT;
+            int origin = ((sender as MenuItem).Tag as Drink).OriginPrice;
+            int count = ((sender as MenuItem).Tag as Drink).Count;
 
             fEditDrink frm = new fEditDrink(id, name, price, image, origin, count);
             frm.ShowDialog();

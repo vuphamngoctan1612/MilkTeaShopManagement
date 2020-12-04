@@ -126,7 +126,7 @@ namespace MilkTeaShopManagement.DAL
 
             DTO.Drink item = new DTO.Drink(dr);
 
-            return item.COUNT;
+            return item.Count;
         }
     }
 }

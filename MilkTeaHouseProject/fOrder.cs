@@ -276,7 +276,7 @@ namespace MilkTeaHouseProject
         {
             int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
 
-            if (((sender as DrinkItem).Tag as Drink).COUNT > BillInfoDAL.Instance.GetCountbyDrinkBillID(this.billID, idDrink))
+            if (((sender as DrinkItem).Tag as Drink).Count > BillInfoDAL.Instance.GetCountbyDrinkBillID(this.billID, idDrink))
             {
                 try
                 {
