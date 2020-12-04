@@ -859,3 +859,10 @@ C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProjec
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
+C:\Users\NIU\Desktop\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources

@@ -37,14 +37,16 @@ namespace MilkTeaHouseProject.DAL
             return listBillInfo;
         }
 
+
+        //fix
         public void InsertBillInfo(int idBill, int idDrink, int count)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idDrink , @count", new object[] { idBill, idDrink, count });
         }
 
-        public void UpdateBillInfo(int idDrink, int count)
+        public void UpdateBillInfo(int idDrink, int idbill, int count)
         {
-            DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where DrinkID = '" + idDrink + "'");
+            DataProvider.Instance.ExecuteNonQuery("update BillInfo set Count = " + count + " where DrinkID = '" + idDrink + "' and BILLID = " + idbill);
         }
 
         public void DeleteBillInfobyIDBill(int idBill)
@@ -61,6 +63,26 @@ namespace MilkTeaHouseProject.DAL
         {
             DataProvider.Instance.ExecuteNonQuery("USP_SetnullDrinkIDinBillInfo @drinkID ",
                 new object[] { id });
+        }
+
+        public int GetCountbyDrinkBillID(int idbill, int iddrink)
+        {
+            string query = string.Format("select * from BillInfo where DrinkID = {0} and BillID = {1}", iddrink, idbill);
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
+
+                BillInfo item = new BillInfo(dr);
+
+                return item.Count;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

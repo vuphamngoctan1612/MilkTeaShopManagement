@@ -16,7 +16,7 @@ namespace MilkTeaHouseProject
 {
     public partial class fEditDrink : Form
     {
-        public fEditDrink(int id, string name, int price, byte[] image)
+        public fEditDrink(int id, string name, int price, byte[] image, int origin, int count)
         {
             InitializeComponent();
 
@@ -25,6 +25,8 @@ namespace MilkTeaHouseProject
             txtNameDrink.Text = name;
             txtPrice.Text = price.ToString();
             cbCategory.Text = DrinkDAL.Instance.getCategorybyID(id);
+            txtOriginPrice.Text = origin.ToString();
+            txtCount.Text = count.ToString();
 
             if (image == null)
             {
@@ -135,7 +137,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, ConvertToNumber(txtPrice.Text),cbCategory.Text, img);
+                DrinkDAL.Instance.EditDrink(Int32.Parse(lbShowId.Text), txtNameDrink.Text, ConvertToNumber(txtPrice.Text),cbCategory.Text, img, ConvertToNumber(txtOriginPrice.Text), ConvertToNumber(txtCount.Text));
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
             }
@@ -163,6 +165,17 @@ namespace MilkTeaHouseProject
         {
             SeparateThousands(this.txtPrice);
         }
+        private void txtOriginPrice_TextChanged(object sender, EventArgs e)
+        {
+            SeparateThousands(this.txtOriginPrice);
+        }
+
+        private void txtCount_TextChanged(object sender, EventArgs e)
+        {
+            SeparateThousands(this.txtCount);
+        }
         #endregion
+
+
     }
 }

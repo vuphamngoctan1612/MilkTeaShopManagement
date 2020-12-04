@@ -17,7 +17,7 @@ namespace MilkTeaHouseProject
         public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
         public byte[] Images { get; set; }
 
-        public MenuItem(int id, string name, int price, string category, byte[] img, bool setcolor)
+        public MenuItem(int id, string name, int price, string category, byte[] img, bool setcolor, int origin, int count)
         {
             InitializeComponent();
 
@@ -26,6 +26,9 @@ namespace MilkTeaHouseProject
             this.lbName.BringToFront();
             this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
             this.lbCategory.Text = category;
+            this.lbOriginPrice.Text = origin.ToString();
+            this.lbCount.Text = count.ToString();
+
             if (img == null)
             {
                 picFood.Image = null;
@@ -54,12 +57,14 @@ namespace MilkTeaHouseProject
         void sizeChange()
         {
             int space = this.Width / 6;
-            lbId.Location = new Point((int)(space *1.2), 10);
-            lbName.Location = new Point(space * 3, 10);
-            lbCategory.Location = new Point(space * 2, 10);
-            lbPrice.Location = new Point(space * 4 + 5, 10);
-            btnEdit.Location = new Point(space * 5 - 5, 10);
-            btnDelete.Location = new Point(space * 5 + 65, 10);
+            lbId.Location = new Point((int)(space * 0.7), 10);
+            lbCategory.Location = new Point((int)(space * 1.4), 10);
+            lbName.Location = new Point(space * 2, 10);
+            lbOriginPrice.Location = new Point(space* 3, 10);
+            lbPrice.Location = new Point((int)(space * 3.8) , 10);
+            lbCount.Location = new Point((int)(space * 4.5), 10);
+            btnEdit.Location = new Point((int)(space * 5.2), 10);
+            btnDelete.Location = new Point((int)(space * 5.2) + 65, 10);
         }
         #endregion
 
