@@ -794,7 +794,6 @@ C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Deb
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
@@ -882,3 +881,14 @@ C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\LiveCharts.W
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources

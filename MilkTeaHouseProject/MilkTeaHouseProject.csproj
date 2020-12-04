@@ -161,12 +161,6 @@
     <Compile Include="fEditDrink.Designer.cs">
       <DependentUpon>fEditDrink.cs</DependentUpon>
     </Compile>
-    <Compile Include="fEditStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fEditStaff.Designer.cs">
-      <DependentUpon>fEditStaff.cs</DependentUpon>
-    </Compile>
     <Compile Include="fInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,9 +274,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fEditDrink.resx">
       <DependentUpon>fEditDrink.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fEditStaff.resx">
-      <DependentUpon>fEditStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fInvoice.resx">
       <DependentUpon>fInvoice.cs</DependentUpon>

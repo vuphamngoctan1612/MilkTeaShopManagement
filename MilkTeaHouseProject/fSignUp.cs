@@ -34,11 +34,7 @@ namespace MilkTeaHouseProject
         {
             string username = txtUser.Text;
             string password = txtPass.Text;
-            string name = txtName.Text;
-            string pos = "Quản lí";
-            DateTime birthday = dateTimePicker1.Value;
-
-            byte[] img = LoadImage();
+            
             
             if (string.IsNullOrEmpty(username))
             {
@@ -48,26 +44,19 @@ namespace MilkTeaHouseProject
             {
                 MessageBox.Show("Nhập mật khẩu", "Error");
             }
-            else if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Nhập Họ Tên", "Error");
-            }
             else if (txtRePass.Text != txtPass.Text)
             {
                 MessageBox.Show("Mật khẩu nhập lại không trùng", "Error");
             }
             else
             {
-                    bool res = AccountDAL.Instance.signUpAdmin(username, password);
-                if (res != false) 
+                if(AccountDAL.Instance.SignUp(username, password))
                 {
-                    StaffDAL.Instance.AddStaff(name, img, birthday, pos, username,"");
-                    MessageBox.Show("Đăng kí thành công");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập đã tồn tại");
+                    MessageBox.Show("Tài khoản đã tồn tại!");
                 }
             }
         }

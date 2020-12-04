@@ -22,8 +22,61 @@ namespace MilkTeaHouseProject
         public fAddStaff()
         {
             InitializeComponent();
-
-            this.txtID.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            List<Account> accounts = AccountDAL.Instance.GetListAccount();
+            this.lbIDinrease.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
+            foreach(Position pos in positions)
+            {
+                this.cbbPos.Items.Add(pos.Name);
+            }    
+            foreach(Account acc in accounts)
+            {
+                this.cbbUser.Items.Add(acc.Username);
+            }    
+            
+        }
+        public fAddStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username, string cmnd, bool sex, string address)
+        {
+            InitializeComponent();
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            List<Account> accounts = AccountDAL.Instance.GetListAccount();
+            this.lbIDinrease.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
+            foreach (Position posistion in positions)
+            {
+                this.cbbPos.Items.Add(posistion.Name);
+            }
+            foreach (Account acc in accounts)
+            {
+                this.cbbUser.Items.Add(acc.Username);
+            }
+            this.lbIDinrease.Text = ID.ToString();
+            this.txtName.Text = name;
+            if (image == null)
+            {
+                ptbImage.Image = null;
+            }
+            else
+            {
+                img = image;
+                MemoryStream mstream = new MemoryStream(image);
+                Bitmap bitmap = new Bitmap(mstream);
+                ptbImage.Image = bitmap;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            this.dptBirthDate.Value = birthDate;
+            this.txtPhoneNumber.Text = phonenumber;
+            this.cbbPos.Text = pos;
+            this.cbbUser.Text = username;
+            this.txtCMND.Text = cmnd;
+            if (sex)
+            {
+                this.cbMan.Checked = true;
+            }
+            else
+            {
+                this.cbWoman.Checked = true;
+            }
+            this.txtAddress.Text = address;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,13 +88,30 @@ namespace MilkTeaHouseProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
+            string username = this.cbbUser.Text;
             string name = this.txtName.Text;
-            DateTime birthdate = this.dateTimePicker1.Value;
+            DateTime birthdate = this.dptBirthDate.Value;
             string position = this.cbbPos.Text;
             string phoneNumber = this.txtPhoneNumber.Text;
-
+            string cmnd = this.txtCMND.Text;
+            string address = this.txtAddress.Text;
+            bool sex = false;
+            if (this.cbMan.Checked == true)
+            {
+                sex = true;
+            }
+            if (this.cbWoman.Checked == true)
+            {
+                sex = false;
+            }
+            if (this.cbMan.Checked == false && this.cbWoman.Checked == false)
+            {
+                MessageBox.Show("Chọn giới tính", "Error");
+            }
+            if (this.cbMan.Checked != false && this.cbWoman.Checked != false)
+            {
+                MessageBox.Show("Không chọn 2 giới tính", "Error");
+            }
             if (imgLocation == "")
             {
                 LoadImage();
@@ -60,40 +130,30 @@ namespace MilkTeaHouseProject
                 MessageBox.Show("Chọn Công việc", "Error");
                 return;
             }
-            if (phoneNumber.Length < 10)
+            if (phoneNumber.Length != 10)
             {
                 MessageBox.Show("Số điện thoại không hợp lệ", "Error");
                 return;
             }
-
+            if (cmnd.Length != 9)
+            {
+                MessageBox.Show("Số CMND không hợp lệ", "Error");
+                return;
+            }    
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Nhập địa  chỉ", "Error");
+            }    
             if (position == "Thu Ngân")
             {
-                if (string.IsNullOrEmpty(this.txtUser.Text))
-                {
-                    MessageBox.Show("Nhập User", "Error");
-                    return;
-                }
-                if (string.IsNullOrEmpty(this.txtPass.Text))
-                {
-                    MessageBox.Show("Nhập PassWord", "Error");
-                    return;
-                }
-                if (AccountDAL.Instance.SignUp(username, password))
-                {
-                    StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, phoneNumber);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Trùng username", "Error");
-                    return;
-                }                
-            }
+                StaffDAL.Instance.AddStaff(name, img, birthdate, position, username,phoneNumber, cmnd, sex, address);
+                this.Close();
+            }  
             else
             {
-                StaffDAL.Instance.AddStaff(name, img, birthdate, position, phoneNumber);
+                StaffDAL.Instance.AddStaff(name, img, birthdate, position, phoneNumber, cmnd, sex, address);
                 this.Close();
-            }
+            }    
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -145,9 +205,114 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        private void btAddUserName_Click(object sender, EventArgs e)
         {
+            fSignUp frm = new fSignUp();
+            frm.ShowDialog();
+            List<Account> accounts = AccountDAL.Instance.GetListAccount();
+            this.cbbUser.Items.Clear();
+            foreach (Account acc in accounts)
+            {
+                this.cbbUser.Items.Add(acc.Username);
+            }
 
+        }
+
+        private void cbbPos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbbPos.Text == "Thu Ngân")
+            {
+                this.cbbUser.Visible = true;
+                this.btAddUserName.Visible = true;
+            }
+            else
+            {
+                this.cbbUser.Visible = false;
+                this.btAddUserName.Visible = false;
+            }
+        }
+
+        private void btAddPosition_Click(object sender, EventArgs e)
+        {
+            fSetSalary frm = new fSetSalary();
+            frm.ShowDialog();
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            this.cbbPos.Items.Clear();
+            foreach (Position pos in positions)
+            {
+                this.cbbPos.Items.Add(pos.Name);
+            }
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.lbIDinrease.Text.ToString());
+            string username = this.cbbUser.Text;
+            string name = this.txtName.Text;
+            DateTime birthdate = this.dptBirthDate.Value;
+            string position = this.cbbPos.Text;
+            string phoneNumber = this.txtPhoneNumber.Text;
+            string cmnd = this.txtCMND.Text;
+            string address = this.txtAddress.Text;
+            bool sex = false;
+            if (this.cbMan.Checked == true)
+            {
+                sex = true;
+            }
+            if (this.cbWoman.Checked == true)
+            {
+                sex = false;
+            }
+            if (this.cbMan.Checked == false && this.cbWoman.Checked == false)
+            {
+                MessageBox.Show("Chọn giới tính", "Error");
+            }
+            if (this.cbMan.Checked != false && this.cbWoman.Checked != false)
+            {
+                MessageBox.Show("Không chọn 2 giới tính", "Error");
+            }
+            if (imgLocation == "")
+            {
+                LoadImage();
+            }
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader bnr = new BinaryReader(stream);
+            img = bnr.ReadBytes((int)stream.Length);
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Nhập Họ Tên", "Error");
+                return;
+            }
+            if (string.IsNullOrEmpty(position))
+            {
+                MessageBox.Show("Chọn Công việc", "Error");
+                return;
+            }
+            if (phoneNumber.Length != 10)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ", "Error");
+                return;
+            }
+            if (cmnd.Length != 9)
+            {
+                MessageBox.Show("Số CMND không hợp lệ", "Error");
+                return;
+            }
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Nhập địa  chỉ", "Error");
+            }
+            if (position == "Thu Ngân")
+            {
+                StaffDAL.Instance.EditStaff(id, name, img, birthdate, position, username, phoneNumber, cmnd, sex, address);
+                this.Close();
+            }
+            else
+            {
+                StaffDAL.Instance.EditStaff(id, name, img, birthdate, position, phoneNumber, cmnd, sex, address);
+                this.Close();
+            }
         }
     }
 }

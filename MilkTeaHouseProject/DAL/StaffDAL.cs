@@ -114,18 +114,18 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);   
         }
 
-        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber)
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string cmnd, bool sex, string address)
         {
 
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @phonenumber  ",
-                new object[] { ID, name, image, birthDate, pos, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @phonenumber , @cmnd , @sex , @address ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, cmnd, sex, address });
         }
 
-        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username)
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username, string cmnd, bool sex, string address)
         {
 
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber  ",
-                new object[] { ID, name, image, birthDate, pos, phonenumber, username });
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber , @cmnd , @sex, @addres  ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, username, cmnd, sex, address });
         }
 
         public void DelStaff(int iD)
@@ -134,20 +134,20 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, string phonenumber)
+        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, string phonenumber, string cmnd, bool sex, string address)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber ",
-                new object[] { id, name, image, birthDate, pos, username, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber , @cmnd , @sex , @address ",
+                new object[] { id, name, image, birthDate, pos, username, phonenumber, cmnd, sex, address });
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, string phonenumber)
+        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, string phonenumber, string cmnd, bool sex, string address)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber ",
-                new object[] { id, name, image, birthdate, pos, phonenumber });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber , @cmnd , @sex , @adress ",
+                new object[] { id, name, image, birthdate, pos, phonenumber, cmnd, sex, address });
         }
 
         public void UpdateOverTime(int id, int overtime)

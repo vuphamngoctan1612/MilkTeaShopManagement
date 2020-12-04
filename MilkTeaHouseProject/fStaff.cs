@@ -167,9 +167,12 @@ namespace MilkTeaHouseProject
             string phonenumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
             string username = ((sender as StaffItem).Tag as Staff).UserName;
             byte[] image = ((sender as StaffItem).Tag as Staff).Image;
-
-            fEditStaff frm = new fEditStaff(id, name, birthDate, pos, phonenumber, username, image);
-            //fAddStaff frm = new fAddStaff(id, name, birthDate, pos, phonenumber);
+            string address = ((sender as StaffItem).Tag as Staff).Address;
+            bool sex = ((sender as StaffItem).Tag as Staff).Sex;
+            string cmnd = ((sender as StaffItem).Tag as Staff).CMND;
+            string phoneNumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
+            fAddStaff frm = new fAddStaff( id,  name,  image,  birthDate,  pos,  phonenumber,  username,  cmnd,  sex,  address);
+            frm.btEdit.Visible = true;
             frm.ShowDialog();
 
             this.flowLayoutPanelStaff.Controls.Clear();
@@ -179,6 +182,7 @@ namespace MilkTeaHouseProject
         private void btAdd_Click(object sender, EventArgs e)
         {
             fAddStaff f = new fAddStaff();
+            f.btnAdd.Visible = true;
             f.ShowDialog();
 
             this.flowLayoutPanelStaff.Controls.Clear();

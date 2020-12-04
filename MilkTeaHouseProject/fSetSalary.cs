@@ -23,6 +23,11 @@ namespace MilkTeaHouseProject
             InitializeComponent();
 
             this.cbbStaff.Text = "Thu ngân";
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            foreach(Position pos in positions)
+            {
+                this.cbbStaff.Items.Add(pos.Name);
+            }    
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -135,6 +140,39 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         #endregion
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            this.txtName.Visible = true;
+            this.cbbStaff.Visible = false;
+            this.btSave.Visible = false;
+            this.btnAdd.Visible = true;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string pos = this.txtName.Text;
+            int salary = ConvertToNumber(this.txtSalary.Text);
+            int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+            int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+            if (string.IsNullOrEmpty(pos))
+            {
+                MessageBox.Show("Nhập vị trí công việc");
+            }    
+            else
+            {
+                try
+                {
+                    PositionDAL.Instance.AddPosition(pos, salary, overTimeSalary, minusSalary);
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Trùng vị trí trước đó");
+                }
+            }    
+        }
     }
 }

@@ -16,9 +16,12 @@ namespace MilkTeaHouseProject.DTO
         private string position;
         private string userName;
         private int overTime;
-        private int fault;
         private int salaryReceived;
+        private int fault;
         private string phoneNumber;
+        private string cmnd;
+        private string address;
+        private bool sex;
 
         public int ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
@@ -30,8 +33,11 @@ namespace MilkTeaHouseProject.DTO
         public int SalaryReceived { get => salaryReceived; set => salaryReceived = value; }
         public int Fault { get => fault; set => fault = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public string CMND { get => cmnd; set => cmnd = value; }
+        public string Address { get => address; set => address = value; }
+        public bool Sex { get => sex; set => sex = value; }
 
-        public Staff(int id, string name, byte[] image, DateTime birthdate, string position, string username, int overtime, int salaryreceived, int fault, string phonenumber)
+        public Staff(int id, string name, byte[] image, DateTime birthdate, string position, string username, int overtime, int salaryreceived, int fault, string phonenumber, string cmnd, string address, bool sex)
         {
             this.iD = id;
             this.name = name;
@@ -43,7 +49,9 @@ namespace MilkTeaHouseProject.DTO
             this.salaryReceived = salaryreceived;
             this.fault = fault;
             this.phoneNumber = phonenumber;
-
+            this.cmnd = cmnd;
+            this.address = address;
+            this.sex = sex;
         }
 
         public Staff(DataRow row)
@@ -58,6 +66,9 @@ namespace MilkTeaHouseProject.DTO
                 this.Image = (byte[])row["Image"];
             this.fault = (int)row["Fault"];
             this.phoneNumber = row["PhoneNumber"].ToString();
+            this.cmnd = row["CMND"].ToString();
+            this.address = row["Address"].ToString();
+            this.sex = (bool)row["Sex"];
         }
     }
 }

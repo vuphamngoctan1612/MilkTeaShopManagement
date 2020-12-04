@@ -1,4 +1,4 @@
-﻿create database MilkTeaManagement
+﻿create MilkTea
 go
 
 use MilkTeaManagement
@@ -14,6 +14,7 @@ create table Account
 )
 go
 
+select * from Account
 create table Drink
 (
 	ID int not null,
@@ -27,10 +28,6 @@ create table Drink
 	constraint FK_Drink_Category foreign key(CATEGORY) references Category(NAME)
 )
 go
-alter table drink
-add COUNT int default 0
-alter table drink
-add OriginPrice int default 0
 
 create table Category
 (
@@ -63,8 +60,12 @@ alter table Staff
 add PhoneNumber varchar(10)
 alter table Staff
 add foreign key (position) references Position(name)
-alter table staff
-drop column MinusSalary
+alter table Staff 
+add CMND varchar(9)
+alter table Staff
+add Address nvarchar(1000)
+alter table Staff
+add Sex bit
 select *from staff
 create table Bill
 (
@@ -79,37 +80,6 @@ create table Bill
 go
 alter table bill	
 add NOTE text
-
-alter table bill
-add TableID int
-
-alter table bill
-add constraint FK_Bill_TableId foreign key(TableID) references TableFood(ID)
-
-
-create table TableFood
-(
-	ID int not null,
-	Name nvarchar(100),
-	status bit default 0,
-
-	constraint PK_Table_ID primary key(ID)
-)
-go
-
-alter table tableFood
-add NameGroup nvarchar(100) default ''
-
-alter table TableFood
-add constraint FK_TableFood_GroupTable foreign key(NameGroup) references GroupTable(Name)
-
-create table GroupTable
-(
-	NAME nvarchar(100) default '',
-
-	constraint PK_GroupTable primary key (NAME)
-)
-	
 
 create table BillInfo
 (
@@ -129,10 +99,25 @@ create table Position
 	OverTimeSalary INT default 0,
 	MinusSalary INT default 0
 )
+select * from Position
+Insert into Position
+Values (N'Thu Ngân',3000000,0,0);
+Insert into Position
+Values (N'Pha Chế',3000000,0,0);
+Insert into Position
+Values (N'Phục Vụ',3000000,0,0);
+Insert into Position
+Values (N'Bảo Vệ',3000000,0,0);
+create table Admin
+(	
+	ID int primary key,
+	Name nvarchar(100)
+)
+insert into Admin
+values (1,N'Thành Quang');
+
 
 -- proc BillInfo
-
---edit 
 create proc USP_InsertBillInfo
 @idBill int, @idDrink int, @count int	
 as
@@ -150,7 +135,7 @@ begin
 			if (@newCount > 0)
 				update BillInfo 
 				set Count = @drinkCount + @Count
-				where DrinkID = @idDrink and BILLID = @idBill
+				where DrinkID = @idDrink
 			else 
 				delete BillInfo
 				where BillID = @idBill and DrinkID = @idDrink
@@ -168,8 +153,6 @@ begin
 end
 go
 
-
-
 create proc USP_DeleteBillInfo
 @BillID int
 as
@@ -180,8 +163,8 @@ end
 go
 
 -- proc Bill
-create proc USP_UpdateBill
-@ID int, @StaffID int, @CheckOut date, @Status bit, @Total int, 
+alter proc USP_UpdateBill
+@ID int, @StaffID int, @CheckOut date, @Status bit, @Total int
 as
 begin
 	update Bill
@@ -190,7 +173,7 @@ begin
 end
 go
 
-create proc USP_InsertBill
+alter proc USP_InsertBill
 @ID int, @StaffID int, @note text
 as
 begin
@@ -214,27 +197,31 @@ end
 go
 
 -- proc drink
-create proc USP_AddDrink
-@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image, @Origin int, @Count int
+alter proc USP_AddDrink
+@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
 as
 begin
-	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE, OriginPrice, Count) values (@ID, @Name, @Category, @Price, @Image, @Origin, @Count)
+	--insert into Drink(ID,NAME,PRICE,IMAGE) values (@ID,@Name,@Price,@Image)
+
+	--update Drink
+	--set category = @Category
+	--where ID = @ID
+
+	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE) values (@ID, @Name, @Category, @Price, @Image)
 end
 go
 
-drop proc USP_EditDrink
-
 create proc USP_EditDrink
-@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image, @Origin int, @Count int
+@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
 as 
 begin
 	update Drink
-	set Name=@Name, Price=@Price, category=@Category, Image=@Image, OriginPrice=@Origin, Count=@Count
+	set Name=@Name, Price=@Price, category=@Category, Image=@Image
 	where ID=@ID
 end
 go
 
-create proc USP_SetnullDrinkIDinBillInfo
+alter proc USP_SetnullDrinkIDinBillInfo
 @drinkID int
 as
 begin
@@ -244,6 +231,11 @@ begin
 end
 go
 
+UPDATE Drink
+SET STATUS =1
+WHERE ID = 1
+
+select * from Drink
 -- PROC MENU
 create proc USP_GetListMenuByBillID
 @billID int
@@ -273,42 +265,40 @@ end
 go
 
 -- proc staff
-create proc USP_AddStaff
-@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @phonenumber varchar(10)
+alter proc USP_AddStaff
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
-	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, USERNAME, PhoneNumber) values(@ID, @Name, @image, @birthday, @pos, @username, @phonenumber)
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, USERNAME, PhoneNumber, CMND, Sex, Address) values(@ID, @Name, @image, @birthday, @pos, @username, @phonenumber, @cmnd, @sex, @address)
 end
 go
 
-create proc USP_AddStaffnoUsername
-@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @phonenumber varchar(10)
+alter proc USP_AddStaffnoUsername
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
-	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, PhoneNumber) values(@ID, @Name, @image, @birthday, @pos, @phonenumber)
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, PhoneNumber, CMND, Sex, Address) values(@ID, @Name, @image, @birthday, @pos, @phonenumber, @cmnd, @sex, @address)
 end
 go
 
-create proc USP_EditStaff
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@phonenumber varchar(10)
-as
-begin
-	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber
-	where ID = @ID
-end
-go
-
-create proc USP_EditStaffnoUsername
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10)
+alter proc USP_EditStaff
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber, CMND = @cmnd, Sex = @sex, Address = @address
 	where ID = @ID
 end
 go
-
+alter proc USP_EditStaffnoUsername
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10),  @cmnd varchar(9), @sex bit, @address nvarchar(1000)
+as
+begin
+	update Staff 
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber, CMND = @cmnd, Sex = @sex, Address = @address
+	where ID = @ID
+end
+go
 create proc USP_DelStaff
 @ID int
 as
@@ -337,7 +327,7 @@ begin
 end
 go
 
-create proc USP_UpdateSalary
+alter proc USP_UpdateSalary
 @name nvarchar(100), @salary int,@overtimesalary int, @minussalary int
 as
 begin
@@ -365,7 +355,7 @@ begin
 	delete from Account where UserName = @user
 end
 
-create proc USP_GetListInvoicebyBillID
+alter proc USP_GetListInvoicebyBillID
 @billID int
 as
 begin
@@ -375,18 +365,15 @@ from ((BillInfo as bf
 		on bf.DrinkID = d.ID)
 		inner join Bill as b
 		on b.ID = bf.BillID)
-	where b.ID = @billID
+	where b.ID = 6
 end
-
-select * from GroupTable
-delete from 
-
-select * from TableFood
-select * from Bill
-select * from BillInfo
-
-                SELECT SUM(bf.COUNT) 
-				FROM BillInfo bf 
-                    JOIN Drink d ON d.ID = bf.DRINKID 
-                    WHERE BILLID = 64
-      
+INSERT INTO BILL VALUES({0}, {1}, '{2}', 1, {3}, N'Kết toán lương tháng {4}'), 
+                id, idStaff, time, totalSalary, month)
+select * from bill
+select *from Staff
+select *from Account
+select * from Position
+insert into Position
+values (N'Quản Lý', 0,0,0);
+insert into Staff
+values (1, N'Thế ANh',null,'10-01-2020',N'Quản Lý','admin',0,0,0,'0');
