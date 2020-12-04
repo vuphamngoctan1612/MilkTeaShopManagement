@@ -32,10 +32,12 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnHomePage = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.btnViewPro5 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnAccount = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnLogOut = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.pnReport = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTopStaff = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnTopDrink = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnSales = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.pnTool = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -55,7 +57,7 @@
             this.panelBackground.SuspendLayout();
             this.pnDesktop.SuspendLayout();
             this.pnHomePage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.panel2.SuspendLayout();
             this.pnTool.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.fpnControl.SuspendLayout();
@@ -90,10 +92,8 @@
             // pnHomePage
             // 
             this.pnHomePage.BackColor = System.Drawing.Color.White;
-            this.pnHomePage.Controls.Add(this.picLogo);
-            this.pnHomePage.Controls.Add(this.btnViewPro5);
-            this.pnHomePage.Controls.Add(this.btnAccount);
-            this.pnHomePage.Controls.Add(this.btnLogOut);
+            this.pnHomePage.Controls.Add(this.pnReport);
+            this.pnHomePage.Controls.Add(this.panel2);
             this.pnHomePage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnHomePage.Location = new System.Drawing.Point(0, 0);
             this.pnHomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -102,127 +102,142 @@
             this.pnHomePage.TabIndex = 2;
             this.pnHomePage.SizeChanged += new System.EventHandler(this.pnHomePage_SizeChanged);
             // 
-            // picLogo
+            // pnReport
             // 
-            this.picLogo.Image = global::MilkTeaHouseProject.Properties.Resources._3545f49ee7278db6a6d44e62e4e9bfeb;
-            this.picLogo.Location = new System.Drawing.Point(224, 30);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(610, 286);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
+            this.pnReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnReport.Location = new System.Drawing.Point(0, 84);
+            this.pnReport.Name = "pnReport";
+            this.pnReport.Size = new System.Drawing.Size(994, 588);
+            this.pnReport.TabIndex = 4;
             // 
-            // btnViewPro5
+            // panel2
             // 
-            this.btnViewPro5.AnimationHoverSpeed = 0.07F;
-            this.btnViewPro5.AnimationSpeed = 0.03F;
-            this.btnViewPro5.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewPro5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnViewPro5.BorderColor = System.Drawing.Color.Black;
-            this.btnViewPro5.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnViewPro5.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnViewPro5.CheckedForeColor = System.Drawing.Color.White;
-            this.btnViewPro5.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnViewPro5.CheckedImage")));
-            this.btnViewPro5.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnViewPro5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewPro5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnViewPro5.FocusedColor = System.Drawing.Color.Empty;
-            this.btnViewPro5.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPro5.ForeColor = System.Drawing.Color.White;
-            this.btnViewPro5.Image = global::MilkTeaHouseProject.Properties.Resources.Business_Contact_32;
-            this.btnViewPro5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnViewPro5.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnViewPro5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnViewPro5.Location = new System.Drawing.Point(358, 360);
-            this.btnViewPro5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnViewPro5.Name = "btnViewPro5";
-            this.btnViewPro5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
-            this.btnViewPro5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnViewPro5.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnViewPro5.OnHoverImage = null;
-            this.btnViewPro5.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnViewPro5.OnPressedColor = System.Drawing.Color.Black;
-            this.btnViewPro5.Radius = 5;
-            this.btnViewPro5.Size = new System.Drawing.Size(304, 52);
-            this.btnViewPro5.TabIndex = 1;
-            this.btnViewPro5.Text = "Thông tin cá nhân";
-            this.btnViewPro5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnViewPro5.Click += new System.EventHandler(this.btnViewPro5_Click);
+            this.panel2.Controls.Add(this.btnTopStaff);
+            this.panel2.Controls.Add(this.btnTopDrink);
+            this.panel2.Controls.Add(this.btnSales);
+            this.panel2.Controls.Add(this.gunaLabel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(994, 84);
+            this.panel2.TabIndex = 3;
             // 
-            // btnAccount
+            // btnTopStaff
             // 
-            this.btnAccount.AnimationHoverSpeed = 0.07F;
-            this.btnAccount.AnimationSpeed = 0.03F;
-            this.btnAccount.BackColor = System.Drawing.Color.Transparent;
-            this.btnAccount.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnAccount.BorderColor = System.Drawing.Color.Black;
-            this.btnAccount.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAccount.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAccount.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAccount.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAccount.CheckedImage")));
-            this.btnAccount.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAccount.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.Image = global::MilkTeaHouseProject.Properties.Resources.Key_2___Copy;
-            this.btnAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAccount.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAccount.Location = new System.Drawing.Point(358, 451);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
-            this.btnAccount.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAccount.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAccount.OnHoverImage = null;
-            this.btnAccount.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAccount.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAccount.Radius = 5;
-            this.btnAccount.Size = new System.Drawing.Size(304, 52);
-            this.btnAccount.TabIndex = 1;
-            this.btnAccount.Text = "Đổi mật khẩu";
-            this.btnAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            this.btnTopStaff.AnimationHoverSpeed = 0.07F;
+            this.btnTopStaff.AnimationSpeed = 0.03F;
+            this.btnTopStaff.BackColor = System.Drawing.Color.Transparent;
+            this.btnTopStaff.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnTopStaff.BorderColor = System.Drawing.Color.Black;
+            this.btnTopStaff.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnTopStaff.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnTopStaff.CheckedForeColor = System.Drawing.Color.White;
+            this.btnTopStaff.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnTopStaff.CheckedImage")));
+            this.btnTopStaff.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnTopStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTopStaff.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnTopStaff.FocusedColor = System.Drawing.Color.Empty;
+            this.btnTopStaff.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTopStaff.ForeColor = System.Drawing.Color.White;
+            this.btnTopStaff.Image = null;
+            this.btnTopStaff.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnTopStaff.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnTopStaff.Location = new System.Drawing.Point(209, 21);
+            this.btnTopStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTopStaff.Name = "btnTopStaff";
+            this.btnTopStaff.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnTopStaff.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnTopStaff.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnTopStaff.OnHoverImage = null;
+            this.btnTopStaff.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnTopStaff.OnPressedColor = System.Drawing.Color.Black;
+            this.btnTopStaff.Radius = 7;
+            this.btnTopStaff.Size = new System.Drawing.Size(189, 34);
+            this.btnTopStaff.TabIndex = 3;
+            this.btnTopStaff.Text = "Top nhân viên";
+            this.btnTopStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnTopStaff.Click += new System.EventHandler(this.btnTopStaff_Click);
             // 
-            // btnLogOut
+            // btnTopDrink
             // 
-            this.btnLogOut.AnimationHoverSpeed = 0.07F;
-            this.btnLogOut.AnimationSpeed = 0.03F;
-            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnLogOut.BorderColor = System.Drawing.Color.Black;
-            this.btnLogOut.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnLogOut.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnLogOut.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLogOut.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.CheckedImage")));
-            this.btnLogOut.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLogOut.FocusedColor = System.Drawing.Color.Empty;
-            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Image = global::MilkTeaHouseProject.Properties.Resources.Exit___Copy;
-            this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnLogOut.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLogOut.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogOut.Location = new System.Drawing.Point(358, 540);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
-            this.btnLogOut.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnLogOut.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnLogOut.OnHoverImage = null;
-            this.btnLogOut.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogOut.OnPressedColor = System.Drawing.Color.Black;
-            this.btnLogOut.Radius = 5;
-            this.btnLogOut.Size = new System.Drawing.Size(304, 52);
-            this.btnLogOut.TabIndex = 1;
-            this.btnLogOut.Text = "Đăng xuất";
-            this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnTopDrink.AnimationHoverSpeed = 0.07F;
+            this.btnTopDrink.AnimationSpeed = 0.03F;
+            this.btnTopDrink.BackColor = System.Drawing.Color.Transparent;
+            this.btnTopDrink.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnTopDrink.BorderColor = System.Drawing.Color.Black;
+            this.btnTopDrink.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnTopDrink.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnTopDrink.CheckedForeColor = System.Drawing.Color.White;
+            this.btnTopDrink.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnTopDrink.CheckedImage")));
+            this.btnTopDrink.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnTopDrink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTopDrink.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnTopDrink.FocusedColor = System.Drawing.Color.Empty;
+            this.btnTopDrink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTopDrink.ForeColor = System.Drawing.Color.White;
+            this.btnTopDrink.Image = null;
+            this.btnTopDrink.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnTopDrink.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnTopDrink.Location = new System.Drawing.Point(14, 21);
+            this.btnTopDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTopDrink.Name = "btnTopDrink";
+            this.btnTopDrink.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnTopDrink.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnTopDrink.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnTopDrink.OnHoverImage = null;
+            this.btnTopDrink.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnTopDrink.OnPressedColor = System.Drawing.Color.Black;
+            this.btnTopDrink.Radius = 7;
+            this.btnTopDrink.Size = new System.Drawing.Size(189, 34);
+            this.btnTopDrink.TabIndex = 3;
+            this.btnTopDrink.Text = "Top bán chạy";
+            this.btnTopDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnTopDrink.Click += new System.EventHandler(this.btnTopDrink_Click);
+            // 
+            // btnSales
+            // 
+            this.btnSales.AnimationHoverSpeed = 0.07F;
+            this.btnSales.AnimationSpeed = 0.03F;
+            this.btnSales.BackColor = System.Drawing.Color.Transparent;
+            this.btnSales.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnSales.BorderColor = System.Drawing.Color.Black;
+            this.btnSales.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSales.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSales.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSales.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSales.CheckedImage")));
+            this.btnSales.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSales.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSales.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSales.ForeColor = System.Drawing.Color.White;
+            this.btnSales.Image = null;
+            this.btnSales.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSales.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSales.Location = new System.Drawing.Point(404, 21);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnSales.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSales.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSales.OnHoverImage = null;
+            this.btnSales.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSales.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSales.Radius = 7;
+            this.btnSales.Size = new System.Drawing.Size(189, 34);
+            this.btnSales.TabIndex = 3;
+            this.btnSales.Text = "Doanh số";
+            this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(28, 21);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(0, 25);
+            this.gunaLabel1.TabIndex = 2;
             // 
             // pnTool
             // 
@@ -568,10 +583,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.panelBackground.ResumeLayout(false);
             this.pnDesktop.ResumeLayout(false);
             this.pnHomePage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.pnTool.ResumeLayout(false);
             this.pnTool.PerformLayout();
             this.panelControl.ResumeLayout(false);
@@ -605,10 +622,12 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private Guna.UI.WinForms.GunaLabel lbDisplay;
         private System.Windows.Forms.Panel pnHomePage;
-        private Guna.UI.WinForms.GunaAdvenceButton btnAccount;
-        public Guna.UI.WinForms.GunaAdvenceButton btnLogOut;
-        private Guna.UI.WinForms.GunaAdvenceButton btnViewPro5;
-        private System.Windows.Forms.PictureBox picLogo;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private System.Windows.Forms.Panel pnReport;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI.WinForms.GunaAdvenceButton btnTopStaff;
+        private Guna.UI.WinForms.GunaAdvenceButton btnTopDrink;
+        private Guna.UI.WinForms.GunaAdvenceButton btnSales;
     }
 }
 

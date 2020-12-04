@@ -859,3 +859,14 @@ C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProjec
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.SalesReport.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkReport.resources
