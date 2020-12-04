@@ -127,8 +127,27 @@ namespace MilkTeaHouseProject
                 string name = this.txtNameDrink.Text;
                 int price = ConvertToNumber(this.txtPrice.Text);
                 string category = this.cbCategory.Text;
+                int originPrice=0;
+                int Count=0;
 
-                DrinkDAL.Instance.AddDrink(name, price, category, img);
+                if (this.txtOriginPrice.Text == "")
+                {
+                    originPrice = 0;
+                }
+                else
+                {
+                    originPrice = ConvertToNumber(txtOriginPrice.Text);
+                }
+                if (this.txtCount.Text == "")
+                {
+                    Count = 0;
+                }
+                else
+                {
+                    Count = ConvertToNumber(txtCount.Text);
+                }
+
+                DrinkDAL.Instance.AddDrink(name, price, category, img, originPrice, Count);
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
 
@@ -151,6 +170,15 @@ namespace MilkTeaHouseProject
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
             SeparateThousands(this.txtPrice);
+        }
+        private void txtOriginPrice_TextChanged(object sender, EventArgs e)
+        {
+            SeparateThousands(this.txtOriginPrice);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            SeparateThousands(this.txtCount);
         }
         #endregion
     }

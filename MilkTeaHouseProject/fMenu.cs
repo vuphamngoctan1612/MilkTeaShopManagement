@@ -34,7 +34,7 @@ namespace MilkTeaHouseProject
                 else
                     setcolor = true;
 
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor);
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.OriginPrice, drink.Count);
                 item.onDel += Item_onDel;
                 item.onEdit += Item_onEdit;
 
@@ -59,7 +59,7 @@ namespace MilkTeaHouseProject
                         setcolor = false;
                     else
                         setcolor = true;
-                    MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor);
+                    MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.OriginPrice, drink.Count);
                     item.Tag = drink;
                     item.onDel += Item_onDel;
                     item.onEdit += Item_onEdit;
@@ -77,11 +77,13 @@ namespace MilkTeaHouseProject
                 item.Width = flowLayoutPanelMenu.Width;
             }
 
-            double space = flowLayoutPanelMenu.Width / 6;
-            lbID.Location = new Point((int)space, 8);
-            lbCategory.Location = new Point((int)space * 2, 8);
-            lbName.Location = new Point((int)space * 3, 8);
-            lbPrice.Location = new Point((int)space * 4, 8);
+            int space = flowLayoutPanelMenu.Width / 6;
+            lbID.Location = new Point((int)(space * 0.5), 10);
+            lbCategory.Location = new Point((int)(space * 1.4), 10);
+            lbName.Location = new Point(space * 2, 10);
+            lbOriginPrice.Location = new Point(space * 3, 10);
+            lbPrice.Location = new Point((int)(space * 3.8), 10);
+            lbCount.Location = new Point((int)(space * 4.5), 10);
         }
 
         void DeleteMenu(int id)
@@ -105,8 +107,10 @@ namespace MilkTeaHouseProject
             string name = ((sender as MenuItem).Tag as Drink).Name;
             int price = ((sender as MenuItem).Tag as Drink).Price;
             byte[] image = ((sender as MenuItem).Tag as Drink).Image;
+            int origin = ((sender as MenuItem).Tag as Drink).OriginPrice;
+            int count = ((sender as MenuItem).Tag as Drink).Count;
 
-            fEditDrink frm = new fEditDrink(id, name, price, image);
+            fEditDrink frm = new fEditDrink(id, name, price, image, origin, count);
             frm.ShowDialog();
             LoadMenu();
 

@@ -37,6 +37,8 @@ namespace MilkTeaHouseProject
             this.lbId = new Guna.UI.WinForms.GunaLabel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbCategory = new Guna.UI.WinForms.GunaLabel();
+            this.lbOriginPrice = new Guna.UI.WinForms.GunaLabel();
+            this.lbCount = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +163,28 @@ namespace MilkTeaHouseProject
             this.lbCategory.TabIndex = 10;
             this.lbCategory.Text = "Category";
             // 
+            // lbOriginPrice
+            // 
+            this.lbOriginPrice.AutoSize = true;
+            this.lbOriginPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOriginPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbOriginPrice.Location = new System.Drawing.Point(946, 35);
+            this.lbOriginPrice.Name = "lbOriginPrice";
+            this.lbOriginPrice.Size = new System.Drawing.Size(60, 30);
+            this.lbOriginPrice.TabIndex = 12;
+            this.lbOriginPrice.Text = "Price";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbCount.Location = new System.Drawing.Point(1049, 32);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(60, 30);
+            this.lbCount.TabIndex = 12;
+            this.lbCount.Text = "Price";
+            // 
             // MenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -168,6 +192,8 @@ namespace MilkTeaHouseProject
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.lbCount);
+            this.Controls.Add(this.lbOriginPrice);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.picFood);
             this.Controls.Add(this.lbId);
@@ -192,5 +218,7 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaLabel lbId;
         private Guna.UI.WinForms.GunaLabel lbName;
         private Guna.UI.WinForms.GunaLabel lbCategory;
+        private Guna.UI.WinForms.GunaLabel lbOriginPrice;
+        private Guna.UI.WinForms.GunaLabel lbCount;
     }
 }

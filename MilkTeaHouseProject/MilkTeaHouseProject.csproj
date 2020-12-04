@@ -42,10 +42,22 @@
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Desktop\_Getintopc.com_Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +67,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillItem.cs">
@@ -69,8 +83,10 @@
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DrinkDAL.cs" />
+    <Compile Include="DAL\GroupTableDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
+    <Compile Include="DAL\ReportDAL.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="DAL\TableFoodDAL.cs" />
     <Compile Include="DrinkItem.cs">
@@ -79,16 +95,30 @@
     <Compile Include="DrinkItem.Designer.cs">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="DropShadow.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
     <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Encryptor.cs" />
+    <Compile Include="DTO\GroupTable.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Position.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\TableFood.cs" />
+    <Compile Include="fAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddTable.Designer.cs">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableItem.Designer.cs">
+      <DependentUpon>TableItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +266,9 @@
     <EmbeddedResource Include="fAddStaff.resx">
       <DependentUpon>fAddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fAddTable.resx">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +332,9 @@
     </Compile>
     <EmbeddedResource Include="StaffItem.resx">
       <DependentUpon>StaffItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableItem.resx">
+      <DependentUpon>TableItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -421,6 +457,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\searchlue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableWhile.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
