@@ -121,9 +121,6 @@
   <data name="Key 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Key 2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\account_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="moneyout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moneyout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,6 +136,9 @@
   <data name="Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="a881ce19f6d5832f8c6fa156cb45abb6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\FoodsImage\a881ce19f6d5832f8c6fa156cb45abb6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +153,9 @@
   </data>
   <data name="searchlue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchlue.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moneybox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moneybox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\add_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +178,8 @@
   <data name="Business_Contact_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Business_Contact_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="moneybox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moneybox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="account_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\account_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_bin_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\delete_bin_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +226,9 @@
   <data name="drinkitem1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drinkitem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="searchlue2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchlue.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Key 2 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Key 2 - Copy.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -232,7 +238,7 @@
   <data name="kawaii_coffee_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\kawaii_coffee_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="searchlue2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searchlue.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TableWhile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWhile.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

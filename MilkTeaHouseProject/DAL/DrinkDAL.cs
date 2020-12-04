@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MilkTeaHouseProject.DTO;
+using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaShopManagement.DAL
 {
@@ -71,18 +73,20 @@ namespace MilkTeaShopManagement.DAL
                 return 0;
             }
         }
-        public void AddDrink(string Name, int Price, string Category, byte[] Image)
+
+        //fix
+        public void AddDrink(string Name, int Price, string Category, byte[] Image, int origin, int count)
         {
             int id = GetMAXDrinkID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image ",
-                new object[] { id, Name, Price, Category, Image });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image , @Origin , @Count",
+                new object[] { id, Name, Price, Category, Image, origin, count });
         }
 
-        public void EditDrink(int id, string name, int price, string category, byte[] image)
+        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin, int count)
         { 
-            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image ",
-                new object[] { id, name, price, category, image });
+            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin , @Count",
+                new object[] { id, name, price, category, image, origin, count });
         }
 
         public void DelDrink(int id)
@@ -101,6 +105,28 @@ namespace MilkTeaShopManagement.DAL
         public string getCategorybyID(int id)
         {
             return (string)DataProvider.Instance.ExecuteScalar("SELECT Category FROM Drink WHERE ID = " + id);
+        }
+
+        public void MinusCount(int billID)
+        {
+            List<BillInfo> billinfo = BillInfoDAL.Instance.GetListBillInfoByIDBill(billID);
+
+            foreach (BillInfo item in billinfo)
+            {
+                string query = string.Format("update Drink set COUNT = COUNT - {0} where ID = {1}", item.Count, item.IdDrink);
+                DataProvider.Instance.ExecuteNonQuery(query);
+            }
+        }
+
+        public int GetCountbyDrinkID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM Drink where ID = {0}", id));
+
+            DataRow dr = data.Rows[0];
+
+            DTO.Drink item = new DTO.Drink(dr);
+
+            return item.Count;
         }
     }
 }

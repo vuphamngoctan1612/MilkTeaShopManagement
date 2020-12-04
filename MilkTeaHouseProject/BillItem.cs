@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
+using MilkTeaShopManagement.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -19,6 +20,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
+        private int billID;
         public int Count 
         {
             get { return (int)this.count.Value; }
@@ -41,7 +43,7 @@ namespace MilkTeaHouseProject
             return int.Parse(tmp);
         }
 
-        public BillItem (int idDrink, string foodName, int price, int count)
+        public BillItem (int idDrink, string foodName, int price, int count, int idBill)
         {
             InitializeComponent();
 
@@ -50,6 +52,7 @@ namespace MilkTeaHouseProject
             this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
             this.count.Value = count;
             this.lbTotal.Text = string.Format("{0:n0}", price * (int)this.count.Value).ToString();
+            this.billID = idBill;
         }
 
         public event EventHandler onValueChanged = null;
@@ -57,15 +60,22 @@ namespace MilkTeaHouseProject
 
         private void count_ValueChanged(object sender, EventArgs e)
         {
-            int price = CovertToNumber(this.lbPrice.Text);
-            int total = price * (int)this.count.Value;
-            this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
-
-            BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), (int)this.count.Value);
-
-            if (onValueChanged != null)
+            if (DrinkDAL.Instance.GetCountbyDrinkID(int.Parse(lbDrinkID.Text)) >= (int)this.count.Value)
             {
-                onValueChanged.Invoke(this, new EventArgs());
+                int price = CovertToNumber(this.lbPrice.Text);
+                int total = price * (int)this.count.Value;
+                this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
+
+                BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), this.billID, (int)this.count.Value);
+
+                if (onValueChanged != null)
+                {
+                    onValueChanged.Invoke(this, new EventArgs());
+                }
+            }
+            else
+            {
+                this.count.Value -= 1;
             }
         }
 
@@ -75,6 +85,12 @@ namespace MilkTeaHouseProject
             {
                 onDel.Invoke(this, new EventArgs());
             }
+        }
+
+        public void FalseVisibleDel()
+        {
+            btnDel.Visible = false;
+            count.Enabled = false;
         }
     }
 }

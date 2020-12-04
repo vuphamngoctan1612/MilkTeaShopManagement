@@ -43,6 +43,10 @@
             this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.cbCategory = new Guna.UI.WinForms.GunaComboBox();
             this.lbCategory = new System.Windows.Forms.Label();
+            this.txtOriginPrice = new System.Windows.Forms.TextBox();
+            this.txtCount = new System.Windows.Forms.TextBox();
+            this.lbOriginPrice = new System.Windows.Forms.Label();
+            this.lbCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImg)).BeginInit();
             this.SuspendLayout();
@@ -50,11 +54,11 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(55, 458);
+            this.txtPrice.Location = new System.Drawing.Point(456, 415);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.MaxLength = 11;
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(286, 30);
+            this.txtPrice.Size = new System.Drawing.Size(321, 34);
             this.txtPrice.TabIndex = 2;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
@@ -62,10 +66,10 @@
             // txtNameDrink
             // 
             this.txtNameDrink.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameDrink.Location = new System.Drawing.Point(55, 387);
+            this.txtNameDrink.Location = new System.Drawing.Point(456, 256);
             this.txtNameDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNameDrink.Name = "txtNameDrink";
-            this.txtNameDrink.Size = new System.Drawing.Size(286, 30);
+            this.txtNameDrink.Size = new System.Drawing.Size(321, 34);
             this.txtNameDrink.TabIndex = 1;
             // 
             // panel1
@@ -77,7 +81,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 34);
+            this.panel1.Size = new System.Drawing.Size(851, 42);
             this.panel1.TabIndex = 24;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -103,7 +107,7 @@
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(360, 0);
+            this.btnExit.Location = new System.Drawing.Point(801, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
@@ -112,7 +116,7 @@
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(44, 34);
+            this.btnExit.Size = new System.Drawing.Size(50, 42);
             this.btnExit.TabIndex = 2;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -122,9 +126,9 @@
             this.lbNameForm.AutoSize = true;
             this.lbNameForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameForm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNameForm.Location = new System.Drawing.Point(9, 5);
+            this.lbNameForm.Location = new System.Drawing.Point(10, 6);
             this.lbNameForm.Name = "lbNameForm";
-            this.lbNameForm.Size = new System.Drawing.Size(79, 23);
+            this.lbNameForm.Size = new System.Drawing.Size(93, 28);
             this.lbNameForm.TabIndex = 1;
             this.lbNameForm.Text = "Sửa món";
             // 
@@ -132,9 +136,9 @@
             // 
             this.lbShowId.AutoSize = true;
             this.lbShowId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbShowId.Location = new System.Drawing.Point(112, 258);
+            this.lbShowId.Location = new System.Drawing.Point(520, 94);
             this.lbShowId.Name = "lbShowId";
-            this.lbShowId.Size = new System.Drawing.Size(28, 23);
+            this.lbShowId.Size = new System.Drawing.Size(33, 28);
             this.lbShowId.TabIndex = 30;
             this.lbShowId.Text = "ID";
             // 
@@ -143,10 +147,10 @@
             this.ptbImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptbImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbImg.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
-            this.ptbImg.Location = new System.Drawing.Point(93, 50);
+            this.ptbImg.Location = new System.Drawing.Point(93, 108);
             this.ptbImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbImg.Name = "ptbImg";
-            this.ptbImg.Size = new System.Drawing.Size(211, 184);
+            this.ptbImg.Size = new System.Drawing.Size(237, 230);
             this.ptbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ptbImg.TabIndex = 29;
             this.ptbImg.TabStop = false;
@@ -157,9 +161,9 @@
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPrice.Location = new System.Drawing.Point(52, 430);
+            this.lbPrice.Location = new System.Drawing.Point(456, 381);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(82, 23);
+            this.lbPrice.Size = new System.Drawing.Size(94, 28);
             this.lbPrice.TabIndex = 21;
             this.lbPrice.Text = "Giá món:";
             // 
@@ -168,9 +172,9 @@
             this.lbNameDrink.AutoSize = true;
             this.lbNameDrink.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameDrink.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbNameDrink.Location = new System.Drawing.Point(51, 358);
+            this.lbNameDrink.Location = new System.Drawing.Point(451, 220);
             this.lbNameDrink.Name = "lbNameDrink";
-            this.lbNameDrink.Size = new System.Drawing.Size(84, 23);
+            this.lbNameDrink.Size = new System.Drawing.Size(95, 28);
             this.lbNameDrink.TabIndex = 22;
             this.lbNameDrink.Text = "Tên món:";
             // 
@@ -179,9 +183,9 @@
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbId.Location = new System.Drawing.Point(55, 258);
+            this.lbId.Location = new System.Drawing.Point(456, 94);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(32, 23);
+            this.lbId.Size = new System.Drawing.Size(37, 28);
             this.lbId.TabIndex = 23;
             this.lbId.Text = "ID:";
             // 
@@ -205,7 +209,7 @@
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(212, 522);
+            this.btnReturn.Location = new System.Drawing.Point(633, 566);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
@@ -215,7 +219,7 @@
             this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
-            this.btnReturn.Size = new System.Drawing.Size(128, 34);
+            this.btnReturn.Size = new System.Drawing.Size(144, 42);
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -241,7 +245,7 @@
             this.btnEdit.Image = null;
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnEdit.Location = new System.Drawing.Point(56, 522);
+            this.btnEdit.Location = new System.Drawing.Point(458, 566);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
@@ -251,7 +255,7 @@
             this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btnEdit.Radius = 10;
-            this.btnEdit.Size = new System.Drawing.Size(128, 34);
+            this.btnEdit.Size = new System.Drawing.Size(144, 42);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -268,13 +272,13 @@
             this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(57, 327);
+            this.cbCategory.Location = new System.Drawing.Point(458, 181);
             this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategory.MaxDropDownItems = 100;
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbCategory.Size = new System.Drawing.Size(286, 31);
+            this.cbCategory.Size = new System.Drawing.Size(321, 35);
             this.cbCategory.TabIndex = 0;
             // 
             // lbCategory
@@ -282,18 +286,66 @@
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbCategory.Location = new System.Drawing.Point(53, 294);
+            this.lbCategory.Location = new System.Drawing.Point(454, 140);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(45, 23);
+            this.lbCategory.Size = new System.Drawing.Size(52, 28);
             this.lbCategory.TabIndex = 45;
             this.lbCategory.Text = "Loại:";
             // 
+            // txtOriginPrice
+            // 
+            this.txtOriginPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOriginPrice.Location = new System.Drawing.Point(457, 342);
+            this.txtOriginPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOriginPrice.MaxLength = 10;
+            this.txtOriginPrice.Name = "txtOriginPrice";
+            this.txtOriginPrice.Size = new System.Drawing.Size(321, 34);
+            this.txtOriginPrice.TabIndex = 46;
+            this.txtOriginPrice.TextChanged += new System.EventHandler(this.txtOriginPrice_TextChanged);
+            // 
+            // txtCount
+            // 
+            this.txtCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCount.Location = new System.Drawing.Point(458, 493);
+            this.txtCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCount.MaxLength = 10;
+            this.txtCount.Name = "txtCount";
+            this.txtCount.Size = new System.Drawing.Size(321, 34);
+            this.txtCount.TabIndex = 47;
+            this.txtCount.TextChanged += new System.EventHandler(this.txtCount_TextChanged);
+            // 
+            // lbOriginPrice
+            // 
+            this.lbOriginPrice.AutoSize = true;
+            this.lbOriginPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOriginPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbOriginPrice.Location = new System.Drawing.Point(453, 308);
+            this.lbOriginPrice.Name = "lbOriginPrice";
+            this.lbOriginPrice.Size = new System.Drawing.Size(88, 28);
+            this.lbOriginPrice.TabIndex = 48;
+            this.lbOriginPrice.Text = "Giá gốc:";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbCount.Location = new System.Drawing.Point(454, 459);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(102, 28);
+            this.lbCount.TabIndex = 49;
+            this.lbCount.Text = "Số lượng:";
+            // 
             // fEditDrink
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(404, 589);
+            this.ClientSize = new System.Drawing.Size(851, 674);
+            this.Controls.Add(this.txtOriginPrice);
+            this.Controls.Add(this.txtCount);
+            this.Controls.Add(this.lbOriginPrice);
+            this.Controls.Add(this.lbCount);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.txtPrice);
@@ -335,5 +387,9 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private Guna.UI.WinForms.GunaComboBox cbCategory;
         private System.Windows.Forms.Label lbCategory;
+        private System.Windows.Forms.TextBox txtOriginPrice;
+        private System.Windows.Forms.TextBox txtCount;
+        private System.Windows.Forms.Label lbOriginPrice;
+        private System.Windows.Forms.Label lbCount;
     }
 }
