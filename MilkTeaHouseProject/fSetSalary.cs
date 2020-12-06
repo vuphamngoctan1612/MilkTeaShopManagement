@@ -22,12 +22,14 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
 
-            this.cbbStaff.Text = "Thu ngân";
             List<Position> positions = PositionDAL.Instance.GetListPosistion();
-            foreach(Position pos in positions)
+
+            foreach (Position pos in positions)
             {
                 this.cbbStaff.Items.Add(pos.Name);
-            }    
+            }
+
+            this.cbbStaff.Text = "Thu ngân";
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -141,14 +143,22 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        #endregion
-
         private void btAdd_Click(object sender, EventArgs e)
         {
-            this.txtName.Visible = true;
-            this.cbbStaff.Visible = false;
-            this.btSave.Visible = false;
-            this.btnAdd.Visible = true;
+            if (txtName.Visible == false)
+            {
+                this.txtName.Visible = true;
+                this.cbbStaff.Visible = false;
+                this.btSave.Visible = false;
+                this.btnAdd.Visible = true;
+            }
+            else
+            {
+                this.txtName.Visible = false;
+                this.cbbStaff.Visible = true;
+                this.btSave.Visible = true;
+                this.btnAdd.Visible = false;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -174,5 +184,12 @@ namespace MilkTeaHouseProject
                 }
             }    
         }
+
+        private void fSetSalary_Load(object sender, EventArgs e)
+        {
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
+        }
+        #endregion
     }
 }

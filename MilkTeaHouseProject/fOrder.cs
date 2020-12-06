@@ -80,6 +80,7 @@ namespace MilkTeaHouseProject
                 billItem.onDel += BillItem_onDel;
 
                 billItem.Tag = menu;
+                billItem.Width = flowLayoutPanelBill.Width;
 
                 this.flowLayoutPanelBill.Controls.Add(billItem);
             }
@@ -617,9 +618,8 @@ namespace MilkTeaHouseProject
                     item.Visible = false;
             }
         }
+
+
         #endregion
-
-
-
     }
 }

@@ -21,6 +21,9 @@ namespace MilkTeaHouseProject
             this.username = username;
             this.txtIDBill.Text = (BillDAL.Instance.GetMAXIDBill() + 1).ToString();
             this.txtStaffID.Text = StaffDAL.Instance.GetStaffIDbyUsername(username).ToString();
+
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
         }
 
         #region Method

@@ -19,6 +19,9 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
             txtID.Text = ID.ToString();
+
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

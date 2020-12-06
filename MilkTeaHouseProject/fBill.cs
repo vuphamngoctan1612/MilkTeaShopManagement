@@ -22,7 +22,6 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
             this.username = username;
-            loadBill();
         }
 
         #region Methods
@@ -142,6 +141,11 @@ namespace MilkTeaHouseProject
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void fBill_Load(object sender, EventArgs e)
+        {
+            loadBill();
         }
         #endregion
     }

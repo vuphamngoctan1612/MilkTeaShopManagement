@@ -340,10 +340,7 @@ C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProjec
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
-C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
-C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
-C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
 C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
@@ -892,3 +889,20 @@ C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Deb
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\NIU\Desktop\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources

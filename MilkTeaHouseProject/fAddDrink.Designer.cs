@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAddDrink));
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtNameDrink = new System.Windows.Forms.TextBox();
             this.pn = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbNameForm = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbNameDrink = new System.Windows.Forms.Label();
@@ -44,33 +41,18 @@
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.cbCategory = new Guna.UI.WinForms.GunaComboBox();
             this.lbOriginPrice = new System.Windows.Forms.Label();
-            this.txtOriginPrice = new System.Windows.Forms.TextBox();
             this.lbCount = new System.Windows.Forms.Label();
-            this.txtCount = new System.Windows.Forms.TextBox();
+            this.btnAddCategory = new Guna.UI.WinForms.GunaButton();
+            this.txtID = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtNameDrink = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtOriginPrice = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtPrice = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtCount = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtCategory = new Guna.UI.WinForms.GunaLineTextBox();
+            this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(396, 428);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPrice.MaxLength = 10;
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(321, 34);
-            this.txtPrice.TabIndex = 3;
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
-            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
-            // 
-            // txtNameDrink
-            // 
-            this.txtNameDrink.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameDrink.Location = new System.Drawing.Point(395, 274);
-            this.txtNameDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNameDrink.Name = "txtNameDrink";
-            this.txtNameDrink.Size = new System.Drawing.Size(321, 34);
-            this.txtNameDrink.TabIndex = 2;
             // 
             // pn
             // 
@@ -132,22 +114,12 @@
             this.lbNameForm.TabIndex = 1;
             this.lbNameForm.Text = "Thêm món";
             // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(395, 111);
-            this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(318, 34);
-            this.txtID.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(391, 78);
+            this.label1.Location = new System.Drawing.Point(391, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 28);
             this.label1.TabIndex = 42;
@@ -158,7 +130,7 @@
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPrice.Location = new System.Drawing.Point(390, 394);
+            this.lbPrice.Location = new System.Drawing.Point(390, 404);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(96, 28);
             this.lbPrice.TabIndex = 34;
@@ -169,7 +141,7 @@
             this.lbNameDrink.AutoSize = true;
             this.lbNameDrink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameDrink.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbNameDrink.Location = new System.Drawing.Point(390, 240);
+            this.lbNameDrink.Location = new System.Drawing.Point(390, 250);
             this.lbNameDrink.Name = "lbNameDrink";
             this.lbNameDrink.Size = new System.Drawing.Size(98, 28);
             this.lbNameDrink.TabIndex = 35;
@@ -180,7 +152,7 @@
             this.btnReturn.AnimationHoverSpeed = 0.07F;
             this.btnReturn.AnimationSpeed = 0.03F;
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.btnReturn.BorderColor = System.Drawing.Color.Black;
             this.btnReturn.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnReturn.CheckedBorderColor = System.Drawing.Color.Black;
@@ -198,7 +170,7 @@
             this.btnReturn.Location = new System.Drawing.Point(569, 559);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
+            this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnReturn.OnHoverForeColor = System.Drawing.Color.White;
             this.btnReturn.OnHoverImage = null;
@@ -216,7 +188,7 @@
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbCategory.Location = new System.Drawing.Point(391, 158);
+            this.lbCategory.Location = new System.Drawing.Point(391, 168);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(56, 28);
             this.lbCategory.TabIndex = 42;
@@ -241,7 +213,8 @@
             this.btnAdd.AnimationHoverSpeed = 0.07F;
             this.btnAdd.AnimationSpeed = 0.03F;
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btnAdd.BorderColor = System.Drawing.Color.Black;
             this.btnAdd.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnAdd.CheckedBorderColor = System.Drawing.Color.Black;
@@ -259,7 +232,7 @@
             this.btnAdd.Location = new System.Drawing.Point(394, 559);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAdd.OnHoverImage = null;
@@ -289,7 +262,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbCategory.Size = new System.Drawing.Size(321, 35);
+            this.cbCategory.Size = new System.Drawing.Size(315, 35);
             this.cbCategory.TabIndex = 1;
             // 
             // lbOriginPrice
@@ -297,46 +270,176 @@
             this.lbOriginPrice.AutoSize = true;
             this.lbOriginPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOriginPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbOriginPrice.Location = new System.Drawing.Point(391, 318);
+            this.lbOriginPrice.Location = new System.Drawing.Point(391, 328);
             this.lbOriginPrice.Name = "lbOriginPrice";
             this.lbOriginPrice.Size = new System.Drawing.Size(88, 28);
             this.lbOriginPrice.TabIndex = 34;
             this.lbOriginPrice.Text = "Giá gốc:";
-            // 
-            // txtOriginPrice
-            // 
-            this.txtOriginPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOriginPrice.Location = new System.Drawing.Point(395, 352);
-            this.txtOriginPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOriginPrice.MaxLength = 10;
-            this.txtOriginPrice.Name = "txtOriginPrice";
-            this.txtOriginPrice.Size = new System.Drawing.Size(321, 34);
-            this.txtOriginPrice.TabIndex = 3;
-            this.txtOriginPrice.TextChanged += new System.EventHandler(this.txtOriginPrice_TextChanged);
-            this.txtOriginPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // lbCount
             // 
             this.lbCount.AutoSize = true;
             this.lbCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbCount.Location = new System.Drawing.Point(392, 469);
+            this.lbCount.Location = new System.Drawing.Point(392, 479);
             this.lbCount.Name = "lbCount";
             this.lbCount.Size = new System.Drawing.Size(102, 28);
             this.lbCount.TabIndex = 34;
             this.lbCount.Text = "Số lượng:";
             // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.AnimationHoverSpeed = 0.07F;
+            this.btnAddCategory.AnimationSpeed = 0.03F;
+            this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.BaseColor = System.Drawing.Color.White;
+            this.btnAddCategory.BorderColor = System.Drawing.Color.Black;
+            this.btnAddCategory.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
+            this.btnAddCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddCategory.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAddCategory.Location = new System.Drawing.Point(728, 200);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddCategory.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddCategory.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.OnHoverImage = null;
+            this.btnAddCategory.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddCategory.Radius = 10;
+            this.btnAddCategory.Size = new System.Drawing.Size(42, 38);
+            this.btnAddCategory.TabIndex = 54;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.Color.White;
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtID.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtID.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtID.Location = new System.Drawing.Point(394, 118);
+            this.txtID.Name = "txtID";
+            this.txtID.PasswordChar = '\0';
+            this.txtID.SelectedText = "";
+            this.txtID.Size = new System.Drawing.Size(318, 34);
+            this.txtID.TabIndex = 55;
+            // 
+            // txtNameDrink
+            // 
+            this.txtNameDrink.BackColor = System.Drawing.Color.White;
+            this.txtNameDrink.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNameDrink.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtNameDrink.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNameDrink.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtNameDrink.Location = new System.Drawing.Point(394, 281);
+            this.txtNameDrink.Name = "txtNameDrink";
+            this.txtNameDrink.PasswordChar = '\0';
+            this.txtNameDrink.SelectedText = "";
+            this.txtNameDrink.Size = new System.Drawing.Size(318, 34);
+            this.txtNameDrink.TabIndex = 55;
+            // 
+            // txtOriginPrice
+            // 
+            this.txtOriginPrice.BackColor = System.Drawing.Color.White;
+            this.txtOriginPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtOriginPrice.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtOriginPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtOriginPrice.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtOriginPrice.Location = new System.Drawing.Point(394, 357);
+            this.txtOriginPrice.Name = "txtOriginPrice";
+            this.txtOriginPrice.PasswordChar = '\0';
+            this.txtOriginPrice.SelectedText = "";
+            this.txtOriginPrice.Size = new System.Drawing.Size(318, 34);
+            this.txtOriginPrice.TabIndex = 55;
+            this.txtOriginPrice.TextChanged += new System.EventHandler(this.txtOriginPrice_TextChanged);
+            this.txtOriginPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.BackColor = System.Drawing.Color.White;
+            this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPrice.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPrice.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtPrice.Location = new System.Drawing.Point(394, 432);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PasswordChar = '\0';
+            this.txtPrice.SelectedText = "";
+            this.txtPrice.Size = new System.Drawing.Size(318, 34);
+            this.txtPrice.TabIndex = 55;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
             // txtCount
             // 
-            this.txtCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCount.Location = new System.Drawing.Point(396, 503);
-            this.txtCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCount.MaxLength = 10;
+            this.txtCount.BackColor = System.Drawing.Color.White;
+            this.txtCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCount.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCount.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtCount.Location = new System.Drawing.Point(394, 511);
             this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(321, 34);
-            this.txtCount.TabIndex = 3;
+            this.txtCount.PasswordChar = '\0';
+            this.txtCount.SelectedText = "";
+            this.txtCount.Size = new System.Drawing.Size(318, 34);
+            this.txtCount.TabIndex = 55;
             this.txtCount.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.BackColor = System.Drawing.Color.White;
+            this.txtCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCategory.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCategory.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtCategory.Location = new System.Drawing.Point(395, 200);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.PasswordChar = '\0';
+            this.txtCategory.SelectedText = "";
+            this.txtCategory.Size = new System.Drawing.Size(318, 34);
+            this.txtCategory.TabIndex = 55;
+            this.txtCategory.Visible = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AnimationHoverSpeed = 0.07F;
+            this.btnEdit.AnimationSpeed = 0.03F;
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.Black;
+            this.btnEdit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnEdit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
+            this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = null;
+            this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnEdit.Location = new System.Drawing.Point(394, 559);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
+            this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEdit.OnHoverImage = null;
+            this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEdit.Radius = 10;
+            this.btnEdit.Size = new System.Drawing.Size(144, 42);
+            this.btnEdit.TabIndex = 56;
+            this.btnEdit.Text = "Lưu";
+            this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // fAddDrink
             // 
@@ -344,14 +447,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(787, 635);
-            this.Controls.Add(this.cbCategory);
-            this.Controls.Add(this.txtOriginPrice);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtOriginPrice);
             this.Controls.Add(this.txtNameDrink);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.btnAddCategory);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.lbCategory);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbOriginPrice);
             this.Controls.Add(this.lbCount);
@@ -360,11 +465,13 @@
             this.Controls.Add(this.lbNameDrink);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtCategory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fAddDrink";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddDrink";
+            this.Load += new System.EventHandler(this.fAddDrink_Load);
             this.pn.ResumeLayout(false);
             this.pn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
@@ -374,12 +481,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtNameDrink;
         private System.Windows.Forms.Panel pn;
         private System.Windows.Forms.Label lbNameForm;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox ptbImage;
         private System.Windows.Forms.Label lbPrice;
@@ -390,8 +493,14 @@
         private System.Windows.Forms.Label lbCategory;
         private Guna.UI.WinForms.GunaComboBox cbCategory;
         private System.Windows.Forms.Label lbOriginPrice;
-        private System.Windows.Forms.TextBox txtOriginPrice;
         private System.Windows.Forms.Label lbCount;
-        private System.Windows.Forms.TextBox txtCount;
+        private Guna.UI.WinForms.GunaButton btnAddCategory;
+        private Guna.UI.WinForms.GunaLineTextBox txtID;
+        private Guna.UI.WinForms.GunaLineTextBox txtNameDrink;
+        private Guna.UI.WinForms.GunaLineTextBox txtOriginPrice;
+        private Guna.UI.WinForms.GunaLineTextBox txtPrice;
+        private Guna.UI.WinForms.GunaLineTextBox txtCount;
+        private Guna.UI.WinForms.GunaLineTextBox txtCategory;
+        private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
     }
 }

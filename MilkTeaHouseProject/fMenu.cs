@@ -18,7 +18,6 @@ namespace MilkTeaHouseProject
         public fMenu()
         {
             InitializeComponent();
-            LoadMenu();
         }
         #region Method
         public void LoadMenu()
@@ -110,7 +109,7 @@ namespace MilkTeaHouseProject
             int origin = ((sender as MenuItem).Tag as Drink).OriginPrice;
             int count = ((sender as MenuItem).Tag as Drink).Count;
 
-            fEditDrink frm = new fEditDrink(id, name, price, image, origin, count);
+            fAddDrink frm = new fAddDrink(id, name, price, image, origin, count);
             frm.ShowDialog();
             LoadMenu();
 
@@ -128,12 +127,6 @@ namespace MilkTeaHouseProject
         private void flowLayoutPanelMenu_SizeChanged(object sender, EventArgs e)
         {
             LoadSize();
-        }
-
-        private void btnAddCategory_Click(object sender, EventArgs e)
-        {
-            fCategory frm = new fCategory();
-            frm.ShowDialog();
         }
 
         private void btnDelCategory_Click(object sender, EventArgs e)
@@ -154,6 +147,13 @@ namespace MilkTeaHouseProject
         {
             SearchDrink(txtSearch.Text);
         }
+
+        private void fMenu_Load(object sender, EventArgs e)
+        {
+            LoadMenu();
+        }
         #endregion
+
+
     }
 }

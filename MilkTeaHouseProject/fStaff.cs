@@ -36,12 +36,11 @@ namespace MilkTeaHouseProject
             int space = this.flowLayoutPanelStaff.Width / 8;
             lbID.Location = new Point(85, 5);
             lbName.Location = new Point((int)(space * 1.7), 5);
-            lbBirthDate.Location = new Point((int)(space * 2.8), 5);
-            lbPosition.Location = new Point((int)(space * 3.6), 5);
-            lbUserName.Location = new Point((int)(space * 4.2), 5);
-            lbOvertime.Location = new Point((int)(space * 5.1), 5);
-            lbFaust.Location = new Point((int)(space * 6), 5);
-            lbSalary.Location = new Point((int)(space * 6.6), 5);
+            lbPosition.Location = new Point((int)(space * 3), 5);
+            lbUserName.Location = new Point((int)(space * 3.7), 5);
+            lbOvertime.Location = new Point((int)(space * 4.8), 5);
+            lbFaust.Location = new Point((int)(space * 5.8), 5);
+            lbSalary.Location = new Point((int)(space * 6.5), 5);
         }
         public void LoadStaff()
         {
@@ -68,7 +67,7 @@ namespace MilkTeaHouseProject
                 }
 
                 StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, setcolor);
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
                 totalSalary += staff.SalaryReceived;
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
@@ -105,7 +104,7 @@ namespace MilkTeaHouseProject
                         {
                             int salaryReceived = pos.Salary + staff.OverTime * pos.OverTimeSalary - staff.Fault * pos.MinusSalary;
                             StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
-                            StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, setcolor);
+                            StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
 
                             totalSalary += staff.SalaryReceived;
                             staffItem.onEdit += Item_OnEdit;

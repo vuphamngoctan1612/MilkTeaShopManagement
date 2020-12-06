@@ -47,8 +47,8 @@ namespace MilkTeaHouseProject
             this.btnDelete.AnimationHoverSpeed = 0.07F;
             this.btnDelete.AnimationSpeed = 0.03F;
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
-            this.btnDelete.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnDelete.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.btnDelete.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.btnDelete.BorderColor = System.Drawing.Color.Black;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -61,8 +61,8 @@ namespace MilkTeaHouseProject
             this.btnDelete.Location = new System.Drawing.Point(1387, 23);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(10);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
-            this.btnDelete.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
+            this.btnDelete.OnHoverBaseColor1 = System.Drawing.Color.Red;
+            this.btnDelete.OnHoverBaseColor2 = System.Drawing.Color.Red;
             this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDelete.OnHoverImage = null;
@@ -78,8 +78,8 @@ namespace MilkTeaHouseProject
             this.btnEdit.AnimationHoverSpeed = 0.07F;
             this.btnEdit.AnimationSpeed = 0.03F;
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.btnEdit.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnEdit.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnEdit.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btnEdit.BorderColor = System.Drawing.Color.Black;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -92,8 +92,8 @@ namespace MilkTeaHouseProject
             this.btnEdit.Location = new System.Drawing.Point(1173, 23);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
-            this.btnEdit.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
+            this.btnEdit.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
+            this.btnEdit.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
             this.btnEdit.OnHoverImage = null;

@@ -173,6 +173,26 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap client {
+            get {
+                object obj = ResourceManager.GetObject("client", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Collapse_Arrow_32 {
+            get {
+                object obj = ResourceManager.GetObject("Collapse_Arrow_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete {
             get {
                 object obj = ResourceManager.GetObject("Delete", resourceCulture);
@@ -246,6 +266,16 @@ namespace MilkTeaHouseProject.Properties {
         internal static System.Drawing.Bitmap Exit___Copy {
             get {
                 object obj = ResourceManager.GetObject("Exit - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Expand_Arrow_32 {
+            get {
+                object obj = ResourceManager.GetObject("Expand_Arrow_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,6 +363,16 @@ namespace MilkTeaHouseProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap moneblue {
+            get {
+                object obj = ResourceManager.GetObject("moneblue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Money_Box_32 {
             get {
                 object obj = ResourceManager.GetObject("Money_Box_32", resourceCulture);
@@ -356,6 +396,16 @@ namespace MilkTeaHouseProject.Properties {
         internal static System.Drawing.Bitmap moneyout {
             get {
                 object obj = ResourceManager.GetObject("moneyout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pebgreen {
+            get {
+                object obj = ResourceManager.GetObject("pebgreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

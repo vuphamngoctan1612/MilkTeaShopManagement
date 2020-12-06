@@ -34,10 +34,6 @@
             this.btnDeleteTable = new Guna.UI.WinForms.GunaAdvenceButton();
             this.tableID = new Guna.UI.WinForms.GunaLabel();
             this.lbTableSelected = new Guna.UI.WinForms.GunaLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbFoodName = new System.Windows.Forms.Label();
             this.pnSplitBill = new System.Windows.Forms.Panel();
             this.pnTotal = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -109,16 +105,12 @@
             this.pnTitle.Controls.Add(this.btnDeleteTable);
             this.pnTitle.Controls.Add(this.tableID);
             this.pnTitle.Controls.Add(this.lbTableSelected);
-            this.pnTitle.Controls.Add(this.label3);
-            this.pnTitle.Controls.Add(this.label2);
-            this.pnTitle.Controls.Add(this.label1);
-            this.pnTitle.Controls.Add(this.lbFoodName);
             this.pnTitle.Controls.Add(this.pnSplitBill);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(645, 108);
+            this.pnTitle.Size = new System.Drawing.Size(645, 59);
             this.pnTitle.TabIndex = 0;
             // 
             // btnDeleteTable
@@ -127,7 +119,7 @@
             this.btnDeleteTable.AnimationHoverSpeed = 0.07F;
             this.btnDeleteTable.AnimationSpeed = 0.03F;
             this.btnDeleteTable.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteTable.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.btnDeleteTable.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.btnDeleteTable.BorderColor = System.Drawing.Color.Black;
             this.btnDeleteTable.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnDeleteTable.CheckedBorderColor = System.Drawing.Color.Black;
@@ -142,9 +134,9 @@
             this.btnDeleteTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDeleteTable.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDeleteTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDeleteTable.Location = new System.Drawing.Point(516, 8);
+            this.btnDeleteTable.Location = new System.Drawing.Point(508, 8);
             this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnDeleteTable.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btnDeleteTable.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDeleteTable.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDeleteTable.OnHoverImage = null;
@@ -179,51 +171,11 @@
             this.lbTableSelected.TabIndex = 3;
             this.lbTableSelected.Text = "TableName";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(451, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 30);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tổng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(341, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 30);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Giá món";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(221, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Số lượng";
-            // 
-            // lbFoodName
-            // 
-            this.lbFoodName.AutoSize = true;
-            this.lbFoodName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbFoodName.Location = new System.Drawing.Point(51, 63);
-            this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(99, 30);
-            this.lbFoodName.TabIndex = 2;
-            this.lbFoodName.Text = "Tên món";
-            // 
             // pnSplitBill
             // 
             this.pnSplitBill.BackColor = System.Drawing.Color.LightGray;
             this.pnSplitBill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitBill.Location = new System.Drawing.Point(0, 107);
+            this.pnSplitBill.Location = new System.Drawing.Point(0, 58);
             this.pnSplitBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnSplitBill.Name = "pnSplitBill";
             this.pnSplitBill.Size = new System.Drawing.Size(645, 1);
@@ -313,7 +265,7 @@
             // 
             this.btnCancel.AnimationHoverSpeed = 0.07F;
             this.btnCancel.AnimationSpeed = 0.03F;
-            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.btnCancel.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnCancel.CheckedBorderColor = System.Drawing.Color.Black;
@@ -333,7 +285,7 @@
             this.btnCancel.Location = new System.Drawing.Point(320, 0);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
             this.btnCancel.OnHoverImage = null;
@@ -370,7 +322,7 @@
             this.btnPay.Location = new System.Drawing.Point(0, 0);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPay.Name = "btnPay";
-            this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(151)))), ((int)(((byte)(71)))));
+            this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnPay.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnPay.OnHoverForeColor = System.Drawing.Color.White;
             this.btnPay.OnHoverImage = null;
@@ -387,10 +339,10 @@
             this.flowLayoutPanelBill.AutoScroll = true;
             this.flowLayoutPanelBill.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 108);
-            this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 59);
+            this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(645, 405);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(645, 454);
             this.flowLayoutPanelBill.TabIndex = 5;
             // 
             // gunaElipsePanel1
@@ -608,7 +560,7 @@
             this.PnContainTable.Controls.Add(this.flowLayoutPanelTable);
             this.PnContainTable.Controls.Add(this.panel3);
             this.PnContainTable.Controls.Add(this.pnToolinGroup);
-            this.PnContainTable.Location = new System.Drawing.Point(36, 268);
+            this.PnContainTable.Location = new System.Drawing.Point(25, 69);
             this.PnContainTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PnContainTable.Name = "PnContainTable";
             this.PnContainTable.Radius = 20;
@@ -726,7 +678,7 @@
             this.pnContainDrink.Controls.Add(this.flowLayoutPanelDrinks);
             this.pnContainDrink.Controls.Add(this.panel2);
             this.pnContainDrink.Controls.Add(this.pnToolInCategory);
-            this.pnContainDrink.Location = new System.Drawing.Point(10, 50);
+            this.pnContainDrink.Location = new System.Drawing.Point(36, 558);
             this.pnContainDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnContainDrink.Name = "pnContainDrink";
             this.pnContainDrink.Radius = 20;
@@ -806,8 +758,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.ClientSize = new System.Drawing.Size(1400, 714);
-            this.Controls.Add(this.pnContainDrink);
             this.Controls.Add(this.PnContainTable);
+            this.Controls.Add(this.pnContainDrink);
             this.Controls.Add(this.pnCenter);
             this.Controls.Add(this.gunaElipsePanel1);
             this.Controls.Add(this.pnTop);
@@ -848,10 +800,6 @@
         #endregion
         private System.Windows.Forms.Panel pnCenter;
         private System.Windows.Forms.Panel pnTitle;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbFoodName;
         private System.Windows.Forms.Panel pnSplitBill;
         private System.Windows.Forms.Panel pnTotal;
         private System.Windows.Forms.Panel panel1;

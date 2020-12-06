@@ -57,6 +57,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -143,23 +144,11 @@
     <Compile Include="fBill.Designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCategory.Designer.cs">
-      <DependentUpon>fCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="fDelCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fDelCategory.Designer.cs">
       <DependentUpon>fDelCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fEditDrink.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fEditDrink.Designer.cs">
-      <DependentUpon>fEditDrink.cs</DependentUpon>
     </Compile>
     <Compile Include="fInvoice.cs">
       <SubType>Form</SubType>
@@ -266,14 +255,8 @@
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fCategory.resx">
-      <DependentUpon>fCategory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fDelCategory.resx">
       <DependentUpon>fDelCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fEditDrink.resx">
-      <DependentUpon>fEditDrink.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fInvoice.resx">
       <DependentUpon>fInvoice.cs</DependentUpon>
@@ -454,6 +437,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TableWhile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand_Arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse_Arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pebgreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

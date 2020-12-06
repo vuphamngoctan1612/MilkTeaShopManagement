@@ -135,7 +135,7 @@ namespace MilkTeaHouseProject.DAL
             int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(username);
             DateTime time = DateTime.Now;
             string month = time.Month.ToString() + "/" + time.Year.ToString();
-            string query = string.Format("INSERT INTO BILL VALUES({0}, {1}, '{2}', 1, {3}, N'Kết toán lương tháng {4}')", 
+            string query = string.Format("INSERT INTO BILL(ID, STAFFid, CHECKOUT, STATUS, TOTAL, NOTE) VALUES({0}, {1}, '{2}', 1, {3}, N'Kết toán lương tháng {4}')", 
                 id, idStaff, time, totalSalary, month);
             DataProvider.Instance.ExecuteNonQuery(query);
         }

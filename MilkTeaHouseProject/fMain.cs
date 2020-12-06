@@ -18,7 +18,6 @@ namespace MilkTeaHouseProject
     public partial class fMain : Form
     {
         private GunaAdvenceButton currentButton;
-        private Random random;
         private Form activeForm;
         private Panel leftCurrentButton;
 
@@ -26,7 +25,6 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
 
-            random = new Random();
             leftCurrentButton = new Panel();
             leftCurrentButton.Size = new Size(10, 52);
             panelControl.Controls.Add(leftCurrentButton);
@@ -181,12 +179,8 @@ namespace MilkTeaHouseProject
 
         private void pnHomePage_SizeChanged(object sender, EventArgs e)
         {
-            this.picLogo.Location = new Point((int)(this.pnHomePage.Width - this.picLogo.Width) / 2, this.picLogo.Location.Y);
-            this.btnViewPro5.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnViewPro5.Location.Y);
-            this.btnAccount.Location = new Point((int)(this.pnHomePage.Width - this.btnAccount.Width) / 2, this.btnAccount.Location.Y);
-            this.btnLogOut.Location = new Point((int)(this.pnHomePage.Width - this.btnLogOut.Width) / 2, this.btnLogOut.Location.Y);
-        }
 
+        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -198,8 +192,134 @@ namespace MilkTeaHouseProject
             fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.PhoneNumber, staff.Image);
             frm.ShowDialog();
         }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            //this.pnSales.Width = this.pnTopDrink.Width = this.pnTopStaff.Width = this.flowLayoutPanelChart.Width - 25;
+            //this.pnSales.Height = this.pnTopDrink.Height = this.pnTopStaff.Height = 80;
+
+            //int Y = (this.pnSales.Height - this.btnExpandSales.Height) / 2;
+            //Point localLb = new Point(pnSales.Location.X, Y);
+            //Point localBtn = new Point(this.pnSales.Width - 65, Y);
+
+            //pnSales.Location = pnTopStaff.Location = pnTopDrink.Location = localLb;
+            //btnExpandSales.Location = btnCollapseSales.Location = btnExpandTopStaff.Location = btnExpandTopDrink.Location = btnCollapseTopStaff.Location = btnCollapseTopDrink.Location = localBtn;
+
+            //btnExpandSales_Click(sender, e);
+        }
+
+        #region btnExpand&Collapse
+        private void btnExpandSales_Click(object sender, EventArgs e)
+        {
+            this.pnSales.Height = 400;
+            btnCollapseSales.Visible = true;
+            btnExpandSales.Visible = false;
+
+            pnContainSales.Visible = true;
+        }
+
+        private void btnCollapseSales_Click(object sender, EventArgs e)
+        {
+            this.pnSales.Height = 80;
+            btnCollapseSales.Visible = false;
+            btnExpandSales.Visible = true;
+            
+            pnContainSales.Visible = false;
+        }
+        private void btnExpandTopDrink_Click(object sender, EventArgs e)
+        {
+            this.pnTopDrink.Height = 400;
+            btnCollapseTopDrink.Visible = true;
+            btnExpandTopDrink.Visible = false;
+
+            pnContainTopdrink.Visible = true;
+        }
+
+        private void btnCollapseTopDrink_Click(object sender, EventArgs e)
+        {
+            this.pnTopDrink.Height = 80;
+            btnCollapseTopDrink.Visible = false;
+            btnExpandTopDrink.Visible = true;
+
+            pnContainTopdrink.Visible = false;
+        }
+
+        private void btnExpandTopStaff_Click(object sender, EventArgs e)
+        {
+            this.pnTopStaff.Height = 400;
+            btnCollapseTopStaff.Visible = true;
+            btnExpandTopStaff.Visible = false;
+        }
+
+        private void btnCollapseTopStaff_Click(object sender, EventArgs e)
+        {
+            this.pnTopStaff.Height = 80;
+            btnCollapseTopStaff.Visible = false;
+            btnExpandTopStaff.Visible = true;
+        }
         #endregion
 
+        #region lbClick
 
+        private void lbSalesMonth_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainSales.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+        }
+
+        private void lbSalesSeason_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainSales.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+        }
+
+        private void lbSalesYear_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainSales.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+        }
+
+        private void lbTopCount_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainTopdrink.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+        }
+
+        private void lbTopPrice_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainTopdrink.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+        }
+        #endregion
+
+        #endregion
+
+        private void fMain_Shown(object sender, EventArgs e)
+        {
+            this.pnSales.Width = this.pnTopDrink.Width = this.pnTopStaff.Width = this.flowLayoutPanelChart.Width - 25;
+            this.pnSales.Height = this.pnTopDrink.Height = this.pnTopStaff.Height = 80;
+
+            int Y = (this.pnSales.Height - this.btnExpandSales.Height) / 2;
+            Point localLb = new Point(pnSales.Location.X, Y);
+            Point localBtn = new Point(this.pnSales.Width - 65, Y);
+
+            pnSales.Location = pnTopStaff.Location = pnTopDrink.Location = localLb;
+            btnExpandSales.Location = btnCollapseSales.Location = btnExpandTopStaff.Location = btnExpandTopDrink.Location = btnCollapseTopStaff.Location = btnCollapseTopDrink.Location = localBtn;
+        }
     }
 }

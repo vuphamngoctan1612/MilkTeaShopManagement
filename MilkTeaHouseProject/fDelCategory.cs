@@ -54,5 +54,11 @@ namespace MilkTeaHouseProject
         {
             this.Close();
         }
+
+        private void fDelCategory_Load(object sender, EventArgs e)
+        {
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
+        }
     }
 }

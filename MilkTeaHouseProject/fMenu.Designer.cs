@@ -34,19 +34,18 @@
             this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
             this.btnDelCategory = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnAddCategory = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnStaff = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbCount = new System.Windows.Forms.Label();
+            this.lbOriginPrice = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbCategory = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.lbOriginPrice = new System.Windows.Forms.Label();
-            this.lbCount = new System.Windows.Forms.Label();
             this.pnBtn.SuspendLayout();
             this.pnSearch.SuspendLayout();
             this.pnStaff.SuspendLayout();
@@ -60,7 +59,6 @@
             this.pnBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnBtn.Controls.Add(this.pnSearch);
             this.pnBtn.Controls.Add(this.btnDelCategory);
-            this.pnBtn.Controls.Add(this.btnAddCategory);
             this.pnBtn.Controls.Add(this.gunaAdvenceButton1);
             this.pnBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBtn.Location = new System.Drawing.Point(0, 0);
@@ -142,7 +140,7 @@
             this.btnDelCategory.AnimationHoverSpeed = 0.07F;
             this.btnDelCategory.AnimationSpeed = 0.03F;
             this.btnDelCategory.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelCategory.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
+            this.btnDelCategory.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.btnDelCategory.BorderColor = System.Drawing.Color.Black;
             this.btnDelCategory.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnDelCategory.CheckedBorderColor = System.Drawing.Color.Black;
@@ -157,10 +155,10 @@
             this.btnDelCategory.Image = null;
             this.btnDelCategory.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDelCategory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDelCategory.Location = new System.Drawing.Point(469, 18);
+            this.btnDelCategory.Location = new System.Drawing.Point(234, 18);
             this.btnDelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelCategory.Name = "btnDelCategory";
-            this.btnDelCategory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
+            this.btnDelCategory.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btnDelCategory.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDelCategory.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDelCategory.OnHoverImage = null;
@@ -172,43 +170,6 @@
             this.btnDelCategory.Text = "Xóa loại";
             this.btnDelCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDelCategory.Click += new System.EventHandler(this.btnDelCategory_Click);
-            // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnAddCategory.AnimationHoverSpeed = 0.07F;
-            this.btnAddCategory.AnimationSpeed = 0.03F;
-            this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
-            this.btnAddCategory.BorderColor = System.Drawing.Color.Black;
-            this.btnAddCategory.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAddCategory.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAddCategory.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.CheckedImage")));
-            this.btnAddCategory.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCategory.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddCategory.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.Image = null;
-            this.btnAddCategory.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddCategory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddCategory.Location = new System.Drawing.Point(246, 18);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
-            this.btnAddCategory.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddCategory.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.OnHoverImage = null;
-            this.btnAddCategory.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddCategory.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddCategory.Radius = 10;
-            this.btnAddCategory.Size = new System.Drawing.Size(173, 42);
-            this.btnAddCategory.TabIndex = 0;
-            this.btnAddCategory.Text = "Thêm loại";
-            this.btnAddCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // gunaAdvenceButton1
             // 
@@ -234,7 +195,7 @@
             this.gunaAdvenceButton1.Location = new System.Drawing.Point(21, 18);
             this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton1.OnHoverImage = null;
@@ -307,6 +268,26 @@
             this.panel1.Size = new System.Drawing.Size(1088, 51);
             this.panel1.TabIndex = 0;
             // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCount.Location = new System.Drawing.Point(978, 11);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(103, 30);
+            this.lbCount.TabIndex = 0;
+            this.lbCount.Text = "Số lượng";
+            // 
+            // lbOriginPrice
+            // 
+            this.lbOriginPrice.AutoSize = true;
+            this.lbOriginPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbOriginPrice.Location = new System.Drawing.Point(751, 11);
+            this.lbOriginPrice.Name = "lbOriginPrice";
+            this.lbOriginPrice.Size = new System.Drawing.Size(87, 30);
+            this.lbOriginPrice.TabIndex = 0;
+            this.lbOriginPrice.Text = "Giá gốc";
+            // 
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
@@ -347,26 +328,6 @@
             this.lbID.TabIndex = 0;
             this.lbID.Text = "Mã sản phẩm";
             // 
-            // lbOriginPrice
-            // 
-            this.lbOriginPrice.AutoSize = true;
-            this.lbOriginPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbOriginPrice.Location = new System.Drawing.Point(751, 11);
-            this.lbOriginPrice.Name = "lbOriginPrice";
-            this.lbOriginPrice.Size = new System.Drawing.Size(87, 30);
-            this.lbOriginPrice.TabIndex = 0;
-            this.lbOriginPrice.Text = "Giá gốc";
-            // 
-            // lbCount
-            // 
-            this.lbCount.AutoSize = true;
-            this.lbCount.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCount.Location = new System.Drawing.Point(978, 11);
-            this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(103, 30);
-            this.lbCount.TabIndex = 0;
-            this.lbCount.Text = "Số lượng";
-            // 
             // fMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -377,6 +338,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fMenu";
             this.Text = "MENU";
+            this.Load += new System.EventHandler(this.fMenu_Load);
             this.pnBtn.ResumeLayout(false);
             this.pnSearch.ResumeLayout(false);
             this.pnStaff.ResumeLayout(false);
@@ -400,7 +362,6 @@
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbID;
-        private Guna.UI.WinForms.GunaAdvenceButton btnAddCategory;
         private System.Windows.Forms.Label lbCategory;
         private Guna.UI.WinForms.GunaAdvenceButton btnDelCategory;
         private System.Windows.Forms.Panel pnSearch;

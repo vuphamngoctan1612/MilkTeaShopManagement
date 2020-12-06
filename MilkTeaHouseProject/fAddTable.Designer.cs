@@ -308,6 +308,7 @@ namespace MilkTeaHouseProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(556, 459);
             this.Controls.Add(this.btnAddGroup);
             this.Controls.Add(this.cbbGroup);

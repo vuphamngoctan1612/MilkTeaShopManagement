@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace MilkTeaHouseProject
 {
@@ -18,7 +19,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-         
+
         public DrinkItem(string name, int price, byte[] image)
         {
             InitializeComponent();
@@ -53,26 +54,25 @@ namespace MilkTeaHouseProject
 
         private void btnChoose_MouseHover(object sender, EventArgs e)
         {
-            this.btnChoose.OnHoverBaseColor1 = this.btnChoose.OnHoverBaseColor2 = Color.FromArgb(194, 228, 246);
-            this.lbName.BackColor = Color.FromArgb(194, 228, 246);
-            this.lbPrice.BackColor = Color.FromArgb(194, 228, 246);
+            Color color = Color.FromArgb(112, 195, 235);
+
+            this.BackColor = color;
         }
 
         private void btnChoose_MouseLeave(object sender, EventArgs e)
         {
-            this.btnChoose.OnHoverBaseColor1 = this.btnChoose.OnHoverBaseColor2 = Color.Transparent;
-            this.lbName.BackColor = Color.FromArgb(220, 244, 252);
-            this.lbPrice.BackColor = Color.FromArgb(220, 244, 252);
+            Color color = Color.FromArgb(255, 255, 255);
+
+            this.BackColor = color;
         }
 
         private void DrinkItem_SizeChanged(object sender, EventArgs e)
         {
             this.picFood.Width = this.Width - 2 * (this.picFood.Location.X);
             this.picFood.Height = this.Height / 5 * 3;
-            this.picFood.Location = new Point(this.picFood.Location.X, 5);
-            this.lbName.Width = this.picFood.Width;
-            this.lbName.Location = new Point(this.lbName.Location.X, this.picFood.Height + 10);
-            this.lbPrice.Location = new Point(this.lbPrice.Location.X, this.picFood.Height + this.lbName.Height + 10);
+            this.picFood.Location = new Point(this.picFood.Location.X, 10);
+            this.lbName.Location = new Point((this.Width - lbName.Width) / 2, this.picFood.Height + 10);
+            this.lbPrice.Location = new Point((this.Width - lbPrice.Width) / 2, this.picFood.Height + this.lbName.Height + 10);
             btnChoose.Size = this.Size;
         }
     }
