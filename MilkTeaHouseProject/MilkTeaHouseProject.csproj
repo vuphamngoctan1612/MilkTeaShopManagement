@@ -99,10 +99,10 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BillItem.cs">
+    <Compile Include="GUI\BillItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BillItem.designer.cs">
+    <Compile Include="GUI\BillItem.designer.cs">
       <DependentUpon>BillItem.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\AccountDAL.cs" />
@@ -111,10 +111,16 @@
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DrinkDAL.cs" />
-    <Compile Include="DAL\fExport.cs">
+    <Compile Include="GUI\DrinkReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DrinkReport.Designer.cs">
+      <DependentUpon>DrinkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fExport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DAL\fExport.Designer.cs">
+    <Compile Include="GUI\fExport.Designer.cs">
       <DependentUpon>fExport.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\GroupTableDAL.cs" />
@@ -123,13 +129,13 @@
     <Compile Include="DAL\ReportDAL.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="DAL\TableFoodDAL.cs" />
-    <Compile Include="DrinkItem.cs">
+    <Compile Include="GUI\DrinkItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DrinkItem.Designer.cs">
+    <Compile Include="GUI\DrinkItem.Designer.cs">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="DropShadow.cs" />
+    <Compile Include="GUI\DropShadow.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
@@ -141,198 +147,213 @@
     <Compile Include="DTO\Position.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\TableFood.cs" />
-    <Compile Include="fAddTable.cs">
+    <Compile Include="GUI\fAddTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAddTable.Designer.cs">
+    <Compile Include="GUI\fAddTable.Designer.cs">
       <DependentUpon>fAddTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="MilkteaManagementDataSet.Designer.cs">
+    <Compile Include="GUI\MilkteaManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MilkteaManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TableItem.cs">
+    <Compile Include="GUI\RevenueReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TableItem.Designer.cs">
+    <Compile Include="GUI\RevenueReport.Designer.cs">
+      <DependentUpon>RevenueReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StaffReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StaffReport.Designer.cs">
+      <DependentUpon>StaffReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TableItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\TableItem.Designer.cs">
       <DependentUpon>TableItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAccount.cs">
+    <Compile Include="GUI\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAccount.Designer.cs">
+    <Compile Include="GUI\fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAddDrink.cs">
+    <Compile Include="GUI\fAddDrink.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAddDrink.Designer.cs">
+    <Compile Include="GUI\fAddDrink.Designer.cs">
       <DependentUpon>fAddDrink.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAddStaff.cs">
+    <Compile Include="GUI\fAddStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAddStaff.Designer.cs">
+    <Compile Include="GUI\fAddStaff.Designer.cs">
       <DependentUpon>fAddStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="fBill.cs">
+    <Compile Include="GUI\fBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fBill.Designer.cs">
+    <Compile Include="GUI\fBill.Designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="fDelCategory.cs">
+    <Compile Include="GUI\fDelCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDelCategory.Designer.cs">
+    <Compile Include="GUI\fDelCategory.Designer.cs">
       <DependentUpon>fDelCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="fInvoice.cs">
+    <Compile Include="GUI\fInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fInvoice.Designer.cs">
+    <Compile Include="GUI\fInvoice.Designer.cs">
       <DependentUpon>fInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLogin.cs">
+    <Compile Include="GUI\fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fLogin.Designer.cs">
+    <Compile Include="GUI\fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMain.cs">
+    <Compile Include="GUI\fMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMain.Designer.cs">
+    <Compile Include="GUI\fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMenu.cs">
+    <Compile Include="GUI\fMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMenu.Designer.cs">
+    <Compile Include="GUI\fMenu.Designer.cs">
       <DependentUpon>fMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="fOrder.cs">
+    <Compile Include="GUI\fOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fOrder.Designer.cs">
+    <Compile Include="GUI\fOrder.Designer.cs">
       <DependentUpon>fOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="fSetSalary.cs">
+    <Compile Include="GUI\fSetSalary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fSetSalary.Designer.cs">
+    <Compile Include="GUI\fSetSalary.Designer.cs">
       <DependentUpon>fSetSalary.cs</DependentUpon>
     </Compile>
-    <Compile Include="fSignUp.cs">
+    <Compile Include="GUI\fSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fSignUp.Designer.cs">
+    <Compile Include="GUI\fSignUp.Designer.cs">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="fStaff.cs">
+    <Compile Include="GUI\fStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fStaff.Designer.cs">
+    <Compile Include="GUI\fStaff.Designer.cs">
       <DependentUpon>fStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="fViewProfile.cs">
+    <Compile Include="GUI\fViewProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fViewProfile.Designer.cs">
+    <Compile Include="GUI\fViewProfile.Designer.cs">
       <DependentUpon>fViewProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemInBill.cs">
+    <Compile Include="GUI\ItemInBill.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ItemInBill.Designer.cs">
+    <Compile Include="GUI\ItemInBill.Designer.cs">
       <DependentUpon>ItemInBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="MakeABill.cs">
+    <Compile Include="GUI\MakeABill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MakeABill.Designer.cs">
+    <Compile Include="GUI\MakeABill.Designer.cs">
       <DependentUpon>MakeABill.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuItem.cs">
+    <Compile Include="GUI\MenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuItem.Designer.cs">
+    <Compile Include="GUI\MenuItem.Designer.cs">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaffItem.cs">
+    <Compile Include="GUI\StaffItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StaffItem.Designer.cs">
+    <Compile Include="GUI\StaffItem.Designer.cs">
       <DependentUpon>StaffItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="themeColor.cs" />
-    <EmbeddedResource Include="BillItem.resx">
+    <Compile Include="GUI\themeColor.cs" />
+    <EmbeddedResource Include="GUI\BillItem.resx">
       <DependentUpon>BillItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAL\fExport.resx">
+    <EmbeddedResource Include="GUI\DrinkReport.resx">
+      <DependentUpon>DrinkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fExport.resx">
       <DependentUpon>fExport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DrinkItem.dje.resx">
+    <EmbeddedResource Include="GUI\DrinkItem.dje.resx">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DrinkItem.resx">
+    <EmbeddedResource Include="GUI\DrinkItem.resx">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAccount.resx">
+    <EmbeddedResource Include="GUI\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAddDrink.resx">
+    <EmbeddedResource Include="GUI\fAddDrink.resx">
       <DependentUpon>fAddDrink.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAddStaff.resx">
+    <EmbeddedResource Include="GUI\fAddStaff.resx">
       <DependentUpon>fAddStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAddTable.resx">
+    <EmbeddedResource Include="GUI\fAddTable.resx">
       <DependentUpon>fAddTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fBill.resx">
+    <EmbeddedResource Include="GUI\fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fDelCategory.resx">
+    <EmbeddedResource Include="GUI\fDelCategory.resx">
       <DependentUpon>fDelCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fInvoice.resx">
+    <EmbeddedResource Include="GUI\fInvoice.resx">
       <DependentUpon>fInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fLogin.resx">
+    <EmbeddedResource Include="GUI\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMain.resx">
+    <EmbeddedResource Include="GUI\fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMenu.resx">
+    <EmbeddedResource Include="GUI\fMenu.resx">
       <DependentUpon>fMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fOrder.resx">
+    <EmbeddedResource Include="GUI\fOrder.resx">
       <DependentUpon>fOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fSetSalary.resx">
+    <EmbeddedResource Include="GUI\fSetSalary.resx">
       <DependentUpon>fSetSalary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fSignUp.resx">
+    <EmbeddedResource Include="GUI\fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fStaff.resx">
+    <EmbeddedResource Include="GUI\fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fViewProfile.resx">
+    <EmbeddedResource Include="GUI\fViewProfile.resx">
       <DependentUpon>fViewProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemInBill.resx">
+    <EmbeddedResource Include="GUI\ItemInBill.resx">
       <DependentUpon>ItemInBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MakeABill.resx">
+    <EmbeddedResource Include="GUI\MakeABill.resx">
       <DependentUpon>MakeABill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuItem.resx">
+    <EmbeddedResource Include="GUI\MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -345,21 +366,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StaffItem.resx">
+    <EmbeddedResource Include="GUI\RevenueReport.resx">
+      <DependentUpon>RevenueReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StaffItem.resx">
       <DependentUpon>StaffItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TableItem.resx">
+    <EmbeddedResource Include="GUI\StaffReport.resx">
+      <DependentUpon>StaffReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TableItem.resx">
       <DependentUpon>TableItem.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="MilkteaManagementDataSet.xsc">
+    <None Include="GUI\MilkteaManagementDataSet.xsc">
       <DependentUpon>MilkteaManagementDataSet.xsd</DependentUpon>
     </None>
-    <None Include="MilkteaManagementDataSet.xsd">
+    <None Include="GUI\MilkteaManagementDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MilkteaManagementDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MilkteaManagementDataSet.xss">
+    <None Include="GUI\MilkteaManagementDataSet.xss">
       <DependentUpon>MilkteaManagementDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />

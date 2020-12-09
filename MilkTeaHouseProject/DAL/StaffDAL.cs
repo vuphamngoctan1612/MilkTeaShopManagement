@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MilkTeaShopManagement.DAL;
+using LiveCharts;
 
 namespace MilkTeaHouseProject.DAL
 {
@@ -175,6 +176,180 @@ namespace MilkTeaHouseProject.DAL
         public void ResetOverandFault()
         {
             DataProvider.Instance.ExecuteNonQuery(string.Format("UPDATE Staff SET OVERTIME = 0, FAULT = 0"));
+        }
+
+        //top 5 nhan vien theo doanh thu
+        public string[] GetListStaffNameByMonth(string mm, string yy)
+        {
+            List<string> topStaff = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                    "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
+                    "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY Staff.ID, Staff.NAME " +
+                    "ORDER BY TOTAL ASC", mm, yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    topStaff.Add(row["NAME"].ToString());
+                }
+
+                return topStaff.ToArray();
+            }
+            catch
+            {
+                return topStaff.ToArray();
+            }
+        }
+        public string[] GetListStaffNameByYear(string yy)
+        {
+            List<string> topStaff = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                    "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "GROUP BY Staff.ID, Staff.NAME " +
+                    "ORDER BY TOTAL ASC", yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    topStaff.Add(row["NAME"].ToString());
+                }
+
+                return topStaff.ToArray();
+            }
+            catch
+            {
+                return topStaff.ToArray();
+            }
+        }
+
+        public string[] GetListStaffIDByMonth(string mm, string yy)
+        {
+            List<string> topStaff = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                    "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
+                    "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY Staff.ID, Staff.NAME " +
+                    "ORDER BY TOTAL ASC", mm, yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    topStaff.Add(row["ID"].ToString());
+                }
+
+                return topStaff.ToArray();
+            }
+            catch
+            {
+                return topStaff.ToArray();
+            }
+        }
+        public string[] GetListStaffIDByYear(string yy)
+        {
+            List<string> topStaff = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                    "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "GROUP BY Staff.ID, Staff.NAME " +
+                    "ORDER BY TOTAL ASC", yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    topStaff.Add(row["ID"].ToString());
+                }
+
+                return topStaff.ToArray();
+            }
+            catch
+            {
+                return topStaff.ToArray();
+            }
+        }
+
+        public ChartValues<int> GetListTopStaffByMonth(string mm, string yy)
+        {
+            ChartValues<int> res = new ChartValues<int>();
+
+            try
+            {
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                   "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
+                   "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                   "GROUP BY Staff.ID, Staff.NAME " +
+                   "ORDER BY TOTAL ASC", mm, yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                string[] staffsID = this.GetListStaffIDByMonth(mm, yy);
+                int[] revenue = new int[staffsID.Length];
+                int numOfRows = data.Rows.Count;
+
+                int j = 0;
+                for (int i = 0; i < staffsID.Length && j < numOfRows; i++)
+                {
+                    if (staffsID[i] == data.Rows[j]["ID"].ToString())
+                    {
+                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        j++;
+                    }
+                }
+
+                res = new ChartValues<int>(revenue);
+                return res;
+            }
+            catch
+            {
+                return res;
+            }
+        }
+        public ChartValues<int> GetListTopStaffByYear(string yy)
+        {
+            ChartValues<int> res = new ChartValues<int>();
+
+            try
+            {
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                    "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "GROUP BY Staff.ID, Staff.NAME " +
+                    "ORDER BY TOTAL ASC", yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                string[] staffsID = this.GetListStaffIDByYear(yy);
+                int[] revenue = new int[staffsID.Length];
+                int numOfRows = data.Rows.Count;
+
+                int j = 0;
+                for (int i = 0; i < staffsID.Length && j < numOfRows; i++)
+                {
+                    if (staffsID[i] == data.Rows[j]["ID"].ToString())
+                    {
+                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        j++;
+                    }
+                }
+
+                res = new ChartValues<int>(revenue);
+                return res;
+            }
+            catch
+            {
+                return res;
+            }
         }
     }
 }
