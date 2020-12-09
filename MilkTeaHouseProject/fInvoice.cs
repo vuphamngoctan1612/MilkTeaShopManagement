@@ -26,13 +26,20 @@ namespace MilkTeaHouseProject
         public int TotalPrice { get => totalPrice; set => totalPrice = value; }
         public int StaffID { get => staffID; set => staffID = value; }
 
-        public fInvoice(string username, int billID, int totalPrice, int staffID)
+        int TableID;
+
+        public fInvoice(string username, int billID, int totalPrice, int staffID, int tableID)
         {
             InitializeComponent();
+
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
+
             this.Username = username;
             this.BillID = billID;
             this.TotalPrice = totalPrice;
             this.StaffID = staffID;
+            this.TableID = tableID;
 
             this.txtTotalPrice.Text = string.Format("{0:n0}", this.TotalPrice).ToString();
 
@@ -79,11 +86,19 @@ namespace MilkTeaHouseProject
         private void btnPay_Click(object sender, EventArgs e)
         {
             DateTime checkout = DateTime.Now;
-            bool status = true;
 
             try
             {
-                BillDAL.Instance.UpdateBill(this.BillID, checkout, status, this.TotalPrice, this.StaffID);
+                if (this.TableID != 1)
+                {
+                    BillDAL.Instance.UpdateBill(this.BillID, checkout, this.TotalPrice, this.StaffID, this.TableID);
+                    TableFoodDAL.Instance.UpdateTable(this.TableID);
+                }
+                else
+                {
+                    BillDAL.Instance.UpdateBillnoTableID(this.billID, checkout, this.totalPrice, this.staffID);
+                }
+                DrinkDAL.Instance.MinusCount(this.billID);
             }
             catch (SqlException ex)
             {
@@ -100,6 +115,8 @@ namespace MilkTeaHouseProject
         {
             string staffName = StaffDAL.Instance.GetNamebyUsername(this.Username);
             DateTime checkout = DateTime.Now;
+            string tableName = TableFoodDAL.Instance.GetNamebyIdTable(this.TableID);
+            string groupName = TableFoodDAL.Instance.GetNameGroupbyIdTable(this.TableID);
 
             this.easyHTMLReports.Clear();
             this.easyHTMLReports.AddString("<h1>MILKTEA HOUSE</h1>");
@@ -110,6 +127,7 @@ namespace MilkTeaHouseProject
             this.easyHTMLReports.AddString("<br>");
             this.easyHTMLReports.AddString(string.Format("<p>Nhân viên bán hàng: {0}</p>", staffName));
             this.easyHTMLReports.AddString(string.Format("<p>Ngày: {0}</p>", checkout));
+            this.easyHTMLReports.AddString(string.Format("<p>Bàn: {0}</p>", tableName + " " + groupName));
             this.easyHTMLReports.AddString("<br>");
             this.easyHTMLReports.AddLineBreak();
             this.easyHTMLReports.AddDatagridView(this.DataGridViewInvoices);

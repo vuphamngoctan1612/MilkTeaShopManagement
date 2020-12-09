@@ -32,7 +32,6 @@
             this.pnStaff = new System.Windows.Forms.Panel();
             this.flowLayoutPanelStaff = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbBirthDate = new Guna.UI.WinForms.GunaLabel();
             this.lbPosition = new Guna.UI.WinForms.GunaLabel();
             this.lbUserName = new Guna.UI.WinForms.GunaLabel();
             this.lbOvertime = new Guna.UI.WinForms.GunaLabel();
@@ -79,7 +78,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
-            this.panel1.Controls.Add(this.lbBirthDate);
             this.panel1.Controls.Add(this.lbPosition);
             this.panel1.Controls.Add(this.lbUserName);
             this.panel1.Controls.Add(this.lbOvertime);
@@ -93,17 +91,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1618, 39);
             this.panel1.TabIndex = 14;
-            // 
-            // lbBirthDate
-            // 
-            this.lbBirthDate.AutoSize = true;
-            this.lbBirthDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirthDate.Location = new System.Drawing.Point(332, 4);
-            this.lbBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbBirthDate.Name = "lbBirthDate";
-            this.lbBirthDate.Size = new System.Drawing.Size(98, 25);
-            this.lbBirthDate.TabIndex = 22;
-            this.lbBirthDate.Text = "Ngày sinh";
             // 
             // lbPosition
             // 
@@ -258,7 +245,7 @@
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(247, 33);
+            this.txtSearch.Size = new System.Drawing.Size(247, 34);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -281,7 +268,7 @@
             this.btnUpdateSalary.Location = new System.Drawing.Point(16, 14);
             this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateSalary.Name = "btnUpdateSalary";
-            this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnUpdateSalary.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnUpdateSalary.OnHoverForeColor = System.Drawing.Color.White;
             this.btnUpdateSalary.OnHoverImage = null;
@@ -312,7 +299,7 @@
             this.btSetSalary.Location = new System.Drawing.Point(216, 14);
             this.btSetSalary.Margin = new System.Windows.Forms.Padding(4);
             this.btSetSalary.Name = "btSetSalary";
-            this.btSetSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btSetSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btSetSalary.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btSetSalary.OnHoverForeColor = System.Drawing.Color.White;
             this.btSetSalary.OnHoverImage = null;
@@ -343,7 +330,7 @@
             this.btAdd.Location = new System.Drawing.Point(416, 14);
             this.btAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btAdd.Name = "btAdd";
-            this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btAdd.OnHoverForeColor = System.Drawing.Color.White;
             this.btAdd.OnHoverImage = null;
@@ -357,14 +344,15 @@
             // 
             // fStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1618, 880);
             this.Controls.Add(this.pnStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fStaff";
             this.Text = "NHÂN VIÊN";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.fStaff_Load);
             this.pnStaff.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -381,7 +369,6 @@
         private Guna.UI.WinForms.GunaLabel lbName;
         private Guna.UI.WinForms.GunaLabel lbID;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelStaff;
-        private Guna.UI.WinForms.GunaLabel lbBirthDate;
         private Guna.UI.WinForms.GunaLabel lbSalary;
         private Guna.UI.WinForms.GunaLabel lbFaust;
         private Guna.UI.WinForms.GunaLabel lbUserName;

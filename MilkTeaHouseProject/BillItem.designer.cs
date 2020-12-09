@@ -36,6 +36,7 @@
             this.lbDrinkID = new System.Windows.Forms.Label();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.btnDel = new Guna.UI.WinForms.GunaCircleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lbFoodName
@@ -101,7 +102,7 @@
             // 
             // gunaElipse1
             // 
-            this.gunaElipse1.Radius = 10;
+            this.gunaElipse1.Radius = 0;
             this.gunaElipse1.TargetControl = this;
             // 
             // btnDel
@@ -128,18 +129,28 @@
             this.btnDel.TabIndex = 4;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(635, 3);
+            this.panel1.TabIndex = 6;
+            // 
             // BillItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.lbDrinkID);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.count);
             this.Controls.Add(this.lbFoodName);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "BillItem";
             this.Size = new System.Drawing.Size(635, 71);
             this.ResumeLayout(false);
@@ -156,5 +167,6 @@
         private System.Windows.Forms.Label lbDrinkID;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaCircleButton btnDel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

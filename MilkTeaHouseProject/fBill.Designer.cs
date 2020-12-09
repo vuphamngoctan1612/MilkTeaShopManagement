@@ -336,7 +336,7 @@
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(247, 33);
+            this.txtSearch.Size = new System.Drawing.Size(247, 34);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.Text = "\r\n";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -365,7 +365,7 @@
             this.btnMakePayment.Location = new System.Drawing.Point(20, 9);
             this.btnMakePayment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMakePayment.Name = "btnMakePayment";
-            this.btnMakePayment.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.btnMakePayment.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnMakePayment.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnMakePayment.OnHoverForeColor = System.Drawing.Color.White;
             this.btnMakePayment.OnHoverImage = null;
@@ -401,7 +401,7 @@
             this.gunaAdvenceButton1.Location = new System.Drawing.Point(208, 9);
             this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton1.OnHoverImage = null;
@@ -415,8 +415,7 @@
             // 
             // fBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1294, 555);
             this.Controls.Add(this.pnBill);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -424,6 +423,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fBill";
             this.Text = "HÓA ĐƠN";
+            this.Load += new System.EventHandler(this.fBill_Load);
             this.pnBill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

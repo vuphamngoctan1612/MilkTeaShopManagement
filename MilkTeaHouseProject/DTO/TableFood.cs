@@ -12,10 +12,12 @@ namespace MilkTeaHouseProject.DTO
         private int iD;
         private string name;
         private bool status;
+        private string nameGroup;
 
         public int ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
         public bool Status { get => status; set => status = value; }
+        public string NameGroup { get => nameGroup; set => nameGroup = value; }
 
         public TableFood(int id, string name, bool status)
         {
@@ -28,7 +30,8 @@ namespace MilkTeaHouseProject.DTO
         {
             this.ID = (int)row["ID"];
             this.Name = row["Name"].ToString();
-            this.Status = (bool)row["Status"];   
+            this.Status = (bool)row["Status"];
+            this.nameGroup = row["NameGroup"].ToString();
         }
     }
 }

@@ -32,12 +32,17 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnHomePage = new System.Windows.Forms.Panel();
-            this.pnReport = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnTopStaff = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnTopDrink = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnSales = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.panelReport = new System.Windows.Forms.Panel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbCountonBill = new Guna.UI.WinForms.GunaLabel();
+            this.lbCountbill = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnTool = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -54,10 +59,16 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.pnContainName = new System.Windows.Forms.Panel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
+            this.revenueReport1 = new MilkTeaHouseProject.RevenueReport();
+            this.drinksReport1 = new MilkTeaHouseProject.DrinksReport();
+            this.staffReport1 = new MilkTeaHouseProject.StaffReport();
             this.panelBackground.SuspendLayout();
             this.pnDesktop.SuspendLayout();
             this.pnHomePage.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelReport.SuspendLayout();
+            this.gunaPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnTool.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.fpnControl.SuspendLayout();
@@ -75,7 +86,7 @@
             this.panelBackground.Location = new System.Drawing.Point(0, 0);
             this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(1338, 773);
+            this.panelBackground.Size = new System.Drawing.Size(1782, 803);
             this.panelBackground.TabIndex = 0;
             // 
             // pnDesktop
@@ -86,158 +97,146 @@
             this.pnDesktop.Location = new System.Drawing.Point(344, 101);
             this.pnDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDesktop.Name = "pnDesktop";
-            this.pnDesktop.Size = new System.Drawing.Size(994, 672);
+            this.pnDesktop.Size = new System.Drawing.Size(1438, 702);
             this.pnDesktop.TabIndex = 4;
             // 
             // pnHomePage
             // 
-            this.pnHomePage.BackColor = System.Drawing.Color.White;
-            this.pnHomePage.Controls.Add(this.pnReport);
-            this.pnHomePage.Controls.Add(this.panel2);
+            this.pnHomePage.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnHomePage.Controls.Add(this.panelReport);
+            this.pnHomePage.Controls.Add(this.gunaPanel1);
             this.pnHomePage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnHomePage.Location = new System.Drawing.Point(0, 0);
             this.pnHomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnHomePage.Name = "pnHomePage";
-            this.pnHomePage.Size = new System.Drawing.Size(994, 672);
+            this.pnHomePage.Size = new System.Drawing.Size(1438, 702);
             this.pnHomePage.TabIndex = 2;
             this.pnHomePage.SizeChanged += new System.EventHandler(this.pnHomePage_SizeChanged);
             // 
-            // pnReport
+            // panelReport
             // 
-            this.pnReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnReport.Location = new System.Drawing.Point(0, 84);
-            this.pnReport.Name = "pnReport";
-            this.pnReport.Size = new System.Drawing.Size(994, 588);
-            this.pnReport.TabIndex = 4;
+            this.panelReport.AutoScroll = true;
+            this.panelReport.Controls.Add(this.staffReport1);
+            this.panelReport.Controls.Add(this.revenueReport1);
+            this.panelReport.Controls.Add(this.drinksReport1);
+            this.panelReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelReport.Location = new System.Drawing.Point(0, 142);
+            this.panelReport.Name = "panelReport";
+            this.panelReport.Size = new System.Drawing.Size(1438, 560);
+            this.panelReport.TabIndex = 1;
             // 
-            // panel2
+            // gunaPanel1
             // 
-            this.panel2.Controls.Add(this.btnTopStaff);
-            this.panel2.Controls.Add(this.btnTopDrink);
-            this.panel2.Controls.Add(this.btnSales);
-            this.panel2.Controls.Add(this.gunaLabel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(994, 84);
-            this.panel2.TabIndex = 3;
+            this.gunaPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gunaPanel1.Controls.Add(this.panel5);
+            this.gunaPanel1.Controls.Add(this.lbCountonBill);
+            this.gunaPanel1.Controls.Add(this.lbCountbill);
+            this.gunaPanel1.Controls.Add(this.gunaLabel2);
+            this.gunaPanel1.Controls.Add(this.gunaLabel3);
+            this.gunaPanel1.Controls.Add(this.gunaLabel1);
+            this.gunaPanel1.Controls.Add(this.pictureBox2);
+            this.gunaPanel1.Controls.Add(this.pictureBox1);
+            this.gunaPanel1.Controls.Add(this.label1);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(1438, 142);
+            this.gunaPanel1.TabIndex = 0;
             // 
-            // btnTopStaff
+            // panel5
             // 
-            this.btnTopStaff.AnimationHoverSpeed = 0.07F;
-            this.btnTopStaff.AnimationSpeed = 0.03F;
-            this.btnTopStaff.BackColor = System.Drawing.Color.Transparent;
-            this.btnTopStaff.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
-            this.btnTopStaff.BorderColor = System.Drawing.Color.Black;
-            this.btnTopStaff.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnTopStaff.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnTopStaff.CheckedForeColor = System.Drawing.Color.White;
-            this.btnTopStaff.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnTopStaff.CheckedImage")));
-            this.btnTopStaff.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnTopStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTopStaff.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTopStaff.FocusedColor = System.Drawing.Color.Empty;
-            this.btnTopStaff.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTopStaff.ForeColor = System.Drawing.Color.White;
-            this.btnTopStaff.Image = null;
-            this.btnTopStaff.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnTopStaff.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnTopStaff.Location = new System.Drawing.Point(209, 21);
-            this.btnTopStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTopStaff.Name = "btnTopStaff";
-            this.btnTopStaff.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
-            this.btnTopStaff.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnTopStaff.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnTopStaff.OnHoverImage = null;
-            this.btnTopStaff.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnTopStaff.OnPressedColor = System.Drawing.Color.Black;
-            this.btnTopStaff.Radius = 7;
-            this.btnTopStaff.Size = new System.Drawing.Size(189, 34);
-            this.btnTopStaff.TabIndex = 3;
-            this.btnTopStaff.Text = "Top nhân viên";
-            this.btnTopStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnTopStaff.Click += new System.EventHandler(this.btnTopStaff_Click);
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel5.Location = new System.Drawing.Point(304, 57);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(2, 64);
+            this.panel5.TabIndex = 4;
             // 
-            // btnTopDrink
+            // lbCountonBill
             // 
-            this.btnTopDrink.AnimationHoverSpeed = 0.07F;
-            this.btnTopDrink.AnimationSpeed = 0.03F;
-            this.btnTopDrink.BackColor = System.Drawing.Color.Transparent;
-            this.btnTopDrink.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
-            this.btnTopDrink.BorderColor = System.Drawing.Color.Black;
-            this.btnTopDrink.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnTopDrink.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnTopDrink.CheckedForeColor = System.Drawing.Color.White;
-            this.btnTopDrink.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnTopDrink.CheckedImage")));
-            this.btnTopDrink.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnTopDrink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTopDrink.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTopDrink.FocusedColor = System.Drawing.Color.Empty;
-            this.btnTopDrink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTopDrink.ForeColor = System.Drawing.Color.White;
-            this.btnTopDrink.Image = null;
-            this.btnTopDrink.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnTopDrink.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnTopDrink.Location = new System.Drawing.Point(14, 21);
-            this.btnTopDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTopDrink.Name = "btnTopDrink";
-            this.btnTopDrink.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
-            this.btnTopDrink.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnTopDrink.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnTopDrink.OnHoverImage = null;
-            this.btnTopDrink.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnTopDrink.OnPressedColor = System.Drawing.Color.Black;
-            this.btnTopDrink.Radius = 7;
-            this.btnTopDrink.Size = new System.Drawing.Size(189, 34);
-            this.btnTopDrink.TabIndex = 3;
-            this.btnTopDrink.Text = "Top bán chạy";
-            this.btnTopDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnTopDrink.Click += new System.EventHandler(this.btnTopDrink_Click);
+            this.lbCountonBill.AutoSize = true;
+            this.lbCountonBill.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountonBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.lbCountonBill.Location = new System.Drawing.Point(445, 80);
+            this.lbCountonBill.Name = "lbCountonBill";
+            this.lbCountonBill.Size = new System.Drawing.Size(23, 25);
+            this.lbCountonBill.TabIndex = 3;
+            this.lbCountonBill.Text = "0";
             // 
-            // btnSales
+            // lbCountbill
             // 
-            this.btnSales.AnimationHoverSpeed = 0.07F;
-            this.btnSales.AnimationSpeed = 0.03F;
-            this.btnSales.BackColor = System.Drawing.Color.Transparent;
-            this.btnSales.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
-            this.btnSales.BorderColor = System.Drawing.Color.Black;
-            this.btnSales.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnSales.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnSales.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSales.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSales.CheckedImage")));
-            this.btnSales.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSales.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSales.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Image = null;
-            this.btnSales.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSales.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSales.Location = new System.Drawing.Point(404, 21);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(115)))), ((int)(((byte)(54)))));
-            this.btnSales.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSales.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSales.OnHoverImage = null;
-            this.btnSales.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSales.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSales.Radius = 7;
-            this.btnSales.Size = new System.Drawing.Size(189, 34);
-            this.btnSales.TabIndex = 3;
-            this.btnSales.Text = "Doanh số";
-            this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            this.lbCountbill.AutoSize = true;
+            this.lbCountbill.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountbill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.lbCountbill.Location = new System.Drawing.Point(137, 80);
+            this.lbCountbill.Name = "lbCountbill";
+            this.lbCountbill.Size = new System.Drawing.Size(23, 25);
+            this.lbCountbill.TabIndex = 3;
+            this.lbCountbill.Text = "0";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel2.Location = new System.Drawing.Point(137, 106);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(83, 20);
+            this.gunaLabel2.TabIndex = 3;
+            this.gunaLabel2.Text = "Hôm qua 0";
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gunaLabel3.Location = new System.Drawing.Point(445, 57);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(155, 20);
+            this.gunaLabel3.TabIndex = 3;
+            this.gunaLabel3.Text = "Số đơn đang phục vụ";
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(28, 21);
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gunaLabel1.Location = new System.Drawing.Point(137, 57);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(0, 25);
-            this.gunaLabel1.TabIndex = 2;
+            this.gunaLabel1.Size = new System.Drawing.Size(117, 20);
+            this.gunaLabel1.TabIndex = 3;
+            this.gunaLabel1.Text = "Số đơn đã xong";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MilkTeaHouseProject.Properties.Resources.pebgreen;
+            this.pictureBox2.Location = new System.Drawing.Point(350, 57);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(82, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MilkTeaHouseProject.Properties.Resources.moneblue;
+            this.pictureBox1.Location = new System.Drawing.Point(52, 62);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(435, 36);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "KẾT QUẢ BÁN HÀNG HÔM NAY";
             // 
             // pnTool
             // 
@@ -251,7 +250,7 @@
             this.pnTool.Location = new System.Drawing.Point(344, 0);
             this.pnTool.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTool.Name = "pnTool";
-            this.pnTool.Size = new System.Drawing.Size(994, 101);
+            this.pnTool.Size = new System.Drawing.Size(1438, 101);
             this.pnTool.TabIndex = 3;
             this.pnTool.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -277,7 +276,7 @@
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(949, 2);
+            this.btnExit.Location = new System.Drawing.Point(1393, 2);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
@@ -299,7 +298,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(851, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(1295, 1);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(48, 37);
@@ -317,7 +316,7 @@
             this.btnZoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZoom.ForeColor = System.Drawing.Color.White;
-            this.btnZoom.Location = new System.Drawing.Point(899, 1);
+            this.btnZoom.Location = new System.Drawing.Point(1343, 1);
             this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZoom.Name = "btnZoom";
             this.btnZoom.Size = new System.Drawing.Size(48, 37);
@@ -332,7 +331,7 @@
             this.lbButtonSelected.AutoSize = true;
             this.lbButtonSelected.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbButtonSelected.ForeColor = System.Drawing.Color.White;
-            this.lbButtonSelected.Location = new System.Drawing.Point(443, 35);
+            this.lbButtonSelected.Location = new System.Drawing.Point(665, 35);
             this.lbButtonSelected.Name = "lbButtonSelected";
             this.lbButtonSelected.Size = new System.Drawing.Size(96, 37);
             this.lbButtonSelected.TabIndex = 9;
@@ -348,7 +347,7 @@
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(344, 773);
+            this.panelControl.Size = new System.Drawing.Size(344, 803);
             this.panelControl.TabIndex = 0;
             // 
             // fpnControl
@@ -362,7 +361,7 @@
             this.fpnControl.Location = new System.Drawing.Point(0, 219);
             this.fpnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fpnControl.Name = "fpnControl";
-            this.fpnControl.Size = new System.Drawing.Size(344, 554);
+            this.fpnControl.Size = new System.Drawing.Size(344, 584);
             this.fpnControl.TabIndex = 17;
             // 
             // btnMenu
@@ -569,26 +568,57 @@
             this.lbName.Text = "MilkTeaHouse";
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
+            // revenueReport1
+            // 
+            this.revenueReport1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.revenueReport1.Flag = 0;
+            this.revenueReport1.Location = new System.Drawing.Point(0, 304);
+            this.revenueReport1.Name = "revenueReport1";
+            this.revenueReport1.Size = new System.Drawing.Size(1417, 273);
+            this.revenueReport1.TabIndex = 1;
+            // 
+            // drinksReport1
+            // 
+            this.drinksReport1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.drinksReport1.Flag = 0;
+            this.drinksReport1.Location = new System.Drawing.Point(0, 0);
+            this.drinksReport1.Name = "drinksReport1";
+            this.drinksReport1.Size = new System.Drawing.Size(1417, 304);
+            this.drinksReport1.TabIndex = 0;
+            // 
+            // staffReport1
+            // 
+            this.staffReport1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.staffReport1.Flag = 0;
+            this.staffReport1.Location = new System.Drawing.Point(0, 577);
+            this.staffReport1.Name = "staffReport1";
+            this.staffReport1.Size = new System.Drawing.Size(1417, 354);
+            this.staffReport1.TabIndex = 1;
+            // 
             // fMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1338, 773);
+            this.ClientSize = new System.Drawing.Size(1782, 803);
             this.Controls.Add(this.panelBackground);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1246, 729);
+            this.MinimumSize = new System.Drawing.Size(1246, 727);
             this.Name = "fMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fMain_Load);
+            this.Shown += new System.EventHandler(this.fMain_Shown);
             this.panelBackground.ResumeLayout(false);
             this.pnDesktop.ResumeLayout(false);
             this.pnHomePage.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelReport.ResumeLayout(false);
+            this.gunaPanel1.ResumeLayout(false);
+            this.gunaPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnTool.ResumeLayout(false);
             this.pnTool.PerformLayout();
             this.panelControl.ResumeLayout(false);
@@ -622,12 +652,20 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private Guna.UI.WinForms.GunaLabel lbDisplay;
         private System.Windows.Forms.Panel pnHomePage;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI.WinForms.GunaLabel lbCountonBill;
+        private Guna.UI.WinForms.GunaLabel lbCountbill;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.Panel pnReport;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI.WinForms.GunaAdvenceButton btnTopStaff;
-        private Guna.UI.WinForms.GunaAdvenceButton btnTopDrink;
-        private Guna.UI.WinForms.GunaAdvenceButton btnSales;
+        private System.Windows.Forms.Panel panelReport;
+        private DrinksReport drinksReport1;
+        private RevenueReport revenueReport1;
+        private StaffReport staffReport1;
     }
 }
 

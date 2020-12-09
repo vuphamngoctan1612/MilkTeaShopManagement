@@ -22,6 +22,13 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
 
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+
+            foreach (Position pos in positions)
+            {
+                this.cbbStaff.Items.Add(pos.Name);
+            }
+
             this.cbbStaff.Text = "Thu ngân";
         }
 
@@ -134,6 +141,54 @@ namespace MilkTeaHouseProject
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            if (txtName.Visible == false)
+            {
+                this.txtName.Visible = true;
+                this.cbbStaff.Visible = false;
+                this.btSave.Visible = false;
+                this.btnAdd.Visible = true;
+            }
+            else
+            {
+                this.txtName.Visible = false;
+                this.cbbStaff.Visible = true;
+                this.btSave.Visible = true;
+                this.btnAdd.Visible = false;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string pos = this.txtName.Text;
+            int salary = ConvertToNumber(this.txtSalary.Text);
+            int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+            int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+            if (string.IsNullOrEmpty(pos))
+            {
+                MessageBox.Show("Nhập vị trí công việc");
+            }    
+            else
+            {
+                try
+                {
+                    PositionDAL.Instance.AddPosition(pos, salary, overTimeSalary, minusSalary);
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Trùng vị trí trước đó");
+                }
+            }    
+        }
+
+        private void fSetSalary_Load(object sender, EventArgs e)
+        {
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
         }
         #endregion
     }

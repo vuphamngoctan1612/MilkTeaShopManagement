@@ -13,9 +13,13 @@ using MilkTeaHouseProject.DAL;
 
 namespace MilkTeaHouseProject
 {
-    public partial class SalesReport : UserControl
+    public partial class RevenueReport : UserControl
     {
-        public SalesReport()
+        private int flag;
+        
+        public int Flag { get => flag; set => flag = value; }
+
+        public RevenueReport()
         {
             InitializeComponent();
         }
@@ -132,61 +136,91 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Event
-        private void SalesReport_Load(object sender, EventArgs e)
+        private void lbSalesMonth_Click(object sender, EventArgs e)
         {
-            string month = DateTime.Now.Month.ToString();
-            string year = DateTime.Now.Year.ToString();
+            foreach (Control item in pnContainSales.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
 
-            this.cbbPeriod.Text = "Tháng";
-            this.cbbTime.Text = month;
-
-            LoadChartColumnByMonth(month, year);
-        }
-
-        private void cbbPeriod_SelectedIndexChanged(object sender, EventArgs e)
-        {
             this.cbbTime.Items.Clear();
-            //month
-            if (this.cbbPeriod.SelectedIndex == 0)
+
+            for (int i = 0; i < 12; i++)
             {
-                for (int i = 0; i < DateTime.Now.Month; i++)
-                {
-                    this.cbbTime.Items.Add((i + 1).ToString());
-                }
+                this.cbbTime.Items.Add(i + 1);
             }
-            else
+
+            this.Flag = 0;  //flag == 0 => month            
+        }
+        private void lbSalesSeason_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainSales.Controls)
             {
-                int currentYear = DateTime.Now.Year;
-                this.cbbTime.Items.Add(currentYear - 2);
-                this.cbbTime.Items.Add(currentYear - 1);
-                this.cbbTime.Items.Add(currentYear);
+                item.ForeColor = Color.Black;
             }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+
+            this.cbbTime.Items.Clear();
+
+            int currentYear = DateTime.Now.Year;
+            this.cbbTime.Items.Add(currentYear - 2);
+            this.cbbTime.Items.Add(currentYear - 1);
+            this.cbbTime.Items.Add(currentYear);
+
+            this.Flag = 1;  //flag == 0 => quarter            
+        }
+        private void lbSalesYear_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnContainSales.Controls)
+            {
+                item.ForeColor = Color.Black;
+            }
+            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
+
+            this.cbbTime.Items.Clear();
+
+            int currentYear = DateTime.Now.Year;
+            this.cbbTime.Items.Add(currentYear - 2);
+            this.cbbTime.Items.Add(currentYear - 1);
+            this.cbbTime.Items.Add(currentYear);
+
+            this.Flag = 2;  //flag == 0 => year            
         }
 
         private void cbbTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //month            
-            if (this.cbbPeriod.SelectedIndex == 0)
+        {            
+            if (this.Flag == 0)
             {
                 string month = this.cbbTime.Text;
                 string year = DateTime.Now.Year.ToString();
 
                 LoadChartColumnByMonth(month, year);
             }
-            //year
-            else if (this.cbbPeriod.SelectedIndex == 1)
+            if (this.Flag == 1)
             {
                 string year = this.cbbTime.Text;
 
                 LoadChartColumnByQuarter(year);
             }
-            if (this.cbbPeriod.SelectedIndex == 2)
+            if (this.Flag == 2)
             {
                 string year = this.cbbTime.Text;
 
                 LoadChartColumnByYear(year);
             }
         }
+
+        private void RevenueReport_Load(object sender, EventArgs e)
+        {
+            string month = DateTime.Now.Month.ToString();
+            string year = DateTime.Now.Year.ToString();
+
+            this.cbbTime.Text = month;
+
+            LoadChartColumnByMonth(month, year);
+        }
         #endregion
+
     }
 }

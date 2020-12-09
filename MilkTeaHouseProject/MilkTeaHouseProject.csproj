@@ -57,6 +57,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,6 +84,7 @@
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DrinkDAL.cs" />
+    <Compile Include="DAL\GroupTableDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
     <Compile Include="DAL\ReportDAL.cs" />
@@ -94,23 +96,48 @@
     <Compile Include="DrinkItem.Designer.cs">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="DrinkReport.cs">
+    <Compile Include="DrinksReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DrinkReport.Designer.cs">
-      <DependentUpon>DrinkReport.cs</DependentUpon>
+    <Compile Include="DrinksReport.Designer.cs">
+      <DependentUpon>DrinksReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="DropShadow.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
     <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Encryptor.cs" />
+    <Compile Include="DTO\GroupTable.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Position.cs" />
-    <Compile Include="DTO\Report.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\TableFood.cs" />
+    <Compile Include="fAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddTable.Designer.cs">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RevenueReport.Designer.cs">
+      <DependentUpon>RevenueReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffReport.Designer.cs">
+      <DependentUpon>StaffReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableItem.Designer.cs">
+      <DependentUpon>TableItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,29 +162,11 @@
     <Compile Include="fBill.Designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCategory.Designer.cs">
-      <DependentUpon>fCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="fDelCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fDelCategory.Designer.cs">
       <DependentUpon>fDelCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fEditDrink.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fEditDrink.Designer.cs">
-      <DependentUpon>fEditDrink.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fEditStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fEditStaff.Designer.cs">
-      <DependentUpon>fEditStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="fInvoice.cs">
       <SubType>Form</SubType>
@@ -233,12 +242,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SalesReport.Designer.cs">
-      <DependentUpon>SalesReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="StaffItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -255,8 +258,8 @@
     <EmbeddedResource Include="DrinkItem.resx">
       <DependentUpon>DrinkItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DrinkReport.resx">
-      <DependentUpon>DrinkReport.cs</DependentUpon>
+    <EmbeddedResource Include="DrinksReport.resx">
+      <DependentUpon>DrinksReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
@@ -267,20 +270,14 @@
     <EmbeddedResource Include="fAddStaff.resx">
       <DependentUpon>fAddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fAddTable.resx">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fCategory.resx">
-      <DependentUpon>fCategory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fDelCategory.resx">
       <DependentUpon>fDelCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fEditDrink.resx">
-      <DependentUpon>fEditDrink.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fEditStaff.resx">
-      <DependentUpon>fEditStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fInvoice.resx">
       <DependentUpon>fInvoice.cs</DependentUpon>
@@ -328,11 +325,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SalesReport.resx">
-      <DependentUpon>SalesReport.cs</DependentUpon>
+    <EmbeddedResource Include="RevenueReport.resx">
+      <DependentUpon>RevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffItem.resx">
       <DependentUpon>StaffItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffReport.resx">
+      <DependentUpon>StaffReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableItem.resx">
+      <DependentUpon>TableItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -455,6 +458,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\searchlue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableWhile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand_Arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse_Arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pebgreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
