@@ -229,5 +229,10 @@ namespace MilkTeaHouseProject
         }
         #endregion
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            fExport frm = new fExport();
+            frm.ShowDialog();
+        }
     }
 }
