@@ -33,5 +33,16 @@ namespace MilkTeaHouseProject.Properties {
                 return ((string)(this["AppData"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-1VC7CBQ8\\QUANG_UIT_K14;Initial Catalog=MilkteaManagement;Integ" +
+            "rated Security=True")]
+        public string MilkteaManagementConnectionString {
+            get {
+                return ((string)(this["MilkteaManagementConnectionString"]));
+            }
+        }
     }
 }

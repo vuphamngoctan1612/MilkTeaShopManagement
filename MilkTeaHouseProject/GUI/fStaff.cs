@@ -231,8 +231,45 @@ namespace MilkTeaHouseProject
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            //fExport frm = new fExport();
-            //frm.ShowDialog();
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    object misValue = System.Reflection.Missing.Value;
+                    Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+                    application.Visible = false;
+                    Microsoft.Office.Interop.Excel.Workbook workbook = application.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+                    Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+
+                    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ID as N'Mã nhân viên', Name as N'Tên', BIRTHDATE as N'Ngày sinh', POSITION as N'Vị trí', USERNAME as N'Tên đăng nhập', OVERTIME as N'Giờ tăng ca', SalaryReceived as N'Lương nhận được', Fault as N'Lỗi', PhoneNumber as N'Số điện thoại', CMND as N'Chứng minh nhân dân', Sex as N'Giới tính', Address as N'Địa chỉ' FROM Staff");
+
+                    worksheet = application.Worksheets.Add(misValue, misValue, misValue, misValue);
+                    worksheet.Name = "Staff";
+                    for (int i = 0; i < data.Columns.Count; i++)
+                    {
+                        worksheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                    }
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < data.Columns.Count; j++)
+                        {
+                            if (data.Rows[i][j].ToString() == "True")
+                            {
+                                worksheet.Cells[i + 2, j + 1] = "Nam";
+                            }
+                            else if (data.Rows[i][j].ToString() == "False")
+                            {
+                                worksheet.Cells[i + 2, j + 1] = "Nữ";
+                            }
+                            else
+                            {
+                                worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
+                            }
+                        }
+                    }
+                    workbook.SaveAs(sfd.FileName);
+                }
+            }
         }
     }
 }

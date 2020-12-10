@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaShopManagement.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -148,5 +149,47 @@ namespace MilkTeaHouseProject
             loadBill();
         }
         #endregion
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    object misValue = System.Reflection.Missing.Value;
+                    Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+                    application.Visible = false;
+                    Microsoft.Office.Interop.Excel.Workbook workbook = application.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+                    Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+
+                    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ID as N'Mã hóa đơn', STAFFID as N'Mã nhân viên', CHECKOUT as N'Thời gian', STATUS as N'Trạng thái', TOTAL as N'Tổng', NOTE as N'Ghi chú' FROM Bill");
+                    worksheet = application.Worksheets.Add(misValue, misValue, misValue, misValue);
+                    worksheet.Name = "Staff";
+                    for (int i = 0; i < data.Columns.Count; i++)
+                    {
+                        worksheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                    }
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < data.Columns.Count; j++)
+                        {
+                            if (data.Rows[i][j].ToString() == "True")
+                            {
+                                worksheet.Cells[i + 2, j + 1] = "Đã thanh toán";
+                            }
+                            else if (data.Rows[i][j].ToString() == "False")
+                            {
+                                worksheet.Cells[i + 2, j + 1] = "Chưa thanh toán";
+                            }
+                            else
+                            {
+                                worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
+                            }
+                        }
+                    }
+                    workbook.SaveAs(sfd.FileName);
+                }
+            }
+        }
     }
 }

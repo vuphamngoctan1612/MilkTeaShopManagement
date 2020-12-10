@@ -117,12 +117,6 @@
     <Compile Include="GUI\DrinkReport.Designer.cs">
       <DependentUpon>DrinkReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\fExport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\fExport.Designer.cs">
-      <DependentUpon>fExport.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAL\GroupTableDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
@@ -292,9 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DrinkReport.resx">
       <DependentUpon>DrinkReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fExport.resx">
-      <DependentUpon>fExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DrinkItem.dje.resx">
       <DependentUpon>DrinkItem.cs</DependentUpon>

@@ -788,9 +788,7 @@ C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Deb
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
@@ -998,3 +996,23 @@ C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.cs
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
