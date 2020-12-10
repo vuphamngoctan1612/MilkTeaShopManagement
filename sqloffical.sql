@@ -378,3 +378,9 @@ insert into Position
 values (N'Quản Lý', 0,0,0);
 insert into Staff
 values (1, N'Thế ANh',null,'10-01-2020',N'Quản Lý','admin',0,0,0,'0');
+SELECT ID as N'Mã nhân viên',Name as N'Tên', BIRTHDATE as N'Ngày sinh', POSITION as N'Vị trí', USERNAME as N'Tên đăng nhập', OVERTIME as N'Giờ tăng ca', SalaryReceived as N'Lương nhận được', Fault as N'Lỗi', PhoneNumber as N'Số điện thoại', CMND as N'Chứng minh nhân dân', Sex as N'Giới tính', Address as N'Địa chỉ' 
+FROM Staff
+ALTER TABLE Bill
+ALTER COLUMN NOTE NVARCHAR(1000);
+SELECT * FROM Bill;
+SELECT ID as N'Mã hóa đơn', STAFFID as N'Mã nhân viên', CHECKOUT as N'Thời gian', STATUS as N'Trạng thái', TOTAL as N'Tổng', NOTE as N'Ghi chú' FROM Bill

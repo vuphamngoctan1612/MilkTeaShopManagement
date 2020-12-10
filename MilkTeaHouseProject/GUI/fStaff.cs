@@ -159,6 +159,7 @@ namespace MilkTeaHouseProject
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
+            
             int id = ((sender as StaffItem).Tag as Staff).ID;
             string name = ((sender as StaffItem).Tag as Staff).Name;
             DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
@@ -172,6 +173,7 @@ namespace MilkTeaHouseProject
             string phoneNumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
             fAddStaff frm = new fAddStaff( id,  name,  image,  birthDate,  pos,  phonenumber,  username,  cmnd,  sex,  address);
             frm.btEdit.Visible = true;
+            frm.lbNameForm.Text = "Sửa thông tin nhân viên";
             frm.ShowDialog();
 
             this.flowLayoutPanelStaff.Controls.Clear();

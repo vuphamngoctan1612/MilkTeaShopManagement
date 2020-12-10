@@ -452,7 +452,7 @@ namespace MilkTeaHouseProject
         #endregion
 
         private System.Windows.Forms.Panel pn;
-        private System.Windows.Forms.Label lbNameForm;
+        public System.Windows.Forms.Label lbNameForm;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private Guna.UI.WinForms.GunaAdvenceButton btSave;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;

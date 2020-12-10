@@ -235,6 +235,7 @@ namespace MilkTeaHouseProject
         private void btAddPosition_Click(object sender, EventArgs e)
         {
             fSetSalary frm = new fSetSalary();
+            frm.lbNameForm.Text = "Thêm vị trí";
             frm.ShowDialog();
             List<Position> positions = PositionDAL.Instance.GetListPosistion();
             this.cbbPos.Items.Clear();
@@ -321,6 +322,22 @@ namespace MilkTeaHouseProject
             shadow.ApplyShadows(this);
 
 
+        }
+
+        private void cbMan_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.cbMan.Checked == true)
+            {
+                this.cbWoman.Checked = false;
+            }    
+        }
+
+        private void cbWoman_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.cbWoman.Checked == true)
+            {
+                this.cbMan.Checked = false;
+            }    
         }
     }
 }
