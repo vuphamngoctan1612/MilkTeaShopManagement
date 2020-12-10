@@ -87,7 +87,7 @@ namespace MilkTeaHouseProject.DAL
         }
 
         //Top món ăn bán chạy
-            //theo số lượng
+        //theo số lượng
         public string[] GetListCountDrinkNameByMonth(string mm, string yy)
         {
             List<string> drinks = new List<string>();
@@ -146,12 +146,6 @@ namespace MilkTeaHouseProject.DAL
             List<string> drinks = new List<string>();
             try
             {
-                //string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
-                //    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
-                //    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
-                //    "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
-                //    "GROUP BY BillInfo.DRINKID" +
-                //    "ORDER BY COUNT DESC", mm, yy);
                 string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
                     "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
                     "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
@@ -270,7 +264,7 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-            //theo doanh thu
+        //theo doanh thu
         public string[] GetListRevenueDrinkNameByMonth(string mm, string yy)
         {
             List<string> drinks = new List<string>();

@@ -243,7 +243,7 @@ namespace MilkTeaHouseProject.DAL
                     "ORDER BY TOTAL ASC", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-                foreach(DataRow row in data.Rows)
+                foreach (DataRow row in data.Rows)
                 {
                     topStaff.Add(row["ID"].ToString());
                 }
