@@ -32,6 +32,7 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnHomePage = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -58,13 +59,13 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.pnContainName = new System.Windows.Forms.Panel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.drinksReport1 = new MilkTeaHouseProject.DrinksReport();
             this.revenueReport1 = new MilkTeaHouseProject.RevenueReport();
+            this.drinksReport1 = new MilkTeaHouseProject.DrinksReport();
             this.staffReport1 = new MilkTeaHouseProject.StaffReport();
             this.panelBackground.SuspendLayout();
             this.pnDesktop.SuspendLayout();
             this.pnHomePage.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +74,6 @@
             this.fpnControl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnContainName.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -112,6 +112,18 @@
             this.pnHomePage.Size = new System.Drawing.Size(994, 672);
             this.pnHomePage.TabIndex = 2;
             this.pnHomePage.SizeChanged += new System.EventHandler(this.pnHomePage_SizeChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.staffReport1);
+            this.panel2.Controls.Add(this.drinksReport1);
+            this.panel2.Controls.Add(this.revenueReport1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 142);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(994, 530);
+            this.panel2.TabIndex = 1;
             // 
             // gunaPanel1
             // 
@@ -556,43 +568,28 @@
             this.lbName.Text = "MilkTeaHouse";
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
-            // panel2
+            // revenueReport1
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.staffReport1);
-            this.panel2.Controls.Add(this.revenueReport1);
-            this.panel2.Controls.Add(this.drinksReport1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 142);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(994, 530);
-            this.panel2.TabIndex = 1;
+            this.revenueReport1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.revenueReport1.Location = new System.Drawing.Point(0, 0);
+            this.revenueReport1.Name = "revenueReport1";
+            this.revenueReport1.Size = new System.Drawing.Size(973, 527);
+            this.revenueReport1.TabIndex = 0;
             // 
             // drinksReport1
             // 
             this.drinksReport1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.drinksReport1.Flag = 0;
-            this.drinksReport1.Location = new System.Drawing.Point(0, 0);
+            this.drinksReport1.Location = new System.Drawing.Point(0, 527);
             this.drinksReport1.Name = "drinksReport1";
-            this.drinksReport1.Size = new System.Drawing.Size(973, 425);
-            this.drinksReport1.TabIndex = 0;
-            // 
-            // revenueReport1
-            // 
-            this.revenueReport1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.revenueReport1.Flag = 0;
-            this.revenueReport1.Location = new System.Drawing.Point(0, 425);
-            this.revenueReport1.Name = "revenueReport1";
-            this.revenueReport1.Size = new System.Drawing.Size(973, 487);
-            this.revenueReport1.TabIndex = 1;
+            this.drinksReport1.Size = new System.Drawing.Size(973, 521);
+            this.drinksReport1.TabIndex = 1;
             // 
             // staffReport1
             // 
             this.staffReport1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.staffReport1.Flag = 0;
-            this.staffReport1.Location = new System.Drawing.Point(0, 912);
+            this.staffReport1.Location = new System.Drawing.Point(0, 1048);
             this.staffReport1.Name = "staffReport1";
-            this.staffReport1.Size = new System.Drawing.Size(973, 332);
+            this.staffReport1.Size = new System.Drawing.Size(973, 514);
             this.staffReport1.TabIndex = 2;
             // 
             // fMain
@@ -614,6 +611,7 @@
             this.panelBackground.ResumeLayout(false);
             this.pnDesktop.ResumeLayout(false);
             this.pnHomePage.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -626,7 +624,6 @@
             this.panel1.PerformLayout();
             this.pnContainName.ResumeLayout(false);
             this.pnContainName.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -664,8 +661,8 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private System.Windows.Forms.Panel panel2;
         private StaffReport staffReport1;
-        private RevenueReport revenueReport1;
         private DrinksReport drinksReport1;
+        private RevenueReport revenueReport1;
     }
 }
 

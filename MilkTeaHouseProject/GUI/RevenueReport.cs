@@ -15,10 +15,6 @@ namespace MilkTeaHouseProject
 {
     public partial class RevenueReport : UserControl
     {
-        private int flag;
-
-        public int Flag { get => flag; set => flag = value; }
-
         public RevenueReport()
         {
             InitializeComponent();
@@ -136,89 +132,76 @@ namespace MilkTeaHouseProject
         #endregion
 
         #region Event
-        private void lbSalesMonth_Click(object sender, EventArgs e)
-        {
-            foreach (Control item in pnContainSales.Controls)
-            {
-                item.ForeColor = Color.Black;
-            }
-            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
-
-            this.cbbTime.Items.Clear();
-
-            for (int i = 0; i < 12; i++)
-            {
-                this.cbbTime.Items.Add(i + 1);
-            }
-
-            this.Flag = 0;  //flag == 0 => month            
-        }
-        private void lbSalesSeason_Click(object sender, EventArgs e)
-        {
-            foreach (Control item in pnContainSales.Controls)
-            {
-                item.ForeColor = Color.Black;
-            }
-            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
-
-            this.cbbTime.Items.Clear();
-
-            int currentYear = DateTime.Now.Year;
-            this.cbbTime.Items.Add(currentYear - 2);
-            this.cbbTime.Items.Add(currentYear - 1);
-            this.cbbTime.Items.Add(currentYear);
-
-            this.Flag = 1;  //flag == 0 => quarter            
-        }
-        private void lbSalesYear_Click(object sender, EventArgs e)
-        {
-            foreach (Control item in pnContainSales.Controls)
-            {
-                item.ForeColor = Color.Black;
-            }
-            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
-
-            this.cbbTime.Items.Clear();
-
-            int currentYear = DateTime.Now.Year;
-            this.cbbTime.Items.Add(currentYear - 2);
-            this.cbbTime.Items.Add(currentYear - 1);
-            this.cbbTime.Items.Add(currentYear);
-
-            this.Flag = 2;  //flag == 0 => year            
-        }
-
-        private void cbbTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Flag == 0)
-            {
-                string month = this.cbbTime.Text;
-                string year = DateTime.Now.Year.ToString();
-
-                LoadChartColumnByMonth(month, year);
-            }
-            if (this.Flag == 1)
-            {
-                string year = this.cbbTime.Text;
-
-                LoadChartColumnByQuarter(year);
-            }
-            if (this.Flag == 2)
-            {
-                string year = this.cbbTime.Text;
-
-                LoadChartColumnByYear(year);
-            }
-        }
-
         private void RevenueReport_Load(object sender, EventArgs e)
         {
             string month = DateTime.Now.Month.ToString();
             string year = DateTime.Now.Year.ToString();
 
+            this.cbbPeriod.Text = "Theo tháng";
             this.cbbTime.Text = month;
 
             LoadChartColumnByMonth(month, year);
+        }
+
+        private void cbbTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //theo tháng
+            if (this.cbbPeriod.SelectedIndex == 0)
+            {
+                string mm = this.cbbTime.Text;
+                string yy = DateTime.Now.Year.ToString();
+
+                this.LoadChartColumnByMonth(mm, yy);
+            }
+            //theo quý
+            else if (this.cbbPeriod.SelectedIndex == 1)
+            {
+                string yy = this.cbbTime.Text;
+
+                this.LoadChartColumnByQuarter(yy);
+            }
+            //theo năm
+            else
+            {
+                string yy = this.cbbTime.Text;
+
+                this.LoadChartColumnByYear(yy);
+            }
+        }
+
+        private void cbbPeriod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //theo tháng
+            if (this.cbbPeriod.SelectedIndex == 0)
+            {
+                this.cbbTime.Items.Clear();
+
+                string[] monthInYear = ReportDAL.Instance.GetMonthInYear(DateTime.Now.Year.ToString());
+                for (int i = 0; i < monthInYear.Length; i++)
+                {
+                    this.cbbTime.Items.Add(monthInYear[i]);
+                }
+            }
+            //theo quý
+            else if (this.cbbPeriod.SelectedIndex == 1)
+            {
+                this.cbbTime.Items.Clear();
+
+                int currentYear = DateTime.Now.Year;
+                this.cbbTime.Items.Add(currentYear - 2);
+                this.cbbTime.Items.Add(currentYear - 1);
+                this.cbbTime.Items.Add(currentYear);
+            }
+            //theo năm
+            else
+            {
+                this.cbbTime.Items.Clear();
+
+                int currentYear = DateTime.Now.Year;
+                this.cbbTime.Items.Add(currentYear - 2);
+                this.cbbTime.Items.Add(currentYear - 1);
+                this.cbbTime.Items.Add(currentYear);
+            }
         }
         #endregion
     }

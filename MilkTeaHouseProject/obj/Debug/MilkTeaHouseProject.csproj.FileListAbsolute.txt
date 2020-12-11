@@ -989,7 +989,6 @@ C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xm
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
-C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DAL.fExport.resources
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
 C:\Users\Asus\Desktop\Quang\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache

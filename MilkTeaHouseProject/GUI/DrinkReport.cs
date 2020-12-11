@@ -15,13 +15,10 @@ namespace MilkTeaHouseProject
 {
     public partial class DrinksReport : UserControl
     {
-        private int flag;
         public DrinksReport()
         {
             InitializeComponent();
         }
-
-        public int Flag { get => flag; set => flag = value; }
 
         #region Method
         //theo doanh số
@@ -146,47 +143,14 @@ namespace MilkTeaHouseProject
         #region Event
         private void DrinksReport_Load(object sender, EventArgs e)
         {
-            this.cbbCount_or_Revenue.Text = "Theo doanh số";
-
             string mm = DateTime.Now.Month.ToString();
             string yy = DateTime.Now.Year.ToString();
 
+            this.cbbCount_or_Revenue.Text = "Theo doanh số";
+            this.cbbPeriod.Text = "Theo tháng";
+            this.cbbTime.Text = mm;
+
             this.LoadRowChartCountByMonth(mm, yy);
-        }
-
-        private void lbSalesMonth_Click(object sender, EventArgs e)
-        {
-            foreach (Control item in pnContainSales.Controls)
-            {
-                item.ForeColor = Color.Black;
-            }
-            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
-
-            this.cbbTime.Items.Clear();
-
-            for (int i = 0; i < 12; i++)
-            {
-                this.cbbTime.Items.Add(i + 1);
-            }
-
-            this.Flag = 0;  //flag == 0 => month       
-        }
-
-        private void lbSalesYear_Click(object sender, EventArgs e)
-        {
-            foreach (Control item in pnContainSales.Controls)
-            {
-                item.ForeColor = Color.Black;
-            }
-            (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
-
-            this.cbbTime.Items.Clear();
-            int currentYear = DateTime.Now.Year;
-            this.cbbTime.Items.Add(currentYear - 2);
-            this.cbbTime.Items.Add(currentYear - 1);
-            this.cbbTime.Items.Add(currentYear);
-
-            this.Flag = 1;  //flag == 0 => month       
         }
 
         private void cbbTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -194,8 +158,7 @@ namespace MilkTeaHouseProject
             //theo doanh số
             if (this.cbbCount_or_Revenue.SelectedIndex == 0)
             {
-                //theo tháng
-                if (this.Flag == 0)
+                if (this.cbbPeriod.SelectedIndex == 0)
                 {
                     string mm = this.cbbTime.Text;
                     string yy = DateTime.Now.Year.ToString();
@@ -203,18 +166,16 @@ namespace MilkTeaHouseProject
                     this.LoadRowsChartRevenueByMonth(mm, yy);
                 }
                 //theo năm
-                if (this.Flag == 1)
+                else if (this.cbbPeriod.SelectedIndex == 1)
                 {
                     string yy = this.cbbTime.Text;
 
                     this.LoadRowsChartRevenueByYear(yy);
                 }
             }
-            //theo số lượng
-            else
+            else if (this.cbbCount_or_Revenue.SelectedIndex == 1)
             {
-                //theo tháng
-                if (this.Flag == 0)
+                if (this.cbbPeriod.SelectedIndex == 0)
                 {
                     string mm = this.cbbTime.Text;
                     string yy = DateTime.Now.Year.ToString();
@@ -222,12 +183,76 @@ namespace MilkTeaHouseProject
                     this.LoadRowChartCountByMonth(mm, yy);
                 }
                 //theo năm
-                if (this.Flag == 1)
+                else if (this.cbbPeriod.SelectedIndex == 1)
                 {
                     string yy = this.cbbTime.Text;
 
                     this.LoadRowChartCountByYear(yy);
                 }
+            }
+        }
+
+        private void cbbCount_or_Revenue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //theo doanh số
+            if (this.cbbCount_or_Revenue.SelectedIndex == 0)
+            {
+                if (this.cbbPeriod.SelectedIndex == 0)
+                {
+                    string mm = this.cbbTime.Text;
+                    string yy = DateTime.Now.Year.ToString();
+
+                    this.LoadRowsChartRevenueByMonth(mm, yy);
+                }
+                //theo năm
+                else if (this.cbbPeriod.SelectedIndex == 1)
+                {
+                    string yy = this.cbbTime.Text;
+
+                    this.LoadRowsChartRevenueByYear(yy);
+                }
+            }
+            else if (this.cbbCount_or_Revenue.SelectedIndex == 1)
+            {
+                if (this.cbbPeriod.SelectedIndex == 0)
+                {
+                    string mm = this.cbbTime.Text;
+                    string yy = DateTime.Now.Year.ToString();
+
+                    this.LoadRowChartCountByMonth(mm, yy);
+                }
+                //theo năm
+                else if (this.cbbPeriod.SelectedIndex == 1)
+                {
+                    string yy = this.cbbTime.Text;
+
+                    this.LoadRowChartCountByYear(yy);
+                }
+            }
+        }
+
+        private void cbbPeriod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //theo tháng
+            if (this.cbbPeriod.SelectedIndex == 0)
+            {
+                this.cbbTime.Items.Clear();
+
+                string[] monthOfYear = ReportDAL.Instance.GetMonthInYear(DateTime.Now.Year.ToString());
+                for (int i = 0; i < monthOfYear.Length; i++)
+                {
+                    this.cbbTime.Items.Add(monthOfYear[i]);
+                }
+            }
+            //theo năm
+            else if (this.cbbPeriod.SelectedIndex == 1)
+            {
+                this.cbbTime.Items.Clear();
+
+                int currentYear = DateTime.Now.Year;
+                this.cbbTime.Items.Add(currentYear - 2);
+                this.cbbTime.Items.Add(currentYear - 1);
+                this.cbbTime.Items.Add(currentYear);
             }
         }
         #endregion
