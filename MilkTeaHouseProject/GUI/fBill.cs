@@ -162,7 +162,7 @@ namespace MilkTeaHouseProject
                     Microsoft.Office.Interop.Excel.Workbook workbook = application.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
                     Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
 
-                    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ID as N'Mã hóa đơn', STAFFID as N'Mã nhân viên', CHECKOUT as N'Thời gian', STATUS as N'Trạng thái', TOTAL as N'Tổng', NOTE as N'Ghi chú' FROM Bill");
+                    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT Bill.ID as N'Mã hóa đơn', CHECKOUT as N'Thời gian', STAFFID as N'Mã nhân viên', NAME as N'Tên nhân viên', NOTE as 'Ghi chú', Total as N'Tổng hóa đơn' FROM Bill JOIN Staff ON Bill.STAFFID = Staff.ID; ");
                     worksheet = application.Worksheets.Add(misValue, misValue, misValue, misValue);
                     worksheet.Name = "Staff";
                     for (int i = 0; i < data.Columns.Count; i++)
@@ -173,18 +173,7 @@ namespace MilkTeaHouseProject
                     {
                         for (int j = 0; j < data.Columns.Count; j++)
                         {
-                            if (data.Rows[i][j].ToString() == "True")
-                            {
-                                worksheet.Cells[i + 2, j + 1] = "Đã thanh toán";
-                            }
-                            else if (data.Rows[i][j].ToString() == "False")
-                            {
-                                worksheet.Cells[i + 2, j + 1] = "Chưa thanh toán";
-                            }
-                            else
-                            {
                                 worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
-                            }
                         }
                     }
                     workbook.SaveAs(sfd.FileName);
