@@ -35,6 +35,13 @@ namespace MilkTeaHouseProject
         {
             return AccountDAL.Instance.Login(username, password);
         }
+
+        private void ShowError(Control control, string error)
+        {
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
+        }
         #endregion
 
         #region Events
@@ -46,17 +53,16 @@ namespace MilkTeaHouseProject
 
             try
             {
-                if (Login(username, password))
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    fMain f = new fMain(username);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Show();
-                    this.txtUser.Text = this.txtPass.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+                    if (Login(username, password))
+                    {
+                        fMain f = new fMain(username);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                        this.txtUser.Text = this.txtPass.Text = "";
+                    }
                 }
             }
             catch
@@ -93,6 +99,11 @@ namespace MilkTeaHouseProject
                 e.Handled = true;
                 this.btnLogin_Click(sender, e);
             }
+
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
@@ -102,8 +113,59 @@ namespace MilkTeaHouseProject
                 e.Handled = true;
                 this.btnLogin_Click(sender, e);
             }
+
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
 
+        private void txtUser_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUser.Text))
+            {
+                txtUser.Focus();
+                ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
+            }
+        }
+
+        private void txtPass_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPass.Text))
+            {
+                txtPass.Focus();
+                ShowError(txtPass, "Vui lòng nhập mật khẩu");
+            }
+        }
+
+        private void btnLogin_Validating(object sender, CancelEventArgs e)
+        {
+            string username = this.txtUser.Text;
+            string password = this.txtPass.Text;
+
+            if (!Login(username, password))
+            {
+                ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
+            }
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtUser.Text))
+            {
+                errorShow.Visible = false;
+            }
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtPass.Text))
+            {
+                errorShow.Visible = false;
+            }
+        }
         #endregion
+
+
     }
 }

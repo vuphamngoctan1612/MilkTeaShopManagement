@@ -31,7 +31,7 @@ namespace MilkTeaShopManagement.DAL
 
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Drink");
 
-            foreach(DataRow dataRow in data.Rows)
+            foreach (DataRow dataRow in data.Rows)
             {
                 Drink drink = new Drink(dataRow);
 
@@ -84,7 +84,7 @@ namespace MilkTeaShopManagement.DAL
         }
 
         public void EditDrink(int id, string name, int price, string category, byte[] image, int origin, int count)
-        { 
+        {
             DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin , @Count",
                 new object[] { id, name, price, category, image, origin, count });
         }
@@ -107,15 +107,10 @@ namespace MilkTeaShopManagement.DAL
             return (string)DataProvider.Instance.ExecuteScalar("SELECT Category FROM Drink WHERE ID = " + id);
         }
 
-        public void MinusCount(int billID)
+        public void MinusCount(int idDrink)
         {
-            List<BillInfo> billinfo = BillInfoDAL.Instance.GetListBillInfoByIDBill(billID);
-
-            foreach (BillInfo item in billinfo)
-            {
-                string query = string.Format("update Drink set COUNT = COUNT - {0} where ID = {1}", item.Count, item.IdDrink);
-                DataProvider.Instance.ExecuteNonQuery(query);
-            }
+            string query = string.Format("update Drink set COUNT = COUNT - 1 where ID = {0}", idDrink);
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public int GetCountbyDrinkID(int id)
@@ -127,6 +122,12 @@ namespace MilkTeaShopManagement.DAL
             DTO.Drink item = new DTO.Drink(dr);
 
             return item.Count;
+        }
+
+        public void SetCountbyID(int id, int count)
+        {
+            string query = string.Format("update Drink set COUNT = COUNT + {0} where ID = {1}", count, id);
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
     }
 }

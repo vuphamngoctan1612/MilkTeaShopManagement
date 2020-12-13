@@ -26,12 +26,12 @@ namespace MilkTeaHouseProject
             shadow.ApplyShadows(this);
         }
 
-        #region Method
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        #region Method
         public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
         {
             if (!string.IsNullOrEmpty(txt.Text))
@@ -52,6 +52,14 @@ namespace MilkTeaHouseProject
                 tmp = tmp + a;
             }
             return int.Parse(tmp);
+        }
+
+        private void ShowError(Control control, string error)
+        {
+            control.Focus();
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
         }
         #endregion
 
@@ -79,12 +87,11 @@ namespace MilkTeaHouseProject
         {
             int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.username);
 
-            if (string.IsNullOrEmpty(txtTotal.Text.ToString()))
-                MessageBox.Show("Nhập giá trị phiếu chi");
+            if (string.IsNullOrEmpty(txtTotal.Text))
+                ShowError(txtTotal, "Vui lòng nhập giá trị hóa đơn");
             else
             {
                 BillDAL.Instance.MakeABill(idStaff, txtNote.Text, CovertToNumber(txtTotal.Text) * -1);
-                MessageBox.Show("Lập thành công");
                 this.Close();
             }
         }
@@ -92,6 +99,8 @@ namespace MilkTeaHouseProject
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
             SeparateThousands(this.txtTotal);
+
+            this.errorShow.Visible = false;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

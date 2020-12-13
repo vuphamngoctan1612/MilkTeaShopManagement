@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnLogin = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
             this.btnShowPass = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtPass = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtUser = new Guna.UI.WinForms.GunaLineTextBox();
@@ -44,15 +46,19 @@
             this.lbSignup = new System.Windows.Forms.Label();
             this.lb = new System.Windows.Forms.Label();
             this.pnPic = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panel2.SuspendLayout();
             this.pnLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.cartesianChart1);
             this.panel2.Controls.Add(this.gunaLabel1);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnLogin);
@@ -150,10 +156,12 @@
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Validating += new System.ComponentModel.CancelEventHandler(this.btnLogin_Validating);
             // 
             // pnLogin
             // 
             this.pnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnLogin.Controls.Add(this.errorShow);
             this.pnLogin.Controls.Add(this.btnShowPass);
             this.pnLogin.Controls.Add(this.txtPass);
             this.pnLogin.Controls.Add(this.txtUser);
@@ -164,9 +172,21 @@
             this.pnLogin.Location = new System.Drawing.Point(71, 119);
             this.pnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(562, 304);
+            this.pnLogin.Size = new System.Drawing.Size(562, 341);
             this.pnLogin.TabIndex = 8;
             this.pnLogin.Tag = "0";
+            // 
+            // errorShow
+            // 
+            this.errorShow.AutoSize = true;
+            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorShow.ForeColor = System.Drawing.Color.Red;
+            this.errorShow.Location = new System.Drawing.Point(258, 13);
+            this.errorShow.Name = "errorShow";
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
+            this.errorShow.TabIndex = 11;
+            this.errorShow.Text = "gunaLabel2";
+            this.errorShow.Visible = false;
             // 
             // btnShowPass
             // 
@@ -189,7 +209,7 @@
             this.btnShowPass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnShowPass.ImageSize = new System.Drawing.Size(20, 20);
             this.btnShowPass.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnShowPass.Location = new System.Drawing.Point(405, 230);
+            this.btnShowPass.Location = new System.Drawing.Point(418, 251);
             this.btnShowPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
@@ -207,40 +227,44 @@
             this.txtPass.BackColor = System.Drawing.Color.White;
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtPass.Location = new System.Drawing.Point(110, 234);
+            this.txtPass.Location = new System.Drawing.Point(116, 245);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
             this.txtPass.SelectedText = "";
-            this.txtPass.Size = new System.Drawing.Size(327, 42);
+            this.txtPass.Size = new System.Drawing.Size(327, 50);
             this.txtPass.TabIndex = 10;
             this.txtPass.Text = "1";
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
+            this.txtPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtPass_Validating);
             // 
             // txtUser
             // 
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtUser.Location = new System.Drawing.Point(110, 112);
+            this.txtUser.Location = new System.Drawing.Point(116, 121);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
             this.txtUser.SelectedText = "";
-            this.txtUser.Size = new System.Drawing.Size(327, 42);
+            this.txtUser.Size = new System.Drawing.Size(327, 50);
             this.txtUser.TabIndex = 9;
             this.txtUser.Text = "admin";
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
+            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::MilkTeaHouseProject.Properties.Resources.lock_24px;
-            this.pictureBox2.Location = new System.Drawing.Point(69, 236);
+            this.pictureBox2.Location = new System.Drawing.Point(69, 254);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 31);
@@ -254,7 +278,7 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbUser.Location = new System.Drawing.Point(56, 66);
+            this.lbUser.Location = new System.Drawing.Point(56, 84);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(178, 32);
             this.lbUser.TabIndex = 1;
@@ -264,7 +288,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::MilkTeaHouseProject.Properties.Resources.account_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 133);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 31);
@@ -278,7 +302,7 @@
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPass.Location = new System.Drawing.Point(53, 178);
+            this.lbPass.Location = new System.Drawing.Point(53, 196);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(120, 32);
             this.lbPass.TabIndex = 1;
@@ -323,10 +347,23 @@
             this.pnPic.Size = new System.Drawing.Size(440, 642);
             this.pnPic.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(476, -59);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(200, 100);
+            this.cartesianChart1.TabIndex = 13;
+            this.cartesianChart1.Text = "cartesianChart1";
+            this.cartesianChart1.Visible = false;
+            // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1088, 642);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnPic);
@@ -341,6 +378,7 @@
             this.pnLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,5 +400,8 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLineTextBox txtPass;
         private Guna.UI.WinForms.GunaLineTextBox txtUser;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Guna.UI.WinForms.GunaLabel errorShow;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

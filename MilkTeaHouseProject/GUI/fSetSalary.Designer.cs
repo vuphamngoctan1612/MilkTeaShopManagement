@@ -35,6 +35,7 @@ namespace MilkTeaHouseProject
             this.btSave = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelSetSalary = new System.Windows.Forms.Panel();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtName = new Guna.UI.WinForms.GunaLineTextBox();
             this.btAdd = new Guna.UI.WinForms.GunaButton();
@@ -183,6 +184,7 @@ namespace MilkTeaHouseProject
             // panelSetSalary
             // 
             this.panelSetSalary.BackColor = System.Drawing.Color.White;
+            this.panelSetSalary.Controls.Add(this.errorShow);
             this.panelSetSalary.Controls.Add(this.btnAdd);
             this.panelSetSalary.Controls.Add(this.txtName);
             this.panelSetSalary.Controls.Add(this.btAdd);
@@ -203,6 +205,18 @@ namespace MilkTeaHouseProject
             this.panelSetSalary.Name = "panelSetSalary";
             this.panelSetSalary.Size = new System.Drawing.Size(660, 654);
             this.panelSetSalary.TabIndex = 24;
+            // 
+            // errorShow
+            // 
+            this.errorShow.AutoSize = true;
+            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorShow.ForeColor = System.Drawing.Color.Red;
+            this.errorShow.Location = new System.Drawing.Point(265, 18);
+            this.errorShow.Name = "errorShow";
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
+            this.errorShow.TabIndex = 64;
+            this.errorShow.Text = "gunaLabel2";
+            this.errorShow.Visible = false;
             // 
             // btnAdd
             // 
@@ -235,7 +249,7 @@ namespace MilkTeaHouseProject
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(165, 43);
             this.btnAdd.TabIndex = 41;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Lưu";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -245,16 +259,17 @@ namespace MilkTeaHouseProject
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtName.Location = new System.Drawing.Point(265, 66);
+            this.txtName.Location = new System.Drawing.Point(270, 66);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(290, 40);
+            this.txtName.Size = new System.Drawing.Size(290, 48);
             this.txtName.TabIndex = 40;
             this.txtName.Visible = false;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btAdd
             // 
@@ -298,14 +313,14 @@ namespace MilkTeaHouseProject
             this.txtMinusSalary.BackColor = System.Drawing.Color.White;
             this.txtMinusSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMinusSalary.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtMinusSalary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinusSalary.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinusSalary.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtMinusSalary.Location = new System.Drawing.Point(265, 407);
+            this.txtMinusSalary.Location = new System.Drawing.Point(270, 407);
             this.txtMinusSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMinusSalary.Name = "txtMinusSalary";
             this.txtMinusSalary.PasswordChar = '\0';
             this.txtMinusSalary.SelectedText = "";
-            this.txtMinusSalary.Size = new System.Drawing.Size(174, 40);
+            this.txtMinusSalary.Size = new System.Drawing.Size(174, 48);
             this.txtMinusSalary.TabIndex = 3;
             this.txtMinusSalary.Text = "0";
             this.txtMinusSalary.TextChanged += new System.EventHandler(this.txtMinusSalary_TextChanged);
@@ -328,14 +343,14 @@ namespace MilkTeaHouseProject
             this.txtSalary.BackColor = System.Drawing.Color.White;
             this.txtSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSalary.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtSalary.Location = new System.Drawing.Point(264, 186);
+            this.txtSalary.Location = new System.Drawing.Point(269, 186);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PasswordChar = '\0';
             this.txtSalary.SelectedText = "";
-            this.txtSalary.Size = new System.Drawing.Size(294, 40);
+            this.txtSalary.Size = new System.Drawing.Size(294, 48);
             this.txtSalary.TabIndex = 1;
             this.txtSalary.Text = "0";
             this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
@@ -358,14 +373,14 @@ namespace MilkTeaHouseProject
             this.txtOverTime.BackColor = System.Drawing.Color.White;
             this.txtOverTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOverTime.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtOverTime.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOverTime.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOverTime.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtOverTime.Location = new System.Drawing.Point(264, 306);
+            this.txtOverTime.Location = new System.Drawing.Point(269, 306);
             this.txtOverTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtOverTime.Name = "txtOverTime";
             this.txtOverTime.PasswordChar = '\0';
             this.txtOverTime.SelectedText = "";
-            this.txtOverTime.Size = new System.Drawing.Size(174, 40);
+            this.txtOverTime.Size = new System.Drawing.Size(174, 48);
             this.txtOverTime.TabIndex = 2;
             this.txtOverTime.Text = "0";
             this.txtOverTime.TextChanged += new System.EventHandler(this.txtOverTime_TextChanged);
@@ -403,7 +418,7 @@ namespace MilkTeaHouseProject
             this.cbbStaff.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbStaff.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbStaff.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbStaff.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStaff.ForeColor = System.Drawing.Color.Black;
             this.cbbStaff.FormattingEnabled = true;
             this.cbbStaff.Location = new System.Drawing.Point(270, 66);
@@ -411,7 +426,7 @@ namespace MilkTeaHouseProject
             this.cbbStaff.Name = "cbbStaff";
             this.cbbStaff.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbStaff.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbStaff.Size = new System.Drawing.Size(280, 38);
+            this.cbbStaff.Size = new System.Drawing.Size(280, 46);
             this.cbbStaff.TabIndex = 0;
             this.cbbStaff.SelectedIndexChanged += new System.EventHandler(this.cbbStaff_SelectedIndexChanged);
             // 
@@ -429,8 +444,8 @@ namespace MilkTeaHouseProject
             // 
             // fSetSalary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(660, 692);
             this.ControlBox = false;
             this.Controls.Add(this.panelSetSalary);
@@ -470,5 +485,6 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaLineTextBox txtName;
         private Guna.UI.WinForms.GunaButton btAdd;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
+        private Guna.UI.WinForms.GunaLabel errorShow;
     }
 }

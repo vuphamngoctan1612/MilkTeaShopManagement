@@ -25,9 +25,6 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
 
-            leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10, 52);
-            panelControl.Controls.Add(leftCurrentButton);
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -74,10 +71,8 @@ namespace MilkTeaHouseProject
                     currentButton.BaseColor = Color.FromArgb(0, 144, 218);
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 177);
-                    leftCurrentButton.BackColor = color;
+                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 262);
                     leftCurrentButton.Visible = true;
-                    leftCurrentButton.BringToFront();
                 }
             }
         }
@@ -114,8 +109,7 @@ namespace MilkTeaHouseProject
             lbButtonSelected.Text = "HOME";
             lbButtonSelected.ForeColor = Color.White;
             currentButton = null;
-            leftCurrentButton.Visible = false;
-            
+            leftCurrentButton.Visible = false;      
         }
         #endregion
 
@@ -177,31 +171,49 @@ namespace MilkTeaHouseProject
             Application.Exit();
         }
 
-        private void pnHomePage_SizeChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnViewPro5_Click(object sender, EventArgs e)
         {
-            DTO.Staff staff = StaffDAL.Instance.GetStaff(this.lbUserName.Text);
-            fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.PhoneNumber, staff.Image);
-            frm.ShowDialog();
+            DataRow dr = StaffDAL.Instance.GetStaff(this.lbUserName.Text);
+            if (dr.Table.Rows.Count > 0)
+            {
+                DTO.Staff staff = new DTO.Staff(dr);
+                fViewProfile frm = new fViewProfile(staff.ID, staff.Name, staff.BirthDate, staff.Position, staff.PhoneNumber, staff.Image);
+                frm.ShowDialog();
+            }
         }
 
         private void fMain_Load(object sender, EventArgs e)
         {
             
-        }     
-        #endregion
+        }
 
         private void fMain_Shown(object sender, EventArgs e)
         {
-            
+            leftCurrentButton = new Panel();
+            leftCurrentButton.Size = new Size(10, 52);
+            panelControl.Controls.Add(leftCurrentButton);
+            leftCurrentButton.Visible = false;
+            leftCurrentButton.BackColor = Color.FromArgb(255, 255, 255);
+            leftCurrentButton.Height = btnMenu.Height;
+            leftCurrentButton.BringToFront();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnViewPro5_Click(sender, e);
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAccount_Click(sender, e);
+        }
+        #endregion
+
+
     }
 }

@@ -41,6 +41,7 @@ namespace MilkTeaHouseProject
 
                 flowLayoutPanelMenu.Controls.Add(item);
             }
+            LoadSize();
         }
 
         public void SearchDrink(string search)
@@ -77,12 +78,12 @@ namespace MilkTeaHouseProject
             }
 
             int space = flowLayoutPanelMenu.Width / 6;
-            lbID.Location = new Point((int)(space * 0.5), 10);
-            lbCategory.Location = new Point((int)(space * 1.4), 10);
-            lbName.Location = new Point(space * 2, 10);
-            lbOriginPrice.Location = new Point(space * 3, 10);
-            lbPrice.Location = new Point((int)(space * 3.8), 10);
-            lbCount.Location = new Point((int)(space * 4.5), 10);
+            lbID.Location = new Point((int)(space * 0.8), 10);
+            lbCategory.Location = new Point((int)(space * 2), 10);
+            lbName.Location = new Point(space * 3, 10);
+            lbOriginPrice.Location = new Point(space * 4, 10);
+            lbPrice.Location = new Point((int)(space * 4.8), 10);
+            lbCount.Location = new Point((int)(space * 5.5), 10);
         }
 
         void DeleteMenu(int id)
@@ -107,7 +108,8 @@ namespace MilkTeaHouseProject
             int price = ((sender as MenuItem).Tag as Drink).Price;
             byte[] image = ((sender as MenuItem).Tag as Drink).Image;
             int origin = ((sender as MenuItem).Tag as Drink).OriginPrice;
-            int count = ((sender as MenuItem).Tag as Drink).Count;
+            //int count = ((sender as MenuItem).Tag as Drink).Count;
+            int count = int.Parse((sender as MenuItem).COUNT);
 
             fAddDrink frm = new fAddDrink(id, name, price, image, origin, count);
             frm.ShowDialog();

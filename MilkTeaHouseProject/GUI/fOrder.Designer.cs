@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fOrder));
             this.pnCenter = new System.Windows.Forms.Panel();
             this.pnTitle = new System.Windows.Forms.Panel();
-            this.btnDeleteTable = new Guna.UI.WinForms.GunaAdvenceButton();
             this.tableID = new Guna.UI.WinForms.GunaLabel();
             this.lbTableSelected = new Guna.UI.WinForms.GunaLabel();
             this.pnSplitBill = new System.Windows.Forms.Panel();
             this.pnTotal = new System.Windows.Forms.Panel();
+            this.lbSuccess = new Guna.UI.WinForms.GunaLabel();
+            this.lbErrorShow = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbCount = new System.Windows.Forms.Label();
             this.lb = new System.Windows.Forms.Label();
@@ -102,7 +103,6 @@
             // pnTitle
             // 
             this.pnTitle.BackColor = System.Drawing.Color.Transparent;
-            this.pnTitle.Controls.Add(this.btnDeleteTable);
             this.pnTitle.Controls.Add(this.tableID);
             this.pnTitle.Controls.Add(this.lbTableSelected);
             this.pnTitle.Controls.Add(this.pnSplitBill);
@@ -112,42 +112,6 @@
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(645, 59);
             this.pnTitle.TabIndex = 0;
-            // 
-            // btnDeleteTable
-            // 
-            this.btnDeleteTable.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDeleteTable.AnimationHoverSpeed = 0.07F;
-            this.btnDeleteTable.AnimationSpeed = 0.03F;
-            this.btnDeleteTable.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteTable.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.btnDeleteTable.BorderColor = System.Drawing.Color.Black;
-            this.btnDeleteTable.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnDeleteTable.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnDeleteTable.CheckedForeColor = System.Drawing.Color.White;
-            this.btnDeleteTable.CheckedImage = null;
-            this.btnDeleteTable.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnDeleteTable.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDeleteTable.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDeleteTable.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteTable.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteTable.Image = global::MilkTeaHouseProject.Properties.Resources.delete_bin_32px;
-            this.btnDeleteTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDeleteTable.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDeleteTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDeleteTable.Location = new System.Drawing.Point(508, 8);
-            this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.OnHoverBaseColor = System.Drawing.Color.Red;
-            this.btnDeleteTable.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDeleteTable.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDeleteTable.OnHoverImage = null;
-            this.btnDeleteTable.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDeleteTable.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDeleteTable.Radius = 10;
-            this.btnDeleteTable.Size = new System.Drawing.Size(121, 42);
-            this.btnDeleteTable.TabIndex = 4;
-            this.btnDeleteTable.Text = "Xóa bàn";
-            this.btnDeleteTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // tableID
             // 
@@ -184,14 +148,40 @@
             // pnTotal
             // 
             this.pnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(171)))));
+            this.pnTotal.Controls.Add(this.lbSuccess);
+            this.pnTotal.Controls.Add(this.lbErrorShow);
             this.pnTotal.Controls.Add(this.panel1);
             this.pnTotal.Controls.Add(this.pnBtnPay);
             this.pnTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnTotal.Location = new System.Drawing.Point(0, 513);
+            this.pnTotal.Location = new System.Drawing.Point(0, 500);
             this.pnTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(645, 152);
+            this.pnTotal.Size = new System.Drawing.Size(645, 165);
             this.pnTotal.TabIndex = 2;
+            // 
+            // lbSuccess
+            // 
+            this.lbSuccess.AutoSize = true;
+            this.lbSuccess.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lbSuccess.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbSuccess.Location = new System.Drawing.Point(42, 9);
+            this.lbSuccess.Name = "lbSuccess";
+            this.lbSuccess.Size = new System.Drawing.Size(124, 30);
+            this.lbSuccess.TabIndex = 4;
+            this.lbSuccess.Text = "gunaLabel1";
+            this.lbSuccess.Visible = false;
+            // 
+            // lbErrorShow
+            // 
+            this.lbErrorShow.AutoSize = true;
+            this.lbErrorShow.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lbErrorShow.ForeColor = System.Drawing.Color.Red;
+            this.lbErrorShow.Location = new System.Drawing.Point(42, 9);
+            this.lbErrorShow.Name = "lbErrorShow";
+            this.lbErrorShow.Size = new System.Drawing.Size(124, 30);
+            this.lbErrorShow.TabIndex = 4;
+            this.lbErrorShow.Text = "gunaLabel1";
+            this.lbErrorShow.Visible = false;
             // 
             // panel1
             // 
@@ -201,10 +191,10 @@
             this.panel1.Controls.Add(this.lbTotalPrice);
             this.panel1.Controls.Add(this.lbNameTotal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 39);
+            this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(645, 41);
+            this.panel1.Size = new System.Drawing.Size(645, 47);
             this.panel1.TabIndex = 3;
             // 
             // lbCount
@@ -255,7 +245,7 @@
             this.pnBtnPay.Controls.Add(this.btnCancel);
             this.pnBtnPay.Controls.Add(this.btnPay);
             this.pnBtnPay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBtnPay.Location = new System.Drawing.Point(0, 80);
+            this.pnBtnPay.Location = new System.Drawing.Point(0, 93);
             this.pnBtnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnBtnPay.Name = "pnBtnPay";
             this.pnBtnPay.Size = new System.Drawing.Size(645, 72);
@@ -342,7 +332,7 @@
             this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 59);
             this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(645, 454);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(645, 441);
             this.flowLayoutPanelBill.TabIndex = 5;
             // 
             // gunaElipsePanel1
@@ -639,7 +629,7 @@
             this.btnAddTable.AnimationHoverSpeed = 0.07F;
             this.btnAddTable.AnimationSpeed = 0.03F;
             this.btnAddTable.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddTable.BaseColor = System.Drawing.Color.White;
+            this.btnAddTable.BaseColor = System.Drawing.Color.Transparent;
             this.btnAddTable.BorderColor = System.Drawing.Color.Black;
             this.btnAddTable.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddTable.Dock = System.Windows.Forms.DockStyle.Right;
@@ -754,8 +744,8 @@
             // 
             // fOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.ClientSize = new System.Drawing.Size(1400, 714);
             this.Controls.Add(this.PnContainTable);
@@ -770,12 +760,14 @@
             this.MinimumSize = new System.Drawing.Size(1400, 714);
             this.Name = "fOrder";
             this.Text = "ĐẶT HÀNG";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fOrder_FormClosed);
             this.Load += new System.EventHandler(this.fOrder_Load);
             this.SizeChanged += new System.EventHandler(this.fOrder_SizeChanged);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
             this.pnTotal.ResumeLayout(false);
+            this.pnTotal.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnBtnPay.ResumeLayout(false);
@@ -840,6 +832,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelGroup;
         private Guna.UI.WinForms.GunaLabel lbAllinGroup;
         private Guna.UI.WinForms.GunaButton btnAddTable;
-        private Guna.UI.WinForms.GunaAdvenceButton btnDeleteTable;
+        private Guna.UI.WinForms.GunaLabel lbErrorShow;
+        private Guna.UI.WinForms.GunaLabel lbSuccess;
     }
 }

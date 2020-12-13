@@ -29,7 +29,7 @@ namespace MilkTeaHouseProject
                 this.cbbStaff.Items.Add(pos.Name);
             }
 
-            this.cbbStaff.Text = "Thu ngân";
+            this.cbbStaff.Text = "Thu Ngân";
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -59,6 +59,14 @@ namespace MilkTeaHouseProject
                 txt.Select(txt.Text.Length, 0);
             }
         }
+
+        private void ShowError(Control control, string error)
+        {
+            control.Focus();
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
+        }
         #endregion
 
         #region Event
@@ -73,18 +81,33 @@ namespace MilkTeaHouseProject
         }
 
         private void btSave_Click(object sender, EventArgs e)
-        {
-            string position = this.cbbStaff.Text;
-            int salary = ConvertToNumber(this.txtSalary.Text);
-            int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
-            int MinusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+        {            
+            if (string.IsNullOrEmpty(txtSalary.Text))
+            {
+                txtSalary.Text = "0";
+            }
+
+            if (string.IsNullOrEmpty(txtMinusSalary.Text))
+            {
+                txtMinusSalary.Text = "0";
+            }
+
+            if (string.IsNullOrEmpty(txtOverTime.Text))
+            {
+                txtOverTime.Text = "0";
+            }
 
             if (string.IsNullOrEmpty(cbbStaff.Text))
             {
-                MessageBox.Show("Chọn vị trí công việc", "Error");
+                ShowError(cbbStaff, "Vui lòng chọn vị trí");
             }
             else
             {
+                string position = this.cbbStaff.Text;
+                int salary = ConvertToNumber(this.txtSalary.Text);
+                int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+                int MinusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+
                 PositionDAL.Instance.UpdateSalary(position, salary, overTimeSalary, MinusSalary);
                 this.Close();
             }
@@ -169,7 +192,7 @@ namespace MilkTeaHouseProject
             int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
             if (string.IsNullOrEmpty(pos))
             {
-                MessageBox.Show("Nhập vị trí công việc");
+                ShowError(txtName, "Vui lòng nhập tên vị trí mới");
             }    
             else
             {
@@ -180,7 +203,7 @@ namespace MilkTeaHouseProject
                 }
                 catch
                 {
-                    MessageBox.Show("Trùng vị trí trước đó");
+                    ShowError(txtName, "Vị trí này đã có");
                 }
             }    
         }
@@ -190,6 +213,13 @@ namespace MilkTeaHouseProject
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
         #endregion
+
+
     }
 }

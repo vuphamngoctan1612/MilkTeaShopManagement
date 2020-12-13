@@ -60,7 +60,7 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
-            return int.Parse(tmp);  
+            return int.Parse(tmp);
         }
 
         public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
@@ -85,20 +85,10 @@ namespace MilkTeaHouseProject
         #region Event
         private void btnPay_Click(object sender, EventArgs e)
         {
-            DateTime checkout = DateTime.Now;
-
             try
             {
-                if (this.TableID != 1)
-                {
-                    BillDAL.Instance.UpdateBill(this.BillID, checkout, this.TotalPrice, this.StaffID, this.TableID);
-                    TableFoodDAL.Instance.UpdateTable(this.TableID);
-                }
-                else
-                {
-                    BillDAL.Instance.UpdateBillnoTableID(this.billID, checkout, this.totalPrice, this.staffID);
-                }
-                DrinkDAL.Instance.MinusCount(this.billID);
+                TableFoodDAL.Instance.SetStatusEmpty(TableID);
+                BillDAL.Instance.PayBill(BillID, TableID);
             }
             catch (SqlException ex)
             {

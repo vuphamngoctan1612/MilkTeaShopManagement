@@ -119,7 +119,7 @@
             // DrinkItem
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.gunaShadowPanel1);
             this.Name = "DrinkItem";

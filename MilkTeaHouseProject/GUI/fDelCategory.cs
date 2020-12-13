@@ -30,12 +30,17 @@ namespace MilkTeaHouseProject
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        #region Method
         private void LoadNameCategory()
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
             cbCategory.DataSource = dt;
             cbCategory.DisplayMember = "NAME";
         }
+        #endregion
+
+        #region Event
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,5 +65,6 @@ namespace MilkTeaHouseProject
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
         }
+        #endregion
     }
 }

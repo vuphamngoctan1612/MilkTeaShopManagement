@@ -38,13 +38,13 @@ namespace MilkTeaHouseProject.DAL
             return staffs;
         }
 
-        public Staff GetStaff(string username)
+        public DataRow GetStaff(string username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff WHERE username = '" + username + "'");
-            
-            Staff staff = new Staff(data.Rows[0]);
 
-            return staff;
+                //Staff staff = new Staff(data.Rows[0]);
+
+            return data.Rows[0];   
         }
 
         public int GetStaffIDbyUsername(string username)

@@ -148,7 +148,6 @@ namespace MilkTeaHouseProject
         {
             loadBill();
         }
-        #endregion
 
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
@@ -173,12 +172,13 @@ namespace MilkTeaHouseProject
                     {
                         for (int j = 0; j < data.Columns.Count; j++)
                         {
-                                worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
+                            worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
                         }
                     }
                     workbook.SaveAs(sfd.FileName);
                 }
             }
         }
+        #endregion
     }
 }

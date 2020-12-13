@@ -28,17 +28,30 @@ namespace MilkTeaHouseProject
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void pn_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
+        
+        #region Method
         private void LoadGroup()
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("select * from GroupTable");
             cbbGroup.DataSource = dt;
             cbbGroup.DisplayMember = "NAME";
+        }
+
+        private void ShowError(Control control, string error)
+        {
+            control.Focus();
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
+        }
+        #endregion
+
+        #region event
+
+        private void pn_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void fAddTable_Load(object sender, EventArgs e)
@@ -58,7 +71,6 @@ namespace MilkTeaHouseProject
                 if (cbbGroup.Visible == true)
                 {
                     TableFoodDAL.Instance.AddTable(txtName.Text, cbbGroup.Text);
-                    MessageBox.Show("Thêm thành công");
                     this.Close();
                 }
                 else
@@ -67,18 +79,17 @@ namespace MilkTeaHouseProject
                     {
                         GroupTableDAL.Instance.AddGroupTable(txtGroup.Text);
                         TableFoodDAL.Instance.AddTable(txtName.Text, txtGroup.Text);
-                        MessageBox.Show("Thêm thành công");
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Nhập nhóm mới");
+                        ShowError(txtGroup, "Vui lòng nhập tên nhóm mới");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Nhập tên bàn");
+                ShowError(txtName, "Vui lòng nhập tên bàn");
             }
 
         }
@@ -88,11 +99,24 @@ namespace MilkTeaHouseProject
             if (cbbGroup.Visible)
             {
                 cbbGroup.Visible = false;
+                txtGroup.Visible = true;
             }
             else
             {
+                txtGroup.Visible = false;
                 cbbGroup.Visible = true;
             }
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+
+        private void txtGroup_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+        #endregion
     }
 }
