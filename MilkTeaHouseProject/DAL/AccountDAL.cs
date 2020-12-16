@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaHouseProject.DTO;
 
 namespace MilkTeaShopManagement.DAL
 {
@@ -21,6 +22,17 @@ namespace MilkTeaShopManagement.DAL
 
         private AccountDAL() { }
 
+        public List<Account> GetListAccount()
+        {
+            List<Account> accounts = new List<Account>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Account");
+            foreach(DataRow dataRow in data.Rows)
+            {
+                Account account = new Account(dataRow);
+                accounts.Add(account);
+            }
+            return accounts;
+        }
         public bool LoginAdmin(string userName, string passWord)
         {
             passWord = Encryptor.Instance.Encrypt(passWord);

@@ -13,13 +13,30 @@ namespace MilkTeaHouseProject.DAL
     {
         private static ReportDAL instance;
 
-        public static ReportDAL Instance 
+        public static ReportDAL Instance
         {
             get { if (instance == null) instance = new ReportDAL(); return instance; }
-            private set => instance = value; 
+            private set => instance = value;
         }
 
         private ReportDAL() { }
+
+        public int GetNumberOfBillsPaid(int dd, int mm, int yy)
+        {
+            string query = string.Format("SELECT COUNT(*) FROM Bill " +
+                "WHERE STATUS = 1 " +
+                "AND DAY(CHECKOUT) = {0} " +
+                "AND MONTH(CHECKOUT) = {1} " +
+                "AND YEAR(CHECKOUT) = {2}", dd, mm, yy);
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar(query);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
 
         //Báo cáo doanh thu
         public string[] GetDayInMonth(string mm, string yy)
@@ -29,7 +46,8 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT DAY(CHECKOUT) AS DAY FROM Bill " +
-                    "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1} GROUP BY DAY(CHECKOUT)", mm, yy);
+                    "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1} " +
+                    "GROUP BY DAY(CHECKOUT)", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 foreach (DataRow row in data.Rows)
@@ -51,7 +69,8 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH FROM Bill " +
-                    "WHERE YEAR(CHECKOUT) = {0} GROUP BY MONTH(CHECKOUT)", yy);
+                    "WHERE YEAR(CHECKOUT) = {0} " +
+                    "GROUP BY MONTH(CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 foreach (DataRow row in data.Rows)
@@ -73,10 +92,11 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER FROM Bill " +
-                    "WHERE YEAR(CHECKOUT) = {0} GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
+                    "WHERE YEAR(CHECKOUT) = {0} " +
+                    "GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-                foreach(DataRow row in data.Rows)
+                foreach (DataRow row in data.Rows)
                 {
                     quarterInYear.Add(row["QUARTER"].ToString());
                 }
@@ -96,7 +116,8 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT DAY(CHECKOUT) AS DAY, SUM(TOTAL) AS TOTAL FROM Bill " +
-                    "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1}  AND TOTAL > 0 GROUP BY DAY(CHECKOUT)", mm, yy);
+                    "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1}  AND TOTAL > 0 " +
+                    "GROUP BY DAY(CHECKOUT)", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] daysOfMonth = this.GetDayInMonth(mm, yy);
@@ -128,7 +149,8 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH, SUM(TOTAL) AS TOTAL FROM Bill " +
-                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL > 0 GROUP BY MONTH(CHECKOUT)", yy);
+                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL > 0 " +
+                    "GROUP BY MONTH(CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] monthsOfYear = this.GetMonthInYear(yy);
@@ -159,8 +181,9 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, SUM(TOTAL) FROM Bill " +
-                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL > 0 GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
+                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, SUM(TOTAL) AS TOTAL FROM Bill " +
+                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL > 0 " +
+                    "GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] quarterInYear = this.GetQuarterInYear(yy);
@@ -193,7 +216,8 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT DAY(CHECKOUT) AS DAY, SUM(TOTAL) AS TOTAL FROM Bill " +
-                    "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1} AND TOTAL < 0 GROUP BY DAY(CHECKOUT)", mm, yy);
+                    "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1} AND TOTAL < 0 " +
+                    "GROUP BY DAY(CHECKOUT)", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] daysOfMonth = this.GetDayInMonth(mm, yy);
@@ -225,7 +249,8 @@ namespace MilkTeaHouseProject.DAL
             try
             {
                 string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH, SUM(TOTAL) AS TOTAL FROM Bill " +
-                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL < 0 GROUP BY MONTH(CHECKOUT)", yy);
+                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL < 0 " +
+                    "GROUP BY MONTH(CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] monthsOfYear = this.GetMonthInYear(yy);
@@ -256,8 +281,9 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, SUM(TOTAL) FROM Bill " +
-                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL < 0 GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
+                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, SUM(TOTAL) AS TOTAL FROM Bill " +
+                    "WHERE YEAR(CHECKOUT) = {0} AND TOTAL < 0 " +
+                    "GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] quarterInYear = this.GetQuarterInYear(yy);

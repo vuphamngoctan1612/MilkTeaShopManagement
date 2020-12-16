@@ -93,5 +93,11 @@ namespace MilkTeaHouseProject.DAL
 
             return 0;
         }
+        public void AddPosition(string pos, int salary, int overtimesalary, int minussalary)
+        {
+
+            string query = string.Format("INSERT INTO Position VALUES (N'{0}',{1},{2},{3})", pos, salary, overtimesalary, minussalary);
+            DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }
