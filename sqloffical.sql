@@ -28,7 +28,11 @@ create table Drink
 	constraint FK_Drink_Category foreign key(CATEGORY) references Category(NAME)
 )
 go
-
+alter table drink
+add STATUS bit default 1;
+alter table drink
+add OriginPrice int default 0;
+select *from drink;
 create table Category
 (
 	NAME nvarchar(100) default '',
@@ -80,6 +84,9 @@ create table Bill
 go
 alter table bill	
 add NOTE text
+alter table bill
+add CheckIn date
+
 
 create table BillInfo
 (
@@ -198,25 +205,21 @@ go
 
 -- proc drink
 alter proc USP_AddDrink
-@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
+@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image, @Origin int, @Count int
 as
 begin
-	--insert into Drink(ID,NAME,PRICE,IMAGE) values (@ID,@Name,@Price,@Image)
-
-	--update Drink
-	--set category = @Category
-	--where ID = @ID
-
-	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE) values (@ID, @Name, @Category, @Price, @Image)
+	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE, OriginPrice, Count) values (@ID, @Name, @Category, @Price, @Image, @Origin, @Count)
 end
 go
 
+
+
 create proc USP_EditDrink
-@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image
+@ID int, @Name nvarchar(100), @Price int, @Category nvarchar(100), @Image image, @Origin int, @Count int
 as 
 begin
 	update Drink
-	set Name=@Name, Price=@Price, category=@Category, Image=@Image
+	set Name=@Name, Price=@Price, category=@Category, Image=@Image, OriginPrice=@Origin, Count=@Count
 	where ID=@ID
 end
 go
@@ -266,37 +269,37 @@ go
 
 -- proc staff
 alter proc USP_AddStaff
-@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @username varchar(100), @salaryreceived int , @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
-	insert into Staff  
-	values(@ID, @Name, @image, @birthday, @pos, @username,0,0,0, @phonenumber, @cmnd, @sex, @address)
+	insert into Staff  (ID, NAME, IMAGE,BIRTHDATE, POSITION, USERNAME, OVERTIME, SalaryReceived, Fault, PhoneNumber, CMND, Sex, Address)
+	values(@ID, @Name, @image, @birthday, @pos, @username,0,@salaryreceived,0, @phonenumber, @cmnd, @sex, @address)
 end
 go
 
 alter proc USP_AddStaffnoUsername
-@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
+@ID int, @Name nvarchar(100), @image image, @birthday date, @pos nvarchar(100), @salaryreceived int , @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
-	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, PhoneNumber, CMND, Sex, Address) values(@ID, @Name, @image, @birthday, @pos, @phonenumber, @cmnd, @sex, @address)
+	insert into Staff (ID, NAME, IMAGE, BIRTHDATE, POSITION, SalaryReceived,PhoneNumber, CMND, Sex, Address) values(@ID, @Name, @image, @birthday, @pos, @salaryreceived,@phonenumber, @cmnd, @sex, @address)
 end
 go
 
 alter proc USP_EditStaff
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100),@phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @username varchar(100),@salaryreceived int, @phonenumber varchar(10), @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber, CMND = @cmnd, Sex = @sex, Address = @address
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, USERNAME = @username, SalaryReceived = @salaryreceived,PhoneNumber = @phonenumber, CMND = @cmnd, Sex = @sex, Address = @address
 	where ID = @ID
 end
 go
 alter proc USP_EditStaffnoUsername
-@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @phonenumber varchar(10),  @cmnd varchar(9), @sex bit, @address nvarchar(1000)
+@ID int, @Name nvarchar(100), @Image image,@birthday date, @pos nvarchar(100), @salaryreceived int, @phonenumber varchar(10),  @cmnd varchar(9), @sex bit, @address nvarchar(1000)
 as
 begin
 	update Staff 
-	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, PhoneNumber = @phonenumber, CMND = @cmnd, Sex = @sex, Address = @address
+	set Name = @Name, IMAGE = @Image ,BirthDate = @birthday, Position = @pos, SalaryReceived = @salaryreceived, PhoneNumber = @phonenumber, CMND = @cmnd, Sex = @sex, Address = @address
 	where ID = @ID
 end
 go
@@ -372,6 +375,7 @@ INSERT INTO BILL VALUES({0}, {1}, '{2}', 1, {3}, N'Kết toán lương tháng {4
                 id, idStaff, time, totalSalary, month)
 select * from bill
 select *from Staff
+select * from Drink
 select *from Account
 select * from Position
 insert into Position

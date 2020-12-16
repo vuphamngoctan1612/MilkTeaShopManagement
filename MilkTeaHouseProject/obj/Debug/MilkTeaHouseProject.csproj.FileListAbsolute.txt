@@ -916,7 +916,6 @@ C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\bin\D
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
-C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DAL.fExport.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
 C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
@@ -1080,3 +1079,6 @@ C:\Users\NIU\Desktop\featuresTQ\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\NIU\Desktop\featuresTQ\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\NIU\Desktop\featuresTQ\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
 C:\Users\NIU\Desktop\featuresTQ\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Thành Quang 3.2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
