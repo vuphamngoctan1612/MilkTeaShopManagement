@@ -137,7 +137,7 @@ namespace MilkTeaHouseProject
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
                 StaffDAL.Instance.DelStaff(iD);
             }
-            (sender as StaffItem).Visible = false;
+            this.flowLayoutPanelStaff.Controls.RemoveAt(staffItems.IndexOf((sender as StaffItem)));
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
@@ -165,29 +165,28 @@ namespace MilkTeaHouseProject
             fAddStaff f = new fAddStaff();
             f.ActivebtnAdd();
             f.ShowDialog();
-            //List<Staff> staffs = StaffDAL.Instance.GetListStaff();
-            //bool setcolor = true;
-            //if (this.flowLayoutPanelStaff.Controls.Count < staffs.Count)
-            //{
-            //    foreach (Staff staff in staffs)
-            //    {
-            //        if (staffs.IndexOf(staff) == staffs.Count)
-            //        {
-            //            StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
-            //            totalSalary += staff.SalaryReceived;
-            //            staffItem.onEdit += Item_OnEdit;
-            //            staffItem.onDel += StaffItem_onDel;
-            //            staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
-            //            staffItem.onFaultChanged += StaffItem_onFaultChanged;
-            //            staffItem.Tag = staff;
+            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
+            bool setcolor = true;
+            if (this.flowLayoutPanelStaff.Controls.Count < staffs.Count)
+            {
+                foreach (Staff staff in staffs)
+                {
+                    int count = staffs.IndexOf(staff);
+                    if (staffs.IndexOf(staff) + 1 == staffs.Count)
+                    {
+                        StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
+                        totalSalary += staff.SalaryReceived;
+                        staffItem.onEdit += Item_OnEdit;
+                        staffItem.onDel += StaffItem_onDel;
+                        staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
+                        staffItem.onFaultChanged += StaffItem_onFaultChanged;
+                        staffItem.Tag = staff;
 
-            //            flowLayoutPanelStaff.Controls.Add(staffItem);
-            //        }
-            //    }
-            //}
-
-            this.flowLayoutPanelStaff.Controls.Clear();
-            LoadStaff();
+                        flowLayoutPanelStaff.Controls.Add(staffItem);
+                        sizeChange();
+                    }
+                }
+            }
         }
 
         private void flowLayoutPanelStaff_SizeChanged(object sender, EventArgs e)
