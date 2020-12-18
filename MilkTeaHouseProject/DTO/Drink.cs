@@ -11,7 +11,7 @@ namespace MilkTeaShopManagement.DTO
     {
         private int iD;
         private string name;
-        private string Category;
+        private string category;
         private int price;
         private byte[] image;
         private bool status;
@@ -21,7 +21,7 @@ namespace MilkTeaShopManagement.DTO
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
         public int ID { get => iD; set => iD = value; }
-        public string CategoryID { get => Category; set => Category = value; }
+        public string Category { get => category; set => category = value; }
         public byte[] Image { get => image; set => image = value; }
         public bool Status { get => status; set => status = value; }
         public int Count { get => count; set => count = value; }
@@ -31,14 +31,14 @@ namespace MilkTeaShopManagement.DTO
             this.ID = id;
             this.Name = name;
             this.Price = price;
-            this.Category = Category;
+            this.category = Category;
         }
         public Drink(DataRow row)
         {
             this.ID = (int)row["ID"];
             this.Name = row["Name"].ToString();
             this.Price = (int)row["Price"];
-            this.Category = row["Category"].ToString();
+            this.category = row["Category"].ToString();
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];
             this.Status = (bool)row["STATUS"];

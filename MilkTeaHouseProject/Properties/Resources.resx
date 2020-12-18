@@ -121,8 +121,11 @@
   <data name="Key 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Key 2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="moneyout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moneyout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pebgreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pebgreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\account_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Checkout_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checkout_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +139,8 @@
   <data name="Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Collapse_Arrow_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Collapse_Arrow_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a881ce19f6d5832f8c6fa156cb45abb6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\FoodsImage\a881ce19f6d5832f8c6fa156cb45abb6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +157,14 @@
   <data name="searchlue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchlue.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="moneybox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moneybox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\add_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\account_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drinkitem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drinkitem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +172,14 @@
   <data name="MILKTEA HOUSE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\MILKTEA HOUSE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TableWhile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWhile.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Initiate_Money_Transfer_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Initiate_Money_Transfer_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\settings_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MILKTEA HOUSE (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\MILKTEA HOUSE (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,17 +190,17 @@
   <data name="Business_Contact_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Business_Contact_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\account_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="moneybox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moneybox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_bin_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\delete_bin_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="eye_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\eye_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\add_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Money_Box_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Money_Box_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +208,14 @@
   <data name="clear_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="moneblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moneblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="client" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\client.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pos_terminal_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\pos_terminal_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,14 +232,14 @@
   <data name="btnSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSearch.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\add_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="moneyout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moneyout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\settings_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Expand_Arrow_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Expand_Arrow_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\account_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drinkitem1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drinkitem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,7 +256,7 @@
   <data name="kawaii_coffee_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\kawaii_coffee_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TableWhile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TableWhile.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Left_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Left_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

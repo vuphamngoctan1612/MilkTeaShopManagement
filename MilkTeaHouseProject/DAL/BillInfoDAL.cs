@@ -15,10 +15,10 @@ namespace MilkTeaHouseProject.DAL
     {
         private static BillInfoDAL instance;
 
-        public static BillInfoDAL Instance 
+        public static BillInfoDAL Instance
         {
             get { if (instance == null) instance = new BillInfoDAL(); return BillInfoDAL.instance; }
-            set => instance = value; 
+            set => instance = value;
         }
 
         private BillInfoDAL() { }
@@ -57,7 +57,7 @@ namespace MilkTeaHouseProject.DAL
 
         public void DeleteBillInfobyIDDrink(int iddrink, int billid)
         {
-            DataProvider.Instance.ExecuteNonQuery(string.Format("Delete from BillInfo where drinkid = {0} and billid = {1}", iddrink , billid));
+            DataProvider.Instance.ExecuteNonQuery(string.Format("Delete from BillInfo where drinkid = {0} and billid = {1}", iddrink, billid));
         }
 
         public void SetnullDrinkIdBillInfo(int id)
@@ -87,12 +87,19 @@ namespace MilkTeaHouseProject.DAL
         }
 
         //Top món ăn bán chạy
-        public string[] GetListDrinkName()
+        //theo số lượng
+        public string[] GetListCountDrinkNameByMonth(string mm, string yy)
         {
             List<string> drinks = new List<string>();
+
             try
             {
-                string query = string.Format("SELECT * FROM DRINK");
+                string query = string.Format("SELECT Drink.NAME, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "WHERE MONTH(BILL.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY Drink.NAME " +
+                    "ORDER BY COUNT ASC", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 foreach (DataRow row in data.Rows)
@@ -107,15 +114,44 @@ namespace MilkTeaHouseProject.DAL
                 return drinks.ToArray();
             }
         }
-        public string[] GetListDrinkIDByMonth(string mm, string yy)
+        public string[] GetListCountDrinkNameByYear(string yy)
+        {
+            List<string> drinks = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT Drink.NAME, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "GROUP BY Drink.NAME " +
+                    "ORDER BY COUNT ASC", yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    drinks.Add(row["NAME"].ToString());
+                }
+
+                return drinks.ToArray();
+            }
+            catch
+            {
+                return drinks.ToArray();
+            }
+        }
+
+        public string[] GetListCountDrinkIDByMonth(string mm, string yy)
         {
             List<string> drinks = new List<string>();
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID FROM ((BillInfo " +
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
                     "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
                     "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
-                    "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} GROUP BY BillInfo.DRINKID", mm, yy);
+                    "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY BillInfo.DRINKID " +
+                    "ORDER BY COUNT ASC", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 foreach (DataRow row in data.Rows)
@@ -130,15 +166,17 @@ namespace MilkTeaHouseProject.DAL
                 return drinks.ToArray();
             }
         }
-        public string[] GetListDrinkIDByYear(string yy)
+        public string[] GetListCountDrinkIDByYear(string yy)
         {
             List<string> drinks = new List<string>();
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID FROM ((BillInfo " +
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
                     "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
                     "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
-                    "WHERE YEAR(Bill.CHECKOUT) = {0} GROUP BY BillInfo.DRINKID", yy);
+                    "WHERE YEAR(Bill.CHECKOUT) = 2020 " +
+                    "GROUP BY BillInfo.DRINKID " +
+                    "ORDER BY COUNT ASC", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 foreach (DataRow row in data.Rows)
@@ -153,19 +191,22 @@ namespace MilkTeaHouseProject.DAL
                 return drinks.ToArray();
             }
         }
-        //theo số lượng
+
         public ChartValues<int> GetCountDrinkByMonth(string mm, string yy)
         {
             ChartValues<int> res = new ChartValues<int>();
 
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(COUNT) AS COUNT FROM BillInfo " +
-                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID " +
-                    "WHERE MONTH(CHECKOUT) = {0}  AND YEAR(CHECKOUT) = {1} GROUP BY BillInfo.DRINKID", mm, yy);
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY BillInfo.DRINKID " +
+                    "ORDER BY COUNT ASC", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-                string[] drinksID = this.GetListDrinkIDByMonth(mm, yy);
+                string[] drinksID = this.GetListCountDrinkIDByMonth(mm, yy);
                 int[] count = new int[drinksID.Length];
                 int numOfRows = data.Rows.Count;
 
@@ -193,12 +234,15 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(COUNT) AS COUNT FROM BillInfo " +
-                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID " +
-                    "WHERE YEAR(CHECKOUT) = {0} GROUP BY BillInfo.DRINKID", yy);
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, SUM(BillInfo.COUNT) AS COUNT FROM ((BillInfo " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "GROUP BY BillInfo.DRINKID " +
+                    "ORDER BY COUNT ASC", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-                string[] drinksID = this.GetListDrinkIDByYear(yy);
+                string[] drinksID = this.GetListCountDrinkIDByYear(yy);
                 int[] count = new int[drinksID.Length];
                 int numOfRows = data.Rows.Count;
 
@@ -221,19 +265,127 @@ namespace MilkTeaHouseProject.DAL
             }
         }
         //theo doanh thu
+        public string[] GetListRevenueDrinkNameByMonth(string mm, string yy)
+        {
+            List<string> drinks = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT BillInfo.DRINKID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "WHERE MONTH(BILL.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY BillInfo.DRINKID, Drink.PRICE, Drink.NAME " +
+                    "ORDER BY TOTAL DESC", mm, yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    drinks.Add(row["NAME"].ToString());
+                }
+
+                return drinks.ToArray();
+            }
+            catch
+            {
+                return drinks.ToArray();
+            }
+        }
+        public string[] GetListRevenueDrinkNameByYear(string yy)
+        {
+            List<string> drinks = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT BillInfo.DRINKID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "GROUP BY BillInfo.DRINKID, Drink.PRICE, Drink.NAME " +
+                    "ORDER BY TOTAL DESC", yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    drinks.Add(row["NAME"].ToString());
+                }
+
+                return drinks.ToArray();
+            }
+            catch
+            {
+                return drinks.ToArray();
+            }
+        }
+
+        public string[] GetListRevenueDrinkIDByMonth(string mm, string yy)
+        {
+            List<string> drinks = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID)" +
+                    "WHERE MONTH(BILL.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY BillInfo.DRINKID, Drink.PRICE, Drink.NAME " +
+                    "ORDER BY TOTAL DESC", mm, yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    drinks.Add(row["ID"].ToString());
+                }
+
+                return drinks.ToArray();
+            }
+            catch
+            {
+                return drinks.ToArray();
+            }
+        }
+        public string[] GetListRevenueDrinkIDByYear(string yy)
+        {
+            List<string> drinks = new List<string>();
+
+            try
+            {
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                   "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                   "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                   "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                   "GROUP BY BillInfo.DRINKID, Drink.PRICE, Drink.NAME " +
+                   "ORDER BY TOTAL DESC", yy);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    drinks.Add(row["ID"].ToString());
+                }
+
+                return drinks.ToArray();
+            }
+            catch
+            {
+                return drinks.ToArray();
+            }
+        }
+
         public ChartValues<int> GetRevenueDrinkByMonth(string mm, string yy)
         {
             ChartValues<int> res = new ChartValues<int>();
 
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID, BillInfo.COUNT * Drink.PRICE AS PRICE FROM ((BillInfo " +
-                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID)" +
-                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID)" +
-                    "WHERE MONTH(BILL.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} GROUP BY BillInfo.DRINKID, BillInfo.COUNT* Drink.PRICE", mm, yy);
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                    "WHERE MONTH(BILL.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                    "GROUP BY BillInfo.DRINKID, Drink.PRICE, Drink.NAME " +
+                    "ORDER BY TOTAL DESC", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-                string[] drinksID = this.GetListDrinkIDByMonth(mm, yy);
+                string[] drinksID = this.GetListRevenueDrinkIDByMonth(mm, yy);
                 int[] revenue = new int[drinksID.Length];
                 int numOfRows = data.Rows.Count;
 
@@ -242,7 +394,7 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (drinksID[i] == data.Rows[j]["ID"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["PRICE"].ToString());
+                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
@@ -261,13 +413,15 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID, BillInfo.COUNT * Drink.PRICE AS PRICE FROM ((BillInfo " +
-                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID)" +
-                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID)" +
-                    "WHERE YEAR(Bill.CHECKOUT) = {0} GROUP BY BillInfo.DRINKID, BillInfo.COUNT* Drink.PRICE", yy);
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                   "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
+                   "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
+                   "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                   "GROUP BY BillInfo.DRINKID, Drink.PRICE, Drink.NAME " +
+                   "ORDER BY TOTAL DESC", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-                string[] drinksID = this.GetListDrinkIDByYear(yy);
+                string[] drinksID = this.GetListRevenueDrinkIDByYear(yy);
                 int[] revenue = new int[drinksID.Length];
                 int numOfRows = data.Rows.Count;
 
@@ -276,7 +430,7 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (drinksID[i] == data.Rows[j]["ID"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["PRICE"].ToString());
+                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
