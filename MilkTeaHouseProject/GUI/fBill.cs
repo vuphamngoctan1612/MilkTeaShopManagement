@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MilkTeaShopManagement.DAL;
 
 namespace MilkTeaHouseProject
 {
@@ -146,6 +147,37 @@ namespace MilkTeaHouseProject
         private void fBill_Load(object sender, EventArgs e)
         {
             loadBill();
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    object misValue = System.Reflection.Missing.Value;
+                    Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+                    application.Visible = false;
+                    Microsoft.Office.Interop.Excel.Workbook workbook = application.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+                    Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+
+                    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT Bill.ID as N'Mã hóa đơn', CHECKOUT as N'Thời gian', STAFFID as N'Mã nhân viên', NAME as N'Tên nhân viên', NOTE as 'Ghi chú', Total as N'Tổng hóa đơn' FROM Bill JOIN Staff ON Bill.STAFFID = Staff.ID; ");
+                    worksheet = application.Worksheets.Add(misValue, misValue, misValue, misValue);
+                    worksheet.Name = "Staff";
+                    for (int i = 0; i < data.Columns.Count; i++)
+                    {
+                        worksheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                    }
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < data.Columns.Count; j++)
+                        {
+                            worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
+                        }
+                    }
+                    workbook.SaveAs(sfd.FileName);
+                }
+            }
         }
         #endregion
     }

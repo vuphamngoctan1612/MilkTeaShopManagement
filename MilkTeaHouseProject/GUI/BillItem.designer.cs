@@ -57,7 +57,7 @@
             this.count.ButtonForeColor = System.Drawing.Color.White;
             this.count.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.count.ForeColor = System.Drawing.Color.Black;
-            this.count.Location = new System.Drawing.Point(220, 12);
+            this.count.Location = new System.Drawing.Point(218, 21);
             this.count.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.count.Maximum = ((long)(9999999));
             this.count.Minimum = ((long)(0));
@@ -109,7 +109,7 @@
             // 
             this.btnDel.AnimationHoverSpeed = 0.07F;
             this.btnDel.AnimationSpeed = 0.03F;
-            this.btnDel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
+            this.btnDel.BaseColor = System.Drawing.Color.Transparent;
             this.btnDel.BorderColor = System.Drawing.Color.Black;
             this.btnDel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDel.FocusedColor = System.Drawing.Color.Empty;
@@ -140,8 +140,8 @@
             // 
             // BillItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDel);

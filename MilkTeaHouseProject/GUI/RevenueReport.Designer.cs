@@ -33,8 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnContainSales = new System.Windows.Forms.Panel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.cbbTime = new Guna.UI.WinForms.GunaComboBox();
             this.cbbPeriod = new Guna.UI.WinForms.GunaComboBox();
+            this.cbbTime = new Guna.UI.WinForms.GunaComboBox();
             this.pnSales.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnContainSales.SuspendLayout();
@@ -63,7 +63,7 @@
             this.pnSales.ShadowColor = System.Drawing.Color.Black;
             this.pnSales.ShadowShift = 3;
             this.pnSales.Size = new System.Drawing.Size(1050, 593);
-            this.pnSales.TabIndex = 2;
+            this.pnSales.TabIndex = 3;
             // 
             // panel1
             // 
@@ -96,27 +96,6 @@
             this.gunaLabel1.TabIndex = 6;
             this.gunaLabel1.Text = "DOANH THU";
             // 
-            // cbbTime
-            // 
-            this.cbbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbTime.BackColor = System.Drawing.Color.Transparent;
-            this.cbbTime.BaseColor = System.Drawing.Color.White;
-            this.cbbTime.BorderColor = System.Drawing.Color.Silver;
-            this.cbbTime.BorderSize = 1;
-            this.cbbTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTime.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbTime.ForeColor = System.Drawing.Color.Black;
-            this.cbbTime.FormattingEnabled = true;
-            this.cbbTime.Location = new System.Drawing.Point(843, 58);
-            this.cbbTime.Name = "cbbTime";
-            this.cbbTime.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbbTime.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbTime.Size = new System.Drawing.Size(184, 31);
-            this.cbbTime.TabIndex = 5;
-            this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
-            // 
             // cbbPeriod
             // 
             this.cbbPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -142,6 +121,27 @@
             this.cbbPeriod.TabIndex = 5;
             this.cbbPeriod.SelectedIndexChanged += new System.EventHandler(this.cbbPeriod_SelectedIndexChanged);
             // 
+            // cbbTime
+            // 
+            this.cbbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbTime.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTime.BaseColor = System.Drawing.Color.White;
+            this.cbbTime.BorderColor = System.Drawing.Color.Silver;
+            this.cbbTime.BorderSize = 1;
+            this.cbbTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTime.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTime.ForeColor = System.Drawing.Color.Black;
+            this.cbbTime.FormattingEnabled = true;
+            this.cbbTime.Location = new System.Drawing.Point(843, 58);
+            this.cbbTime.Name = "cbbTime";
+            this.cbbTime.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbbTime.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbbTime.Size = new System.Drawing.Size(184, 31);
+            this.cbbTime.TabIndex = 5;
+            this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
+            // 
             // RevenueReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -164,8 +164,8 @@
         private Guna.UI.WinForms.GunaShadowPanel pnSales;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnContainSales;
-        private Guna.UI.WinForms.GunaComboBox cbbTime;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaComboBox cbbPeriod;
+        private Guna.UI.WinForms.GunaComboBox cbbTime;
     }
 }

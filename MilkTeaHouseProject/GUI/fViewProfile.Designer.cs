@@ -246,13 +246,13 @@ namespace MilkTeaHouseProject
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Enabled = false;
             this.txtPhone.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtPhone.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.txtPhone.Location = new System.Drawing.Point(624, 302);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.SelectedText = "";
-            this.txtPhone.Size = new System.Drawing.Size(346, 37);
+            this.txtPhone.Size = new System.Drawing.Size(346, 48);
             this.txtPhone.TabIndex = 44;
             // 
             // txtPos
@@ -261,13 +261,13 @@ namespace MilkTeaHouseProject
             this.txtPos.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPos.Enabled = false;
             this.txtPos.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtPos.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPos.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtPos.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.txtPos.Location = new System.Drawing.Point(624, 238);
             this.txtPos.Name = "txtPos";
             this.txtPos.PasswordChar = '\0';
             this.txtPos.SelectedText = "";
-            this.txtPos.Size = new System.Drawing.Size(346, 37);
+            this.txtPos.Size = new System.Drawing.Size(346, 48);
             this.txtPos.TabIndex = 44;
             // 
             // txtBirth
@@ -276,13 +276,13 @@ namespace MilkTeaHouseProject
             this.txtBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBirth.Enabled = false;
             this.txtBirth.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtBirth.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtBirth.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtBirth.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.txtBirth.Location = new System.Drawing.Point(624, 167);
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.PasswordChar = '\0';
             this.txtBirth.SelectedText = "";
-            this.txtBirth.Size = new System.Drawing.Size(346, 37);
+            this.txtBirth.Size = new System.Drawing.Size(346, 48);
             this.txtBirth.TabIndex = 44;
             // 
             // txtID
@@ -291,13 +291,13 @@ namespace MilkTeaHouseProject
             this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtID.Enabled = false;
             this.txtID.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtID.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtID.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.txtID.Location = new System.Drawing.Point(118, 378);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(74, 37);
+            this.txtID.Size = new System.Drawing.Size(74, 48);
             this.txtID.TabIndex = 44;
             // 
             // txtName
@@ -306,13 +306,13 @@ namespace MilkTeaHouseProject
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Enabled = false;
             this.txtName.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtName.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.txtName.Location = new System.Drawing.Point(624, 99);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(346, 37);
+            this.txtName.Size = new System.Drawing.Size(346, 48);
             this.txtName.TabIndex = 44;
             // 
             // pnStraight
@@ -326,8 +326,8 @@ namespace MilkTeaHouseProject
             // 
             // fViewProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1061, 487);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.pnContain);

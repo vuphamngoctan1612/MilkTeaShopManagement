@@ -63,7 +63,7 @@
             this.pnSales.ShadowColor = System.Drawing.Color.Black;
             this.pnSales.ShadowShift = 3;
             this.pnSales.Size = new System.Drawing.Size(1003, 614);
-            this.pnSales.TabIndex = 3;
+            this.pnSales.TabIndex = 4;
             // 
             // panel1
             // 
@@ -92,7 +92,7 @@
             this.cbbPeriod.BackColor = System.Drawing.Color.Transparent;
             this.cbbPeriod.BaseColor = System.Drawing.Color.White;
             this.cbbPeriod.BorderColor = System.Drawing.Color.Silver;
-            this.cbbPeriod.BorderSize = 0;
+            this.cbbPeriod.BorderSize = 1;
             this.cbbPeriod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPeriod.FocusedColor = System.Drawing.Color.Empty;
@@ -163,8 +163,8 @@
         private Guna.UI.WinForms.GunaShadowPanel pnSales;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnContainSales;
-        private Guna.UI.WinForms.GunaComboBox cbbTime;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaComboBox cbbPeriod;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaComboBox cbbTime;
     }
 }

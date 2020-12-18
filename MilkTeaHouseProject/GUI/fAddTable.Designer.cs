@@ -43,6 +43,7 @@ namespace MilkTeaHouseProject
             this.txtGroup = new Guna.UI.WinForms.GunaTextBox();
             this.cbbGroup = new Guna.UI.WinForms.GunaComboBox();
             this.btnAddGroup = new Guna.UI.WinForms.GunaButton();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
             this.pn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +112,7 @@ namespace MilkTeaHouseProject
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbName.Location = new System.Drawing.Point(103, 265);
+            this.lbName.Location = new System.Drawing.Point(103, 252);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(91, 28);
             this.lbName.TabIndex = 47;
@@ -122,7 +123,7 @@ namespace MilkTeaHouseProject
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbId.Location = new System.Drawing.Point(103, 95);
+            this.lbId.Location = new System.Drawing.Point(103, 82);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(38, 28);
             this.lbId.TabIndex = 48;
@@ -137,12 +138,12 @@ namespace MilkTeaHouseProject
             this.txtID.FocusedBaseColor = System.Drawing.Color.White;
             this.txtID.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtID.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtID.Location = new System.Drawing.Point(108, 135);
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtID.Location = new System.Drawing.Point(108, 122);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(336, 36);
+            this.txtID.Size = new System.Drawing.Size(336, 48);
             this.txtID.TabIndex = 49;
             // 
             // txtName
@@ -153,13 +154,14 @@ namespace MilkTeaHouseProject
             this.txtName.FocusedBaseColor = System.Drawing.Color.White;
             this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtName.Location = new System.Drawing.Point(108, 296);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtName.Location = new System.Drawing.Point(108, 283);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(336, 36);
+            this.txtName.Size = new System.Drawing.Size(336, 48);
             this.txtName.TabIndex = 49;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnReturn
             // 
@@ -238,7 +240,7 @@ namespace MilkTeaHouseProject
             this.lbGroup.AutoSize = true;
             this.lbGroup.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGroup.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbGroup.Location = new System.Drawing.Point(103, 185);
+            this.lbGroup.Location = new System.Drawing.Point(103, 172);
             this.lbGroup.Name = "lbGroup";
             this.lbGroup.Size = new System.Drawing.Size(75, 28);
             this.lbGroup.TabIndex = 47;
@@ -252,13 +254,15 @@ namespace MilkTeaHouseProject
             this.txtGroup.FocusedBaseColor = System.Drawing.Color.White;
             this.txtGroup.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtGroup.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtGroup.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGroup.Location = new System.Drawing.Point(108, 216);
+            this.txtGroup.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtGroup.Location = new System.Drawing.Point(108, 203);
             this.txtGroup.Name = "txtGroup";
             this.txtGroup.PasswordChar = '\0';
             this.txtGroup.SelectedText = "";
-            this.txtGroup.Size = new System.Drawing.Size(336, 36);
+            this.txtGroup.Size = new System.Drawing.Size(336, 48);
             this.txtGroup.TabIndex = 49;
+            this.txtGroup.Visible = false;
+            this.txtGroup.TextChanged += new System.EventHandler(this.txtGroup_TextChanged);
             // 
             // cbbGroup
             // 
@@ -268,14 +272,14 @@ namespace MilkTeaHouseProject
             this.cbbGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbGroup.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbGroup.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbGroup.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.cbbGroup.ForeColor = System.Drawing.Color.Black;
             this.cbbGroup.FormattingEnabled = true;
-            this.cbbGroup.Location = new System.Drawing.Point(108, 216);
+            this.cbbGroup.Location = new System.Drawing.Point(108, 204);
             this.cbbGroup.Name = "cbbGroup";
             this.cbbGroup.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbGroup.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbGroup.Size = new System.Drawing.Size(336, 35);
+            this.cbbGroup.Size = new System.Drawing.Size(336, 46);
             this.cbbGroup.TabIndex = 52;
             // 
             // btnAddGroup
@@ -292,7 +296,7 @@ namespace MilkTeaHouseProject
             this.btnAddGroup.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.btnAddGroup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddGroup.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAddGroup.Location = new System.Drawing.Point(461, 214);
+            this.btnAddGroup.Location = new System.Drawing.Point(461, 201);
             this.btnAddGroup.Name = "btnAddGroup";
             this.btnAddGroup.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddGroup.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -304,12 +308,25 @@ namespace MilkTeaHouseProject
             this.btnAddGroup.TabIndex = 53;
             this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
             // 
+            // errorShow
+            // 
+            this.errorShow.AutoSize = true;
+            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorShow.ForeColor = System.Drawing.Color.Red;
+            this.errorShow.Location = new System.Drawing.Point(217, 55);
+            this.errorShow.Name = "errorShow";
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
+            this.errorShow.TabIndex = 58;
+            this.errorShow.Text = "gunaLabel2";
+            this.errorShow.Visible = false;
+            // 
             // fAddTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(556, 459);
+            this.Controls.Add(this.errorShow);
             this.Controls.Add(this.btnAddGroup);
             this.Controls.Add(this.cbbGroup);
             this.Controls.Add(this.btnReturn);
@@ -348,5 +365,6 @@ namespace MilkTeaHouseProject
         private Guna.UI.WinForms.GunaTextBox txtGroup;
         private Guna.UI.WinForms.GunaComboBox cbbGroup;
         private Guna.UI.WinForms.GunaButton btnAddGroup;
+        private Guna.UI.WinForms.GunaLabel errorShow;
     }
 }

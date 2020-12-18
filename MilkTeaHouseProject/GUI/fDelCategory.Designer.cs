@@ -190,28 +190,28 @@ namespace MilkTeaHouseProject
             this.cbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FocusedColor = System.Drawing.Color.Empty;
-            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.cbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(40, 148);
+            this.cbCategory.Location = new System.Drawing.Point(40, 132);
             this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbCategory.Size = new System.Drawing.Size(321, 35);
+            this.cbCategory.Size = new System.Drawing.Size(321, 46);
             this.cbCategory.TabIndex = 56;
             // 
             // fDelCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(392, 332);
-            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.lbNameCategory);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.cbCategory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fDelCategory";

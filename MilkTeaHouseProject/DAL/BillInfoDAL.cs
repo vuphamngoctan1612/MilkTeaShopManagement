@@ -15,10 +15,10 @@ namespace MilkTeaHouseProject.DAL
     {
         private static BillInfoDAL instance;
 
-        public static BillInfoDAL Instance 
+        public static BillInfoDAL Instance
         {
             get { if (instance == null) instance = new BillInfoDAL(); return BillInfoDAL.instance; }
-            set => instance = value; 
+            set => instance = value;
         }
 
         private BillInfoDAL() { }
@@ -57,7 +57,7 @@ namespace MilkTeaHouseProject.DAL
 
         public void DeleteBillInfobyIDDrink(int iddrink, int billid)
         {
-            DataProvider.Instance.ExecuteNonQuery(string.Format("Delete from BillInfo where drinkid = {0} and billid = {1}", iddrink , billid));
+            DataProvider.Instance.ExecuteNonQuery(string.Format("Delete from BillInfo where drinkid = {0} and billid = {1}", iddrink, billid));
         }
 
         public void SetnullDrinkIdBillInfo(int id)

@@ -15,6 +15,7 @@ namespace MilkTeaHouseProject.DTO
         private int total;
         private int staffID;
         private string note;
+        private DateTime checkin;
 
         public int ID { get => iD; set => iD = value; }
         public DateTime CheckOut { get => checkOut; set => checkOut = value; }
@@ -22,6 +23,7 @@ namespace MilkTeaHouseProject.DTO
         public int Total { get => total; set => total = value; }
         public int StaffID { get => staffID; set => staffID = value; }
         public string NOTE { get => note; set => note = value; }
+        public DateTime CheckIn { get => checkin; set => checkin = value; }
 
         public Bill(int id, DateTime checkout, bool status, int staffID)
         {
@@ -40,7 +42,9 @@ namespace MilkTeaHouseProject.DTO
             this.total = (int)row["total"];
             if (!Convert.IsDBNull(row["StaffID"]))
                 this.staffID = (int)row["StaffID"];
-            this.note = row["NOTE"].ToString() ;
+            this.note = row["NOTE"].ToString();
+            if (!Convert.IsDBNull(row["CHECKIN"]))
+                this.checkin = (DateTime)row["CHECKIN"];
         }
     }
 }

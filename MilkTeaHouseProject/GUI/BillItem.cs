@@ -21,10 +21,10 @@ namespace MilkTeaHouseProject
         }
 
         private int billID;
-        public int Count 
+        public int Count
         {
             get { return (int)this.count.Value; }
-            set => this.count.Value = value; 
+            set => this.count.Value = value;
         }
 
         public string IdDrink
@@ -43,7 +43,7 @@ namespace MilkTeaHouseProject
             return int.Parse(tmp);
         }
 
-        public BillItem (int idDrink, string foodName, int price, int count, int idBill)
+        public BillItem(int idDrink, string foodName, int price, int count, int idBill)
         {
             InitializeComponent();
 
@@ -72,10 +72,6 @@ namespace MilkTeaHouseProject
                 {
                     onValueChanged.Invoke(this, new EventArgs());
                 }
-            }
-            else
-            {
-                this.count.Value -= 1;
             }
         }
 

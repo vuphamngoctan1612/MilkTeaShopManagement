@@ -26,6 +26,17 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        #region Method
+        private void ShowError(Control control, string error)
+        {
+            control.Focus();
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
+        }
+        #endregion
+
+        #region Event
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -46,20 +57,20 @@ namespace MilkTeaHouseProject
         {
             if (txtPass.Text == "")
             {
-                MessageBox.Show("Nhập mật khẩu mới");
+                ShowError(txtPass, "Nhập mật khẩu mới");
             }
             else if (txtRepass.Text == "")
                 { 
-                    MessageBox.Show("Nhập lại mật khẩu mới"); 
+                    ShowError(txtRepass, "Nhập lại mật khẩu mới"); 
                 }
                     else if (txtPass.Text != txtRepass.Text)
                     {
-                        MessageBox.Show("Mật khẩu nhập lại không trùng");
+                        ShowError(txtPass, "Mật khẩu nhập lại không trùng");
                     } 
                         else
                         {
                             AccountDAL.Instance.changePassword(txtUser.Text, txtPass.Text);
-                            MessageBox.Show("Đổi thành công");
+                            //MessageBox.Show("Đổi thành công");
                             this.Close();
                         }    
         }
@@ -71,6 +82,41 @@ namespace MilkTeaHouseProject
                 e.Handled = true;
                 this.btnAdd_Click(sender, e);
             }
+
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
+
+        private void txtRepass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                this.btnAdd_Click(sender, e);
+            }
+
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+
+        private void txtRepass_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+        #endregion
     }
 }

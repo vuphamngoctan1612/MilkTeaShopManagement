@@ -34,13 +34,13 @@ namespace MilkTeaHouseProject
                 item.Width = this.flowLayoutPanelStaff.Width;
             }
             int space = this.flowLayoutPanelStaff.Width / 8;
-            lbID.Location = new Point(85, 5);
-            lbName.Location = new Point((int)(space * 1.7), 5);
-            lbPosition.Location = new Point((int)(space * 3), 5);
-            lbUserName.Location = new Point((int)(space * 3.7), 5);
-            lbOvertime.Location = new Point((int)(space * 4.8), 5);
-            lbFaust.Location = new Point((int)(space * 5.8), 5);
-            lbSalary.Location = new Point((int)(space * 6.5), 5);
+            lbID.Location = new Point(85, 10);
+            lbName.Location = new Point((int)(space * 1.7), 10);
+            lbPosition.Location = new Point((int)(space * 3.2), 10);
+            lbUserName.Location = new Point((int)(space * 4.2), 10);
+            lbOvertime.Location = new Point((int)(space * 5.4), 10);
+            lbFaust.Location = new Point((int)(space * 6.5), 10);
+            lbSalary.Location = new Point((int)(space * 7.2), 10);
         }
         public void LoadStaff()
         {
@@ -68,7 +68,7 @@ namespace MilkTeaHouseProject
 
                 StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
                 StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
-                totalSalary += staff.SalaryReceived;
+                totalSalary += salaryReceived;
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
@@ -159,6 +159,7 @@ namespace MilkTeaHouseProject
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
+            
             int id = ((sender as StaffItem).Tag as Staff).ID;
             string name = ((sender as StaffItem).Tag as Staff).Name;
             DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
@@ -172,6 +173,7 @@ namespace MilkTeaHouseProject
             string phoneNumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
             fAddStaff frm = new fAddStaff( id,  name,  image,  birthDate,  pos,  phonenumber,  username,  cmnd,  sex,  address);
             frm.btEdit.Visible = true;
+            frm.lbNameForm.Text = "Sửa thông tin nhân viên";
             frm.ShowDialog();
 
             this.flowLayoutPanelStaff.Controls.Clear();
@@ -227,12 +229,49 @@ namespace MilkTeaHouseProject
         {
             SearchStaff(txtSearch.Text);
         }
-        #endregion
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            //fExport frm = new fExport();
-            //frm.ShowDialog();
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    object misValue = System.Reflection.Missing.Value;
+                    Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+                    application.Visible = false;
+                    Microsoft.Office.Interop.Excel.Workbook workbook = application.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+                    Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+
+                    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ID as N'Mã nhân viên', Name as N'Tên', BIRTHDATE as N'Ngày sinh', POSITION as N'Vị trí', USERNAME as N'Tên đăng nhập', OVERTIME as N'Giờ tăng ca', SalaryReceived as N'Lương nhận được', Fault as N'Lỗi', PhoneNumber as N'Số điện thoại', CMND as N'Chứng minh nhân dân', Sex as N'Giới tính', Address as N'Địa chỉ' FROM Staff");
+
+                    worksheet = application.Worksheets.Add(misValue, misValue, misValue, misValue);
+                    worksheet.Name = "Staff";
+                    for (int i = 0; i < data.Columns.Count; i++)
+                    {
+                        worksheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                    }
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < data.Columns.Count; j++)
+                        {
+                            if (data.Rows[i][j].ToString() == "True")
+                            {
+                                worksheet.Cells[i + 2, j + 1] = "Nam";
+                            }
+                            else if (data.Rows[i][j].ToString() == "False")
+                            {
+                                worksheet.Cells[i + 2, j + 1] = "Nữ";
+                            }
+                            else
+                            {
+                                worksheet.Cells[i + 2, j + 1] = data.Rows[i][j].ToString();
+                            }
+                        }
+                    }
+                    workbook.SaveAs(sfd.FileName);
+                }
+            }
         }
+        #endregion
     }
 }

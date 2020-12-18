@@ -86,6 +86,23 @@ namespace MilkTeaHouseProject
         string imgLocation = "";
         byte[] img = null;
 
+
+        #region Method
+        private void ShowError(Control control, string error)
+        {
+            control.Focus();
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
+        }
+
+        private void LoadImage()
+        {
+            imgLocation = "./images/blank-profile.png";
+        }
+        #endregion
+
+        #region event
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.cbbUser.Text;
@@ -104,14 +121,14 @@ namespace MilkTeaHouseProject
             {
                 sex = false;
             }
-            if (this.cbMan.Checked == false && this.cbWoman.Checked == false)
+            if ((this.cbMan.Checked == false) && (this.cbWoman.Checked == false))
             {
-                MessageBox.Show("Chọn giới tính", "Error");
+                errorShow.Visible = true;
+                errorShow.Location = new Point(cbMan.Location.X, cbMan.Location.Y + cbMan.Height);
+                errorShow.Text = "Vui lòng chọn giới tính";
+                return;
             }
-            if (this.cbMan.Checked != false && this.cbWoman.Checked != false)
-            {
-                MessageBox.Show("Không chọn 2 giới tính", "Error");
-            }
+
             if (imgLocation == "")
             {
                 LoadImage();
@@ -122,29 +139,29 @@ namespace MilkTeaHouseProject
 
             if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Nhập Họ Tên", "Error");
+                ShowError(txtName, "Vui lòng nhập họ tên");
                 return;
             }
             if (string.IsNullOrEmpty(position))
             {
-                MessageBox.Show("Chọn Công việc", "Error");
+                ShowError(cbbPos, "Vui lòng chọn vị trí ");
                 return;
             }
             if (phoneNumber.Length != 10)
             {
-                MessageBox.Show("Số điện thoại không hợp lệ", "Error");
+                ShowError(txtPhoneNumber, "SĐT không hợp lệ");
                 return;
             }
             if (cmnd.Length != 9)
             {
-                MessageBox.Show("Số CMND không hợp lệ", "Error");
+                ShowError(txtCMND, "Số CMND không hợp lệ");
                 return;
             }    
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(address))
             {
-                MessageBox.Show("Nhập địa  chỉ", "Error");
+                ShowError(txtAddress, "Vui lòng nhập địa chỉ");
             }    
-            if (position == "Thu Ngân")
+            if (position.ToUpper() == "THU NGÂN")
             {
                 StaffDAL.Instance.AddStaff(name, img, birthdate, position, username,phoneNumber, cmnd, sex, address);
                 this.Close();
@@ -184,11 +201,6 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void LoadImage()
-        {
-            imgLocation = "./images/blank-profile.png";
-        }
-
         private void txtSalary_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -199,7 +211,7 @@ namespace MilkTeaHouseProject
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.cbbPos.Text != "Thu Ngân")
+            if (this.cbbPos.Text.ToUpper() != "THU NGÂN")
             {
                 e.Handled = true;
             }
@@ -215,12 +227,11 @@ namespace MilkTeaHouseProject
             {
                 this.cbbUser.Items.Add(acc.Username);
             }
-
         }
 
         private void cbbPos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cbbPos.Text == "Thu Ngân")
+            if (this.cbbPos.Text.ToUpper() == "THU NGÂN")
             {
                 this.cbbUser.Visible = true;
                 this.btAddUserName.Visible = true;
@@ -235,6 +246,7 @@ namespace MilkTeaHouseProject
         private void btAddPosition_Click(object sender, EventArgs e)
         {
             fSetSalary frm = new fSetSalary();
+            frm.lbNameForm.Text = "Thêm vị trí";
             frm.ShowDialog();
             List<Position> positions = PositionDAL.Instance.GetListPosistion();
             this.cbbPos.Items.Clear();
@@ -265,12 +277,12 @@ namespace MilkTeaHouseProject
             }
             if (this.cbMan.Checked == false && this.cbWoman.Checked == false)
             {
-                MessageBox.Show("Chọn giới tính", "Error");
+                errorShow.Visible = true;
+                errorShow.Location = new Point(cbMan.Location.X, cbMan.Location.Y + cbMan.Height);
+                errorShow.Text = "Vui lòng chọn giới tính";
+                return;
             }
-            if (this.cbMan.Checked != false && this.cbWoman.Checked != false)
-            {
-                MessageBox.Show("Không chọn 2 giới tính", "Error");
-            }
+
             if (imgLocation == "")
             {
                 LoadImage();
@@ -281,29 +293,29 @@ namespace MilkTeaHouseProject
 
             if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Nhập Họ Tên", "Error");
+                ShowError(txtName, "Vui lòng nhập họ tên ");
                 return;
             }
             if (string.IsNullOrEmpty(position))
             {
-                MessageBox.Show("Chọn Công việc", "Error");
+                ShowError(cbbPos, "Vui lòng chọn vị trí ");
                 return;
             }
             if (phoneNumber.Length != 10)
             {
-                MessageBox.Show("Số điện thoại không hợp lệ", "Error");
+                ShowError(txtPhoneNumber, "SĐT không hợp lệ");
                 return;
             }
             if (cmnd.Length != 9)
             {
-                MessageBox.Show("Số CMND không hợp lệ", "Error");
+                ShowError(txtCMND, "Số CMND không hợp lệ  ");
                 return;
             }
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(address))
             {
-                MessageBox.Show("Nhập địa  chỉ", "Error");
+                ShowError(txtAddress, "Vui lòng nhập địa chỉ ");
             }
-            if (position == "Thu Ngân")
+            if (position.ToUpper() == "THU NGÂN")
             {
                 StaffDAL.Instance.EditStaff(id, name, img, birthdate, position, username, phoneNumber, cmnd, sex, address);
                 this.Close();
@@ -320,7 +332,44 @@ namespace MilkTeaHouseProject
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
 
-
+            this.cbMan.Checked = this.cbWoman.Checked = false;
         }
+
+        private void cbMan_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.cbMan.Checked == true)
+            {
+                this.cbWoman.Checked = false;
+            }    
+        }
+
+        private void cbWoman_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.cbWoman.Checked == true)
+            {
+                this.cbMan.Checked = false;
+            }    
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+
+        private void txtCMND_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
+        #endregion
     }
 }

@@ -46,7 +46,7 @@ namespace MilkTeaHouseProject
                 lbCategory.Tag = lbCategory;
 
                 lbCategory.Click += LbCategory_Click;
-                
+
                 this.flowLayoutPanelCategory.Controls.Add(lbCategory);
             }
         }
@@ -72,9 +72,13 @@ namespace MilkTeaHouseProject
             flowLayoutPanelBill.Controls.Clear();
             List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(billID);
 
+            int count;
+
             foreach (DTO.Menu menu in listMenu)
             {
-                BillItem billItem = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count, billID);
+                count = BillInfoDAL.Instance.GetCountbyDrinkBillID(billID, menu.IdDrink);
+
+                BillItem billItem = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, count, billID);
 
                 billItem.onValueChanged += BillItem_onValueChanged;
                 billItem.onDel += BillItem_onDel;
@@ -145,7 +149,7 @@ namespace MilkTeaHouseProject
                 TableItem item = new TableItem(table.ID, table.Name, table.Status);
                 item.Tag = table;
                 item.onChoose += TableItem_onChoose;
-                
+
 
                 this.flowLayoutPanelTable.Controls.Add(item);
             }
@@ -219,6 +223,33 @@ namespace MilkTeaHouseProject
             this.btnDrink.BaseColor = Color.FromArgb(255, 255, 255);
             this.btnDrink.ForeColor = Color.FromArgb(0, 144, 218);
         }
+
+        public int ConvertToNumber(string str)
+        {
+            string[] s = str.Split(',');
+            string tmp = "";
+            foreach (string a in s)
+            {
+                tmp = tmp + a;
+            }
+            return int.Parse(tmp);
+        }
+
+        private void ShowError(string error)
+        {
+            lbSuccess.Visible = false;
+            lbErrorShow.Visible = true;
+            lbErrorShow.Text = error;
+            pnTotal.BackColor = Color.FromArgb(255, 233, 171);
+        }
+
+        private void ShowSuccess(string query)
+        {
+            lbSuccess.Visible = true;
+            lbErrorShow.Visible = false;
+            lbSuccess.Text = query;
+            pnTotal.BackColor = Color.FromArgb(172, 234, 156);
+        }
         #endregion
 
         #region Events
@@ -236,86 +267,105 @@ namespace MilkTeaHouseProject
             (sender as TableItem).Selected = true;
             (sender as TableItem).ChangeBackcolor();
 
-            if (((sender as TableItem).Tag as TableFood).Status == true)
+            if (TableFoodDAL.Instance.GetStatusbyIdTable(int.Parse(tableID.Text)) == true)
             {
                 int idBillByTableID = BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text));
 
-                LoadBill(BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text)));
+                if (idBillByTableID != 0)
+                    LoadBill(idBillByTableID);
 
-                foreach (Control item in flowLayoutPanelBill.Controls)
-                {
-                    (item as BillItem).FalseVisibleDel();
-                }
-                this.btnCancel.Text = "Hủy bàn";
-                this.btnPay.Visible = false;
+                this.btnPay.Visible = true;
+                this.btnCancel.Enabled = true;
+                this.btnCancel.Text = "Hủy đơn";
 
                 this.lbCount.Text = MenuDAL.Instance.GetCount(idBillByTableID).ToString();
                 this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(idBillByTableID)).ToString();
             }
             else
             {
-                LoadBill(this.billID);
-                this.btnCancel.Text = "Hủy đơn";
-                this.btnPay.Visible = true;
+                flowLayoutPanelBill.Controls.Clear();
+                if (lbTableSelected.Text != "Mang về")
+                {
+                    this.btnCancel.Enabled = true;
+                    this.btnCancel.Text = "Xóa bàn";
+                    this.btnPay.Visible = false;
+                }
+                else
+                {
+                    this.btnPay.Visible = false;
+                    this.btnCancel.Enabled = false;
+                }
 
                 this.lbCount.Text = MenuDAL.Instance.GetCount(this.billID).ToString();
                 this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(this.billID)).ToString();
-            
             }
 
-            if (((sender as TableItem).Tag as TableFood).Name == "Mang về")
-            {
-                this.btnDeleteTable.Visible = false;
-            }
-            else
-            {
-                this.btnDeleteTable.Visible = true;
-            }
         }
 
         private void DrinkItem_onChoose(object sender, EventArgs e)
         {
             int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
+            int idBill;
+            int count = 1;
+            int price = ((sender as DrinkItem).Tag as Drink).Price - ((sender as DrinkItem).Tag as Drink).OriginPrice;
 
-            if (((sender as DrinkItem).Tag as Drink).Count > BillInfoDAL.Instance.GetCountbyDrinkBillID(this.billID, idDrink))
+            if (DrinkDAL.Instance.GetCountbyDrinkID(idDrink) > 0)
             {
-                try
+                if (TableFoodDAL.Instance.GetStatusbyIdTable(int.Parse(tableID.Text)) == true)
                 {
+                    idBill = BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text));
+
+                    BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
+
+                    //price = MenuDAL.Instance.GetTotalPrice(idBill);
+
+                    BillDAL.Instance.UpdateBill(idBill, price);
+                }
+                else
+                {
+                    idBill = this.billID;
                     int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
-                    int count = 1;
 
-                    if (!BillDAL.Instance.ExistBillbyIDBill(this.billID))
-                        BillDAL.Instance.InsertBill(this.billID, idStaff);
+                    if (!BillDAL.Instance.ExistBillbyIDBill(idBill))
+                        BillDAL.Instance.InsertBill(idBill, idStaff, tableID.Text, price);
 
-                    BillInfoDAL.Instance.InsertBillInfo(this.billID, idDrink, count);
+                    BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
+
+                    TableFoodDAL.Instance.UpdateTable(int.Parse(tableID.Text));
+
+                    this.billID += 1;
+
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message, "Lỗi");
-                }
-                finally
-                {
-                    this.lbCount.Text = MenuDAL.Instance.GetCount(this.billID).ToString();
-                    this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(this.billID)).ToString();
-                    LoadBill(this.billID);
-                }
+                this.btnPay.Visible = true;
+                this.btnCancel.Text = "Hủy đơn";
+                this.btnCancel.Visible = true;
+
+                DrinkDAL.Instance.MinusCount(idDrink);
+
+                this.lbCount.Text = MenuDAL.Instance.GetCount(idBill).ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(idBill)).ToString();
+                LoadBill(idBill);
             }
             else
             {
-                MessageBox.Show("Món này đã hết hàng");
+                ShowError("Món này đã hết hàng");
             }
         }
 
         private void BillItem_onDel(object sender, EventArgs e)
         {
+            int idBill = BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text));
+
             try
             {
                 int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
+                int count = ((sender as BillItem).Tag as DTO.Menu).Count;
 
-                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, billID);
+                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
+                DrinkDAL.Instance.SetCountbyID(drinkID, count);
 
-                this.lbCount.Text = MenuDAL.Instance.GetCount(billID).ToString();
-                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
+                this.lbCount.Text = MenuDAL.Instance.GetCount(idBill).ToString();
+                this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(idBill)).ToString();
             }
             catch
             {
@@ -323,9 +373,9 @@ namespace MilkTeaHouseProject
             }
             finally
             {
-
+                ShowSuccess("Đã hủy món");
                 this.flowLayoutPanelBill.Controls.Clear();
-                LoadBill(this.billID);
+                LoadBill(idBill);
             }
         }
 
@@ -337,15 +387,17 @@ namespace MilkTeaHouseProject
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            int idBill = BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text));
+
             if (this.flowLayoutPanelBill.Controls.Count > 0)
             {
-                int totalPrice = MenuDAL.Instance.GetTotalPrice(billID);
+                int totalPrice = MenuDAL.Instance.GetTotalPrice(idBill);
                 int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
 
-                fInvoice invoice = new fInvoice(this.Username, billID, totalPrice, staffID, int.Parse(tableID.Text));
+                fInvoice invoice = new fInvoice(this.Username, idBill, totalPrice, staffID, int.Parse(tableID.Text));
                 invoice.ShowDialog();
 
-                if (BillDAL.Instance.GetStatusbyIDBill(billID) == true)
+                if (BillDAL.Instance.GetStatusbyIDBill(idBill) == true)
                 {
                     this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
@@ -353,56 +405,60 @@ namespace MilkTeaHouseProject
                     LoadTable();
                     LoadDrink();
 
+                    ShowSuccess("Thanh toán thành công");
                     TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
                     flowLayoutPanelBill.Controls.Clear();
-
-                    billID += 1;
                 }
             }
             else
             {
-                MessageBox.Show("Hóa đơn không tồn tại!", "Error");
+                ShowError("Hóa đơn không tồn tại");
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (btnCancel.Text != "Hủy bàn")
+            if (btnCancel.Text != "Xóa bàn")
             {
-                if (this.flowLayoutPanelBill.Controls.Count != 0)
+                try
                 {
-                    try
+                    int idBill = BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text));
+
+                    foreach (Control item in flowLayoutPanelBill.Controls)
                     {
-                        BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
-                        BillDAL.Instance.DeleteBill(billID);
+                        int drinkID = ((item as BillItem).Tag as DTO.Menu).IdDrink;
+                        int count = ((item as BillItem).Tag as DTO.Menu).Count;
+
+                        BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
+                        DrinkDAL.Instance.SetCountbyID(drinkID, count);
                     }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error");
-                    }
-                    finally
-                    {
-                        this.flowLayoutPanelBill.Controls.Clear();
-                        this.lbCount.Text = "0";
-                        this.lbTotalPrice.Text = "0";
-                    }
+                    //BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
+
+                    BillDAL.Instance.DeleteBill(idBill);
+
+                    TableFoodDAL.Instance.SetStatusEmpty(int.Parse(tableID.Text));
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Hóa đơn không tồn tại!", "Error");
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                finally
+                {
+                    ShowSuccess("Đã hủy đơn");
+                    this.flowLayoutPanelBill.Controls.Clear();
+                    this.lbCount.Text = "0";
+                    this.lbTotalPrice.Text = "0";
                 }
             }
             else
             {
-                BillDAL.Instance.SetTableNullbyTableID(int.Parse(tableID.Text));
-                TableFoodDAL.Instance.SetStatusEmpty(int.Parse(tableID.Text));
+                TableFoodDAL.Instance.DeleteTable(int.Parse(tableID.Text));
 
-                LoadTable();
-                flowLayoutPanelBill.Controls.Clear();
+                ShowSuccess("Đã xóa bàn");
 
-                this.btnCancel.Text = "Hủy đơn";
-                this.btnPay.Visible = true;
+                TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
             }
+            LoadTable();
 
             TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
         }
@@ -455,13 +511,7 @@ namespace MilkTeaHouseProject
 
         private void fOrder_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (flowLayoutPanelBill.Controls.Count > 0)
-            {
-                BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
-                BillDAL.Instance.DeleteBill(billID);
 
-                flowLayoutPanelBill.Controls.Clear();
-            }
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -480,18 +530,8 @@ namespace MilkTeaHouseProject
         }
 
         private void btnDrink_Click(object sender, EventArgs e)
-        {
+        { 
             ActiveBtnDrink();
-
-            if (TableFoodDAL.Instance.GetStatusbyIdTable(int.Parse(tableID.Text)) == true)
-            {
-                LoadBill(this.billID);
-
-                this.btnCancel.Text = "Hủy đơn";
-                this.btnPay.Visible = true;
-
-                TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
-            }
         }
 
         private void fOrder_Load(object sender, EventArgs e)
@@ -505,7 +545,6 @@ namespace MilkTeaHouseProject
             LoadGroup();
 
             TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
-            this.btnDeleteTable.Visible = false;
         }
 
         private void fOrder_SizeChanged(object sender, EventArgs e)
@@ -539,46 +578,8 @@ namespace MilkTeaHouseProject
 
             LoadTable();
             LoadGroup();
-        }
 
-        private void btnDeleteTable_Click(object sender, EventArgs e)
-        {
-            if (btnCancel.Text != "Hủy bàn")
-            {
-                if (this.flowLayoutPanelBill.Controls.Count != 0)
-                {
-                    try
-                    {
-                        BillInfoDAL.Instance.DeleteBillInfobyIDBill(billID);
-                        BillDAL.Instance.DeleteBill(billID);
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error");
-                    }
-                    finally
-                    {
-                        this.flowLayoutPanelBill.Controls.Clear();
-                        this.lbCount.Text = "0";
-                        this.lbTotalPrice.Text = "0";
-                    }
-                }
-            }
-            else
-            {
-                BillDAL.Instance.SetTableNullbyTableID(int.Parse(tableID.Text));
-                TableFoodDAL.Instance.SetStatusEmpty(int.Parse(tableID.Text));
-                LoadTable();
-                flowLayoutPanelBill.Controls.Clear();
-                this.btnCancel.Text = "Hủy đơn";
-                this.btnPay.Visible = true;
-            }
-
-            TableFoodDAL.Instance.DeleteTable(int.Parse(tableID.Text));
-
-            LoadTable();
-
-            TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
+            ShowSuccess("Thêm bàn thành công");
         }
 
         private void lbAllinGroup_Click(object sender, EventArgs e)
@@ -618,8 +619,6 @@ namespace MilkTeaHouseProject
                     item.Visible = false;
             }
         }
-
-
         #endregion
     }
 }

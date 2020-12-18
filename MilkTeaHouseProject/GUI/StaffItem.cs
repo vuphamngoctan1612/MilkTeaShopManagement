@@ -72,6 +72,8 @@ namespace MilkTeaHouseProject
             {
                 this.BackColor = Color.FromArgb(255, 255, 255);
             }
+
+            gunaPictureBox1.Image = picStaff.Image;
         }
         public event EventHandler onEdit = null;
         public event EventHandler onDel = null;
@@ -79,6 +81,19 @@ namespace MilkTeaHouseProject
         public event EventHandler onFaultChanged = null;
 
 
+        void SizeLoad()
+        {
+            int space = this.Width / 8;
+            picStaff.Width = picStaff.Height = 50;
+            picStaff.Location = new Point(10, 10);
+            lbID.Location = new Point(130, 20);
+            lbName.Location = new Point((int)(space * 1.7), 20);
+            lbPosition.Location = new Point((int)(space * 3.2), 20);
+            lbUserName.Location = new Point((int)(space * 4.2), 1205);
+            numericUpDownOverTime.Location = new Point((int)(space * 5.5), 20);
+            numericFault.Location = new Point((int)(space * 6.5), 20);
+            lbSalary.Location = new Point((int)(space * 7.2), 20);
+        }
         private void btEdit_Click(object sender, EventArgs e)
         {
             if (onEdit != null)
@@ -97,10 +112,7 @@ namespace MilkTeaHouseProject
 
         private void StaffItem_SizeChanged(object sender, EventArgs e)
         {
-            if (this.Height == 50)
-                Collapse();
-            else
-                Expand();
+            SizeLoad();
         }
 
         private void numericUpDownOverTime_ValueChanged(object sender, EventArgs e)
@@ -131,10 +143,10 @@ namespace MilkTeaHouseProject
 
         private void StaffItem_Click(object sender, EventArgs e)
         {
-            if (this.Height == 50)
-                this.Height = 250;
+            if (this.Height == 70)
+                Expand();
             else
-                this.Height = 50;
+                Collapse();
         }
 
         private void StaffItem_Load(object sender, EventArgs e)
@@ -145,34 +157,18 @@ namespace MilkTeaHouseProject
 
         public void Expand()
         {
-            this.Height = 250;
+            this.Height = 400;
             int space = this.Width / 3;
-            picStaff.Width = picStaff.Height = 100;
-            picStaff.Location = new Point(50, 90);
 
             this.gunaSeparator1.Visible = true;
-            gunaSeparator1.Width = this.Width;
-            gunaSeparator1.Location = new Point(0, 50);
-
-            panel1.Location = new Point(250, 80);
         }
 
         public void Collapse()
         {
-            this.Height = 50;
+            this.Height = 70;
             this.gunaSeparator1.Visible = false;
-            int space = this.Width / 8;
-            picStaff.Width = picStaff.Height = 45;
-            picStaff.Location = new Point(10, 3);
-            lbID.Location = new Point(space, 15);
-            lbName.Location = new Point((int)(space * 1.7), 15);
-            lbPosition.Location = new Point((int)(space * 3), 15);
-            lbUserName.Location = new Point((int)(space * 3.7), 15);
-            numericUpDownOverTime.Location = new Point((int)(space * 4.9), 15);
-            numericFault.Location = new Point((int)(space * 5.8), 15);
-            lbSalary.Location = new Point((int)(space * 6.5), 15);
-            btEdit.Location = new Point((int)(space * 7.2), 12);
-            btDel.Location = new Point((int)(space * 7.2) + 50, 12);
+
+            SizeLoad();
         }
     }
 }

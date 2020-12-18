@@ -28,52 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.cbbCount_or_Revenue = new Guna.UI.WinForms.GunaComboBox();
+            this.cbbPeriod = new Guna.UI.WinForms.GunaComboBox();
+            this.cbbTime = new Guna.UI.WinForms.GunaComboBox();
             this.CartesianChartReport = new LiveCharts.WinForms.CartesianChart();
             this.pnSales = new Guna.UI.WinForms.GunaShadowPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cbbCount_or_Revenue = new Guna.UI.WinForms.GunaComboBox();
-            this.cbbTime = new Guna.UI.WinForms.GunaComboBox();
-            this.cbbPeriod = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.panel4.SuspendLayout();
             this.pnSales.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // CartesianChartReport
-            // 
-            this.CartesianChartReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CartesianChartReport.Location = new System.Drawing.Point(0, 0);
-            this.CartesianChartReport.Name = "CartesianChartReport";
-            this.CartesianChartReport.Size = new System.Drawing.Size(1132, 578);
-            this.CartesianChartReport.TabIndex = 6;
-            this.CartesianChartReport.Text = "cartesianChart1";
-            // 
-            // pnSales
-            // 
-            this.pnSales.BackColor = System.Drawing.Color.Transparent;
-            this.pnSales.BaseColor = System.Drawing.Color.White;
-            this.pnSales.Controls.Add(this.panel1);
-            this.pnSales.Controls.Add(this.panel4);
-            this.pnSales.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnSales.Location = new System.Drawing.Point(0, 0);
-            this.pnSales.Margin = new System.Windows.Forms.Padding(0);
-            this.pnSales.Name = "pnSales";
-            this.pnSales.Radius = 5;
-            this.pnSales.ShadowColor = System.Drawing.Color.Black;
-            this.pnSales.ShadowShift = 3;
-            this.pnSales.Size = new System.Drawing.Size(1132, 694);
-            this.pnSales.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.CartesianChartReport);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 116);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 578);
-            this.panel1.TabIndex = 7;
             // 
             // panel4
             // 
@@ -87,6 +53,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1132, 116);
             this.panel4.TabIndex = 5;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(14, 22);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(291, 32);
+            this.gunaLabel1.TabIndex = 6;
+            this.gunaLabel1.Text = "TOP MÓN ĂN BÁN CHẠY";
             // 
             // cbbCount_or_Revenue
             // 
@@ -110,27 +86,6 @@
             this.cbbCount_or_Revenue.Size = new System.Drawing.Size(282, 35);
             this.cbbCount_or_Revenue.TabIndex = 5;
             this.cbbCount_or_Revenue.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
-            // 
-            // cbbTime
-            // 
-            this.cbbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbTime.BackColor = System.Drawing.Color.Transparent;
-            this.cbbTime.BaseColor = System.Drawing.Color.White;
-            this.cbbTime.BorderColor = System.Drawing.Color.Silver;
-            this.cbbTime.BorderSize = 1;
-            this.cbbTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTime.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbTime.ForeColor = System.Drawing.Color.Black;
-            this.cbbTime.FormattingEnabled = true;
-            this.cbbTime.Location = new System.Drawing.Point(911, 70);
-            this.cbbTime.Name = "cbbTime";
-            this.cbbTime.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbbTime.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbTime.Size = new System.Drawing.Size(178, 31);
-            this.cbbTime.TabIndex = 5;
-            this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
             // 
             // cbbPeriod
             // 
@@ -156,15 +111,60 @@
             this.cbbPeriod.TabIndex = 5;
             this.cbbPeriod.SelectedIndexChanged += new System.EventHandler(this.cbbPeriod_SelectedIndexChanged);
             // 
-            // gunaLabel1
+            // cbbTime
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(14, 22);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(291, 32);
-            this.gunaLabel1.TabIndex = 6;
-            this.gunaLabel1.Text = "TOP MÓN ĂN BÁN CHẠY";
+            this.cbbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbTime.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTime.BaseColor = System.Drawing.Color.White;
+            this.cbbTime.BorderColor = System.Drawing.Color.Silver;
+            this.cbbTime.BorderSize = 1;
+            this.cbbTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTime.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTime.ForeColor = System.Drawing.Color.Black;
+            this.cbbTime.FormattingEnabled = true;
+            this.cbbTime.Location = new System.Drawing.Point(911, 70);
+            this.cbbTime.Name = "cbbTime";
+            this.cbbTime.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbbTime.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbbTime.Size = new System.Drawing.Size(178, 31);
+            this.cbbTime.TabIndex = 5;
+            this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
+            // 
+            // CartesianChartReport
+            // 
+            this.CartesianChartReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CartesianChartReport.Location = new System.Drawing.Point(0, 0);
+            this.CartesianChartReport.Name = "CartesianChartReport";
+            this.CartesianChartReport.Size = new System.Drawing.Size(1132, 578);
+            this.CartesianChartReport.TabIndex = 6;
+            this.CartesianChartReport.Text = "cartesianChart1";
+            // 
+            // pnSales
+            // 
+            this.pnSales.BackColor = System.Drawing.Color.Transparent;
+            this.pnSales.BaseColor = System.Drawing.Color.White;
+            this.pnSales.Controls.Add(this.panel1);
+            this.pnSales.Controls.Add(this.panel4);
+            this.pnSales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnSales.Location = new System.Drawing.Point(0, 0);
+            this.pnSales.Margin = new System.Windows.Forms.Padding(0);
+            this.pnSales.Name = "pnSales";
+            this.pnSales.Radius = 5;
+            this.pnSales.ShadowColor = System.Drawing.Color.Black;
+            this.pnSales.ShadowShift = 3;
+            this.pnSales.Size = new System.Drawing.Size(1132, 694);
+            this.pnSales.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.CartesianChartReport);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 116);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1132, 578);
+            this.panel1.TabIndex = 7;
             // 
             // DrinksReport
             // 
@@ -174,23 +174,23 @@
             this.Name = "DrinksReport";
             this.Size = new System.Drawing.Size(1132, 694);
             this.Load += new System.EventHandler(this.DrinksReport_Load);
-            this.pnSales.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.pnSales.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaComboBox cbbCount_or_Revenue;
+        private Guna.UI.WinForms.GunaComboBox cbbPeriod;
+        private Guna.UI.WinForms.GunaComboBox cbbTime;
         private LiveCharts.WinForms.CartesianChart CartesianChartReport;
         private Guna.UI.WinForms.GunaShadowPanel pnSales;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
-        private Guna.UI.WinForms.GunaComboBox cbbCount_or_Revenue;
-        private Guna.UI.WinForms.GunaComboBox cbbTime;
-        private Guna.UI.WinForms.GunaComboBox cbbPeriod;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }

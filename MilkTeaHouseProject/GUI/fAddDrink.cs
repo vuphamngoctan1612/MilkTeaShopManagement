@@ -17,28 +17,51 @@ namespace MilkTeaHouseProject
 {
     public partial class fAddDrink : Form
     {
+        public int ID { get => ConvertToNumber(this.txtID.Text); }
+        public string DrinkName { get => this.txtNameDrink.Text; }
+        public int Price { get => ConvertToNumber(this.txtPrice.Text); }
+        public string Category
+        {
+            get
+            {
+                if (this.txtCategory.Visible == true)
+                {
+                    return this.txtCategory.Text;
+                }
+                else
+                {
+                    return this.cbbCategory.Text;
+                }
+            }
+        }
+        public byte[] Image { get => this.img; }
+        public System.Drawing.Image IMAGE { get => this.ptbImage.Image; set => this.ptbImage.Image = value; }
+        public int Origin { get => ConvertToNumber(this.txtOriginPrice.Text); }
+
         public fAddDrink()
         {
             InitializeComponent();
+            LoadNameCategory();
 
             txtID.Text = (DrinkDAL.Instance.GetMAXDrinkID() + 1).ToString();
             btnAdd.Visible = true;
             btnEdit.Visible = false;
             btnAdd.BringToFront();
             lbNameForm.Text = "Thêm món";
+            txtID.Enabled = false;
         }
 
         public fAddDrink(int id, string name, int price, byte[] image, int origin, int count)
         {
             InitializeComponent();
-
+            LoadNameCategory();
+            
             txtID.Text = id.ToString();
             txtID.Enabled = false;
             txtNameDrink.Text = name;
             txtPrice.Text = price.ToString();
-            cbCategory.Text = DrinkDAL.Instance.getCategorybyID(id);
+            cbbCategory.Text = DrinkDAL.Instance.GetCategorybyID(id);
             txtOriginPrice.Text = origin.ToString();
-            txtCount.Text = count.ToString();
 
             if (image == null)
             {
@@ -56,7 +79,37 @@ namespace MilkTeaHouseProject
             btnEdit.Visible = true;
             btnAdd.Visible = false;
             btnEdit.BringToFront();
-            btnAddCategory.Visible = false;
+            lbNameForm.Text = "Sửa món";
+        }
+
+        public fAddDrink(int id, string name, string category, int price, byte[] image, int origin, int count)
+        {
+            InitializeComponent();
+            LoadNameCategory();
+
+            txtID.Text = id.ToString();
+            txtID.Enabled = false;
+            txtNameDrink.Text = name;
+            cbbCategory.Text = DrinkDAL.Instance.GetCategorybyID(id);
+            txtPrice.Text = price.ToString();
+            txtOriginPrice.Text = origin.ToString();
+
+            if (image == null)
+            {
+                ptbImage.Image = null;
+            }
+            else
+            {
+                img = image;
+                MemoryStream mstream = new MemoryStream(image);
+                Bitmap bitmap = new Bitmap(mstream);
+                ptbImage.Image = bitmap;
+                ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+            btnEdit.Visible = true;
+            btnAdd.Visible = false;
+            btnEdit.BringToFront();
             lbNameForm.Text = "Sửa món";
         }
 
@@ -69,8 +122,8 @@ namespace MilkTeaHouseProject
         private void LoadNameCategory()
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
-            cbCategory.DataSource = dt;
-            cbCategory.DisplayMember = "NAME";
+            cbbCategory.DataSource = dt;
+            cbbCategory.DisplayMember = "NAME";
         }
 
         private void loadImage()
@@ -100,9 +153,19 @@ namespace MilkTeaHouseProject
             return int.Parse(tmp);
         }
 
+        private void ShowError(Control control, string error)
+        {
+            control.Focus();
+            errorShow.Visible = true;
+            errorShow.Location = new Point(control.Location.X, control.Location.Y + control.Height);
+            errorShow.Text = error;
+        }
+        #endregion
+
         string imgLocation = "";
         byte[] img = null;
-        #endregion
+        public event EventHandler onEdit = null;
+        public event EventHandler onAdd = null;
 
         #region Event
         private void btnExit_Click(object sender, EventArgs e)
@@ -135,6 +198,7 @@ namespace MilkTeaHouseProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string category = "";
             try
             {
                 if (imgLocation == "")
@@ -151,83 +215,60 @@ namespace MilkTeaHouseProject
                     {
                         if (string.IsNullOrEmpty(this.txtCategory.Text))
                         {
-                            MessageBox.Show("Vui lòng nhập tên loại!", "Lỗi");
+                            ShowError(txtCategory, "Vui lòng nhập loại mới");
                             return;
                         }
 
-                        CategoryDAL.Instance.AddCategory(txtCategory.Text);
+                        category = this.txtCategory.Text;
+                        CategoryDAL.Instance.AddCategory(category);
                     }
                     catch (SqlException)
                     {
-                        MessageBox.Show("Trùng loại");
+                        ShowError(txtCategory, "Trùng loại");
                     }
                 }
                 else
-                if (string.IsNullOrEmpty(cbCategory.Text))
                 {
-                    MessageBox.Show("Vui lòng chọn loại");
-                    return;
+                    category = cbbCategory.Text;
                 }
-
+                
                 if (string.IsNullOrEmpty(txtNameDrink.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập tên món");
+                    ShowError(txtNameDrink, "Vui lòng nhập tên món");
                     return;
                 }
-
+                if (string.IsNullOrEmpty(txtOriginPrice.Text))
+                {
+                    ShowError(txtOriginPrice, "Vui lòng nhập giá gốc món");
+                    return;
+                }
                 if (string.IsNullOrEmpty(txtPrice.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập giá món");
+                    ShowError(txtPrice, "Vui lòng nhập giá");
                     return;
                 }
 
                 string name = this.txtNameDrink.Text;
                 int price = ConvertToNumber(this.txtPrice.Text);
-                int originPrice=0;
-                int Count=0;
-                string category;
+                int originPrice = ConvertToNumber(txtOriginPrice.Text);
 
-                if (txtCategory.Visible==true)
-                {
-                    category = txtCategory.Text;
-                }
-                else
-                {
-                    category = cbCategory.Text;
-                }
-
-                if (this.txtOriginPrice.Text == "")
-                {
-                    originPrice = 0;
-                }
-                else
-                {
-                    originPrice = ConvertToNumber(txtOriginPrice.Text);
-                }
-                if (this.txtCount.Text == "")
-                {
-                    Count = 0;
-                }
-                else
-                {
-                    Count = ConvertToNumber(txtCount.Text);
-                }
-
-                DrinkDAL.Instance.AddDrink(name, price, category, img, originPrice, Count);
-                MessageBox.Show("Cập nhật thành công");
+                DrinkDAL.Instance.AddDrink(name, price, category, img, originPrice, 0);
                 this.Close();
 
+                if (onAdd != null)
+                {
+                    onAdd.Invoke(this, new EventArgs());
+                }
             }
-            catch (SqlException)
+            catch(SqlException)
             {
-                MessageBox.Show("Trùng ID.");
+                ShowError(txtID, "");
             }
-
         }
-
+                
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            string category = "";
             if (ptbImage.Image == null)
             {
                 if (imgLocation == "")
@@ -247,20 +288,50 @@ namespace MilkTeaHouseProject
                     img = bnr.ReadBytes((int)stream.Length);
                 }
             }
-            if (txtNameDrink.Text == "")
+
+            if (txtCategory.Visible == true)
             {
-                MessageBox.Show("Vui lòng nhập tên món");
-            }
-            else if (txtPrice.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập giá");
+                try
+                {
+                    if (string.IsNullOrEmpty(this.txtCategory.Text))
+                    {
+                        ShowError(txtCategory, "Vui lòng nhập loại mới");
+                        return;
+                    }
+
+                    category = txtCategory.Text;
+                    CategoryDAL.Instance.AddCategory(category);
+                }
+                catch (SqlException)
+                {
+                    ShowError(txtCategory, "Trùng loại");
+                }
             }
             else
             {
-                DrinkDAL.Instance.EditDrink(Int32.Parse(txtID.Text), txtNameDrink.Text, ConvertToNumber(txtPrice.Text), cbCategory.Text, img, ConvertToNumber(txtOriginPrice.Text), ConvertToNumber(txtCount.Text));
-                MessageBox.Show("Cập nhật thành công");
-                this.Close();
+                category = cbbCategory.Text;
             }
+
+            if (string.IsNullOrEmpty(txtNameDrink.Text))
+            {
+                ShowError(txtNameDrink, "Vui lòng nhập tên món");
+            }
+            if (string.IsNullOrEmpty(txtOriginPrice.Text))
+            {
+                ShowError(txtOriginPrice, "Vui lòng nhập giá gốc món");
+            }
+            if (string.IsNullOrEmpty(txtPrice.Text))
+            {
+                ShowError(txtPrice, "Vui lòng nhập giá");
+            }
+
+            DrinkDAL.Instance.EditDrink(Int32.Parse(txtID.Text), txtNameDrink.Text, ConvertToNumber(txtPrice.Text), category, img, ConvertToNumber(txtOriginPrice.Text), 0);
+            this.Close();
+
+            if (onEdit != null)
+            {
+                onEdit.Invoke(this, new EventArgs());
+            }                     
         }
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -274,18 +345,17 @@ namespace MilkTeaHouseProject
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
             SeparateThousands(this.txtPrice);
+
+            errorShow.Visible = false;
         }
 
         private void txtOriginPrice_TextChanged(object sender, EventArgs e)
         {
             SeparateThousands(this.txtOriginPrice);
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            SeparateThousands(this.txtCount);
+            errorShow.Visible = false;
         }
-
+                
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             if (txtCategory.Visible == true)
@@ -303,12 +373,20 @@ namespace MilkTeaHouseProject
 
         private void fAddDrink_Load(object sender, EventArgs e)
         {
-            LoadNameCategory();
+            //LoadNameCategory();
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
         }
+
+        private void txtNameDrink_TextChanged(object sender, EventArgs e)
+        {
+                errorShow.Visible = false;
+        }
+
+        private void txtCategory_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
         #endregion
-
-
     }
 }

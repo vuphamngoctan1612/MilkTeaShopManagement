@@ -46,6 +46,7 @@
             this.lbTotalIncome = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
             this.pnDate = new System.Windows.Forms.Panel();
+            this.btnExportExcel = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
@@ -80,10 +81,10 @@
             this.flowLayoutPanelBill.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelBill.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 180);
+            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 178);
             this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(1456, 514);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(1456, 516);
             this.flowLayoutPanelBill.TabIndex = 9;
             this.flowLayoutPanelBill.SizeChanged += new System.EventHandler(this.flowLayoutPanelBill_SizeChanged);
             // 
@@ -97,7 +98,7 @@
             this.panel1.Controls.Add(this.lbCheckout);
             this.panel1.Controls.Add(this.lbId);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 135);
+            this.panel1.Location = new System.Drawing.Point(0, 133);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1456, 45);
@@ -152,7 +153,7 @@
             this.lbCheckout.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbCheckout.AutoSize = true;
             this.lbCheckout.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCheckout.Location = new System.Drawing.Point(197, 6);
+            this.lbCheckout.Location = new System.Drawing.Point(196, 6);
             this.lbCheckout.Name = "lbCheckout";
             this.lbCheckout.Size = new System.Drawing.Size(106, 30);
             this.lbCheckout.TabIndex = 0;
@@ -162,7 +163,7 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(17, 6);
+            this.lbId.Location = new System.Drawing.Point(16, 6);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(132, 30);
             this.lbId.TabIndex = 0;
@@ -178,10 +179,10 @@
             this.panel2.Controls.Add(this.lbTotalIncome);
             this.panel2.Controls.Add(this.gunaLabel12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 56);
+            this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1456, 79);
+            this.panel2.Size = new System.Drawing.Size(1456, 78);
             this.panel2.TabIndex = 5;
             // 
             // gunaPictureBox2
@@ -192,7 +193,7 @@
             this.gunaPictureBox2.Location = new System.Drawing.Point(1244, 2);
             this.gunaPictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.gunaPictureBox2.Size = new System.Drawing.Size(26, 25);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox2.TabIndex = 1;
             this.gunaPictureBox2.TabStop = false;
@@ -264,6 +265,7 @@
             // pnDate
             // 
             this.pnDate.BackColor = System.Drawing.SystemColors.Control;
+            this.pnDate.Controls.Add(this.btnExportExcel);
             this.pnDate.Controls.Add(this.pnSearch);
             this.pnDate.Controls.Add(this.btnMakePayment);
             this.pnDate.Controls.Add(this.gunaAdvenceButton1);
@@ -271,8 +273,44 @@
             this.pnDate.Location = new System.Drawing.Point(0, 0);
             this.pnDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDate.Name = "pnDate";
-            this.pnDate.Size = new System.Drawing.Size(1456, 56);
+            this.pnDate.Size = new System.Drawing.Size(1456, 55);
             this.pnDate.TabIndex = 1;
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnExportExcel.AnimationHoverSpeed = 0.07F;
+            this.btnExportExcel.AnimationSpeed = 0.03F;
+            this.btnExportExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportExcel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
+            this.btnExportExcel.BorderColor = System.Drawing.Color.Black;
+            this.btnExportExcel.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExportExcel.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExportExcel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExportExcel.CheckedImage")));
+            this.btnExportExcel.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExportExcel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExportExcel.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.Image = null;
+            this.btnExportExcel.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExportExcel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExportExcel.Location = new System.Drawing.Point(438, 11);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
+            this.btnExportExcel.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExportExcel.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.OnHoverImage = null;
+            this.btnExportExcel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExportExcel.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExportExcel.Radius = 10;
+            this.btnExportExcel.Size = new System.Drawing.Size(160, 38);
+            this.btnExportExcel.TabIndex = 11;
+            this.btnExportExcel.Text = "Xuất file excel";
+            this.btnExportExcel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // pnSearch
             // 
@@ -280,9 +318,9 @@
             this.pnSearch.Controls.Add(this.txtSearch);
             this.pnSearch.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnSearch.Location = new System.Drawing.Point(1092, 0);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(364, 56);
+            this.pnSearch.Size = new System.Drawing.Size(364, 55);
             this.pnSearch.TabIndex = 10;
             // 
             // btnSearch
@@ -331,13 +369,13 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.Location = new System.Drawing.Point(43, 8);
+            this.txtSearch.Location = new System.Drawing.Point(44, 8);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(278, 42);
+            this.txtSearch.Size = new System.Drawing.Size(278, 41);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.Text = "\r\n";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -416,8 +454,8 @@
             // 
             // fBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1456, 694);
             this.Controls.Add(this.pnBill);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -425,6 +463,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fBill";
             this.Text = "HÓA ĐƠN";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fBill_Load);
             this.pnBill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -462,5 +501,6 @@
         private System.Windows.Forms.Panel pnSearch;
         private Guna.UI.WinForms.GunaAdvenceButton btnSearch;
         private Guna.UI.WinForms.GunaTextBox txtSearch;
+        private Guna.UI.WinForms.GunaAdvenceButton btnExportExcel;
     }
 }

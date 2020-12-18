@@ -43,6 +43,7 @@ namespace MilkTeaHouseProject
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
             this.pn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,7 @@ namespace MilkTeaHouseProject
             this.txtNote.BackColor = System.Drawing.Color.White;
             this.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNote.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtNote.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtNote.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtNote.LineColor = System.Drawing.Color.Silver;
             this.txtNote.Location = new System.Drawing.Point(388, 208);
             this.txtNote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -138,7 +139,7 @@ namespace MilkTeaHouseProject
             this.txtTotal.BackColor = System.Drawing.Color.White;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotal.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtTotal.LineColor = System.Drawing.Color.Silver;
             this.txtTotal.Location = new System.Drawing.Point(388, 272);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -283,12 +284,25 @@ namespace MilkTeaHouseProject
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // errorShow
+            // 
+            this.errorShow.AutoSize = true;
+            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorShow.ForeColor = System.Drawing.Color.Red;
+            this.errorShow.Location = new System.Drawing.Point(180, 388);
+            this.errorShow.Name = "errorShow";
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
+            this.errorShow.TabIndex = 65;
+            this.errorShow.Text = "gunaLabel2";
+            this.errorShow.Visible = false;
+            // 
             // MakeABill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.errorShow);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pn);
@@ -327,5 +341,6 @@ namespace MilkTeaHouseProject
         private System.Windows.Forms.Label lbNameForm;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
+        private Guna.UI.WinForms.GunaLabel errorShow;
     }
 }

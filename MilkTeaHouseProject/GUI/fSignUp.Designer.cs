@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSignUp));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnReturn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnSignUp = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
+            this.txtRePass = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtPass = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtUser = new Guna.UI.WinForms.GunaLineTextBox();
             this.lbRePass = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
             this.lbPass = new System.Windows.Forms.Label();
             this.pnPic = new System.Windows.Forms.Panel();
-            this.txtUser = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtPass = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtRePass = new Guna.UI.WinForms.GunaLineTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.pnLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -165,9 +169,11 @@
             this.btnSignUp.Text = "Đăng kí";
             this.btnSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            this.btnSignUp.Validating += new System.ComponentModel.CancelEventHandler(this.btnSignUp_Validating);
             // 
             // pnLogin
             // 
+            this.pnLogin.Controls.Add(this.errorShow);
             this.pnLogin.Controls.Add(this.txtRePass);
             this.pnLogin.Controls.Add(this.txtPass);
             this.pnLogin.Controls.Add(this.txtUser);
@@ -179,6 +185,67 @@
             this.pnLogin.Size = new System.Drawing.Size(543, 450);
             this.pnLogin.TabIndex = 0;
             this.pnLogin.Tag = "0";
+            // 
+            // errorShow
+            // 
+            this.errorShow.AutoSize = true;
+            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorShow.ForeColor = System.Drawing.Color.Red;
+            this.errorShow.Location = new System.Drawing.Point(290, 299);
+            this.errorShow.Name = "errorShow";
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
+            this.errorShow.TabIndex = 3;
+            this.errorShow.Text = "gunaLabel1";
+            this.errorShow.Visible = false;
+            // 
+            // txtRePass
+            // 
+            this.txtRePass.BackColor = System.Drawing.Color.White;
+            this.txtRePass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRePass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtRePass.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtRePass.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtRePass.Location = new System.Drawing.Point(62, 386);
+            this.txtRePass.Name = "txtRePass";
+            this.txtRePass.PasswordChar = '\0';
+            this.txtRePass.SelectedText = "";
+            this.txtRePass.Size = new System.Drawing.Size(422, 37);
+            this.txtRePass.TabIndex = 3;
+            this.txtRePass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
+            this.txtRePass.Validating += new System.ComponentModel.CancelEventHandler(this.txtRePass_Validating);
+            // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.Color.White;
+            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtPass.Location = new System.Drawing.Point(62, 259);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '\0';
+            this.txtPass.SelectedText = "";
+            this.txtPass.Size = new System.Drawing.Size(422, 37);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
+            this.txtPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtPass_Validating);
+            // 
+            // txtUser
+            // 
+            this.txtUser.BackColor = System.Drawing.Color.White;
+            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtUser.Location = new System.Drawing.Point(64, 125);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.PasswordChar = '\0';
+            this.txtUser.SelectedText = "";
+            this.txtUser.Size = new System.Drawing.Size(422, 37);
+            this.txtUser.TabIndex = 1;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
+            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
             // 
             // lbRePass
             // 
@@ -227,52 +294,14 @@
             this.pnPic.Size = new System.Drawing.Size(440, 643);
             this.pnPic.TabIndex = 0;
             // 
-            // txtUser
+            // errorProvider1
             // 
-            this.txtUser.BackColor = System.Drawing.Color.White;
-            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtUser.Location = new System.Drawing.Point(64, 125);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.PasswordChar = '\0';
-            this.txtUser.SelectedText = "";
-            this.txtUser.Size = new System.Drawing.Size(422, 37);
-            this.txtUser.TabIndex = 2;
-            // 
-            // txtPass
-            // 
-            this.txtPass.BackColor = System.Drawing.Color.White;
-            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtPass.Location = new System.Drawing.Point(62, 259);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
-            this.txtPass.SelectedText = "";
-            this.txtPass.Size = new System.Drawing.Size(422, 37);
-            this.txtPass.TabIndex = 2;
-            // 
-            // txtRePass
-            // 
-            this.txtRePass.BackColor = System.Drawing.Color.White;
-            this.txtRePass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRePass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtRePass.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtRePass.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtRePass.Location = new System.Drawing.Point(62, 386);
-            this.txtRePass.Name = "txtRePass";
-            this.txtRePass.PasswordChar = '\0';
-            this.txtRePass.SelectedText = "";
-            this.txtRePass.Size = new System.Drawing.Size(422, 37);
-            this.txtRePass.TabIndex = 2;
+            this.errorProvider1.ContainerControl = this;
             // 
             // fSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1088, 643);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnPic);
@@ -283,6 +312,7 @@
             this.panel2.ResumeLayout(false);
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +331,7 @@
         private Guna.UI.WinForms.GunaLineTextBox txtRePass;
         private Guna.UI.WinForms.GunaLineTextBox txtPass;
         private Guna.UI.WinForms.GunaLineTextBox txtUser;
+        private Guna.UI.WinForms.GunaLabel errorShow;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
