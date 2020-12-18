@@ -61,26 +61,16 @@ namespace MilkTeaHouseProject
 
         public void SearchDrink(string search)
         {
-            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
-            this.flowLayoutPanelMenu.Controls.Clear();
-            bool setcolor = true;
-
-            foreach (Drink drink in drinks)
+            foreach(Control item in this.flowLayoutPanelMenu.Controls)
             {
-                string name = drink.Name;
-                if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                string name = (item as MenuItem).NAME;
+                if (!name.ToLower().Contains(search.ToLower()))
                 {
-                    if (setcolor == true)
-                        setcolor = false;
-                    else
-                        setcolor = true;
-
-                    MenuItem DrinkItem = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Category, drink.Image, setcolor, drink.OriginPrice, drink.Count);
-                    DrinkItem.Tag = drink;
-                    DrinkItem.onDel += DrinkItem_onDel;
-                    DrinkItem.onEdit += DrinkItem_onEdit;
-
-                    this.flowLayoutPanelMenu.Controls.Add(DrinkItem);
+                    item.Visible = false;
+                }
+                else
+                {
+                    item.Visible = true;
                 }
             }
         }

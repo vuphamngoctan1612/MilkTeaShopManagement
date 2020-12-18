@@ -55,17 +55,6 @@ namespace MilkTeaHouseProject
 
         public void LoadDrinkbyCategory(string category)
         {
-            //List<Drink> drinks = DrinkDAL.Instance.GetListDrinkbyCategory(category);
-
-            //foreach (Drink drink in drinks)
-            //{
-            //    DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
-            //    item.Tag = drink;
-            //    item.onChoose += DrinkItem_onChoose;
-
-            //    this.flowLayoutPanelDrinks.Controls.Add(item);
-            //}
-
             if (category != lbAll.Text)
             {
                 foreach (Control item in flowLayoutPanelDrinks.Controls)
@@ -87,8 +76,6 @@ namespace MilkTeaHouseProject
                     item.Visible = true;
                 }
             }
-
-            //LoadSizeDrinḳ();
         }
 
         public void LoadBill(int billID)
@@ -129,28 +116,10 @@ namespace MilkTeaHouseProject
 
         public void SearchDrink(string search)
         {
-            //List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
-            //this.flowLayoutPanelDrinks.Controls.Clear();
-
-            //foreach (Drink drink in drinks)
-            //{
-            //    string name = drink.Name;
-            //    if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
-            //    {
-            //        DrinkItem item = new DrinkItem(name, drink.Price, drink.Image, drink.CategoryID);
-            //        item.Tag = drink;
-            //        item.onChoose += DrinkItem_onChoose;
-
-            //        this.flowLayoutPanelDrinks.Controls.Add(item);
-            //    }
-
-            //    LoadSizeDrinḳ();
-            //}
-
             foreach (Control drink in flowLayoutPanelDrinks.Controls)
             {
                 string name = (drink as DrinkItem).NAME;
-                if (!name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                if (!name.ToLower().Contains(search.ToLower()))
                 {
                     drink.Visible = false;
                 }
@@ -159,7 +128,6 @@ namespace MilkTeaHouseProject
                     drink.Visible = true;
                 }
             }
-            //LoadSizeDrinḳ();
         }
 
         public void LoadSizeDrinḳ()
@@ -220,15 +188,6 @@ namespace MilkTeaHouseProject
 
             foreach (GroupTable group in groups)
             {
-                //Label lbGroup = new Label();
-                //lbGroup.Text = group.Name;
-                //lbGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
-                //                                            System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                //lbGroup.AutoSize = true;
-                //lbGroup.Cursor = System.Windows.Forms.Cursors.Hand;
-                //lbGroup.Tag = lbGroup;
-
-                //lbGroup.Click += LbGroup_Click;
                 Label lbGroup = LoadGroup(group.Name);
 
                 this.flowLayoutPanelGroup.Controls.Add(lbGroup);
@@ -377,8 +336,6 @@ namespace MilkTeaHouseProject
 
                     BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
 
-                    //price = MenuDAL.Instance.GetTotalPrice(idBill);
-
                     BillDAL.Instance.UpdateBill(idBill, price);
                 }
                 else
@@ -460,9 +417,6 @@ namespace MilkTeaHouseProject
                     this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
 
-                    //LoadTable();
-                    //LoadDrink();
-
                     ShowSuccess("Thanh toán thành công");
                     TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
                 }
@@ -489,7 +443,6 @@ namespace MilkTeaHouseProject
                         BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
                         DrinkDAL.Instance.SetCountbyID(drinkID, count);
                     }
-                    //BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
 
                     BillDAL.Instance.DeleteBill(idBill);
 
@@ -520,14 +473,13 @@ namespace MilkTeaHouseProject
                     }
                 }    
             }
-            //LoadTable();
 
             TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
         }
 
         private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
         {
-            //LoadSizeDrinḳ();
+            
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
@@ -651,10 +603,6 @@ namespace MilkTeaHouseProject
                 }
                 ShowSuccess("Thêm bàn thành công");
             }
-            //LoadTable();
-            //LoadAllGroup();
-
-            
         }
 
         private void lbAllinGroup_Click(object sender, EventArgs e)
@@ -694,7 +642,6 @@ namespace MilkTeaHouseProject
                     item.Visible = false;
             }
         }
-        #endregion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -704,5 +651,6 @@ namespace MilkTeaHouseProject
             lbSuccess.Visible = false;
             this.pnTotal.BackColor = Color.FromArgb(255, 233, 171);
         }
+        #endregion
     }
 }
