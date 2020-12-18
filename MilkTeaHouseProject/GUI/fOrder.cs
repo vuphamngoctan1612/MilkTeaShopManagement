@@ -636,16 +636,25 @@ namespace MilkTeaHouseProject
             fAddTable frm = new fAddTable(id);
             frm.ShowDialog();
 
-            AddTable(frm.ID, frm.NameTable, frm.Status, frm.NameGroup);
-            if (frm.FLAG == true)
+            if (frm.FLAG != 0)
             {
-                Label lb = LoadGroup(frm.NameGroup);
-                flowLayoutPanelGroup.Controls.Add(lb);
+                if (frm.FLAG == 2)
+                {
+                    Label lb = LoadGroup(frm.NameGroup);
+                    flowLayoutPanelGroup.Controls.Add(lb);
+                    AddTable(frm.ID, frm.NameTable, frm.Status, frm.NameGroup);
+                }
+                else
+                if (frm.FLAG == 1)
+                {
+                    AddTable(frm.ID, frm.NameTable, frm.Status, frm.NameGroup);
+                }
+                ShowSuccess("Thêm bàn thành công");
             }
             //LoadTable();
             //LoadAllGroup();
 
-            ShowSuccess("Thêm bàn thành công");
+            
         }
 
         private void lbAllinGroup_Click(object sender, EventArgs e)

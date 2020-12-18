@@ -22,19 +22,21 @@ namespace MilkTeaHouseProject
 
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
+
+            this.FLAG = 0;
         }
 
         private int id;
         private string nameTable;
         private bool status;
         private string nameGroup;
-        private bool flag;
+        private int flag;
 
         public int ID { get => id; set => id = value; }
         public string NameTable { get => nameTable; set => nameTable = value; }
         public bool Status { get => status; set => status = value; }
         public string NameGroup { get => nameGroup; set => nameGroup = value; }
-        public bool FLAG { get => flag; set => flag = value; }
+        public int FLAG { get => flag; set => flag = value; }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -87,7 +89,7 @@ namespace MilkTeaHouseProject
                     this.NameTable = txtName.Text;
                     this.Status = false;
                     this.NameGroup = cbbGroup.Text;
-                    this.FLAG = false;
+                    this.FLAG = 1;
                     this.Close();
                 }
                 else
@@ -100,7 +102,7 @@ namespace MilkTeaHouseProject
                         this.NameTable = txtName.Text;
                         this.Status = false;
                         this.NameGroup = txtGroup.Text;
-                        this.FLAG = true;
+                        this.FLAG = 2;
                         this.Close();
                     }
                     else
