@@ -29,8 +29,6 @@ C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseP
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
-C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
-C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
@@ -388,7 +386,6 @@ C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug
 C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
-C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
 C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
@@ -1146,3 +1143,34 @@ C:\Users\Asus\Desktop\New folder (2)\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHo
 C:\Users\Asus\Desktop\New folder (2)\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Asus\Desktop\New folder (2)\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\New folder (2)\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
+C:\Users\Asus\Desktop\featuresTheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources

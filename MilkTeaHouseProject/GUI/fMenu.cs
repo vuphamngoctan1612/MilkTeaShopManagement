@@ -110,11 +110,19 @@ namespace MilkTeaHouseProject
 
         private void DeleteCategoryByName(string name)
         {
-            foreach(MenuItem item in this.flowLayoutPanelMenu.Controls)
+            //foreach(MenuItem item in this.flowLayoutPanelMenu.Controls)
+            //{
+            //    if (item.CATEGORY == name)
+            //    {
+            //        this.flowLayoutPanelMenu.Controls.Remove(item);
+            //    }
+            //}
+            for (int i = 0; i < this.flowLayoutPanelMenu.Controls.Count; i++)
             {
-                if (item.CATEGORY == name)
+                if ((this.flowLayoutPanelMenu.Controls[i] as MenuItem).CATEGORY == name)
                 {
-                    this.flowLayoutPanelMenu.Controls.Remove(item);
+                    this.flowLayoutPanelMenu.Controls.RemoveAt(i);
+                    i--;
                 }
             }
         }
