@@ -11,17 +11,53 @@ using System.IO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaHouseProject.DAL;
 using System.Data.SqlClient;
+using MilkTeaShopManagement.DTO;
 
 namespace MilkTeaHouseProject
 {
     public partial class MenuItem : UserControl
     {
-        public string ID { get => this.lbId.Text; set => this.lbId.Text = value; }
-        public string NAME { get => this.lbName.Text; set => this.lbName.Text = value; }
-        public byte[] Images { get; set; }
-        public string COUNT { get => this.lbCount.Text; set => this.lbCount.Text = value; }
+        public string ID
+        {
+            get => this.lbId.Text;
+            set
+            {
+                this.lbId.Text = this.IDShow.Text = value;
+            }
+        }
+        public string NAME
+        {
+            get => this.lbName.Text;
+            set => this.lbName.Text = this.NameShow.Text = value;
+        }
+        public string CATEGORY
+        {
+            get => this.lbCategory.Text;
+            set => lbCategory.Text = this.Category.Text = value;
+        }
+        public byte[] IMAGE { get => this.img; set => this.img = value; }
+        public Image Image { set => this.picFood.Image = this.gunaPictureBox1.Image = value; }
+        public string COUNT
+        {
+            get => this.lbCount.Text;
+            set => this.lbCount.Text = this.Count.Text = string.Format("{0:n0}", value).ToString();
+        }
+        public int PRICE
+        {
+            get => ConvertToNumber(this.Price.Text);
+            set => this.lbPrice.Text = this.Price.Text = string.Format("{0:n0}", value).ToString();
+        }
+        public int ORIGIN
+        {
+            get => ConvertToNumber(this.lbOriginPrice.Text);
+            set => this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", value).ToString();
+        }
 
-        public MenuItem(int id, string name, int price, string category, byte[] img, bool setcolor, int origin, int count)
+        public Guna.UI.WinForms.GunaLineTextBox TxtCount { get => this.txtCount; set => this.txtCount = value; }
+        public Guna.UI.WinForms.GunaButton BtnAdd { get => this.btnAdd; set => this.btnAdd = value; }
+        public Guna.UI.WinForms.GunaButton BtnShowAddCount { get => this.btnShowAddCount; set => this.btnShowAddCount = value; }
+
+        public MenuItem(int id, string name, int price, string category, byte[] image, bool setcolor, int origin, int count)
         {
             InitializeComponent();
 
@@ -33,13 +69,14 @@ namespace MilkTeaHouseProject
             this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", origin).ToString();
             this.lbCount.Text = this.Count.Text = count.ToString();
 
-            if (img == null)
+            if (image == null)
             {
                 picFood.Image = null;
             }
             else
             {
-                MemoryStream mstream = new MemoryStream(img);
+                img = image;
+                MemoryStream mstream = new MemoryStream(image);
                 picFood.Image = Image.FromStream(mstream);
                 picFood.SizeMode = PictureBoxSizeMode.StretchImage;
             }
@@ -55,11 +92,20 @@ namespace MilkTeaHouseProject
             }
             this.gunaPictureBox1.Image = this.picFood.Image;
         }
+        #region Methods
+        public void UpdateItem(int id)
+        {
+            Drink drink = DrinkDAL.Instance.GetDrinkByID(id);
 
-        public event EventHandler onDel = null;
-        public event EventHandler onEdit = null;
-
-        #region Mothods
+            this.lbId.Text = this.IDShow.Text = drink.ID.ToString();
+            this.lbName.Text = this.NameShow.Text = drink.Name;
+            this.lbCategory.Text = this.Category.Text = drink.Category;
+            //this.picFood.Image = this.gunaPictureBox1.Image = drink.Image;
+            this.IMAGE = drink.Image;
+            this.lbPrice.Text = this.Price.Text = string.Format("{0:n0}", drink.Price).ToString();
+            this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", drink.OriginPrice).ToString();
+            this.lbCount.Text = this.Count.Text = drink.Count.ToString();
+        }
         public int ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
@@ -71,7 +117,7 @@ namespace MilkTeaHouseProject
             return int.Parse(tmp);
         }
 
-        void sizeChange()
+        void SizeChange()
         {
             int space = this.Width / 6;
             lbId.Location = new Point((int)(space), 15);
@@ -82,6 +128,10 @@ namespace MilkTeaHouseProject
             lbCount.Location = new Point((int)(space * 5.5), 15);
         }
         #endregion
+
+        public event EventHandler onDel = null;
+        public event EventHandler onEdit = null;
+        private byte[] img = null;
 
         #region Event
         private void btnEdit_Click(object sender, EventArgs e)
@@ -102,9 +152,8 @@ namespace MilkTeaHouseProject
 
         private void MenuItem_SizeChanged(object sender, EventArgs e)
         {
-            sizeChange();
+            SizeChange();
         }
-        #endregion
 
         private void MenuItem_Click(object sender, EventArgs e)
         {
@@ -113,7 +162,9 @@ namespace MilkTeaHouseProject
                 Expand();
             }
             else
+            {
                 Collapse();
+            }
         }
 
         public void Expand()
@@ -134,8 +185,6 @@ namespace MilkTeaHouseProject
         {
             Collapse();
         }
-
-
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -195,5 +244,6 @@ namespace MilkTeaHouseProject
         {
             this.errorShow.Visible = false;
         }
+        #endregion
     }
 }

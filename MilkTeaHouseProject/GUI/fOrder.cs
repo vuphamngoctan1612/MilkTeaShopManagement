@@ -117,7 +117,7 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                DrinkItem drinkItem = new DrinkItem(drink.Name, drink.Price, drink.Image, drink.CategoryID);
+                DrinkItem drinkItem = new DrinkItem(drink.Name, drink.Price, drink.Image, drink.Category);
                 drinkItem.Tag = drink;
                 drinkItem.onChoose += DrinkItem_onChoose;
 

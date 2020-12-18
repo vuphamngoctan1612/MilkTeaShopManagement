@@ -467,10 +467,7 @@ C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouse
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
-C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fCategory.resources
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
-C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditDrink.resources
-C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fEditStaff.resources
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
 C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
@@ -1210,3 +1207,23 @@ C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technolog
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\featuresNT\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Asus\Desktop\featuresNgocTan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources

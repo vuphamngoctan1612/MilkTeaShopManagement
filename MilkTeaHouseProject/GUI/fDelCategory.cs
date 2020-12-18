@@ -15,6 +15,8 @@ namespace MilkTeaHouseProject
 {
     public partial class fDelCategory : Form
     {
+        public string Category { get => this.cbCategory.Text; }
+
         public fDelCategory()
         {
             InitializeComponent();
@@ -40,6 +42,8 @@ namespace MilkTeaHouseProject
         }
         #endregion
 
+        public event EventHandler onDel = null;
+
         #region Event
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -53,6 +57,10 @@ namespace MilkTeaHouseProject
             DrinkDAL.Instance.SetnullForCategory(category);
             CategoryDAL.Instance.DeleteCategory(category);
             this.Close();
+            if (onDel != null)
+            {
+                onDel.Invoke(this, new EventArgs());
+            }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

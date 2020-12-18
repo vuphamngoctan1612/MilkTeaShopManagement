@@ -19,10 +19,10 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
+
         #region Method
         public void LoadMenu()
         {
-            flowLayoutPanelMenu.Controls.Clear();
             List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
             bool setcolor = true;
 
@@ -33,41 +33,14 @@ namespace MilkTeaHouseProject
                 else
                     setcolor = true;
 
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.OriginPrice, drink.Count);
-                item.onDel += Item_onDel;
-                item.onEdit += Item_onEdit;
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Category, drink.Image, setcolor, drink.OriginPrice, drink.Count);
+
+                item.onDel += DrinkItem_onDel;
+                item.onEdit += DrinkItem_onEdit;
 
                 item.Tag = drink;
-
                 flowLayoutPanelMenu.Controls.Add(item);
             }
-            LoadSize();
-        }
-
-        public void SearchDrink(string search)
-        {
-            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
-            this.flowLayoutPanelMenu.Controls.Clear();
-            bool setcolor = true;
-
-            foreach (Drink drink in drinks)
-            {
-                string name = drink.Name;
-                if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
-                {
-                    if (setcolor == true)
-                        setcolor = false;
-                    else
-                        setcolor = true;
-                    MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.CategoryID, drink.Image, setcolor, drink.OriginPrice, drink.Count);
-                    item.Tag = drink;
-                    item.onDel += Item_onDel;
-                    item.onEdit += Item_onEdit;
-
-                    this.flowLayoutPanelMenu.Controls.Add(item);
-                }
-            }
-            LoadSize();
         }
 
         private void LoadSize()
@@ -86,76 +59,220 @@ namespace MilkTeaHouseProject
             lbCount.Location = new Point((int)(space * 5.5), 10);
         }
 
-        void DeleteMenu(int id)
+        public void SearchDrink(string search)
+        {
+            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
+            this.flowLayoutPanelMenu.Controls.Clear();
+            bool setcolor = true;
+
+            foreach (Drink drink in drinks)
+            {
+                string name = drink.Name;
+                if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                {
+                    if (setcolor == true)
+                        setcolor = false;
+                    else
+                        setcolor = true;
+
+                    MenuItem DrinkItem = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Category, drink.Image, setcolor, drink.OriginPrice, drink.Count);
+                    DrinkItem.Tag = drink;
+                    DrinkItem.onDel += DrinkItem_onDel;
+                    DrinkItem.onEdit += DrinkItem_onEdit;
+
+                    this.flowLayoutPanelMenu.Controls.Add(DrinkItem);
+                }
+            }
+        }
+
+        private void DeleteMenu(int id)
         {
             DrinkDAL.Instance.DelDrink(id);
+        }
+
+        private void SetBackGround()
+        {
+            bool flag = false;
+            foreach (Control control in this.flowLayoutPanelMenu.Controls)
+            {
+                if (flag == false)
+                {
+                    control.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    control.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
+                }
+            }
+        }
+
+        private void DeleteCategoryByName(string name)
+        {
+            for (int i = 0; i < this.flowLayoutPanelMenu.Controls.Count; i++)
+            {
+                if ((this.flowLayoutPanelMenu.Controls[i] as MenuItem).CATEGORY == name)
+                {
+                    this.flowLayoutPanelMenu.Controls.RemoveAt(i);
+                    i--;
+                }
+            }
         }
         #endregion
 
         #region Event
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            fAddDrink f = new fAddDrink();
-            f.ShowDialog();
-            LoadMenu();
-            flowLayoutPanelMenu_SizeChanged(sender, e);
-        }
+            fAddDrink fAddDrink = new fAddDrink();
+            fAddDrink.onAdd += fAddDrink_onAdd;
+            fAddDrink.Tag = fAddDrink;
 
+            fAddDrink.ShowDialog();
+        }
+        private void fAddDrink_onAdd(object sender, EventArgs e)
+        {
+            int id = (sender as fAddDrink).ID;
+            string name = (sender as fAddDrink).DrinkName;
+            int price = (sender as fAddDrink).Price;
+            string category = (sender as fAddDrink).Category;
+            byte[] image = (sender as fAddDrink).Image;
+            int origin = (sender as fAddDrink).Origin;
+
+            MenuItem item = new MenuItem(id, name, price, category, image, true, origin, 0);
+            item.onDel += Item_onDel;
+            item.onEdit += Item_onEdit;
+            item.Tag = item;
+            this.flowLayoutPanelMenu.Controls.Add(item);
+
+            //set background
+            bool flag = false;
+            foreach (MenuItem MenuItem in this.flowLayoutPanelMenu.Controls)
+            {
+                if (flag == false)
+                {
+                    MenuItem.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    MenuItem.TxtCount.BackColor = MenuItem.BtnAdd.BaseColor = MenuItem.BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    MenuItem.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    MenuItem.TxtCount.BackColor = MenuItem.BtnAdd.BaseColor = MenuItem.BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
+                }
+            }
+
+            this.LoadSize();
+        }
         private void Item_onEdit(object sender, EventArgs e)
         {
-            int id = ((sender as MenuItem).Tag as Drink).ID;
-            string name = ((sender as MenuItem).Tag as Drink).Name;
-            int price = ((sender as MenuItem).Tag as Drink).Price;
-            byte[] image = ((sender as MenuItem).Tag as Drink).Image;
-            int origin = ((sender as MenuItem).Tag as Drink).OriginPrice;
-            //int count = ((sender as MenuItem).Tag as Drink).Count;
-            int count = int.Parse((sender as MenuItem).COUNT);
+            int id = int.Parse((sender as MenuItem).ID);
 
-            fAddDrink frm = new fAddDrink(id, name, price, image, origin, count);
-            frm.ShowDialog();
-            LoadMenu();
+            Drink drink = DrinkDAL.Instance.GetDrinkByID(id);
 
-            flowLayoutPanelMenu_SizeChanged(sender, e);
+            fAddDrink fEditDrink = new fAddDrink(id, drink.Name, drink.Price, drink.Image, drink.OriginPrice, drink.Count);
+            fEditDrink.onEdit += FEditDrink_onEdit;
+            fEditDrink.Tag = fEditDrink;
+
+            fEditDrink.ShowDialog();
+
+            (sender as MenuItem).ID = fEditDrink.ID.ToString();
+            (sender as MenuItem).NAME = fEditDrink.DrinkName;
+            (sender as MenuItem).CATEGORY = DrinkDAL.Instance.GetCategorybyID(fEditDrink.ID);
+            (sender as MenuItem).Image = fEditDrink.IMAGE;
+            (sender as MenuItem).PRICE = fEditDrink.Price;
+            (sender as MenuItem).ORIGIN = fEditDrink.Origin;
+            (sender as MenuItem).COUNT = drink.Count.ToString();
         }
-
         private void Item_onDel(object sender, EventArgs e)
         {
-            DeleteMenu(((sender as MenuItem).Tag as Drink).ID);
-            LoadMenu();
+            DrinkDAL.Instance.DelDrink(int.Parse((sender as MenuItem).ID));
+            this.flowLayoutPanelMenu.Controls.Remove(sender as MenuItem);
 
-            flowLayoutPanelMenu_SizeChanged(sender, e);
+            this.SetBackGround();
+
+            this.LoadSize();
+        }
+
+        private void DrinkItem_onEdit(object sender, EventArgs e)
+        {
+            int id = ((sender as MenuItem).Tag as Drink).ID;
+
+            Drink drink = DrinkDAL.Instance.GetDrinkByID(id);
+
+            fAddDrink fEditDrink = new fAddDrink(id, drink.Name, drink.Price, drink.Image, drink.OriginPrice, drink.Count);
+            fEditDrink.onEdit += FEditDrink_onEdit;
+            fEditDrink.Tag = fEditDrink;
+
+            fEditDrink.ShowDialog();
+
+            (sender as MenuItem).ID = fEditDrink.ID.ToString();
+            (sender as MenuItem).NAME = fEditDrink.DrinkName;
+            (sender as MenuItem).CATEGORY = DrinkDAL.Instance.GetCategorybyID(fEditDrink.ID);
+            (sender as MenuItem).Image = fEditDrink.IMAGE;
+            (sender as MenuItem).PRICE = fEditDrink.Price;
+            (sender as MenuItem).ORIGIN = fEditDrink.Origin;
+            (sender as MenuItem).COUNT = drink.Count.ToString();
+        }
+        private void DrinkItem_onDel(object sender, EventArgs e)
+        {
+            DrinkDAL.Instance.DelDrink(((sender as MenuItem).Tag as Drink).ID);
+            this.flowLayoutPanelMenu.Controls.Remove(sender as MenuItem);
+
+            this.SetBackGround();
+
+            this.LoadSize();
+        }
+
+        private void FEditDrink_onEdit(object sender, EventArgs e)
+        {
+
         }
 
         private void flowLayoutPanelMenu_SizeChanged(object sender, EventArgs e)
         {
-            LoadSize();
+            foreach (Control item in flowLayoutPanelMenu.Controls)
+            {
+                item.Width = flowLayoutPanelMenu.Width;
+            }
         }
 
         private void btnDelCategory_Click(object sender, EventArgs e)
         {
-            fDelCategory frm = new fDelCategory();
-            frm.ShowDialog();
-            LoadMenu();
+            fDelCategory fDelCategory = new fDelCategory();
+            fDelCategory.onDel += FDelCategory_onDel;
+            fDelCategory.Tag = fDelCategory;
 
-            this.flowLayoutPanelMenu_SizeChanged(sender, e);
+            fDelCategory.ShowDialog();
+        }
+
+        private void FDelCategory_onDel(object sender, EventArgs e)
+        {
+            DeleteCategoryByName((sender as fDelCategory).Category);
+            this.SetBackGround();
+            this.LoadSize();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             SearchDrink(txtSearch.Text);
+            this.LoadSize();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SearchDrink(txtSearch.Text);
+            this.LoadSize();
         }
 
         private void fMenu_Load(object sender, EventArgs e)
         {
-            LoadMenu();
+            flowLayoutPanelMenu.Controls.Clear();
+
+            this.LoadMenu();
+            this.LoadSize();
         }
         #endregion
-
-
     }
 }
