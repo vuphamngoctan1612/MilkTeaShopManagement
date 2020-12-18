@@ -24,6 +24,18 @@ namespace MilkTeaHouseProject
             shadow.ApplyShadows(this);
         }
 
+        private int id;
+        private string nameTable;
+        private bool status;
+        private string nameGroup;
+        private bool flag;
+
+        public int ID { get => id; set => id = value; }
+        public string NameTable { get => nameTable; set => nameTable = value; }
+        public bool Status { get => status; set => status = value; }
+        public string NameGroup { get => nameGroup; set => nameGroup = value; }
+        public bool FLAG { get => flag; set => flag = value; }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -71,6 +83,11 @@ namespace MilkTeaHouseProject
                 if (cbbGroup.Visible == true)
                 {
                     TableFoodDAL.Instance.AddTable(txtName.Text, cbbGroup.Text);
+                    this.ID =int.Parse(txtID.Text);
+                    this.NameTable = txtName.Text;
+                    this.Status = false;
+                    this.NameGroup = cbbGroup.Text;
+                    this.FLAG = false;
                     this.Close();
                 }
                 else
@@ -79,6 +96,11 @@ namespace MilkTeaHouseProject
                     {
                         GroupTableDAL.Instance.AddGroupTable(txtGroup.Text);
                         TableFoodDAL.Instance.AddTable(txtName.Text, txtGroup.Text);
+                        this.ID = int.Parse(txtID.Text);
+                        this.NameTable = txtName.Text;
+                        this.Status = false;
+                        this.NameGroup = txtGroup.Text;
+                        this.FLAG = true;
                         this.Close();
                     }
                     else

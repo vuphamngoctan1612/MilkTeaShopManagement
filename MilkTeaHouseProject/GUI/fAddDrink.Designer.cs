@@ -51,6 +51,7 @@
             this.txtCategory = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.errorShow = new Guna.UI.WinForms.GunaLabel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
@@ -248,6 +249,7 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.AllowDrop = true;
             this.cbCategory.BackColor = System.Drawing.Color.Transparent;
             this.cbCategory.BaseColor = System.Drawing.Color.White;
             this.cbCategory.BorderColor = System.Drawing.Color.Silver;
@@ -458,12 +460,21 @@
             this.errorShow.Text = "gunaLabel2";
             this.errorShow.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(118, 514);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 58;
+            // 
             // fAddDrink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(790, 658);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.errorShow);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtCount);
@@ -521,5 +532,6 @@
         private Guna.UI.WinForms.GunaLineTextBox txtCategory;
         private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
         private Guna.UI.WinForms.GunaLabel errorShow;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

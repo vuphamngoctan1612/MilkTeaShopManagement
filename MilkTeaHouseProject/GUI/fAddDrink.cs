@@ -37,6 +37,8 @@ namespace MilkTeaHouseProject
             txtID.Enabled = false;
             txtNameDrink.Text = name;
             txtPrice.Text = price.ToString();
+
+            LoadNameCategory();
             cbCategory.Text = DrinkDAL.Instance.getCategorybyID(id);
             txtOriginPrice.Text = origin.ToString();
             txtCount.Text = count.ToString();
@@ -72,6 +74,8 @@ namespace MilkTeaHouseProject
             DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Category");
             cbCategory.DataSource = dt;
             cbCategory.DisplayMember = "NAME";
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "NAME";
         }
 
         private void loadImage()
@@ -350,7 +354,7 @@ namespace MilkTeaHouseProject
 
         private void fAddDrink_Load(object sender, EventArgs e)
         {
-            LoadNameCategory();
+            //LoadNameCategory();
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
         }

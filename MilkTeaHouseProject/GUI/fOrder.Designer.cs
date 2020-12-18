@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fOrder));
             this.pnCenter = new System.Windows.Forms.Panel();
             this.pnTitle = new System.Windows.Forms.Panel();
@@ -73,6 +74,7 @@
             this.flowLayoutPanelCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.lbAll = new Guna.UI.WinForms.GunaLabel();
             this.pnSplitCategory = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnTitle.SuspendLayout();
             this.pnTotal.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -603,6 +605,7 @@
             // 
             // flowLayoutPanelGroup
             // 
+            this.flowLayoutPanelGroup.AutoScroll = true;
             this.flowLayoutPanelGroup.Controls.Add(this.lbAllinGroup);
             this.flowLayoutPanelGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelGroup.Location = new System.Drawing.Point(0, 0);
@@ -711,6 +714,7 @@
             // 
             // flowLayoutPanelCategory
             // 
+            this.flowLayoutPanelCategory.AutoScroll = true;
             this.flowLayoutPanelCategory.Controls.Add(this.lbAll);
             this.flowLayoutPanelCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 19);
@@ -741,6 +745,12 @@
             this.pnSplitCategory.Name = "pnSplitCategory";
             this.pnSplitCategory.Size = new System.Drawing.Size(669, 1);
             this.pnSplitCategory.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fOrder
             // 
@@ -834,5 +844,6 @@
         private Guna.UI.WinForms.GunaButton btnAddTable;
         private Guna.UI.WinForms.GunaLabel lbErrorShow;
         private Guna.UI.WinForms.GunaLabel lbSuccess;
+        private System.Windows.Forms.Timer timer1;
     }
 }

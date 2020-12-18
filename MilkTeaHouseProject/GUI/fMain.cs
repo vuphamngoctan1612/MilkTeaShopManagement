@@ -19,7 +19,6 @@ namespace MilkTeaHouseProject
     {
         private GunaAdvenceButton currentButton;
         private Form activeForm;
-        private Panel leftCurrentButton;
 
         public fMain(string username)
         {
@@ -71,8 +70,6 @@ namespace MilkTeaHouseProject
                     currentButton.BaseColor = Color.FromArgb(0, 144, 218);
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    leftCurrentButton.Location = new Point(0, currentButton.Location.Y + 262);
-                    leftCurrentButton.Visible = true;
                 }
             }
         }
@@ -83,8 +80,7 @@ namespace MilkTeaHouseProject
                 if (previousBtn.GetType() == typeof(GunaAdvenceButton))
                 {
                     previousBtn.BaseColor = Color.FromArgb(28, 29, 38);
-                    previousBtn.ForeColor = Color.FromArgb(160, 160, 160);
-                    previousBtn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -108,8 +104,7 @@ namespace MilkTeaHouseProject
             DisableButton();
             lbButtonSelected.Text = "HOME";
             lbButtonSelected.ForeColor = Color.White;
-            currentButton = null;
-            leftCurrentButton.Visible = false;      
+            currentButton = null;  
         }
         #endregion
 
@@ -189,13 +184,7 @@ namespace MilkTeaHouseProject
 
         private void fMain_Shown(object sender, EventArgs e)
         {
-            leftCurrentButton = new Panel();
-            leftCurrentButton.Size = new Size(10, 52);
-            panelControl.Controls.Add(leftCurrentButton);
-            leftCurrentButton.Visible = false;
-            leftCurrentButton.BackColor = Color.FromArgb(255, 255, 255);
-            leftCurrentButton.Height = btnMenu.Height;
-            leftCurrentButton.BringToFront();
+
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,8 +201,12 @@ namespace MilkTeaHouseProject
         {
             btnAccount_Click(sender, e);
         }
+
         #endregion
 
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //this.revenueReport1.RevenueReport_Load(sender, e);
+        }
     }
 }
