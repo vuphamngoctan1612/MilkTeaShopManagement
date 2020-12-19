@@ -61,26 +61,16 @@ namespace MilkTeaHouseProject
 
         public void SearchDrink(string search)
         {
-            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
-            this.flowLayoutPanelMenu.Controls.Clear();
-            bool setcolor = true;
-
-            foreach (Drink drink in drinks)
+            foreach(Control item in this.flowLayoutPanelMenu.Controls)
             {
-                string name = drink.Name;
-                if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                string name = (item as MenuItem).NAME;
+                if (!name.ToLower().Contains(search.ToLower()))
                 {
-                    if (setcolor == true)
-                        setcolor = false;
-                    else
-                        setcolor = true;
-
-                    MenuItem DrinkItem = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Category, drink.Image, setcolor, drink.OriginPrice, drink.Count);
-                    DrinkItem.Tag = drink;
-                    DrinkItem.onDel += DrinkItem_onDel;
-                    DrinkItem.onEdit += DrinkItem_onEdit;
-
-                    this.flowLayoutPanelMenu.Controls.Add(DrinkItem);
+                    item.Visible = false;
+                }
+                else
+                {
+                    item.Visible = true;
                 }
             }
         }
@@ -110,13 +100,6 @@ namespace MilkTeaHouseProject
 
         private void DeleteCategoryByName(string name)
         {
-            //foreach(MenuItem item in this.flowLayoutPanelMenu.Controls)
-            //{
-            //    if (item.CATEGORY == name)
-            //    {
-            //        this.flowLayoutPanelMenu.Controls.Remove(item);
-            //    }
-            //}
             for (int i = 0; i < this.flowLayoutPanelMenu.Controls.Count; i++)
             {
                 if ((this.flowLayoutPanelMenu.Controls[i] as MenuItem).CATEGORY == name)
@@ -175,18 +158,10 @@ namespace MilkTeaHouseProject
         private void Item_onEdit(object sender, EventArgs e)
         {
             int id = int.Parse((sender as MenuItem).ID);
-            //string name = (sender as MenuItem).NAME;
-            //int price = (sender as MenuItem).PRICE;
-            //string category = (sender as MenuItem).CATEGORY;
-            //byte[] image = (sender as MenuItem).IMAGE;
-            //int origin = (sender as MenuItem).ORIGIN;
-            //int count = int.Parse((sender as MenuItem).COUNT);
 
             Drink drink = DrinkDAL.Instance.GetDrinkByID(id);
 
             fAddDrink fEditDrink = new fAddDrink(id, drink.Name, drink.Price, drink.Image, drink.OriginPrice, drink.Count);
-            //fAddDrink fEditDrink = new fAddDrink(id, name, category, price, image, origin, count);
-            //fAddDrink fEditDrink = new fAddDrink(id, name, price, image, origin, count);
             fEditDrink.onEdit += FEditDrink_onEdit;
             fEditDrink.Tag = fEditDrink;
 
@@ -213,17 +188,10 @@ namespace MilkTeaHouseProject
         private void DrinkItem_onEdit(object sender, EventArgs e)
         {
             int id = ((sender as MenuItem).Tag as Drink).ID;
-            //string name = ((sender as MenuItem).Tag as Drink).Name;
-            //string category = ((sender as MenuItem).Tag as Drink).Category;
-            //int price = ((sender as MenuItem).Tag as Drink).Price;
-            //byte[] image = ((sender as MenuItem).Tag as Drink).Image;
-            //int origin = ((sender as MenuItem).Tag as Drink).OriginPrice;
-            //int count = int.Parse((sender as MenuItem).COUNT);
 
             Drink drink = DrinkDAL.Instance.GetDrinkByID(id);
 
             fAddDrink fEditDrink = new fAddDrink(id, drink.Name, drink.Price, drink.Image, drink.OriginPrice, drink.Count);
-            //fAddDrink fEditDrink = new fAddDrink(id, name, price, image, origin, count);
             fEditDrink.onEdit += FEditDrink_onEdit;
             fEditDrink.Tag = fEditDrink;
 
@@ -249,9 +217,7 @@ namespace MilkTeaHouseProject
 
         private void FEditDrink_onEdit(object sender, EventArgs e)
         {
-            //this.flowLayoutPanelMenu.Controls.Clear();
-            //this.LoadMenu();
-            //this.LoadSize();
+
         }
 
         private void flowLayoutPanelMenu_SizeChanged(object sender, EventArgs e)
@@ -276,9 +242,6 @@ namespace MilkTeaHouseProject
             DeleteCategoryByName((sender as fDelCategory).Category);
             this.SetBackGround();
             this.LoadSize();
-            //this.flowLayoutPanelMenu.Controls.Clear();
-            //this.LoadMenu();
-            //this.LoadSize();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

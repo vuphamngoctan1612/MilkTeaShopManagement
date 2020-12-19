@@ -12,11 +12,27 @@ namespace MilkTeaHouseProject.DTO
 {
     public partial class TableItem : UserControl
     {
-        public TableItem(int ID, string name, bool status)
+        private int id;
+        private string nameTable;
+        private bool status;
+        private string nameGroup;
+        private bool flag;
+
+        public int ID { get => id; set => id = value; }
+        public string NameTable { get => nameTable; set => nameTable = value; }
+        public bool Status { get => status; set => status = value; }
+        public string NameGroup { get => nameGroup; set => nameGroup = value; }
+        public bool FLAG { get => flag; set => flag = value; }
+
+        public TableItem(int id, string name, bool status)
         {
             InitializeComponent();
             lbName.Text = name;
-            lbID.Text = ID.ToString();
+            lbID.Text = id.ToString();
+
+            ID = id;
+            NameTable = name;
+            Status = status;
         }
 
         private void TableItem_Load(object sender, EventArgs e)

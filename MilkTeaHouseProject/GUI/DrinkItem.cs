@@ -20,7 +20,20 @@ namespace MilkTeaHouseProject
             InitializeComponent();
         }
 
-        public DrinkItem(string name, int price, byte[] image)
+        private string Category;
+        private string NameDrink;
+
+        public string CATEGORY
+        {
+            get { return this.Category; }
+        }
+
+        public string NAME
+        {
+            get { return this.NameDrink; }
+        }
+
+        public DrinkItem(string name, int price, byte[] image, string category)
         {
             InitializeComponent();
 
@@ -28,6 +41,8 @@ namespace MilkTeaHouseProject
             btnChoose.Size = this.Size;
             this.lbName.Text = name;
             this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
+            this.Category = category;
+            this.NameDrink = name;
 
             if (image == null)
             {

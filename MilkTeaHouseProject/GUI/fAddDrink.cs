@@ -55,7 +55,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
             LoadNameCategory();
-            
+
             txtID.Text = id.ToString();
             txtID.Enabled = false;
             txtNameDrink.Text = name;
@@ -231,7 +231,7 @@ namespace MilkTeaHouseProject
                 {
                     category = cbbCategory.Text;
                 }
-                
+
                 if (string.IsNullOrEmpty(txtNameDrink.Text))
                 {
                     ShowError(txtNameDrink, "Vui lòng nhập tên món");
@@ -260,12 +260,12 @@ namespace MilkTeaHouseProject
                     onAdd.Invoke(this, new EventArgs());
                 }
             }
-            catch(SqlException)
+            catch (SqlException)
             {
                 ShowError(txtID, "");
             }
         }
-                
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             string category = "";
@@ -331,7 +331,7 @@ namespace MilkTeaHouseProject
             if (onEdit != null)
             {
                 onEdit.Invoke(this, new EventArgs());
-            }                     
+            }
         }
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -355,7 +355,7 @@ namespace MilkTeaHouseProject
 
             errorShow.Visible = false;
         }
-                
+
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             if (txtCategory.Visible == true)
@@ -373,14 +373,13 @@ namespace MilkTeaHouseProject
 
         private void fAddDrink_Load(object sender, EventArgs e)
         {
-            //LoadNameCategory();
             DropShadow shadow = new DropShadow();
             shadow.ApplyShadows(this);
         }
 
         private void txtNameDrink_TextChanged(object sender, EventArgs e)
         {
-                errorShow.Visible = false;
+            errorShow.Visible = false;
         }
 
         private void txtCategory_TextChanged(object sender, EventArgs e)

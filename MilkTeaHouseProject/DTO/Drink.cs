@@ -31,14 +31,14 @@ namespace MilkTeaShopManagement.DTO
             this.ID = id;
             this.Name = name;
             this.Price = price;
-            this.Category = Category;
+            this.category = Category;
         }
         public Drink(DataRow row)
         {
             this.ID = (int)row["ID"];
             this.Name = row["Name"].ToString();
             this.Price = (int)row["Price"];
-            this.Category = row["Category"].ToString();
+            this.category = row["Category"].ToString();
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];
             this.Status = (bool)row["STATUS"];

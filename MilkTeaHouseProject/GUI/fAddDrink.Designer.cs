@@ -39,16 +39,18 @@
             this.lbCategory = new System.Windows.Forms.Label();
             this.ptbImage = new System.Windows.Forms.PictureBox();
             this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.cbbCategory = new Guna.UI.WinForms.GunaComboBox();
             this.lbOriginPrice = new System.Windows.Forms.Label();
+            this.lbCount = new System.Windows.Forms.Label();
             this.btnAddCategory = new Guna.UI.WinForms.GunaButton();
             this.txtID = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtNameDrink = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtOriginPrice = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtPrice = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtCount = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtCategory = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.errorShow = new Guna.UI.WinForms.GunaLabel();
-            this.cbbCategory = new Guna.UI.WinForms.GunaComboBox();
             this.pn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
@@ -249,6 +251,28 @@
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // cbbCategory
+            // 
+            this.cbbCategory.AllowDrop = true;
+            this.cbbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbbCategory.BaseColor = System.Drawing.Color.White;
+            this.cbbCategory.BorderColor = System.Drawing.Color.Silver;
+            this.cbbCategory.BorderSize = 1;
+            this.cbbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbCategory.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.cbbCategory.ForeColor = System.Drawing.Color.Black;
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(330, 181);
+            this.cbbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbCategory.MaxDropDownItems = 100;
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cbbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbbCategory.Size = new System.Drawing.Size(263, 40);
+            this.cbbCategory.TabIndex = 1;
+            // 
             // lbOriginPrice
             // 
             this.lbOriginPrice.AutoSize = true;
@@ -260,6 +284,19 @@
             this.lbOriginPrice.Size = new System.Drawing.Size(75, 23);
             this.lbOriginPrice.TabIndex = 34;
             this.lbOriginPrice.Text = "Giá gốc:";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbCount.Location = new System.Drawing.Point(327, 428);
+            this.lbCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(88, 23);
+            this.lbCount.TabIndex = 34;
+            this.lbCount.Text = "Số lượng:";
+            this.lbCount.Visible = false;
             // 
             // btnAddCategory
             // 
@@ -275,7 +312,7 @@
             this.btnAddCategory.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.btnAddCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddCategory.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAddCategory.Location = new System.Drawing.Point(605, 186);
+            this.btnAddCategory.Location = new System.Drawing.Point(607, 180);
             this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -353,6 +390,23 @@
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
+            // txtCount
+            // 
+            this.txtCount.BackColor = System.Drawing.Color.White;
+            this.txtCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCount.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCount.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtCount.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtCount.Location = new System.Drawing.Point(328, 453);
+            this.txtCount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.PasswordChar = '\0';
+            this.txtCount.SelectedText = "";
+            this.txtCount.Size = new System.Drawing.Size(265, 42);
+            this.txtCount.TabIndex = 55;
+            this.txtCount.Visible = false;
+            this.txtCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
             // txtCategory
             // 
             this.txtCategory.BackColor = System.Drawing.Color.White;
@@ -420,43 +474,26 @@
             this.errorShow.Text = "gunaLabel2";
             this.errorShow.Visible = false;
             // 
-            // cbbCategory
-            // 
-            this.cbbCategory.BackColor = System.Drawing.Color.Transparent;
-            this.cbbCategory.BaseColor = System.Drawing.Color.White;
-            this.cbbCategory.BorderColor = System.Drawing.Color.Silver;
-            this.cbbCategory.BorderSize = 1;
-            this.cbbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategory.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbCategory.ForeColor = System.Drawing.Color.Black;
-            this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.Location = new System.Drawing.Point(330, 189);
-            this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbCategory.Size = new System.Drawing.Size(263, 31);
-            this.cbbCategory.TabIndex = 58;
-            // 
             // fAddDrink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(658, 548);
-            this.Controls.Add(this.cbbCategory);
             this.Controls.Add(this.errorShow);
             this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.txtCount);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtOriginPrice);
             this.Controls.Add(this.txtNameDrink);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnAddCategory);
+            this.Controls.Add(this.cbbCategory);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbOriginPrice);
+            this.Controls.Add(this.lbCount);
             this.Controls.Add(this.ptbImage);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbNameDrink);
@@ -488,15 +525,17 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private System.Windows.Forms.Label lbCategory;
+        private Guna.UI.WinForms.GunaComboBox cbbCategory;
         private System.Windows.Forms.Label lbOriginPrice;
+        private System.Windows.Forms.Label lbCount;
         private Guna.UI.WinForms.GunaButton btnAddCategory;
         private Guna.UI.WinForms.GunaLineTextBox txtID;
         private Guna.UI.WinForms.GunaLineTextBox txtNameDrink;
         private Guna.UI.WinForms.GunaLineTextBox txtOriginPrice;
         private Guna.UI.WinForms.GunaLineTextBox txtPrice;
+        private Guna.UI.WinForms.GunaLineTextBox txtCount;
         private Guna.UI.WinForms.GunaLineTextBox txtCategory;
         private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
         private Guna.UI.WinForms.GunaLabel errorShow;
-        private Guna.UI.WinForms.GunaComboBox cbbCategory;
     }
 }

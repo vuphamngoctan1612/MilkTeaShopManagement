@@ -17,39 +17,39 @@ namespace MilkTeaHouseProject
 {
     public partial class MenuItem : UserControl
     {
-        public string ID 
-        { 
+        public string ID
+        {
             get => this.lbId.Text;
             set
             {
                 this.lbId.Text = this.IDShow.Text = value;
             }
         }
-        public string NAME 
+        public string NAME
         {
-            get => this.lbName.Text; 
-            set => this.lbName.Text = this.NameShow.Text =  value; 
+            get => this.lbName.Text;
+            set => this.lbName.Text = this.NameShow.Text = value;
         }
-        public string CATEGORY 
+        public string CATEGORY
         {
             get => this.lbCategory.Text;
-            set => lbCategory.Text = this.Category.Text = value; 
+            set => lbCategory.Text = this.Category.Text = value;
         }
         public byte[] IMAGE { get => this.img; set => this.img = value; }
         public Image Image { set => this.picFood.Image = this.gunaPictureBox1.Image = value; }
-        public string COUNT 
+        public string COUNT
         {
-            get => this.lbCount.Text; 
+            get => this.lbCount.Text;
             set => this.lbCount.Text = this.Count.Text = string.Format("{0:n0}", value).ToString();
         }
-        public int PRICE 
+        public int PRICE
         {
-            get => ConvertToNumber(this.Price.Text); 
+            get => ConvertToNumber(this.Price.Text);
             set => this.lbPrice.Text = this.Price.Text = string.Format("{0:n0}", value).ToString();
         }
-        public int ORIGIN 
-        { 
-            get => ConvertToNumber(this.lbOriginPrice.Text); 
+        public int ORIGIN
+        {
+            get => ConvertToNumber(this.lbOriginPrice.Text);
             set => this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", value).ToString();
         }
 

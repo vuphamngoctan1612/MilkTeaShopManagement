@@ -62,7 +62,7 @@
             this.pnBtn.Controls.Add(this.gunaAdvenceButton1);
             this.pnBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBtn.Location = new System.Drawing.Point(0, 0);
-            this.pnBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnBtn.Name = "pnBtn";
             this.pnBtn.Size = new System.Drawing.Size(907, 66);
             this.pnBtn.TabIndex = 1;
@@ -100,7 +100,7 @@
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSearch.Location = new System.Drawing.Point(232, 20);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -123,9 +123,9 @@
             this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(36, 16);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
@@ -156,7 +156,7 @@
             this.btnDelCategory.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDelCategory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDelCategory.Location = new System.Drawing.Point(195, 15);
-            this.btnDelCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelCategory.Name = "btnDelCategory";
             this.btnDelCategory.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btnDelCategory.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -193,7 +193,7 @@
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceButton1.Location = new System.Drawing.Point(17, 15);
-            this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -214,7 +214,7 @@
             this.pnStaff.Controls.Add(this.pnBtn);
             this.pnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnStaff.Location = new System.Drawing.Point(0, 0);
-            this.pnStaff.Margin = new System.Windows.Forms.Padding(2);
+            this.pnStaff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnStaff.Name = "pnStaff";
             this.pnStaff.Size = new System.Drawing.Size(907, 535);
             this.pnStaff.TabIndex = 2;
@@ -225,7 +225,7 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 66);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(907, 469);
             this.panel3.TabIndex = 2;
@@ -235,7 +235,7 @@
             this.panel2.Controls.Add(this.flowLayoutPanelMenu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 42);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(907, 427);
             this.panel2.TabIndex = 0;
@@ -263,7 +263,7 @@
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(907, 42);
             this.panel1.TabIndex = 0;
@@ -341,7 +341,7 @@
             this.ClientSize = new System.Drawing.Size(907, 535);
             this.Controls.Add(this.pnStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fMenu";
             this.Text = "MENU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

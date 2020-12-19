@@ -58,13 +58,13 @@ namespace MilkTeaHouseProject
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorShow = new Guna.UI.WinForms.GunaLabel();
             this.gunaSeparator6 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaSeparator5 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaSeparator4 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaSeparator3 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
@@ -225,7 +225,7 @@ namespace MilkTeaHouseProject
             this.gunaLabel6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLabel6.Location = new System.Drawing.Point(978, 188);
             this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(91, 25);
+            this.gunaLabel6.Size = new System.Drawing.Size(105, 30);
             this.gunaLabel6.TabIndex = 24;
             this.gunaLabel6.Text = "Số lượng:";
             // 
@@ -251,7 +251,7 @@ namespace MilkTeaHouseProject
             this.Count.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Count.Location = new System.Drawing.Point(1089, 188);
             this.Count.Name = "Count";
-            this.Count.Size = new System.Drawing.Size(30, 25);
+            this.Count.Size = new System.Drawing.Size(34, 30);
             this.Count.TabIndex = 15;
             this.Count.Text = "ID";
             // 
@@ -262,7 +262,7 @@ namespace MilkTeaHouseProject
             this.Price.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Price.Location = new System.Drawing.Point(1089, 117);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(30, 25);
+            this.Price.Size = new System.Drawing.Size(34, 30);
             this.Price.TabIndex = 15;
             this.Price.Text = "ID";
             // 
@@ -273,7 +273,7 @@ namespace MilkTeaHouseProject
             this.oriPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.oriPrice.Location = new System.Drawing.Point(1089, 45);
             this.oriPrice.Name = "oriPrice";
-            this.oriPrice.Size = new System.Drawing.Size(30, 25);
+            this.oriPrice.Size = new System.Drawing.Size(34, 30);
             this.oriPrice.TabIndex = 15;
             this.oriPrice.Text = "ID";
             // 
@@ -284,7 +284,7 @@ namespace MilkTeaHouseProject
             this.Category.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Category.Location = new System.Drawing.Point(643, 188);
             this.Category.Name = "Category";
-            this.Category.Size = new System.Drawing.Size(30, 25);
+            this.Category.Size = new System.Drawing.Size(34, 30);
             this.Category.TabIndex = 15;
             this.Category.Text = "ID";
             // 
@@ -295,7 +295,7 @@ namespace MilkTeaHouseProject
             this.NameShow.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.NameShow.Location = new System.Drawing.Point(643, 117);
             this.NameShow.Name = "NameShow";
-            this.NameShow.Size = new System.Drawing.Size(30, 25);
+            this.NameShow.Size = new System.Drawing.Size(34, 30);
             this.NameShow.TabIndex = 15;
             this.NameShow.Text = "ID";
             // 
@@ -306,7 +306,7 @@ namespace MilkTeaHouseProject
             this.IDShow.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.IDShow.Location = new System.Drawing.Point(643, 45);
             this.IDShow.Name = "IDShow";
-            this.IDShow.Size = new System.Drawing.Size(30, 25);
+            this.IDShow.Size = new System.Drawing.Size(34, 30);
             this.IDShow.TabIndex = 15;
             this.IDShow.Text = "ID";
             // 
@@ -317,7 +317,7 @@ namespace MilkTeaHouseProject
             this.gunaLabel5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLabel5.Location = new System.Drawing.Point(978, 117);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(81, 25);
+            this.gunaLabel5.Size = new System.Drawing.Size(91, 30);
             this.gunaLabel5.TabIndex = 24;
             this.gunaLabel5.Text = "Giá bán:";
             // 
@@ -328,7 +328,7 @@ namespace MilkTeaHouseProject
             this.gunaLabel4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLabel4.Location = new System.Drawing.Point(978, 45);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(80, 25);
+            this.gunaLabel4.Size = new System.Drawing.Size(91, 30);
             this.gunaLabel4.TabIndex = 24;
             this.gunaLabel4.Text = "Giá gốc:";
             // 
@@ -339,7 +339,7 @@ namespace MilkTeaHouseProject
             this.gunaLabel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLabel3.Location = new System.Drawing.Point(461, 188);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(51, 25);
+            this.gunaLabel3.Size = new System.Drawing.Size(57, 30);
             this.gunaLabel3.TabIndex = 24;
             this.gunaLabel3.Text = "Loại:";
             // 
@@ -350,7 +350,7 @@ namespace MilkTeaHouseProject
             this.gunaLabel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLabel2.Location = new System.Drawing.Point(461, 117);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(128, 25);
+            this.gunaLabel2.Size = new System.Drawing.Size(146, 30);
             this.gunaLabel2.TabIndex = 24;
             this.gunaLabel2.Text = "Tên sản phẩm";
             // 
@@ -361,7 +361,7 @@ namespace MilkTeaHouseProject
             this.gunaLabel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLabel1.Location = new System.Drawing.Point(461, 45);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(130, 25);
+            this.gunaLabel1.Size = new System.Drawing.Size(148, 30);
             this.gunaLabel1.TabIndex = 24;
             this.gunaLabel1.Text = "Mã sản phẩm:";
             // 
@@ -372,7 +372,7 @@ namespace MilkTeaHouseProject
             this.lbCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbCount.Location = new System.Drawing.Point(1072, 48);
             this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(54, 25);
+            this.lbCount.Size = new System.Drawing.Size(60, 30);
             this.lbCount.TabIndex = 19;
             this.lbCount.Text = "Price";
             // 
@@ -383,7 +383,7 @@ namespace MilkTeaHouseProject
             this.lbOriginPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbOriginPrice.Location = new System.Drawing.Point(969, 51);
             this.lbOriginPrice.Name = "lbOriginPrice";
-            this.lbOriginPrice.Size = new System.Drawing.Size(54, 25);
+            this.lbOriginPrice.Size = new System.Drawing.Size(60, 30);
             this.lbOriginPrice.TabIndex = 20;
             this.lbOriginPrice.Text = "Price";
             // 
@@ -394,7 +394,7 @@ namespace MilkTeaHouseProject
             this.lbPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbPrice.Location = new System.Drawing.Point(861, 51);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(54, 25);
+            this.lbPrice.Size = new System.Drawing.Size(60, 30);
             this.lbPrice.TabIndex = 21;
             this.lbPrice.Text = "Price";
             // 
@@ -420,7 +420,7 @@ namespace MilkTeaHouseProject
             this.lbId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbId.Location = new System.Drawing.Point(293, 34);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(30, 25);
+            this.lbId.Size = new System.Drawing.Size(34, 30);
             this.lbId.TabIndex = 15;
             this.lbId.Text = "ID";
             // 
@@ -431,7 +431,7 @@ namespace MilkTeaHouseProject
             this.lbCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbCategory.Location = new System.Drawing.Point(643, 51);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(88, 25);
+            this.lbCategory.Size = new System.Drawing.Size(102, 30);
             this.lbCategory.TabIndex = 16;
             this.lbCategory.Text = "Category";
             // 
@@ -442,7 +442,7 @@ namespace MilkTeaHouseProject
             this.lbName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbName.Location = new System.Drawing.Point(421, 51);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(99, 25);
+            this.lbName.Size = new System.Drawing.Size(114, 30);
             this.lbName.TabIndex = 17;
             this.lbName.Text = "Drink Item";
             // 
@@ -458,7 +458,7 @@ namespace MilkTeaHouseProject
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1528, 72);
+            this.panel1.Size = new System.Drawing.Size(1528, 38);
             this.panel1.TabIndex = 25;
             this.panel1.Click += new System.EventHandler(this.MenuItem_Click);
             // 
@@ -493,18 +493,6 @@ namespace MilkTeaHouseProject
             this.panel2.Size = new System.Drawing.Size(1528, 420);
             this.panel2.TabIndex = 26;
             this.panel2.Click += new System.EventHandler(this.MenuItem_Click);
-            // 
-            // errorShow
-            // 
-            this.errorShow.AutoSize = true;
-            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.errorShow.ForeColor = System.Drawing.Color.Red;
-            this.errorShow.Location = new System.Drawing.Point(1289, 233);
-            this.errorShow.Name = "errorShow";
-            this.errorShow.Size = new System.Drawing.Size(86, 20);
-            this.errorShow.TabIndex = 58;
-            this.errorShow.Text = "gunaLabel2";
-            this.errorShow.Visible = false;
             // 
             // gunaSeparator6
             // 
@@ -553,6 +541,18 @@ namespace MilkTeaHouseProject
             this.gunaSeparator1.Name = "gunaSeparator1";
             this.gunaSeparator1.Size = new System.Drawing.Size(327, 10);
             this.gunaSeparator1.TabIndex = 30;
+            // 
+            // errorShow
+            // 
+            this.errorShow.AutoSize = true;
+            this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorShow.ForeColor = System.Drawing.Color.Red;
+            this.errorShow.Location = new System.Drawing.Point(1289, 233);
+            this.errorShow.Name = "errorShow";
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
+            this.errorShow.TabIndex = 58;
+            this.errorShow.Text = "gunaLabel2";
+            this.errorShow.Visible = false;
             // 
             // MenuItem
             // 
