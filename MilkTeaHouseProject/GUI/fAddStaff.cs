@@ -29,11 +29,17 @@ namespace MilkTeaHouseProject
             this.lbIDinrease.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
             foreach(Position pos in positions)
             {
-                this.cbbPos.Items.Add(pos.Name);
-            }    
-            foreach(Account acc in accounts)
+                if (pos.Name != "Quản Lý")
+                {
+                    this.cbbPos.Items.Add(pos.Name);
+                }
+            }
+            foreach (Account acc in accounts)
             {
-                usernames.Add(acc.Username);
+                if (acc.Username != "admin")
+                {
+                    usernames.Add(acc.Username);
+                }
             }
             usernames.Sort();
             foreach(string username in usernames)
@@ -88,6 +94,7 @@ namespace MilkTeaHouseProject
             this.dptBirthDate.Value = birthDate;
             this.txtPhoneNumber.Text = phonenumber;
             this.cbbPos.Text = pos;
+            this.cbbUser.Items.Add(username);
             this.cbbUser.Text = username;
             this.lbUsername.Text = username;
             this.cbbUser.Text = username;

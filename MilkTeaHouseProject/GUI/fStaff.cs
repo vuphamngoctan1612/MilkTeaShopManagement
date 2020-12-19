@@ -75,40 +75,36 @@ namespace MilkTeaHouseProject
 
         public void SearchStaff(string search)
         {
-            totalSalary = 0;
-            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
-
-            List<Position> positions = PositionDAL.Instance.GetListPosistion();
-            this.flowLayoutPanelStaff.Controls.Clear();
-            bool setcolor = true;
-
-            foreach (Staff staff in staffs)
+            foreach(Control staff in flowLayoutPanelStaff.Controls)
             {
-                foreach (Position pos in positions)
+                string name = (staff as StaffItem).Name;
+                if(!name.ToLower().Contains(this.txtSearch.Text.ToLower()))
                 {
-                    string name = staff.Name;
-                    if (setcolor == true)
-                        setcolor = false;
-                    else
-                        setcolor = true;
-                    if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                    if (!name.ToLower().Contains(search.ToLower()))
                     {
-                        if (staff.Position == pos.Name)
-                        {
-
-                            StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
-                            staffItem.UpdateSalaryReceived();
-                            totalSalary += staff.SalaryReceived;
-                            staffItem.onEdit += Item_OnEdit;
-                            staffItem.onDel += StaffItem_onDel;
-                            staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
-                            staffItem.onFaultChanged += StaffItem_onFaultChanged;
-                            staffItem.Tag = staff;
-
-                            flowLayoutPanelStaff.Controls.Add(staffItem);
-                        }
+                        staff.Visible = false;
                     }
-                    sizeChange();
+                    else
+                    {
+                        staff.Visible = true;
+                    }
+                }
+            }    
+        }
+        private void SetBackGround()
+        {
+            bool flag = false;
+            foreach (Control control in this.flowLayoutPanelStaff.Controls)
+            {
+                if (flag == false)
+                {
+                    control.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    control.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
                 }
             }
         }
@@ -125,10 +121,11 @@ namespace MilkTeaHouseProject
             if (pos == "Thu Ngân")
             {
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
+                StaffDAL.Instance.SetUsernameToNULLbyID(iD);
                 AccountDAL.Instance.DelAccount(username);
                 StaffDAL.Instance.DelStaff(iD);
             }
-            else if (pos == "Quản lí")
+            else if (pos.ToUpper() == "QUẢN LÝ")
             {
                 MessageBox.Show("Không thể xóa chức vụ này");
             }
@@ -137,22 +134,24 @@ namespace MilkTeaHouseProject
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
                 StaffDAL.Instance.DelStaff(iD);
             }
-            this.flowLayoutPanelStaff.Controls.RemoveAt(staffItems.IndexOf((sender as StaffItem)));
+            this.flowLayoutPanelStaff.Controls.Remove(sender as StaffItem);
+            this.SetBackGround();
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
 
             int id = ((sender as StaffItem).Tag as Staff).ID;
-            string name = ((sender as StaffItem).Tag as Staff).Name;
-            DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
-            string pos = ((sender as StaffItem).Tag as Staff).Position;
-            string phonenumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
-            string username = ((sender as StaffItem).Tag as Staff).UserName;
-            byte[] image = ((sender as StaffItem).Tag as Staff).Image;
-            string address = ((sender as StaffItem).Tag as Staff).Address;
-            bool sex = ((sender as StaffItem).Tag as Staff).Sex;
-            string cmnd = ((sender as StaffItem).Tag as Staff).CMND;
-            string phoneNumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
+            Staff staff = new Staff (StaffDAL.Instance.GetStaffById(id));
+            string name = staff.Name;
+            DateTime birthDate = staff.BirthDate;
+            string pos = staff.Position;
+            string phonenumber = staff.PhoneNumber;
+            string username = staff.UserName;
+            byte[] image = staff.Image;
+            string address = staff.Address;
+            bool sex = staff.Sex;
+            string cmnd = staff.CMND;
+            string phoneNumber = staff.PhoneNumber;
             fAddStaff frm = new fAddStaff(id, name, image, birthDate, pos, phonenumber, username, cmnd, sex, address);
             frm.ActivebtnEdit();
             frm.UpdatelbNameForm("Sửa thông tin nhân viên");
@@ -183,6 +182,7 @@ namespace MilkTeaHouseProject
                         staffItem.Tag = staff;
 
                         flowLayoutPanelStaff.Controls.Add(staffItem);
+                        staffItems.Add(staffItem);
                         sizeChange();
                     }
                 }
@@ -198,10 +198,10 @@ namespace MilkTeaHouseProject
         {
             fSetSalary f = new fSetSalary();
             f.ShowDialog();
-            foreach (StaffItem staffItem in staffItems)
+            foreach(StaffItem staff in staffItems)
             {
-                staffItem.UpdateSalaryReceived();
-            }
+                staff.UpdateSalaryReceived();
+            }    
         }
 
         private void btnUpdateSalary_Click(object sender, EventArgs e)
@@ -272,6 +272,7 @@ namespace MilkTeaHouseProject
                 }
             }
         }
+        
         #endregion
     }
 }

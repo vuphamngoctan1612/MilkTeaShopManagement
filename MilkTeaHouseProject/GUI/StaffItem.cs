@@ -56,7 +56,7 @@ namespace MilkTeaHouseProject
                 picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            if (position == "Quản lí")
+            if (position.ToUpper() == "QUẢN LÝ")
             {
                 this.btEdit.Visible = false;
                 this.btDel.Visible = false;
@@ -198,7 +198,7 @@ namespace MilkTeaHouseProject
                     int salaryReceived = 0;
                     salaryReceived = position.Salary + staff.OverTime * position.OverTimeSalary - staff.Fault * position.MinusSalary;
                     StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
-                    this.lbSalary.Text = string.Format("{0:n0}", staff.SalaryReceived).ToString();
+                    this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
                 }
             }
         }

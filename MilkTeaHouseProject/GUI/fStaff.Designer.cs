@@ -60,19 +60,20 @@
             this.pnStaff.Controls.Add(this.panel2);
             this.pnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnStaff.Location = new System.Drawing.Point(0, 0);
-            this.pnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnStaff.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pnStaff.Name = "pnStaff";
-            this.pnStaff.Size = new System.Drawing.Size(1820, 1100);
+            this.pnStaff.Size = new System.Drawing.Size(1213, 733);
             this.pnStaff.TabIndex = 0;
             // 
             // flowLayoutPanelStaff
             // 
+            this.flowLayoutPanelStaff.AutoScroll = true;
             this.flowLayoutPanelStaff.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanelStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 127);
+            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 85);
             this.flowLayoutPanelStaff.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelStaff.Name = "flowLayoutPanelStaff";
-            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1820, 973);
+            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1213, 648);
             this.flowLayoutPanelStaff.TabIndex = 15;
             this.flowLayoutPanelStaff.SizeChanged += new System.EventHandler(this.flowLayoutPanelStaff_SizeChanged);
             // 
@@ -87,20 +88,19 @@
             this.panel1.Controls.Add(this.lbName);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 78);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 52);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1820, 49);
+            this.panel1.Size = new System.Drawing.Size(1213, 33);
             this.panel1.TabIndex = 14;
             // 
             // lbPosition
             // 
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.Location = new System.Drawing.Point(540, 9);
-            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPosition.Location = new System.Drawing.Point(360, 6);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(61, 30);
+            this.lbPosition.Size = new System.Drawing.Size(42, 20);
             this.lbPosition.TabIndex = 21;
             this.lbPosition.Text = "Vị trí";
             // 
@@ -108,10 +108,9 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(684, 5);
-            this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserName.Location = new System.Drawing.Point(456, 3);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(160, 30);
+            this.lbUserName.Size = new System.Drawing.Size(111, 20);
             this.lbUserName.TabIndex = 20;
             this.lbUserName.Text = "Tên đăng nhập";
             // 
@@ -119,10 +118,9 @@
             // 
             this.lbOvertime.AutoSize = true;
             this.lbOvertime.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOvertime.Location = new System.Drawing.Point(927, 9);
-            this.lbOvertime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbOvertime.Location = new System.Drawing.Point(618, 6);
             this.lbOvertime.Name = "lbOvertime";
-            this.lbOvertime.Size = new System.Drawing.Size(147, 30);
+            this.lbOvertime.Size = new System.Drawing.Size(100, 20);
             this.lbOvertime.TabIndex = 19;
             this.lbOvertime.Text = "Giờ làm thêm";
             // 
@@ -130,10 +128,9 @@
             // 
             this.lbFaust.AutoSize = true;
             this.lbFaust.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFaust.Location = new System.Drawing.Point(1108, 9);
-            this.lbFaust.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFaust.Location = new System.Drawing.Point(739, 6);
             this.lbFaust.Name = "lbFaust";
-            this.lbFaust.Size = new System.Drawing.Size(69, 30);
+            this.lbFaust.Size = new System.Drawing.Size(47, 20);
             this.lbFaust.TabIndex = 19;
             this.lbFaust.Text = "Số lỗi";
             // 
@@ -141,10 +138,9 @@
             // 
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(1254, 9);
-            this.lbSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSalary.Location = new System.Drawing.Point(836, 6);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(77, 30);
+            this.lbSalary.Size = new System.Drawing.Size(52, 20);
             this.lbSalary.TabIndex = 18;
             this.lbSalary.Text = "Lương";
             // 
@@ -152,10 +148,9 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(178, 9);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbName.Location = new System.Drawing.Point(119, 6);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(152, 30);
+            this.lbName.Size = new System.Drawing.Size(105, 20);
             this.lbName.TabIndex = 16;
             this.lbName.Text = "Tên nhân viên";
             // 
@@ -163,10 +158,9 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(14, 5);
-            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbID.Location = new System.Drawing.Point(9, 3);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(148, 30);
+            this.lbID.Size = new System.Drawing.Size(103, 20);
             this.lbID.TabIndex = 10;
             this.lbID.Text = "Mã nhân viên";
             // 
@@ -180,9 +174,9 @@
             this.panel2.Controls.Add(this.btAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1820, 78);
+            this.panel2.Size = new System.Drawing.Size(1213, 52);
             this.panel2.TabIndex = 13;
             // 
             // btnExport
@@ -201,8 +195,7 @@
             this.btnExport.Image = null;
             this.btnExport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(690, 18);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExport.Location = new System.Drawing.Point(460, 12);
             this.btnExport.Name = "btnExport";
             this.btnExport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnExport.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -210,7 +203,7 @@
             this.btnExport.OnHoverImage = null;
             this.btnExport.OnPressedColor = System.Drawing.Color.Black;
             this.btnExport.Radius = 10;
-            this.btnExport.Size = new System.Drawing.Size(212, 42);
+            this.btnExport.Size = new System.Drawing.Size(141, 28);
             this.btnExport.TabIndex = 26;
             this.btnExport.Text = "Xuất file Excel";
             this.btnExport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -221,10 +214,10 @@
             this.pnSearch.Controls.Add(this.btnSearch);
             this.pnSearch.Controls.Add(this.txtSearch);
             this.pnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSearch.Location = new System.Drawing.Point(1456, 0);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnSearch.Location = new System.Drawing.Point(970, 0);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(364, 78);
+            this.pnSearch.Size = new System.Drawing.Size(243, 52);
             this.pnSearch.TabIndex = 25;
             // 
             // btnSearch
@@ -248,8 +241,8 @@
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(274, 22);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Location = new System.Drawing.Point(183, 15);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -257,7 +250,7 @@
             this.btnSearch.OnHoverImage = null;
             this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Size = new System.Drawing.Size(36, 32);
+            this.btnSearch.Size = new System.Drawing.Size(24, 21);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -273,13 +266,13 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.Location = new System.Drawing.Point(44, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Location = new System.Drawing.Point(29, 12);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(278, 42);
+            this.txtSearch.Size = new System.Drawing.Size(185, 28);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -299,8 +292,7 @@
             this.btnUpdateSalary.Image = null;
             this.btnUpdateSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateSalary.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdateSalary.Location = new System.Drawing.Point(18, 18);
-            this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdateSalary.Location = new System.Drawing.Point(12, 12);
             this.btnUpdateSalary.Name = "btnUpdateSalary";
             this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnUpdateSalary.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -308,7 +300,7 @@
             this.btnUpdateSalary.OnHoverImage = null;
             this.btnUpdateSalary.OnPressedColor = System.Drawing.Color.Black;
             this.btnUpdateSalary.Radius = 10;
-            this.btnUpdateSalary.Size = new System.Drawing.Size(212, 42);
+            this.btnUpdateSalary.Size = new System.Drawing.Size(141, 28);
             this.btnUpdateSalary.TabIndex = 24;
             this.btnUpdateSalary.Text = "Kết toán lương";
             this.btnUpdateSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -330,8 +322,7 @@
             this.btSetSalary.Image = null;
             this.btSetSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btSetSalary.ImageSize = new System.Drawing.Size(20, 20);
-            this.btSetSalary.Location = new System.Drawing.Point(243, 18);
-            this.btSetSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btSetSalary.Location = new System.Drawing.Point(162, 12);
             this.btSetSalary.Name = "btSetSalary";
             this.btSetSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btSetSalary.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -339,7 +330,7 @@
             this.btSetSalary.OnHoverImage = null;
             this.btSetSalary.OnPressedColor = System.Drawing.Color.Black;
             this.btSetSalary.Radius = 10;
-            this.btSetSalary.Size = new System.Drawing.Size(212, 42);
+            this.btSetSalary.Size = new System.Drawing.Size(141, 28);
             this.btSetSalary.TabIndex = 24;
             this.btSetSalary.Text = "Thiết lập lương";
             this.btSetSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -361,8 +352,7 @@
             this.btAdd.Image = null;
             this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btAdd.Location = new System.Drawing.Point(468, 18);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAdd.Location = new System.Drawing.Point(312, 12);
             this.btAdd.Name = "btAdd";
             this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -370,7 +360,7 @@
             this.btAdd.OnHoverImage = null;
             this.btAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btAdd.Radius = 10;
-            this.btAdd.Size = new System.Drawing.Size(212, 42);
+            this.btAdd.Size = new System.Drawing.Size(141, 28);
             this.btAdd.TabIndex = 23;
             this.btAdd.Text = "Thêm nhân viên";
             this.btAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -378,12 +368,12 @@
             // 
             // fStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1820, 1100);
+            this.ClientSize = new System.Drawing.Size(1213, 733);
             this.Controls.Add(this.pnStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "fStaff";
             this.Text = "NHÂN VIÊN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
