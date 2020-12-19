@@ -15,9 +15,12 @@ namespace MilkTeaHouseProject
 {
     public partial class fMenu : Form
     {
-        public fMenu()
+        public string Username { get; set; }
+
+        public fMenu(string username)
         {
             InitializeComponent();
+            this.Username = username;
         }
 
         #region Method
@@ -33,7 +36,7 @@ namespace MilkTeaHouseProject
                 else
                     setcolor = true;
 
-                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Category, drink.Image, setcolor, drink.OriginPrice, drink.Count);
+                MenuItem item = new MenuItem(drink.ID, drink.Name, drink.Price, drink.Category, drink.Image, setcolor, drink.OriginPrice, drink.Count, Username);
 
                 item.onDel += DrinkItem_onDel;
                 item.onEdit += DrinkItem_onEdit;
@@ -73,6 +76,7 @@ namespace MilkTeaHouseProject
                     item.Visible = true;
                 }
             }
+            this.SetBackGround();
         }
 
         private void DeleteMenu(int id)
@@ -129,7 +133,7 @@ namespace MilkTeaHouseProject
             byte[] image = (sender as fAddDrink).Image;
             int origin = (sender as fAddDrink).Origin;
 
-            MenuItem item = new MenuItem(id, name, price, category, image, true, origin, 0);
+            MenuItem item = new MenuItem(id, name, price, category, image, true, origin, 0, Username);
             item.onDel += Item_onDel;
             item.onEdit += Item_onEdit;
             item.Tag = item;

@@ -40,6 +40,22 @@ namespace MilkTeaHouseProject.DAL
             return bills;
         }
 
+        public Bill GetBillByID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM BILL WHERE ID = {0}", id));
+
+            if (data.Rows.Count > 0)
+            {
+                Bill bill = new Bill(data.Rows[0]);
+
+                return bill;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public int GetIDBill()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("select ID from Bill");
@@ -202,14 +218,15 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void MakeBillforUpdateCountDrink(string nameDrink, int count, int total)
+        public void MakeBillforUpdateCountDrink(string DrinkName, int count, int total, string username)
         {
-            DateTime time = DateTime.Now;
-
             int id = GetMAXIDBill() + 1;
+            DateTime time = DateTime.Now;
+            int staffID = StaffDAL.Instance.GetStaffIDbyUsername(username);
 
-            string query = string.Format("INSERT INTO BILL(ID, CHECKOUT, STATUS, TOTAL, NOTE, CHECKIN) VALUES({0}, '{1}', 1, {2}, N'Nhập thêm {3} số lượng {4}', '{5}')",
-                    id, time, total, nameDrink, count, time);
+            string query = string.Format("INSERT INTO BILL(ID, CHECKOUT, STATUS, TOTAL, NOTE, CHECKIN, STAFFID) " +
+                "VALUES({0}, '{1}', 1, {2}, N'Nhập thêm {3} số lượng {4}', '{5}', {6})",
+                    id, time, total, DrinkName, count, time, staffID);
 
             DataProvider.Instance.ExecuteNonQuery(query);
         }

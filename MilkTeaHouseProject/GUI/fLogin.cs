@@ -51,8 +51,8 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            try
-            {
+            //try
+            //{
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
                     if (Login(username, password))
@@ -64,11 +64,11 @@ namespace MilkTeaHouseProject
                         this.txtUser.Text = this.txtPass.Text = "";
                     }
                 }
-            }
-            catch
-            {
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void lbSignup_Click(object sender, EventArgs e)
@@ -111,7 +111,6 @@ namespace MilkTeaHouseProject
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
-                this.btnLogin_Click(sender, e);
             }
 
             if (e.KeyChar == (char)Keys.Space)
@@ -164,8 +163,14 @@ namespace MilkTeaHouseProject
                 errorShow.Visible = false;
             }
         }
+
+        private void btnShowPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnShowPass_Click(sender, e);
+            }
+        }
         #endregion
-
-
     }
 }

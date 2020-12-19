@@ -99,10 +99,10 @@ namespace MilkTeaShopManagement.DAL
                 new object[] { id, Name, Price, Category, Image, origin, count });
         }
 
-        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin, int count)
+        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin , @Count",
-                new object[] { id, name, price, category, image, origin, count });
+            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin ",
+                new object[] { id, name, price, category, image, origin });
         }
 
         public void DelDrink(int id)
