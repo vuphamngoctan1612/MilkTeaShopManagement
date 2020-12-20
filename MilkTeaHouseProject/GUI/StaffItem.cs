@@ -17,6 +17,7 @@ namespace MilkTeaHouseProject
 {
     public partial class StaffItem : UserControl
     {
+        public string NAME { get => this.lbName.Text; }
         public StaffItem()
         {
             InitializeComponent();

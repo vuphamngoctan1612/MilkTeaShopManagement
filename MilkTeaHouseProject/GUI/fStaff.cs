@@ -75,21 +75,30 @@ namespace MilkTeaHouseProject
 
         public void SearchStaff(string search)
         {
-            foreach(Control staff in flowLayoutPanelStaff.Controls)
+            bool flag = false;
+            foreach (Control item in this.flowLayoutPanelStaff.Controls)
             {
-                string name = (staff as StaffItem).Name;
-                if(!name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                string StaffName = (item as StaffItem).NAME;
+
+                if (!StaffName.ToLower().Contains(search.ToLower()))
                 {
-                    if (!name.ToLower().Contains(search.ToLower()))
+                    item.Visible = false;
+                }
+                else
+                {
+                    item.Visible = true;
+                    if (flag == false)
                     {
-                        staff.Visible = false;
+                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
                     }
                     else
                     {
-                        staff.Visible = true;
+                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
                     }
                 }
-            }    
+            }
         }
         private void SetBackGround()
         {
@@ -187,6 +196,7 @@ namespace MilkTeaHouseProject
                     }
                 }
             }
+            this.SetBackGround();
         }
 
         private void flowLayoutPanelStaff_SizeChanged(object sender, EventArgs e)
@@ -211,8 +221,6 @@ namespace MilkTeaHouseProject
                 StaffDAL.Instance.ResetOverandFault();
                 BillDAL.Instance.UpdateBillSalary(username, totalSalary * -1);
                 MessageBox.Show("Kết toán lương thành công");
-                this.flowLayoutPanelStaff.Controls.Clear();
-                LoadStaff();
             }
             else
             {
