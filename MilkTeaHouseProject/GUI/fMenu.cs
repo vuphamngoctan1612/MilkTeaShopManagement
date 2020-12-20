@@ -64,6 +64,7 @@ namespace MilkTeaHouseProject
 
         public void SearchDrink(string search)
         {
+            bool flag = false;
             foreach(Control item in this.flowLayoutPanelMenu.Controls)
             {
                 string name = (item as MenuItem).NAME;
@@ -74,9 +75,21 @@ namespace MilkTeaHouseProject
                 else
                 {
                     item.Visible = true;
+                    //set background
+                    if (flag == false)
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
+                    }
+                    else
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
+                    }
                 }
             }
-            this.SetBackGround();
         }
 
         private void DeleteMenu(int id)
@@ -87,16 +100,18 @@ namespace MilkTeaHouseProject
         private void SetBackGround()
         {
             bool flag = false;
-            foreach (Control control in this.flowLayoutPanelMenu.Controls)
+            foreach (Control item in this.flowLayoutPanelMenu.Controls)
             {
                 if (flag == false)
                 {
-                    control.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
                     flag = true;
                 }
                 else
                 {
-                    control.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
                     flag = false;
                 }
             }
@@ -139,24 +154,7 @@ namespace MilkTeaHouseProject
             item.Tag = item;
             this.flowLayoutPanelMenu.Controls.Add(item);
 
-            //set background
-            bool flag = false;
-            foreach (MenuItem MenuItem in this.flowLayoutPanelMenu.Controls)
-            {
-                if (flag == false)
-                {
-                    MenuItem.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
-                    MenuItem.TxtCount.BackColor = MenuItem.BtnAdd.BaseColor = MenuItem.BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
-                    flag = true;
-                }
-                else
-                {
-                    MenuItem.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
-                    MenuItem.TxtCount.BackColor = MenuItem.BtnAdd.BaseColor = MenuItem.BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
-                    flag = false;
-                }
-            }
-
+            this.SetBackGround();
             this.LoadSize();
         }
         private void Item_onEdit(object sender, EventArgs e)

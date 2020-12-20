@@ -91,17 +91,28 @@ namespace MilkTeaHouseProject
         }
         private void SearchStaffName(string name)
         {
-            foreach (Control control in this.flowLayoutPanelBill.Controls)
+            bool flag = false;
+            foreach (Control item in this.flowLayoutPanelBill.Controls)
             {
-                string StaffName = (control as ItemInBill).StaffName;
+                string StaffName = (item as ItemInBill).StaffName;
 
                 if (!StaffName.ToLower().Contains(name.ToLower()))
                 {
-                    control.Visible = false;
+                    item.Visible = false;
                 }
                 else
                 {
-                    control.Visible = true;
+                    item.Visible = true;
+                    if (flag == false)
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
+                    }
+                    else
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
+                    }
                 }
             }
         }
