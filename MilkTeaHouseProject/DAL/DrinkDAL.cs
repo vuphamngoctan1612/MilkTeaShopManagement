@@ -62,6 +62,22 @@ namespace MilkTeaShopManagement.DAL
             return drinks;
         }
 
+        public Drink GetDrinkByID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM DRINK WHERE ID = {0}", id));
+
+            if (data.Rows.Count > 0)
+            {
+                Drink drink = new Drink(data.Rows[0]);
+
+                return drink;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public int GetMAXDrinkID()
         {
             try
@@ -83,10 +99,10 @@ namespace MilkTeaShopManagement.DAL
                 new object[] { id, Name, Price, Category, Image, origin, count });
         }
 
-        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin, int count)
+        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin , @Count",
-                new object[] { id, name, price, category, image, origin, count });
+            DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin ",
+                new object[] { id, name, price, category, image, origin });
         }
 
         public void DelDrink(int id)
@@ -102,7 +118,7 @@ namespace MilkTeaShopManagement.DAL
                 " WHERE CATEGORY = '{0}'", category));
         }
 
-        public string getCategorybyID(int id)
+        public string GetCategorybyID(int id)
         {
             return (string)DataProvider.Instance.ExecuteScalar("SELECT Category FROM Drink WHERE ID = " + id);
         }

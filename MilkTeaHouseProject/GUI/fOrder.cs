@@ -19,6 +19,7 @@ namespace MilkTeaHouseProject
     public partial class fOrder : Form
     {
         private string username;
+        private int staffID;
         private int billID = BillDAL.Instance.GetMAXIDBill() + 1;
 
         public fOrder(string username)
@@ -26,6 +27,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
 
             this.username = username;
+            this.staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
         }
 
         #region Methods
@@ -53,18 +55,27 @@ namespace MilkTeaHouseProject
 
         public void LoadDrinkbyCategory(string category)
         {
-            List<Drink> drinks = DrinkDAL.Instance.GetListDrinkbyCategory(category);
-
-            foreach (Drink drink in drinks)
+            if (category != lbAll.Text)
             {
-                DrinkItem item = new DrinkItem(drink.Name, drink.Price, drink.Image);
-                item.Tag = drink;
-                item.onChoose += DrinkItem_onChoose;
-
-                this.flowLayoutPanelDrinks.Controls.Add(item);
+                foreach (Control item in flowLayoutPanelDrinks.Controls)
+                {
+                    if ((item as DrinkItem).CATEGORY != category)
+                    {
+                        item.Visible = false;
+                    }
+                    else
+                    {
+                        item.Visible = true;
+                    }
+                }
             }
-
-            LoadSizeDrinḳ();
+            else
+            {
+                foreach (Control item in flowLayoutPanelDrinks.Controls)
+                {
+                    item.Visible = true;
+                }
+            }
         }
 
         public void LoadBill(int billID)
@@ -72,13 +83,9 @@ namespace MilkTeaHouseProject
             flowLayoutPanelBill.Controls.Clear();
             List<DTO.Menu> listMenu = MenuDAL.Instance.GetListMenu(billID);
 
-            int count;
-
             foreach (DTO.Menu menu in listMenu)
             {
-                count = BillInfoDAL.Instance.GetCountbyDrinkBillID(billID, menu.IdDrink);
-
-                BillItem billItem = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, count, billID);
+                BillItem billItem = new BillItem(menu.IdDrink, menu.DrinkName, menu.Price, menu.Count, billID);
 
                 billItem.onValueChanged += BillItem_onValueChanged;
                 billItem.onDel += BillItem_onDel;
@@ -97,7 +104,7 @@ namespace MilkTeaHouseProject
 
             foreach (Drink drink in drinks)
             {
-                DrinkItem drinkItem = new DrinkItem(drink.Name, drink.Price, drink.Image);
+                DrinkItem drinkItem = new DrinkItem(drink.Name, drink.Price, drink.Image, drink.Category);
                 drinkItem.Tag = drink;
                 drinkItem.onChoose += DrinkItem_onChoose;
 
@@ -109,22 +116,17 @@ namespace MilkTeaHouseProject
 
         public void SearchDrink(string search)
         {
-            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
-            this.flowLayoutPanelDrinks.Controls.Clear();
-
-            foreach (Drink drink in drinks)
+            foreach (Control drink in flowLayoutPanelDrinks.Controls)
             {
-                string name = drink.Name;
-                if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                string name = (drink as DrinkItem).NAME;
+                if (!name.ToLower().Contains(search.ToLower()))
                 {
-                    DrinkItem item = new DrinkItem(name, drink.Price, drink.Image);
-                    item.Tag = drink;
-                    item.onChoose += DrinkItem_onChoose;
-
-                    this.flowLayoutPanelDrinks.Controls.Add(item);
+                    drink.Visible = false;
                 }
-
-                LoadSizeDrinḳ();
+                else
+                {
+                    drink.Visible = true;
+                }
             }
         }
 
@@ -164,7 +166,7 @@ namespace MilkTeaHouseProject
             }
         }
 
-        public void LoadAllGroup()
+        public void LoadLabelAllinGroup()
         {
             Label lbAll = new Label();
             lbAll.Text = "Tất cả";
@@ -177,27 +179,34 @@ namespace MilkTeaHouseProject
             this.flowLayoutPanelGroup.Controls.Add(lbAll);
         }
 
-        public void LoadGroup()
+        public void LoadAllGroup()
         {
             flowLayoutPanelGroup.Controls.Clear();
             List<GroupTable> groups = GroupTableDAL.Instance.GetListGroupTable();
 
-            LoadAllGroup();
+            LoadLabelAllinGroup();
 
             foreach (GroupTable group in groups)
             {
-                Label lbGroup = new Label();
-                lbGroup.Text = group.Name;
-                lbGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
-                                                            System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                lbGroup.AutoSize = true;
-                lbGroup.Cursor = System.Windows.Forms.Cursors.Hand;
-                lbGroup.Tag = lbGroup;
-
-                lbGroup.Click += LbGroup_Click;
+                Label lbGroup = LoadGroup(group.Name);
 
                 this.flowLayoutPanelGroup.Controls.Add(lbGroup);
             }
+        }
+
+        public Label LoadGroup(string namegroup)
+        {
+            Label lbGroup = new Label();
+            lbGroup.Text = namegroup;
+            lbGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
+                                                        System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbGroup.AutoSize = true;
+            lbGroup.Cursor = System.Windows.Forms.Cursors.Hand;
+            lbGroup.Tag = lbGroup;
+
+            lbGroup.Click += LbGroup_Click;
+
+            return lbGroup;
         }
 
         private void ActiveBtnTable()
@@ -249,6 +258,16 @@ namespace MilkTeaHouseProject
             lbErrorShow.Visible = false;
             lbSuccess.Text = query;
             pnTotal.BackColor = Color.FromArgb(172, 234, 156);
+        }
+
+        public void AddTable(int ID, string name, bool status, string nameGroup)
+        {
+            TableFood table = new TableFood(ID, name, status, nameGroup);
+            TableItem item = new TableItem(table.ID, table.Name, table.Status);
+            item.Tag = table;
+            item.onChoose += TableItem_onChoose;
+
+            this.flowLayoutPanelTable.Controls.Add(item);
         }
         #endregion
 
@@ -317,17 +336,14 @@ namespace MilkTeaHouseProject
 
                     BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
 
-                    //price = MenuDAL.Instance.GetTotalPrice(idBill);
-
                     BillDAL.Instance.UpdateBill(idBill, price);
                 }
                 else
                 {
                     idBill = this.billID;
-                    int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
 
                     if (!BillDAL.Instance.ExistBillbyIDBill(idBill))
-                        BillDAL.Instance.InsertBill(idBill, idStaff, tableID.Text, price);
+                        BillDAL.Instance.InsertBill(idBill, this.staffID, tableID.Text, price);
 
                     BillInfoDAL.Instance.InsertBillInfo(idBill, idDrink, count);
 
@@ -339,11 +355,13 @@ namespace MilkTeaHouseProject
                 this.btnPay.Visible = true;
                 this.btnCancel.Text = "Hủy đơn";
                 this.btnCancel.Visible = true;
+                this.btnCancel.Enabled = true;
 
                 DrinkDAL.Instance.MinusCount(idDrink);
 
                 this.lbCount.Text = MenuDAL.Instance.GetCount(idBill).ToString();
                 this.lbTotalPrice.Text = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(idBill)).ToString();
+
                 LoadBill(idBill);
             }
             else
@@ -355,12 +373,11 @@ namespace MilkTeaHouseProject
         private void BillItem_onDel(object sender, EventArgs e)
         {
             int idBill = BillDAL.Instance.GetBillIdbyTableID(int.Parse(tableID.Text));
+            int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
+            int count = ((sender as BillItem).Tag as DTO.Menu).Count;
 
             try
             {
-                int drinkID = ((sender as BillItem).Tag as DTO.Menu).IdDrink;
-                int count = ((sender as BillItem).Tag as DTO.Menu).Count;
-
                 BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
                 DrinkDAL.Instance.SetCountbyID(drinkID, count);
 
@@ -374,8 +391,7 @@ namespace MilkTeaHouseProject
             finally
             {
                 ShowSuccess("Đã hủy món");
-                this.flowLayoutPanelBill.Controls.Clear();
-                LoadBill(idBill);
+                flowLayoutPanelBill.Controls.Remove(sender as BillItem);
             }
         }
 
@@ -392,7 +408,6 @@ namespace MilkTeaHouseProject
             if (this.flowLayoutPanelBill.Controls.Count > 0)
             {
                 int totalPrice = MenuDAL.Instance.GetTotalPrice(idBill);
-                int staffID = StaffDAL.Instance.GetStaffIDbyUsername(this.Username);
 
                 fInvoice invoice = new fInvoice(this.Username, idBill, totalPrice, staffID, int.Parse(tableID.Text));
                 invoice.ShowDialog();
@@ -402,12 +417,8 @@ namespace MilkTeaHouseProject
                     this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
 
-                    LoadTable();
-                    LoadDrink();
-
                     ShowSuccess("Thanh toán thành công");
                     TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
-                    flowLayoutPanelBill.Controls.Clear();
                 }
             }
             else
@@ -432,7 +443,6 @@ namespace MilkTeaHouseProject
                         BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, idBill);
                         DrinkDAL.Instance.SetCountbyID(drinkID, count);
                     }
-                    //BillInfoDAL.Instance.DeleteBillInfobyIDBill(idBill);
 
                     BillDAL.Instance.DeleteBill(idBill);
 
@@ -445,7 +455,6 @@ namespace MilkTeaHouseProject
                 finally
                 {
                     ShowSuccess("Đã hủy đơn");
-                    this.flowLayoutPanelBill.Controls.Clear();
                     this.lbCount.Text = "0";
                     this.lbTotalPrice.Text = "0";
                 }
@@ -456,16 +465,21 @@ namespace MilkTeaHouseProject
 
                 ShowSuccess("Đã xóa bàn");
 
-                TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
+                for (int i = 1; i < flowLayoutPanelTable.Controls.Count; i++)
+                {
+                    if ((flowLayoutPanelTable.Controls[i] as TableItem).ID.ToString() == tableID.Text)
+                    {
+                        flowLayoutPanelTable.Controls.RemoveAt(i);
+                    }
+                }    
             }
-            LoadTable();
 
             TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
         }
 
         private void flowLayoutPanelDrinks_SizeChanged(object sender, EventArgs e)
         {
-            LoadSizeDrinḳ();
+            
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
@@ -482,7 +496,7 @@ namespace MilkTeaHouseProject
 
             this.lbAll.ForeColor = Color.FromArgb(0, 144, 218);
 
-            LoadDrink();
+            LoadDrinkbyCategory(lbAll.Text);
         }
 
         private void LbCategory_Click(object sender, EventArgs e)
@@ -493,8 +507,6 @@ namespace MilkTeaHouseProject
             }
 
             (sender as Label).ForeColor = Color.FromArgb(0, 144, 218);
-
-            this.flowLayoutPanelDrinks.Controls.Clear();
 
             LoadDrinkbyCategory(((sender as Label).Tag as Label).Text);
         }
@@ -542,7 +554,7 @@ namespace MilkTeaHouseProject
             LoadTable();
             LoadDrink();
             LoadCategory();
-            LoadGroup();
+            LoadAllGroup();
 
             TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
         }
@@ -576,10 +588,21 @@ namespace MilkTeaHouseProject
             fAddTable frm = new fAddTable(id);
             frm.ShowDialog();
 
-            LoadTable();
-            LoadGroup();
-
-            ShowSuccess("Thêm bàn thành công");
+            if (frm.FLAG != 0)
+            {
+                if (frm.FLAG == 2)
+                {
+                    Label lb = LoadGroup(frm.NameGroup);
+                    flowLayoutPanelGroup.Controls.Add(lb);
+                    AddTable(frm.ID, frm.NameTable, frm.Status, frm.NameGroup);
+                }
+                else
+                if (frm.FLAG == 1)
+                {
+                    AddTable(frm.ID, frm.NameTable, frm.Status, frm.NameGroup);
+                }
+                ShowSuccess("Thêm bàn thành công");
+            }
         }
 
         private void lbAllinGroup_Click(object sender, EventArgs e)
@@ -618,6 +641,15 @@ namespace MilkTeaHouseProject
                 if (((item as TableItem).Tag as TableFood).NameGroup != nameGroup)
                     item.Visible = false;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //timer1.Stop();
+            //timer1.Enabled = false;
+            lbErrorShow.Visible = false;
+            lbSuccess.Visible = false;
+            this.pnTotal.BackColor = Color.FromArgb(255, 233, 171);
         }
         #endregion
     }

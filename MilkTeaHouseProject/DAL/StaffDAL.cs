@@ -46,14 +46,6 @@ namespace MilkTeaHouseProject.DAL
 
             return data.Rows[0];   
         }
-        public DataRow GetStaffById(int id)
-        {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Staff WHERE ID = '" + id + "'");
-
-            //Staff staff = new Staff(data.Rows[0]);
-
-            return data.Rows[0];
-        }
 
         public int GetStaffIDbyUsername(string username)
         {
@@ -123,18 +115,18 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);   
         }
 
-        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, int salaryReceived, string phonenumber, string cmnd, bool sex, string address)
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string cmnd, bool sex, string address)
         {
 
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @salaryreceived , @phonenumber , @cmnd , @sex , @address ",
-                new object[] { ID, name, image, birthDate, pos, salaryReceived,phonenumber, cmnd, sex, address });
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @phonenumber , @cmnd , @sex , @address ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, cmnd, sex, address });
         }
 
-        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, int salaryReceived, string phonenumber, string username, string cmnd, bool sex, string address)
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username, string cmnd, bool sex, string address)
         {
 
-            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @username , @salaryreceived , @phonenumber , @cmnd , @sex , @address ",
-                new object[] { ID, name, image, birthDate, pos, username, salaryReceived,phonenumber, cmnd, sex, address });
+            DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @phonenumber , @cmnd , @sex, @addres  ",
+                new object[] { ID, name, image, birthDate, pos, phonenumber, username, cmnd, sex, address });
         }
 
         public void DelStaff(int iD)
@@ -143,20 +135,20 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, int salaryReceived,string phonenumber, string cmnd, bool sex, string address)
+        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, string phonenumber, string cmnd, bool sex, string address)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @salaryreceived , @phonenumber , @cmnd , @sex , @address ",
-                new object[] { id, name, image, birthDate, pos, username, salaryReceived, phonenumber, cmnd, sex, address });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaff @ID , @Name , @image , @birthday , @pos , @username , @phonenumber , @cmnd , @sex , @address ",
+                new object[] { id, name, image, birthDate, pos, username, phonenumber, cmnd, sex, address });
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, int salaryReceived, string phonenumber, string cmnd, bool sex, string address)
+        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, string phonenumber, string cmnd, bool sex, string address)
         {
             int id = GetMAXStaffID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @salaryreceived , @phonenumber , @cmnd , @sex , @adress ",
-                new object[] { id, name, image, birthdate, pos, salaryReceived,phonenumber, cmnd, sex, address });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddStaffnoUsername @ID , @Name , @image , @birthday , @pos , @phonenumber , @cmnd , @sex , @adress ",
+                new object[] { id, name, image, birthdate, pos, phonenumber, cmnd, sex, address });
         }
 
         public void UpdateOverTime(int id, int overtime)

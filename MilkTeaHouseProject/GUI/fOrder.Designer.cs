@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fOrder));
             this.pnCenter = new System.Windows.Forms.Panel();
             this.pnTitle = new System.Windows.Forms.Panel();
@@ -73,6 +74,7 @@
             this.flowLayoutPanelCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.lbAll = new Guna.UI.WinForms.GunaLabel();
             this.pnSplitCategory = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnTitle.SuspendLayout();
             this.pnTotal.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,10 +96,10 @@
             // 
             this.pnCenter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pnCenter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnCenter.Location = new System.Drawing.Point(730, 49);
-            this.pnCenter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnCenter.Location = new System.Drawing.Point(610, 41);
+            this.pnCenter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnCenter.Name = "pnCenter";
-            this.pnCenter.Size = new System.Drawing.Size(15, 665);
+            this.pnCenter.Size = new System.Drawing.Size(12, 554);
             this.pnCenter.TabIndex = 7;
             // 
             // pnTitle
@@ -108,18 +110,19 @@
             this.pnTitle.Controls.Add(this.pnSplitBill);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(645, 59);
+            this.pnTitle.Size = new System.Drawing.Size(537, 49);
             this.pnTitle.TabIndex = 0;
             // 
             // tableID
             // 
             this.tableID.AutoSize = true;
             this.tableID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tableID.Location = new System.Drawing.Point(200, 20);
+            this.tableID.Location = new System.Drawing.Point(167, 17);
+            this.tableID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tableID.Name = "tableID";
-            this.tableID.Size = new System.Drawing.Size(70, 25);
+            this.tableID.Size = new System.Drawing.Size(59, 20);
             this.tableID.TabIndex = 3;
             this.tableID.Text = "TableID";
             this.tableID.Visible = false;
@@ -129,9 +132,10 @@
             this.lbTableSelected.AutoSize = true;
             this.lbTableSelected.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lbTableSelected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.lbTableSelected.Location = new System.Drawing.Point(51, 20);
+            this.lbTableSelected.Location = new System.Drawing.Point(42, 17);
+            this.lbTableSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTableSelected.Name = "lbTableSelected";
-            this.lbTableSelected.Size = new System.Drawing.Size(129, 30);
+            this.lbTableSelected.Size = new System.Drawing.Size(110, 25);
             this.lbTableSelected.TabIndex = 3;
             this.lbTableSelected.Text = "TableName";
             // 
@@ -139,10 +143,10 @@
             // 
             this.pnSplitBill.BackColor = System.Drawing.Color.LightGray;
             this.pnSplitBill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitBill.Location = new System.Drawing.Point(0, 58);
-            this.pnSplitBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnSplitBill.Location = new System.Drawing.Point(0, 48);
+            this.pnSplitBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnSplitBill.Name = "pnSplitBill";
-            this.pnSplitBill.Size = new System.Drawing.Size(645, 1);
+            this.pnSplitBill.Size = new System.Drawing.Size(537, 1);
             this.pnSplitBill.TabIndex = 1;
             // 
             // pnTotal
@@ -153,10 +157,10 @@
             this.pnTotal.Controls.Add(this.panel1);
             this.pnTotal.Controls.Add(this.pnBtnPay);
             this.pnTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnTotal.Location = new System.Drawing.Point(0, 500);
-            this.pnTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTotal.Location = new System.Drawing.Point(0, 417);
+            this.pnTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(645, 165);
+            this.pnTotal.Size = new System.Drawing.Size(537, 137);
             this.pnTotal.TabIndex = 2;
             // 
             // lbSuccess
@@ -164,9 +168,10 @@
             this.lbSuccess.AutoSize = true;
             this.lbSuccess.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbSuccess.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbSuccess.Location = new System.Drawing.Point(42, 9);
+            this.lbSuccess.Location = new System.Drawing.Point(35, 7);
+            this.lbSuccess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSuccess.Name = "lbSuccess";
-            this.lbSuccess.Size = new System.Drawing.Size(124, 30);
+            this.lbSuccess.Size = new System.Drawing.Size(110, 25);
             this.lbSuccess.TabIndex = 4;
             this.lbSuccess.Text = "gunaLabel1";
             this.lbSuccess.Visible = false;
@@ -176,9 +181,10 @@
             this.lbErrorShow.AutoSize = true;
             this.lbErrorShow.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbErrorShow.ForeColor = System.Drawing.Color.Red;
-            this.lbErrorShow.Location = new System.Drawing.Point(42, 9);
+            this.lbErrorShow.Location = new System.Drawing.Point(35, 7);
+            this.lbErrorShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbErrorShow.Name = "lbErrorShow";
-            this.lbErrorShow.Size = new System.Drawing.Size(124, 30);
+            this.lbErrorShow.Size = new System.Drawing.Size(110, 25);
             this.lbErrorShow.TabIndex = 4;
             this.lbErrorShow.Text = "gunaLabel1";
             this.lbErrorShow.Visible = false;
@@ -191,10 +197,10 @@
             this.panel1.Controls.Add(this.lbTotalPrice);
             this.panel1.Controls.Add(this.lbNameTotal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 46);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 38);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(645, 47);
+            this.panel1.Size = new System.Drawing.Size(537, 39);
             this.panel1.TabIndex = 3;
             // 
             // lbCount
@@ -202,9 +208,10 @@
             this.lbCount.AutoSize = true;
             this.lbCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCount.Location = new System.Drawing.Point(356, 5);
+            this.lbCount.Location = new System.Drawing.Point(297, 4);
+            this.lbCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(27, 32);
+            this.lbCount.Size = new System.Drawing.Size(21, 25);
             this.lbCount.TabIndex = 6;
             this.lbCount.Text = "0";
             this.lbCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,9 +220,10 @@
             // 
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(552, 5);
+            this.lb.Location = new System.Drawing.Point(460, 4);
+            this.lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(57, 30);
+            this.lb.Size = new System.Drawing.Size(46, 23);
             this.lb.TabIndex = 5;
             this.lb.Text = "VND";
             // 
@@ -223,10 +231,11 @@
             // 
             this.lbTotalPrice.AutoSize = true;
             this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPrice.Location = new System.Drawing.Point(447, 5);
+            this.lbTotalPrice.Location = new System.Drawing.Point(372, 4);
+            this.lbTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotalPrice.Name = "lbTotalPrice";
             this.lbTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbTotalPrice.Size = new System.Drawing.Size(25, 30);
+            this.lbTotalPrice.Size = new System.Drawing.Size(19, 23);
             this.lbTotalPrice.TabIndex = 3;
             this.lbTotalPrice.Text = "0";
             // 
@@ -234,9 +243,10 @@
             // 
             this.lbNameTotal.AutoSize = true;
             this.lbNameTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameTotal.Location = new System.Drawing.Point(240, 8);
+            this.lbNameTotal.Location = new System.Drawing.Point(200, 7);
+            this.lbNameTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNameTotal.Name = "lbNameTotal";
-            this.lbNameTotal.Size = new System.Drawing.Size(122, 30);
+            this.lbNameTotal.Size = new System.Drawing.Size(96, 23);
             this.lbNameTotal.TabIndex = 4;
             this.lbNameTotal.Text = "Tổng cộng:";
             // 
@@ -245,10 +255,10 @@
             this.pnBtnPay.Controls.Add(this.btnCancel);
             this.pnBtnPay.Controls.Add(this.btnPay);
             this.pnBtnPay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBtnPay.Location = new System.Drawing.Point(0, 93);
-            this.pnBtnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnBtnPay.Location = new System.Drawing.Point(0, 77);
+            this.pnBtnPay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnBtnPay.Name = "pnBtnPay";
-            this.pnBtnPay.Size = new System.Drawing.Size(645, 72);
+            this.pnBtnPay.Size = new System.Drawing.Size(537, 60);
             this.pnBtnPay.TabIndex = 1;
             // 
             // btnCancel
@@ -272,8 +282,8 @@
             this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCancel.ImageSize = new System.Drawing.Size(30, 30);
             this.btnCancel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCancel.Location = new System.Drawing.Point(320, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Location = new System.Drawing.Point(267, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -281,7 +291,7 @@
             this.btnCancel.OnHoverImage = null;
             this.btnCancel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancel.Size = new System.Drawing.Size(325, 72);
+            this.btnCancel.Size = new System.Drawing.Size(270, 60);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Hủy đơn";
             this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -310,7 +320,7 @@
             this.btnPay.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPay.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btnPay.Location = new System.Drawing.Point(0, 0);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPay.Name = "btnPay";
             this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnPay.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -318,7 +328,7 @@
             this.btnPay.OnHoverImage = null;
             this.btnPay.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnPay.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPay.Size = new System.Drawing.Size(320, 72);
+            this.btnPay.Size = new System.Drawing.Size(267, 60);
             this.btnPay.TabIndex = 2;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -329,10 +339,10 @@
             this.flowLayoutPanelBill.AutoScroll = true;
             this.flowLayoutPanelBill.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 59);
+            this.flowLayoutPanelBill.Location = new System.Drawing.Point(0, 49);
             this.flowLayoutPanelBill.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelBill.Name = "flowLayoutPanelBill";
-            this.flowLayoutPanelBill.Size = new System.Drawing.Size(645, 441);
+            this.flowLayoutPanelBill.Size = new System.Drawing.Size(537, 368);
             this.flowLayoutPanelBill.TabIndex = 5;
             // 
             // gunaElipsePanel1
@@ -343,21 +353,21 @@
             this.gunaElipsePanel1.Controls.Add(this.pnTotal);
             this.gunaElipsePanel1.Controls.Add(this.pnTitle);
             this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(745, 49);
-            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(622, 41);
+            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(645, 665);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(537, 554);
             this.gunaElipsePanel1.TabIndex = 6;
             // 
             // pnLeft
             // 
             this.pnLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pnLeft.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnLeft.Location = new System.Drawing.Point(1390, 0);
-            this.pnLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnLeft.Location = new System.Drawing.Point(1159, 0);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(10, 714);
+            this.pnLeft.Size = new System.Drawing.Size(8, 595);
             this.pnLeft.TabIndex = 2;
             // 
             // pnRight
@@ -365,9 +375,9 @@
             this.pnRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
             this.pnRight.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnRight.Location = new System.Drawing.Point(0, 0);
-            this.pnRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(10, 714);
+            this.pnRight.Size = new System.Drawing.Size(8, 595);
             this.pnRight.TabIndex = 3;
             // 
             // gunaElipsePanel4
@@ -376,11 +386,11 @@
             this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel4.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel4.Controls.Add(this.lbBill);
-            this.gunaElipsePanel4.Location = new System.Drawing.Point(823, 2);
-            this.gunaElipsePanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaElipsePanel4.Location = new System.Drawing.Point(687, 2);
+            this.gunaElipsePanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";
             this.gunaElipsePanel4.Radius = 10;
-            this.gunaElipsePanel4.Size = new System.Drawing.Size(164, 62);
+            this.gunaElipsePanel4.Size = new System.Drawing.Size(137, 52);
             this.gunaElipsePanel4.TabIndex = 2;
             // 
             // lbBill
@@ -388,9 +398,10 @@
             this.lbBill.AutoSize = true;
             this.lbBill.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.lbBill.Location = new System.Drawing.Point(35, 9);
+            this.lbBill.Location = new System.Drawing.Point(29, 7);
+            this.lbBill.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBill.Name = "lbBill";
-            this.lbBill.Size = new System.Drawing.Size(94, 28);
+            this.lbBill.Size = new System.Drawing.Size(79, 23);
             this.lbBill.TabIndex = 0;
             this.lbBill.Text = "Hóa đơn";
             // 
@@ -398,10 +409,10 @@
             // 
             this.pnSearch.Controls.Add(this.btnSearch);
             this.pnSearch.Controls.Add(this.txtSearch);
-            this.pnSearch.Location = new System.Drawing.Point(453, 0);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnSearch.Location = new System.Drawing.Point(377, 0);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(364, 49);
+            this.pnSearch.Size = new System.Drawing.Size(303, 41);
             this.pnSearch.TabIndex = 12;
             // 
             // btnSearch
@@ -425,8 +436,8 @@
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(274, 9);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Location = new System.Drawing.Point(228, 7);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -434,7 +445,7 @@
             this.btnSearch.OnHoverImage = null;
             this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Size = new System.Drawing.Size(36, 32);
+            this.btnSearch.Size = new System.Drawing.Size(30, 27);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -449,14 +460,14 @@
             this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.Location = new System.Drawing.Point(43, 4);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(36, 3);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(278, 42);
+            this.txtSearch.Size = new System.Drawing.Size(232, 35);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
@@ -469,10 +480,10 @@
             this.pnTop.Controls.Add(this.pnSearch);
             this.pnTop.Controls.Add(this.gunaElipsePanel4);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(10, 0);
-            this.pnTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTop.Location = new System.Drawing.Point(8, 0);
+            this.pnTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1380, 49);
+            this.pnTop.Size = new System.Drawing.Size(1151, 41);
             this.pnTop.TabIndex = 4;
             // 
             // btnDrink
@@ -494,7 +505,8 @@
             this.btnDrink.Image = null;
             this.btnDrink.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDrink.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDrink.Location = new System.Drawing.Point(191, 2);
+            this.btnDrink.Location = new System.Drawing.Point(159, 2);
+            this.btnDrink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnDrink.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -503,7 +515,7 @@
             this.btnDrink.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDrink.OnPressedColor = System.Drawing.Color.Black;
             this.btnDrink.Radius = 10;
-            this.btnDrink.Size = new System.Drawing.Size(137, 60);
+            this.btnDrink.Size = new System.Drawing.Size(114, 50);
             this.btnDrink.TabIndex = 13;
             this.btnDrink.Text = "Thực đơn";
             this.btnDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -528,7 +540,8 @@
             this.btnTable.Image = null;
             this.btnTable.ImageSize = new System.Drawing.Size(20, 20);
             this.btnTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnTable.Location = new System.Drawing.Point(54, 2);
+            this.btnTable.Location = new System.Drawing.Point(45, 2);
+            this.btnTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTable.Name = "btnTable";
             this.btnTable.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnTable.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -537,7 +550,7 @@
             this.btnTable.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnTable.OnPressedColor = System.Drawing.Color.Black;
             this.btnTable.Radius = 10;
-            this.btnTable.Size = new System.Drawing.Size(137, 60);
+            this.btnTable.Size = new System.Drawing.Size(114, 50);
             this.btnTable.TabIndex = 13;
             this.btnTable.Text = "Bàn";
             this.btnTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -550,11 +563,11 @@
             this.PnContainTable.Controls.Add(this.flowLayoutPanelTable);
             this.PnContainTable.Controls.Add(this.panel3);
             this.PnContainTable.Controls.Add(this.pnToolinGroup);
-            this.PnContainTable.Location = new System.Drawing.Point(25, 69);
-            this.PnContainTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PnContainTable.Location = new System.Drawing.Point(21, 57);
+            this.PnContainTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PnContainTable.Name = "PnContainTable";
             this.PnContainTable.Radius = 20;
-            this.PnContainTable.Size = new System.Drawing.Size(640, 266);
+            this.PnContainTable.Size = new System.Drawing.Size(533, 222);
             this.PnContainTable.TabIndex = 11;
             // 
             // flowLayoutPanelTable
@@ -562,21 +575,21 @@
             this.flowLayoutPanelTable.AutoScroll = true;
             this.flowLayoutPanelTable.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelTable.Location = new System.Drawing.Point(0, 58);
-            this.flowLayoutPanelTable.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanelTable.Location = new System.Drawing.Point(0, 48);
+            this.flowLayoutPanelTable.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.flowLayoutPanelTable.Name = "flowLayoutPanelTable";
-            this.flowLayoutPanelTable.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelTable.Size = new System.Drawing.Size(640, 165);
+            this.flowLayoutPanelTable.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.flowLayoutPanelTable.Size = new System.Drawing.Size(533, 138);
             this.flowLayoutPanelTable.TabIndex = 11;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 223);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 186);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(640, 43);
+            this.panel3.Size = new System.Drawing.Size(533, 36);
             this.panel3.TabIndex = 10;
             // 
             // pnToolinGroup
@@ -586,9 +599,9 @@
             this.pnToolinGroup.Controls.Add(this.panel5);
             this.pnToolinGroup.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnToolinGroup.Location = new System.Drawing.Point(0, 0);
-            this.pnToolinGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnToolinGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnToolinGroup.Name = "pnToolinGroup";
-            this.pnToolinGroup.Size = new System.Drawing.Size(640, 58);
+            this.pnToolinGroup.Size = new System.Drawing.Size(533, 48);
             this.pnToolinGroup.TabIndex = 1;
             // 
             // panel4
@@ -596,20 +609,22 @@
             this.panel4.Controls.Add(this.flowLayoutPanelGroup);
             this.panel4.Controls.Add(this.btnAddTable);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 19);
+            this.panel4.Location = new System.Drawing.Point(0, 15);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(640, 38);
+            this.panel4.Size = new System.Drawing.Size(533, 32);
             this.panel4.TabIndex = 1;
             // 
             // flowLayoutPanelGroup
             // 
+            this.flowLayoutPanelGroup.AutoScroll = true;
             this.flowLayoutPanelGroup.Controls.Add(this.lbAllinGroup);
             this.flowLayoutPanelGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelGroup.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanelGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanelGroup.Name = "flowLayoutPanelGroup";
-            this.flowLayoutPanelGroup.Padding = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanelGroup.Size = new System.Drawing.Size(582, 38);
+            this.flowLayoutPanelGroup.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowLayoutPanelGroup.Size = new System.Drawing.Size(485, 32);
             this.flowLayoutPanelGroup.TabIndex = 6;
             // 
             // lbAllinGroup
@@ -617,9 +632,10 @@
             this.lbAllinGroup.AutoSize = true;
             this.lbAllinGroup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbAllinGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAllinGroup.Location = new System.Drawing.Point(9, 6);
+            this.lbAllinGroup.Location = new System.Drawing.Point(7, 5);
+            this.lbAllinGroup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAllinGroup.Name = "lbAllinGroup";
-            this.lbAllinGroup.Size = new System.Drawing.Size(71, 30);
+            this.lbAllinGroup.Size = new System.Drawing.Size(56, 23);
             this.lbAllinGroup.TabIndex = 0;
             this.lbAllinGroup.Text = "Tất cả";
             this.lbAllinGroup.Click += new System.EventHandler(this.lbAllinGroup_Click);
@@ -639,7 +655,8 @@
             this.btnAddTable.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.btnAddTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddTable.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAddTable.Location = new System.Drawing.Point(582, 0);
+            this.btnAddTable.Location = new System.Drawing.Point(485, 0);
+            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddTable.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -647,7 +664,7 @@
             this.btnAddTable.OnHoverImage = null;
             this.btnAddTable.OnPressedColor = System.Drawing.Color.Black;
             this.btnAddTable.Radius = 10;
-            this.btnAddTable.Size = new System.Drawing.Size(58, 38);
+            this.btnAddTable.Size = new System.Drawing.Size(48, 32);
             this.btnAddTable.TabIndex = 5;
             this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
@@ -655,10 +672,10 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.LightGray;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 57);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(0, 47);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(640, 1);
+            this.panel5.Size = new System.Drawing.Size(533, 1);
             this.panel5.TabIndex = 0;
             // 
             // pnContainDrink
@@ -668,11 +685,11 @@
             this.pnContainDrink.Controls.Add(this.flowLayoutPanelDrinks);
             this.pnContainDrink.Controls.Add(this.panel2);
             this.pnContainDrink.Controls.Add(this.pnToolInCategory);
-            this.pnContainDrink.Location = new System.Drawing.Point(36, 558);
-            this.pnContainDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnContainDrink.Location = new System.Drawing.Point(30, 465);
+            this.pnContainDrink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnContainDrink.Name = "pnContainDrink";
             this.pnContainDrink.Radius = 20;
-            this.pnContainDrink.Size = new System.Drawing.Size(669, 156);
+            this.pnContainDrink.Size = new System.Drawing.Size(557, 130);
             this.pnContainDrink.TabIndex = 12;
             // 
             // flowLayoutPanelDrinks
@@ -680,21 +697,21 @@
             this.flowLayoutPanelDrinks.AutoScroll = true;
             this.flowLayoutPanelDrinks.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 58);
-            this.flowLayoutPanelDrinks.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanelDrinks.Location = new System.Drawing.Point(0, 48);
+            this.flowLayoutPanelDrinks.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.flowLayoutPanelDrinks.Name = "flowLayoutPanelDrinks";
-            this.flowLayoutPanelDrinks.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(669, 55);
+            this.flowLayoutPanelDrinks.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.flowLayoutPanelDrinks.Size = new System.Drawing.Size(557, 46);
             this.flowLayoutPanelDrinks.TabIndex = 13;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 113);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 94);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(669, 43);
+            this.panel2.Size = new System.Drawing.Size(557, 36);
             this.panel2.TabIndex = 10;
             // 
             // pnToolInCategory
@@ -704,20 +721,21 @@
             this.pnToolInCategory.Controls.Add(this.pnSplitCategory);
             this.pnToolInCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnToolInCategory.Location = new System.Drawing.Point(0, 0);
-            this.pnToolInCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnToolInCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnToolInCategory.Name = "pnToolInCategory";
-            this.pnToolInCategory.Size = new System.Drawing.Size(669, 58);
+            this.pnToolInCategory.Size = new System.Drawing.Size(557, 48);
             this.pnToolInCategory.TabIndex = 1;
             // 
             // flowLayoutPanelCategory
             // 
+            this.flowLayoutPanelCategory.AutoScroll = true;
             this.flowLayoutPanelCategory.Controls.Add(this.lbAll);
             this.flowLayoutPanelCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 19);
-            this.flowLayoutPanelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanelCategory.Location = new System.Drawing.Point(0, 15);
+            this.flowLayoutPanelCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
-            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanelCategory.Size = new System.Drawing.Size(669, 38);
+            this.flowLayoutPanelCategory.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowLayoutPanelCategory.Size = new System.Drawing.Size(557, 32);
             this.flowLayoutPanelCategory.TabIndex = 1;
             // 
             // lbAll
@@ -725,9 +743,10 @@
             this.lbAll.AutoSize = true;
             this.lbAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbAll.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAll.Location = new System.Drawing.Point(9, 6);
+            this.lbAll.Location = new System.Drawing.Point(7, 5);
+            this.lbAll.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAll.Name = "lbAll";
-            this.lbAll.Size = new System.Drawing.Size(71, 30);
+            this.lbAll.Size = new System.Drawing.Size(56, 23);
             this.lbAll.TabIndex = 0;
             this.lbAll.Text = "Tất cả";
             this.lbAll.Click += new System.EventHandler(this.lbAll_Click);
@@ -736,18 +755,24 @@
             // 
             this.pnSplitCategory.BackColor = System.Drawing.Color.LightGray;
             this.pnSplitCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnSplitCategory.Location = new System.Drawing.Point(0, 57);
-            this.pnSplitCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnSplitCategory.Location = new System.Drawing.Point(0, 47);
+            this.pnSplitCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnSplitCategory.Name = "pnSplitCategory";
-            this.pnSplitCategory.Size = new System.Drawing.Size(669, 1);
+            this.pnSplitCategory.Size = new System.Drawing.Size(557, 1);
             this.pnSplitCategory.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(1400, 714);
+            this.ClientSize = new System.Drawing.Size(1167, 595);
             this.Controls.Add(this.PnContainTable);
             this.Controls.Add(this.pnContainDrink);
             this.Controls.Add(this.pnCenter);
@@ -756,8 +781,8 @@
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1400, 714);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(1167, 595);
             this.Name = "fOrder";
             this.Text = "ĐẶT HÀNG";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -834,5 +859,6 @@
         private Guna.UI.WinForms.GunaButton btnAddTable;
         private Guna.UI.WinForms.GunaLabel lbErrorShow;
         private Guna.UI.WinForms.GunaLabel lbSuccess;
+        private System.Windows.Forms.Timer timer1;
     }
 }

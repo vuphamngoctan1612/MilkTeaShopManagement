@@ -19,11 +19,12 @@ namespace MilkTeaHouseProject.DTO
         public bool Status { get => status; set => status = value; }
         public string NameGroup { get => nameGroup; set => nameGroup = value; }
 
-        public TableFood(int id, string name, bool status)
+        public TableFood(int id, string name, bool status, string nameGroup)
         {
             this.ID = id;
             this.Name = name;
             this.Status = status;
+            this.NameGroup = nameGroup;
         }
 
         public TableFood (DataRow row)

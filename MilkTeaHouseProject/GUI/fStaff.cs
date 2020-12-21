@@ -19,7 +19,6 @@ namespace MilkTeaHouseProject
     {
         private int totalSalary;
         private string username;
-        List<StaffItem> staffItems = new List<StaffItem>();
         public fStaff(string username)
         {
             InitializeComponent();
@@ -58,9 +57,18 @@ namespace MilkTeaHouseProject
                     setcolor = false;
                 else
                     setcolor = true;
-                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
+                int salaryReceived = 0;
+                foreach (Position pos in positions)
+                {
+                    if (pos.Name == staff.Position)
+                    {
+                        salaryReceived = pos.Salary + staff.OverTime * pos.OverTimeSalary - staff.Fault * pos.MinusSalary;
+                    }
+                }
 
-                totalSalary += staff.SalaryReceived;
+                StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
+                StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
+                totalSalary += salaryReceived;
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
@@ -68,60 +76,63 @@ namespace MilkTeaHouseProject
                 staffItem.Tag = staff;
 
                 flowLayoutPanelStaff.Controls.Add(staffItem);
-                staffItems.Add(staffItem);
                 sizeChange();
             }
         }
 
         public void SearchStaff(string search)
         {
-            bool flag = false;
-            foreach (Control item in this.flowLayoutPanelStaff.Controls)
-            {
-                string StaffName = (item as StaffItem).NAME;
+            totalSalary = 0;
+            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
 
-                if (!StaffName.ToLower().Contains(search.ToLower()))
-                {
-                    item.Visible = false;
-                }
-                else
-                {
-                    item.Visible = true;
-                    if (flag == false)
-                    {
-                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
-                        flag = true;
-                    }
-                    else
-                    {
-                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
-                        flag = false;
-                    }
-                }
-            }
-        }
-        private void SetBackGround()
-        {
-            bool flag = false;
-            foreach (Control control in this.flowLayoutPanelStaff.Controls)
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            this.flowLayoutPanelStaff.Controls.Clear();
+            bool setcolor = true;
+
+            foreach (Staff staff in staffs)
             {
-                if (flag == false)
+                foreach (Position pos in positions)
                 {
-                    control.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
-                    flag = true;
-                }
-                else
-                {
-                    control.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
-                    flag = false;
+                    string name = staff.Name;
+                    if (setcolor == true)
+                        setcolor = false;
+                    else
+                        setcolor = true;
+                    if (name.ToLower().Contains(this.txtSearch.Text.ToLower()))
+                    {
+                        if (staff.Position == pos.Name)
+                        {
+                            int salaryReceived = pos.Salary + staff.OverTime * pos.OverTimeSalary - staff.Fault * pos.MinusSalary;
+                            StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
+                            StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, salaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
+
+                            totalSalary += staff.SalaryReceived;
+                            staffItem.onEdit += Item_OnEdit;
+                            staffItem.onDel += StaffItem_onDel;
+                            staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
+                            staffItem.onFaultChanged += StaffItem_onFaultChanged;
+                            staffItem.Tag = staff;
+
+                            flowLayoutPanelStaff.Controls.Add(staffItem);
+                        }
+                    }
+                    sizeChange();
                 }
             }
         }
         #endregion
 
         #region Events
-        private void StaffItem_onFaultChanged(object sender, EventArgs e) { }
-        private void StaffItem_onOverTimeValueChanged(object sender, EventArgs e) { }
+        private void StaffItem_onFaultChanged(object sender, EventArgs e)
+        {
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
+        }
+        private void StaffItem_onOverTimeValueChanged(object sender, EventArgs e)
+        {
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
+        }
         private void StaffItem_onDel(object sender, EventArgs e)
         {
             int iD = ((sender as StaffItem).Tag as Staff).ID;
@@ -130,11 +141,10 @@ namespace MilkTeaHouseProject
             if (pos == "Thu Ngân")
             {
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
-                StaffDAL.Instance.SetUsernameToNULLbyID(iD);
-                AccountDAL.Instance.DelAccount(username);
                 StaffDAL.Instance.DelStaff(iD);
+                AccountDAL.Instance.DelAccount(username);
             }
-            else if (pos.ToUpper() == "QUẢN LÝ")
+            else if (pos == "Quản lí")
             {
                 MessageBox.Show("Không thể xóa chức vụ này");
             }
@@ -143,60 +153,41 @@ namespace MilkTeaHouseProject
                 BillDAL.Instance.UpDateStaffIDtoNULL(iD);
                 StaffDAL.Instance.DelStaff(iD);
             }
-            this.flowLayoutPanelStaff.Controls.Remove(sender as StaffItem);
-            this.SetBackGround();
+
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
         }
         private void Item_OnEdit(object sender, EventArgs args)
         {
-
+            
             int id = ((sender as StaffItem).Tag as Staff).ID;
-            Staff staff = new Staff (StaffDAL.Instance.GetStaffById(id));
-            string name = staff.Name;
-            DateTime birthDate = staff.BirthDate;
-            string pos = staff.Position;
-            string phonenumber = staff.PhoneNumber;
-            string username = staff.UserName;
-            byte[] image = staff.Image;
-            string address = staff.Address;
-            bool sex = staff.Sex;
-            string cmnd = staff.CMND;
-            string phoneNumber = staff.PhoneNumber;
-            fAddStaff frm = new fAddStaff(id, name, image, birthDate, pos, phonenumber, username, cmnd, sex, address);
-            frm.ActivebtnEdit();
-            frm.UpdatelbNameForm("Sửa thông tin nhân viên");
+            string name = ((sender as StaffItem).Tag as Staff).Name;
+            DateTime birthDate = ((sender as StaffItem).Tag as Staff).BirthDate;
+            string pos = ((sender as StaffItem).Tag as Staff).Position;
+            string phonenumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
+            string username = ((sender as StaffItem).Tag as Staff).UserName;
+            byte[] image = ((sender as StaffItem).Tag as Staff).Image;
+            string address = ((sender as StaffItem).Tag as Staff).Address;
+            bool sex = ((sender as StaffItem).Tag as Staff).Sex;
+            string cmnd = ((sender as StaffItem).Tag as Staff).CMND;
+            string phoneNumber = ((sender as StaffItem).Tag as Staff).PhoneNumber;
+            fAddStaff frm = new fAddStaff( id,  name,  image,  birthDate,  pos,  phonenumber,  username,  cmnd,  sex,  address);
+            frm.btEdit.Visible = true;
+            frm.lbNameForm.Text = "Sửa thông tin nhân viên";
             frm.ShowDialog();
-            (sender as StaffItem).UpdateStaffItem(id);
+
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
         {
             fAddStaff f = new fAddStaff();
-            f.ActivebtnAdd();
+            f.btnAdd.Visible = true;
             f.ShowDialog();
-            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
-            bool setcolor = true;
-            if (this.flowLayoutPanelStaff.Controls.Count < staffs.Count)
-            {
-                foreach (Staff staff in staffs)
-                {
-                    int count = staffs.IndexOf(staff);
-                    if (staffs.IndexOf(staff) + 1 == staffs.Count)
-                    {
-                        StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
-                        totalSalary += staff.SalaryReceived;
-                        staffItem.onEdit += Item_OnEdit;
-                        staffItem.onDel += StaffItem_onDel;
-                        staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
-                        staffItem.onFaultChanged += StaffItem_onFaultChanged;
-                        staffItem.Tag = staff;
 
-                        flowLayoutPanelStaff.Controls.Add(staffItem);
-                        staffItems.Add(staffItem);
-                        sizeChange();
-                    }
-                }
-            }
-            this.SetBackGround();
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
         }
 
         private void flowLayoutPanelStaff_SizeChanged(object sender, EventArgs e)
@@ -208,10 +199,9 @@ namespace MilkTeaHouseProject
         {
             fSetSalary f = new fSetSalary();
             f.ShowDialog();
-            foreach(StaffItem staff in staffItems)
-            {
-                staff.UpdateSalaryReceived();
-            }    
+
+            this.flowLayoutPanelStaff.Controls.Clear();
+            LoadStaff();
         }
 
         private void btnUpdateSalary_Click(object sender, EventArgs e)
@@ -221,6 +211,8 @@ namespace MilkTeaHouseProject
                 StaffDAL.Instance.ResetOverandFault();
                 BillDAL.Instance.UpdateBillSalary(username, totalSalary * -1);
                 MessageBox.Show("Kết toán lương thành công");
+                this.flowLayoutPanelStaff.Controls.Clear();
+                LoadStaff();
             }
             else
             {
@@ -280,7 +272,6 @@ namespace MilkTeaHouseProject
                 }
             }
         }
-        
         #endregion
     }
 }

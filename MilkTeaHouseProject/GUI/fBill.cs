@@ -26,7 +26,7 @@ namespace MilkTeaHouseProject
         }
 
         #region Methods
-        void sizeChange()
+        private void SizeChange()
         {
             foreach (Control item in flowLayoutPanelBill.Controls)
             {
@@ -40,7 +40,7 @@ namespace MilkTeaHouseProject
             this.lbNote.Location = new Point((int)(space * 4.3), 5);
             this.lbTotal.Location = new Point((int)(space * 6.2), 5);
         }
-        public void loadBill()
+        private void LoadBill()
         {
             flowLayoutPanelBill.Controls.Clear();
             List<Bill> bills = BillDAL.Instance.LoadBill();
@@ -70,44 +70,51 @@ namespace MilkTeaHouseProject
             }
             lbTotalIncome.Text= string.Format("{0:n0}", Income).ToString();
             lbTotalSpend.Text= string.Format("{0:n0}", Spend).ToString();
-            sizeChange();
+            SizeChange();
         }
-
+        private void SetBackGround()
+        {
+            bool flag = false;
+            foreach (Control control in this.flowLayoutPanelBill.Controls)
+            {
+                if (flag == false)
+                {
+                    control.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    control.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
+                }
+            }
+        }
         private void SearchStaffName(string name)
         {
-            flowLayoutPanelBill.Controls.Clear();
-            List<Bill> bills = BillDAL.Instance.LoadBill();
-            Income = Spend = 0;
-            bool setcolor = true;
-
-            foreach (Bill bill in bills)
+            bool flag = false;
+            foreach (Control item in this.flowLayoutPanelBill.Controls)
             {
-                string StaffName = StaffDAL.Instance.GetNamebyID(bill.StaffID);
+                string StaffName = (item as ItemInBill).StaffName;
 
-                if (StaffName.ToLower().Contains(name.ToLower()))
+                if (!StaffName.ToLower().Contains(name.ToLower()))
                 {
-                    if (setcolor)
-                        setcolor = false;
-                    else
-                        setcolor = true;
-
-
-                    ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffName, bill.NOTE, bill.Total, setcolor);
-                    if (bill.Total < 0)
-                    {
-                        Spend += bill.Total;
-                    }
-                    else
-                    {
-                        Income += bill.Total;
-                    }
-                    item.Tag = bill;
-                    flowLayoutPanelBill.Controls.Add(item);
+                    item.Visible = false;
                 }
-                lbTotalIncome.Text = string.Format("{0:n0}", Income).ToString();
-                lbTotalSpend.Text = string.Format("{0:n0}", Spend).ToString();
+                else
+                {
+                    item.Visible = true;
+                    if (flag == false)
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
+                    }
+                    else
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
+                    }
+                }
             }
-            sizeChange();
         }
         #endregion
 
@@ -115,13 +122,24 @@ namespace MilkTeaHouseProject
         private void btnMakePayment_Click(object sender, EventArgs e)
         {
             MakeABill frm = new MakeABill(username);
+            frm.onAdd += Frm_onAdd;
+
             frm.ShowDialog();
-            loadBill();
+        }
+
+        private void Frm_onAdd(object sender, EventArgs e)
+        {
+            Bill bill = BillDAL.Instance.GetBillByID(BillDAL.Instance.GetMAXIDBill());
+            ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffDAL.Instance.GetNamebyID(bill.StaffID), bill.NOTE, bill.Total, true);
+
+            this.flowLayoutPanelBill.Controls.Add(item);
+            this.SetBackGround();
+            this.SizeChange();
         }
 
         private void flowLayoutPanelBill_SizeChanged(object sender, EventArgs e)
         {
-            sizeChange();
+            SizeChange();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -146,7 +164,7 @@ namespace MilkTeaHouseProject
 
         private void fBill_Load(object sender, EventArgs e)
         {
-            loadBill();
+            LoadBill();
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)

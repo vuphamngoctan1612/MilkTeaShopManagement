@@ -65,7 +65,6 @@ namespace MilkTeaHouseProject.DTO
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];
             this.fault = (int)row["Fault"];
-            this.salaryReceived = (int)row["SalaryReceived"];
             this.phoneNumber = row["PhoneNumber"].ToString();
             this.cmnd = row["CMND"].ToString();
             this.address = row["Address"].ToString();
