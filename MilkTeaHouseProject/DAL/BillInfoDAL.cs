@@ -42,7 +42,7 @@ namespace MilkTeaHouseProject.DAL
         //fix
         public void InsertBillInfo(int idBill, int idDrink, int count)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idDrink , @count", new object[] { idBill, idDrink, count });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idDrink , @count ", new object[] { idBill, idDrink, count });
         }
 
         public void UpdateBillInfo(int idDrink, int idbill, int count)

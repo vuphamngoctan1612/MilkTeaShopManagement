@@ -12,6 +12,9 @@ namespace MilkTeaHouseProject
 {
     public partial class ItemInBill : UserControl
     {
+        public int StaffID { get => int.Parse(this.lbStaffID.Text); }
+        public string StaffName { get => this.lbStaffName.Text; }
+
         public ItemInBill()
         {
             InitializeComponent();
@@ -62,9 +65,9 @@ namespace MilkTeaHouseProject
             this.lbID.Location = new Point(50, 10);
             this.lbDate.Location = new Point(space, 10);
             if (lbStaffID.Text == "Nhân viên đã nghỉ")
-                this.lbStaffID.Location = new Point((int)(space * 1.9), 10);
+                this.lbStaffID.Location = new Point((int)(space * 2), 5);
             else
-                this.lbStaffID.Location = new Point((int)(space * 2.3), 10);
+                this.lbStaffID.Location = new Point((int)(space * 2), 5);
             this.lbStaffName.Location = new Point(space * 3, 10);
             this.lbNote.Location = new Point((int)(space * 4.3), 10);
             this.lbTotal.Location = new Point((int)(space * 6.3), 10);

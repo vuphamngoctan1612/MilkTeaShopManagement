@@ -130,7 +130,7 @@ namespace MilkTeaHouseProject
 
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new fMenu(), sender);
+            OpenChildForm(new fMenu(this.lbUserName.Text), sender);
         }
 
         private void btnOrder_Click(object sender, EventArgs e)

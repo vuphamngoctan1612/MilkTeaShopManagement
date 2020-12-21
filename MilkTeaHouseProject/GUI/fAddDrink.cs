@@ -325,7 +325,12 @@ namespace MilkTeaHouseProject
                 ShowError(txtPrice, "Vui lòng nhập giá");
             }
 
-            DrinkDAL.Instance.EditDrink(Int32.Parse(txtID.Text), txtNameDrink.Text, ConvertToNumber(txtPrice.Text), category, img, ConvertToNumber(txtOriginPrice.Text), 0);
+            int id = int.Parse(this.txtID.Text);
+            string name = this.txtNameDrink.Text;
+            int price = ConvertToNumber(this.txtPrice.Text);
+            int OriginPrice = ConvertToNumber(this.txtOriginPrice.Text);
+
+            DrinkDAL.Instance.EditDrink(id, name, price, category, img, OriginPrice);
             this.Close();
 
             if (onEdit != null)
@@ -339,6 +344,14 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.lbNameForm.Text == "Thêm món")
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.lbNameForm.Text == "Sửa món")
+            {
+                this.btnEdit_Click(sender, e);
             }
         }
 
