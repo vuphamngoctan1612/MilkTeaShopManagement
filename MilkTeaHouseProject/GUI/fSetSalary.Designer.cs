@@ -60,7 +60,7 @@ namespace MilkTeaHouseProject
             this.pn.Controls.Add(this.btnExit);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(440, 29);
             this.pn.TabIndex = 5;
@@ -101,7 +101,7 @@ namespace MilkTeaHouseProject
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(407, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -135,7 +135,7 @@ namespace MilkTeaHouseProject
             this.btSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btSave.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btSave.Location = new System.Drawing.Point(85, 355);
-            this.btSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSave.Margin = new System.Windows.Forms.Padding(2);
             this.btSave.Name = "btSave";
             this.btSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btSave.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -171,7 +171,7 @@ namespace MilkTeaHouseProject
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(231, 355);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -244,7 +244,7 @@ namespace MilkTeaHouseProject
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.Location = new System.Drawing.Point(85, 355);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -319,7 +319,7 @@ namespace MilkTeaHouseProject
             this.txtMinusSalary.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinusSalary.LineColor = System.Drawing.Color.Gainsboro;
             this.txtMinusSalary.Location = new System.Drawing.Point(180, 271);
-            this.txtMinusSalary.MaxLength = 14;
+            this.txtMinusSalary.MaxLength = 10;
             this.txtMinusSalary.Name = "txtMinusSalary";
             this.txtMinusSalary.PasswordChar = '\0';
             this.txtMinusSalary.SelectedText = "";
@@ -348,7 +348,7 @@ namespace MilkTeaHouseProject
             this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.LineColor = System.Drawing.Color.Gainsboro;
             this.txtSalary.Location = new System.Drawing.Point(179, 124);
-            this.txtSalary.MaxLength = 14;
+            this.txtSalary.MaxLength = 11;
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PasswordChar = '\0';
             this.txtSalary.SelectedText = "";
@@ -377,7 +377,7 @@ namespace MilkTeaHouseProject
             this.txtOverTime.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOverTime.LineColor = System.Drawing.Color.Gainsboro;
             this.txtOverTime.Location = new System.Drawing.Point(179, 204);
-            this.txtOverTime.MaxLength = 14;
+            this.txtOverTime.MaxLength = 10;
             this.txtOverTime.Name = "txtOverTime";
             this.txtOverTime.PasswordChar = '\0';
             this.txtOverTime.SelectedText = "";
