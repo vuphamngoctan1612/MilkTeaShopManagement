@@ -69,6 +69,7 @@ namespace MilkTeaHouseProject.DTO
             this.cmnd = row["CMND"].ToString();
             this.address = row["Address"].ToString();
             this.sex = (bool)row["Sex"];
+            this.salaryReceived = int.Parse(row["SalaryReceived"].ToString());
         }
     }
 }
