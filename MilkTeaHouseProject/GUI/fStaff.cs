@@ -150,7 +150,7 @@ namespace MilkTeaHouseProject
         {
 
             int id = ((sender as StaffItem).Tag as Staff).ID;
-            Staff staff = new Staff (StaffDAL.Instance.GetStaffById(id));
+            Staff staff = StaffDAL.Instance.GetStaffById(id);
             string name = staff.Name;
             DateTime birthDate = staff.BirthDate;
             string pos = staff.Position;
@@ -208,9 +208,9 @@ namespace MilkTeaHouseProject
         {
             fSetSalary f = new fSetSalary();
             f.ShowDialog();
-            foreach(StaffItem staff in staffItems)
+            foreach (Control item in this.flowLayoutPanelStaff.Controls)
             {
-                staff.UpdateSalaryReceived();
+                (item as StaffItem).UpdateSalaryReceived();
             }    
         }
 

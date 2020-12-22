@@ -41,6 +41,7 @@
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
+            this.lbUsername = new Guna.UI.WinForms.GunaLabel();
             this.cbWoman = new Guna.UI.WinForms.GunaCheckBox();
             this.cbMan = new Guna.UI.WinForms.GunaCheckBox();
             this.btnAddUserName = new Guna.UI.WinForms.GunaButton();
@@ -60,7 +61,6 @@
             this.btAddPosition = new Guna.UI.WinForms.GunaButton();
             this.cbbPos = new Guna.UI.WinForms.GunaComboBox();
             this.ptbImage = new System.Windows.Forms.PictureBox();
-            this.lbUsername = new Guna.UI.WinForms.GunaLabel();
             this.pn.SuspendLayout();
             this.pnContain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
@@ -109,7 +109,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(95, 28);
-            this.btnReturn.TabIndex = 7;
+            this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -268,7 +268,7 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(33, 28);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 11;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -311,6 +311,17 @@
             this.pnContain.Size = new System.Drawing.Size(900, 437);
             this.pnContain.TabIndex = 5;
             // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbUsername.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbUsername.Location = new System.Drawing.Point(794, 346);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(68, 15);
+            this.lbUsername.TabIndex = 67;
+            this.lbUsername.Text = "gunaLabel1";
+            // 
             // cbWoman
             // 
             this.cbWoman.BaseColor = System.Drawing.Color.White;
@@ -321,7 +332,7 @@
             this.cbWoman.Location = new System.Drawing.Point(387, 246);
             this.cbWoman.Name = "cbWoman";
             this.cbWoman.Size = new System.Drawing.Size(48, 21);
-            this.cbWoman.TabIndex = 66;
+            this.cbWoman.TabIndex = 3;
             this.cbWoman.Text = "Nữ";
             this.cbWoman.Click += new System.EventHandler(this.cbWoman_Click);
             // 
@@ -335,7 +346,7 @@
             this.cbMan.Location = new System.Drawing.Point(289, 246);
             this.cbMan.Name = "cbMan";
             this.cbMan.Size = new System.Drawing.Size(59, 21);
-            this.cbMan.TabIndex = 65;
+            this.cbMan.TabIndex = 2;
             this.cbMan.Text = "Nam";
             this.cbMan.Click += new System.EventHandler(this.cbMan_Click);
             // 
@@ -417,7 +428,7 @@
             this.cbbUser.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbUser.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbUser.Size = new System.Drawing.Size(201, 33);
-            this.cbbUser.TabIndex = 58;
+            this.cbbUser.TabIndex = 8;
             this.cbbUser.Visible = false;
             // 
             // btEdit
@@ -451,7 +462,7 @@
             this.btEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btEdit.Radius = 10;
             this.btEdit.Size = new System.Drawing.Size(95, 28);
-            this.btEdit.TabIndex = 57;
+            this.btEdit.TabIndex = 9;
             this.btEdit.Text = "Lưu";
             this.btEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.Visible = false;
@@ -469,7 +480,7 @@
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(201, 35);
-            this.txtAddress.TabIndex = 56;
+            this.txtAddress.TabIndex = 5;
             this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label2
@@ -497,7 +508,7 @@
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.SelectedText = "";
             this.txtPhoneNumber.Size = new System.Drawing.Size(201, 35);
-            this.txtPhoneNumber.TabIndex = 54;
+            this.txtPhoneNumber.TabIndex = 6;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
             // 
@@ -544,7 +555,7 @@
             this.dptBirthDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dptBirthDate.OnPressedColor = System.Drawing.Color.Black;
             this.dptBirthDate.Size = new System.Drawing.Size(223, 31);
-            this.dptBirthDate.TabIndex = 50;
+            this.dptBirthDate.TabIndex = 1;
             this.dptBirthDate.Text = "Wednesday, December 2, 2020";
             this.dptBirthDate.Value = new System.DateTime(2020, 12, 2, 10, 57, 23, 701);
             // 
@@ -560,7 +571,7 @@
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(223, 35);
-            this.txtName.TabIndex = 49;
+            this.txtName.TabIndex = 0;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtCMND
@@ -576,7 +587,7 @@
             this.txtCMND.PasswordChar = '\0';
             this.txtCMND.SelectedText = "";
             this.txtCMND.Size = new System.Drawing.Size(223, 35);
-            this.txtCMND.TabIndex = 47;
+            this.txtCMND.TabIndex = 4;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
             this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
             // 
@@ -633,7 +644,7 @@
             this.cbbPos.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbPos.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbPos.Size = new System.Drawing.Size(201, 33);
-            this.cbbPos.TabIndex = 2;
+            this.cbbPos.TabIndex = 7;
             this.cbbPos.SelectedIndexChanged += new System.EventHandler(this.cbbPos_SelectedIndexChanged);
             // 
             // ptbImage
@@ -649,17 +660,6 @@
             this.ptbImage.TabIndex = 42;
             this.ptbImage.TabStop = false;
             this.ptbImage.Click += new System.EventHandler(this.ptbImage_Click);
-            // 
-            // lbUsername
-            // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbUsername.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbUsername.Location = new System.Drawing.Point(794, 346);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(68, 15);
-            this.lbUsername.TabIndex = 67;
-            this.lbUsername.Text = "gunaLabel1";
             // 
             // fAddStaff
             // 

@@ -173,7 +173,7 @@ namespace MilkTeaHouseProject
         }
         public void UpdateStaffItem(int id)
         {
-            Staff staff = new Staff(StaffDAL.Instance.GetStaffById(id));
+            Staff staff = StaffDAL.Instance.GetStaffById(id);
 
             this.lbID.Text = staff.ID.ToString();
             this.lbName.Text = NameShow.Text = staff.Name.ToString();
@@ -184,13 +184,26 @@ namespace MilkTeaHouseProject
             this.PhoneShow.Text = staff.PhoneNumber;
             this.AddressShow.Text = staff.Address;
             this.CMNDShow.Text = staff.CMND;
+            if (staff.Image == null)
+            {
+                this.picStaff.Image = null;
+                this.gunaPictureBox1.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(staff.Image);
+                picStaff.Image = Image.FromStream(mstream);
+                picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
+                gunaPictureBox1.Image = Image.FromStream(mstream);
+
+            }
         }
         public void UpdateSalaryReceived()
         {
             List<Position> positions = PositionDAL.Instance.GetListPosistion();
             int id = int.Parse(this.lbID.Text);
             string pos = this.lbPosition.Text;
-            Staff staff = new Staff(StaffDAL.Instance.GetStaffById(id));
+            Staff staff = StaffDAL.Instance.GetStaffById(id);
 
             foreach (Position position in positions)
             {

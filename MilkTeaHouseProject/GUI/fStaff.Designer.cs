@@ -204,7 +204,7 @@
             this.btnExport.OnPressedColor = System.Drawing.Color.Black;
             this.btnExport.Radius = 10;
             this.btnExport.Size = new System.Drawing.Size(141, 28);
-            this.btnExport.TabIndex = 26;
+            this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Xuất file Excel";
             this.btnExport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -273,7 +273,7 @@
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(185, 28);
-            this.txtSearch.TabIndex = 9;
+            this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnUpdateSalary
@@ -301,7 +301,7 @@
             this.btnUpdateSalary.OnPressedColor = System.Drawing.Color.Black;
             this.btnUpdateSalary.Radius = 10;
             this.btnUpdateSalary.Size = new System.Drawing.Size(141, 28);
-            this.btnUpdateSalary.TabIndex = 24;
+            this.btnUpdateSalary.TabIndex = 0;
             this.btnUpdateSalary.Text = "Kết toán lương";
             this.btnUpdateSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateSalary.Click += new System.EventHandler(this.btnUpdateSalary_Click);
@@ -331,7 +331,7 @@
             this.btSetSalary.OnPressedColor = System.Drawing.Color.Black;
             this.btSetSalary.Radius = 10;
             this.btSetSalary.Size = new System.Drawing.Size(141, 28);
-            this.btSetSalary.TabIndex = 24;
+            this.btSetSalary.TabIndex = 1;
             this.btSetSalary.Text = "Thiết lập lương";
             this.btSetSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btSetSalary.Click += new System.EventHandler(this.btSetSalary_Click);
@@ -361,7 +361,7 @@
             this.btAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btAdd.Radius = 10;
             this.btAdd.Size = new System.Drawing.Size(141, 28);
-            this.btAdd.TabIndex = 23;
+            this.btAdd.TabIndex = 2;
             this.btAdd.Text = "Thêm nhân viên";
             this.btAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
