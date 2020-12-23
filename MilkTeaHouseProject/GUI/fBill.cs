@@ -16,8 +16,8 @@ namespace MilkTeaHouseProject
     public partial class fBill : Form
     {
 
-        private int Income;
-        private int Spend;
+        private long Income;
+        private long Spend;
         private string username;
         public fBill(string username)
         {

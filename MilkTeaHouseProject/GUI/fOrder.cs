@@ -326,7 +326,7 @@ namespace MilkTeaHouseProject
             int idDrink = ((sender as DrinkItem).Tag as Drink).ID;
             int idBill;
             int count = 1;
-            int price = ((sender as DrinkItem).Tag as Drink).Price - ((sender as DrinkItem).Tag as Drink).OriginPrice;
+            long price = ((sender as DrinkItem).Tag as Drink).Price - ((sender as DrinkItem).Tag as Drink).OriginPrice;
 
             if (DrinkDAL.Instance.GetCountbyDrinkID(idDrink) > 0)
             {

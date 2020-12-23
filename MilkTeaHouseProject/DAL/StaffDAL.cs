@@ -128,14 +128,14 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, int salaryReceived, string phonenumber, string cmnd, bool sex, string address)
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, long salaryReceived, string phonenumber, string cmnd, bool sex, string address)
         {
 
             DataProvider.Instance.ExecuteNonQuery(" USP_EditStaffnoUsername @ID , @Name , @Image , @birthday , @pos , @salaryreceived , @phonenumber , @cmnd , @sex , @address ",
                 new object[] { ID, name, image, birthDate, pos, salaryReceived, phonenumber, cmnd, sex, address });
         }
 
-        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, int salaryReceived, string phonenumber, string username, string cmnd, bool sex, string address)
+        public void EditStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, long salaryReceived, string phonenumber, string username, string cmnd, bool sex, string address)
         {
 
             DataProvider.Instance.ExecuteNonQuery(" USP_EditStaff @ID , @Name , @Image , @birthday , @pos , @username , @salaryreceived , @phonenumber , @cmnd , @sex , @address ",
@@ -148,7 +148,7 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, int salaryReceived, string phonenumber, string cmnd, bool sex, string address)
+        public void AddStaff(string name, byte[] image, DateTime birthDate, string pos, string username, long salaryReceived, string phonenumber, string cmnd, bool sex, string address)
         {
             int id = GetMAXStaffID() + 1;
 
@@ -156,7 +156,7 @@ namespace MilkTeaHouseProject.DAL
                 new object[] { id, name, image, birthDate, pos, username, salaryReceived, phonenumber, cmnd, sex, address });
         }
 
-        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, int salaryReceived, string phonenumber, string cmnd, bool sex, string address)
+        public void AddStaff(string name, byte[] image, DateTime birthdate, string pos, long salaryReceived, string phonenumber, string cmnd, bool sex, string address)
         {
             int id = GetMAXStaffID() + 1;
 
@@ -174,13 +174,13 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateFault @ID , @fault ", new object[] { id, fault });
         }
 
-        public void UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
+        public void UpdateSalary(string pos, long salary, long overtimesalary, long minussalary)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalary @position , @salary , @overtimesalary , @minussalary ",
                 new object[] { pos, salary, overtimesalary, minussalary });
         }
 
-        public void UpdateSalaryReceived(int id, int salaryreceived)
+        public void UpdateSalaryReceived(int id, long salaryreceived)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_UpdateSalaryReceived @id , @salaryreceived ",
                 new object[] { id, salaryreceived });
@@ -294,9 +294,9 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public ChartValues<int> GetListTopStaffByMonth(string mm, string yy)
+        public ChartValues<long> GetListTopStaffByMonth(string mm, string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -308,7 +308,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] staffsID = this.GetListStaffIDByMonth(mm, yy);
-                int[] revenue = new int[staffsID.Length];
+                long[] revenue = new long[staffsID.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -321,7 +321,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -329,9 +329,9 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetListTopStaffByYear(string yy)
+        public ChartValues<long> GetListTopStaffByYear(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -343,7 +343,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] staffsID = this.GetListStaffIDByYear(yy);
-                int[] revenue = new int[staffsID.Length];
+                long[] revenue = new long[staffsID.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -356,7 +356,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch

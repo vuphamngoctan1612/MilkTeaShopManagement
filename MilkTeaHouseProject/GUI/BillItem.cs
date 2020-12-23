@@ -43,7 +43,7 @@ namespace MilkTeaHouseProject
             return int.Parse(tmp);
         }
 
-        public BillItem(int idDrink, string foodName, int price, int count, int idBill)
+        public BillItem(int idDrink, string foodName, long price, int count, int idBill)
         {
             InitializeComponent();
 

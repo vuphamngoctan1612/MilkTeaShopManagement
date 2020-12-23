@@ -17,7 +17,7 @@ namespace MilkTeaHouseProject
 {
     public partial class fStaff : Form
     {
-        private int totalSalary;
+        private long totalSalary;
         private string username;
         List<StaffItem> staffItems = new List<StaffItem>();
         public fStaff(string username)

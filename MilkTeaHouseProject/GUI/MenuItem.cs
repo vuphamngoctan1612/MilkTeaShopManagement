@@ -58,7 +58,7 @@ namespace MilkTeaHouseProject
         public Guna.UI.WinForms.GunaButton BtnShowAddCount { get => this.btnShowAddCount; set => this.btnShowAddCount = value; }
         public string UserName { get; set; }
 
-        public MenuItem(int id, string name, int price, string category, byte[] image, bool setcolor, int origin, int count, string username)
+        public MenuItem(int id, string name, long price, string category, byte[] image, bool setcolor, long origin, int count, string username)
         {
             InitializeComponent();
             this.UserName = username;

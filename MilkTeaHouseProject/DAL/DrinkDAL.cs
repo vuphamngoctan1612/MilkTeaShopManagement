@@ -91,7 +91,7 @@ namespace MilkTeaShopManagement.DAL
         }
 
         //fix
-        public void AddDrink(string Name, int Price, string Category, byte[] Image, int origin, int count)
+        public void AddDrink(string Name, long Price, string Category, byte[] Image, long origin, int count)
         {
             int id = GetMAXDrinkID() + 1;
 
@@ -99,7 +99,7 @@ namespace MilkTeaShopManagement.DAL
                 new object[] { id, Name, Price, Category, Image, origin, count });
         }
 
-        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin)
+        public void EditDrink(int id, string name, long price, string category, byte[] image, long origin)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin ",
                 new object[] { id, name, price, category, image, origin });

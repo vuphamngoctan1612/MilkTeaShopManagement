@@ -122,7 +122,7 @@ namespace MilkTeaHouseProject
             string cmnd = this.txtCMND.Text;
             string address = this.txtAddress.Text;
             bool sex = false;
-            int salaryReceived = PositionDAL.Instance.GetSalarybyPosition(position);
+            long salaryReceived = PositionDAL.Instance.GetSalarybyPosition(position);
             if (this.cbMan.Checked == true)
             {
                 sex = true;
@@ -275,7 +275,7 @@ namespace MilkTeaHouseProject
             string cmnd = this.txtCMND.Text;
             string address = this.txtAddress.Text;
             bool sex = false;
-            int salaryReceived = PositionDAL.Instance.GetSalarybyPosition(position);
+            long salaryReceived = PositionDAL.Instance.GetSalarybyPosition(position);
             if (this.cbMan.Checked == true)
             {
                 sex = true;

@@ -109,9 +109,9 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public ChartValues<int> GetRevenueByMonth(string mm, string yy)
+        public ChartValues<long> GetRevenueByMonth(string mm, string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -121,7 +121,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] daysOfMonth = this.GetDayInMonth(mm, yy);
-                int[] revenue = new int[daysOfMonth.Length];
+                long[] revenue = new long[daysOfMonth.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -134,7 +134,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -142,9 +142,9 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetRevenueByYear(string yy)
+        public ChartValues<long> GetRevenueByYear(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -154,7 +154,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] monthsOfYear = this.GetMonthInYear(yy);
-                int[] revenue = new int[monthsOfYear.Length];
+                long[] revenue = new long[monthsOfYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -167,7 +167,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -175,9 +175,9 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetRevenueByQuarter(string yy)
+        public ChartValues<long> GetRevenueByQuarter(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -187,7 +187,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] quarterInYear = this.GetQuarterInYear(yy);
-                int[] revenue = new int[quarterInYear.Length];
+                long[] revenue = new long[quarterInYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -200,7 +200,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -209,9 +209,9 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public ChartValues<int> GetExpenseByMonth(string mm, string yy)
+        public ChartValues<long> GetExpenseByMonth(string mm, string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -221,7 +221,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] daysOfMonth = this.GetDayInMonth(mm, yy);
-                int[] expense = new int[daysOfMonth.Length];
+                long[] expense = new long[daysOfMonth.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -234,7 +234,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(expense);
+                res = new ChartValues<long>(expense);
                 return res;
             }
             catch
@@ -242,9 +242,9 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetExpenseByYear(string yy)
+        public ChartValues<long> GetExpenseByYear(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -254,7 +254,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] monthsOfYear = this.GetMonthInYear(yy);
-                int[] expense = new int[monthsOfYear.Length];
+                long[] expense = new long[monthsOfYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -267,7 +267,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(expense);
+                res = new ChartValues<long>(expense);
                 return res;
             }
             catch
@@ -275,9 +275,9 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetExpenseByQuarter(string yy)
+        public ChartValues<long> GetExpenseByQuarter(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -287,7 +287,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] quarterInYear = this.GetQuarterInYear(yy);
-                int[] revenue = new int[quarterInYear.Length];
+                long[] revenue = new long[quarterInYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -300,7 +300,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch

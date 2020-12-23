@@ -21,7 +21,7 @@ namespace MilkTeaHouseProject
         }
 
 
-        public ItemInBill(int ID, DateTime checkout, int staffID, string Staffname, string note, int total, bool setcolor)
+        public ItemInBill(int ID, DateTime checkout, int staffID, string Staffname, string note, long total, bool setcolor)
         {
             InitializeComponent();
 

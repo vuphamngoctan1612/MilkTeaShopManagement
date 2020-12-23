@@ -371,9 +371,9 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public ChartValues<int> GetRevenueDrinkByMonth(string mm, string yy)
+        public ChartValues<long> GetRevenueDrinkByMonth(string mm, string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -386,7 +386,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] drinksID = this.GetListRevenueDrinkIDByMonth(mm, yy);
-                int[] revenue = new int[drinksID.Length];
+                long[] revenue = new long[drinksID.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -399,7 +399,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -407,9 +407,9 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetRevenueDrinkByYear(string yy)
+        public ChartValues<long> GetRevenueDrinkByYear(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
@@ -422,7 +422,7 @@ namespace MilkTeaHouseProject.DAL
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] drinksID = this.GetListRevenueDrinkIDByYear(yy);
-                int[] revenue = new int[drinksID.Length];
+                long[] revenue = new long[drinksID.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -435,7 +435,7 @@ namespace MilkTeaHouseProject.DAL
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch

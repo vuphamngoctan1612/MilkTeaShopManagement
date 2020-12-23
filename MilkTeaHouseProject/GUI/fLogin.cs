@@ -51,8 +51,8 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            //try
-            //{
+            try
+            {
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
                     if (Login(username, password))
@@ -64,11 +64,11 @@ namespace MilkTeaHouseProject
                         this.txtUser.Text = this.txtPass.Text = "";
                     }
                 }
-            //}
-            //catch
-            //{
-
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("fsdfaf");
+            }
         }
 
         private void lbSignup_Click(object sender, EventArgs e)

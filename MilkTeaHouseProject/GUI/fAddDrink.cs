@@ -51,7 +51,7 @@ namespace MilkTeaHouseProject
             txtID.Enabled = false;
         }
 
-        public fAddDrink(int id, string name, int price, byte[] image, int origin, int count)
+        public fAddDrink(int id, string name, long price, byte[] image, long origin, int count)
         {
             InitializeComponent();
             LoadNameCategory();

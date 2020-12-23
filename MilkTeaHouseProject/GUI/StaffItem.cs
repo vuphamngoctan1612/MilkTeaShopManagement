@@ -26,7 +26,7 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived, bool sex, string cmnd, string phone, string address, bool setcolor)
+        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, long salaryReceived, bool sex, string cmnd, string phone, string address, bool setcolor)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
@@ -213,7 +213,7 @@ namespace MilkTeaHouseProject
             {
                 if (position.Name == pos)
                 {
-                    int salaryReceived = 0;
+                    long salaryReceived = 0;
                     salaryReceived = position.Salary + staff.OverTime * position.OverTimeSalary - staff.Fault * position.MinusSalary;
                     StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
                     this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
