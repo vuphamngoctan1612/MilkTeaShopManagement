@@ -22,61 +22,12 @@ namespace MilkTeaHouseProject
         public fAddStaff()
         {
             InitializeComponent();
-            List<Position> positions = PositionDAL.Instance.GetListPosistion();
-            List<Account> accounts = AccountDAL.Instance.GetListAccount();
-            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
-            List<string> usernames = new List<string>();
-            this.lbIDinrease.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
-            foreach (Position pos in positions)
-            {
-                if (pos.Name != "Quản Lý")
-                {
-                    this.cbbPos.Items.Add(pos.Name);
-                }
-            }
-            foreach (Account acc in accounts)
-            {
-                if (acc.Username != "admin")
-                {
-                    usernames.Add(acc.Username);
-                }
-            }
-            usernames.Sort();
-            foreach (string username in usernames)
-            {
-                this.cbbUser.Items.Add(username);
-            }
-            foreach (Staff staff in staffs)
-            {
-                this.cbbUser.Items.Remove(staff.UserName);
-            }
-
+            this.CreateItemForComboBox();
         }
         public fAddStaff(int ID, string name, byte[] image, DateTime birthDate, string pos, string phonenumber, string username, string cmnd, bool sex, string address)
         {
             InitializeComponent();
-            List<Position> positions = PositionDAL.Instance.GetListPosistion();
-            List<Account> accounts = AccountDAL.Instance.GetListAccount();
-            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
-            List<string> usernames = new List<string>();
-            this.lbIDinrease.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
-            foreach (Position posistion in positions)
-            {
-                this.cbbPos.Items.Add(posistion.Name);
-            }
-            foreach (Account acc in accounts)
-            {
-                usernames.Add(acc.Username);
-            }
-            usernames.Sort();
-            foreach (string userName in usernames)
-            {
-                this.cbbUser.Items.Add(userName);
-            }
-            foreach (Staff staff in staffs)
-            {
-                this.cbbUser.Items.Remove(staff.UserName);
-            }
+            this.CreateItemForComboBox();
             this.lbIDinrease.Text = ID.ToString();
             this.txtName.Text = name;
             if (image == null)
@@ -116,7 +67,34 @@ namespace MilkTeaHouseProject
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         string imgLocation = "";
         byte[] img = null;
-
+        private void CreateItemForComboBox()
+        {
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            List<Account> accounts = AccountDAL.Instance.GetListAccount();
+            List<Staff> staffs = StaffDAL.Instance.GetListStaff();
+            List<string> usernames = new List<string>();
+            this.lbIDinrease.Text = (StaffDAL.Instance.GetMAXStaffID() + 1).ToString();
+            foreach (Position posistion in positions)
+            {
+                if (posistion.Name.ToLower() != "Quản Lý".ToLower())
+                {
+                    this.cbbPos.Items.Add(posistion.Name);
+                }
+            }
+            foreach (Account acc in accounts)
+            {
+                usernames.Add(acc.Username);
+            }
+            usernames.Sort();
+            foreach (string userName in usernames)
+            {
+                this.cbbUser.Items.Add(userName);
+            }
+            foreach (Staff staff in staffs)
+            {
+                this.cbbUser.Items.Remove(staff.UserName);
+            }
+        }    
 
         #region Method
         private void ShowError(Control control, string error)
@@ -153,35 +131,16 @@ namespace MilkTeaHouseProject
             {
                 sex = false;
             }
-            if ((this.cbMan.Checked == false) && (this.cbWoman.Checked == false))
-            {
-                errorShow.Visible = true;
-                errorShow.Location = new Point(cbMan.Location.X, cbMan.Location.Y + cbMan.Height);
-                errorShow.Text = "Vui lòng chọn giới tính";
-                return;
-            }
-
-            if (imgLocation == "")
-            {
-                LoadImage();
-            }
-            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader bnr = new BinaryReader(stream);
-            img = bnr.ReadBytes((int)stream.Length);
-
             if (string.IsNullOrEmpty(name))
             {
                 ShowError(txtName, "Vui lòng nhập họ tên");
                 return;
             }
-            if (string.IsNullOrEmpty(position))
+            if ((this.cbMan.Checked == false) && (this.cbWoman.Checked == false))
             {
-                ShowError(cbbPos, "Vui lòng chọn vị trí ");
-                return;
-            }
-            if (phoneNumber.Length != 10)
-            {
-                ShowError(txtPhoneNumber, "SĐT không hợp lệ");
+                errorShow.Visible = true;
+                errorShow.Location = new Point(cbMan.Location.X, cbMan.Location.Y + cbMan.Height);
+                errorShow.Text = "Vui lòng chọn giới tính";
                 return;
             }
             if (cmnd.Length != 9)
@@ -193,7 +152,24 @@ namespace MilkTeaHouseProject
             {
                 ShowError(txtAddress, "Vui lòng nhập địa chỉ");
             }
-            if (position.ToUpper() == "THU NGÂN")
+            if (phoneNumber.Length != 10)
+            {
+                ShowError(txtPhoneNumber, "SĐT không hợp lệ");
+                return;
+            }
+            if (string.IsNullOrEmpty(position))
+            {
+                ShowError(cbbPos, "Vui lòng chọn vị trí ");
+                return;
+            }
+            if (imgLocation == "")
+            {
+                LoadImage();
+            }
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader bnr = new BinaryReader(stream);
+            img = bnr.ReadBytes((int)stream.Length);
+            if (position.ToLower() == "THU NGÂN".ToLower())
             {
                 StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, salaryReceived, phoneNumber, cmnd, sex, address);
                 this.Close();
@@ -394,6 +370,13 @@ namespace MilkTeaHouseProject
         {
             fSignUp frm = new fSignUp();
             frm.ShowDialog();
+            List<Account> accounts = AccountDAL.Instance.GetListAccount();
+            this.cbbUser.Items.Clear();
+            foreach(Account account in accounts)
+            {
+                this.cbbUser.Items.Add(account.Username);
+            }    
+
         }
 
         private void cbMan_Click(object sender, EventArgs e)

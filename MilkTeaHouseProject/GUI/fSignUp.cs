@@ -122,7 +122,7 @@ namespace MilkTeaHouseProject
             {
                 ShowError(txtRePass, "Mật khẩu nhập lại sai");
             }
-            else if (!AccountDAL.Instance.SignUp(username, password))
+            else if (AccountDAL.Instance.IsExistAccount(username))
             {
                 ShowError(txtUser, "Tên đăng nhập đã tồn tại");
             }

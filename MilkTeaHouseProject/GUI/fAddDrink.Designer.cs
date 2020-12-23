@@ -350,6 +350,7 @@
             this.txtOriginPrice.LineColor = System.Drawing.Color.Gainsboro;
             this.txtOriginPrice.Location = new System.Drawing.Point(262, 257);
             this.txtOriginPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOriginPrice.MaxLength = 11;
             this.txtOriginPrice.Name = "txtOriginPrice";
             this.txtOriginPrice.PasswordChar = '\0';
             this.txtOriginPrice.SelectedText = "";
@@ -367,6 +368,7 @@
             this.txtPrice.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPrice.Location = new System.Drawing.Point(262, 314);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrice.MaxLength = 11;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.SelectedText = "";

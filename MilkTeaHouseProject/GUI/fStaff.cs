@@ -23,7 +23,6 @@ namespace MilkTeaHouseProject
         public fStaff(string username)
         {
             InitializeComponent();
-            LoadStaff();
             this.username = username;
         }
         #region Method
@@ -69,8 +68,9 @@ namespace MilkTeaHouseProject
 
                 flowLayoutPanelStaff.Controls.Add(staffItem);
                 staffItems.Add(staffItem);
-                sizeChange();
             }
+
+            sizeChange();
         }
 
         public void SearchStaff(string search)
@@ -221,6 +221,12 @@ namespace MilkTeaHouseProject
                 StaffDAL.Instance.ResetOverandFault();
                 BillDAL.Instance.UpdateBillSalary(username, totalSalary * -1);
                 MessageBox.Show("Kết toán lương thành công");
+                foreach (Control item in this.flowLayoutPanelStaff.Controls)
+                {
+                    (item as StaffItem).SALARYRECEIVED = PositionDAL.Instance.GetSalarybyPosition((item as StaffItem).POSITION).ToString();
+                    (item as StaffItem).OVERTIME = 0;
+                    (item as StaffItem).FAULT = 0;
+                }    
             }
             else
             {
@@ -280,7 +286,12 @@ namespace MilkTeaHouseProject
                 }
             }
         }
-        
+        private void fStaff_Load(object sender, EventArgs e)
+        {
+            this.LoadStaff();
+        }
         #endregion
+
+
     }
 }

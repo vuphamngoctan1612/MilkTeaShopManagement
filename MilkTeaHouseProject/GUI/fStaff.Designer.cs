@@ -377,6 +377,7 @@
             this.Name = "fStaff";
             this.Text = "NHÂN VIÊN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.fStaff_Load);
             this.pnStaff.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

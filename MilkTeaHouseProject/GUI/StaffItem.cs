@@ -18,6 +18,10 @@ namespace MilkTeaHouseProject
     public partial class StaffItem : UserControl
     {
         public string NAME { get => this.lbName.Text; }
+        public long OVERTIME { get => this.numericUpDownOverTime.Value; set => this.numericUpDownOverTime.Value = value; }
+        public long FAULT { get => this.numericFault.Value; set => this.numericFault.Value = value; }
+        public string SALARYRECEIVED { get => this.lbSalary.Text; set => this.lbSalary.Text = value; }
+        public string POSITION { get => this.lbPosition.Text; set => this.lbPosition.Text = value; }
         public StaffItem()
         {
             InitializeComponent();

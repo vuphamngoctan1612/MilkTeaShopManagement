@@ -82,9 +82,9 @@ namespace MilkTeaHouseProject
             this.panel2.Controls.Add(this.lbID);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1137, 47);
+            this.panel2.Size = new System.Drawing.Size(1137, 70);
             this.panel2.TabIndex = 22;
             this.panel2.Click += new System.EventHandler(this.StaffItem_Click);
             // 
@@ -211,10 +211,10 @@ namespace MilkTeaHouseProject
             this.panel1.Controls.Add(this.AddressShow);
             this.panel1.Controls.Add(this.BirthDate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1137, 220);
+            this.panel1.Size = new System.Drawing.Size(1137, 197);
             this.panel1.TabIndex = 23;
             this.panel1.Click += new System.EventHandler(this.StaffItem_Click);
             // 
@@ -222,7 +222,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator8.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator8.Location = new System.Drawing.Point(608, 49);
-            this.gunaSeparator8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator8.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator8.Name = "gunaSeparator8";
             this.gunaSeparator8.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator8.TabIndex = 28;
@@ -231,7 +231,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator7.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator7.Location = new System.Drawing.Point(608, 117);
-            this.gunaSeparator7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator7.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator7.Name = "gunaSeparator7";
             this.gunaSeparator7.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator7.TabIndex = 28;
@@ -240,7 +240,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator6.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator6.Location = new System.Drawing.Point(609, 154);
-            this.gunaSeparator6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator6.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator6.Name = "gunaSeparator6";
             this.gunaSeparator6.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator6.TabIndex = 28;
@@ -249,7 +249,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator5.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator5.Location = new System.Drawing.Point(304, 154);
-            this.gunaSeparator5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator5.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator5.Name = "gunaSeparator5";
             this.gunaSeparator5.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator5.TabIndex = 28;
@@ -258,7 +258,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator4.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator4.Location = new System.Drawing.Point(304, 117);
-            this.gunaSeparator4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator4.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator4.Name = "gunaSeparator4";
             this.gunaSeparator4.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator4.TabIndex = 28;
@@ -267,7 +267,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator3.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator3.Location = new System.Drawing.Point(304, 84);
-            this.gunaSeparator3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator3.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator3.Name = "gunaSeparator3";
             this.gunaSeparator3.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator3.TabIndex = 28;
@@ -276,7 +276,7 @@ namespace MilkTeaHouseProject
             // 
             this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
             this.gunaSeparator2.Location = new System.Drawing.Point(304, 49);
-            this.gunaSeparator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator2.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator2.Name = "gunaSeparator2";
             this.gunaSeparator2.Size = new System.Drawing.Size(224, 7);
             this.gunaSeparator2.TabIndex = 28;
@@ -286,7 +286,7 @@ namespace MilkTeaHouseProject
             this.gunaSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaSeparator1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaSeparator1.Location = new System.Drawing.Point(0, 0);
-            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator1.Name = "gunaSeparator1";
             this.gunaSeparator1.Size = new System.Drawing.Size(1137, 7);
             this.gunaSeparator1.TabIndex = 27;
