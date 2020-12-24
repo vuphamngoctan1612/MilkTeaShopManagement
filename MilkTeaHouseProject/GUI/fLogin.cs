@@ -51,21 +51,11 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            //try
+            try
             {
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    if (string.IsNullOrEmpty(txtUser.Text))
-                    {
-                        txtUser.Focus();
-                        ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
-                    } 
-                    else if (string.IsNullOrEmpty(txtPass.Text))
-                    {
-                        txtPass.Focus();
-                        ShowError(txtPass, "Vui lòng nhập mật khẩu");
-                    }
-                    else if (Login(username, password))
+                    if (Login(username, password))
                     {
                         fMain f = new fMain(username);
                         this.Hide();
@@ -77,12 +67,22 @@ namespace MilkTeaHouseProject
                     {
                         ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
                     }
+                    if (string.IsNullOrEmpty(txtUser.Text))
+                    {
+                        txtUser.Focus();
+                        ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
+                    }
+                    if (string.IsNullOrEmpty(txtPass.Text))
+                    {
+                        txtPass.Focus();
+                        ShowError(txtPass, "Vui lòng nhập mật khẩu");
+                    }
                 }
             }
-            //catch
-            //{
-            //    MessageBox.Show("fsdfaf");
-            //}
+            catch
+            {
+
+            }
         }
 
         private void lbSignup_Click(object sender, EventArgs e)

@@ -300,9 +300,9 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, (CAST(SUM(Bill.TOTAL) AS BIGINT)) AS TOTAL FROM Staff " +
                    "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
-                   "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
+                   "WHERE MONTH(Bill.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} AND BILL.TOTAL > 0" +
                    "GROUP BY Staff.ID, Staff.NAME " +
                    "ORDER BY TOTAL ASC", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
@@ -316,7 +316,7 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (staffsID[i] == data.Rows[j]["ID"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
@@ -335,9 +335,9 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, SUM(Bill.TOTAL) AS TOTAL FROM Staff " +
+                string query = string.Format("SELECT TOP 5 Staff.ID, Staff.NAME, (CAST(SUM(Bill.TOTAL) AS BIGINT)) AS TOTAL FROM Staff " +
                     "INNER JOIN Bill ON Staff.ID = Bill.STAFFID " +
-                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
+                    "WHERE YEAR(Bill.CHECKOUT) = {0} AND BILL.TOTAL > 0" +
                     "GROUP BY Staff.ID, Staff.NAME " +
                     "ORDER BY TOTAL ASC", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
@@ -351,7 +351,7 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (staffsID[i] == data.Rows[j]["ID"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }

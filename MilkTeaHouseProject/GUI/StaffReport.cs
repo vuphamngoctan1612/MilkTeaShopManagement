@@ -109,6 +109,7 @@ namespace MilkTeaHouseProject
 
         private void cbbPeriod_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //theo tháng
             if (this.cbbPeriod.SelectedIndex == 0)
             {
                 this.cbbTime.Items.Clear();
@@ -119,14 +120,16 @@ namespace MilkTeaHouseProject
                     this.cbbTime.Items.Add(monthInYear[i]);
                 }
             }
+            //theo năm
             else if (this.cbbPeriod.SelectedIndex == 1)
             {
                 this.cbbTime.Items.Clear();
 
-                int currentYear = DateTime.Now.Year;
-                this.cbbTime.Items.Add(currentYear - 2);
-                this.cbbTime.Items.Add(currentYear - 1);
-                this.cbbTime.Items.Add(currentYear);
+                string[] years = ReportDAL.Instance.GetYear();
+                for (int i = 0; i < years.Length; i++)
+                {
+                    this.cbbTime.Items.Add(years[i]);
+                }
             }
         }
         #endregion

@@ -1,13 +1,8 @@
 ﻿using LiveCharts;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MilkTeaHouseProject.DAL
 {
@@ -377,7 +372,7 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, (CAST(SUM(BillInfo.COUNT) * Drink.PRICE) AS BIGINT) AS TOTAL FROM ((BillInfo " +
                     "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
                     "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
                     "WHERE MONTH(BILL.CHECKOUT) = {0} AND YEAR(Bill.CHECKOUT) = {1} " +
@@ -394,7 +389,7 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (drinksID[i] == data.Rows[j]["ID"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
@@ -413,7 +408,7 @@ namespace MilkTeaHouseProject.DAL
 
             try
             {
-                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, SUM(BillInfo.COUNT) * Drink.PRICE AS TOTAL FROM ((BillInfo " +
+                string query = string.Format("SELECT BillInfo.DRINKID AS ID, Drink.NAME, SUM(BillInfo.COUNT) AS COUNT, Drink.PRICE, (CAST(SUM(BillInfo.COUNT) * Drink.PRICE) AS BIGINT) AS TOTAL FROM ((BillInfo " +
                    "INNER JOIN Bill ON BillInfo.BILLID = Bill.ID) " +
                    "INNER JOIN Drink ON BillInfo.DRINKID = Drink.ID) " +
                    "WHERE YEAR(Bill.CHECKOUT) = {0} " +
@@ -430,7 +425,7 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (drinksID[i] == data.Rows[j]["ID"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }

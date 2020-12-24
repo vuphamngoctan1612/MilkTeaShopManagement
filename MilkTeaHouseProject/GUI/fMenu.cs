@@ -350,6 +350,11 @@ namespace MilkTeaHouseProject
             DeleteCategoryByName((sender as fDelCategory).Category);
             this.SetBackGround();
             this.LoadSize();
+
+            //set lại items cho cbbSearch
+            cbSearch.Items.Clear();
+            cbSearch.Items.Add("Tất cả");
+            LoadCategoryinCbb();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -372,7 +377,6 @@ namespace MilkTeaHouseProject
             this.LoadSize();
             this.LoadCategoryinCbb();
         }
-        #endregion
 
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -398,5 +402,6 @@ namespace MilkTeaHouseProject
                 LoadCategoryinCbb();
             }
         }
+        #endregion
     }
 }
