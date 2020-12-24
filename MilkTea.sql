@@ -129,10 +129,10 @@ create table BillInfo
 go
 
 ALTER proc [dbo].[USP_AddDrink]
-@ID int, @Name nvarchar(100), @Price bigint, @Category nvarchar(100), @Image image
+@ID int, @Name nvarchar(100), @Price bigint, @Category nvarchar(100), @Image image, @Origin bigint
 as
 begin
-	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE) values (@ID, @Name, @Category, @Price, @Image)
+	insert into Drink (ID, NAME, CATEGORY, PRICE, IMAGE, originprice) values (@ID, @Name, @Category, @Price, @Image, @Origin)
 end
 
 ALTER proc [dbo].[USP_AddStaff]
