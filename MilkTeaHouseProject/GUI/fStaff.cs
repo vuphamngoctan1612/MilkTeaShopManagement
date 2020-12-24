@@ -79,23 +79,53 @@ namespace MilkTeaHouseProject
             foreach (Control item in this.flowLayoutPanelStaff.Controls)
             {
                 string StaffName = (item as StaffItem).NAME;
-
-                if (!StaffName.ToLower().Contains(search.ToLower()))
+                if (cbSearch.Text == "Tất cả")
                 {
-                    item.Visible = false;
-                }
-                else
-                {
-                    item.Visible = true;
-                    if (flag == false)
+                    if (!StaffName.ToLower().Contains(search.ToLower()))
                     {
-                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
-                        flag = true;
+                        item.Visible = false;
                     }
                     else
                     {
-                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
-                        flag = false;
+                        item.Visible = true;
+                        if (flag == false)
+                        {
+                            item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                            flag = true;
+                        }
+                        else
+                        {
+                            item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                            flag = false;
+                        }
+                    }
+                }
+                else
+                {
+                    if ((item as StaffItem).POSITION == cbSearch.Text)
+                    {
+                        if (!StaffName.ToLower().Contains(search.ToLower()))
+                        {
+                            item.Visible = false;
+                        }
+                        else
+                        {
+                            item.Visible = true;
+                            if (flag == false)
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                                flag = true;
+                            }
+                            else
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                                flag = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        item.Visible = false;
                     }
                 }
             }
@@ -113,6 +143,67 @@ namespace MilkTeaHouseProject
                 else
                 {
                     control.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
+                }
+            }
+        }
+
+        private void LoadPosinCbb()
+        {
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+
+            cbSearch.Items.Add("Tất cả");
+
+            foreach (Position item in positions)
+            {
+                cbSearch.Items.Add(item.Name);
+            }
+
+            cbSearch.SelectedIndex = 0;
+        }
+
+        private void SearchPos(string pos)
+        {
+            bool flag = false;
+
+            foreach (StaffItem item in flowLayoutPanelStaff.Controls)
+            {
+                if (item.POSITION == pos)
+                {
+                    item.Visible = true;
+                    if (flag == false)
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
+                    }
+                    else
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
+                    }
+                }
+                else
+                {
+                    item.Visible = false;
+                }
+            }
+        }
+
+        private void ShowAllStaff()
+        {
+            bool flag = false;
+
+            foreach (StaffItem item in flowLayoutPanelStaff.Controls)
+            {
+                item.Visible = true;
+                if (flag == false)
+                {
+                    item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
                     flag = false;
                 }
             }
@@ -289,9 +380,34 @@ namespace MilkTeaHouseProject
         private void fStaff_Load(object sender, EventArgs e)
         {
             this.LoadStaff();
+            this.LoadPosinCbb();
         }
+
         #endregion
 
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
 
+            if (cbSearch.SelectedIndex == 0)
+            {
+                ShowAllStaff();
+            }
+            else
+            {
+                SearchPos(cbSearch.Text);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+
+            if (positions.Count == cbSearch.Items.Count)
+            {
+                cbSearch.Items.Clear();
+                LoadPosinCbb();
+            }
+        }
     }
 }

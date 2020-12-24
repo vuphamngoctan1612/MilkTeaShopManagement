@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fStaff));
             this.pnStaff = new System.Windows.Forms.Panel();
             this.flowLayoutPanelStaff = new System.Windows.Forms.FlowLayoutPanel();
@@ -42,11 +43,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExport = new Guna.UI.WinForms.GunaButton();
             this.pnSearch = new System.Windows.Forms.Panel();
+            this.cbSearch = new Guna.UI.WinForms.GunaComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
             this.btnUpdateSalary = new Guna.UI.WinForms.GunaButton();
             this.btSetSalary = new Guna.UI.WinForms.GunaButton();
             this.btAdd = new Guna.UI.WinForms.GunaButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnStaff.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,9 +64,9 @@
             this.pnStaff.Controls.Add(this.panel2);
             this.pnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnStaff.Location = new System.Drawing.Point(0, 0);
-            this.pnStaff.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnStaff.Name = "pnStaff";
-            this.pnStaff.Size = new System.Drawing.Size(1213, 733);
+            this.pnStaff.Size = new System.Drawing.Size(1820, 1100);
             this.pnStaff.TabIndex = 0;
             // 
             // flowLayoutPanelStaff
@@ -70,10 +74,10 @@
             this.flowLayoutPanelStaff.AutoScroll = true;
             this.flowLayoutPanelStaff.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanelStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 85);
+            this.flowLayoutPanelStaff.Location = new System.Drawing.Point(0, 135);
             this.flowLayoutPanelStaff.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelStaff.Name = "flowLayoutPanelStaff";
-            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1213, 648);
+            this.flowLayoutPanelStaff.Size = new System.Drawing.Size(1820, 965);
             this.flowLayoutPanelStaff.TabIndex = 15;
             this.flowLayoutPanelStaff.SizeChanged += new System.EventHandler(this.flowLayoutPanelStaff_SizeChanged);
             // 
@@ -88,19 +92,20 @@
             this.panel1.Controls.Add(this.lbName);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 52);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel1.Location = new System.Drawing.Point(0, 85);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1213, 33);
+            this.panel1.Size = new System.Drawing.Size(1820, 50);
             this.panel1.TabIndex = 14;
             // 
             // lbPosition
             // 
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.Location = new System.Drawing.Point(360, 6);
+            this.lbPosition.Location = new System.Drawing.Point(540, 9);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(42, 20);
+            this.lbPosition.Size = new System.Drawing.Size(61, 30);
             this.lbPosition.TabIndex = 21;
             this.lbPosition.Text = "Vị trí";
             // 
@@ -108,9 +113,10 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(456, 3);
+            this.lbUserName.Location = new System.Drawing.Point(684, 4);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(111, 20);
+            this.lbUserName.Size = new System.Drawing.Size(160, 30);
             this.lbUserName.TabIndex = 20;
             this.lbUserName.Text = "Tên đăng nhập";
             // 
@@ -118,9 +124,10 @@
             // 
             this.lbOvertime.AutoSize = true;
             this.lbOvertime.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOvertime.Location = new System.Drawing.Point(618, 6);
+            this.lbOvertime.Location = new System.Drawing.Point(927, 9);
+            this.lbOvertime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOvertime.Name = "lbOvertime";
-            this.lbOvertime.Size = new System.Drawing.Size(100, 20);
+            this.lbOvertime.Size = new System.Drawing.Size(147, 30);
             this.lbOvertime.TabIndex = 19;
             this.lbOvertime.Text = "Giờ làm thêm";
             // 
@@ -128,9 +135,10 @@
             // 
             this.lbFaust.AutoSize = true;
             this.lbFaust.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFaust.Location = new System.Drawing.Point(739, 6);
+            this.lbFaust.Location = new System.Drawing.Point(1108, 9);
+            this.lbFaust.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFaust.Name = "lbFaust";
-            this.lbFaust.Size = new System.Drawing.Size(47, 20);
+            this.lbFaust.Size = new System.Drawing.Size(69, 30);
             this.lbFaust.TabIndex = 19;
             this.lbFaust.Text = "Số lỗi";
             // 
@@ -138,9 +146,10 @@
             // 
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(836, 6);
+            this.lbSalary.Location = new System.Drawing.Point(1254, 9);
+            this.lbSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSalary.Name = "lbSalary";
-            this.lbSalary.Size = new System.Drawing.Size(52, 20);
+            this.lbSalary.Size = new System.Drawing.Size(77, 30);
             this.lbSalary.TabIndex = 18;
             this.lbSalary.Text = "Lương";
             // 
@@ -148,9 +157,10 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(119, 6);
+            this.lbName.Location = new System.Drawing.Point(178, 9);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(105, 20);
+            this.lbName.Size = new System.Drawing.Size(152, 30);
             this.lbName.TabIndex = 16;
             this.lbName.Text = "Tên nhân viên";
             // 
@@ -158,9 +168,10 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(9, 3);
+            this.lbID.Location = new System.Drawing.Point(14, 4);
+            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(103, 20);
+            this.lbID.Size = new System.Drawing.Size(148, 30);
             this.lbID.TabIndex = 10;
             this.lbID.Text = "Mã nhân viên";
             // 
@@ -174,9 +185,9 @@
             this.panel2.Controls.Add(this.btAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1213, 52);
+            this.panel2.Size = new System.Drawing.Size(1820, 85);
             this.panel2.TabIndex = 13;
             // 
             // btnExport
@@ -195,7 +206,8 @@
             this.btnExport.Image = null;
             this.btnExport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(460, 12);
+            this.btnExport.Location = new System.Drawing.Point(655, 21);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnExport.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -203,7 +215,7 @@
             this.btnExport.OnHoverImage = null;
             this.btnExport.OnPressedColor = System.Drawing.Color.Black;
             this.btnExport.Radius = 10;
-            this.btnExport.Size = new System.Drawing.Size(141, 28);
+            this.btnExport.Size = new System.Drawing.Size(187, 42);
             this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Xuất file Excel";
             this.btnExport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -211,14 +223,48 @@
             // 
             // pnSearch
             // 
+            this.pnSearch.Controls.Add(this.cbSearch);
+            this.pnSearch.Controls.Add(this.label1);
             this.pnSearch.Controls.Add(this.btnSearch);
             this.pnSearch.Controls.Add(this.txtSearch);
             this.pnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSearch.Location = new System.Drawing.Point(970, 0);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pnSearch.Location = new System.Drawing.Point(1216, 0);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(243, 52);
+            this.pnSearch.Size = new System.Drawing.Size(604, 85);
             this.pnSearch.TabIndex = 25;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.cbSearch.BaseColor = System.Drawing.Color.White;
+            this.cbSearch.BorderColor = System.Drawing.Color.Silver;
+            this.cbSearch.BorderSize = 1;
+            this.cbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.cbSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.cbSearch.ForeColor = System.Drawing.Color.Black;
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(27, 33);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbSearch.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbSearch.Size = new System.Drawing.Size(203, 37);
+            this.cbSearch.TabIndex = 27;
+            this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label1.Location = new System.Drawing.Point(26, 1);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 28);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Vị trí";
             // 
             // btnSearch
             // 
@@ -241,8 +287,8 @@
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(183, 15);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnSearch.Location = new System.Drawing.Point(514, 32);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -250,7 +296,7 @@
             this.btnSearch.OnHoverImage = null;
             this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Size = new System.Drawing.Size(24, 21);
+            this.btnSearch.Size = new System.Drawing.Size(36, 32);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -266,13 +312,13 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.Location = new System.Drawing.Point(29, 12);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtSearch.Location = new System.Drawing.Point(284, 28);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(185, 28);
+            this.txtSearch.Size = new System.Drawing.Size(278, 42);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -292,7 +338,8 @@
             this.btnUpdateSalary.Image = null;
             this.btnUpdateSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateSalary.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdateSalary.Location = new System.Drawing.Point(12, 12);
+            this.btnUpdateSalary.Location = new System.Drawing.Point(18, 21);
+            this.btnUpdateSalary.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateSalary.Name = "btnUpdateSalary";
             this.btnUpdateSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnUpdateSalary.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -300,7 +347,7 @@
             this.btnUpdateSalary.OnHoverImage = null;
             this.btnUpdateSalary.OnPressedColor = System.Drawing.Color.Black;
             this.btnUpdateSalary.Radius = 10;
-            this.btnUpdateSalary.Size = new System.Drawing.Size(141, 28);
+            this.btnUpdateSalary.Size = new System.Drawing.Size(187, 42);
             this.btnUpdateSalary.TabIndex = 0;
             this.btnUpdateSalary.Text = "Kết toán lương";
             this.btnUpdateSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -322,7 +369,8 @@
             this.btSetSalary.Image = null;
             this.btSetSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btSetSalary.ImageSize = new System.Drawing.Size(20, 20);
-            this.btSetSalary.Location = new System.Drawing.Point(162, 12);
+            this.btSetSalary.Location = new System.Drawing.Point(230, 21);
+            this.btSetSalary.Margin = new System.Windows.Forms.Padding(4);
             this.btSetSalary.Name = "btSetSalary";
             this.btSetSalary.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btSetSalary.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -330,7 +378,7 @@
             this.btSetSalary.OnHoverImage = null;
             this.btSetSalary.OnPressedColor = System.Drawing.Color.Black;
             this.btSetSalary.Radius = 10;
-            this.btSetSalary.Size = new System.Drawing.Size(141, 28);
+            this.btSetSalary.Size = new System.Drawing.Size(187, 42);
             this.btSetSalary.TabIndex = 1;
             this.btSetSalary.Text = "Thiết lập lương";
             this.btSetSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -352,7 +400,8 @@
             this.btAdd.Image = null;
             this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btAdd.Location = new System.Drawing.Point(312, 12);
+            this.btAdd.Location = new System.Drawing.Point(442, 21);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btAdd.Name = "btAdd";
             this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -360,20 +409,26 @@
             this.btAdd.OnHoverImage = null;
             this.btAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btAdd.Radius = 10;
-            this.btAdd.Size = new System.Drawing.Size(141, 28);
+            this.btAdd.Size = new System.Drawing.Size(187, 42);
             this.btAdd.TabIndex = 2;
             this.btAdd.Text = "Thêm nhân viên";
             this.btAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1213, 733);
+            this.ClientSize = new System.Drawing.Size(1820, 1100);
             this.Controls.Add(this.pnStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fStaff";
             this.Text = "NHÂN VIÊN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -383,6 +438,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.pnSearch.ResumeLayout(false);
+            this.pnSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,5 +462,8 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnSearch;
         private Guna.UI.WinForms.GunaTextBox txtSearch;
         private Guna.UI.WinForms.GunaButton btnExport;
+        private Guna.UI.WinForms.GunaComboBox cbSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

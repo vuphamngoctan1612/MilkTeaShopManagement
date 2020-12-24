@@ -18,9 +18,13 @@ namespace MilkTeaHouseProject
         public BillItem()
         {
             InitializeComponent();
+
         }
 
         private int billID;
+        public bool FLAG;
+        public int COUNT;
+
         public int Count
         {
             get { return (int)this.count.Value; }
@@ -32,7 +36,12 @@ namespace MilkTeaHouseProject
             get { return this.lbDrinkID.Text; }
         }
 
-        public int CovertToNumber(string str)
+        public string PRICE
+        {
+            get { return this.lbPrice.Text; }
+        }
+
+        public long CovertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -40,7 +49,7 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
-            return int.Parse(tmp);
+            return long.Parse(tmp);
         }
 
         public BillItem(int idDrink, string foodName, long price, int count, int idBill)
@@ -50,9 +59,13 @@ namespace MilkTeaHouseProject
             this.lbDrinkID.Text = idDrink.ToString();
             this.lbFoodName.Text = foodName;
             this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
+            this.FLAG = true;
             this.count.Value = count;
             this.lbTotal.Text = string.Format("{0:n0}", price * (int)this.count.Value).ToString();
             this.billID = idBill;
+            this.COUNT = count;
+
+            this.count.Maximum = this.COUNT + DrinkDAL.Instance.GetCountbyDrinkID(idDrink);
         }
 
         public event EventHandler onValueChanged = null;
@@ -60,13 +73,35 @@ namespace MilkTeaHouseProject
 
         private void count_ValueChanged(object sender, EventArgs e)
         {
-            if (DrinkDAL.Instance.GetCountbyDrinkID(int.Parse(lbDrinkID.Text)) >= (int)this.count.Value)
+            if (FLAG == false)
             {
-                int price = CovertToNumber(this.lbPrice.Text);
-                int total = price * (int)this.count.Value;
-                this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
+                if (count.Value > this.COUNT)
+                {
+                    if (DrinkDAL.Instance.GetCountbyDrinkID(int.Parse(lbDrinkID.Text)) > 0)
+                    {
+                        long price = CovertToNumber(this.lbPrice.Text);
+                        long total = price * (int)this.count.Value;
+                        this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
 
-                BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), this.billID, (int)this.count.Value);
+                        BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), this.billID, (int)this.count.Value);
+                        BillDAL.Instance.UpdateBill(this.billID, price);
+                        DrinkDAL.Instance.MinusCount(int.Parse(this.lbDrinkID.Text));
+                        this.COUNT += 1;
+                        this.count.Maximum -= 1;
+                    }
+                }
+                else if (count.Value < this.COUNT)
+                {
+                    long price = CovertToNumber(this.lbPrice.Text);
+                    long total = price * (int)this.count.Value;
+                    this.lbTotal.Text = string.Format("{0:n0}", total).ToString();
+
+                    BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbDrinkID.Text), this.billID, (int)this.count.Value);
+                    BillDAL.Instance.UpdateMinusCountBill(this.billID, price);
+                    DrinkDAL.Instance.SetCountbyID(int.Parse(this.lbDrinkID.Text), 1);
+                    this.COUNT -= 1;
+                    this.count.Maximum += 1;
+                }
 
                 if (onValueChanged != null)
                 {

@@ -124,6 +124,7 @@ namespace MilkTeaHouseProject.DTO
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "TableItem";
             this.Load += new System.EventHandler(this.TableItem_Load);
+            this.BackColorChanged += new System.EventHandler(this.TableItem_BackColorChanged);
             ((System.ComponentModel.ISupportInitialize)(this.picTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicTable2)).EndInit();
             this.ResumeLayout(false);

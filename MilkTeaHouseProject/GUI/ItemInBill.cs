@@ -14,6 +14,9 @@ namespace MilkTeaHouseProject
     {
         public int StaffID { get => int.Parse(this.lbStaffID.Text); }
         public string StaffName { get => this.lbStaffName.Text; }
+        public string NOTE { get => this.lbNote.Text; }
+        public int BillID { get => int.Parse(this.lbID.Text); }
+        public string TOTAL { set => this.lbTotal.Text = string.Format("{0:n0}", value); }
 
         public ItemInBill()
         {

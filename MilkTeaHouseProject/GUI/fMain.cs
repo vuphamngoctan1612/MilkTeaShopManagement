@@ -12,6 +12,9 @@ using MilkteaHouse.bin.Debug.image;
 using Guna.UI.WinForms;
 using MilkTeaHouseProject.DAL;
 using MilkTeaShopManagement.DAL;
+using MilkTeaHouseProject.GUI;
+using MilkTeaHouseProject.DTO;
+using System.IO;
 
 namespace MilkTeaHouseProject
 {
@@ -19,6 +22,11 @@ namespace MilkTeaHouseProject
     {
         private GunaAdvenceButton currentButton;
         private Form activeForm;
+        private fMenu frmMenu;
+        private fStaff frmStaff;
+        private fBill frmBill;
+        private fOrder frmOrder;
+        private fRoomTable frmRoom;
 
         public fMain(string username)
         {
@@ -31,6 +39,15 @@ namespace MilkTeaHouseProject
             this.lbDisplay.Text = "Hello, " + StaffDAL.Instance.GetNamebyUsername(username);
             this.lbDisplay.Location = new Point((this.pnContainName.Width - lbDisplay.Width) / 2, this.lbDisplay.Location.Y);
             this.lbUserName.Text = username;
+
+            frmMenu = new fMenu(lbUserName.Text);
+            frmStaff = new fStaff(lbUserName.Text);
+            frmOrder = new fOrder(lbUserName.Text);
+            frmBill = new fBill(lbUserName.Text);
+            frmRoom = new fRoomTable(frmOrder);
+            frmOrder.LoadFormRoom(frmRoom);
+            frmOrder.LoadFormMenu(frmMenu);
+
             Enable();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -52,10 +69,10 @@ namespace MilkTeaHouseProject
 
             if (status == true)
             {
-                this.btnMenu.Enabled = false;
-                this.btnStaff.Enabled = false;
-                this.btnBill.Enabled = false;
-            }    
+                this.btnMenu.Visible = false;
+                this.btnStaff.Visible = false;
+                this.btnBill.Visible = false;
+            }
         }
 
         private void ActivateButton(object btnSender)
@@ -86,8 +103,8 @@ namespace MilkTeaHouseProject
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
-            if (activeForm != null)
-                activeForm.Close();
+            //if (activeForm != null)
+            //    activeForm.Close();
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -101,10 +118,29 @@ namespace MilkTeaHouseProject
         }
         private void Reset()
         {
+            frmMenu.SendToBack();
+            frmOrder.SendToBack();
+            frmBill.SendToBack();
+            frmStaff.SendToBack();
+            frmRoom.SendToBack();
             DisableButton();
             lbButtonSelected.Text = "HOME";
             lbButtonSelected.ForeColor = Color.White;
-            currentButton = null;  
+            currentButton = null;
+        }
+
+        public void LoadAvatar(string username)
+        {
+            int id = StaffDAL.Instance.GetStaffIDbyUsername(username);
+            Staff staff = StaffDAL.Instance.GetStaffById(id);
+
+            byte[] image = staff.Image;
+            if (image != null)
+            {
+                MemoryStream mstream = new MemoryStream(image);
+                Bitmap bitmap = new Bitmap(mstream);
+                avtToolStripMenuItem.Image = bitmap;
+            }
         }
         #endregion
 
@@ -130,22 +166,32 @@ namespace MilkTeaHouseProject
 
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new fMenu(this.lbUserName.Text), sender);
+            if (activeForm != frmMenu)
+                OpenChildForm(frmMenu, sender);
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fOrder(this.lbUserName.Text), sender);
+            if (activeForm != frmOrder)
+                OpenChildForm(frmOrder, sender);
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fStaff(lbUserName.Text), sender);
+            if (activeForm != frmStaff)
+                OpenChildForm(frmStaff, sender);
+        }
+
+        private void btnRoomTable_Click(object sender, EventArgs e)
+        {
+            if (activeForm != frmRoom)
+                OpenChildForm(frmRoom, sender);
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fBill(lbUserName.Text), sender);
+            if (activeForm != frmBill)
+                OpenChildForm(frmBill, sender);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -156,8 +202,9 @@ namespace MilkTeaHouseProject
         }
         private void lbName_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
-                activeForm.Close();
+            //if (activeForm != null)
+            //    activeForm.Close();
+            activeForm = null;
             Reset();
         }
 
@@ -179,7 +226,7 @@ namespace MilkTeaHouseProject
 
         private void fMain_Load(object sender, EventArgs e)
         {
-            
+            LoadAvatar(lbUserName.Text);
         }
 
         private void fMain_Shown(object sender, EventArgs e)
@@ -202,11 +249,13 @@ namespace MilkTeaHouseProject
             btnAccount_Click(sender, e);
         }
 
-        #endregion
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             //this.revenueReport1.RevenueReport_Load(sender, e);
+            gunaLabel4.Text = BillDAL.Instance.CountBillSellinginDay().ToString();
+            lbCountbill.Text = BillDAL.Instance.CountBillSoldinDay().ToString();
+            gunaLabel2.Text = "Hôm qua: " + BillDAL.Instance.CountBillSoldinYesrerday().ToString();
         }
+        #endregion
     }
 }

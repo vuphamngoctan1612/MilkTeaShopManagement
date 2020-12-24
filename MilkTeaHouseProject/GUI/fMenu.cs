@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MilkTeaShopManagement.DTO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaHouseProject.DAL;
+using MilkTeaHouseProject.DTO;
 
 namespace MilkTeaHouseProject
 {
@@ -65,28 +66,62 @@ namespace MilkTeaHouseProject
         public void SearchDrink(string search)
         {
             bool flag = false;
-            foreach(Control item in this.flowLayoutPanelMenu.Controls)
+            foreach (Control item in this.flowLayoutPanelMenu.Controls)
             {
                 string name = (item as MenuItem).NAME;
-                if (!name.ToLower().Contains(search.ToLower()))
+                if (cbSearch.Text == "Tất cả")
                 {
-                    item.Visible = false;
-                }
-                else
-                {
-                    item.Visible = true;
-                    //set background
-                    if (flag == false)
+                    if (!name.ToLower().Contains(search.ToLower()))
                     {
-                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
-                        (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
-                        flag = true;
+                        item.Visible = false;
                     }
                     else
                     {
-                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
-                        (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
-                        flag = false;
+                        item.Visible = true;
+                        //set background
+                        if (flag == false)
+                        {
+                            item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                            (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
+                            flag = true;
+                        }
+                        else
+                        {
+                            item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                            (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
+                            flag = false;
+                        }
+                    }
+                }
+                else
+                { 
+                    if ((item as MenuItem).CATEGORY == cbSearch.Text)
+                    {
+                        if (!name.ToLower().Contains(search.ToLower()))
+                        {
+                            item.Visible = false;
+                        }
+                        else
+                        {
+                            item.Visible = true;
+                            //set background
+                            if (flag == false)
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                                (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(255, 255, 255);
+                                flag = true;
+                            }
+                            else
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                                (item as MenuItem).TxtCount.BackColor = (item as MenuItem).BtnAdd.BaseColor = (item as MenuItem).BtnShowAddCount.BaseColor = Color.FromArgb(240, 240, 240);
+                                flag = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        item.Visible = false;
                     }
                 }
             }
@@ -128,6 +163,75 @@ namespace MilkTeaHouseProject
                 }
             }
         }
+
+        public void LoadCount()
+        {
+            List<Drink> drinks = DrinkDAL.Instance.LoadDrink();
+
+            for (int i = 0; i < drinks.Count; i++)
+            {
+                (flowLayoutPanelMenu.Controls[i] as MenuItem).COUNT = drinks[i].Count.ToString();
+            }
+        }
+
+        private void LoadCategoryinCbb()
+        {
+            List<Category> categories = CategoryDAL.Instance.GetListCategory();
+
+            foreach (Category item in categories)
+            {
+                cbSearch.Items.Add(item.Name);
+            }
+            cbSearch.SelectedIndex = 0;
+        }
+
+        private void SearchDrinkbyCategory(string category)
+        {
+            bool flag = false;
+
+            foreach (MenuItem item in flowLayoutPanelMenu.Controls)
+            {
+                if (item.CATEGORY == category)
+                {
+                    item.Visible = true;
+                    if (flag == false)
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
+                    }
+                    else
+                    {
+                        item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
+                    }
+                }
+                else
+                {
+                    item.Visible = false;
+                }
+            }
+        }
+
+        private void ShowAllDrink()
+        {
+            bool flag = false;
+
+            foreach (MenuItem item in flowLayoutPanelMenu.Controls)
+            {
+                item.Visible = true;
+                if (flag == false)
+                {
+                    item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
+                }
+            }
+        }
+
         #endregion
 
         #region Event
@@ -143,10 +247,10 @@ namespace MilkTeaHouseProject
         {
             int id = (sender as fAddDrink).ID;
             string name = (sender as fAddDrink).DrinkName;
-            int price = (sender as fAddDrink).Price;
+            long price = (sender as fAddDrink).Price;
             string category = (sender as fAddDrink).Category;
             byte[] image = (sender as fAddDrink).Image;
-            int origin = (sender as fAddDrink).Origin;
+            long origin = (sender as fAddDrink).Origin;
 
             MenuItem item = new MenuItem(id, name, price, category, image, true, origin, 0, Username);
             item.onDel += Item_onDel;
@@ -156,6 +260,8 @@ namespace MilkTeaHouseProject
 
             this.SetBackGround();
             this.LoadSize();
+            this.ShowAllDrink();
+            this.cbSearch.SelectedIndex = 0;
         }
         private void Item_onEdit(object sender, EventArgs e)
         {
@@ -264,7 +370,33 @@ namespace MilkTeaHouseProject
 
             this.LoadMenu();
             this.LoadSize();
+            this.LoadCategoryinCbb();
         }
         #endregion
+
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            if (cbSearch.SelectedIndex == 0)
+            {
+                ShowAllDrink();
+            }
+            else
+            {
+                SearchDrinkbyCategory(cbSearch.Text);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            List<Category> categories = CategoryDAL.Instance.GetListCategory();
+
+            if (categories.Count == cbSearch.Items.Count)
+            {
+                cbSearch.Items.Clear();
+                cbSearch.Items.Add("Tất cả");
+                LoadCategoryinCbb();
+            }
+        }
     }
 }

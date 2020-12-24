@@ -230,5 +230,80 @@ namespace MilkTeaHouseProject.DAL
 
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+        public void UpdateTableID(int tableID, int BillID)
+        {
+            string query = string.Format("UPDATE BILL set TABLEID = '{0}' where ID = {1}",
+               tableID, BillID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public int CountBillSoldinDay()
+        {
+            string query = string.Format("SELECT * FROM BILL WHERE DAY(CHECKIN) = {0} and MONTH(CHECKIN) = {1} and YEAR(CHECKIN) = {2} and STATUS = 1 and NOTE = N'Bán hàng'"
+                , DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows.Count;
+            }
+            return 0;
+        }
+
+        public int CountBillSoldinYesrerday()
+        {
+            string query = string.Format("SELECT * FROM BILL WHERE DAY(CHECKIN) = {0} and MONTH(CHECKIN) = {1} and YEAR(CHECKIN) = {2} and STATUS = 1 and NOTE = N'Bán hàng'"
+                , DateTime.Now.Day - 1, DateTime.Now.Month, DateTime.Now.Year);
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows.Count;
+            }
+            return 0;
+        }
+
+        public int CountBillSellinginDay()
+        {
+            string query = string.Format("SELECT * FROM BILL WHERE DAY(CHECKIN) = {0} and MONTH(CHECKIN) = {1} and YEAR(CHECKIN) = {2} and STATUS = 0 and NOTE = N'Bán hàng'"
+                , DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows.Count;
+            }
+            return 0;
+        }
+        public void UpdateMinusCountBill(int id, long price)
+        {
+            string query = string.Format("UPDATE BILL set Total = Total - {0} where ID = {1}",
+                price, id);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void UpdateTotalBill(int id, long price)
+        {
+            string query = string.Format("UPDATE BILL SET TOTAL = TOTAL - {0} WHERE ID = {1}", price, id);
+
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public int CountBillStatusTrue()
+        {
+            string query = string.Format("SELECT * FROM BILL WHERE STATUS = 1");
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows.Count;
+            }
+            return 0;
+        }
     }
 }

@@ -59,10 +59,9 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.panel2.Location = new System.Drawing.Point(293, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(440, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 429);
+            this.panel2.Size = new System.Drawing.Size(648, 644);
             this.panel2.TabIndex = 0;
             // 
             // btnExit
@@ -88,8 +87,7 @@
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(400, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Location = new System.Drawing.Point(600, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -97,7 +95,7 @@
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(32, 29);
+            this.btnExit.Size = new System.Drawing.Size(48, 44);
             this.btnExit.TabIndex = 11;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -122,8 +120,7 @@
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(231, 351);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Location = new System.Drawing.Point(344, 539);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -132,7 +129,7 @@
             this.btnReturn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
-            this.btnReturn.Size = new System.Drawing.Size(120, 29);
+            this.btnReturn.Size = new System.Drawing.Size(180, 44);
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -158,8 +155,7 @@
             this.btnSignUp.Image = null;
             this.btnSignUp.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSignUp.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSignUp.Location = new System.Drawing.Point(87, 351);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignUp.Location = new System.Drawing.Point(128, 539);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnSignUp.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -168,7 +164,7 @@
             this.btnSignUp.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSignUp.OnPressedColor = System.Drawing.Color.Black;
             this.btnSignUp.Radius = 10;
-            this.btnSignUp.Size = new System.Drawing.Size(120, 29);
+            this.btnSignUp.Size = new System.Drawing.Size(180, 44);
             this.btnSignUp.TabIndex = 5;
             this.btnSignUp.Text = "Đăng kí";
             this.btnSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -184,10 +180,9 @@
             this.pnLogin.Controls.Add(this.lbRePass);
             this.pnLogin.Controls.Add(this.lbUser);
             this.pnLogin.Controls.Add(this.lbPass);
-            this.pnLogin.Location = new System.Drawing.Point(34, 8);
-            this.pnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnLogin.Location = new System.Drawing.Point(51, 12);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(362, 300);
+            this.pnLogin.Size = new System.Drawing.Size(543, 498);
             this.pnLogin.TabIndex = 0;
             this.pnLogin.Tag = "0";
             // 
@@ -196,10 +191,9 @@
             this.errorShow.AutoSize = true;
             this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.errorShow.ForeColor = System.Drawing.Color.Red;
-            this.errorShow.Location = new System.Drawing.Point(193, 199);
-            this.errorShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.errorShow.Location = new System.Drawing.Point(57, 455);
             this.errorShow.Name = "errorShow";
-            this.errorShow.Size = new System.Drawing.Size(68, 15);
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
             this.errorShow.TabIndex = 3;
             this.errorShow.Text = "gunaLabel1";
             this.errorShow.Visible = false;
@@ -211,12 +205,11 @@
             this.txtRePass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtRePass.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtRePass.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtRePass.Location = new System.Drawing.Point(41, 257);
-            this.txtRePass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRePass.Location = new System.Drawing.Point(62, 390);
             this.txtRePass.Name = "txtRePass";
             this.txtRePass.PasswordChar = '●';
             this.txtRePass.SelectedText = "";
-            this.txtRePass.Size = new System.Drawing.Size(281, 28);
+            this.txtRePass.Size = new System.Drawing.Size(422, 48);
             this.txtRePass.TabIndex = 3;
             this.txtRePass.UseSystemPasswordChar = true;
             this.txtRePass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
@@ -229,12 +222,11 @@
             this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtPass.Location = new System.Drawing.Point(41, 173);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass.Location = new System.Drawing.Point(62, 256);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';
             this.txtPass.SelectedText = "";
-            this.txtPass.Size = new System.Drawing.Size(281, 28);
+            this.txtPass.Size = new System.Drawing.Size(422, 48);
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
@@ -247,12 +239,11 @@
             this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtUser.Location = new System.Drawing.Point(43, 83);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Location = new System.Drawing.Point(64, 128);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
             this.txtUser.SelectedText = "";
-            this.txtUser.Size = new System.Drawing.Size(281, 28);
+            this.txtUser.Size = new System.Drawing.Size(422, 48);
             this.txtUser.TabIndex = 1;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
@@ -264,10 +255,9 @@
             this.lbRePass.AutoSize = true;
             this.lbRePass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbRePass.Location = new System.Drawing.Point(37, 221);
-            this.lbRePass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRePass.Location = new System.Drawing.Point(56, 356);
             this.lbRePass.Name = "lbRePass";
-            this.lbRePass.Size = new System.Drawing.Size(139, 21);
+            this.lbRePass.Size = new System.Drawing.Size(217, 32);
             this.lbRePass.TabIndex = 1;
             this.lbRePass.Text = "Nhập lại mật khẩu";
             // 
@@ -277,10 +267,9 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbUser.Location = new System.Drawing.Point(39, 46);
-            this.lbUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUser.Location = new System.Drawing.Point(58, 93);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(116, 21);
+            this.lbUser.Size = new System.Drawing.Size(178, 32);
             this.lbUser.TabIndex = 1;
             this.lbUser.Text = "Tên đăng nhập";
             // 
@@ -290,10 +279,9 @@
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPass.Location = new System.Drawing.Point(37, 132);
-            this.lbPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPass.Location = new System.Drawing.Point(56, 222);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(77, 21);
+            this.lbPass.Size = new System.Drawing.Size(120, 32);
             this.lbPass.TabIndex = 1;
             this.lbPass.Text = "Mật khẩu";
             // 
@@ -304,9 +292,8 @@
             this.pnPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnPic.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnPic.Location = new System.Drawing.Point(0, 0);
-            this.pnPic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnPic.Name = "pnPic";
-            this.pnPic.Size = new System.Drawing.Size(293, 429);
+            this.pnPic.Size = new System.Drawing.Size(440, 644);
             this.pnPic.TabIndex = 0;
             // 
             // errorProvider1
@@ -315,13 +302,12 @@
             // 
             // fSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(725, 429);
+            this.ClientSize = new System.Drawing.Size(1088, 644);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnPic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSignUp";

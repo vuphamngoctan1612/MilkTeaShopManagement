@@ -17,9 +17,9 @@ namespace MilkTeaHouseProject
 {
     public partial class fAddDrink : Form
     {
-        public int ID { get => ConvertToNumber(this.txtID.Text); }
+        public int ID { get => int.Parse(this.txtID.Text); }
         public string DrinkName { get => this.txtNameDrink.Text; }
-        public int Price { get => ConvertToNumber(this.txtPrice.Text); }
+        public long Price { get => ConvertToNumber(this.txtPrice.Text); }
         public string Category
         {
             get
@@ -36,7 +36,7 @@ namespace MilkTeaHouseProject
         }
         public byte[] Image { get => this.img; }
         public System.Drawing.Image IMAGE { get => this.ptbImage.Image; set => this.ptbImage.Image = value; }
-        public int Origin { get => ConvertToNumber(this.txtOriginPrice.Text); }
+        public long Origin { get => ConvertToNumber(this.txtOriginPrice.Text); }
 
         public fAddDrink()
         {
@@ -142,7 +142,7 @@ namespace MilkTeaHouseProject
             }
         }
 
-        public int ConvertToNumber(string str)
+        public long ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -150,7 +150,7 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
-            return int.Parse(tmp);
+            return long.Parse(tmp);
         }
 
         private void ShowError(Control control, string error)
@@ -187,7 +187,7 @@ namespace MilkTeaHouseProject
         private void pnImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg| All files(*.png)(*.jpg)(*.jepg)(*.ico)|*.png;*.jpg;*.jepg;*.ico";
+            dialog.Filter = "png files(.png)|.png|jpg files(.jpg)|.jpg| All files(.png)(.jpg)(.jepg)(.ico)|*.png;*.jpg;*.jepg;*.ico";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 imgLocation = dialog.FileName.ToString();
@@ -249,10 +249,10 @@ namespace MilkTeaHouseProject
                 }
 
                 string name = this.txtNameDrink.Text;
-                int price = ConvertToNumber(this.txtPrice.Text);
-                int originPrice = ConvertToNumber(txtOriginPrice.Text);
+                long price = ConvertToNumber(this.txtPrice.Text);
+                long originPrice = ConvertToNumber(txtOriginPrice.Text);
 
-                DrinkDAL.Instance.AddDrink(name, price, category, img, originPrice, 0);
+                DrinkDAL.Instance.AddDrink(name, price, category, img, originPrice);
                 this.Close();
 
                 if (onAdd != null)
@@ -327,8 +327,8 @@ namespace MilkTeaHouseProject
 
             int id = int.Parse(this.txtID.Text);
             string name = this.txtNameDrink.Text;
-            int price = ConvertToNumber(this.txtPrice.Text);
-            int OriginPrice = ConvertToNumber(this.txtOriginPrice.Text);
+            long price = ConvertToNumber(this.txtPrice.Text);
+            long OriginPrice = ConvertToNumber(this.txtOriginPrice.Text);
 
             DrinkDAL.Instance.EditDrink(id, name, price, category, img, OriginPrice);
             this.Close();
