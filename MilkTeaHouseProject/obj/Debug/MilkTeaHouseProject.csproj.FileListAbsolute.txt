@@ -1358,3 +1358,268 @@ C:\Users\Asus\Desktop\Tan\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.
 C:\Users\Asus\Desktop\Tan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\Asus\Desktop\Tan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\Tan\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\TheAnh\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe.config
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelDataReader.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\expertxls.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\System.IO.Packaging.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ClosedXML.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ClosedXML.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelDataReader.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelDataReader.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\ExcelNumberFormat.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\expertxls.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAccount.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddDrink.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddStaff.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fAddTable.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fBill.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fDelCategory.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fInvoice.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fLogin.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMain.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fMenu.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fOrder.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSetSalary.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fSignUp.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fStaff.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.fViewProfile.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.ItemInBill.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MakeABill.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.MenuItem.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.Properties.Resources.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.RevenueReport.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffItem.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.StaffReport.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DTO.TableItem.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinkItem.dje.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.GenerateResource.cache
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CoreCompileInputs.cache
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fDelRoom.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fRoomTable.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master 2\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fSwapTable.resources

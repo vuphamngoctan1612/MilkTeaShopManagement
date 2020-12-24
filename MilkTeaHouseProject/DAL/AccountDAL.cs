@@ -81,7 +81,16 @@ namespace MilkTeaShopManagement.DAL
                 return false;
             }
         }
-
+        public bool IsExistAccount(string username)
+        {
+            string query = string.Format("SELECT * FROM Account WHERE USERNAME = '{0}'", username);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
         public bool signUpAdmin(string username, string password)
         {
             password = Encryptor.Instance.Encrypt(password);

@@ -18,6 +18,9 @@ namespace MilkTeaHouseProject
         {
             InitializeComponent();
 
+            DropShadow dr = new DropShadow();
+            dr.ApplyShadows(this);
+
             txtUser.Text = username;
             this.StartPosition = FormStartPosition.CenterScreen;
         }

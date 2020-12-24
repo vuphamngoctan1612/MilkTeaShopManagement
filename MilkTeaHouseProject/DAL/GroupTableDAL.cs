@@ -40,8 +40,10 @@ namespace MilkTeaHouseProject.DAL
             DataProvider.Instance.ExecuteNonQuery("insert into GroupTable values ( N'" + name + "')");
         }
 
-        public void DeleteCategory(string name)
+        public void DeleteGroup(string name)
         {
+            DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM TABLEFOOD WHERE NAMEGROUP = '{0}'", name));
+
             DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM GroupTable WHERE NAME = '{0}'", name));
         }
 

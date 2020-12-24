@@ -56,10 +56,12 @@ namespace MilkTeaHouseProject
         public Guna.UI.WinForms.GunaLineTextBox TxtCount { get => this.txtCount; set => this.txtCount = value; }
         public Guna.UI.WinForms.GunaButton BtnAdd { get => this.btnAdd; set => this.btnAdd = value; }
         public Guna.UI.WinForms.GunaButton BtnShowAddCount { get => this.btnShowAddCount; set => this.btnShowAddCount = value; }
+        public string UserName { get; set; }
 
-        public MenuItem(int id, string name, int price, string category, byte[] image, bool setcolor, int origin, int count)
+        public MenuItem(int id, string name, long price, string category, byte[] image, bool setcolor, long origin, int count, string username)
         {
             InitializeComponent();
+            this.UserName = username;
 
             this.lbId.Text = this.IDShow.Text = id.ToString();
             this.lbName.Text = this.NameShow.Text = name;
@@ -202,10 +204,12 @@ namespace MilkTeaHouseProject
                     count = int.Parse(this.txtCount.Text);
                 }
 
-                total = count * (ConvertToNumber(lbPrice.Text) - ConvertToNumber(lbOriginPrice.Text)) * (-1);
+                total = count * ConvertToNumber(lbOriginPrice.Text) * (-1);
                 DrinkDAL.Instance.SetCountbyID(int.Parse(ID), count);
                 if (count != 0)
-                    BillDAL.Instance.MakeBillforUpdateCountDrink(NAME, count, total);
+                {
+                    BillDAL.Instance.MakeBillforUpdateCountDrink(NAME, count, total, UserName);
+                }
                 count += int.Parse(lbCount.Text);
                 this.lbCount.Text = this.Count.Text = count.ToString();
                 this.txtCount.Visible = false;
@@ -215,7 +219,6 @@ namespace MilkTeaHouseProject
             catch (SqlException)
             {
                 this.errorShow.Visible = true;
-                //this.errorShow.Location = new Point(txtCount.Location.X, txtCount.Location.Y + txtCount.Height);
                 errorShow.Text = "Số lượng quá lớn";
             }
         }

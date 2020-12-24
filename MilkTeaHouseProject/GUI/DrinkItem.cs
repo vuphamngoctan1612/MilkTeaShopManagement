@@ -33,7 +33,7 @@ namespace MilkTeaHouseProject
             get { return this.NameDrink; }
         }
 
-        public DrinkItem(string name, int price, byte[] image, string category)
+        public DrinkItem(string name, long price, byte[] image, string category)
         {
             InitializeComponent();
 

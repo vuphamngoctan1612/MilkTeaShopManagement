@@ -17,11 +17,16 @@ namespace MilkTeaHouseProject
 {
     public partial class StaffItem : UserControl
     {
+        public string NAME { get => this.lbName.Text; }
+        public long OVERTIME { get => this.numericUpDownOverTime.Value; set => this.numericUpDownOverTime.Value = value; }
+        public long FAULT { get => this.numericFault.Value; set => this.numericFault.Value = value; }
+        public string SALARYRECEIVED { get => this.lbSalary.Text; set => this.lbSalary.Text = value; }
+        public string POSITION { get => this.lbPosition.Text; set => this.lbPosition.Text = value; }
         public StaffItem()
         {
             InitializeComponent();
         }
-        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, int salaryReceived, bool sex, string cmnd, string phone, string address, bool setcolor)
+        public StaffItem(int id, string name, byte[] image, DateTime birthdate, string position, string userName, int overtime, int fault, long salaryReceived, bool sex, string cmnd, string phone, string address, bool setcolor)
         {
             InitializeComponent();
             this.lbID.Text = id.ToString();
@@ -36,7 +41,7 @@ namespace MilkTeaHouseProject
             this.AddressShow.Text = address;
             this.CMNDShow.Text = cmnd;
 
-            if (sex == true)
+            if (sex)
             {
                 this.SexShow.Text = "Nam";
             }
@@ -56,7 +61,7 @@ namespace MilkTeaHouseProject
                 picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            if (position == "Quản lí")
+            if (position.ToUpper() == "QUẢN LÝ")
             {
                 this.btEdit.Visible = false;
                 this.btDel.Visible = false;
@@ -89,7 +94,7 @@ namespace MilkTeaHouseProject
             lbID.Location = new Point(130, 20);
             lbName.Location = new Point((int)(space * 1.7), 20);
             lbPosition.Location = new Point((int)(space * 3.2), 20);
-            lbUserName.Location = new Point((int)(space * 4.2), 1205);
+            lbUserName.Location = new Point((int)(space * 4.2), 20);
             numericUpDownOverTime.Location = new Point((int)(space * 5.5), 20);
             numericFault.Location = new Point((int)(space * 6.5), 20);
             lbSalary.Location = new Point((int)(space * 7.2), 20);
@@ -119,8 +124,8 @@ namespace MilkTeaHouseProject
         {
             int id = int.Parse(this.lbID.Text);
             int overtime = int.Parse(this.numericUpDownOverTime.Value.ToString());
-
             StaffDAL.Instance.UpdateOverTime(id, overtime);
+            this.UpdateSalaryReceived();
 
             if (onOverTimeValueChanged != null)
             {
@@ -132,8 +137,8 @@ namespace MilkTeaHouseProject
         {
             int id = int.Parse(this.lbID.Text);
             int fault = (int)this.numericFault.Value;
-
             StaffDAL.Instance.UpdateFault(id, fault);
+            this.UpdateSalaryReceived();
 
             if (onFaultChanged != null)
             {
@@ -169,6 +174,51 @@ namespace MilkTeaHouseProject
             this.gunaSeparator1.Visible = false;
 
             SizeLoad();
+        }
+        public void UpdateStaffItem(int id)
+        {
+            Staff staff = StaffDAL.Instance.GetStaffById(id);
+
+            this.lbID.Text = staff.ID.ToString();
+            this.lbName.Text = NameShow.Text = staff.Name.ToString();
+            this.BirthShow.Text = staff.BirthDate.ToString();
+            this.lbPosition.Text = PosShow.Text = staff.Position;
+            this.lbUserName.Text = staff.UserName;
+            this.lbSalary.Text = string.Format("{0:n0}", staff.SalaryReceived).ToString();
+            this.PhoneShow.Text = staff.PhoneNumber;
+            this.AddressShow.Text = staff.Address;
+            this.CMNDShow.Text = staff.CMND;
+            if (staff.Image == null)
+            {
+                this.picStaff.Image = null;
+                this.gunaPictureBox1.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(staff.Image);
+                picStaff.Image = Image.FromStream(mstream);
+                picStaff.SizeMode = PictureBoxSizeMode.StretchImage;
+                gunaPictureBox1.Image = Image.FromStream(mstream);
+
+            }
+        }
+        public void UpdateSalaryReceived()
+        {
+            List<Position> positions = PositionDAL.Instance.GetListPosistion();
+            int id = int.Parse(this.lbID.Text);
+            string pos = this.lbPosition.Text;
+            Staff staff = StaffDAL.Instance.GetStaffById(id);
+
+            foreach (Position position in positions)
+            {
+                if (position.Name == pos)
+                {
+                    long salaryReceived = 0;
+                    salaryReceived = position.Salary + staff.OverTime * position.OverTimeSalary - staff.Fault * position.MinusSalary;
+                    StaffDAL.Instance.UpdateSalaryReceived(staff.ID, salaryReceived);
+                    this.lbSalary.Text = string.Format("{0:n0}", salaryReceived).ToString();
+                }
+            }
         }
     }
 }

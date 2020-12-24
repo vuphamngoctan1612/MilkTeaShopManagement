@@ -51,11 +51,21 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            try
+            //try
             {
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    if (Login(username, password))
+                    if (string.IsNullOrEmpty(txtUser.Text))
+                    {
+                        txtUser.Focus();
+                        ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
+                    } 
+                    else if (string.IsNullOrEmpty(txtPass.Text))
+                    {
+                        txtPass.Focus();
+                        ShowError(txtPass, "Vui lòng nhập mật khẩu");
+                    }
+                    else if (Login(username, password))
                     {
                         fMain f = new fMain(username);
                         this.Hide();
@@ -63,12 +73,16 @@ namespace MilkTeaHouseProject
                         this.Show();
                         this.txtUser.Text = this.txtPass.Text = "";
                     }
+                    else
+                    {
+                        ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
+                    }
                 }
             }
-            catch
-            {
-
-            }
+            //catch
+            //{
+            //    MessageBox.Show("fsdfaf");
+            //}
         }
 
         private void lbSignup_Click(object sender, EventArgs e)
@@ -111,7 +125,6 @@ namespace MilkTeaHouseProject
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
-                this.btnLogin_Click(sender, e);
             }
 
             if (e.KeyChar == (char)Keys.Space)
@@ -131,22 +144,22 @@ namespace MilkTeaHouseProject
 
         private void txtPass_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPass.Text))
-            {
-                txtPass.Focus();
-                ShowError(txtPass, "Vui lòng nhập mật khẩu");
-            }
+            //if (string.IsNullOrEmpty(txtPass.Text))
+            //{
+            //    txtPass.Focus();
+            //    ShowError(txtPass, "Vui lòng nhập mật khẩu");
+            //}
         }
 
         private void btnLogin_Validating(object sender, CancelEventArgs e)
         {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
+            //string username = this.txtUser.Text;
+            //string password = this.txtPass.Text;
 
-            if (!Login(username, password))
-            {
-                ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
-            }
+            //if (!Login(username, password))
+            //{
+            //    ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
+            //}
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
@@ -164,8 +177,14 @@ namespace MilkTeaHouseProject
                 errorShow.Visible = false;
             }
         }
+
+        private void btnShowPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnShowPass_Click(sender, e);
+            }
+        }
         #endregion
-
-
     }
 }

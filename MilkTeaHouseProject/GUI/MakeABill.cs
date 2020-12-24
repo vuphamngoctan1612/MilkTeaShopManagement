@@ -15,6 +15,9 @@ namespace MilkTeaHouseProject
     public partial class MakeABill : Form
     {
         private string username;
+
+        public string Note { get => this.txtNote.Text; set => this.txtNote.Text = value; }
+
         public MakeABill(string username)
         {
             InitializeComponent();
@@ -63,12 +66,18 @@ namespace MilkTeaHouseProject
         }
         #endregion
 
+        public event EventHandler onAdd = null;
+
         #region Event
         private void gunaLineTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnAdd_Click(sender, e);
             }
         }
 
@@ -93,6 +102,11 @@ namespace MilkTeaHouseProject
             {
                 BillDAL.Instance.MakeABill(idStaff, txtNote.Text, CovertToNumber(txtTotal.Text) * -1);
                 this.Close();
+            }
+
+            if (onAdd != null)
+            {
+                onAdd.Invoke(this, new EventArgs());
             }
         }
 

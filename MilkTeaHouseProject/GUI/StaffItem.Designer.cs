@@ -39,6 +39,13 @@ namespace MilkTeaHouseProject
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.lbID = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaSeparator8 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator7 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator6 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator5 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator4 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator3 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.btDel = new Guna.UI.WinForms.GunaButton();
             this.btEdit = new Guna.UI.WinForms.GunaButton();
@@ -57,13 +64,6 @@ namespace MilkTeaHouseProject
             this.Namelb = new Guna.UI.WinForms.GunaLabel();
             this.AddressShow = new Guna.UI.WinForms.GunaLabel();
             this.BirthDate = new Guna.UI.WinForms.GunaLabel();
-            this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaSeparator3 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaSeparator4 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaSeparator5 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaSeparator6 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaSeparator7 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaSeparator8 = new Guna.UI.WinForms.GunaSeparator();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaff)).BeginInit();
             this.panel1.SuspendLayout();
@@ -95,13 +95,13 @@ namespace MilkTeaHouseProject
             this.numericFault.ButtonForeColor = System.Drawing.Color.White;
             this.numericFault.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericFault.ForeColor = System.Drawing.Color.Black;
-            this.numericFault.Location = new System.Drawing.Point(1375, 25);
-            this.numericFault.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numericFault.Location = new System.Drawing.Point(1376, 26);
+            this.numericFault.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericFault.Maximum = ((long)(9999999));
             this.numericFault.Minimum = ((long)(0));
             this.numericFault.Name = "numericFault";
-            this.numericFault.Size = new System.Drawing.Size(88, 30);
-            this.numericFault.TabIndex = 27;
+            this.numericFault.Size = new System.Drawing.Size(90, 30);
+            this.numericFault.TabIndex = 1;
             this.numericFault.Value = ((long)(0));
             this.numericFault.ValueChanged += new System.EventHandler(this.numericFault_ValueChanged);
             // 
@@ -114,12 +114,12 @@ namespace MilkTeaHouseProject
             this.numericUpDownOverTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownOverTime.ForeColor = System.Drawing.Color.Black;
             this.numericUpDownOverTime.Location = new System.Drawing.Point(1250, 26);
-            this.numericUpDownOverTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numericUpDownOverTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDownOverTime.Maximum = ((long)(9999999));
             this.numericUpDownOverTime.Minimum = ((long)(0));
             this.numericUpDownOverTime.Name = "numericUpDownOverTime";
-            this.numericUpDownOverTime.Size = new System.Drawing.Size(88, 30);
-            this.numericUpDownOverTime.TabIndex = 26;
+            this.numericUpDownOverTime.Size = new System.Drawing.Size(90, 30);
+            this.numericUpDownOverTime.TabIndex = 0;
             this.numericUpDownOverTime.Text = "gunaNumeric1";
             this.numericUpDownOverTime.Value = ((long)(0));
             this.numericUpDownOverTime.ValueChanged += new System.EventHandler(this.numericUpDownOverTime_ValueChanged);
@@ -128,10 +128,10 @@ namespace MilkTeaHouseProject
             // 
             this.picStaff.BaseColor = System.Drawing.Color.White;
             this.picStaff.Enabled = false;
-            this.picStaff.Location = new System.Drawing.Point(122, 5);
-            this.picStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picStaff.Location = new System.Drawing.Point(122, 4);
+            this.picStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picStaff.Name = "picStaff";
-            this.picStaff.Size = new System.Drawing.Size(68, 61);
+            this.picStaff.Size = new System.Drawing.Size(68, 62);
             this.picStaff.TabIndex = 25;
             this.picStaff.TabStop = false;
             // 
@@ -150,7 +150,7 @@ namespace MilkTeaHouseProject
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbUserName.Location = new System.Drawing.Point(1057, 25);
+            this.lbUserName.Location = new System.Drawing.Point(1058, 26);
             this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(156, 30);
@@ -161,7 +161,7 @@ namespace MilkTeaHouseProject
             // 
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbPosition.Location = new System.Drawing.Point(959, 25);
+            this.lbPosition.Location = new System.Drawing.Point(958, 26);
             this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
             this.lbPosition.Size = new System.Drawing.Size(58, 30);
@@ -172,7 +172,7 @@ namespace MilkTeaHouseProject
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbName.Location = new System.Drawing.Point(557, 15);
+            this.lbName.Location = new System.Drawing.Point(556, 15);
             this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(146, 30);
@@ -183,7 +183,7 @@ namespace MilkTeaHouseProject
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbID.Location = new System.Drawing.Point(335, 26);
+            this.lbID.Location = new System.Drawing.Point(334, 26);
             this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(143, 30);
@@ -224,6 +224,62 @@ namespace MilkTeaHouseProject
             this.panel1.TabIndex = 23;
             this.panel1.Click += new System.EventHandler(this.StaffItem_Click);
             // 
+            // gunaSeparator8
+            // 
+            this.gunaSeparator8.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator8.Location = new System.Drawing.Point(912, 74);
+            this.gunaSeparator8.Name = "gunaSeparator8";
+            this.gunaSeparator8.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator8.TabIndex = 28;
+            // 
+            // gunaSeparator7
+            // 
+            this.gunaSeparator7.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator7.Location = new System.Drawing.Point(912, 176);
+            this.gunaSeparator7.Name = "gunaSeparator7";
+            this.gunaSeparator7.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator7.TabIndex = 28;
+            // 
+            // gunaSeparator6
+            // 
+            this.gunaSeparator6.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator6.Location = new System.Drawing.Point(914, 231);
+            this.gunaSeparator6.Name = "gunaSeparator6";
+            this.gunaSeparator6.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator6.TabIndex = 28;
+            // 
+            // gunaSeparator5
+            // 
+            this.gunaSeparator5.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator5.Location = new System.Drawing.Point(456, 231);
+            this.gunaSeparator5.Name = "gunaSeparator5";
+            this.gunaSeparator5.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator5.TabIndex = 28;
+            // 
+            // gunaSeparator4
+            // 
+            this.gunaSeparator4.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator4.Location = new System.Drawing.Point(456, 176);
+            this.gunaSeparator4.Name = "gunaSeparator4";
+            this.gunaSeparator4.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator4.TabIndex = 28;
+            // 
+            // gunaSeparator3
+            // 
+            this.gunaSeparator3.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator3.Location = new System.Drawing.Point(456, 126);
+            this.gunaSeparator3.Name = "gunaSeparator3";
+            this.gunaSeparator3.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator3.TabIndex = 28;
+            // 
+            // gunaSeparator2
+            // 
+            this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator2.Location = new System.Drawing.Point(456, 74);
+            this.gunaSeparator2.Name = "gunaSeparator2";
+            this.gunaSeparator2.Size = new System.Drawing.Size(336, 10);
+            this.gunaSeparator2.TabIndex = 28;
+            // 
             // gunaSeparator1
             // 
             this.gunaSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -248,7 +304,7 @@ namespace MilkTeaHouseProject
             this.btDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btDel.ImageSize = new System.Drawing.Size(20, 20);
             this.btDel.Location = new System.Drawing.Point(1112, 262);
-            this.btDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btDel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btDel.Name = "btDel";
             this.btDel.OnHoverBaseColor = System.Drawing.Color.Red;
             this.btDel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -257,7 +313,7 @@ namespace MilkTeaHouseProject
             this.btDel.OnPressedColor = System.Drawing.Color.Black;
             this.btDel.Radius = 10;
             this.btDel.Size = new System.Drawing.Size(177, 38);
-            this.btDel.TabIndex = 26;
+            this.btDel.TabIndex = 3;
             this.btDel.Text = "Xóa";
             this.btDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
@@ -277,7 +333,7 @@ namespace MilkTeaHouseProject
             this.btEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.ImageSize = new System.Drawing.Size(20, 20);
             this.btEdit.Location = new System.Drawing.Point(912, 262);
-            this.btEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btEdit.Name = "btEdit";
             this.btEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btEdit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -286,7 +342,7 @@ namespace MilkTeaHouseProject
             this.btEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btEdit.Radius = 10;
             this.btEdit.Size = new System.Drawing.Size(177, 38);
-            this.btEdit.TabIndex = 25;
+            this.btEdit.TabIndex = 2;
             this.btEdit.Text = "Cập nhật";
             this.btEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
@@ -295,7 +351,7 @@ namespace MilkTeaHouseProject
             // 
             this.Phone.AutoSize = true;
             this.Phone.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.Phone.Location = new System.Drawing.Point(908, 143);
+            this.Phone.Location = new System.Drawing.Point(908, 142);
             this.Phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(57, 30);
@@ -306,7 +362,7 @@ namespace MilkTeaHouseProject
             // 
             this.Address.AutoSize = true;
             this.Address.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.Address.Location = new System.Drawing.Point(908, 41);
+            this.Address.Location = new System.Drawing.Point(908, 40);
             this.Address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(82, 30);
@@ -317,10 +373,10 @@ namespace MilkTeaHouseProject
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Enabled = false;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(70, 41);
-            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(70, 40);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(213, 187);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(213, 188);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 17;
             this.gunaPictureBox1.TabStop = false;
@@ -329,7 +385,7 @@ namespace MilkTeaHouseProject
             // 
             this.CMND.AutoSize = true;
             this.CMND.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CMND.Location = new System.Drawing.Point(451, 198);
+            this.CMND.Location = new System.Drawing.Point(452, 198);
             this.CMND.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CMND.Name = "CMND";
             this.CMND.Size = new System.Drawing.Size(83, 30);
@@ -340,7 +396,7 @@ namespace MilkTeaHouseProject
             // 
             this.Sex.AutoSize = true;
             this.Sex.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.Sex.Location = new System.Drawing.Point(451, 143);
+            this.Sex.Location = new System.Drawing.Point(452, 142);
             this.Sex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Sex.Name = "Sex";
             this.Sex.Size = new System.Drawing.Size(98, 30);
@@ -362,7 +418,7 @@ namespace MilkTeaHouseProject
             // 
             this.SexShow.AutoSize = true;
             this.SexShow.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.SexShow.Location = new System.Drawing.Point(608, 143);
+            this.SexShow.Location = new System.Drawing.Point(608, 142);
             this.SexShow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SexShow.Name = "SexShow";
             this.SexShow.Size = new System.Drawing.Size(113, 30);
@@ -384,7 +440,7 @@ namespace MilkTeaHouseProject
             // 
             this.NameShow.AutoSize = true;
             this.NameShow.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.NameShow.Location = new System.Drawing.Point(608, 41);
+            this.NameShow.Location = new System.Drawing.Point(608, 40);
             this.NameShow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameShow.Name = "NameShow";
             this.NameShow.Size = new System.Drawing.Size(113, 30);
@@ -417,7 +473,7 @@ namespace MilkTeaHouseProject
             // 
             this.PhoneShow.AutoSize = true;
             this.PhoneShow.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.PhoneShow.Location = new System.Drawing.Point(1038, 143);
+            this.PhoneShow.Location = new System.Drawing.Point(1038, 142);
             this.PhoneShow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneShow.Name = "PhoneShow";
             this.PhoneShow.Size = new System.Drawing.Size(113, 30);
@@ -428,7 +484,7 @@ namespace MilkTeaHouseProject
             // 
             this.Namelb.AutoSize = true;
             this.Namelb.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.Namelb.Location = new System.Drawing.Point(451, 41);
+            this.Namelb.Location = new System.Drawing.Point(452, 40);
             this.Namelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Namelb.Name = "Namelb";
             this.Namelb.Size = new System.Drawing.Size(84, 30);
@@ -440,7 +496,7 @@ namespace MilkTeaHouseProject
             this.AddressShow.AllowDrop = true;
             this.AddressShow.AutoSize = true;
             this.AddressShow.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.AddressShow.Location = new System.Drawing.Point(1038, 41);
+            this.AddressShow.Location = new System.Drawing.Point(1038, 40);
             this.AddressShow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddressShow.Name = "AddressShow";
             this.AddressShow.Size = new System.Drawing.Size(113, 30);
@@ -451,68 +507,12 @@ namespace MilkTeaHouseProject
             // 
             this.BirthDate.AutoSize = true;
             this.BirthDate.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.BirthDate.Location = new System.Drawing.Point(451, 93);
+            this.BirthDate.Location = new System.Drawing.Point(452, 93);
             this.BirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BirthDate.Name = "BirthDate";
             this.BirthDate.Size = new System.Drawing.Size(113, 30);
             this.BirthDate.TabIndex = 24;
             this.BirthDate.Text = "Ngày sinh:";
-            // 
-            // gunaSeparator2
-            // 
-            this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator2.Location = new System.Drawing.Point(456, 74);
-            this.gunaSeparator2.Name = "gunaSeparator2";
-            this.gunaSeparator2.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator2.TabIndex = 28;
-            // 
-            // gunaSeparator3
-            // 
-            this.gunaSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator3.Location = new System.Drawing.Point(456, 126);
-            this.gunaSeparator3.Name = "gunaSeparator3";
-            this.gunaSeparator3.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator3.TabIndex = 28;
-            // 
-            // gunaSeparator4
-            // 
-            this.gunaSeparator4.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator4.Location = new System.Drawing.Point(456, 176);
-            this.gunaSeparator4.Name = "gunaSeparator4";
-            this.gunaSeparator4.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator4.TabIndex = 28;
-            // 
-            // gunaSeparator5
-            // 
-            this.gunaSeparator5.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator5.Location = new System.Drawing.Point(456, 231);
-            this.gunaSeparator5.Name = "gunaSeparator5";
-            this.gunaSeparator5.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator5.TabIndex = 28;
-            // 
-            // gunaSeparator6
-            // 
-            this.gunaSeparator6.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator6.Location = new System.Drawing.Point(913, 231);
-            this.gunaSeparator6.Name = "gunaSeparator6";
-            this.gunaSeparator6.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator6.TabIndex = 28;
-            // 
-            // gunaSeparator7
-            // 
-            this.gunaSeparator7.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator7.Location = new System.Drawing.Point(912, 176);
-            this.gunaSeparator7.Name = "gunaSeparator7";
-            this.gunaSeparator7.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator7.TabIndex = 28;
-            // 
-            // gunaSeparator8
-            // 
-            this.gunaSeparator8.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator8.Location = new System.Drawing.Point(912, 74);
-            this.gunaSeparator8.Name = "gunaSeparator8";
-            this.gunaSeparator8.Size = new System.Drawing.Size(336, 10);
-            this.gunaSeparator8.TabIndex = 28;
             // 
             // StaffItem
             // 
