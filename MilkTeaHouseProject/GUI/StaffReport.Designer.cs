@@ -130,14 +130,14 @@
             this.cbbTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTime.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTime.ForeColor = System.Drawing.Color.Black;
             this.cbbTime.FormattingEnabled = true;
             this.cbbTime.Location = new System.Drawing.Point(806, 64);
             this.cbbTime.Name = "cbbTime";
             this.cbbTime.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbTime.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbTime.Size = new System.Drawing.Size(160, 31);
+            this.cbbTime.Size = new System.Drawing.Size(160, 32);
             this.cbbTime.TabIndex = 5;
             this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
             // 

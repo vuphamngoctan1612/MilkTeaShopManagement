@@ -45,10 +45,12 @@ namespace MilkTeaHouseProject.DTO
 
         private void TableItem_Load(object sender, EventArgs e)
         {
-
             this.btnChoose.Size = this.Size;
             this.lbName.Location = new Point((this.Width - lbName.Width) / 2, lbName.Location.Y);
             this.lbName.ForeColor = Color.Black;
+
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
         }
 
         public void ChangeBackcolor()

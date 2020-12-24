@@ -73,7 +73,7 @@
             this.cbbCount_or_Revenue.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbCount_or_Revenue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCount_or_Revenue.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbCount_or_Revenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbCount_or_Revenue.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbCount_or_Revenue.ForeColor = System.Drawing.Color.Black;
             this.cbbCount_or_Revenue.FormattingEnabled = true;
             this.cbbCount_or_Revenue.Items.AddRange(new object[] {
@@ -83,7 +83,7 @@
             this.cbbCount_or_Revenue.Name = "cbbCount_or_Revenue";
             this.cbbCount_or_Revenue.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbCount_or_Revenue.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbCount_or_Revenue.Size = new System.Drawing.Size(282, 35);
+            this.cbbCount_or_Revenue.Size = new System.Drawing.Size(282, 32);
             this.cbbCount_or_Revenue.TabIndex = 5;
             this.cbbCount_or_Revenue.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
             // 
@@ -121,14 +121,14 @@
             this.cbbTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTime.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTime.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTime.ForeColor = System.Drawing.Color.Black;
             this.cbbTime.FormattingEnabled = true;
             this.cbbTime.Location = new System.Drawing.Point(911, 70);
             this.cbbTime.Name = "cbbTime";
             this.cbbTime.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbTime.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbTime.Size = new System.Drawing.Size(178, 31);
+            this.cbbTime.Size = new System.Drawing.Size(178, 32);
             this.cbbTime.TabIndex = 5;
             this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
             // 

@@ -111,7 +111,7 @@ namespace MilkTeaHouseProject
         }
         #endregion
 
-        #region event
+        #region Event
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string username = this.cbbUser.Text;
@@ -364,7 +364,6 @@ namespace MilkTeaHouseProject
         {
             this.errorShow.Visible = false;
         }
-        #endregion
 
         private void btnAddUserName_Click(object sender, EventArgs e)
         {
@@ -388,17 +387,21 @@ namespace MilkTeaHouseProject
         {
             this.cbMan.Checked = false;
         }
+
         public void ActivebtnEdit()
         {
             this.btEdit.Visible = true;
         }
+
         public void ActivebtnAdd()
         {
             this.btnAdd.Visible = true;
         }
+
         public void UpdatelbNameForm(string newNameForm)
         {
             this.lbNameForm.Text = newNameForm;
         }
+        #endregion
     }
 }

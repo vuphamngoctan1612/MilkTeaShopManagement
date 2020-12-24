@@ -42,7 +42,6 @@ namespace MilkTeaHouseProject.GUI
             this.btnSwapTable = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAddTable = new Guna.UI.WinForms.GunaAdvenceButton();
             this.flowLayoutPanelGroup = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.flowLayoutPanelTable = new System.Windows.Forms.FlowLayoutPanel();
             this.pnBtn.SuspendLayout();
             this.pnSearch.SuspendLayout();
@@ -50,7 +49,7 @@ namespace MilkTeaHouseProject.GUI
             // 
             // pnBtn
             // 
-            this.pnBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnBtn.Controls.Add(this.gunaSeparator2);
             this.pnBtn.Controls.Add(this.lbIDTable);
             this.pnBtn.Controls.Add(this.pnSearch);
@@ -62,24 +61,26 @@ namespace MilkTeaHouseProject.GUI
             this.pnBtn.Location = new System.Drawing.Point(0, 0);
             this.pnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(1326, 79);
+            this.pnBtn.Size = new System.Drawing.Size(1105, 66);
             this.pnBtn.TabIndex = 3;
             // 
             // gunaSeparator2
             // 
             this.gunaSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator2.Location = new System.Drawing.Point(0, 69);
+            this.gunaSeparator2.Location = new System.Drawing.Point(0, 58);
+            this.gunaSeparator2.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator2.Name = "gunaSeparator2";
-            this.gunaSeparator2.Size = new System.Drawing.Size(962, 10);
+            this.gunaSeparator2.Size = new System.Drawing.Size(802, 8);
             this.gunaSeparator2.TabIndex = 15;
             // 
             // lbIDTable
             // 
             this.lbIDTable.AutoSize = true;
-            this.lbIDTable.Location = new System.Drawing.Point(900, 40);
+            this.lbIDTable.Location = new System.Drawing.Point(750, 33);
+            this.lbIDTable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbIDTable.Name = "lbIDTable";
-            this.lbIDTable.Size = new System.Drawing.Size(51, 20);
+            this.lbIDTable.Size = new System.Drawing.Size(46, 17);
             this.lbIDTable.TabIndex = 12;
             this.lbIDTable.Text = "label1";
             this.lbIDTable.Visible = false;
@@ -90,19 +91,20 @@ namespace MilkTeaHouseProject.GUI
             this.pnSearch.Controls.Add(this.btnSearch);
             this.pnSearch.Controls.Add(this.txtSearch);
             this.pnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSearch.Location = new System.Drawing.Point(962, 0);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.pnSearch.Location = new System.Drawing.Point(802, 0);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(364, 79);
+            this.pnSearch.Size = new System.Drawing.Size(303, 66);
             this.pnSearch.TabIndex = 11;
             // 
             // gunaSeparator3
             // 
             this.gunaSeparator3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator3.Location = new System.Drawing.Point(0, 69);
+            this.gunaSeparator3.Location = new System.Drawing.Point(0, 58);
+            this.gunaSeparator3.Margin = new System.Windows.Forms.Padding(2);
             this.gunaSeparator3.Name = "gunaSeparator3";
-            this.gunaSeparator3.Size = new System.Drawing.Size(364, 10);
+            this.gunaSeparator3.Size = new System.Drawing.Size(303, 8);
             this.gunaSeparator3.TabIndex = 16;
             // 
             // btnSearch
@@ -126,7 +128,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSearch.Location = new System.Drawing.Point(278, 24);
+            this.btnSearch.Location = new System.Drawing.Point(232, 20);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -135,7 +137,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnSearch.OnHoverImage = null;
             this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Size = new System.Drawing.Size(36, 32);
+            this.btnSearch.Size = new System.Drawing.Size(30, 27);
             this.btnSearch.TabIndex = 10;
             // 
             // txtSearch
@@ -149,14 +151,14 @@ namespace MilkTeaHouseProject.GUI
             this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(43, 19);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(36, 16);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 10;
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(278, 47);
+            this.txtSearch.Size = new System.Drawing.Size(232, 39);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -181,7 +183,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnDelTable.Image = null;
             this.btnDelTable.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDelTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDelTable.Location = new System.Drawing.Point(666, 19);
+            this.btnDelTable.Location = new System.Drawing.Point(555, 16);
             this.btnDelTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelTable.Name = "btnDelTable";
             this.btnDelTable.OnHoverBaseColor = System.Drawing.Color.Red;
@@ -191,7 +193,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnDelTable.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDelTable.OnPressedColor = System.Drawing.Color.Black;
             this.btnDelTable.Radius = 10;
-            this.btnDelTable.Size = new System.Drawing.Size(173, 42);
+            this.btnDelTable.Size = new System.Drawing.Size(144, 35);
             this.btnDelTable.TabIndex = 2;
             this.btnDelTable.Text = "Xóa bàn";
             this.btnDelTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -219,7 +221,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnDelRoom.Image = null;
             this.btnDelRoom.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDelRoom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDelRoom.Location = new System.Drawing.Point(250, 19);
+            this.btnDelRoom.Location = new System.Drawing.Point(208, 16);
             this.btnDelRoom.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelRoom.Name = "btnDelRoom";
             this.btnDelRoom.OnHoverBaseColor = System.Drawing.Color.Red;
@@ -229,7 +231,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnDelRoom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDelRoom.OnPressedColor = System.Drawing.Color.Black;
             this.btnDelRoom.Radius = 10;
-            this.btnDelRoom.Size = new System.Drawing.Size(173, 42);
+            this.btnDelRoom.Size = new System.Drawing.Size(144, 35);
             this.btnDelRoom.TabIndex = 2;
             this.btnDelRoom.Text = "Xóa phòng";
             this.btnDelRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -256,7 +258,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnSwapTable.Image = null;
             this.btnSwapTable.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSwapTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSwapTable.Location = new System.Drawing.Point(455, 19);
+            this.btnSwapTable.Location = new System.Drawing.Point(379, 16);
             this.btnSwapTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwapTable.Name = "btnSwapTable";
             this.btnSwapTable.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
@@ -266,7 +268,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnSwapTable.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSwapTable.OnPressedColor = System.Drawing.Color.Black;
             this.btnSwapTable.Radius = 10;
-            this.btnSwapTable.Size = new System.Drawing.Size(173, 42);
+            this.btnSwapTable.Size = new System.Drawing.Size(144, 35);
             this.btnSwapTable.TabIndex = 1;
             this.btnSwapTable.Text = "Chuyển bàn";
             this.btnSwapTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -294,7 +296,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnAddTable.Image = null;
             this.btnAddTable.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAddTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddTable.Location = new System.Drawing.Point(41, 19);
+            this.btnAddTable.Location = new System.Drawing.Point(34, 16);
             this.btnAddTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
@@ -304,7 +306,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnAddTable.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAddTable.OnPressedColor = System.Drawing.Color.Black;
             this.btnAddTable.Radius = 10;
-            this.btnAddTable.Size = new System.Drawing.Size(173, 42);
+            this.btnAddTable.Size = new System.Drawing.Size(144, 35);
             this.btnAddTable.TabIndex = 1;
             this.btnAddTable.Text = "Thêm bàn";
             this.btnAddTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -315,43 +317,36 @@ namespace MilkTeaHouseProject.GUI
             this.flowLayoutPanelGroup.AutoScroll = true;
             this.flowLayoutPanelGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(252)))));
             this.flowLayoutPanelGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanelGroup.Location = new System.Drawing.Point(0, 79);
+            this.flowLayoutPanelGroup.Location = new System.Drawing.Point(0, 66);
+            this.flowLayoutPanelGroup.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelGroup.Name = "flowLayoutPanelGroup";
-            this.flowLayoutPanelGroup.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.flowLayoutPanelGroup.Size = new System.Drawing.Size(1326, 42);
+            this.flowLayoutPanelGroup.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.flowLayoutPanelGroup.Size = new System.Drawing.Size(1105, 35);
             this.flowLayoutPanelGroup.TabIndex = 4;
-            // 
-            // gunaSeparator1
-            // 
-            this.gunaSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(0, 121);
-            this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(1326, 10);
-            this.gunaSeparator1.TabIndex = 5;
             // 
             // flowLayoutPanelTable
             // 
             this.flowLayoutPanelTable.AutoScroll = true;
+            this.flowLayoutPanelTable.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.flowLayoutPanelTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelTable.Location = new System.Drawing.Point(0, 131);
-            this.flowLayoutPanelTable.Margin = new System.Windows.Forms.Padding(9);
+            this.flowLayoutPanelTable.Location = new System.Drawing.Point(0, 101);
+            this.flowLayoutPanelTable.Margin = new System.Windows.Forms.Padding(7);
             this.flowLayoutPanelTable.Name = "flowLayoutPanelTable";
-            this.flowLayoutPanelTable.Padding = new System.Windows.Forms.Padding(9);
-            this.flowLayoutPanelTable.Size = new System.Drawing.Size(1326, 722);
+            this.flowLayoutPanelTable.Padding = new System.Windows.Forms.Padding(7);
+            this.flowLayoutPanelTable.Size = new System.Drawing.Size(1105, 610);
             this.flowLayoutPanelTable.TabIndex = 6;
             // 
             // fRoomTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1326, 853);
+            this.ClientSize = new System.Drawing.Size(1105, 711);
             this.Controls.Add(this.flowLayoutPanelTable);
-            this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.flowLayoutPanelGroup);
             this.Controls.Add(this.pnBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fRoomTable";
             this.Text = "Phòng bàn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -374,9 +369,8 @@ namespace MilkTeaHouseProject.GUI
         private Guna.UI.WinForms.GunaAdvenceButton btnSwapTable;
         private Guna.UI.WinForms.GunaAdvenceButton btnAddTable;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelGroup;
-        private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTable;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTable;
     }
 }

@@ -185,6 +185,12 @@ namespace MilkTeaHouseProject
                 this.btnShowPass_Click(sender, e);
             }
         }
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+            DropShadow shadow = new DropShadow();
+            shadow.ApplyShadows(this);
+        }
         #endregion
     }
 }

@@ -104,6 +104,23 @@ namespace MilkTeaHouseProject
             DwmExtendFrameIntoClientArea(form.Handle, ref margins);
         }
 
+        public void ApplyShadows(UserControl form)
+        {
+            var v = 2;
+
+            DwmSetWindowAttribute(form.Handle, 2, ref v, 4);
+
+            MARGINS margins = new MARGINS()
+            {
+                bottomHeight = 1,
+                leftWidth = 0,
+                rightWidth = 0,
+                topHeight = 0
+            };
+
+            DwmExtendFrameIntoClientArea(form.Handle, ref margins);
+        }
+
         #endregion
 
         #endregion

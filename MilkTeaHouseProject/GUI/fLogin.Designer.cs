@@ -201,6 +201,7 @@
             this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtPass.LineSize = 2;
             this.txtPass.Location = new System.Drawing.Point(105, 206);
             this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
@@ -256,6 +257,7 @@
             this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtUser.LineSize = 2;
             this.txtUser.Location = new System.Drawing.Point(105, 97);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
@@ -345,6 +347,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.fLogin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnLogin.ResumeLayout(false);
