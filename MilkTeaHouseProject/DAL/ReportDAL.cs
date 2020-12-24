@@ -109,19 +109,42 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public ChartValues<int> GetRevenueByMonth(string mm, string yy)
+        public string[] GetYear()
         {
-            ChartValues<int> res = new ChartValues<int>();
+            List<string> years = new List<string>();
 
             try
             {
-                string query = string.Format("SELECT DAY(CHECKOUT) AS DAY, SUM(TOTAL) AS TOTAL FROM Bill " +
+                string query = string.Format("SELECT YEAR(BILL.CHECKOUT) AS YEAR FROM Bill " +
+                    "GROUP BY YEAR(BILL.CHECKOUT)");
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach(DataRow row in data.Rows)
+                {
+                    years.Add(row["YEAR"].ToString());
+                }
+
+                return years.ToArray();
+            }
+            catch
+            {
+                return years.ToArray();
+            }
+        }
+
+        public ChartValues<long> GetRevenueByMonth(string mm, string yy)
+        {
+            ChartValues<long> res = new ChartValues<long>();
+
+            try
+            {
+                string query = string.Format("SELECT DAY(CHECKOUT) AS DAY, (CAST(SUM(TOTAL) AS bigint)) AS TOTAL FROM Bill " +
                     "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1}  AND TOTAL > 0 " +
                     "GROUP BY DAY(CHECKOUT)", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] daysOfMonth = this.GetDayInMonth(mm, yy);
-                int[] revenue = new int[daysOfMonth.Length];
+                long[] revenue = new long[daysOfMonth.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -129,12 +152,12 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (daysOfMonth[i] == data.Rows[j]["DAY"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -142,19 +165,19 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetRevenueByYear(string yy)
+        public ChartValues<long> GetRevenueByYear(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
-                string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH, SUM(TOTAL) AS TOTAL FROM Bill " +
+                string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH, (CAST(SUM(TOTAL) AS bigint)) AS TOTAL FROM Bill " +
                     "WHERE YEAR(CHECKOUT) = {0} AND TOTAL > 0 " +
                     "GROUP BY MONTH(CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] monthsOfYear = this.GetMonthInYear(yy);
-                int[] revenue = new int[monthsOfYear.Length];
+                long[] revenue = new long[monthsOfYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -162,12 +185,12 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (monthsOfYear[i] == data.Rows[j]["MONTH"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -175,19 +198,19 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetRevenueByQuarter(string yy)
+        public ChartValues<long> GetRevenueByQuarter(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
-                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, SUM(TOTAL) AS TOTAL FROM Bill " +
+                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, (CAST(SUM(TOTAL) AS bigint)) AS TOTAL FROM Bill " +
                     "WHERE YEAR(CHECKOUT) = {0} AND TOTAL > 0 " +
                     "GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] quarterInYear = this.GetQuarterInYear(yy);
-                int[] revenue = new int[quarterInYear.Length];
+                long[] revenue = new long[quarterInYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -195,12 +218,12 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (quarterInYear[i] == data.Rows[j]["QUARTER"].ToString())
                     {
-                        revenue[i] = int.Parse(data.Rows[j]["TOTAL"].ToString());
+                        revenue[i] = long.Parse(data.Rows[j]["TOTAL"].ToString());
                         j++;
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch
@@ -209,19 +232,19 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public ChartValues<int> GetExpenseByMonth(string mm, string yy)
+        public ChartValues<long> GetExpenseByMonth(string mm, string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
-                string query = string.Format("SELECT DAY(CHECKOUT) AS DAY, SUM(TOTAL) AS TOTAL FROM Bill " +
+                string query = string.Format("SELECT DAY(CHECKOUT) AS DAY, (CAST(SUM(TOTAL) AS bigint)) AS TOTAL FROM Bill " +
                     "WHERE MONTH(CHECKOUT) = {0} AND YEAR(CHECKOUT) = {1} AND TOTAL < 0 " +
                     "GROUP BY DAY(CHECKOUT)", mm, yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] daysOfMonth = this.GetDayInMonth(mm, yy);
-                int[] expense = new int[daysOfMonth.Length];
+                long[] expense = new long[daysOfMonth.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -229,12 +252,12 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (daysOfMonth[i] == data.Rows[j]["DAY"].ToString())
                     {
-                        expense[i] = Math.Abs(int.Parse(data.Rows[j]["TOTAL"].ToString()));
+                        expense[i] = Math.Abs(long.Parse(data.Rows[j]["TOTAL"].ToString()));
                         j++;
                     }
                 }
 
-                res = new ChartValues<int>(expense);
+                res = new ChartValues<long>(expense);
                 return res;
             }
             catch
@@ -242,19 +265,19 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetExpenseByYear(string yy)
+        public ChartValues<long> GetExpenseByYear(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
-                string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH, SUM(TOTAL) AS TOTAL FROM Bill " +
+                string query = string.Format("SELECT MONTH(CHECKOUT) AS MONTH, (CAST(SUM(TOTAL) AS bigint)) AS TOTAL FROM Bill " +
                     "WHERE YEAR(CHECKOUT) = {0} AND TOTAL < 0 " +
                     "GROUP BY MONTH(CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] monthsOfYear = this.GetMonthInYear(yy);
-                int[] expense = new int[monthsOfYear.Length];
+                long[] expense = new long[monthsOfYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -262,12 +285,12 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (monthsOfYear[i] == data.Rows[j]["MONTH"].ToString())
                     {
-                        expense[i] = Math.Abs(int.Parse(data.Rows[j]["TOTAL"].ToString()));
+                        expense[i] = Math.Abs(long.Parse(data.Rows[j]["TOTAL"].ToString()));
                         j++;
                     }
                 }
 
-                res = new ChartValues<int>(expense);
+                res = new ChartValues<long>(expense);
                 return res;
             }
             catch
@@ -275,19 +298,19 @@ namespace MilkTeaHouseProject.DAL
                 return res;
             }
         }
-        public ChartValues<int> GetExpenseByQuarter(string yy)
+        public ChartValues<long> GetExpenseByQuarter(string yy)
         {
-            ChartValues<int> res = new ChartValues<int>();
+            ChartValues<long> res = new ChartValues<long>();
 
             try
             {
-                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, SUM(TOTAL) AS TOTAL FROM Bill " +
+                string query = string.Format("SELECT DATEPART(QUARTER, CHECKOUT) AS QUARTER, (CAST(SUM(TOTAL) AS bigint)) AS TOTAL FROM Bill " +
                     "WHERE YEAR(CHECKOUT) = {0} AND TOTAL < 0 " +
                     "GROUP BY DATEPART(QUARTER, CHECKOUT)", yy);
                 DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
                 string[] quarterInYear = this.GetQuarterInYear(yy);
-                int[] revenue = new int[quarterInYear.Length];
+                long[] revenue = new long[quarterInYear.Length];
                 int numOfRows = data.Rows.Count;
 
                 int j = 0;
@@ -295,12 +318,12 @@ namespace MilkTeaHouseProject.DAL
                 {
                     if (quarterInYear[i] == data.Rows[j]["QUARTER"].ToString())
                     {
-                        revenue[i] = Math.Abs(int.Parse(data.Rows[j]["TOTAL"].ToString()));
+                        revenue[i] = Math.Abs(long.Parse(data.Rows[j]["TOTAL"].ToString()));
                         j++;
                     }
                 }
 
-                res = new ChartValues<int>(revenue);
+                res = new ChartValues<long>(revenue);
                 return res;
             }
             catch

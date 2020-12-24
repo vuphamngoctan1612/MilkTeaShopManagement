@@ -58,7 +58,7 @@ namespace MilkTeaHouseProject.DAL
         {
             int id = GetMAXIDBill() + 1;
 
-            string query = string.Format("INSERT INTO TABLEFOOD VALUES({0}, N'{1}', 0, N'{2}')",id, Name, namegroup);
+            string query = string.Format("INSERT INTO TABLEFOOD VALUES({0}, N'{1}', 0, N'{2}')", id, Name, namegroup);
 
             DataProvider.Instance.ExecuteNonQuery(query);
         }
@@ -68,6 +68,13 @@ namespace MilkTeaHouseProject.DAL
             string query = string.Format("update TableFood set status = 0 where ID = {0}", id);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+        public void SetStatusBusy(int id)
+        {
+            string query = string.Format("update TableFood set status = 1 where ID = {0}", id);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
         public void AddBringtoHome()
         {
             string query = string.Format("INSERT INTO TABLEFOOD VALUES(1, N'Mang về', 0, null)");
@@ -118,6 +125,29 @@ namespace MilkTeaHouseProject.DAL
             TableFood item = new TableFood(dr);
 
             return item.NameGroup;
+        }
+
+        public int CountTableTruebyGroupTable(string nameGroup)
+        {
+            string query = string.Format("select * from tablefood where nameGroup = N'{0}' and Status = 1", nameGroup);
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            return dt.Rows.Count;
+        }
+
+        public DataTable GetNamesTablebyGroupTable(string nameGroup, string nameTable)
+        {
+            string query = string.Format("select Name from tablefood where nameGroup = N'{0}' and name <> N'{1}'", nameGroup, nameTable);
+
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetIDsTablebyGroupTable(string nameGroup, string nameTable)
+        {
+            string query = string.Format("select ID from tablefood where nameGroup = N'{0}' and name <> N'{1}'", nameGroup, nameTable);
+
+            return DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }

@@ -12,21 +12,22 @@ namespace MilkTeaShopManagement.DTO
         private int iD;
         private string name;
         private string category;
-        private int price;
+        private long price;
         private byte[] image;
         private bool status;
         private int count;
-        private int originPrice;
+        private long originPrice;
 
         public string Name { get => name; set => name = value; }
-        public int Price { get => price; set => price = value; }
+        public long Price { get => price; set => price = value; }
         public int ID { get => iD; set => iD = value; }
         public string Category { get => category; set => category = value; }
         public byte[] Image { get => image; set => image = value; }
         public bool Status { get => status; set => status = value; }
         public int Count { get => count; set => count = value; }
-        public int OriginPrice { get => originPrice; set => originPrice = value; }
-        public Drink(int id, string name, int price, string Category)
+        public long OriginPrice { get => originPrice; set => originPrice = value; }
+
+        public Drink(int id, string name, long price, string Category)
         {
             this.ID = id;
             this.Name = name;
@@ -37,13 +38,13 @@ namespace MilkTeaShopManagement.DTO
         {
             this.ID = (int)row["ID"];
             this.Name = row["Name"].ToString();
-            this.Price = (int)row["Price"];
+            this.Price = (long)row["Price"];
             this.category = row["Category"].ToString();
             if (!Convert.IsDBNull(row["Image"]))
                 this.Image = (byte[])row["Image"];
             this.Status = (bool)row["STATUS"];
             this.Count = int.Parse(row["COUNT"].ToString());
-            this.OriginPrice = int.Parse(row["originprice"].ToString());
+            this.OriginPrice = long.Parse(row["originprice"].ToString());
         }
     }
 }

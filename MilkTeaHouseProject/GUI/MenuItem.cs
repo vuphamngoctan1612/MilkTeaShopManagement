@@ -42,12 +42,12 @@ namespace MilkTeaHouseProject
             get => this.lbCount.Text;
             set => this.lbCount.Text = this.Count.Text = string.Format("{0:n0}", value).ToString();
         }
-        public int PRICE
+        public long PRICE
         {
             get => ConvertToNumber(this.Price.Text);
             set => this.lbPrice.Text = this.Price.Text = string.Format("{0:n0}", value).ToString();
         }
-        public int ORIGIN
+        public long ORIGIN
         {
             get => ConvertToNumber(this.lbOriginPrice.Text);
             set => this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", value).ToString();
@@ -58,7 +58,7 @@ namespace MilkTeaHouseProject
         public Guna.UI.WinForms.GunaButton BtnShowAddCount { get => this.btnShowAddCount; set => this.btnShowAddCount = value; }
         public string UserName { get; set; }
 
-        public MenuItem(int id, string name, int price, string category, byte[] image, bool setcolor, int origin, int count, string username)
+        public MenuItem(int id, string name, long price, string category, byte[] image, bool setcolor, long origin, int count, string username)
         {
             InitializeComponent();
             this.UserName = username;
@@ -69,7 +69,7 @@ namespace MilkTeaHouseProject
             this.lbPrice.Text = this.Price.Text = string.Format("{0:n0}", price).ToString();
             this.lbCategory.Text = this.Category.Text = category;
             this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", origin).ToString();
-            this.lbCount.Text = this.Count.Text = count.ToString();
+            this.lbCount.Text = this.Count.Text = string.Format("{0:n0}", count).ToString();
 
             if (image == null)
             {
@@ -94,6 +94,7 @@ namespace MilkTeaHouseProject
             }
             this.gunaPictureBox1.Image = this.picFood.Image;
         }
+
         #region Methods
         public void UpdateItem(int id)
         {
@@ -108,7 +109,7 @@ namespace MilkTeaHouseProject
             this.lbOriginPrice.Text = this.oriPrice.Text = string.Format("{0:n0}", drink.OriginPrice).ToString();
             this.lbCount.Text = this.Count.Text = drink.Count.ToString();
         }
-        public int ConvertToNumber(string str)
+        public long ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -116,7 +117,33 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
+            return long.Parse(tmp);
+        }
+
+        public int ConvertTo_IntNumber(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return 0;
+            }
+            string[] s = str.Split(',');
+            string tmp = "";
+            foreach (string a in s)
+            {
+                tmp = tmp + a;
+            }
             return int.Parse(tmp);
+        }
+
+        public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
+        {
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt.Text = String.Format(culture, "{0:N0}", valueBefore);
+                txt.Select(txt.Text.Length, 0);
+            }
         }
 
         void SizeChange()
@@ -192,8 +219,8 @@ namespace MilkTeaHouseProject
         {
             try
             {
-                int count;
-                int total;
+                int count = ConvertTo_IntNumber(this.txtCount.Text);
+                long total;
 
                 if (txtCount.Text == "")
                 {
@@ -201,17 +228,17 @@ namespace MilkTeaHouseProject
                 }
                 else
                 {
-                    count = int.Parse(this.txtCount.Text);
+                    count = ConvertTo_IntNumber(this.txtCount.Text);
                 }
 
-                total = count * (ConvertToNumber(lbPrice.Text) - ConvertToNumber(lbOriginPrice.Text)) * (-1);
+                total = count * ConvertToNumber(lbOriginPrice.Text) * (-1);
                 DrinkDAL.Instance.SetCountbyID(int.Parse(ID), count);
                 if (count != 0)
                 {
                     BillDAL.Instance.MakeBillforUpdateCountDrink(NAME, count, total, UserName);
                 }
-                count += int.Parse(lbCount.Text);
-                this.lbCount.Text = this.Count.Text = count.ToString();
+                count += ConvertTo_IntNumber(lbCount.Text);
+                this.lbCount.Text = this.Count.Text = string.Format("{0:n0}", count).ToString();
                 this.txtCount.Visible = false;
                 this.btnAdd.Visible = false;
                 this.txtCount.Text = "";
@@ -245,6 +272,7 @@ namespace MilkTeaHouseProject
 
         private void txtCount_TextChanged(object sender, EventArgs e)
         {
+            this.SeparateThousands(this.txtCount);
             this.errorShow.Visible = false;
         }
         #endregion

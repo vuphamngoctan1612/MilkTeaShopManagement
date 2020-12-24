@@ -12,7 +12,7 @@ namespace MilkTeaHouseProject.DTO
         private int iD;
         private DateTime checkOut;
         private bool status;
-        private int total;
+        private long total;
         private int staffID;
         private string note;
         private DateTime checkin;
@@ -20,7 +20,7 @@ namespace MilkTeaHouseProject.DTO
         public int ID { get => iD; set => iD = value; }
         public DateTime CheckOut { get => checkOut; set => checkOut = value; }
         public bool Status { get => status; set => status = value; }
-        public int Total { get => total; set => total = value; }
+        public long Total { get => total; set => total = value; }
         public int StaffID { get => staffID; set => staffID = value; }
         public string NOTE { get => note; set => note = value; }
         public DateTime CheckIn { get => checkin; set => checkin = value; }
@@ -39,7 +39,7 @@ namespace MilkTeaHouseProject.DTO
             if (!Convert.IsDBNull(row["CHECKOUT"]))
                 this.CheckOut = (DateTime)row["CHECKOUT"];
             this.status = (bool)row["status"];
-            this.total = (int)row["total"];
+            this.total = (long)row["total"];
             if (!Convert.IsDBNull(row["StaffID"]))
                 this.staffID = (int)row["StaffID"];
             this.note = row["NOTE"].ToString();

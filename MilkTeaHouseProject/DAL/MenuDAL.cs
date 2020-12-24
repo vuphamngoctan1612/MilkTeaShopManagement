@@ -70,11 +70,11 @@ namespace MilkTeaHouseProject.DAL
             }
         }
 
-        public int GetTotalPrice(int billID)
+        public long GetTotalPrice(int billID)
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar(string.Format("SELECT SUM(d.PRICE * bf.COUNT) FROM BillInfo bf " +
+                return (long)DataProvider.Instance.ExecuteScalar(string.Format("SELECT SUM(d.PRICE * bf.COUNT) FROM BillInfo bf " +
                     "JOIN Drink d ON d.ID = bf.DRINKID " +
                     "WHERE BILLID = {0}", billID));
             }

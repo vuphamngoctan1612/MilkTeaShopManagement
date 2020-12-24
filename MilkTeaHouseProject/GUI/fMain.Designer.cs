@@ -34,9 +34,6 @@
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnHomePage = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.staffReport1 = new MilkTeaHouseProject.StaffReport();
-            this.drinksReport1 = new MilkTeaHouseProject.DrinksReport();
-            this.revenueReport1 = new MilkTeaHouseProject.RevenueReport();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -50,7 +47,7 @@
             this.pnTool = new System.Windows.Forms.Panel();
             this.pnLogout = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ádToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.avtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,12 +61,16 @@
             this.btnStaff = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnBill = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnOrder = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnRoomTable = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbDisplay = new Guna.UI.WinForms.GunaLabel();
             this.lbUserName = new System.Windows.Forms.Label();
             this.pnContainName = new System.Windows.Forms.Panel();
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.staffReport1 = new MilkTeaHouseProject.StaffReport();
+            this.drinksReport1 = new MilkTeaHouseProject.DrinksReport();
+            this.revenueReport1 = new MilkTeaHouseProject.RevenueReport();
             this.panelBackground.SuspendLayout();
             this.pnDesktop.SuspendLayout();
             this.pnHomePage.SuspendLayout();
@@ -134,33 +135,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1193, 637);
             this.panel2.TabIndex = 1;
-            // 
-            // staffReport1
-            // 
-            this.staffReport1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.staffReport1.Location = new System.Drawing.Point(0, 1257);
-            this.staffReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.staffReport1.Name = "staffReport1";
-            this.staffReport1.Size = new System.Drawing.Size(1167, 617);
-            this.staffReport1.TabIndex = 2;
-            // 
-            // drinksReport1
-            // 
-            this.drinksReport1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.drinksReport1.Location = new System.Drawing.Point(0, 632);
-            this.drinksReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.drinksReport1.Name = "drinksReport1";
-            this.drinksReport1.Size = new System.Drawing.Size(1167, 625);
-            this.drinksReport1.TabIndex = 1;
-            // 
-            // revenueReport1
-            // 
-            this.revenueReport1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.revenueReport1.Location = new System.Drawing.Point(0, 0);
-            this.revenueReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.revenueReport1.Name = "revenueReport1";
-            this.revenueReport1.Size = new System.Drawing.Size(1167, 632);
-            this.revenueReport1.TabIndex = 0;
             // 
             // gunaPanel1
             // 
@@ -314,7 +288,7 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ádToolStripMenuItem});
+            this.avtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(85, 66);
@@ -322,18 +296,17 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ádToolStripMenuItem
+            // avtToolStripMenuItem
             // 
-            this.ádToolStripMenuItem.BackgroundImage = global::MilkTeaHouseProject.Properties.Resources._3545f49ee7278db6a6d44e62e4e9bfeb;
-            this.ádToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ádToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.avtToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.avtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đổiMậtKhẩuToolStripMenuItem,
             this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
-            this.ádToolStripMenuItem.Image = global::MilkTeaHouseProject.Properties.Resources._3545f49ee7278db6a6d44e62e4e9bfeb;
-            this.ádToolStripMenuItem.Name = "ádToolStripMenuItem";
-            this.ádToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ádToolStripMenuItem.Size = new System.Drawing.Size(66, 62);
+            this.avtToolStripMenuItem.Image = global::MilkTeaHouseProject.Properties.Resources._3545f49ee7278db6a6d44e62e4e9bfeb;
+            this.avtToolStripMenuItem.Name = "avtToolStripMenuItem";
+            this.avtToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.avtToolStripMenuItem.Size = new System.Drawing.Size(66, 60);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
@@ -463,6 +436,7 @@
             this.fpnControl.Controls.Add(this.btnStaff);
             this.fpnControl.Controls.Add(this.btnBill);
             this.fpnControl.Controls.Add(this.btnOrder);
+            this.fpnControl.Controls.Add(this.btnRoomTable);
             this.fpnControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fpnControl.Location = new System.Drawing.Point(0, 262);
             this.fpnControl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -614,6 +588,42 @@
             this.btnOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
+            // btnRoomTable
+            // 
+            this.btnRoomTable.AnimationHoverSpeed = 0.07F;
+            this.btnRoomTable.AnimationSpeed = 0.03F;
+            this.btnRoomTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(38)))));
+            this.btnRoomTable.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(38)))));
+            this.btnRoomTable.BorderColor = System.Drawing.Color.Black;
+            this.btnRoomTable.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnRoomTable.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnRoomTable.CheckedForeColor = System.Drawing.Color.White;
+            this.btnRoomTable.CheckedImage = null;
+            this.btnRoomTable.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnRoomTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoomTable.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRoomTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRoomTable.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRoomTable.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomTable.ForeColor = System.Drawing.Color.White;
+            this.btnRoomTable.Image = global::MilkTeaHouseProject.Properties.Resources.TableWhile;
+            this.btnRoomTable.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnRoomTable.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnRoomTable.Location = new System.Drawing.Point(4, 322);
+            this.btnRoomTable.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnRoomTable.Name = "btnRoomTable";
+            this.btnRoomTable.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
+            this.btnRoomTable.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRoomTable.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRoomTable.OnHoverImage = null;
+            this.btnRoomTable.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnRoomTable.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRoomTable.Size = new System.Drawing.Size(413, 76);
+            this.btnRoomTable.TabIndex = 16;
+            this.btnRoomTable.Text = "Phòng bàn";
+            this.btnRoomTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRoomTable.Click += new System.EventHandler(this.btnRoomTable_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(38)))));
@@ -680,8 +690,35 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // staffReport1
+            // 
+            this.staffReport1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.staffReport1.Location = new System.Drawing.Point(0, 1257);
+            this.staffReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.staffReport1.Name = "staffReport1";
+            this.staffReport1.Size = new System.Drawing.Size(1167, 617);
+            this.staffReport1.TabIndex = 2;
+            // 
+            // drinksReport1
+            // 
+            this.drinksReport1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.drinksReport1.Location = new System.Drawing.Point(0, 632);
+            this.drinksReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.drinksReport1.Name = "drinksReport1";
+            this.drinksReport1.Size = new System.Drawing.Size(1167, 625);
+            this.drinksReport1.TabIndex = 1;
+            // 
+            // revenueReport1
+            // 
+            this.revenueReport1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.revenueReport1.Location = new System.Drawing.Point(0, 0);
+            this.revenueReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.revenueReport1.Name = "revenueReport1";
+            this.revenueReport1.Size = new System.Drawing.Size(1167, 632);
+            this.revenueReport1.TabIndex = 0;
             // 
             // fMain
             // 
@@ -760,11 +797,12 @@
         private RevenueReport revenueReport1;
         private System.Windows.Forms.Panel pnLogout;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ádToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem avtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI.WinForms.GunaAdvenceButton btnRoomTable;
     }
 }
 

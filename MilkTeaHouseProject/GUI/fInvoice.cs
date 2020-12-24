@@ -18,17 +18,17 @@ namespace MilkTeaHouseProject
     {
         private string username;
         private int billID;
-        private int totalPrice;
+        private long totalPrice;
         private int staffID;
 
         public string Username { get => username; set => username = value; }
         public int BillID { get => billID; set => billID = value; }
-        public int TotalPrice { get => totalPrice; set => totalPrice = value; }
+        public long TotalPrice { get => totalPrice; set => totalPrice = value; }
         public int StaffID { get => staffID; set => staffID = value; }
 
         int TableID;
 
-        public fInvoice(string username, int billID, int totalPrice, int staffID, int tableID)
+        public fInvoice(string username, int billID, long totalPrice, int staffID, int tableID)
         {
             InitializeComponent();
 
@@ -137,8 +137,8 @@ namespace MilkTeaHouseProject
             {
                 SeparateThousands(this.txtCustomerPay);
 
-                int customerPay = ConvertToNumber(this.txtCustomerPay.Text);
-                int change = customerPay - this.TotalPrice;
+                long customerPay = ConvertToNumber(this.txtCustomerPay.Text);
+                long change = customerPay - this.TotalPrice;
 
                 this.txtChange.Text = change.ToString();
             }

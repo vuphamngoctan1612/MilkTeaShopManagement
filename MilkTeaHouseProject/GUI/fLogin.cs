@@ -51,8 +51,8 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            //try
-            //{
+            try
+            {
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
                     if (Login(username, password))
@@ -63,12 +63,26 @@ namespace MilkTeaHouseProject
                         this.Show();
                         this.txtUser.Text = this.txtPass.Text = "";
                     }
+                    else
+                    {
+                        ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
+                    }
+                    if (string.IsNullOrEmpty(txtUser.Text))
+                    {
+                        txtUser.Focus();
+                        ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
+                    }
+                    if (string.IsNullOrEmpty(txtPass.Text))
+                    {
+                        txtPass.Focus();
+                        ShowError(txtPass, "Vui lòng nhập mật khẩu");
+                    }
                 }
-            //}
-            //catch
-            //{
+            }
+            catch
+            {
 
-            //}
+            }
         }
 
         private void lbSignup_Click(object sender, EventArgs e)
@@ -130,22 +144,22 @@ namespace MilkTeaHouseProject
 
         private void txtPass_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPass.Text))
-            {
-                txtPass.Focus();
-                ShowError(txtPass, "Vui lòng nhập mật khẩu");
-            }
+            //if (string.IsNullOrEmpty(txtPass.Text))
+            //{
+            //    txtPass.Focus();
+            //    ShowError(txtPass, "Vui lòng nhập mật khẩu");
+            //}
         }
 
         private void btnLogin_Validating(object sender, CancelEventArgs e)
         {
-            string username = this.txtUser.Text;
-            string password = this.txtPass.Text;
+            //string username = this.txtUser.Text;
+            //string password = this.txtPass.Text;
 
-            if (!Login(username, password))
-            {
-                ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
-            }
+            //if (!Login(username, password))
+            //{
+            //    ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
+            //}
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)

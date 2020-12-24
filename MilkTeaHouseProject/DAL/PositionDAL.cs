@@ -36,7 +36,7 @@ namespace MilkTeaHouseProject.DAL
             return posistions;
         }
 
-        public bool UpdateSalary(string pos, int salary, int overtimesalary, int minussalary)
+        public bool UpdateSalary(string pos, long salary, long overtimesalary, long minussalary)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace MilkTeaHouseProject.DAL
                 return false;
             }
         }
-        public int GetSalarybyPosition(string position)
+        public long GetSalarybyPosition(string position)
         {
             string query = string.Format("SELECT * FROM Position WHERE Name = N'{0}'", position);
 
@@ -63,7 +63,7 @@ namespace MilkTeaHouseProject.DAL
 
             return 0;
         }
-        public int GetOverTimeSalarybyPosition(string position)
+        public long GetOverTimeSalarybyPosition(string position)
         {
             string query = string.Format("SELECT * FROM Position WHERE Name = N'{0}'", position);
 
@@ -78,7 +78,7 @@ namespace MilkTeaHouseProject.DAL
 
             return 0;
         }
-        public int GetMinusSalarybyPosition(string position)
+        public long GetMinusSalarybyPosition(string position)
         {
             string query = string.Format("SELECT * FROM Position WHERE Name = N'{0}'", position);
 
@@ -93,7 +93,7 @@ namespace MilkTeaHouseProject.DAL
 
             return 0;
         }
-        public void AddPosition(string pos, int salary, int overtimesalary, int minussalary)
+        public void AddPosition(string pos, long salary, long overtimesalary, int minussalary)
         {
 
             string query = string.Format("INSERT INTO Position VALUES (N'{0}',{1},{2},{3})", pos, salary, overtimesalary, minussalary);

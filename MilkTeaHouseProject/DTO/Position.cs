@@ -10,16 +10,16 @@ namespace MilkTeaHouseProject.DTO
     class Position
     {
         private string name;
-        private int salary;
-        private int overTimeSalary;
-        private int minusSalary;
+        private long salary;
+        private long overTimeSalary;
+        private long minusSalary;
 
         public string Name { get => name; set => name = value; }
-        public int Salary { get => salary; set => salary = value; }
-        public int OverTimeSalary { get => overTimeSalary; set => overTimeSalary = value; }
-        public int MinusSalary { get => minusSalary; set => minusSalary = value; }
+        public long Salary { get => salary; set => salary = value; }
+        public long OverTimeSalary { get => overTimeSalary; set => overTimeSalary = value; }
+        public long MinusSalary { get => minusSalary; set => minusSalary = value; }
 
-        public Position(string name, int salary, int overTimeSalary, int minusSalary)
+        public Position(string name, long salary, long overTimeSalary, long minusSalary)
         {
             this.name = name;
             this.salary = salary;
@@ -30,9 +30,9 @@ namespace MilkTeaHouseProject.DTO
         public Position(DataRow row)
         {
             this.name = row["Name"].ToString();
-            this.salary = (int)row["Salary"];
-            this.overTimeSalary = (int)row["OverTimeSalary"];
-            this.minusSalary = (int)row["MinusSalary"];
+            this.salary = (long)row["Salary"];
+            this.overTimeSalary = (long)row["OverTimeSalary"];
+            this.minusSalary = (long)row["MinusSalary"];
         }
     }
 }

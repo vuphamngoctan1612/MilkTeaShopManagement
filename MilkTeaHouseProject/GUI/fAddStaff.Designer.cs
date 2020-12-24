@@ -41,10 +41,12 @@
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnContain = new System.Windows.Forms.Panel();
-            this.errorShow = new Guna.UI.WinForms.GunaLabel();
+            this.lbUsername = new Guna.UI.WinForms.GunaLabel();
             this.cbWoman = new Guna.UI.WinForms.GunaCheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cbMan = new Guna.UI.WinForms.GunaCheckBox();
+            this.btnAddUserName = new Guna.UI.WinForms.GunaButton();
+            this.errorShow = new Guna.UI.WinForms.GunaLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbIDinrease = new System.Windows.Forms.Label();
             this.cbbUser = new Guna.UI.WinForms.GunaComboBox();
             this.btEdit = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -105,7 +107,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(142, 42);
-            this.btnReturn.TabIndex = 7;
+            this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -255,17 +257,19 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(50, 42);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 11;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pnContain
             // 
             this.pnContain.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnContain.Controls.Add(this.errorShow);
+            this.pnContain.Controls.Add(this.lbUsername);
             this.pnContain.Controls.Add(this.cbWoman);
-            this.pnContain.Controls.Add(this.label3);
             this.pnContain.Controls.Add(this.cbMan);
+            this.pnContain.Controls.Add(this.btnAddUserName);
+            this.pnContain.Controls.Add(this.errorShow);
+            this.pnContain.Controls.Add(this.label3);
             this.pnContain.Controls.Add(this.lbIDinrease);
             this.pnContain.Controls.Add(this.cbbUser);
             this.pnContain.Controls.Add(this.btEdit);
@@ -292,8 +296,75 @@
             this.pnContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContain.Location = new System.Drawing.Point(0, 0);
             this.pnContain.Name = "pnContain";
-            this.pnContain.Size = new System.Drawing.Size(1350, 655);
+            this.pnContain.Size = new System.Drawing.Size(1350, 656);
             this.pnContain.TabIndex = 5;
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbUsername.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbUsername.Location = new System.Drawing.Point(1191, 519);
+            this.lbUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(103, 25);
+            this.lbUsername.TabIndex = 67;
+            this.lbUsername.Text = "gunaLabel1";
+            // 
+            // cbWoman
+            // 
+            this.cbWoman.BaseColor = System.Drawing.Color.White;
+            this.cbWoman.CheckedOffColor = System.Drawing.Color.Gray;
+            this.cbWoman.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbWoman.FillColor = System.Drawing.Color.White;
+            this.cbWoman.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWoman.Location = new System.Drawing.Point(580, 369);
+            this.cbWoman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbWoman.Name = "cbWoman";
+            this.cbWoman.Size = new System.Drawing.Size(59, 30);
+            this.cbWoman.TabIndex = 3;
+            this.cbWoman.Text = "Nữ";
+            this.cbWoman.Click += new System.EventHandler(this.cbWoman_Click);
+            // 
+            // cbMan
+            // 
+            this.cbMan.BaseColor = System.Drawing.Color.White;
+            this.cbMan.CheckedOffColor = System.Drawing.Color.Gray;
+            this.cbMan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbMan.FillColor = System.Drawing.Color.White;
+            this.cbMan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMan.Location = new System.Drawing.Point(434, 369);
+            this.cbMan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMan.Name = "cbMan";
+            this.cbMan.Size = new System.Drawing.Size(75, 30);
+            this.cbMan.TabIndex = 2;
+            this.cbMan.Text = "Nam";
+            this.cbMan.Click += new System.EventHandler(this.cbMan_Click);
+            // 
+            // btnAddUserName
+            // 
+            this.btnAddUserName.AnimationHoverSpeed = 0.07F;
+            this.btnAddUserName.AnimationSpeed = 0.03F;
+            this.btnAddUserName.BaseColor = System.Drawing.Color.White;
+            this.btnAddUserName.BorderColor = System.Drawing.Color.Black;
+            this.btnAddUserName.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddUserName.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddUserName.ForeColor = System.Drawing.Color.White;
+            this.btnAddUserName.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
+            this.btnAddUserName.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddUserName.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddUserName.Location = new System.Drawing.Point(1274, 356);
+            this.btnAddUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddUserName.Name = "btnAddUserName";
+            this.btnAddUserName.OnHoverBaseColor = System.Drawing.Color.White;
+            this.btnAddUserName.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddUserName.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddUserName.OnHoverImage = null;
+            this.btnAddUserName.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddUserName.Size = new System.Drawing.Size(33, 34);
+            this.btnAddUserName.TabIndex = 64;
+            this.btnAddUserName.Click += new System.EventHandler(this.btnAddUserName_Click);
             // 
             // errorShow
             // 
@@ -307,21 +378,6 @@
             this.errorShow.Text = "gunaLabel2";
             this.errorShow.Visible = false;
             // 
-            // cbWoman
-            // 
-            this.cbWoman.BaseColor = System.Drawing.Color.White;
-            this.cbWoman.CheckedOffColor = System.Drawing.Color.Gray;
-            this.cbWoman.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbWoman.FillColor = System.Drawing.Color.White;
-            this.cbWoman.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbWoman.Location = new System.Drawing.Point(560, 369);
-            this.cbWoman.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbWoman.Name = "cbWoman";
-            this.cbWoman.Size = new System.Drawing.Size(59, 30);
-            this.cbWoman.TabIndex = 62;
-            this.cbWoman.Text = "Nữ";
-            this.cbWoman.CheckedChanged += new System.EventHandler(this.cbWoman_CheckedChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -332,21 +388,6 @@
             this.label3.Size = new System.Drawing.Size(95, 28);
             this.label3.TabIndex = 61;
             this.label3.Text = "Giới tính";
-            // 
-            // cbMan
-            // 
-            this.cbMan.BaseColor = System.Drawing.Color.White;
-            this.cbMan.CheckedOffColor = System.Drawing.Color.Gray;
-            this.cbMan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbMan.FillColor = System.Drawing.Color.White;
-            this.cbMan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMan.Location = new System.Drawing.Point(434, 369);
-            this.cbMan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbMan.Name = "cbMan";
-            this.cbMan.Size = new System.Drawing.Size(75, 30);
-            this.cbMan.TabIndex = 60;
-            this.cbMan.Text = "Nam";
-            this.cbMan.CheckedChanged += new System.EventHandler(this.cbMan_CheckedChanged);
             // 
             // lbIDinrease
             // 
@@ -370,12 +411,12 @@
             this.cbbUser.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbUser.ForeColor = System.Drawing.Color.Black;
             this.cbbUser.FormattingEnabled = true;
-            this.cbbUser.Location = new System.Drawing.Point(968, 361);
+            this.cbbUser.Location = new System.Drawing.Point(964, 353);
             this.cbbUser.Name = "cbbUser";
             this.cbbUser.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbUser.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbUser.Size = new System.Drawing.Size(300, 46);
-            this.cbbUser.TabIndex = 58;
+            this.cbbUser.TabIndex = 8;
             this.cbbUser.Visible = false;
             // 
             // btEdit
@@ -408,7 +449,7 @@
             this.btEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btEdit.Radius = 10;
             this.btEdit.Size = new System.Drawing.Size(142, 42);
-            this.btEdit.TabIndex = 57;
+            this.btEdit.TabIndex = 9;
             this.btEdit.Text = "Lưu";
             this.btEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.Visible = false;
@@ -421,13 +462,13 @@
             this.txtAddress.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtAddress.Location = new System.Drawing.Point(964, 102);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAddress.Location = new System.Drawing.Point(964, 92);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(302, 48);
-            this.txtAddress.TabIndex = 56;
+            this.txtAddress.TabIndex = 5;
             this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label2
@@ -448,14 +489,14 @@
             this.txtPhoneNumber.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(964, 183);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(964, 174);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.SelectedText = "";
             this.txtPhoneNumber.Size = new System.Drawing.Size(302, 48);
-            this.txtPhoneNumber.TabIndex = 54;
+            this.txtPhoneNumber.TabIndex = 6;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
             // 
@@ -472,8 +513,8 @@
             this.btAddUserName.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.btAddUserName.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAddUserName.ImageSize = new System.Drawing.Size(20, 20);
-            this.btAddUserName.Location = new System.Drawing.Point(1680, 55);
-            this.btAddUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAddUserName.Location = new System.Drawing.Point(1680, 56);
+            this.btAddUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAddUserName.Name = "btAddUserName";
             this.btAddUserName.OnHoverBaseColor = System.Drawing.Color.White;
             this.btAddUserName.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -494,8 +535,8 @@
             this.dptBirthDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dptBirthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dptBirthDate.ForeColor = System.Drawing.Color.Black;
-            this.dptBirthDate.Location = new System.Drawing.Point(433, 274);
-            this.dptBirthDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dptBirthDate.Location = new System.Drawing.Point(434, 266);
+            this.dptBirthDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dptBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dptBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dptBirthDate.Name = "dptBirthDate";
@@ -503,8 +544,8 @@
             this.dptBirthDate.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dptBirthDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dptBirthDate.OnPressedColor = System.Drawing.Color.Black;
-            this.dptBirthDate.Size = new System.Drawing.Size(334, 46);
-            this.dptBirthDate.TabIndex = 50;
+            this.dptBirthDate.Size = new System.Drawing.Size(334, 48);
+            this.dptBirthDate.TabIndex = 1;
             this.dptBirthDate.Text = "Wednesday, December 2, 2020";
             this.dptBirthDate.Value = new System.DateTime(2020, 12, 2, 10, 57, 23, 701);
             // 
@@ -515,13 +556,13 @@
             this.txtName.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtName.Location = new System.Drawing.Point(433, 183);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtName.Location = new System.Drawing.Point(434, 174);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(334, 48);
-            this.txtName.TabIndex = 49;
+            this.txtName.TabIndex = 0;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtCMND
@@ -531,14 +572,14 @@
             this.txtCMND.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtCMND.Location = new System.Drawing.Point(433, 459);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCMND.Location = new System.Drawing.Point(433, 448);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCMND.MaxLength = 9;
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.PasswordChar = '\0';
             this.txtCMND.SelectedText = "";
             this.txtCMND.Size = new System.Drawing.Size(334, 48);
-            this.txtCMND.TabIndex = 47;
+            this.txtCMND.TabIndex = 4;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
             this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress_1);
             // 
@@ -566,15 +607,15 @@
             this.btAddPosition.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.btAddPosition.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAddPosition.ImageSize = new System.Drawing.Size(20, 20);
-            this.btAddPosition.Location = new System.Drawing.Point(1273, 278);
-            this.btAddPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAddPosition.Location = new System.Drawing.Point(1274, 273);
+            this.btAddPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAddPosition.Name = "btAddPosition";
             this.btAddPosition.OnHoverBaseColor = System.Drawing.Color.White;
             this.btAddPosition.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btAddPosition.OnHoverForeColor = System.Drawing.Color.White;
             this.btAddPosition.OnHoverImage = null;
             this.btAddPosition.OnPressedColor = System.Drawing.Color.Black;
-            this.btAddPosition.Size = new System.Drawing.Size(33, 35);
+            this.btAddPosition.Size = new System.Drawing.Size(33, 34);
             this.btAddPosition.TabIndex = 45;
             this.btAddPosition.Click += new System.EventHandler(this.btAddPosition_Click);
             // 
@@ -589,12 +630,12 @@
             this.cbbPos.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPos.ForeColor = System.Drawing.Color.Black;
             this.cbbPos.FormattingEnabled = true;
-            this.cbbPos.Location = new System.Drawing.Point(966, 274);
+            this.cbbPos.Location = new System.Drawing.Point(964, 266);
             this.cbbPos.Name = "cbbPos";
             this.cbbPos.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbPos.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbPos.Size = new System.Drawing.Size(300, 46);
-            this.cbbPos.TabIndex = 2;
+            this.cbbPos.TabIndex = 7;
             this.cbbPos.SelectedIndexChanged += new System.EventHandler(this.cbbPos_SelectedIndexChanged);
             // 
             // ptbImage
@@ -604,7 +645,7 @@
             this.ptbImage.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.ptbImage.Location = new System.Drawing.Point(34, 112);
             this.ptbImage.Name = "ptbImage";
-            this.ptbImage.Size = new System.Drawing.Size(246, 231);
+            this.ptbImage.Size = new System.Drawing.Size(246, 232);
             this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ptbImage.TabIndex = 42;
             this.ptbImage.TabStop = false;
@@ -615,13 +656,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1350, 655);
+            this.ClientSize = new System.Drawing.Size(1350, 656);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.pnContain);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1350, 655);
-            this.MinimumSize = new System.Drawing.Size(1350, 655);
+            this.MaximumSize = new System.Drawing.Size(1350, 656);
+            this.MinimumSize = new System.Drawing.Size(1350, 656);
             this.Name = "fAddStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddStaff";
@@ -638,14 +679,14 @@
         #endregion
         private System.Windows.Forms.Label lbUser;
         private Guna.UI.WinForms.GunaAdvenceButton btnReturn;
-        public Guna.UI.WinForms.GunaAdvenceButton btnAdd;
+        private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private System.Windows.Forms.Label lbPhoneNumber;
         private System.Windows.Forms.Label lbPos;
         private System.Windows.Forms.Label lbBirth;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Panel pn;
-        public System.Windows.Forms.Label lbNameForm;
+        private System.Windows.Forms.Label lbNameForm;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private System.Windows.Forms.Panel pnContain;
         private System.Windows.Forms.PictureBox ptbImage;
@@ -656,15 +697,17 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaComboBox cbbPos;
         private Guna.UI.WinForms.GunaComboBox cbbUser;
-        public Guna.UI.WinForms.GunaAdvenceButton btEdit;
+        private Guna.UI.WinForms.GunaAdvenceButton btEdit;
         private Guna.UI.WinForms.GunaLineTextBox txtAddress;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaLineTextBox txtPhoneNumber;
         private Guna.UI.WinForms.GunaButton btAddUserName;
         private System.Windows.Forms.Label lbIDinrease;
-        private Guna.UI.WinForms.GunaCheckBox cbMan;
-        private Guna.UI.WinForms.GunaCheckBox cbWoman;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaLabel errorShow;
+        private Guna.UI.WinForms.GunaButton btnAddUserName;
+        private Guna.UI.WinForms.GunaCheckBox cbWoman;
+        private Guna.UI.WinForms.GunaCheckBox cbMan;
+        private Guna.UI.WinForms.GunaLabel lbUsername;
     }
 }

@@ -249,10 +249,11 @@ namespace MilkTeaHouseProject
             {
                 this.cbbTime.Items.Clear();
 
-                int currentYear = DateTime.Now.Year;
-                this.cbbTime.Items.Add(currentYear - 2);
-                this.cbbTime.Items.Add(currentYear - 1);
-                this.cbbTime.Items.Add(currentYear);
+                string[] years = ReportDAL.Instance.GetYear();
+                for (int i = 0; i < years.Length; i++)
+                {
+                    this.cbbTime.Items.Add(years[i]);
+                }
             }
         }
         #endregion

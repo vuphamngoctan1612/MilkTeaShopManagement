@@ -26,6 +26,8 @@ namespace MilkTeaShopManagement.DAL
         private string connectionSTR = @"Data Source=LAPTOP-9RONKO2M\SQLSERVE;Initial Catalog=MilkTea;Integrated Security=True";
         //private string connectionSTR = @"Data Source=LAPTOP-1VC7CBQ8\QUANG_UIT_K14;Initial Catalog=MilkTeaManagement;Integrated Security=True";
         //private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTeaManagement;Integrated Security=True";
+        //private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTea;Integrated Security=True";
+
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

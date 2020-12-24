@@ -16,8 +16,8 @@ namespace MilkTeaHouseProject
     public partial class fBill : Form
     {
 
-        private int Income;
-        private int Spend;
+        private long Income;
+        private long Spend;
         private string username;
         public fBill(string username)
         {
@@ -56,7 +56,7 @@ namespace MilkTeaHouseProject
 
                 string StaffName = StaffDAL.Instance.GetNamebyID(bill.StaffID);
 
-                ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffName, bill.NOTE, bill.Total, setcolor);
+                ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffName, bill.NOTE, Math.Abs(bill.Total), setcolor);
                 if (bill.Total < 0)
                 {
                     Spend += bill.Total;
@@ -68,6 +68,7 @@ namespace MilkTeaHouseProject
                 item.Tag = bill;
                 flowLayoutPanelBill.Controls.Add(item);
             }
+            Spend *= -1;
             lbTotalIncome.Text= string.Format("{0:n0}", Income).ToString();
             lbTotalSpend.Text= string.Format("{0:n0}", Spend).ToString();
             SizeChange();
@@ -95,8 +96,114 @@ namespace MilkTeaHouseProject
             foreach (Control item in this.flowLayoutPanelBill.Controls)
             {
                 string StaffName = (item as ItemInBill).StaffName;
+                if (cbSearch.Text == "Tất cả")
+                {
+                    if (!StaffName.ToLower().Contains(name.ToLower()))
+                    {
+                        item.Visible = false;
+                    }
+                    else
+                    {
+                        item.Visible = true;
+                        if (flag == false)
+                        {
+                            item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                            flag = true;
+                        }
+                        else
+                        {
+                            item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                            flag = false;
+                        }
+                    }
+                }
+                else if (cbSearch.Text == "Phiếu chi")
+                {
+                    int id = (item as ItemInBill).BillID;
 
-                if (!StaffName.ToLower().Contains(name.ToLower()))
+                    Bill bill = BillDAL.Instance.GetBillByID(id);
+
+                    if (bill.Total < 0)
+                    {
+                        if (!StaffName.ToLower().Contains(name.ToLower()))
+                        {
+                            item.Visible = false;
+                        }
+                        else
+                        {
+                            item.Visible = true;
+                            if (flag == false)
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                                flag = true;
+                            }
+                            else
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                                flag = false;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    string note = (item as ItemInBill).NOTE;
+                    if (!note.ToLower().Contains(cbSearch.Text.ToLower()))
+                    {
+                        item.Visible = false;
+                    }
+                    else
+                    {
+                        if (!StaffName.ToLower().Contains(name.ToLower()))
+                        {
+                            item.Visible = false;
+                        }
+                        else
+                        {
+                            item.Visible = true;
+                            if (flag == false)
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                                flag = true;
+                            }
+                            else
+                            {
+                                item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                                flag = false;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        public void SearchAllNote()
+        {
+            bool flag = false;
+            foreach (Control item in flowLayoutPanelBill.Controls)
+            {
+                item.Visible = true;
+                if (flag == false)
+                {
+                    item.BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                    flag = true;
+                }
+                else
+                {
+                    item.BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                    flag = false;
+                }
+            }
+        }
+
+        private void SearchNotebyName(string name)
+        {
+            bool flag = false;
+            foreach (Control item in flowLayoutPanelBill.Controls)
+            {
+                string note = (item as ItemInBill).NOTE;
+                if (!note.ToLower().Contains(name.ToLower()))
                 {
                     item.Visible = false;
                 }
@@ -116,6 +223,36 @@ namespace MilkTeaHouseProject
                 }
             }
         }
+
+        private void SearchExpense()
+        {
+            List<Bill> bills = BillDAL.Instance.LoadBill();
+            bool flag = false;
+
+            SearchAllNote();
+            for (int i = 0; i < bills.Count; i++)
+            {
+                if (bills[i].Total < 0)
+                {
+                    flowLayoutPanelBill.Controls[i].Visible = true;
+                    if (flag == false)
+                    {
+                        flowLayoutPanelBill.Controls[i].BackColor = this.BackColor = Color.FromArgb(255, 255, 255);
+                        flag = true;
+                    }
+                    else
+                    {
+                        flowLayoutPanelBill.Controls[i].BackColor = this.BackColor = Color.FromArgb(240, 240, 240);
+                        flag = false;
+                    }
+                }
+                else
+                {
+                    flowLayoutPanelBill.Controls[i].Visible = false;
+                }
+            }
+        }
+
         #endregion
 
         #region Event
@@ -130,11 +267,13 @@ namespace MilkTeaHouseProject
         private void Frm_onAdd(object sender, EventArgs e)
         {
             Bill bill = BillDAL.Instance.GetBillByID(BillDAL.Instance.GetMAXIDBill());
-            ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffDAL.Instance.GetNamebyID(bill.StaffID), bill.NOTE, bill.Total, true);
+            ItemInBill item = new ItemInBill(bill.ID, bill.CheckOut, bill.StaffID, StaffDAL.Instance.GetNamebyID(bill.StaffID), bill.NOTE, Math.Abs(bill.Total), true);
 
             this.flowLayoutPanelBill.Controls.Add(item);
             this.SetBackGround();
             this.SizeChange();
+            this.cbSearch.SelectedIndex = 0;
+            this.SearchAllNote();
         }
 
         private void flowLayoutPanelBill_SizeChanged(object sender, EventArgs e)
@@ -165,6 +304,8 @@ namespace MilkTeaHouseProject
         private void fBill_Load(object sender, EventArgs e)
         {
             LoadBill();
+
+            cbSearch.SelectedIndex = 0;
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)
@@ -197,6 +338,43 @@ namespace MilkTeaHouseProject
                 }
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (flowLayoutPanelBill.Controls.Count > 0)
+            {
+                if (flowLayoutPanelBill.Controls.Count != BillDAL.Instance.CountBillStatusTrue())
+                {
+                    LoadBill();
+                }
+            }
+        }
+
         #endregion
+
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            if (cbSearch.SelectedIndex == 0)
+            {
+                SearchAllNote();
+            } 
+            if (cbSearch.SelectedIndex == 1)
+            {
+                SearchNotebyName("Nhập");
+            }
+            if (cbSearch.SelectedIndex == 2)
+            {
+                SearchNotebyName("Bán hàng");
+            }
+            if (cbSearch.SelectedIndex == 3)
+            {
+                SearchNotebyName("Kết toán lương");
+            }
+            if (cbSearch.SelectedIndex == 4)
+            {
+                SearchExpense();
+            }
+        }
     }
 }

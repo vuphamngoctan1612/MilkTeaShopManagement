@@ -147,6 +147,24 @@
     <Compile Include="GUI\fAddTable.Designer.cs">
       <DependentUpon>fAddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fDelRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fDelRoom.Designer.cs">
+      <DependentUpon>fDelRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fRoomTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fRoomTable.Designer.cs">
+      <DependentUpon>fRoomTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fSwapTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fSwapTable.Designer.cs">
+      <DependentUpon>fSwapTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MilkteaManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -311,6 +329,9 @@
     <EmbeddedResource Include="GUI\fDelCategory.resx">
       <DependentUpon>fDelCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fDelRoom.resx">
+      <DependentUpon>fDelRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fInvoice.resx">
       <DependentUpon>fInvoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +347,9 @@
     <EmbeddedResource Include="GUI\fOrder.resx">
       <DependentUpon>fOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fRoomTable.resx">
+      <DependentUpon>fRoomTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fSetSalary.resx">
       <DependentUpon>fSetSalary.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fSwapTable.resx">
+      <DependentUpon>fSwapTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fViewProfile.resx">
       <DependentUpon>fViewProfile.cs</DependentUpon>

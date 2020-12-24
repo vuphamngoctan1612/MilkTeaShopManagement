@@ -64,7 +64,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1259, 42);
+            this.panel4.Size = new System.Drawing.Size(1258, 42);
             this.panel4.TabIndex = 25;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             // 
@@ -90,7 +90,7 @@
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(1209, 0);
+            this.btnExit.Location = new System.Drawing.Point(1208, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
@@ -137,7 +137,7 @@
             this.panel2.Controls.Add(this.gunaLabel3);
             this.panel2.Controls.Add(this.lbTotalPrice);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(827, 42);
+            this.panel2.Location = new System.Drawing.Point(826, 42);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(432, 714);
@@ -166,7 +166,7 @@
             this.btnPrintInvoice.OnPressedColor = System.Drawing.Color.Black;
             this.btnPrintInvoice.Radius = 10;
             this.btnPrintInvoice.Size = new System.Drawing.Size(180, 52);
-            this.btnPrintInvoice.TabIndex = 2;
+            this.btnPrintInvoice.TabIndex = 4;
             this.btnPrintInvoice.Text = "In hóa đơn";
             this.btnPrintInvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPrintInvoice.Visible = false;
@@ -197,7 +197,7 @@
             this.btnPay.OnPressedColor = System.Drawing.Color.Black;
             this.btnPay.Radius = 10;
             this.btnPay.Size = new System.Drawing.Size(180, 52);
-            this.btnPay.TabIndex = 2;
+            this.btnPay.TabIndex = 3;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -210,14 +210,14 @@
             this.txtTotalPrice.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtTotalPrice.Location = new System.Drawing.Point(242, 141);
+            this.txtTotalPrice.Location = new System.Drawing.Point(242, 136);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.PasswordChar = '\0';
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.SelectedText = "";
-            this.txtTotalPrice.Size = new System.Drawing.Size(160, 49);
-            this.txtTotalPrice.TabIndex = 1;
+            this.txtTotalPrice.Size = new System.Drawing.Size(160, 48);
+            this.txtTotalPrice.TabIndex = 0;
             this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtChange
@@ -228,14 +228,14 @@
             this.txtChange.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtChange.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChange.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtChange.Location = new System.Drawing.Point(242, 343);
+            this.txtChange.Location = new System.Drawing.Point(242, 330);
             this.txtChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtChange.Name = "txtChange";
             this.txtChange.PasswordChar = '\0';
             this.txtChange.ReadOnly = true;
             this.txtChange.SelectedText = "";
-            this.txtChange.Size = new System.Drawing.Size(160, 49);
-            this.txtChange.TabIndex = 1;
+            this.txtChange.Size = new System.Drawing.Size(160, 48);
+            this.txtChange.TabIndex = 2;
             this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCustomerPay
@@ -245,13 +245,13 @@
             this.txtCustomerPay.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtCustomerPay.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerPay.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtCustomerPay.Location = new System.Drawing.Point(242, 243);
+            this.txtCustomerPay.Location = new System.Drawing.Point(242, 230);
             this.txtCustomerPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerPay.Name = "txtCustomerPay";
             this.txtCustomerPay.PasswordChar = '\0';
             this.txtCustomerPay.SelectedText = "";
-            this.txtCustomerPay.Size = new System.Drawing.Size(160, 49);
-            this.txtCustomerPay.TabIndex = 0;
+            this.txtCustomerPay.Size = new System.Drawing.Size(160, 48);
+            this.txtCustomerPay.TabIndex = 1;
             this.txtCustomerPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCustomerPay.TextChanged += new System.EventHandler(this.txtCustomerPay_TextChanged);
             // 
@@ -259,7 +259,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(25, 348);
+            this.gunaLabel4.Location = new System.Drawing.Point(26, 348);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(131, 30);
             this.gunaLabel4.TabIndex = 0;
@@ -269,7 +269,7 @@
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(25, 248);
+            this.gunaLabel3.Location = new System.Drawing.Point(26, 248);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(188, 30);
             this.gunaLabel3.TabIndex = 0;
@@ -279,7 +279,7 @@
             // 
             this.lbTotalPrice.AutoSize = true;
             this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPrice.Location = new System.Drawing.Point(25, 154);
+            this.lbTotalPrice.Location = new System.Drawing.Point(26, 154);
             this.lbTotalPrice.Name = "lbTotalPrice";
             this.lbTotalPrice.Size = new System.Drawing.Size(119, 30);
             this.lbTotalPrice.TabIndex = 0;
@@ -301,7 +301,7 @@
             this.panel3.Location = new System.Drawing.Point(54, 42);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(773, 714);
+            this.panel3.Size = new System.Drawing.Size(772, 714);
             this.panel3.TabIndex = 30;
             // 
             // DataGridViewInvoices
@@ -341,7 +341,7 @@
             this.DataGridViewInvoices.RowHeadersWidth = 100;
             this.DataGridViewInvoices.RowTemplate.Height = 24;
             this.DataGridViewInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewInvoices.Size = new System.Drawing.Size(773, 585);
+            this.DataGridViewInvoices.Size = new System.Drawing.Size(772, 585);
             this.DataGridViewInvoices.TabIndex = 1;
             this.DataGridViewInvoices.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridViewInvoices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -371,7 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1259, 756);
+            this.ClientSize = new System.Drawing.Size(1258, 756);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

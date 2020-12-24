@@ -104,7 +104,7 @@ namespace MilkTeaHouseProject
             this.lbNameCategory.AutoSize = true;
             this.lbNameCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbNameCategory.Location = new System.Drawing.Point(35, 88);
+            this.lbNameCategory.Location = new System.Drawing.Point(34, 88);
             this.lbNameCategory.Name = "lbNameCategory";
             this.lbNameCategory.Size = new System.Drawing.Size(91, 28);
             this.lbNameCategory.TabIndex = 51;
@@ -130,7 +130,7 @@ namespace MilkTeaHouseProject
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReturn.Location = new System.Drawing.Point(217, 235);
+            this.btnReturn.Location = new System.Drawing.Point(215, 236);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -141,7 +141,7 @@ namespace MilkTeaHouseProject
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(144, 42);
-            this.btnReturn.TabIndex = 54;
+            this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -166,7 +166,7 @@ namespace MilkTeaHouseProject
             this.btnDel.Image = null;
             this.btnDel.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDel.Location = new System.Drawing.Point(42, 235);
+            this.btnDel.Location = new System.Drawing.Point(39, 236);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDel.Name = "btnDel";
             this.btnDel.OnHoverBaseColor = System.Drawing.Color.Red;
@@ -177,7 +177,7 @@ namespace MilkTeaHouseProject
             this.btnDel.OnPressedColor = System.Drawing.Color.Black;
             this.btnDel.Radius = 10;
             this.btnDel.Size = new System.Drawing.Size(144, 42);
-            this.btnDel.TabIndex = 55;
+            this.btnDel.TabIndex = 1;
             this.btnDel.Text = "Xóa";
             this.btnDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -193,13 +193,13 @@ namespace MilkTeaHouseProject
             this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.cbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(40, 132);
+            this.cbCategory.Location = new System.Drawing.Point(39, 137);
             this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbCategory.Size = new System.Drawing.Size(321, 46);
-            this.cbCategory.TabIndex = 56;
+            this.cbCategory.Size = new System.Drawing.Size(320, 46);
+            this.cbCategory.TabIndex = 0;
             // 
             // fDelCategory
             // 

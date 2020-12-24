@@ -91,15 +91,15 @@ namespace MilkTeaShopManagement.DAL
         }
 
         //fix
-        public void AddDrink(string Name, int Price, string Category, byte[] Image, int origin, int count)
+        public void AddDrink(string Name, long Price, string Category, byte[] Image, long origin)
         {
             int id = GetMAXDrinkID() + 1;
 
-            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image , @Origin , @Count",
-                new object[] { id, Name, Price, Category, Image, origin, count });
+            DataProvider.Instance.ExecuteNonQuery("USP_AddDrink @ID , @Name , @Price , @Category , @Image , @Origin ",
+                new object[] { id, Name, Price, Category, Image, origin });
         }
 
-        public void EditDrink(int id, string name, int price, string category, byte[] image, int origin)
+        public void EditDrink(int id, string name, long price, string category, byte[] image, long origin)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_EditDrink @ID , @Name , @Price , @Category , @Image , @Origin ",
                 new object[] { id, name, price, category, image, origin });
@@ -144,6 +144,17 @@ namespace MilkTeaShopManagement.DAL
         {
             string query = string.Format("update Drink set COUNT = COUNT + {0} where ID = {1}", count, id);
             DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public long GetPricebyDrinkID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM Drink where ID = {0}", id));
+
+            DataRow dr = data.Rows[0];
+
+            DTO.Drink item = new DTO.Drink(dr);
+
+            return item.Price;
         }
     }
 }
