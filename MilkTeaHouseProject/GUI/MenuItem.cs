@@ -217,8 +217,6 @@ namespace MilkTeaHouseProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
                 int count = ConvertTo_IntNumber(this.txtCount.Text);
                 long total;
 
@@ -242,12 +240,6 @@ namespace MilkTeaHouseProject
                 this.txtCount.Visible = false;
                 this.btnAdd.Visible = false;
                 this.txtCount.Text = "";
-            }
-            catch (SqlException)
-            {
-                this.errorShow.Visible = true;
-                errorShow.Text = "Số lượng quá lớn";
-            }
         }
 
         private void btnShowAddCount_Click(object sender, EventArgs e)

@@ -63,7 +63,7 @@ namespace MilkTeaHouseProject
 
             if (position.ToUpper() == "QUẢN LÝ")
             {
-                this.btEdit.Visible = false;
+                this.btEdit.Visible = true;
                 this.btDel.Visible = false;
                 this.numericUpDownOverTime.Visible = false;
                 this.numericFault.Visible = false;
@@ -156,7 +156,6 @@ namespace MilkTeaHouseProject
 
         private void StaffItem_Load(object sender, EventArgs e)
         {
-            //Expand();
             Collapse();
         }
 

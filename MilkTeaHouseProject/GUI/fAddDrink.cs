@@ -399,6 +399,18 @@ namespace MilkTeaHouseProject
         {
             this.errorShow.Visible = false;
         }
+
+        private void txtNameDrink_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && this.lbNameForm.Text == "Thêm món")
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.lbNameForm.Text == "Sửa món")
+            {
+                this.btnEdit_Click(sender, e);
+            }
+        }
         #endregion
     }
 }

@@ -52,10 +52,10 @@ namespace MilkTeaHouseProject.GUI
             this.pn.Controls.Add(this.lbNameForm);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(380, 35);
-            this.pn.TabIndex = 67;
+            this.pn.TabIndex = 4;
             // 
             // btnExit
             // 
@@ -72,7 +72,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -80,7 +80,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(338, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -89,7 +89,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(42, 35);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 0;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -132,14 +132,14 @@ namespace MilkTeaHouseProject.GUI
             this.btnSwap.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnSwap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSwap.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSwap.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSwap.FocusedColor = System.Drawing.Color.White;
             this.btnSwap.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSwap.ForeColor = System.Drawing.Color.White;
             this.btnSwap.Image = null;
             this.btnSwap.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSwap.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSwap.Location = new System.Drawing.Point(49, 307);
-            this.btnSwap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSwap.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwap.Name = "btnSwap";
             this.btnSwap.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnSwap.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -149,7 +149,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnSwap.OnPressedColor = System.Drawing.Color.Black;
             this.btnSwap.Radius = 10;
             this.btnSwap.Size = new System.Drawing.Size(118, 35);
-            this.btnSwap.TabIndex = 59;
+            this.btnSwap.TabIndex = 2;
             this.btnSwap.Text = "Lưu";
             this.btnSwap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
@@ -204,14 +204,14 @@ namespace MilkTeaHouseProject.GUI
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(197, 307);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -221,7 +221,7 @@ namespace MilkTeaHouseProject.GUI
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(120, 35);
-            this.btnReturn.TabIndex = 63;
+            this.btnReturn.TabIndex = 3;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnExit_Click);
@@ -234,17 +234,17 @@ namespace MilkTeaHouseProject.GUI
             this.cbGroup.BorderSize = 1;
             this.cbGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGroup.FocusedColor = System.Drawing.Color.Empty;
+            this.cbGroup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbGroup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGroup.ForeColor = System.Drawing.Color.Black;
             this.cbGroup.FormattingEnabled = true;
             this.cbGroup.Location = new System.Drawing.Point(51, 127);
-            this.cbGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbGroup.Margin = new System.Windows.Forms.Padding(2);
             this.cbGroup.Name = "cbGroup";
             this.cbGroup.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbGroup.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbGroup.Size = new System.Drawing.Size(267, 35);
-            this.cbGroup.TabIndex = 60;
+            this.cbGroup.TabIndex = 0;
             this.cbGroup.SelectedIndexChanged += new System.EventHandler(this.cbGroup_SelectedIndexChanged);
             // 
             // cbID
@@ -259,7 +259,7 @@ namespace MilkTeaHouseProject.GUI
             this.cbID.ForeColor = System.Drawing.Color.Black;
             this.cbID.FormattingEnabled = true;
             this.cbID.Location = new System.Drawing.Point(516, 347);
-            this.cbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbID.Margin = new System.Windows.Forms.Padding(2);
             this.cbID.Name = "cbID";
             this.cbID.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbID.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -274,17 +274,17 @@ namespace MilkTeaHouseProject.GUI
             this.cbTable.BorderSize = 1;
             this.cbTable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTable.FocusedColor = System.Drawing.Color.Empty;
+            this.cbTable.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTable.ForeColor = System.Drawing.Color.Black;
             this.cbTable.FormattingEnabled = true;
             this.cbTable.Location = new System.Drawing.Point(51, 218);
-            this.cbTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTable.Margin = new System.Windows.Forms.Padding(2);
             this.cbTable.Name = "cbTable";
             this.cbTable.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTable.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbTable.Size = new System.Drawing.Size(267, 35);
-            this.cbTable.TabIndex = 62;
+            this.cbTable.TabIndex = 1;
             this.cbTable.SelectedIndexChanged += new System.EventHandler(this.cbTable_SelectedIndexChanged);
             // 
             // fSwapTable
@@ -304,7 +304,7 @@ namespace MilkTeaHouseProject.GUI
             this.Controls.Add(this.cbID);
             this.Controls.Add(this.cbTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fSwapTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSwapTable";

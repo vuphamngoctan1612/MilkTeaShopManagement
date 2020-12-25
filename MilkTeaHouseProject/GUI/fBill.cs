@@ -350,15 +350,13 @@ namespace MilkTeaHouseProject
             }
         }
 
-        #endregion
-
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtSearch.Clear();
             if (cbSearch.SelectedIndex == 0)
             {
                 SearchAllNote();
-            } 
+            }
             if (cbSearch.SelectedIndex == 1)
             {
                 SearchNotebyName("Nhập");
@@ -376,5 +374,6 @@ namespace MilkTeaHouseProject
                 SearchExpense();
             }
         }
+        #endregion
     }
 }

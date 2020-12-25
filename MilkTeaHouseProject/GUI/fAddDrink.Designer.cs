@@ -63,7 +63,7 @@
             this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(657, 35);
-            this.pn.TabIndex = 36;
+            this.pn.TabIndex = 7;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnExit
@@ -81,7 +81,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -98,7 +98,7 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(42, 35);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 0;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -164,7 +164,7 @@
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
@@ -181,7 +181,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(120, 35);
-            this.btnReturn.TabIndex = 4;
+            this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -227,7 +227,7 @@
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.FocusedColor = System.Drawing.Color.White;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
@@ -244,7 +244,7 @@
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(120, 35);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Lưu";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -258,18 +258,18 @@
             this.cbbCategory.BorderSize = 1;
             this.cbbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.Location = new System.Drawing.Point(327, 186);
+            this.cbbCategory.Location = new System.Drawing.Point(327, 190);
             this.cbbCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbbCategory.MaxDropDownItems = 100;
             this.cbbCategory.Name = "cbbCategory";
             this.cbbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cbbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbCategory.Size = new System.Drawing.Size(262, 35);
-            this.cbbCategory.TabIndex = 5;
+            this.cbbCategory.TabIndex = 0;
             // 
             // lbOriginPrice
             // 
@@ -292,7 +292,7 @@
             this.btnAddCategory.BorderColor = System.Drawing.Color.Black;
             this.btnAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCategory.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddCategory.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
             this.btnAddCategory.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
@@ -308,7 +308,7 @@
             this.btnAddCategory.OnPressedColor = System.Drawing.Color.Black;
             this.btnAddCategory.Radius = 10;
             this.btnAddCategory.Size = new System.Drawing.Size(35, 32);
-            this.btnAddCategory.TabIndex = 6;
+            this.btnAddCategory.TabIndex = 1;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // txtID
@@ -325,7 +325,7 @@
             this.txtID.PasswordChar = '\0';
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(265, 40);
-            this.txtID.TabIndex = 0;
+            this.txtID.TabIndex = 8;
             this.txtID.TabStop = false;
             // 
             // txtNameDrink
@@ -342,8 +342,9 @@
             this.txtNameDrink.PasswordChar = '\0';
             this.txtNameDrink.SelectedText = "";
             this.txtNameDrink.Size = new System.Drawing.Size(265, 40);
-            this.txtNameDrink.TabIndex = 0;
+            this.txtNameDrink.TabIndex = 2;
             this.txtNameDrink.TextChanged += new System.EventHandler(this.txtNameDrink_TextChanged);
+            this.txtNameDrink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameDrink_KeyPress);
             // 
             // txtOriginPrice
             // 
@@ -360,7 +361,7 @@
             this.txtOriginPrice.PasswordChar = '\0';
             this.txtOriginPrice.SelectedText = "";
             this.txtOriginPrice.Size = new System.Drawing.Size(265, 41);
-            this.txtOriginPrice.TabIndex = 1;
+            this.txtOriginPrice.TabIndex = 3;
             this.txtOriginPrice.TextChanged += new System.EventHandler(this.txtOriginPrice_TextChanged);
             this.txtOriginPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
@@ -379,7 +380,7 @@
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(265, 39);
-            this.txtPrice.TabIndex = 2;
+            this.txtPrice.TabIndex = 4;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
@@ -416,7 +417,7 @@
             this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEdit.FocusedColor = System.Drawing.Color.White;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = null;
@@ -433,7 +434,7 @@
             this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btnEdit.Radius = 10;
             this.btnEdit.Size = new System.Drawing.Size(120, 35);
-            this.btnEdit.TabIndex = 3;
+            this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Lưu";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);

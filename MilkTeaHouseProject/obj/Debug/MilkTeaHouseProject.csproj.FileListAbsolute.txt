@@ -1526,7 +1526,6 @@ C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.e
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.exe
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\MilkTeaHouseProject.pdb
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\dje\MilkTeaHouseProject.resources.dll
-C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\ClosedXML.dll
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\bin\Debug\EasyHTMLReports.dll

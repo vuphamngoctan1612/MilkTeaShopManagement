@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace MilkTeaHouseProject
             InitializeComponent();
             this.CenterToScreen();
             this.txtPass.UseSystemPasswordChar = true;
+            txtUser.Focus();
         }
 
         #region Methods
@@ -51,35 +53,34 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            //try
+            try
             {
-                if (ValidateChildren(ValidationConstraints.Enabled))
+                if (Login(username, password))
                 {
-                    if (Login(username, password))
-                    {
-                        fMain f = new fMain(username);
-                        this.Hide();
-                        f.ShowDialog();
-                        this.Show();
-                        this.txtUser.Text = this.txtPass.Text = "";
-                    }
-                    else
-                    {
-                        ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
-                    }
-                    if (string.IsNullOrEmpty(txtUser.Text))
-                    {
-                        txtUser.Focus();
-                        ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
-                    }
-                    if (string.IsNullOrEmpty(txtPass.Text))
-                    {
-                        txtPass.Focus();
-                        ShowError(txtPass, "Vui lòng nhập mật khẩu");
-                    }
+                    fMain f = new fMain(username);
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                    this.txtUser.Text = this.txtPass.Text = "";
+                }
+                else
+                {
+                    ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
+                }
+                if (string.IsNullOrEmpty(txtUser.Text))
+                {
+                    txtUser.Focus();
+                    ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtPass.Text))
+                {
+                    txtPass.Focus();
+                    ShowError(txtPass, "Vui lòng nhập mật khẩu");
+                    return;
                 }
             }
-            //catch
+            catch
             {
 
             }
@@ -125,41 +126,13 @@ namespace MilkTeaHouseProject
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
+                btnLogin_Click(sender, e);
             }
 
             if (e.KeyChar == (char)Keys.Space)
             {
                 e.Handled = true;
             }
-        }
-
-        private void txtUser_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtUser.Text))
-            {
-                txtUser.Focus();
-                ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
-            }
-        }
-
-        private void txtPass_Validating(object sender, CancelEventArgs e)
-        {
-            //if (string.IsNullOrEmpty(txtPass.Text))
-            //{
-            //    txtPass.Focus();
-            //    ShowError(txtPass, "Vui lòng nhập mật khẩu");
-            //}
-        }
-
-        private void btnLogin_Validating(object sender, CancelEventArgs e)
-        {
-            //string username = this.txtUser.Text;
-            //string password = this.txtPass.Text;
-
-            //if (!Login(username, password))
-            //{
-            //    ShowError(txtPass, "Tên đăng nhập hoặc mật khẩu sai");
-            //}
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)

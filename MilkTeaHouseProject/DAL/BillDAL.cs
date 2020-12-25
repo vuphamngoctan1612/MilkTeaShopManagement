@@ -93,7 +93,6 @@ namespace MilkTeaHouseProject.DAL
             DateTime checkin = DateTime.Now;
             string query = string.Format("insert into Bill (ID, STAFFID, NOTE, TABLEID, CHECKIN, TOTAL) values ({0}, {1}, N'Bán hàng', {2}, '{3}', {4})", id, staffID, tableid, checkin, price);
             DataProvider.Instance.ExecuteNonQuery(query);
-            //DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID , @Note", new object[] { id, staffID, "Đặt món" });
         }
 
         public void MakeABill(int idStaff, string note, long total)

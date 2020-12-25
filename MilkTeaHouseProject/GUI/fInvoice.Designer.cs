@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fInvoice));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbNameForm = new System.Windows.Forms.Label();
@@ -49,6 +49,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DataGridViewInvoices = new Guna.UI.WinForms.GunaDataGridView();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.lbHotline = new Guna.UI.WinForms.GunaLabel();
+            this.lbCheckout = new Guna.UI.WinForms.GunaLabel();
+            this.lbInfoTable = new Guna.UI.WinForms.GunaLabel();
+            this.lbStaffName = new Guna.UI.WinForms.GunaLabel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbIdbill = new Guna.UI.WinForms.GunaLabel();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,9 +69,9 @@
             this.panel4.Controls.Add(this.lbNameForm);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1048, 35);
+            this.panel4.Size = new System.Drawing.Size(1195, 35);
             this.panel4.TabIndex = 25;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             // 
@@ -90,8 +97,8 @@
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(1006, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Location = new System.Drawing.Point(1153, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -129,6 +136,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.btnPrintInvoice);
             this.panel2.Controls.Add(this.btnPay);
             this.panel2.Controls.Add(this.txtTotalPrice);
@@ -138,10 +146,10 @@
             this.panel2.Controls.Add(this.gunaLabel3);
             this.panel2.Controls.Add(this.lbTotalPrice);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(688, 35);
+            this.panel2.Location = new System.Drawing.Point(835, 35);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 595);
+            this.panel2.Size = new System.Drawing.Size(360, 688);
             this.panel2.TabIndex = 28;
             // 
             // btnPrintInvoice
@@ -157,7 +165,7 @@
             this.btnPrintInvoice.ForeColor = System.Drawing.Color.White;
             this.btnPrintInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintInvoice.Image")));
             this.btnPrintInvoice.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPrintInvoice.Location = new System.Drawing.Point(122, 493);
+            this.btnPrintInvoice.Location = new System.Drawing.Point(122, 483);
             this.btnPrintInvoice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
             this.btnPrintInvoice.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -188,7 +196,7 @@
             this.btnPay.Image = global::MilkTeaHouseProject.Properties.Resources.Cash_In_Hand_32;
             this.btnPay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPay.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnPay.Location = new System.Drawing.Point(122, 415);
+            this.btnPay.Location = new System.Drawing.Point(122, 405);
             this.btnPay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnPay.Name = "btnPay";
             this.btnPay.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(151)))), ((int)(((byte)(71)))));
@@ -212,7 +220,7 @@
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.LineColor = System.Drawing.Color.Gainsboro;
             this.txtTotalPrice.LineSize = 2;
-            this.txtTotalPrice.Location = new System.Drawing.Point(202, 113);
+            this.txtTotalPrice.Location = new System.Drawing.Point(202, 103);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.PasswordChar = '\0';
@@ -231,7 +239,7 @@
             this.txtChange.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChange.LineColor = System.Drawing.Color.Gainsboro;
             this.txtChange.LineSize = 2;
-            this.txtChange.Location = new System.Drawing.Point(202, 275);
+            this.txtChange.Location = new System.Drawing.Point(202, 265);
             this.txtChange.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtChange.Name = "txtChange";
             this.txtChange.PasswordChar = '\0';
@@ -249,7 +257,7 @@
             this.txtCustomerPay.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerPay.LineColor = System.Drawing.Color.Gainsboro;
             this.txtCustomerPay.LineSize = 2;
-            this.txtCustomerPay.Location = new System.Drawing.Point(202, 192);
+            this.txtCustomerPay.Location = new System.Drawing.Point(202, 182);
             this.txtCustomerPay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCustomerPay.Name = "txtCustomerPay";
             this.txtCustomerPay.PasswordChar = '\0';
@@ -263,18 +271,18 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(22, 290);
+            this.gunaLabel4.Location = new System.Drawing.Point(22, 280);
             this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(112, 25);
+            this.gunaLabel4.Size = new System.Drawing.Size(102, 25);
             this.gunaLabel4.TabIndex = 0;
-            this.gunaLabel4.Text = "Tiền thối lại";
+            this.gunaLabel4.Text = "Tiền trả lại";
             // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(22, 207);
+            this.gunaLabel3.Location = new System.Drawing.Point(22, 197);
             this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(164, 25);
@@ -285,7 +293,7 @@
             // 
             this.lbTotalPrice.AutoSize = true;
             this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPrice.Location = new System.Drawing.Point(22, 128);
+            this.lbTotalPrice.Location = new System.Drawing.Point(22, 118);
             this.lbTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotalPrice.Name = "lbTotalPrice";
             this.lbTotalPrice.Size = new System.Drawing.Size(102, 25);
@@ -296,59 +304,65 @@
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 35);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(45, 595);
+            this.panel1.Size = new System.Drawing.Size(45, 688);
             this.panel1.TabIndex = 29;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbInfoTable);
+            this.panel3.Controls.Add(this.lbCheckout);
+            this.panel3.Controls.Add(this.lbIdbill);
+            this.panel3.Controls.Add(this.lbStaffName);
+            this.panel3.Controls.Add(this.lbHotline);
+            this.panel3.Controls.Add(this.gunaLabel1);
             this.panel3.Controls.Add(this.DataGridViewInvoices);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(45, 35);
             this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(643, 595);
+            this.panel3.Size = new System.Drawing.Size(790, 688);
             this.panel3.TabIndex = 30;
             // 
             // DataGridViewInvoices
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridViewInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DataGridViewInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridViewInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewInvoices.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.DataGridViewInvoices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewInvoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridViewInvoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridViewInvoices.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridViewInvoices.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewInvoices.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridViewInvoices.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridViewInvoices.Enabled = false;
             this.DataGridViewInvoices.EnableHeadersVisualStyles = false;
             this.DataGridViewInvoices.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.DataGridViewInvoices.Location = new System.Drawing.Point(0, 108);
+            this.DataGridViewInvoices.Location = new System.Drawing.Point(0, 265);
             this.DataGridViewInvoices.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DataGridViewInvoices.Name = "DataGridViewInvoices";
             this.DataGridViewInvoices.RowHeadersVisible = false;
             this.DataGridViewInvoices.RowHeadersWidth = 100;
             this.DataGridViewInvoices.RowTemplate.Height = 24;
             this.DataGridViewInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewInvoices.Size = new System.Drawing.Size(643, 487);
+            this.DataGridViewInvoices.Size = new System.Drawing.Size(790, 423);
             this.DataGridViewInvoices.TabIndex = 1;
             this.DataGridViewInvoices.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridViewInvoices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -373,12 +387,81 @@
             this.DataGridViewInvoices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewInvoices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel1.Location = new System.Drawing.Point(-2, 15);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(163, 28);
+            this.gunaLabel1.TabIndex = 2;
+            this.gunaLabel1.Text = "MILKTEAHOUSE";
+            // 
+            // lbHotline
+            // 
+            this.lbHotline.AutoSize = true;
+            this.lbHotline.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbHotline.Location = new System.Drawing.Point(-2, 57);
+            this.lbHotline.Name = "lbHotline";
+            this.lbHotline.Size = new System.Drawing.Size(132, 23);
+            this.lbHotline.TabIndex = 2;
+            this.lbHotline.Text = "MILKTEAHOUSE";
+            // 
+            // lbCheckout
+            // 
+            this.lbCheckout.AutoSize = true;
+            this.lbCheckout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbCheckout.Location = new System.Drawing.Point(-4, 173);
+            this.lbCheckout.Name = "lbCheckout";
+            this.lbCheckout.Size = new System.Drawing.Size(132, 23);
+            this.lbCheckout.TabIndex = 2;
+            this.lbCheckout.Text = "MILKTEAHOUSE";
+            // 
+            // lbInfoTable
+            // 
+            this.lbInfoTable.AutoSize = true;
+            this.lbInfoTable.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbInfoTable.Location = new System.Drawing.Point(-1, 214);
+            this.lbInfoTable.Name = "lbInfoTable";
+            this.lbInfoTable.Size = new System.Drawing.Size(132, 23);
+            this.lbInfoTable.TabIndex = 2;
+            this.lbInfoTable.Text = "MILKTEAHOUSE";
+            // 
+            // lbStaffName
+            // 
+            this.lbStaffName.AutoSize = true;
+            this.lbStaffName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbStaffName.Location = new System.Drawing.Point(-1, 94);
+            this.lbStaffName.Name = "lbStaffName";
+            this.lbStaffName.Size = new System.Drawing.Size(132, 23);
+            this.lbStaffName.TabIndex = 2;
+            this.lbStaffName.Text = "MILKTEAHOUSE";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(2, 688);
+            this.panel5.TabIndex = 3;
+            // 
+            // lbIdbill
+            // 
+            this.lbIdbill.AutoSize = true;
+            this.lbIdbill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbIdbill.Location = new System.Drawing.Point(-1, 133);
+            this.lbIdbill.Name = "lbIdbill";
+            this.lbIdbill.Size = new System.Drawing.Size(132, 23);
+            this.lbIdbill.TabIndex = 2;
+            this.lbIdbill.Text = "MILKTEAHOUSE";
+            // 
             // fInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1048, 630);
+            this.ClientSize = new System.Drawing.Size(1195, 723);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -393,6 +476,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewInvoices)).EndInit();
             this.ResumeLayout(false);
 
@@ -416,5 +500,12 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI.WinForms.GunaDataGridView DataGridViewInvoices;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
+        private Guna.UI.WinForms.GunaLabel lbHotline;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel lbInfoTable;
+        private Guna.UI.WinForms.GunaLabel lbCheckout;
+        private Guna.UI.WinForms.GunaLabel lbStaffName;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI.WinForms.GunaLabel lbIdbill;
     }
 }

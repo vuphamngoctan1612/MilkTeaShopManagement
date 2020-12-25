@@ -60,7 +60,7 @@
             this.panel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
             this.panel2.Location = new System.Drawing.Point(367, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(540, 537);
             this.panel2.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -89,7 +89,7 @@
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(500, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -98,7 +98,7 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(40, 37);
-            this.btnExit.TabIndex = 11;
+            this.btnExit.TabIndex = 3;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -107,7 +107,7 @@
             this.btnReturn.AnimationHoverSpeed = 0.07F;
             this.btnReturn.AnimationSpeed = 0.03F;
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.btnReturn.BorderColor = System.Drawing.Color.Black;
             this.btnReturn.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnReturn.CheckedBorderColor = System.Drawing.Color.Black;
@@ -116,14 +116,14 @@
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(287, 449);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -133,7 +133,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(150, 37);
-            this.btnReturn.TabIndex = 1;
+            this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -143,7 +143,7 @@
             this.btnSignUp.AnimationHoverSpeed = 0.07F;
             this.btnSignUp.AnimationSpeed = 0.03F;
             this.btnSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.btnSignUp.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnSignUp.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(173)))), ((int)(((byte)(82)))));
             this.btnSignUp.BorderColor = System.Drawing.Color.Black;
             this.btnSignUp.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnSignUp.CheckedBorderColor = System.Drawing.Color.Black;
@@ -152,14 +152,14 @@
             this.btnSignUp.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignUp.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSignUp.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSignUp.FocusedColor = System.Drawing.Color.White;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
             this.btnSignUp.Image = null;
             this.btnSignUp.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSignUp.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSignUp.Location = new System.Drawing.Point(107, 449);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnSignUp.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -169,11 +169,10 @@
             this.btnSignUp.OnPressedColor = System.Drawing.Color.Black;
             this.btnSignUp.Radius = 10;
             this.btnSignUp.Size = new System.Drawing.Size(150, 37);
-            this.btnSignUp.TabIndex = 0;
+            this.btnSignUp.TabIndex = 1;
             this.btnSignUp.Text = "Đăng kí";
             this.btnSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            this.btnSignUp.Validating += new System.ComponentModel.CancelEventHandler(this.btnSignUp_Validating);
             // 
             // pnLogin
             // 
@@ -185,7 +184,7 @@
             this.pnLogin.Controls.Add(this.lbUser);
             this.pnLogin.Controls.Add(this.lbPass);
             this.pnLogin.Location = new System.Drawing.Point(42, 10);
-            this.pnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.Size = new System.Drawing.Size(452, 415);
             this.pnLogin.TabIndex = 0;
@@ -213,15 +212,15 @@
             this.txtRePass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtRePass.LineSize = 2;
             this.txtRePass.Location = new System.Drawing.Point(52, 325);
-            this.txtRePass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRePass.Margin = new System.Windows.Forms.Padding(2);
             this.txtRePass.Name = "txtRePass";
             this.txtRePass.PasswordChar = '●';
             this.txtRePass.SelectedText = "";
             this.txtRePass.Size = new System.Drawing.Size(352, 40);
             this.txtRePass.TabIndex = 2;
             this.txtRePass.UseSystemPasswordChar = true;
+            this.txtRePass.TextChanged += new System.EventHandler(this.txtRePass_TextChanged);
             this.txtRePass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
-            this.txtRePass.Validating += new System.ComponentModel.CancelEventHandler(this.txtRePass_Validating);
             // 
             // txtPass
             // 
@@ -232,15 +231,15 @@
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPass.LineSize = 2;
             this.txtPass.Location = new System.Drawing.Point(52, 213);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(352, 40);
             this.txtPass.TabIndex = 1;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
-            this.txtPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtPass_Validating);
             // 
             // txtUser
             // 
@@ -251,7 +250,7 @@
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
             this.txtUser.LineSize = 2;
             this.txtUser.Location = new System.Drawing.Point(53, 107);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
             this.txtUser.SelectedText = "";
@@ -259,7 +258,6 @@
             this.txtUser.TabIndex = 0;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
-            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
             // 
             // lbRePass
             // 
@@ -307,7 +305,7 @@
             this.pnPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnPic.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnPic.Location = new System.Drawing.Point(0, 0);
-            this.pnPic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnPic.Margin = new System.Windows.Forms.Padding(2);
             this.pnPic.Name = "pnPic";
             this.pnPic.Size = new System.Drawing.Size(367, 537);
             this.pnPic.TabIndex = 0;
@@ -324,7 +322,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnPic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSignUp";

@@ -101,7 +101,7 @@ namespace MilkTeaHouseProject
             this.txtIDBill.LineColor = System.Drawing.Color.Silver;
             this.txtIDBill.LineSize = 2;
             this.txtIDBill.Location = new System.Drawing.Point(323, 53);
-            this.txtIDBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDBill.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDBill.Name = "txtIDBill";
             this.txtIDBill.PasswordChar = '\0';
             this.txtIDBill.SelectedText = "";
@@ -118,7 +118,7 @@ namespace MilkTeaHouseProject
             this.txtStaffID.LineColor = System.Drawing.Color.Silver;
             this.txtStaffID.LineSize = 2;
             this.txtStaffID.Location = new System.Drawing.Point(323, 107);
-            this.txtStaffID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStaffID.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.PasswordChar = '\0';
             this.txtStaffID.SelectedText = "";
@@ -134,7 +134,7 @@ namespace MilkTeaHouseProject
             this.txtNote.LineColor = System.Drawing.Color.Silver;
             this.txtNote.LineSize = 2;
             this.txtNote.Location = new System.Drawing.Point(323, 167);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(2);
             this.txtNote.Name = "txtNote";
             this.txtNote.PasswordChar = '\0';
             this.txtNote.SelectedText = "";
@@ -150,7 +150,7 @@ namespace MilkTeaHouseProject
             this.txtTotal.LineColor = System.Drawing.Color.Silver;
             this.txtTotal.LineSize = 2;
             this.txtTotal.Location = new System.Drawing.Point(323, 225);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.MaxLength = 11;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
@@ -167,10 +167,10 @@ namespace MilkTeaHouseProject
             this.pn.Controls.Add(this.lbNameForm);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(667, 35);
-            this.pn.TabIndex = 37;
+            this.pn.TabIndex = 4;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
             // 
             // btnExit
@@ -188,7 +188,7 @@ namespace MilkTeaHouseProject
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -196,7 +196,7 @@ namespace MilkTeaHouseProject
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(625, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -205,7 +205,7 @@ namespace MilkTeaHouseProject
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(42, 35);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 0;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -235,14 +235,14 @@ namespace MilkTeaHouseProject
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(459, 296);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -271,14 +271,14 @@ namespace MilkTeaHouseProject
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.FocusedColor = System.Drawing.Color.White;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.Location = new System.Drawing.Point(323, 296);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -325,7 +325,7 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbStaffID);
             this.Controls.Add(this.lbIDBill);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MakeABill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MakeABill";

@@ -383,8 +383,6 @@ namespace MilkTeaHouseProject
             this.LoadPosinCbb();
         }
 
-        #endregion
-
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtSearch.Text = "";
@@ -409,5 +407,7 @@ namespace MilkTeaHouseProject
                 LoadPosinCbb();
             }
         }
+        #endregion
+
     }
 }

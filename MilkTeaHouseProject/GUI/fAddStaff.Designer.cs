@@ -52,6 +52,8 @@
             this.btEdit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtAddress = new Guna.UI.WinForms.GunaLineTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtPos = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtPhoneNumber = new Guna.UI.WinForms.GunaLineTextBox();
             this.btAddUserName = new Guna.UI.WinForms.GunaButton();
             this.dptBirthDate = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -92,7 +94,7 @@
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
@@ -109,7 +111,7 @@
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(118, 35);
-            this.btnReturn.TabIndex = 10;
+            this.btnReturn.TabIndex = 12;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -128,7 +130,7 @@
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.FocusedColor = System.Drawing.Color.White;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
@@ -145,7 +147,7 @@
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(118, 35);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Lưu";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Visible = false;
@@ -221,7 +223,7 @@
             this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(1125, 35);
-            this.pn.TabIndex = 4;
+            this.pn.TabIndex = 1;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
             // 
             // lbNameForm
@@ -251,7 +253,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -268,7 +270,7 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(42, 35);
-            this.btnExit.TabIndex = 11;
+            this.btnExit.TabIndex = 0;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -286,6 +288,8 @@
             this.pnContain.Controls.Add(this.btEdit);
             this.pnContain.Controls.Add(this.txtAddress);
             this.pnContain.Controls.Add(this.label2);
+            this.pnContain.Controls.Add(this.txtUsername);
+            this.pnContain.Controls.Add(this.txtPos);
             this.pnContain.Controls.Add(this.txtPhoneNumber);
             this.pnContain.Controls.Add(this.btAddUserName);
             this.pnContain.Controls.Add(this.dptBirthDate);
@@ -327,7 +331,7 @@
             this.cbWoman.BaseColor = System.Drawing.Color.White;
             this.cbWoman.CheckedOffColor = System.Drawing.Color.Gray;
             this.cbWoman.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbWoman.FillColor = System.Drawing.Color.White;
+            this.cbWoman.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbWoman.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbWoman.Location = new System.Drawing.Point(483, 307);
             this.cbWoman.Name = "cbWoman";
@@ -341,7 +345,7 @@
             this.cbMan.BaseColor = System.Drawing.Color.White;
             this.cbMan.CheckedOffColor = System.Drawing.Color.Gray;
             this.cbMan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbMan.FillColor = System.Drawing.Color.White;
+            this.cbMan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbMan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMan.Location = new System.Drawing.Point(362, 307);
             this.cbMan.Name = "cbMan";
@@ -358,13 +362,13 @@
             this.btnAddUserName.BorderColor = System.Drawing.Color.Black;
             this.btnAddUserName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddUserName.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddUserName.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddUserName.FocusedColor = System.Drawing.Color.Silver;
             this.btnAddUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddUserName.ForeColor = System.Drawing.Color.White;
             this.btnAddUserName.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
             this.btnAddUserName.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddUserName.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddUserName.Location = new System.Drawing.Point(1062, 297);
+            this.btnAddUserName.Location = new System.Drawing.Point(1062, 302);
             this.btnAddUserName.Name = "btnAddUserName";
             this.btnAddUserName.OnHoverBaseColor = System.Drawing.Color.White;
             this.btnAddUserName.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -372,7 +376,7 @@
             this.btnAddUserName.OnHoverImage = null;
             this.btnAddUserName.OnPressedColor = System.Drawing.Color.Black;
             this.btnAddUserName.Size = new System.Drawing.Size(27, 28);
-            this.btnAddUserName.TabIndex = 64;
+            this.btnAddUserName.TabIndex = 10;
             this.btnAddUserName.Click += new System.EventHandler(this.btnAddUserName_Click);
             // 
             // errorShow
@@ -420,17 +424,17 @@
             this.cbbUser.BorderSize = 1;
             this.cbbUser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbUser.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbUser.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbUser.ForeColor = System.Drawing.Color.Black;
             this.cbbUser.FormattingEnabled = true;
-            this.cbbUser.Location = new System.Drawing.Point(803, 294);
+            this.cbbUser.Location = new System.Drawing.Point(803, 298);
             this.cbbUser.Margin = new System.Windows.Forms.Padding(2);
             this.cbbUser.Name = "cbbUser";
             this.cbbUser.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbUser.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbUser.Size = new System.Drawing.Size(251, 35);
-            this.cbbUser.TabIndex = 8;
+            this.cbbUser.TabIndex = 9;
             this.cbbUser.Visible = false;
             // 
             // btEdit
@@ -447,7 +451,7 @@
             this.btEdit.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btEdit.FocusedColor = System.Drawing.Color.Empty;
+            this.btEdit.FocusedColor = System.Drawing.Color.White;
             this.btEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btEdit.ForeColor = System.Drawing.Color.White;
             this.btEdit.Image = null;
@@ -464,7 +468,7 @@
             this.btEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btEdit.Radius = 10;
             this.btEdit.Size = new System.Drawing.Size(118, 35);
-            this.btEdit.TabIndex = 9;
+            this.btEdit.TabIndex = 11;
             this.btEdit.Text = "Lưu";
             this.btEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btEdit.Visible = false;
@@ -497,6 +501,42 @@
             this.label2.Size = new System.Drawing.Size(70, 23);
             this.label2.TabIndex = 55;
             this.label2.Text = "Địa chỉ:";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsername.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtUsername.LineSize = 2;
+            this.txtUsername.Location = new System.Drawing.Point(803, 292);
+            this.txtUsername.MaxLength = 10;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.Size = new System.Drawing.Size(252, 42);
+            this.txtUsername.TabIndex = 9;
+            this.txtUsername.Visible = false;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
+            // 
+            // txtPos
+            // 
+            this.txtPos.BackColor = System.Drawing.Color.White;
+            this.txtPos.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPos.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPos.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtPos.LineSize = 2;
+            this.txtPos.Location = new System.Drawing.Point(802, 215);
+            this.txtPos.MaxLength = 10;
+            this.txtPos.Name = "txtPos";
+            this.txtPos.PasswordChar = '\0';
+            this.txtPos.SelectedText = "";
+            this.txtPos.Size = new System.Drawing.Size(252, 42);
+            this.txtPos.TabIndex = 7;
+            this.txtPos.Visible = false;
+            this.txtPos.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
             // txtPhoneNumber
             // 
@@ -549,7 +589,7 @@
             this.dptBirthDate.CustomFormat = null;
             this.dptBirthDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dptBirthDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dptBirthDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dptBirthDate.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptBirthDate.ForeColor = System.Drawing.Color.Black;
             this.dptBirthDate.Location = new System.Drawing.Point(362, 222);
             this.dptBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -618,7 +658,7 @@
             this.btAddPosition.BorderColor = System.Drawing.Color.Black;
             this.btAddPosition.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAddPosition.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btAddPosition.FocusedColor = System.Drawing.Color.Empty;
+            this.btAddPosition.FocusedColor = System.Drawing.Color.Silver;
             this.btAddPosition.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btAddPosition.ForeColor = System.Drawing.Color.White;
             this.btAddPosition.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
@@ -632,7 +672,7 @@
             this.btAddPosition.OnHoverImage = null;
             this.btAddPosition.OnPressedColor = System.Drawing.Color.Black;
             this.btAddPosition.Size = new System.Drawing.Size(27, 28);
-            this.btAddPosition.TabIndex = 45;
+            this.btAddPosition.TabIndex = 8;
             this.btAddPosition.Click += new System.EventHandler(this.btAddPosition_Click);
             // 
             // cbbPos
@@ -643,7 +683,7 @@
             this.cbbPos.BorderSize = 1;
             this.cbbPos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbPos.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbPos.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbPos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPos.ForeColor = System.Drawing.Color.Black;
             this.cbbPos.FormattingEnabled = true;
@@ -729,5 +769,7 @@
         private Guna.UI.WinForms.GunaCheckBox cbWoman;
         private Guna.UI.WinForms.GunaCheckBox cbMan;
         private Guna.UI.WinForms.GunaLabel lbUsername;
+        private Guna.UI.WinForms.GunaLineTextBox txtUsername;
+        private Guna.UI.WinForms.GunaLineTextBox txtPos;
     }
 }

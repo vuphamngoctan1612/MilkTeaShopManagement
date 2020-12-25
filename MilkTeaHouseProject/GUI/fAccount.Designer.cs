@@ -51,10 +51,10 @@
             this.pn.Controls.Add(this.lbNameForm);
             this.pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn.Location = new System.Drawing.Point(0, 0);
-            this.pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(378, 35);
-            this.pn.TabIndex = 48;
+            this.pn.TabIndex = 4;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnExit
@@ -72,7 +72,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -80,7 +80,7 @@
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.Location = new System.Drawing.Point(336, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(33)))), ((int)(((byte)(39)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -89,7 +89,7 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(42, 35);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 0;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -102,7 +102,7 @@
             this.lbNameForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNameForm.Name = "lbNameForm";
             this.lbNameForm.Size = new System.Drawing.Size(83, 23);
-            this.lbNameForm.TabIndex = 1;
+            this.lbNameForm.TabIndex = 0;
             this.lbNameForm.Text = "Tài khoản";
             // 
             // lbPass
@@ -146,7 +146,7 @@
             this.btnReturn.AnimationHoverSpeed = 0.07F;
             this.btnReturn.AnimationSpeed = 0.03F;
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnReturn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.btnReturn.BorderColor = System.Drawing.Color.Black;
             this.btnReturn.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnReturn.CheckedBorderColor = System.Drawing.Color.Black;
@@ -155,14 +155,14 @@
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
             this.btnReturn.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReturn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReturn.Location = new System.Drawing.Point(202, 322);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnReturn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -182,7 +182,7 @@
             this.btnAdd.AnimationHoverSpeed = 0.07F;
             this.btnAdd.AnimationSpeed = 0.03F;
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(218)))));
+            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(203)))), ((int)(((byte)(63)))));
             this.btnAdd.BorderColor = System.Drawing.Color.Black;
             this.btnAdd.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnAdd.CheckedBorderColor = System.Drawing.Color.Black;
@@ -191,14 +191,14 @@
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.FocusedColor = System.Drawing.Color.Cyan;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.Location = new System.Drawing.Point(55, 322);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -230,8 +230,10 @@
             // 
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUser.Enabled = false;
             this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
             this.txtUser.LineSize = 2;
             this.txtUser.Location = new System.Drawing.Point(57, 102);
@@ -240,7 +242,6 @@
             this.txtUser.SelectedText = "";
             this.txtUser.Size = new System.Drawing.Size(265, 30);
             this.txtUser.TabIndex = 100001;
-            this.txtUser.Text = "gunaLineTextBox1";
             // 
             // txtPass
             // 
@@ -248,15 +249,16 @@
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPass.LineSize = 2;
             this.txtPass.Location = new System.Drawing.Point(57, 178);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(265, 30);
-            this.txtPass.TabIndex = 100001;
-            this.txtPass.Text = "gunaLineTextBox1";
+            this.txtPass.TabIndex = 0;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtRepass
             // 
@@ -264,15 +266,16 @@
             this.txtRepass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRepass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtRepass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtRepass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtRepass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtRepass.LineSize = 2;
             this.txtRepass.Location = new System.Drawing.Point(57, 258);
             this.txtRepass.Name = "txtRepass";
-            this.txtRepass.PasswordChar = '\0';
+            this.txtRepass.PasswordChar = '●';
             this.txtRepass.SelectedText = "";
             this.txtRepass.Size = new System.Drawing.Size(265, 30);
-            this.txtRepass.TabIndex = 100001;
-            this.txtRepass.Text = "gunaLineTextBox1";
+            this.txtRepass.TabIndex = 1;
+            this.txtRepass.UseSystemPasswordChar = true;
             // 
             // fAccount
             // 
@@ -294,7 +297,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Location = new System.Drawing.Point(100, 100);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(378, 667);
             this.Name = "fAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

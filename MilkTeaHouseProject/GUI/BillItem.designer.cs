@@ -43,9 +43,10 @@
             // 
             this.lbFoodName.AutoSize = true;
             this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbFoodName.Location = new System.Drawing.Point(50, 21);
+            this.lbFoodName.Location = new System.Drawing.Point(10, 18);
+            this.lbFoodName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(113, 30);
+            this.lbFoodName.Size = new System.Drawing.Size(96, 25);
             this.lbFoodName.TabIndex = 0;
             this.lbFoodName.Text = "Food Item";
             // 
@@ -57,12 +58,12 @@
             this.count.ButtonForeColor = System.Drawing.Color.White;
             this.count.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.count.ForeColor = System.Drawing.Color.Black;
-            this.count.Location = new System.Drawing.Point(218, 21);
-            this.count.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.count.Location = new System.Drawing.Point(182, 17);
+            this.count.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.count.Maximum = ((long)(9999999));
             this.count.Minimum = ((long)(0));
             this.count.Name = "count";
-            this.count.Size = new System.Drawing.Size(72, 30);
+            this.count.Size = new System.Drawing.Size(60, 30);
             this.count.TabIndex = 1;
             this.count.Text = "gunaNumeric1";
             this.count.Value = ((long)(1));
@@ -72,10 +73,11 @@
             // 
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbPrice.Location = new System.Drawing.Point(340, 21);
+            this.lbPrice.Location = new System.Drawing.Point(283, 17);
+            this.lbPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbPrice.Size = new System.Drawing.Size(60, 30);
+            this.lbPrice.Size = new System.Drawing.Size(54, 25);
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "Price";
             // 
@@ -83,10 +85,11 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbTotal.Location = new System.Drawing.Point(450, 21);
+            this.lbTotal.Location = new System.Drawing.Point(375, 17);
+            this.lbTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbTotal.Size = new System.Drawing.Size(59, 30);
+            this.lbTotal.Size = new System.Drawing.Size(52, 25);
             this.lbTotal.TabIndex = 2;
             this.lbTotal.Text = "Total";
             // 
@@ -94,9 +97,10 @@
             // 
             this.lbDrinkID.AutoSize = true;
             this.lbDrinkID.Enabled = false;
-            this.lbDrinkID.Location = new System.Drawing.Point(38, 1);
+            this.lbDrinkID.Location = new System.Drawing.Point(32, 1);
+            this.lbDrinkID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDrinkID.Name = "lbDrinkID";
-            this.lbDrinkID.Size = new System.Drawing.Size(0, 20);
+            this.lbDrinkID.Size = new System.Drawing.Size(0, 17);
             this.lbDrinkID.TabIndex = 3;
             this.lbDrinkID.Visible = false;
             // 
@@ -117,15 +121,15 @@
             this.btnDel.ForeColor = System.Drawing.Color.White;
             this.btnDel.Image = global::MilkTeaHouseProject.Properties.Resources.Delete2;
             this.btnDel.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDel.Location = new System.Drawing.Point(563, 12);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDel.Location = new System.Drawing.Point(469, 10);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDel.Name = "btnDel";
             this.btnDel.OnHoverBaseColor = System.Drawing.Color.Silver;
             this.btnDel.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDel.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDel.OnHoverImage = null;
             this.btnDel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDel.Size = new System.Drawing.Size(40, 40);
+            this.btnDel.Size = new System.Drawing.Size(33, 33);
             this.btnDel.TabIndex = 4;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
@@ -133,14 +137,15 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 68);
+            this.panel1.Location = new System.Drawing.Point(0, 57);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(635, 3);
+            this.panel1.Size = new System.Drawing.Size(529, 2);
             this.panel1.TabIndex = 6;
             // 
             // BillItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.panel1);
@@ -152,7 +157,7 @@
             this.Controls.Add(this.lbFoodName);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "BillItem";
-            this.Size = new System.Drawing.Size(635, 71);
+            this.Size = new System.Drawing.Size(529, 59);
             this.ResumeLayout(false);
             this.PerformLayout();
 

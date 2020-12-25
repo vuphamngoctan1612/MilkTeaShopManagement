@@ -124,6 +124,7 @@ namespace MilkTeaHouseProject
             {
                 cbbGroup.Visible = false;
                 txtGroup.Visible = true;
+                txtGroup.Focus();
             }
             else
             {

@@ -104,8 +104,6 @@ namespace MilkTeaHouseProject
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
-            //if (activeForm != null)
-            //    activeForm.Close();
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -203,8 +201,6 @@ namespace MilkTeaHouseProject
         }
         private void lbName_Click(object sender, EventArgs e)
         {
-            //if (activeForm != null)
-            //    activeForm.Close();
             activeForm = null;
             Reset();
         }
@@ -252,7 +248,6 @@ namespace MilkTeaHouseProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //this.revenueReport1.RevenueReport_Load(sender, e);
             gunaLabel4.Text = BillDAL.Instance.CountBillSellinginDay().ToString();
             lbCountbill.Text = BillDAL.Instance.CountBillSoldinDay().ToString();
             gunaLabel2.Text = "Hôm qua: " + BillDAL.Instance.CountBillSoldinYesrerday().ToString();

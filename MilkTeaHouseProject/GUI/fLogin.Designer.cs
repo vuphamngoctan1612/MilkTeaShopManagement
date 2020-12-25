@@ -106,7 +106,7 @@
             this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -123,7 +123,7 @@
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(39, 35);
-            this.btnExit.TabIndex = 100;
+            this.btnExit.TabIndex = 1;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -143,7 +143,7 @@
             this.pnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.Size = new System.Drawing.Size(468, 364);
-            this.pnLogin.TabIndex = 100;
+            this.pnLogin.TabIndex = 0;
             this.pnLogin.Tag = "0";
             // 
             // errorShow
@@ -173,7 +173,7 @@
             this.btnShowPass.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowPass.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnShowPass.FocusedColor = System.Drawing.Color.Empty;
+            this.btnShowPass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btnShowPass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnShowPass.ForeColor = System.Drawing.Color.White;
             this.btnShowPass.Image = global::MilkTeaHouseProject.Properties.Resources.eye_30px;
@@ -199,7 +199,7 @@
             this.txtPass.BackColor = System.Drawing.Color.White;
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPass.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPass.LineSize = 2;
             this.txtPass.Location = new System.Drawing.Point(105, 206);
@@ -211,7 +211,6 @@
             this.txtPass.TabIndex = 1;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
-            this.txtPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtPass_Validating);
             // 
             // btnLogin
             // 
@@ -227,7 +226,7 @@
             this.btnLogin.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLogin.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLogin.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Image = null;
@@ -248,14 +247,13 @@
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            this.btnLogin.Validating += new System.ComponentModel.CancelEventHandler(this.btnLogin_Validating);
             // 
             // txtUser
             // 
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUser.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
             this.txtUser.LineSize = 2;
             this.txtUser.Location = new System.Drawing.Point(105, 97);
@@ -267,7 +265,6 @@
             this.txtUser.TabIndex = 0;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
-            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
             // 
             // pictureBox2
             // 
@@ -291,7 +288,7 @@
             this.lbUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(148, 28);
-            this.lbUser.TabIndex = 100;
+            this.lbUser.TabIndex = 0;
             this.lbUser.Text = "Tên đăng nhập";
             // 
             // pictureBox1
@@ -316,7 +313,7 @@
             this.lbPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(98, 28);
-            this.lbPass.TabIndex = 100;
+            this.lbPass.TabIndex = 1;
             this.lbPass.Text = "Mật khẩu";
             // 
             // pnPic
@@ -337,7 +334,6 @@
             // 
             // fLogin
             // 
-            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(908, 535);

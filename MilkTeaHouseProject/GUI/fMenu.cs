@@ -281,6 +281,9 @@ namespace MilkTeaHouseProject
 
             fEditDrink.ShowDialog();
 
+            frmOrder.LoadDrink();
+            frmOrder.LoadTable();
+            
             (sender as MenuItem).ID = fEditDrink.ID.ToString();
             (sender as MenuItem).NAME = fEditDrink.DrinkName;
             (sender as MenuItem).CATEGORY = DrinkDAL.Instance.GetCategorybyID(fEditDrink.ID);
@@ -293,6 +296,7 @@ namespace MilkTeaHouseProject
         {
             DrinkDAL.Instance.DelDrink(int.Parse((sender as MenuItem).ID));
             this.flowLayoutPanelMenu.Controls.Remove(sender as MenuItem);
+            frmOrder.LoadDrink();
 
             this.SetBackGround();
 
@@ -311,6 +315,9 @@ namespace MilkTeaHouseProject
 
             fEditDrink.ShowDialog();
 
+            frmOrder.LoadDrink();
+            frmOrder.LoadTable();
+
             (sender as MenuItem).ID = fEditDrink.ID.ToString();
             (sender as MenuItem).NAME = fEditDrink.DrinkName;
             (sender as MenuItem).CATEGORY = DrinkDAL.Instance.GetCategorybyID(fEditDrink.ID);
@@ -323,6 +330,7 @@ namespace MilkTeaHouseProject
         {
             DrinkDAL.Instance.DelDrink(((sender as MenuItem).Tag as Drink).ID);
             this.flowLayoutPanelMenu.Controls.Remove(sender as MenuItem);
+            frmOrder.LoadDrink();
 
             this.SetBackGround();
 

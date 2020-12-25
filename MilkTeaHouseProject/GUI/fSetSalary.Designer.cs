@@ -63,7 +63,7 @@ namespace MilkTeaHouseProject
             this.pn.Margin = new System.Windows.Forms.Padding(2);
             this.pn.Name = "pn";
             this.pn.Size = new System.Drawing.Size(550, 37);
-            this.pn.TabIndex = 5;
+            this.pn.TabIndex = 1;
             this.pn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
             // 
             // lbNameForm
@@ -93,7 +93,7 @@ namespace MilkTeaHouseProject
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.FocusedColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::MilkTeaHouseProject.Properties.Resources.Delete_32;
@@ -110,7 +110,7 @@ namespace MilkTeaHouseProject
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(42, 37);
-            this.btnExit.TabIndex = 100;
+            this.btnExit.TabIndex = 0;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -128,7 +128,7 @@ namespace MilkTeaHouseProject
             this.btSave.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btSave.FocusedColor = System.Drawing.Color.White;
             this.btSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btSave.ForeColor = System.Drawing.Color.White;
             this.btSave.Image = null;
@@ -145,7 +145,7 @@ namespace MilkTeaHouseProject
             this.btSave.OnPressedColor = System.Drawing.Color.Black;
             this.btSave.Radius = 10;
             this.btSave.Size = new System.Drawing.Size(137, 37);
-            this.btSave.TabIndex = 4;
+            this.btSave.TabIndex = 5;
             this.btSave.Text = "Lưu";
             this.btSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
@@ -164,7 +164,7 @@ namespace MilkTeaHouseProject
             this.btnReturn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = null;
@@ -181,7 +181,7 @@ namespace MilkTeaHouseProject
             this.btnReturn.OnPressedColor = System.Drawing.Color.Black;
             this.btnReturn.Radius = 10;
             this.btnReturn.Size = new System.Drawing.Size(137, 37);
-            this.btnReturn.TabIndex = 3;
+            this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "Trở lại";
             this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -237,7 +237,7 @@ namespace MilkTeaHouseProject
             this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.FocusedColor = System.Drawing.Color.White;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
@@ -254,7 +254,7 @@ namespace MilkTeaHouseProject
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Radius = 10;
             this.btnAdd.Size = new System.Drawing.Size(137, 37);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Lưu";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Visible = false;
@@ -268,12 +268,12 @@ namespace MilkTeaHouseProject
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.LineColor = System.Drawing.Color.Gainsboro;
             this.txtName.LineSize = 2;
-            this.txtName.Location = new System.Drawing.Point(225, 47);
+            this.txtName.Location = new System.Drawing.Point(225, 41);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(242, 42);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 0;
             this.txtName.Visible = false;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -285,7 +285,7 @@ namespace MilkTeaHouseProject
             this.btAdd.BorderColor = System.Drawing.Color.Black;
             this.btAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btAdd.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btAdd.ForeColor = System.Drawing.Color.White;
             this.btAdd.Image = global::MilkTeaHouseProject.Properties.Resources.add_32px;
@@ -299,7 +299,7 @@ namespace MilkTeaHouseProject
             this.btAdd.OnHoverImage = null;
             this.btAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btAdd.Size = new System.Drawing.Size(43, 37);
-            this.btAdd.TabIndex = 6;
+            this.btAdd.TabIndex = 1;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // gunaLabel2
@@ -327,7 +327,7 @@ namespace MilkTeaHouseProject
             this.txtMinusSalary.PasswordChar = '\0';
             this.txtMinusSalary.SelectedText = "";
             this.txtMinusSalary.Size = new System.Drawing.Size(145, 42);
-            this.txtMinusSalary.TabIndex = 2;
+            this.txtMinusSalary.TabIndex = 4;
             this.txtMinusSalary.Text = "0";
             this.txtMinusSalary.TextChanged += new System.EventHandler(this.txtMinusSalary_TextChanged);
             this.txtMinusSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinusSalary_KeyPress);
@@ -357,7 +357,7 @@ namespace MilkTeaHouseProject
             this.txtSalary.PasswordChar = '\0';
             this.txtSalary.SelectedText = "";
             this.txtSalary.Size = new System.Drawing.Size(242, 42);
-            this.txtSalary.TabIndex = 0;
+            this.txtSalary.TabIndex = 2;
             this.txtSalary.Text = "0";
             this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
@@ -387,7 +387,7 @@ namespace MilkTeaHouseProject
             this.txtOverTime.PasswordChar = '\0';
             this.txtOverTime.SelectedText = "";
             this.txtOverTime.Size = new System.Drawing.Size(145, 42);
-            this.txtOverTime.TabIndex = 1;
+            this.txtOverTime.TabIndex = 3;
             this.txtOverTime.Text = "0";
             this.txtOverTime.TextChanged += new System.EventHandler(this.txtOverTime_TextChanged);
             this.txtOverTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOverTime_KeyPress);
@@ -422,7 +422,7 @@ namespace MilkTeaHouseProject
             this.cbbStaff.BorderSize = 1;
             this.cbbStaff.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbStaff.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbStaff.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbStaff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStaff.ForeColor = System.Drawing.Color.Black;
             this.cbbStaff.FormattingEnabled = true;
@@ -431,7 +431,7 @@ namespace MilkTeaHouseProject
             this.cbbStaff.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbStaff.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbStaff.Size = new System.Drawing.Size(234, 35);
-            this.cbbStaff.TabIndex = 5;
+            this.cbbStaff.TabIndex = 0;
             this.cbbStaff.SelectedIndexChanged += new System.EventHandler(this.cbbStaff_SelectedIndexChanged);
             // 
             // lbPos

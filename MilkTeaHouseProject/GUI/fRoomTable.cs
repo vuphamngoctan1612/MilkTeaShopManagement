@@ -157,12 +157,7 @@ namespace MilkTeaHouseProject.GUI
 
         public void LoadSize()
         {
-            int space = this.Width - 8 * flowLayoutPanelTable.Controls[0].Width - 18;
 
-            foreach (Control item in flowLayoutPanelTable.Controls)
-            {
-                item.Margin = new Padding(space, 3, space, 3);
-            }
         }
 
         public void BringToHome()

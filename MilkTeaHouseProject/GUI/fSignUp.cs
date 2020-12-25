@@ -18,7 +18,7 @@ namespace MilkTeaHouseProject
         public fSignUp()
         {
             InitializeComponent();
-            
+
             txtUser.Focus();
         }
 
@@ -56,12 +56,39 @@ namespace MilkTeaHouseProject
             string username = txtUser.Text;
             string password = txtPass.Text;
 
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            if (string.IsNullOrEmpty(this.txtUser.Text))
             {
-                if (AccountDAL.Instance.SignUp(username, password))
-                {
-                    this.Close();
-                }
+                this.txtUser.Focus();
+                ShowError(this.txtUser, "Vui lòng nhập tài khoản!");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.txtPass.Text))
+            {
+                this.txtPass.Focus();
+                ShowError(this.txtPass, "Vui lòng nhập mật khẩu!");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.txtRePass.Text))
+            {
+                this.txtRePass.Focus();
+                ShowError(this.txtRePass, "Vui lòng nhập lại mật khẩu!");
+                return;
+            }
+
+            if (this.txtRePass.Text != this.txtPass.Text)
+            {
+                this.txtRePass.Focus();
+                ShowError(this.txtRePass, "Mật khẩu không khớp!");
+                return;
+            }
+            if (AccountDAL.Instance.SignUp(username, password))
+            {
+                MessageBox.Show("Đăng ký tài khoản thành công!", "Đăng ký");
+                this.Close();
+            }
+            else
+            {
+                ShowError(this.txtUser, "Tài khoản đã tồn tại!");
             }
         }
 
@@ -69,6 +96,7 @@ namespace MilkTeaHouseProject
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                this.btnSignUp_Click(sender, e);
                 e.Handled = true;
             }
 
@@ -78,32 +106,6 @@ namespace MilkTeaHouseProject
             }
         }
 
-        private void txtUser_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtUser.Text))
-            {
-                txtUser.Focus();
-                ShowError(txtUser, "Vui lòng nhập tên đăng nhập");
-            }
-        }
-
-        private void txtPass_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtPass.Text))
-            {
-                txtPass.Focus();
-                ShowError((sender as Control), "Vui lòng nhập mật khẩu");
-            }
-        }
-
-        private void txtRePass_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtRePass.Text))
-            {
-                txtRePass.Focus();
-                ShowError((sender as Control), "Vui lòng nhập lại mật khẩu");
-            }
-        }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
@@ -112,21 +114,22 @@ namespace MilkTeaHouseProject
                 errorShow.Visible = false;
             }
         }
+        #endregion
 
-        private void btnSignUp_Validating(object sender, CancelEventArgs e)
+        private void txtRePass_TextChanged(object sender, EventArgs e)
         {
-            string username = txtUser.Text;
-            string password = txtPass.Text;
-
-            if (password != txtRePass.Text)
+            if (!string.IsNullOrEmpty((sender as Control).Text))
             {
-                ShowError(txtRePass, "Mật khẩu nhập lại sai");
-            }
-            else if (AccountDAL.Instance.IsExistAccount(username))
-            {
-                ShowError(txtUser, "Tên đăng nhập đã tồn tại");
+                errorShow.Visible = false;
             }
         }
-        #endregion
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty((sender as Control).Text))
+            {
+                errorShow.Visible = false;
+            }
+        }
     }
 }

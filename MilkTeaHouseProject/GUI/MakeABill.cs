@@ -97,7 +97,10 @@ namespace MilkTeaHouseProject
             int idStaff = StaffDAL.Instance.GetStaffIDbyUsername(this.username);
 
             if (string.IsNullOrEmpty(txtTotal.Text))
+            {
                 ShowError(txtTotal, "Vui lòng nhập giá trị hóa đơn");
+                return;
+            }
             else
             {
                 BillDAL.Instance.MakeABill(idStaff, txtNote.Text, CovertToNumber(txtTotal.Text) * -1);

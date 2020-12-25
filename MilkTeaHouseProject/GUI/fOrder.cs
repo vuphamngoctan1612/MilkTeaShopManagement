@@ -148,6 +148,7 @@ namespace MilkTeaHouseProject
         public void LoadTable()
         {
             this.flowLayoutPanelTable.Controls.Clear();
+            this.flowLayoutPanelBill.Controls.Clear();
             List<TableFood> tables = TableFoodDAL.Instance.LoadTable();
             Color color = Color.FromArgb(255, 255, 255);
 
@@ -674,13 +675,10 @@ namespace MilkTeaHouseProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //timer1.Stop();
-            //timer1.Enabled = false;
             lbErrorShow.Visible = false;
             lbSuccess.Visible = false;
             this.pnTotal.BackColor = Color.FromArgb(255, 233, 171);
         }
-        #endregion
 
         public void btn_Click(object sender, EventArgs e)
         {
@@ -697,5 +695,6 @@ namespace MilkTeaHouseProject
         {
             this.billID = BillDAL.Instance.GetMAXIDBill() + 1;
         }
+        #endregion
     }
 }

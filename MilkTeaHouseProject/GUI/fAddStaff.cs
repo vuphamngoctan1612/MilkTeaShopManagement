@@ -30,6 +30,7 @@ namespace MilkTeaHouseProject
             this.CreateItemForComboBox();
             this.lbIDinrease.Text = ID.ToString();
             this.txtName.Text = name;
+
             if (image == null)
             {
                 ptbImage.Image = null;
@@ -42,6 +43,7 @@ namespace MilkTeaHouseProject
                 ptbImage.Image = bitmap;
                 ptbImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+
             this.dptBirthDate.Value = birthDate;
             this.txtPhoneNumber.Text = phonenumber;
             this.cbbPos.Text = pos;
@@ -50,6 +52,19 @@ namespace MilkTeaHouseProject
             this.lbUsername.Text = username;
             this.cbbUser.Text = username;
             this.txtCMND.Text = cmnd;
+
+            if (pos.ToLower() == "quản lý".ToLower())
+            {
+                this.txtPos.Text = pos;
+                this.txtPos.Visible = true;
+                this.txtPos.Enabled = false;
+                this.txtUsername.Text = username;
+                this.txtUsername.Visible = true;
+                this.txtUsername.Enabled = false;
+
+                this.cbbPos.Visible = false;
+                this.cbbUser.Visible = false;
+            }
             if (sex)
             {
                 this.cbMan.Checked = true;
@@ -94,7 +109,7 @@ namespace MilkTeaHouseProject
             {
                 this.cbbUser.Items.Remove(staff.UserName);
             }
-        }    
+        }
 
         #region Method
         private void ShowError(Control control, string error)
@@ -123,6 +138,7 @@ namespace MilkTeaHouseProject
             string address = this.txtAddress.Text;
             bool sex = false;
             long salaryReceived = PositionDAL.Instance.GetSalarybyPosition(position);
+
             if (this.cbMan.Checked == true)
             {
                 sex = true;
@@ -166,11 +182,18 @@ namespace MilkTeaHouseProject
             {
                 LoadImage();
             }
+
             FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
             BinaryReader bnr = new BinaryReader(stream);
             img = bnr.ReadBytes((int)stream.Length);
+
             if (position.ToLower() == "THU NGÂN".ToLower())
             {
+                if (string.IsNullOrEmpty(username))
+                {
+                    ShowError(this.cbbUser, "Vui lòng chọn tài khoản!");
+                    return;
+                }
                 StaffDAL.Instance.AddStaff(name, img, birthdate, position, username, salaryReceived, phoneNumber, cmnd, sex, address);
                 this.Close();
             }
@@ -260,7 +283,8 @@ namespace MilkTeaHouseProject
             this.cbbPos.Items.Clear();
             foreach (Position pos in positions)
             {
-                this.cbbPos.Items.Add(pos.Name);
+                if (pos.Name.ToLower() != "Quản lý".ToLower())
+                    this.cbbPos.Items.Add(pos.Name);
             }
         }
 
@@ -276,6 +300,12 @@ namespace MilkTeaHouseProject
             string address = this.txtAddress.Text;
             bool sex = false;
             long salaryReceived = PositionDAL.Instance.GetSalarybyPosition(position);
+
+            if (this.txtPos.Text.ToLower() == "quản lý".ToLower())
+            {
+                position = this.txtPos.Text;
+                username = this.txtUsername.Text;
+            }
             if (this.cbMan.Checked == true)
             {
                 sex = true;
@@ -292,13 +322,25 @@ namespace MilkTeaHouseProject
                 return;
             }
 
-            if (imgLocation == "")
+            if (this.ptbImage.Image == null)
             {
-                LoadImage();
+                if (imgLocation == "")
+                {
+                    LoadImage();
+                }
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader bnr = new BinaryReader(stream);
+                img = bnr.ReadBytes((int)stream.Length);
             }
-            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader bnr = new BinaryReader(stream);
-            img = bnr.ReadBytes((int)stream.Length);
+            else
+            {
+                if (imgLocation != "")
+                {
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader bnr = new BinaryReader(stream);
+                    img = bnr.ReadBytes((int)stream.Length);
+                }
+            }
 
             if (string.IsNullOrEmpty(name))
             {
@@ -324,9 +366,13 @@ namespace MilkTeaHouseProject
             {
                 ShowError(txtAddress, "Vui lòng nhập địa chỉ ");
             }
-            if (position.ToUpper() == "THU NGÂN")
+            if (position.ToUpper() == "THU NGÂN".ToUpper() || position.ToUpper() == "quản lý".ToUpper())
             {
-
+                if (string.IsNullOrEmpty(username) && position.ToUpper() == "THU NGÂN".ToUpper())
+                {
+                    ShowError(this.cbbUser, "Vui lòng chọn tài khoản!");
+                    return;
+                }
                 StaffDAL.Instance.EditStaff(id, name, img, birthdate, position, salaryReceived, phoneNumber, username, cmnd, sex, address);
                 this.Close();
             }
@@ -371,11 +417,11 @@ namespace MilkTeaHouseProject
             frm.ShowDialog();
             List<Account> accounts = AccountDAL.Instance.GetListAccount();
             this.cbbUser.Items.Clear();
-            foreach(Account account in accounts)
+            foreach (Account account in accounts)
             {
-                this.cbbUser.Items.Add(account.Username);
-            }    
-
+                if (account.Type != false)
+                    this.cbbUser.Items.Add(account.Username);
+            }
         }
 
         private void cbMan_Click(object sender, EventArgs e)

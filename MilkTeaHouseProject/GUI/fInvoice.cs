@@ -44,6 +44,7 @@ namespace MilkTeaHouseProject
             this.txtTotalPrice.Text = string.Format("{0:n0}", this.TotalPrice).ToString();
 
             LoadInvoice();
+            LoadInfo();
         }
 
         #region Method
@@ -80,6 +81,21 @@ namespace MilkTeaHouseProject
 
             this.DataGridViewInvoices.DataSource = data;
         }
+
+        private void LoadInfo()
+        {
+            string staffName = StaffDAL.Instance.GetNamebyUsername(this.Username);
+            DateTime checkout = DateTime.Now;
+            string tableName = TableFoodDAL.Instance.GetNamebyIdTable(this.TableID);
+            string groupName = TableFoodDAL.Instance.GetNameGroupbyIdTable(this.TableID);
+            string numberPhone = StaffDAL.Instance.GetPhoneofAdmin();
+
+            lbHotline.Text = string.Format("HOTLINE: {0}", numberPhone);
+            lbCheckout.Text = string.Format("Thời gian thanh toán: {0}", checkout.ToString());
+            lbInfoTable.Text = string.Format("{0} {1}", tableName, groupName);
+            lbStaffName.Text = string.Format("Tên nhân viên: {0}", staffName);
+            lbIdbill.Text = string.Format("Mã hóa đơn: #{0}", this.BillID);
+        }
         #endregion
 
         #region Event
@@ -107,17 +123,18 @@ namespace MilkTeaHouseProject
             DateTime checkout = DateTime.Now;
             string tableName = TableFoodDAL.Instance.GetNamebyIdTable(this.TableID);
             string groupName = TableFoodDAL.Instance.GetNameGroupbyIdTable(this.TableID);
+            string numberPhone = StaffDAL.Instance.GetPhoneofAdmin();
 
             this.easyHTMLReports.Clear();
             this.easyHTMLReports.AddString("<h1>MILKTEA HOUSE</h1>");
             this.easyHTMLReports.AddString("<p>Địa chỉ: blabla</p>");
-            this.easyHTMLReports.AddString("<p>Số điện thoại: 0395033608</p>");
+            this.easyHTMLReports.AddString("<p>Số điện thoại: #{0}</p>", numberPhone);
             this.easyHTMLReports.AddString("<h3>Hóa đơn thanh toán</h3>");
             this.easyHTMLReports.AddString(string.Format("<p>Số hóa đơn: #{0}</p>", this.BillID));
             this.easyHTMLReports.AddString("<br>");
             this.easyHTMLReports.AddString(string.Format("<p>Nhân viên bán hàng: {0}</p>", staffName));
             this.easyHTMLReports.AddString(string.Format("<p>Ngày: {0}</p>", checkout));
-            this.easyHTMLReports.AddString(string.Format("<p>Bàn: {0}</p>", tableName + " " + groupName));
+            this.easyHTMLReports.AddString(string.Format("<p>{0}</p>", tableName + " " + groupName));
             this.easyHTMLReports.AddString("<br>");
             this.easyHTMLReports.AddLineBreak();
             this.easyHTMLReports.AddDatagridView(this.DataGridViewInvoices);
@@ -140,7 +157,8 @@ namespace MilkTeaHouseProject
                 long customerPay = ConvertToNumber(this.txtCustomerPay.Text);
                 long change = customerPay - this.TotalPrice;
 
-                this.txtChange.Text = change.ToString();
+                //this.txtChange.Text = change.ToString();
+                this.txtChange.Text = string.Format("{0:n0}", change).ToString();
             }
             catch
             {

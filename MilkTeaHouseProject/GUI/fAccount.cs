@@ -73,7 +73,7 @@ namespace MilkTeaHouseProject
                         else
                         {
                             AccountDAL.Instance.changePassword(txtUser.Text, txtPass.Text);
-                            //MessageBox.Show("Đổi thành công");
+                            MessageBox.Show("Đổi thành công");
                             this.Close();
                         }    
         }
