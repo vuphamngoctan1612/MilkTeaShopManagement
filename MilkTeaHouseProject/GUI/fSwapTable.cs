@@ -86,41 +86,44 @@ namespace MilkTeaHouseProject.GUI
 
         private void btnSwap_Click(object sender, EventArgs e)
         {
-            int idBill1 = BillDAL.Instance.GetBillIdbyTableID(int.Parse(IDTable1));
-            int idBill2 = BillDAL.Instance.GetBillIdbyTableID(int.Parse(cbID.Text));
-            IDTable2 = cbID.Text;
+            if (!string.IsNullOrEmpty(cbTable.Text))
+            {
+                int idBill1 = BillDAL.Instance.GetBillIdbyTableID(int.Parse(IDTable1));
+                int idBill2 = BillDAL.Instance.GetBillIdbyTableID(int.Parse(cbID.Text));
+                IDTable2 = cbID.Text;
 
-            if (idBill1 != 0)
-            {
-                if (idBill2 != 0)
+                if (idBill1 != 0)
                 {
-                    BillDAL.Instance.UpdateTableID(int.Parse(IDTable1), idBill2);
-                    BillDAL.Instance.UpdateTableID(int.Parse(cbID.Text), idBill1);
-                    FLAG = 1;
-                    this.Close();
+                    if (idBill2 != 0)
+                    {
+                        BillDAL.Instance.UpdateTableID(int.Parse(IDTable1), idBill2);
+                        BillDAL.Instance.UpdateTableID(int.Parse(cbID.Text), idBill1);
+                        FLAG = 1;
+                        this.Close();
+                    }
+                    else
+                    {
+                        BillDAL.Instance.UpdateTableID(int.Parse(cbID.Text), idBill1);
+                        TableFoodDAL.Instance.SetStatusEmpty(int.Parse(IDTable1));
+                        TableFoodDAL.Instance.SetStatusBusy(int.Parse(cbID.Text));
+                        FLAG = 2;
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    BillDAL.Instance.UpdateTableID(int.Parse(cbID.Text), idBill1);
-                    TableFoodDAL.Instance.SetStatusEmpty(int.Parse(IDTable1));
-                    TableFoodDAL.Instance.SetStatusBusy(int.Parse(cbID.Text));
-                    FLAG = 2;
-                    this.Close();
-                }
-            }
-            else
-            {
-                if (idBill2 != 0)
-                {
-                    BillDAL.Instance.UpdateTableID(int.Parse(IDTable1), idBill2);
-                    TableFoodDAL.Instance.SetStatusBusy(int.Parse(IDTable1));
-                    TableFoodDAL.Instance.SetStatusEmpty(int.Parse(cbID.Text));
-                    FLAG = 3;
-                    this.Close();
-                }
-                else
-                {
-                    ShowError(cbTable, "Hai bàn đều rỗng");
+                    if (idBill2 != 0)
+                    {
+                        BillDAL.Instance.UpdateTableID(int.Parse(IDTable1), idBill2);
+                        TableFoodDAL.Instance.SetStatusBusy(int.Parse(IDTable1));
+                        TableFoodDAL.Instance.SetStatusEmpty(int.Parse(cbID.Text));
+                        FLAG = 3;
+                        this.Close();
+                    }
+                    else
+                    {
+                        ShowError(cbTable, "Hai bàn đều rỗng");
+                    }
                 }
             }
         }

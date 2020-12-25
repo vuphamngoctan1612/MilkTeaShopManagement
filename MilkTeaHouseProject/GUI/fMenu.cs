@@ -17,6 +17,7 @@ namespace MilkTeaHouseProject
     public partial class fMenu : Form
     {
         public string Username { get; set; }
+        private fOrder frmOrder;
 
         public fMenu(string username)
         {
@@ -232,6 +233,10 @@ namespace MilkTeaHouseProject
             }
         }
 
+        public void LoadFormOrder(fOrder formOrder)
+        {
+            frmOrder = formOrder;
+        }
         #endregion
 
         #region Event
@@ -257,6 +262,7 @@ namespace MilkTeaHouseProject
             item.onEdit += Item_onEdit;
             item.Tag = item;
             this.flowLayoutPanelMenu.Controls.Add(item);
+            frmOrder.LoadDrink();
 
             this.SetBackGround();
             this.LoadSize();

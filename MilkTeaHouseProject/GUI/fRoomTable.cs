@@ -20,6 +20,7 @@ namespace MilkTeaHouseProject.GUI
         {
             InitializeComponent();
 
+            BringToHome();
             LoadTable();
             LoadSize();
             LoadAllGroup();
@@ -161,6 +162,14 @@ namespace MilkTeaHouseProject.GUI
             foreach (Control item in flowLayoutPanelTable.Controls)
             {
                 item.Margin = new Padding(space, 3, space, 3);
+            }
+        }
+
+        public void BringToHome()
+        {
+            if (TableFoodDAL.Instance.GetMAXIDBill() == 0)
+            {
+                TableFoodDAL.Instance.AddBringtoHome();
             }
         }
         #endregion

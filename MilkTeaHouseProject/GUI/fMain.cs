@@ -47,6 +47,7 @@ namespace MilkTeaHouseProject
             frmRoom = new fRoomTable(frmOrder);
             frmOrder.LoadFormRoom(frmRoom);
             frmOrder.LoadFormMenu(frmMenu);
+            frmMenu.LoadFormOrder(frmOrder);
 
             Enable();
         }

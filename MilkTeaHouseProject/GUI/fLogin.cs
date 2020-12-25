@@ -51,7 +51,7 @@ namespace MilkTeaHouseProject
             string username = this.txtUser.Text;
             string password = this.txtPass.Text;
 
-            try
+            //try
             {
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
@@ -79,7 +79,7 @@ namespace MilkTeaHouseProject
                     }
                 }
             }
-            catch
+            //catch
             {
 
             }
