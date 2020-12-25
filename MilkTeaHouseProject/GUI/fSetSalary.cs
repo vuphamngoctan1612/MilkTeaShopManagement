@@ -127,6 +127,14 @@ namespace MilkTeaHouseProject
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btSave.Visible == true)
+            {
+                this.btSave_Click(sender, e);
+            }
         }
 
         private void txtOverTime_KeyPress(object sender, KeyPressEventArgs e)
@@ -135,6 +143,14 @@ namespace MilkTeaHouseProject
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btSave.Visible == true)
+            {
+                this.btSave_Click(sender, e);
+            }
         }
 
         private void txtMinusSalary_KeyPress(object sender, KeyPressEventArgs e)
@@ -142,6 +158,14 @@ namespace MilkTeaHouseProject
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btSave.Visible == true)
+            {
+                this.btSave_Click(sender, e);
             }
         }
 
@@ -171,6 +195,7 @@ namespace MilkTeaHouseProject
             if (txtName.Visible == false)
             {
                 this.txtName.Visible = true;
+                this.txtName.Focus();
                 this.cbbStaff.Visible = false;
                 this.btSave.Visible = false;
                 this.btnAdd.Visible = true;
@@ -218,8 +243,16 @@ namespace MilkTeaHouseProject
         {
             this.errorShow.Visible = false;
         }
-        #endregion
 
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                this.btnAdd_Click(sender, e);
+            }
+        }
+        #endregion
 
     }
 }

@@ -181,6 +181,14 @@ namespace MilkTeaHouseProject
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void txtCustomerPay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnPay_Click(sender, e);
+            }
+        }
         #endregion
+
     }
 }

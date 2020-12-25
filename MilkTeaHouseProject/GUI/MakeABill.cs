@@ -124,6 +124,18 @@ namespace MilkTeaHouseProject
         {
             this.Close();
         }
+        private void txtNote_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+        }
+
+        private void txtNote_TextChanged(object sender, EventArgs e)
+        {
+            this.errorShow.Visible = false;
+        }
         #endregion
 
     }

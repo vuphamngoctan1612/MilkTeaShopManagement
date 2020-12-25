@@ -461,6 +461,7 @@ namespace MilkTeaHouseProject
 
                     ShowSuccess("Thanh toán thành công");
                     frmRoom.LoadStatusFalse(tableID.Text);
+                    frmRoom.LoadTable();
                     TableItem_onChoose(this.flowLayoutPanelTable.Controls[0], e);
                     frmMenu.LoadCount();
                 }

@@ -24,10 +24,10 @@ namespace MilkTeaShopManagement.DAL
 
         //private string connectionSTR = "Data Source=milk-tea-management.database.windows.net;Initial Catalog=MilkteaManagement;Persist Security Info=True;User ID=milkteashop;Password=Abcdxyz123";
         //private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=MilkTea;Integrated Security=True";
-        private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=data;Integrated Security=True";
+        //private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=data;Integrated Security=True";
         //private string connectionSTR = @"Data Source=LAPTOP-1VC7CBQ8\QUANG_UIT_K14;Initial Catalog=MilkTeaManagement;Integrated Security=True";
         //private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTeaManagement;Integrated Security=True";
-        //private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTea;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTea;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

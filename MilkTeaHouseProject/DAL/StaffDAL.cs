@@ -378,5 +378,14 @@ namespace MilkTeaHouseProject.DAL
 
             return "null";
         }
+
+        public int CountbyUsername(string username)
+        {
+            string query = string.Format("SELECT * FROM STAFF WHERE USERNAME = '{0}'", username);
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            return dt.Rows.Count;
+        }
     }
 }

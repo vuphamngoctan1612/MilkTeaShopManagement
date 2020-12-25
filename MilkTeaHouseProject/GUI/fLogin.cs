@@ -1,4 +1,5 @@
-﻿using MilkTeaShopManagement.DAL;
+﻿using MilkTeaHouseProject.DAL;
+using MilkTeaShopManagement.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,11 +58,18 @@ namespace MilkTeaHouseProject
             {
                 if (Login(username, password))
                 {
-                    fMain f = new fMain(username);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Show();
-                    this.txtUser.Text = this.txtPass.Text = "";
+                    if (StaffDAL.Instance.CountbyUsername(username) > 0)
+                    {
+                        fMain f = new fMain(username);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                        this.txtUser.Text = this.txtPass.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài khoản này chưa được cấp cho nhân viên");
+                    }
                 }
                 else
                 {

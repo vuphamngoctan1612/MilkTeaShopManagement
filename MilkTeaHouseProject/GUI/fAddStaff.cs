@@ -124,6 +124,21 @@ namespace MilkTeaHouseProject
         {
             imgLocation = "./images/blank-profile.png";
         }
+
+        public void ActivebtnEdit()
+        {
+            this.btEdit.Visible = true;
+        }
+
+        public void ActivebtnAdd()
+        {
+            this.btnAdd.Visible = true;
+        }
+
+        public void UpdatelbNameForm(string newNameForm)
+        {
+            this.lbNameForm.Text = newNameForm;
+        }
         #endregion
 
         #region Event
@@ -238,6 +253,15 @@ namespace MilkTeaHouseProject
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == false)
+            {
+                this.btEdit_Click(sender, e);
+            }
+
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
@@ -434,20 +458,71 @@ namespace MilkTeaHouseProject
             this.cbMan.Checked = false;
         }
 
-        public void ActivebtnEdit()
+        
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.btEdit.Visible = true;
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == false)
+            {
+                this.btEdit_Click(sender, e);
+            }
         }
 
-        public void ActivebtnAdd()
+        private void txtAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.btnAdd.Visible = true;
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == false)
+            {
+                this.btEdit_Click(sender, e);
+            }
         }
 
-        public void UpdatelbNameForm(string newNameForm)
+        private void txtPos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.lbNameForm.Text = newNameForm;
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == false)
+            {
+                this.btEdit_Click(sender, e);
+            }
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == false)
+            {
+                this.btEdit_Click(sender, e);
+            }
+        }
+
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == true)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Enter && this.btnAdd.Visible == false)
+            {
+                this.btEdit_Click(sender, e);
+            }
         }
         #endregion
+
     }
 }

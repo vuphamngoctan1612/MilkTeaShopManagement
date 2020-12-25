@@ -142,6 +142,23 @@ namespace MilkTeaHouseProject
         {
             this.errorShow.Visible = false;
         }
+        private void txtGroup_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+        }
+
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnAdd_Click(sender, e);
+            }
+        }
         #endregion
+
     }
 }

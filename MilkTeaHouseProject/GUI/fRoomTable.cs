@@ -25,9 +25,7 @@ namespace MilkTeaHouseProject.GUI
             LoadSize();
             LoadAllGroup();
 
-            flowLayoutPanelTable.Controls[0].Visible = false;
             frmOrder2 = frmOrder;
-
             frmOrder2.LoadTable();
         }
 
@@ -49,6 +47,8 @@ namespace MilkTeaHouseProject.GUI
 
                 this.flowLayoutPanelTable.Controls.Add(item);
             }
+
+            flowLayoutPanelTable.Controls[0].Visible = false;
         }
 
         public void LoadLabelAllinGroup()
