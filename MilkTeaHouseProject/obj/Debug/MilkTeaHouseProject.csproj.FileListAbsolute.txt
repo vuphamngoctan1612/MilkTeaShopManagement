@@ -1829,3 +1829,6 @@ C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technolog
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fDelRoom.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fRoomTable.resources
+C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fSwapTable.resources
