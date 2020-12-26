@@ -387,5 +387,17 @@ namespace MilkTeaHouseProject.DAL
 
             return dt.Rows.Count;
         }
+        public long GetSumSalaryReceived()
+        {
+            string query = "SELECT SUM(SalaryReceived) FROM Staff";
+            try
+            {
+                return long.Parse(DataProvider.Instance.ExecuteScalar(query).ToString());
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -40,13 +40,13 @@ namespace MilkTeaHouseProject
             if (!string.IsNullOrEmpty(txt.Text))
             {
                 System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                ulong valueBefore = ulong.Parse(ConvertToNumber(txt.Text).ToString(), System.Globalization.NumberStyles.AllowThousands);
                 txt.Text = String.Format(culture, "{0:N0}", valueBefore);
                 txt.Select(txt.Text.Length, 0);
             }
         }
 
-        public int CovertToNumber(string str)
+        public long ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -54,7 +54,7 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
-            return int.Parse(tmp);
+            return long.Parse(tmp);
         }
 
         private void ShowError(Control control, string error)
@@ -103,7 +103,7 @@ namespace MilkTeaHouseProject
             }
             else
             {
-                BillDAL.Instance.MakeABill(idStaff, txtNote.Text, CovertToNumber(txtTotal.Text) * -1);
+                BillDAL.Instance.MakeABill(idStaff, txtNote.Text, ConvertToNumber(txtTotal.Text) * -1);
                 this.Close();
             }
 

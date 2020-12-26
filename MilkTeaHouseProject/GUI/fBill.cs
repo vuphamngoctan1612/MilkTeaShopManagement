@@ -123,7 +123,7 @@ namespace MilkTeaHouseProject
 
                     Bill bill = BillDAL.Instance.GetBillByID(id);
 
-                    if (bill.Total < 0)
+                    if (bill.Total <= 0)
                     {
                         if (!StaffName.ToLower().Contains(name.ToLower()))
                         {
@@ -232,7 +232,7 @@ namespace MilkTeaHouseProject
             SearchAllNote();
             for (int i = 0; i < bills.Count; i++)
             {
-                if (bills[i].Total < 0)
+                if (bills[i].Total <= 0)
                 {
                     flowLayoutPanelBill.Controls[i].Visible = true;
                     if (flag == false)

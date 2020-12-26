@@ -17,7 +17,6 @@ namespace MilkTeaHouseProject
 {
     public partial class fStaff : Form
     {
-        private long totalSalary;
         private string username;
         List<StaffItem> staffItems = new List<StaffItem>();
         public fStaff(string username)
@@ -44,7 +43,6 @@ namespace MilkTeaHouseProject
         }
         public void LoadStaff()
         {
-            totalSalary = 0;
             List<Staff> staffs = StaffDAL.Instance.GetListStaff();
 
             List<Position> positions = PositionDAL.Instance.GetListPosistion();
@@ -59,7 +57,6 @@ namespace MilkTeaHouseProject
                     setcolor = true;
                 StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
 
-                totalSalary += staff.SalaryReceived;
                 staffItem.onEdit += Item_OnEdit;
                 staffItem.onDel += StaffItem_onDel;
                 staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
@@ -274,7 +271,7 @@ namespace MilkTeaHouseProject
                     if (staffs.IndexOf(staff) + 1 == staffs.Count)
                     {
                         StaffItem staffItem = new StaffItem(staff.ID, staff.Name, staff.Image, staff.BirthDate, staff.Position, staff.UserName, staff.OverTime, staff.Fault, staff.SalaryReceived, staff.Sex, staff.CMND, staff.PhoneNumber, staff.Address, setcolor);
-                        totalSalary += staff.SalaryReceived;
+                        
                         staffItem.onEdit += Item_OnEdit;
                         staffItem.onDel += StaffItem_onDel;
                         staffItem.onOverTimeValueChanged += StaffItem_onOverTimeValueChanged;
@@ -310,6 +307,7 @@ namespace MilkTeaHouseProject
             if (flowLayoutPanelStaff.Controls.Count > 0)
             {
                 StaffDAL.Instance.ResetOverandFault();
+                long totalSalary = StaffDAL.Instance.GetSumSalaryReceived();
                 BillDAL.Instance.UpdateBillSalary(username, totalSalary * -1);
                 MessageBox.Show("Kết toán lương thành công");
                 foreach (Control item in this.flowLayoutPanelStaff.Controls)

@@ -38,7 +38,7 @@ namespace MilkTeaHouseProject
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         #region Method
-        public int ConvertToNumber(string str)
+        public long ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -46,7 +46,7 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
-            return int.Parse(tmp);
+            return long.Parse(tmp);
         }
 
         public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
@@ -54,7 +54,7 @@ namespace MilkTeaHouseProject
             if (!string.IsNullOrEmpty(txt.Text))
             {
                 System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                ulong valueBefore = ulong.Parse(ConvertToNumber(txt.Text).ToString(), System.Globalization.NumberStyles.AllowThousands);
                 txt.Text = String.Format(culture, "{0:N0}", valueBefore);
                 txt.Select(txt.Text.Length, 0);
             }
@@ -104,9 +104,9 @@ namespace MilkTeaHouseProject
             else
             {
                 string position = this.cbbStaff.Text;
-                int salary = ConvertToNumber(this.txtSalary.Text);
-                int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
-                int MinusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+                long salary = ConvertToNumber(this.txtSalary.Text);
+                long overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+                long MinusSalary = ConvertToNumber(this.txtMinusSalary.Text);
 
                 PositionDAL.Instance.UpdateSalary(position, salary, overTimeSalary, MinusSalary);
                 this.Close();
@@ -212,9 +212,9 @@ namespace MilkTeaHouseProject
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string pos = this.txtName.Text;
-            int salary = ConvertToNumber(this.txtSalary.Text);
-            int overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
-            int minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
+            long salary = ConvertToNumber(this.txtSalary.Text);
+            long overTimeSalary = ConvertToNumber(this.txtOverTime.Text);
+            long minusSalary = ConvertToNumber(this.txtMinusSalary.Text);
             if (string.IsNullOrEmpty(pos))
             {
                 ShowError(txtName, "Vui lòng nhập tên vị trí mới");
