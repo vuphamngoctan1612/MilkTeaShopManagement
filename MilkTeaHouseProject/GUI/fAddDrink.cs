@@ -136,7 +136,7 @@ namespace MilkTeaHouseProject
             if (!string.IsNullOrEmpty(txt.Text))
             {
                 System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                ulong valueBefore = ulong.Parse(ConvertToNumber(txt.Text).ToString(), System.Globalization.NumberStyles.AllowThousands);
+                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
                 txt.Text = String.Format(culture, "{0:N0}", valueBefore);
                 txt.Select(txt.Text.Length, 0);
             }
@@ -199,7 +199,6 @@ namespace MilkTeaHouseProject
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string category = "";
-            try
             {
                 if (imgLocation == "")
                 {
@@ -208,29 +207,6 @@ namespace MilkTeaHouseProject
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader bnr = new BinaryReader(stream);
                 img = bnr.ReadBytes((int)stream.Length);
-
-                if (txtCategory.Visible == true)
-                {
-                    try
-                    {
-                        if (string.IsNullOrEmpty(this.txtCategory.Text))
-                        {
-                            ShowError(txtCategory, "Vui lòng nhập loại mới");
-                            return;
-                        }
-
-                        category = this.txtCategory.Text;
-                        CategoryDAL.Instance.AddCategory(category);
-                    }
-                    catch (SqlException)
-                    {
-                        ShowError(txtCategory, "Trùng loại");
-                    }
-                }
-                else
-                {
-                    category = cbbCategory.Text;
-                }
 
                 if (string.IsNullOrEmpty(txtNameDrink.Text))
                 {
@@ -252,6 +228,30 @@ namespace MilkTeaHouseProject
                 long price = ConvertToNumber(this.txtPrice.Text);
                 long originPrice = ConvertToNumber(txtOriginPrice.Text);
 
+                if (txtCategory.Visible == true)
+                {
+                    try
+                    {
+                        if (string.IsNullOrEmpty(this.txtCategory.Text))
+                        {
+                            ShowError(txtCategory, "Vui lòng nhập loại mới");
+                            return;
+                        }
+
+                        category = this.txtCategory.Text;
+                        CategoryDAL.Instance.AddCategory(category);
+                    }
+                    catch (SqlException)
+                    {
+                        ShowError(txtCategory, "Trùng loại");
+                        return;
+                    }
+                }
+                else
+                {
+                    category = cbbCategory.Text;
+                }
+
                 DrinkDAL.Instance.AddDrink(name, price, category, img, originPrice);
                 this.Close();
 
@@ -259,10 +259,6 @@ namespace MilkTeaHouseProject
                 {
                     onAdd.Invoke(this, new EventArgs());
                 }
-            }
-            catch (SqlException)
-            {
-                ShowError(txtID, "");
             }
         }
 
@@ -289,6 +285,22 @@ namespace MilkTeaHouseProject
                 }
             }
 
+            if (string.IsNullOrEmpty(txtNameDrink.Text))
+            {
+                ShowError(txtNameDrink, "Vui lòng nhập tên món");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtOriginPrice.Text))
+            {
+                ShowError(txtOriginPrice, "Vui lòng nhập giá gốc món");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPrice.Text))
+            {
+                ShowError(txtPrice, "Vui lòng nhập giá");
+                return;
+            }
+
             if (txtCategory.Visible == true)
             {
                 try
@@ -305,24 +317,12 @@ namespace MilkTeaHouseProject
                 catch (SqlException)
                 {
                     ShowError(txtCategory, "Trùng loại");
+                    return;
                 }
             }
             else
             {
                 category = cbbCategory.Text;
-            }
-
-            if (string.IsNullOrEmpty(txtNameDrink.Text))
-            {
-                ShowError(txtNameDrink, "Vui lòng nhập tên món");
-            }
-            if (string.IsNullOrEmpty(txtOriginPrice.Text))
-            {
-                ShowError(txtOriginPrice, "Vui lòng nhập giá gốc món");
-            }
-            if (string.IsNullOrEmpty(txtPrice.Text))
-            {
-                ShowError(txtPrice, "Vui lòng nhập giá");
             }
 
             int id = int.Parse(this.txtID.Text);
