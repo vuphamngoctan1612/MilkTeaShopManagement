@@ -63,18 +63,18 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.panel2.Location = new System.Drawing.Point(368, 0);
+            this.panel2.Location = new System.Drawing.Point(442, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 535);
+            this.panel2.Size = new System.Drawing.Size(648, 642);
             this.panel2.TabIndex = 0;
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(385, 12);
+            this.cartesianChart1.Location = new System.Drawing.Point(462, 14);
             this.cartesianChart1.Margin = new System.Windows.Forms.Padding(2);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(85, 22);
+            this.cartesianChart1.Size = new System.Drawing.Size(102, 26);
             this.cartesianChart1.TabIndex = 100;
             this.cartesianChart1.Text = "cartesianChart1";
             this.cartesianChart1.Visible = false;
@@ -83,10 +83,10 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(99, 42);
+            this.gunaLabel1.Location = new System.Drawing.Point(119, 50);
             this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(274, 67);
+            this.gunaLabel1.Size = new System.Drawing.Size(327, 81);
             this.gunaLabel1.TabIndex = 100;
             this.gunaLabel1.Text = "WELCOME";
             // 
@@ -113,7 +113,7 @@
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(501, 0);
+            this.btnExit.Location = new System.Drawing.Point(601, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
@@ -122,7 +122,7 @@
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(39, 35);
+            this.btnExit.Size = new System.Drawing.Size(47, 42);
             this.btnExit.TabIndex = 1;
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -139,10 +139,10 @@
             this.pnLogin.Controls.Add(this.lbUser);
             this.pnLogin.Controls.Add(this.pictureBox1);
             this.pnLogin.Controls.Add(this.lbPass);
-            this.pnLogin.Location = new System.Drawing.Point(59, 111);
+            this.pnLogin.Location = new System.Drawing.Point(71, 133);
             this.pnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(468, 364);
+            this.pnLogin.Size = new System.Drawing.Size(562, 437);
             this.pnLogin.TabIndex = 0;
             this.pnLogin.Tag = "0";
             // 
@@ -151,10 +151,10 @@
             this.errorShow.AutoSize = true;
             this.errorShow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.errorShow.ForeColor = System.Drawing.Color.Red;
-            this.errorShow.Location = new System.Drawing.Point(215, 11);
+            this.errorShow.Location = new System.Drawing.Point(258, 13);
             this.errorShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorShow.Name = "errorShow";
-            this.errorShow.Size = new System.Drawing.Size(86, 20);
+            this.errorShow.Size = new System.Drawing.Size(103, 25);
             this.errorShow.TabIndex = 100;
             this.errorShow.Text = "gunaLabel2";
             this.errorShow.Visible = false;
@@ -180,7 +180,7 @@
             this.btnShowPass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnShowPass.ImageSize = new System.Drawing.Size(20, 20);
             this.btnShowPass.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnShowPass.Location = new System.Drawing.Point(348, 213);
+            this.btnShowPass.Location = new System.Drawing.Point(418, 256);
             this.btnShowPass.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
@@ -189,7 +189,7 @@
             this.btnShowPass.OnHoverImage = null;
             this.btnShowPass.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnShowPass.OnPressedColor = System.Drawing.Color.Black;
-            this.btnShowPass.Size = new System.Drawing.Size(28, 28);
+            this.btnShowPass.Size = new System.Drawing.Size(34, 34);
             this.btnShowPass.TabIndex = 2;
             this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
             this.btnShowPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnShowPass_KeyPress);
@@ -202,12 +202,12 @@
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPass.LineSize = 2;
-            this.txtPass.Location = new System.Drawing.Point(105, 206);
+            this.txtPass.Location = new System.Drawing.Point(126, 247);
             this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
             this.txtPass.SelectedText = "";
-            this.txtPass.Size = new System.Drawing.Size(272, 44);
+            this.txtPass.Size = new System.Drawing.Size(326, 53);
             this.txtPass.TabIndex = 1;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
@@ -232,7 +232,7 @@
             this.btnLogin.Image = null;
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLogin.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogin.Location = new System.Drawing.Point(164, 298);
+            this.btnLogin.Location = new System.Drawing.Point(197, 358);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
@@ -242,7 +242,7 @@
             this.btnLogin.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnLogin.OnPressedColor = System.Drawing.Color.Black;
             this.btnLogin.Radius = 10;
-            this.btnLogin.Size = new System.Drawing.Size(150, 35);
+            this.btnLogin.Size = new System.Drawing.Size(180, 42);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -256,12 +256,12 @@
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtUser.LineColor = System.Drawing.Color.Gainsboro;
             this.txtUser.LineSize = 2;
-            this.txtUser.Location = new System.Drawing.Point(105, 97);
+            this.txtUser.Location = new System.Drawing.Point(126, 116);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
             this.txtUser.SelectedText = "";
-            this.txtUser.Size = new System.Drawing.Size(272, 44);
+            this.txtUser.Size = new System.Drawing.Size(326, 53);
             this.txtUser.TabIndex = 0;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
@@ -270,10 +270,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = global::MilkTeaHouseProject.Properties.Resources.lock_24px;
-            this.pictureBox2.Location = new System.Drawing.Point(58, 216);
+            this.pictureBox2.Location = new System.Drawing.Point(70, 259);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 26);
+            this.pictureBox2.Size = new System.Drawing.Size(26, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -284,10 +284,10 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbUser.Location = new System.Drawing.Point(48, 67);
+            this.lbUser.Location = new System.Drawing.Point(58, 80);
             this.lbUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(148, 28);
+            this.lbUser.Size = new System.Drawing.Size(178, 32);
             this.lbUser.TabIndex = 0;
             this.lbUser.Text = "Tên đăng nhập";
             // 
@@ -295,10 +295,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::MilkTeaHouseProject.Properties.Resources.account_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 110);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 132);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(26, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -309,10 +309,10 @@
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(47)))), ((int)(((byte)(101)))));
-            this.lbPass.Location = new System.Drawing.Point(48, 177);
+            this.lbPass.Location = new System.Drawing.Point(58, 212);
             this.lbPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(98, 28);
+            this.lbPass.Size = new System.Drawing.Size(120, 32);
             this.lbPass.TabIndex = 1;
             this.lbPass.Text = "Mật khẩu";
             // 
@@ -325,7 +325,7 @@
             this.pnPic.Location = new System.Drawing.Point(0, 0);
             this.pnPic.Margin = new System.Windows.Forms.Padding(2);
             this.pnPic.Name = "pnPic";
-            this.pnPic.Size = new System.Drawing.Size(368, 535);
+            this.pnPic.Size = new System.Drawing.Size(442, 642);
             this.pnPic.TabIndex = 100;
             // 
             // errorProvider1
@@ -334,12 +334,13 @@
             // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(908, 535);
+            this.ClientSize = new System.Drawing.Size(1090, 642);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnPic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

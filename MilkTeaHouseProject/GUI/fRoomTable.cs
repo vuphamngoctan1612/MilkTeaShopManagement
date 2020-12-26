@@ -55,7 +55,7 @@ namespace MilkTeaHouseProject.GUI
         {
             Label lbAll = new Label();
             lbAll.Text = "Tất cả";
-            lbAll.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
+            lbAll.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold,
                                                         System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbAll.AutoSize = true;
             lbAll.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -84,7 +84,7 @@ namespace MilkTeaHouseProject.GUI
         {
             Label lbGroup = new Label();
             lbGroup.Text = namegroup;
-            lbGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold,
+            lbGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold,
                                                         System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbGroup.AutoSize = true;
             lbGroup.Cursor = System.Windows.Forms.Cursors.Hand;

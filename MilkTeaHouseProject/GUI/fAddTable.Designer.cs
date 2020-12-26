@@ -351,6 +351,7 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.pn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAddTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

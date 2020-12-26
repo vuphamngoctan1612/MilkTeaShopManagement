@@ -335,7 +335,7 @@
             this.cbWoman.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbWoman.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbWoman.Location = new System.Drawing.Point(580, 368);
-            this.cbWoman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbWoman.Margin = new System.Windows.Forms.Padding(4);
             this.cbWoman.Name = "cbWoman";
             this.cbWoman.Size = new System.Drawing.Size(59, 30);
             this.cbWoman.TabIndex = 3;
@@ -350,7 +350,7 @@
             this.cbMan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbMan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMan.Location = new System.Drawing.Point(434, 368);
-            this.cbMan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMan.Margin = new System.Windows.Forms.Padding(4);
             this.cbMan.Name = "cbMan";
             this.cbMan.Size = new System.Drawing.Size(75, 30);
             this.cbMan.TabIndex = 2;
@@ -372,7 +372,7 @@
             this.btnAddUserName.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddUserName.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAddUserName.Location = new System.Drawing.Point(1274, 362);
-            this.btnAddUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddUserName.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddUserName.Name = "btnAddUserName";
             this.btnAddUserName.OnHoverBaseColor = System.Drawing.Color.White;
             this.btnAddUserName.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -487,7 +487,7 @@
             this.txtAddress.LineColor = System.Drawing.Color.Gainsboro;
             this.txtAddress.LineSize = 2;
             this.txtAddress.Location = new System.Drawing.Point(964, 92);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.SelectedText = "";
@@ -517,7 +517,7 @@
             this.txtUsername.LineColor = System.Drawing.Color.Gainsboro;
             this.txtUsername.LineSize = 2;
             this.txtUsername.Location = new System.Drawing.Point(964, 350);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MaxLength = 10;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
@@ -537,7 +537,7 @@
             this.txtPos.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPos.LineSize = 2;
             this.txtPos.Location = new System.Drawing.Point(962, 258);
-            this.txtPos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPos.Margin = new System.Windows.Forms.Padding(4);
             this.txtPos.MaxLength = 10;
             this.txtPos.Name = "txtPos";
             this.txtPos.PasswordChar = '\0';
@@ -557,7 +557,7 @@
             this.txtPhoneNumber.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPhoneNumber.LineSize = 2;
             this.txtPhoneNumber.Location = new System.Drawing.Point(964, 174);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
@@ -581,7 +581,7 @@
             this.btAddUserName.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAddUserName.ImageSize = new System.Drawing.Size(20, 20);
             this.btAddUserName.Location = new System.Drawing.Point(1680, 56);
-            this.btAddUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAddUserName.Margin = new System.Windows.Forms.Padding(4);
             this.btAddUserName.Name = "btAddUserName";
             this.btAddUserName.OnHoverBaseColor = System.Drawing.Color.White;
             this.btAddUserName.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -604,7 +604,7 @@
             this.dptBirthDate.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptBirthDate.ForeColor = System.Drawing.Color.Black;
             this.dptBirthDate.Location = new System.Drawing.Point(434, 266);
-            this.dptBirthDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dptBirthDate.Margin = new System.Windows.Forms.Padding(4);
             this.dptBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dptBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dptBirthDate.Name = "dptBirthDate";
@@ -626,7 +626,7 @@
             this.txtName.LineColor = System.Drawing.Color.Gainsboro;
             this.txtName.LineSize = 2;
             this.txtName.Location = new System.Drawing.Point(434, 174);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
@@ -644,7 +644,7 @@
             this.txtCMND.LineColor = System.Drawing.Color.Gainsboro;
             this.txtCMND.LineSize = 2;
             this.txtCMND.Location = new System.Drawing.Point(434, 446);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(4);
             this.txtCMND.MaxLength = 9;
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.PasswordChar = '\0';
@@ -681,7 +681,7 @@
             this.btAddPosition.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAddPosition.ImageSize = new System.Drawing.Size(20, 20);
             this.btAddPosition.Location = new System.Drawing.Point(1274, 272);
-            this.btAddPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAddPosition.Margin = new System.Windows.Forms.Padding(4);
             this.btAddPosition.Name = "btAddPosition";
             this.btAddPosition.OnHoverBaseColor = System.Drawing.Color.White;
             this.btAddPosition.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -737,6 +737,7 @@
             this.Controls.Add(this.pnContain);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1350, 656);
             this.MinimumSize = new System.Drawing.Size(1350, 656);

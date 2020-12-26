@@ -1900,3 +1900,6 @@ C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technolog
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\newmaster\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\newmaster\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.exe
 C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\newmaster\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.pdb
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fDelRoom.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fRoomTable.resources
+C:\Users\NIU\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\New folder\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.GUI.fSwapTable.resources

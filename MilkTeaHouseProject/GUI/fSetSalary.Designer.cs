@@ -29,6 +29,7 @@ namespace MilkTeaHouseProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSetSalary));
             this.pn = new System.Windows.Forms.Panel();
             this.lbNameForm = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -206,7 +207,7 @@ namespace MilkTeaHouseProject
             this.panelSetSalary.Controls.Add(this.btnReturn);
             this.panelSetSalary.Controls.Add(this.btSave);
             this.panelSetSalary.Location = new System.Drawing.Point(0, 44);
-            this.panelSetSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSetSalary.Margin = new System.Windows.Forms.Padding(4);
             this.panelSetSalary.Name = "panelSetSalary";
             this.panelSetSalary.Size = new System.Drawing.Size(660, 654);
             this.panelSetSalary.TabIndex = 0;
@@ -270,7 +271,7 @@ namespace MilkTeaHouseProject
             this.txtName.LineColor = System.Drawing.Color.Gainsboro;
             this.txtName.LineSize = 2;
             this.txtName.Location = new System.Drawing.Point(270, 49);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
@@ -295,7 +296,7 @@ namespace MilkTeaHouseProject
             this.btAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btAdd.Location = new System.Drawing.Point(568, 60);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btAdd.Name = "btAdd";
             this.btAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(130)))), ((int)(((byte)(137)))));
             this.btAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -327,7 +328,7 @@ namespace MilkTeaHouseProject
             this.txtMinusSalary.LineColor = System.Drawing.Color.Gainsboro;
             this.txtMinusSalary.LineSize = 2;
             this.txtMinusSalary.Location = new System.Drawing.Point(268, 398);
-            this.txtMinusSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMinusSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txtMinusSalary.MaxLength = 10;
             this.txtMinusSalary.Name = "txtMinusSalary";
             this.txtMinusSalary.PasswordChar = '\0';
@@ -359,7 +360,7 @@ namespace MilkTeaHouseProject
             this.txtSalary.LineColor = System.Drawing.Color.Gainsboro;
             this.txtSalary.LineSize = 2;
             this.txtSalary.Location = new System.Drawing.Point(268, 178);
-            this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalary.MaxLength = 11;
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PasswordChar = '\0';
@@ -391,7 +392,7 @@ namespace MilkTeaHouseProject
             this.txtOverTime.LineColor = System.Drawing.Color.Gainsboro;
             this.txtOverTime.LineSize = 2;
             this.txtOverTime.Location = new System.Drawing.Point(268, 298);
-            this.txtOverTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOverTime.Margin = new System.Windows.Forms.Padding(4);
             this.txtOverTime.MaxLength = 10;
             this.txtOverTime.Name = "txtOverTime";
             this.txtOverTime.PasswordChar = '\0';
@@ -439,7 +440,7 @@ namespace MilkTeaHouseProject
             this.cbbStaff.ForeColor = System.Drawing.Color.Black;
             this.cbbStaff.FormattingEnabled = true;
             this.cbbStaff.Location = new System.Drawing.Point(270, 56);
-            this.cbbStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbStaff.Margin = new System.Windows.Forms.Padding(4);
             this.cbbStaff.Name = "cbbStaff";
             this.cbbStaff.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbStaff.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -468,7 +469,8 @@ namespace MilkTeaHouseProject
             this.Controls.Add(this.panelSetSalary);
             this.Controls.Add(this.pn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fSetSalary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSetSalary";
