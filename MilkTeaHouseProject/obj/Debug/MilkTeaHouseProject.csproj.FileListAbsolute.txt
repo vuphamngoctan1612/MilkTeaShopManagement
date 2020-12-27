@@ -1489,7 +1489,6 @@ C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseP
 C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\dje\MilkTeaHouseProject.resources.dll
 C:\Users\Thanh Quang\OneDrive\Desktop\Master\MilkTeaShopManagement\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.CopyComplete
-C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csprojAssemblyReference.cache
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.csproj.ResolveComReference.cache
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.BillItem.resources
 C:\Users\Asus\Desktop\master\MilkTeaHouseProject\obj\Debug\MilkTeaHouseProject.DrinksReport.resources

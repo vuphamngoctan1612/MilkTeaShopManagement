@@ -1,0 +1,1 @@
+sqlcmd -E -S .\SQLSERVE -i data.sql
