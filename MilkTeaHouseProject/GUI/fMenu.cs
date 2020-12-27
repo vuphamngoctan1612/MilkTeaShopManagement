@@ -11,6 +11,7 @@ using MilkTeaShopManagement.DTO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
+using System.Data.SqlClient;
 
 namespace MilkTeaHouseProject
 {
@@ -18,7 +19,7 @@ namespace MilkTeaHouseProject
     {
         public string Username { get; set; }
         private fOrder frmOrder;
-
+        private bool flag = true;
         public fMenu(string username)
         {
             InitializeComponent();
@@ -407,13 +408,28 @@ namespace MilkTeaHouseProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            List<Category> categories = CategoryDAL.Instance.GetListCategory();
-
-            if (categories.Count == cbSearch.Items.Count)
+            try
             {
-                cbSearch.Items.Clear();
-                cbSearch.Items.Add("Tất cả");
-                LoadCategoryinCbb();
+                List<Category> categories = CategoryDAL.Instance.GetListCategory();
+
+                if (categories.Count == cbSearch.Items.Count)
+                {
+                    cbSearch.Items.Clear();
+                    cbSearch.Items.Add("Tất cả");
+                    LoadCategoryinCbb();
+                }
+            }
+            catch (SqlException)
+            {
+                if (flag == true)
+                {
+                    flag = false;
+                    timer1.Stop();
+                    timer1.Enabled = false;
+                    timer1.Dispose();
+
+                    return;
+                }
             }
         }
         #endregion

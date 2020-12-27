@@ -12,12 +12,14 @@ using MilkTeaHouseProject.DAL;
 using MilkTeaHouseProject.DTO;
 using MilkTeaShopManagement.DAL;
 using MilkTeaShopManagement.DTO;
+using System.Data.SqlClient;
 
 namespace MilkTeaHouseProject
 {
     public partial class fStaff : Form
     {
         private string username;
+        private bool flag = true;
         List<StaffItem> staffItems = new List<StaffItem>();
         public fStaff(string username)
         {
@@ -397,12 +399,27 @@ namespace MilkTeaHouseProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            List<Position> positions = PositionDAL.Instance.GetListPosistion();
-
-            if (positions.Count == cbSearch.Items.Count)
+            try
             {
-                cbSearch.Items.Clear();
-                LoadPosinCbb();
+                List<Position> positions = PositionDAL.Instance.GetListPosistion();
+
+                if (positions.Count == cbSearch.Items.Count)
+                {
+                    cbSearch.Items.Clear();
+                    LoadPosinCbb();
+                }
+            }
+            catch (SqlException)
+            {
+                if (flag == true)
+                {
+                    flag = false;
+                    timer1.Stop();
+                    timer1.Enabled = false;
+                    timer1.Dispose();
+
+                    return;
+                }
             }
         }
         #endregion

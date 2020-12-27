@@ -22,45 +22,46 @@ namespace MilkTeaShopManagement.DAL
 
         private DataProvider() { }
 
-        //private string connectionSTR = "Data Source=milk-tea-management.database.windows.net;Initial Catalog=MilkteaManagement;Persist Security Info=True;User ID=milkteashop;Password=Abcdxyz123";
+        //connectSTR có thể thay đổi tùy vào IP của máy host của mạng LAN
+
+        // dành cho máy host thay thế data source, server = server máy host
         //private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=MilkTea;Integrated Security=True";
-        private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=data;Integrated Security=True";
-        //private string connectionSTR = @"Data Source=.\QUANG_UIT_K14;Initial Catalog=MilkTeaManagement;Integrated Security=True";
-        //private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTeaManagement;Integrated Security=True";
-        //private string connectionSTR = @"Data Source=DESKTOP-EV76EB0\SQLEXPRESS;Initial Catalog=MilkTea;Integrated Security=True";
+
+        //connectionSTR cho máy con
+        private string connectionSTR = "Server = 192.168.137.1,1433; Initial Catalog = MilkTea; User ID = sa; Password = 16122000; Integrated Security = False; Connect Timeout = 2;";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
-            {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listPara = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listPara)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                    adapter.Fill(data);
+
+                    connection.Close();
                 }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                adapter.Fill(data);
-
-                connection.Close();
-            }
-
-            return data;
+                return data;
         }
 
         public int ExecuteNonQuery(string query, object[] parameter = null)

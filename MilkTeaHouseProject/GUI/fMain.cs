@@ -15,6 +15,7 @@ using MilkTeaShopManagement.DAL;
 using MilkTeaHouseProject.GUI;
 using MilkTeaHouseProject.DTO;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace MilkTeaHouseProject
 {
@@ -27,6 +28,7 @@ namespace MilkTeaHouseProject
         private fBill frmBill;
         private fOrder frmOrder;
         private fRoomTable frmRoom;
+        private bool flag = true;
 
         public fMain(string username)
         {
@@ -248,9 +250,38 @@ namespace MilkTeaHouseProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            gunaLabel4.Text = BillDAL.Instance.CountBillSellinginDay().ToString();
-            lbCountbill.Text = BillDAL.Instance.CountBillSoldinDay().ToString();
-            gunaLabel2.Text = "Hôm qua: " + BillDAL.Instance.CountBillSoldinYesrerday().ToString();
+            try
+            {
+                gunaLabel4.Text = BillDAL.Instance.CountBillSellinginDay().ToString();
+                lbCountbill.Text = BillDAL.Instance.CountBillSoldinDay().ToString();
+                gunaLabel2.Text = "Hôm qua: " + BillDAL.Instance.CountBillSoldinYesrerday().ToString();
+            }
+            catch (SqlException)
+            {
+                if (flag == true)
+                {
+                    flag = false;
+                    string message = "Ngắt kết nối, bạn có muốn tắt thoát chương trình!";
+                    string title = "Close Window";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.OK)
+                    {
+                        Application.Exit();
+                    }
+                    //else
+                    //{
+                    //    flag = true;
+
+                    //}
+                    timer1.Stop();
+                    timer1.Enabled = false;
+                    timer1.Dispose();
+
+                    //MessageBox.Show("Ngắt kết nối");
+                    return;
+                }
+            }
         }
         #endregion
     }

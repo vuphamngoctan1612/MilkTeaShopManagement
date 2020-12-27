@@ -19,6 +19,7 @@ namespace MilkTeaHouseProject
 {
     public partial class fOrder : Form
     {
+        private bool flag = true;
         private string username;
         private int staffID;
         private int billID = BillDAL.Instance.GetMAXIDBill() + 1;
@@ -694,7 +695,21 @@ namespace MilkTeaHouseProject
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            this.billID = BillDAL.Instance.GetMAXIDBill() + 1;
+            try
+            {
+                this.billID = BillDAL.Instance.GetMAXIDBill() + 1;
+            }
+            catch (SqlException)
+            {
+                if (flag == true)
+                {
+                    flag = false;
+                    timer2.Stop();
+                    timer2.Enabled = false;
+                    timer2.Dispose();
+                    return;
+                }
+            }
         }
         #endregion
     }

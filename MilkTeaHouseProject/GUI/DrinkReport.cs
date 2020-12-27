@@ -38,6 +38,7 @@ namespace MilkTeaHouseProject
             this.CartesianChartReport.AxisX.Add(new Axis
             {
                 Title = "Doanh Thu",
+              
                 LabelFormatter = value => value.ToString("N"),
 
             });

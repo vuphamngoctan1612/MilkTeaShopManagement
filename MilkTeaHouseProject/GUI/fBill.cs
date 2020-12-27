@@ -10,12 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MilkTeaShopManagement.DAL;
+using System.Data.SqlClient;
 
 namespace MilkTeaHouseProject
 {
     public partial class fBill : Form
     {
-
+        private bool flag = true;
         private long Income;
         private long Spend;
         private string username;
@@ -341,11 +342,26 @@ namespace MilkTeaHouseProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (flowLayoutPanelBill.Controls.Count > 0)
+            try
             {
-                if (flowLayoutPanelBill.Controls.Count != BillDAL.Instance.CountBillStatusTrue())
+                if (flowLayoutPanelBill.Controls.Count > 0)
                 {
-                    LoadBill();
+                    if (flowLayoutPanelBill.Controls.Count != BillDAL.Instance.CountBillStatusTrue())
+                    {
+                        LoadBill();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                if (flag == true)
+                {
+                    flag = false;
+                    timer1.Stop();
+                    timer1.Enabled = false;
+                    timer1.Dispose();
+
+                    return;
                 }
             }
         }
