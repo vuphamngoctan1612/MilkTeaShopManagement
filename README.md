@@ -41,7 +41,7 @@
         
         - Chạy file createdatabase.bat ở thư mục đã chọn ở trên
         
-        - Đăng nhập tài khoản username: admin, password: 1
+        - Đăng nhập tài khoản username: admin, password: 1, cập nhật đầy đủ thông tin cho tài khoản admin ở giao diện Nhân viên
         
       - Cho máy con:
       
