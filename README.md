@@ -37,9 +37,9 @@
     
       - Cho máy chủ HOST:
       
-        - Chạy file Setup.exe
+        - Chạy file Setup.exe, chọn thư mục cài đặt app
         
-        - Chạy file createdatabase.bat
+        - Chạy file createdatabase.bat ở thư mục đã chọn ở trên
         
         - Đăng nhập tài khoản username: admin, password: 1
         
