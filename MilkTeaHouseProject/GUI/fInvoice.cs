@@ -53,7 +53,7 @@ namespace MilkTeaHouseProject
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public int ConvertToNumber(string str)
+        public long ConvertToNumber(string str)
         {
             string[] s = str.Split(',');
             string tmp = "";
@@ -61,7 +61,7 @@ namespace MilkTeaHouseProject
             {
                 tmp = tmp + a;
             }
-            return int.Parse(tmp);
+            return long.Parse(tmp);
         }
 
         public void SeparateThousands(Guna.UI.WinForms.GunaLineTextBox txt)
@@ -69,7 +69,7 @@ namespace MilkTeaHouseProject
             if (!string.IsNullOrEmpty(txt.Text))
             {
                 System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                ulong valueBefore = ulong.Parse(txt.Text, System.Globalization.NumberStyles.AllowThousands);
+                ulong valueBefore = ulong.Parse(ConvertToNumber(txt.Text).ToString(), System.Globalization.NumberStyles.AllowThousands);
                 txt.Text = String.Format(culture, "{0:N0}", valueBefore);
                 txt.Select(txt.Text.Length, 0);
             }
