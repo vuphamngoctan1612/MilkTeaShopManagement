@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace MilkTeaShopManagement.DAL
 {
@@ -25,7 +26,8 @@ namespace MilkTeaShopManagement.DAL
         //connectSTR có thể thay đổi tùy vào IP của máy host của mạng LAN
 
         // dành cho máy host thay thế data source, server = server máy host
-         private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=MILKTEA;Integrated Security=True";
+        //private string connectionSTR = @"Data Source=.\SQLSERVE;Initial Catalog=MILKTEA;Integrated Security=True";
+        private string connectionSTR = ConfigurationManager.ConnectionStrings["MTHM"].ToString();
 
         //connectionSTR cho máy con
         //private string connectionSTR = "Server = 192.168.137.1,1433; Initial Catalog = MilkTea; User ID = sa; Password = 16122000; Integrated Security = False; Connect Timeout = 2;";
